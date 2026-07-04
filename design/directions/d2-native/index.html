@@ -1,0 +1,689 @@
+<title>i want ur pod — Discover (Playful Pulse · iOS-native)</title>
+<style>
+  /* ============ PLAYFUL PULSE · iOS-17 NATIVE ============
+     Same identity as D2 — coral primary + mint secondary, ui-rounded
+     type, animated equalizer eyebrow, pulse-ring Subscribe, tag chips,
+     gradient artwork. Re-housed into first-class iOS chrome:
+     edge-to-edge translucent tab bar, real "Discover" large title that
+     condenses on scroll, grouped material surfaces, restrained glows. */
+
+  :root {
+    /* --- brand ramp (theme-agnostic) --- */
+    --coral: #FF6A4D;
+    --coral-deep: #F5502F;
+    --mint: #34E0C4;
+    --mint-deep: #06A98B;
+    --grape: #7C6BFF;
+
+    /* --- radii / motion --- */
+    --r-lg: 20px;
+    --r-md: 16px;
+    --r-sm: 12px;
+    --r-pill: 999px;
+    --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+    --ease-soft: cubic-bezier(.22, .61, .36, 1);
+
+    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
+            "Segoe UI", system-ui, sans-serif;
+  }
+
+  /* ---------- DARK (hero) ---------- */
+  :root, :root[data-theme="dark"] {
+    /* iOS dark: near-black base + slightly raised grouped surfaces */
+    --bg: #0E0B12;
+    --grouped-bg: #0E0B12;
+    --bg-glow-1: rgba(255,106,77,.10);
+    --bg-glow-2: rgba(52,224,196,.07);
+    --surface: #1C1722;      /* elevated cells / cards */
+    --surface-2: #262030;
+    --hairline: rgba(255,255,255,.09);
+    --separator: rgba(255,255,255,.12);
+    --text: #F8F3EF;
+    --text-dim: #ABA1B4;
+    --text-faint: #7E7488;
+    --accent: var(--coral);
+    --accent-2: var(--mint);
+    --on-accent: #2A0E04;
+    --chip: rgba(255,255,255,.08);
+    --chip-text: #F8F3EF;
+    --seg-track: rgba(120,120,128,.24);   /* iOS segmented track */
+    --seg-thumb: #38313F;
+    --field: rgba(120,120,128,.24);        /* iOS search field fill */
+    --bar-material: rgba(20,16,26,.72);    /* translucent chrome */
+    --tabbar-icon: #8B8291;
+  }
+
+  /* ---------- LIGHT ---------- */
+  :root[data-theme="light"] {
+    --bg: #F2F1F6;          /* iOS systemGroupedBackground */
+    --grouped-bg: #F2F1F6;
+    --bg-glow-1: rgba(245,80,47,.09);
+    --bg-glow-2: rgba(6,169,139,.08);
+    --surface: #FFFFFF;
+    --surface-2: #F6F1EC;
+    --hairline: rgba(40,26,36,.10);
+    --separator: rgba(60,60,67,.18);
+    --text: #1A1420;
+    --text-dim: #6B6472;
+    --text-faint: #9A919F;
+    --accent: var(--coral-deep);
+    --accent-2: var(--mint-deep);
+    --on-accent: #FFFFFF;
+    --chip: rgba(118,118,128,.12);
+    --chip-text: #1A1420;
+    --seg-track: rgba(118,118,128,.16);
+    --seg-thumb: #FFFFFF;
+    --field: rgba(118,118,128,.12);
+    --bar-material: rgba(248,246,250,.78);
+    --tabbar-icon: #8A8A8E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: var(--font);
+    /* Neutral desk backdrop so the phone reads as the hero, not a webpage. */
+    background:
+      radial-gradient(120% 60% at 85% -5%, #211a2b, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #17131e, transparent 55%),
+      #0a070e;
+    color: var(--text);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 28px 12px;
+    transition: background .5s var(--ease-soft);
+  }
+  :root[data-theme="light"] body {
+    background:
+      radial-gradient(120% 60% at 85% -5%, #f0e6f4, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #eef0f6, transparent 55%),
+      #e6e4ee;
+  }
+
+  /* ---------- theme toggle (fixed) ---------- */
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    height: 44px; padding: 0 16px 0 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: var(--r-pill);
+    background: rgba(30,24,38,.7);
+    backdrop-filter: blur(14px);
+    color: #F8F3EF; font-family: var(--font);
+    font-size: .82rem; font-weight: 700; letter-spacing: .01em;
+    cursor: pointer;
+    transition: transform .3s var(--ease-spring), background .3s;
+  }
+  :root[data-theme="light"] .theme-toggle {
+    background: rgba(255,255,255,.82);
+    border-color: rgba(40,26,36,.12);
+    color: #1A1420;
+  }
+  .theme-toggle:active { transform: scale(.92); }
+  .theme-toggle .tg-emoji { font-size: 1rem; transition: transform .5s var(--ease-spring); }
+  .theme-toggle:hover .tg-emoji { transform: rotate(-20deg) scale(1.15); }
+
+  /* ---------- phone frame ---------- */
+  .phone {
+    position: relative;
+    width: 390px; height: 844px;
+    border-radius: 54px;
+    background: var(--bg);
+    box-shadow:
+      0 0 0 12px #050308,
+      0 0 0 14px #322838,
+      0 50px 90px -30px rgba(0,0,0,.85);
+    overflow: hidden;
+    transition: background .5s var(--ease-soft);
+  }
+  /* ambient brand glow — restrained accent, pinned to top only,
+     no longer a full-bleed wash fighting the native surfaces */
+  .phone::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(58% 20% at 92% 0%, var(--bg-glow-1), transparent 70%),
+      radial-gradient(46% 16% at 2% 6%, var(--bg-glow-2), transparent 72%);
+  }
+
+  .screen {
+    position: absolute; inset: 0; z-index: 1;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    background: var(--grouped-bg);
+    transition: background .5s var(--ease-soft);
+  }
+  /* keep glow visible above the grouped bg but below content */
+  .screen { background: transparent; }
+  .phone { background: var(--grouped-bg); }
+
+  /* ---------- status bar ---------- */
+  .statusbar {
+    height: 54px; flex: none;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 0 28px 8px; font-size: .82rem; font-weight: 700;
+    position: relative; z-index: 30;
+  }
+  .statusbar .sb-right { display: flex; align-items: center; gap: 6px; }
+  .sb-right svg { display: block; }
+  .notch {
+    position: absolute; top: 11px; left: 50%; transform: translateX(-50%);
+    width: 118px; height: 30px; border-radius: 18px; background: #050308; z-index: 40;
+  }
+
+  /* ---------- iOS navigation bar (inline title, appears on scroll) ---------- */
+  .navbar {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 25;
+    height: 96px; flex: none;
+    display: flex; align-items: flex-end; justify-content: center;
+    padding-bottom: 10px;
+    background: var(--bar-material);
+    backdrop-filter: blur(22px) saturate(180%);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    border-bottom: .5px solid var(--separator);
+    opacity: 0; pointer-events: none;
+    transition: opacity .25s var(--ease-soft);
+  }
+  .navbar.show { opacity: 1; }
+  .navbar .nav-eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 13px; margin-right: 8px; }
+  .navbar .nav-eq i {
+    width: 3px; border-radius: 3px; background: var(--accent);
+    animation: pulseBar 1s ease-in-out infinite;
+  }
+  .navbar .nav-eq i:nth-child(1){ height: 6px; animation-delay: 0s; }
+  .navbar .nav-eq i:nth-child(2){ height: 12px; animation-delay: .18s; }
+  .navbar .nav-eq i:nth-child(3){ height: 8px; animation-delay: .36s; }
+  .navbar .nav-title {
+    font-size: 1.06rem; font-weight: 800; letter-spacing: -.01em; color: var(--text);
+    display: inline-flex; align-items: center;
+  }
+
+  /* ---------- scroll region ---------- */
+  .content {
+    flex: 1; overflow-y: auto; overflow-x: hidden;
+    padding: 54px 20px 116px;   /* top pad clears status bar */
+    -webkit-overflow-scrolling: touch;
+    position: relative; z-index: 2;
+  }
+  .content::-webkit-scrollbar { width: 0; }
+
+  /* ---------- large title (literal "Discover") ---------- */
+  .titlewrap { padding: 2px 2px 4px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0; animation: rise .6s var(--ease-soft) .05s forwards;
+  }
+  .eyebrow .eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 12px; }
+  .eyebrow .eq i {
+    width: 3px; border-radius: 3px; background: var(--accent);
+    animation: pulseBar 1s ease-in-out infinite;
+  }
+  .eyebrow .eq i:nth-child(1){ height: 5px; animation-delay: 0s; }
+  .eyebrow .eq i:nth-child(2){ height: 11px; animation-delay: .18s; }
+  .eyebrow .eq i:nth-child(3){ height: 7px; animation-delay: .36s; }
+  @keyframes pulseBar { 0%,100%{ transform: scaleY(.4); } 50%{ transform: scaleY(1); } }
+
+  h1.big {
+    font-size: 2.32rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.04;
+    margin-top: 4px;
+    display: inline-flex; align-items: center; gap: 10px;
+    opacity: 0; animation: rise .6s var(--ease-soft) .12s forwards;
+  }
+  /* a single lively coral dot as the accent, not a headline swap */
+  h1.big .pulse-dot {
+    width: 11px; height: 11px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 0 0 0 var(--accent);
+    animation: idlePulse 2.6s var(--ease-soft) infinite;
+  }
+
+  /* ---------- iOS search field ---------- */
+  .search {
+    margin-top: 16px; height: 40px;
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 6px 0 12px;
+    background: var(--field); border: none;
+    border-radius: 11px;
+    opacity: 0; animation: rise .6s var(--ease-soft) .18s forwards;
+    transition: box-shadow .25s;
+  }
+  .search:focus-within { box-shadow: 0 0 0 2px var(--accent); }
+  .search svg.mag { flex: none; color: var(--text-faint); }
+  .search input {
+    flex: 1; border: none; background: none; outline: none;
+    font-family: var(--font); font-size: 1.0rem; font-weight: 500; color: var(--text);
+    min-width: 0;
+  }
+  .search input::placeholder { color: var(--text-faint); font-weight: 500; }
+  .search .mic {
+    flex: none; width: 30px; height: 30px; border-radius: 50%;
+    display: grid; place-items: center; border: none; cursor: pointer;
+    background: transparent; color: var(--text-faint);
+    transition: color .3s, transform .3s var(--ease-spring);
+  }
+  .search .mic:active { transform: scale(.85); }
+  @keyframes idlePulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(255,106,77,.0); }
+    50% { box-shadow: 0 0 0 6px rgba(255,106,77,.16); }
+  }
+
+  /* ---------- provider segmented control (iOS style) ---------- */
+  .provider {
+    margin-top: 18px;
+    display: flex; flex-direction: column; gap: 8px;
+    opacity: 0; animation: rise .6s var(--ease-soft) .24s forwards;
+  }
+  .provider .lbl {
+    font-size: .74rem; font-weight: 700; color: var(--text-faint);
+    letter-spacing: .04em; text-transform: uppercase;
+    padding-left: 2px;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .seg {
+    position: relative; display: flex; padding: 2px;
+    background: var(--seg-track); border-radius: 9px;
+    height: 32px;
+  }
+  .seg button {
+    position: relative; z-index: 2; flex: 1;
+    border: none; background: none; cursor: pointer;
+    font-family: var(--font); font-size: .86rem; font-weight: 600;
+    color: var(--text); border-radius: 7px;
+    min-height: 28px; transition: color .3s, font-weight .2s;
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  }
+  .seg button.on { font-weight: 700; }
+  .seg button .prov-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+    opacity: 0; transform: scale(0); transition: all .3s var(--ease-spring);
+  }
+  .seg button.on .prov-dot { opacity: 1; transform: scale(1); }
+  .seg .thumb {
+    position: absolute; z-index: 1; top: 2px; left: 2px; bottom: 2px;
+    border-radius: 7px;
+    background: var(--seg-thumb);
+    box-shadow: 0 3px 8px -3px rgba(0,0,0,.28), 0 0 0 .5px rgba(0,0,0,.04);
+    transition: transform .34s var(--ease-spring), width .34s var(--ease-spring);
+  }
+
+  /* ---------- section header ---------- */
+  .sec-head {
+    margin: 26px 2px 4px; display: flex; align-items: center; justify-content: space-between;
+    opacity: 0; animation: rise .6s var(--ease-soft) .3s forwards;
+  }
+  .sec-head h2 { font-size: 1.34rem; font-weight: 800; letter-spacing: -.015em; }
+  .sec-head .count {
+    font-size: .74rem; font-weight: 800; color: var(--accent-2);
+    background: color-mix(in srgb, var(--accent-2) 15%, transparent);
+    padding: 4px 10px; border-radius: var(--r-pill);
+  }
+  .sec-sub { margin: 2px 2px 0; font-size: .82rem; color: var(--text-faint); font-weight: 500;
+    opacity: 0; animation: rise .6s var(--ease-soft) .32s forwards; }
+
+  /* ---------- results: grouped inset list (iOS) ---------- */
+  .list {
+    margin-top: 14px;
+    background: var(--surface);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: 0 1px 0 var(--hairline), 0 8px 24px -18px rgba(0,0,0,.5);
+  }
+  .row {
+    display: flex; align-items: center; gap: 13px;
+    padding: 11px 14px;
+    position: relative;
+    opacity: 0; transform: translateY(12px);
+    animation: rowIn .55s var(--ease-spring) forwards;
+    transition: background .2s;
+  }
+  /* inset hairline separators between cells, not around each card */
+  .row:not(:last-child)::after {
+    content: ""; position: absolute; left: 89px; right: 0; bottom: 0;
+    height: .5px; background: var(--separator);
+  }
+  .row:active { background: color-mix(in srgb, var(--text) 6%, transparent); }
+
+  /* album art gradient tiles */
+  .art {
+    flex: none; width: 60px; height: 60px; border-radius: 14px;
+    position: relative; overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 4px 10px -6px rgba(0,0,0,.5);
+  }
+  .art::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 26%, rgba(255,255,255,.42), transparent 42%),
+      radial-gradient(circle at 78% 82%, rgba(0,0,0,.22), transparent 50%);
+  }
+  .art .glyph {
+    position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 1.45rem; font-weight: 900; color: rgba(255,255,255,.95);
+    text-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .a1 { background: linear-gradient(140deg, #FF7A4D, #FF4D8D); }
+  .a2 { background: linear-gradient(140deg, #34E0C4, #2E8BFF); }
+  .a3 { background: linear-gradient(140deg, #FFC24D, #FF6A4D); }
+  .a4 { background: linear-gradient(140deg, #7C6BFF, #34E0C4); }
+  .a5 { background: linear-gradient(140deg, #FF5E9A, #7C6BFF); }
+  .a6 { background: linear-gradient(140deg, #22C1A6, #7ED957); }
+
+  .row .meta { flex: 1; min-width: 0; }
+  .row .rtitle {
+    font-size: 1rem; font-weight: 700; letter-spacing: -.01em;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .row .rauthor {
+    margin-top: 1px; font-size: .82rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .row .tags { margin-top: 6px; display: flex; gap: 6px; }
+  .row .tag {
+    font-size: .64rem; font-weight: 800; letter-spacing: .02em; text-transform: uppercase;
+    color: var(--text-dim); background: var(--chip);
+    padding: 3px 8px; border-radius: var(--r-pill);
+  }
+  .row .tag.hot { color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+
+  /* subscribe button — pill, pulse ring, Subscribe -> Subscribed */
+  .sub {
+    flex: none; position: relative;
+    min-width: 44px; min-height: 34px; padding: 0 14px;
+    border: none; cursor: pointer; border-radius: var(--r-pill);
+    font-family: var(--font); font-size: .8rem; font-weight: 800; letter-spacing: .01em;
+    color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: 0 6px 14px -8px var(--accent);
+    display: inline-flex; align-items: center; gap: 5px;
+    transition: transform .3s var(--ease-spring), background .3s, color .3s, box-shadow .3s;
+    overflow: visible;
+  }
+  .sub .ico { display: inline-flex; transition: transform .4s var(--ease-spring); }
+  .sub .ico svg { display: block; }
+  .sub .ico-check { display: none; }
+  .sub:active { transform: scale(.9); }
+  .sub.done {
+    background: var(--chip);
+    color: var(--text);
+    box-shadow: none;
+  }
+  .sub.done .ico-plus { display: none; }
+  .sub.done .ico-check { display: inline-flex; }
+  /* radiating pulse ring on subscribe tap */
+  .sub .ring {
+    position: absolute; inset: 0; border-radius: var(--r-pill);
+    border: 2px solid var(--accent); opacity: 0; pointer-events: none;
+  }
+  .sub.pulsing .ring { animation: ringOut .55s var(--ease-soft) forwards; }
+  @keyframes ringOut {
+    0% { opacity: .8; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.55); }
+  }
+
+  /* extra tap target guarantee: min 44 height via hit area */
+  .sub::before {
+    content: ""; position: absolute; inset: -5px -2px; border-radius: var(--r-pill);
+  }
+
+  /* ---------- footer note (kept minimal, native-feeling) ---------- */
+  .foot {
+    margin: 18px 6px 0; font-size: .76rem; color: var(--text-faint); font-weight: 500;
+    text-align: center;
+    opacity: 0; animation: rise .6s var(--ease-soft) .5s forwards;
+  }
+
+  /* ---------- bottom tab bar: STANDARD edge-to-edge iOS ---------- */
+  .tabbar {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 20;
+    height: 83px; display: flex; align-items: flex-start; justify-content: space-around;
+    padding: 8px 6px 0;
+    background: var(--bar-material);
+    backdrop-filter: blur(22px) saturate(180%);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    border-top: .5px solid var(--separator);
+  }
+  .tab {
+    flex: 1; border: none; background: none; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 3px;
+    color: var(--tabbar-icon); font-family: var(--font);
+    font-size: .62rem; font-weight: 600; letter-spacing: .01em;
+    min-height: 48px; padding-top: 2px;
+    transition: color .3s;
+  }
+  .tab svg { transition: transform .4s var(--ease-spring); }
+  .tab:active svg { transform: scale(.85); }
+  .tab.active { color: var(--accent); }
+  .tab.active svg { animation: bounceIn .5s var(--ease-spring); }
+  @keyframes bounceIn { 0%{ transform: translateY(2px) scale(.85);} 60%{ transform: translateY(-2px) scale(1.1);} 100%{ transform: translateY(0) scale(1);} }
+
+  /* ---------- home indicator ---------- */
+  .home-ind { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    width: 134px; height: 5px; border-radius: 3px; background: var(--text); opacity: .3; z-index: 25; }
+
+  /* ---------- keyframes ---------- */
+  @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @keyframes rowIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+    .row, .eyebrow, h1.big, .search, .provider, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
+    .navbar { transition: none; }
+  }
+</style>
+
+<button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
+  <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
+</button>
+
+<div class="phone">
+  <div class="notch"></div>
+  <div class="screen">
+
+    <!-- status bar -->
+    <div class="statusbar">
+      <span>9:41</span>
+      <span class="sb-right">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="4.5" width="3" height="7.5" rx="1"/><rect x="9" y="2" width="3" height="10" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
+        <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.4c2 0 3.9.8 5.3 2.1l1.2-1.3A9.4 9.4 0 0 0 8.5.6 9.4 9.4 0 0 0 2 3.2l1.2 1.3A7.4 7.4 0 0 1 8.5 2.4Z"/><path d="M8.5 6c1 0 2 .4 2.7 1.1l1.2-1.3A6 6 0 0 0 8.5 4a6 6 0 0 0-3.9 1.8l1.2 1.3A4 4 0 0 1 8.5 6Z"/><circle cx="8.5" cy="9.6" r="1.7"/></svg>
+        <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="1" y="1" width="21" height="10" rx="3" stroke="currentColor" stroke-width="1.2" opacity=".5"/><rect x="2.6" y="2.6" width="16" height="6.8" rx="1.6" fill="currentColor"/><rect x="23.4" y="4" width="1.8" height="4" rx="1" fill="currentColor" opacity=".6"/></svg>
+      </span>
+    </div>
+
+    <!-- inline nav bar: fades in as the large title condenses on scroll -->
+    <div class="navbar" id="navbar" aria-hidden="true">
+      <span class="nav-eq"><i></i><i></i><i></i></span>
+      <span class="nav-title">Discover</span>
+    </div>
+
+    <!-- scroll content -->
+    <div class="content" id="content">
+
+      <div class="titlewrap">
+        <span class="eyebrow">
+          <span class="eq"><i></i><i></i><i></i></span>
+          Fresh &amp; pulsing
+        </span>
+        <h1 class="big">Discover<span class="pulse-dot" aria-hidden="true"></span></h1>
+      </div>
+
+      <!-- search -->
+      <label class="search">
+        <svg class="mag" width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6.2" stroke="currentColor" stroke-width="2"/><path d="M13.8 13.8 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Shows, people, topics" aria-label="Search shows, people and topics">
+        <button class="mic" aria-label="Voice search">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="5.5" y="1" width="5" height="8.5" rx="2.5"/><path d="M3.5 7.5a4.5 4.5 0 0 0 9 0" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M8 12v2.5M5.5 14.5h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </button>
+      </label>
+
+      <!-- provider segmented control -->
+      <div class="provider">
+        <span class="lbl">Directory source</span>
+        <div class="seg" id="seg" role="tablist" aria-label="Directory source">
+          <span class="thumb" id="thumb"></span>
+          <button class="on" data-i="0" role="tab" aria-selected="true"><span class="prov-dot" aria-hidden="true"></span>iTunes</button>
+          <button data-i="1" role="tab" aria-selected="false"><span class="prov-dot" aria-hidden="true"></span>PodcastIndex</button>
+        </div>
+      </div>
+
+      <!-- section header -->
+      <div class="sec-head">
+        <h2>Trending now</h2>
+        <span class="count">142 shows</span>
+      </div>
+      <p class="sec-sub">Fresh picks pulsing across the network today</p>
+
+      <!-- results: grouped inset list -->
+      <div class="list" id="list">
+
+        <div class="row" style="animation-delay:.30s">
+          <div class="art a1"><span class="glyph">S</span></div>
+          <div class="meta">
+            <div class="rtitle">Signal &amp; Static</div>
+            <div class="rauthor">Mara Okonkwo</div>
+            <div class="tags"><span class="tag hot">🔥 Hot</span><span class="tag">Tech</span></div>
+          </div>
+          <button class="sub" aria-label="Subscribe to Signal and Static"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="txt">Subscribe</span></button>
+        </div>
+
+        <div class="row" style="animation-delay:.36s">
+          <div class="art a2"><span class="glyph">D</span></div>
+          <div class="meta">
+            <div class="rtitle">Deep End Diaries</div>
+            <div class="rauthor">The Tidewater Collective</div>
+            <div class="tags"><span class="tag">Stories</span><span class="tag">Weekly</span></div>
+          </div>
+          <button class="sub" aria-label="Subscribe to Deep End Diaries"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="txt">Subscribe</span></button>
+        </div>
+
+        <div class="row" style="animation-delay:.42s">
+          <div class="art a3"><span class="glyph">T</span></div>
+          <div class="meta">
+            <div class="rtitle">Toast to That</div>
+            <div class="rauthor">Priya &amp; Devon</div>
+            <div class="tags"><span class="tag hot">🔥 Hot</span><span class="tag">Comedy</span></div>
+          </div>
+          <button class="sub" aria-label="Subscribe to Toast to That"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="txt">Subscribe</span></button>
+        </div>
+
+        <div class="row" style="animation-delay:.48s">
+          <div class="art a4"><span class="glyph">O</span></div>
+          <div class="meta">
+            <div class="rtitle">Orbit Notes</div>
+            <div class="rauthor">Dr. Lena Farrow</div>
+            <div class="tags"><span class="tag">Science</span><span class="tag">Daily</span></div>
+          </div>
+          <button class="sub" aria-label="Subscribe to Orbit Notes"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="txt">Subscribe</span></button>
+        </div>
+
+        <div class="row" style="animation-delay:.54s">
+          <div class="art a5"><span class="glyph">V</span></div>
+          <div class="meta">
+            <div class="rtitle">Velvet Hour</div>
+            <div class="rauthor">Sunday Radio Club</div>
+            <div class="tags"><span class="tag">Music</span><span class="tag">Interviews</span></div>
+          </div>
+          <button class="sub" aria-label="Subscribe to Velvet Hour"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="txt">Subscribe</span></button>
+        </div>
+
+        <div class="row" style="animation-delay:.60s">
+          <div class="art a6"><span class="glyph">G</span></div>
+          <div class="meta">
+            <div class="rtitle">Growing Wild</div>
+            <div class="rauthor">Teo Marchetti</div>
+            <div class="tags"><span class="tag">Nature</span><span class="tag">Weekly</span></div>
+          </div>
+          <button class="sub" aria-label="Subscribe to Growing Wild"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="txt">Subscribe</span></button>
+        </div>
+
+      </div>
+
+      <p class="foot">Powered by iTunes &amp; PodcastIndex directories</p>
+
+    </div>
+
+    <!-- bottom tab bar: standard edge-to-edge iOS -->
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active" aria-current="page">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M15.5 8.5 13.2 13l-4.7 2.5L10.8 11l4.7-2.5Z" fill="currentColor"/></svg>
+        <span>Discover</span>
+      </button>
+      <button class="tab">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="4" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Podcasts</span>
+      </button>
+      <button class="tab">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M4 12h11M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17.5 13.5v5.2c0 .6-.7.9-1.2.5l-.9-.7M20 10.5l-2.5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Up Next</span>
+      </button>
+      <button class="tab">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Downloads</span>
+      </button>
+    </nav>
+
+    <div class="home-ind"></div>
+  </div>
+</div>
+
+<script>
+  // theme toggle
+  const root = document.documentElement;
+  const tt = document.getElementById('tt');
+  const tgEmoji = document.getElementById('tgEmoji');
+  const tgLabel = document.getElementById('tgLabel');
+  root.setAttribute('data-theme', 'dark');
+  tt.addEventListener('click', () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    tgEmoji.textContent = dark ? '☀️' : '🌙';
+    tgLabel.textContent = dark ? 'Light' : 'Dark';
+  });
+
+  // iOS large-title -> inline-title condense on scroll
+  const content = document.getElementById('content');
+  const navbar = document.getElementById('navbar');
+  const bigTitle = document.querySelector('h1.big');
+  content.addEventListener('scroll', () => {
+    // when the large title scrolls mostly out of view, show the inline nav bar
+    const past = content.scrollTop > (bigTitle.offsetTop + bigTitle.offsetHeight - 40);
+    navbar.classList.toggle('show', past);
+  }, { passive: true });
+
+  // segmented control
+  const seg = document.getElementById('seg');
+  const thumb = document.getElementById('thumb');
+  const segBtns = [...seg.querySelectorAll('button')];
+  function moveThumb(btn) {
+    thumb.style.width = btn.offsetWidth + 'px';
+    thumb.style.transform = `translateX(${btn.offsetLeft - 2}px)`;
+  }
+  requestAnimationFrame(() => moveThumb(segBtns[0]));
+  segBtns.forEach(btn => btn.addEventListener('click', () => {
+    segBtns.forEach(b => { b.classList.remove('on'); b.setAttribute('aria-selected','false'); });
+    btn.classList.add('on'); btn.setAttribute('aria-selected','true');
+    moveThumb(btn);
+  }));
+  window.addEventListener('resize', () => moveThumb(seg.querySelector('.on')));
+
+  // subscribe toggle + pulse ring; copy = Subscribe / Subscribed
+  document.querySelectorAll('.sub').forEach(btn => {
+    const txt = btn.querySelector('.txt');
+    const name = btn.getAttribute('aria-label').replace(/^Subscribe to /, '');
+    btn.addEventListener('click', () => {
+      const done = btn.classList.toggle('done');
+      txt.textContent = done ? 'Subscribed' : 'Subscribe';
+      btn.setAttribute('aria-label', (done ? 'Subscribed to ' : 'Subscribe to ') + name);
+      btn.setAttribute('aria-pressed', done ? 'true' : 'false');
+      btn.classList.remove('pulsing'); void btn.offsetWidth; btn.classList.add('pulsing');
+    });
+  });
+
+  // tab bar active state
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.removeAttribute('aria-current'); });
+      tab.classList.add('active'); tab.setAttribute('aria-current','page');
+    });
+  });
+</script>
