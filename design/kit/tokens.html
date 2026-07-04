@@ -1,0 +1,277 @@
+<!-- @dsCard group="Foundations" -->
+<title>Foundations · Tokens</title>
+<style>
+  :root {
+    /* --- brand ramp (theme-agnostic) --- */
+    --coral: #FF6A4D;
+    --coral-deep: #CA340F;
+    --mint: #34E0C4;
+    --mint-deep: #046B58;
+    --grape: #7C6BFF;
+
+    /* --- spacing scale (gutter = --sp-5 = 20px, used everywhere) --- */
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 20px;
+    --sp-6: 26px;
+    --sp-7: 32px;
+    --gutter: var(--sp-5);
+
+    /* --- radii --- */
+    --r-lg: 20px;
+    --r-md: 16px;
+    --r-sm: 12px;
+    --r-field: 11px;
+    --r-art: 14px;
+    --r-seg: 9px;
+    --r-pill: 999px;
+
+    /* --- motion --- */
+    --dur-fast: .2s;
+    --dur-mid: .3s;
+    --dur-row: .55s;
+    --dur-rise: .6s;
+    --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+    --ease-soft: cubic-bezier(.22, .61, .36, 1);
+
+    /* --- elevation --- */
+    --elev-list: 0 1px 0 var(--hairline), 0 8px 24px -18px rgba(0,0,0,.5);
+    --elev-card: 0 1px 0 var(--hairline), 0 12px 30px -20px rgba(0,0,0,.55);
+    --elev-sub: 0 6px 14px -8px var(--accent);
+    --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
+
+    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
+            "Segoe UI", system-ui, sans-serif;
+  }
+
+  /* ---------- DARK (hero) ---------- */
+  :root, :root[data-theme="dark"] {
+    --bg: #0E0B12;
+    --grouped-bg: #0E0B12;
+    --bg-glow-1: rgba(255,106,77,.10);
+    --bg-glow-2: rgba(52,224,196,.07);
+    --surface: #1C1722;
+    --surface-2: #262030;
+    --hairline: rgba(255,255,255,.09);
+    --separator: rgba(255,255,255,.12);
+    --text: #F8F3EF;
+    --text-dim: #ABA1B4;
+    --text-faint: #988DA1;
+    --accent: var(--coral);
+    --accent-2: var(--mint);
+    --on-accent: #2A0E04;
+    --chip: rgba(255,255,255,.08);
+    --chip-text: #F8F3EF;
+    --seg-track: rgba(120,120,128,.24);
+    --seg-thumb: #38313F;
+    --field: rgba(120,120,128,.24);
+    --bar-material: rgba(20,16,26,.72);
+    --tabbar-icon: #8B8291;
+  }
+
+  /* ---------- LIGHT ---------- */
+  :root[data-theme="light"] {
+    --bg: #F2F1F6;
+    --grouped-bg: #F2F1F6;
+    --bg-glow-1: rgba(245,80,47,.09);
+    --bg-glow-2: rgba(6,169,139,.08);
+    --surface: #FFFFFF;
+    --surface-2: #F6F1EC;
+    --hairline: rgba(40,26,36,.10);
+    --separator: rgba(60,60,67,.18);
+    --text: #1A1420;
+    --text-dim: #6B6472;
+    --text-faint: #736A78;
+    --accent: var(--coral-deep);
+    --accent-2: var(--mint-deep);
+    --on-accent: #FFFFFF;
+    --chip: rgba(118,118,128,.12);
+    --chip-text: #1A1420;
+    --seg-track: rgba(118,118,128,.16);
+    --seg-thumb: #FFFFFF;
+    --field: rgba(118,118,128,.10);
+    --bar-material: rgba(248,246,250,.78);
+    --tabbar-icon: #6C6C70;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: var(--font);
+    background:
+      radial-gradient(120% 60% at 85% -5%, #211a2b, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #17131e, transparent 55%),
+      #0a070e;
+    color: var(--text); min-height: 100vh; padding: 64px 22px 80px;
+    transition: background .5s var(--ease-soft);
+  }
+  :root[data-theme="light"] body {
+    background:
+      radial-gradient(120% 60% at 85% -5%, #f0e6f4, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #eef0f6, transparent 55%),
+      #e6e4ee;
+  }
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    height: 44px; padding: 0 16px 0 14px; display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,255,255,.16); border-radius: var(--r-pill);
+    background: rgba(30,24,38,.7); backdrop-filter: blur(14px);
+    color: #F8F3EF; font-family: var(--font); font-size: .82rem; font-weight: 700; cursor: pointer;
+    transition: transform .3s var(--ease-spring), background .3s;
+  }
+  :root[data-theme="light"] .theme-toggle { background: rgba(255,255,255,.82); border-color: rgba(40,26,36,.12); color: #1A1420; }
+  .theme-toggle:active { transform: scale(.92); }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  .doc-h1 { font-size: 2.1rem; font-weight: 800; letter-spacing: -.02em; }
+  .doc-lead { margin-top: 8px; color: var(--text-dim); font-size: .98rem; font-weight: 500; max-width: 60ch; line-height: 1.5; }
+  .grp { margin-top: 44px; }
+  .grp > h2 { font-size: 1.3rem; font-weight: 800; letter-spacing: -.01em; display: inline-flex; align-items: center; gap: 8px; }
+  .grp > p { margin-top: 4px; color: var(--text-faint); font-size: .86rem; font-weight: 500; }
+  .panel { margin-top: 16px; background: var(--surface); border-radius: var(--r-lg);
+    padding: 20px; box-shadow: var(--elev-list); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .sw { border-radius: var(--r-md); overflow: hidden; border: .5px solid var(--separator); }
+  .sw .chip { height: 60px; }
+  .sw .info { padding: 8px 10px; background: var(--surface-2); }
+  .sw .role { font-size: .8rem; font-weight: 800; color: var(--text); }
+  .sw .hex { font-size: .72rem; font-weight: 600; color: var(--text-dim); font-family: ui-monospace, monospace; letter-spacing: .02em; }
+  .type-row { display: flex; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: .5px solid var(--separator); }
+  .type-row:last-child { border-bottom: none; }
+  .type-row .tk { flex: none; width: 118px; font-size: .72rem; font-weight: 700; color: var(--text-faint); font-family: ui-monospace, monospace; }
+  .type-row .sample { color: var(--text); }
+  .scale-row { display: flex; align-items: center; gap: 14px; padding: 9px 0; }
+  .scale-row .tk { flex: none; width: 118px; font-size: .72rem; font-weight: 700; color: var(--text-faint); font-family: ui-monospace, monospace; }
+  .scale-row .bar { height: 16px; border-radius: 4px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+  .scale-row .val { font-size: .8rem; color: var(--text-dim); font-weight: 600; }
+  .radii { display: flex; flex-wrap: wrap; gap: 18px; }
+  .radii .r { text-align: center; }
+  .radii .box { width: 76px; height: 76px; background: color-mix(in srgb, var(--accent) 22%, var(--surface-2));
+    border: 1.5px solid var(--accent); }
+  .radii .lab { margin-top: 8px; font-size: .72rem; font-weight: 700; color: var(--text-dim); font-family: ui-monospace, monospace; }
+  .elevs { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); gap: 20px; }
+  .elevs .e { height: 76px; border-radius: var(--r-md); background: var(--surface-2); display: grid; place-items: center;
+    font-size: .72rem; font-weight: 700; color: var(--text-dim); font-family: ui-monospace, monospace; }
+  .motion { display: flex; flex-wrap: wrap; gap: 14px; }
+  .motion .m { flex: 1 1 200px; background: var(--surface-2); border-radius: var(--r-md); padding: 14px; }
+  .motion .m .lab { font-size: .74rem; font-weight: 800; color: var(--text); }
+  .motion .m .val { font-size: .7rem; font-weight: 600; color: var(--text-faint); font-family: ui-monospace, monospace; margin-top: 2px; }
+  .motion .track { margin-top: 12px; height: 12px; border-radius: 6px; background: var(--chip); position: relative; overflow: hidden; }
+  .motion .dot { position: absolute; top: 1px; left: 2px; width: 10px; height: 10px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2)); animation: slide 2.4s infinite; }
+  .motion .m.soft .dot { animation-timing-function: var(--ease-soft); }
+  .motion .m.spring .dot { animation-timing-function: var(--ease-spring); }
+  @keyframes slide { 0%,12% { left: 2px; } 50% { left: calc(100% - 12px); } 88%,100% { left: 2px; } }
+  .aa { margin-top: 12px; font-size: .8rem; color: var(--text-dim); line-height: 1.5; }
+  .aa b { color: var(--text); }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
+  <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
+</button>
+<div class="wrap">
+  <h1 class="doc-h1">Design tokens</h1>
+  <p class="doc-lead">The single source of truth for “i want ur pod” — Playful Pulse, iOS-native. Coral primary, mint secondary, rounded type. Toggle the theme (top-right) to preview every role in light and dark. Dark is the hero.</p>
+
+  <div class="grp">
+    <h2><span class="eq" style="display:inline-flex;gap:2px;align-items:flex-end;height:14px"><i style="width:3px;height:6px;border-radius:3px;background:var(--accent);display:inline-block"></i><i style="width:3px;height:13px;border-radius:3px;background:var(--accent);display:inline-block"></i><i style="width:3px;height:9px;border-radius:3px;background:var(--accent);display:inline-block"></i></span> Color roles</h2>
+    <p>Resolved for the active theme. Brand ramp is theme-agnostic; roles remap per theme.</p>
+    <div class="panel">
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:var(--bg)"></div><div class="info"><div class="role">--bg</div><div class="hex">grouped background</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--surface)"></div><div class="info"><div class="role">--surface</div><div class="hex">elevated cell / card</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--surface-2)"></div><div class="info"><div class="role">--surface-2</div><div class="hex">raised fill</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--text)"></div><div class="info"><div class="role">--text</div><div class="hex">primary text</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--text-dim)"></div><div class="info"><div class="role">--text-dim</div><div class="hex">secondary text (AA)</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--text-faint)"></div><div class="info"><div class="role">--text-faint</div><div class="hex">muted labels (AA)</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--accent)"></div><div class="info"><div class="role">--accent</div><div class="hex">coral primary</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--accent-2)"></div><div class="info"><div class="role">--accent-2</div><div class="hex">mint secondary</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--grape)"></div><div class="info"><div class="role">--grape</div><div class="hex">brand tertiary</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--on-accent)"></div><div class="info"><div class="role">--on-accent</div><div class="hex">text on accent</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--separator)"></div><div class="info"><div class="role">--separator</div><div class="hex">hairline</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--chip)"></div><div class="info"><div class="role">--chip</div><div class="hex">neutral fill</div></div></div>
+      </div>
+      <p class="aa"><b>AA note.</b> Every text role clears normal-text AA (≥4.5:1) in <b>both</b> themes. <b>text</b> and <b>text-dim</b> carry body copy. <b>accent</b> passes as text on bg/surface — dark coral 6.9, light coral-deep 4.7–5.2; <b>accent-2</b> dark mint 11.7, light mint-deep 5.8–6.5. <b>text-faint</b> now clears 4.5 for muted labels in both themes (light 4.6, dark 6.2). White on light coral-deep = <b>5.2</b>, so the Subscribe / primary label passes.</p>
+    </div>
+  </div>
+
+  <div class="grp">
+    <h2>Type scale</h2>
+    <p>System rounded stack (ui-rounded / SF Pro Rounded). Weights 500–900.</p>
+    <div class="panel">
+      <div class="type-row"><span class="tk">large-title 2.32rem/800</span><span class="sample" style="font-size:2.32rem;font-weight:800;letter-spacing:-.02em">Discover</span></div>
+      <div class="type-row"><span class="tk">section 1.34rem/800</span><span class="sample" style="font-size:1.34rem;font-weight:800;letter-spacing:-.015em">Trending now</span></div>
+      <div class="type-row"><span class="tk">nav-title 1.06rem/800</span><span class="sample" style="font-size:1.06rem;font-weight:800">Discover</span></div>
+      <div class="type-row"><span class="tk">row-title 1rem/700</span><span class="sample" style="font-size:1rem;font-weight:700">Signal &amp; Static</span></div>
+      <div class="type-row"><span class="tk">body 1rem/500</span><span class="sample" style="font-size:1rem;font-weight:500">Shows, people, topics</span></div>
+      <div class="type-row"><span class="tk">subhead .82rem/500</span><span class="sample" style="font-size:.82rem;font-weight:500;color:var(--text-dim)">Mara Okonkwo</span></div>
+      <div class="type-row"><span class="tk">provider .74rem/700</span><span class="sample" style="font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text-faint)">Directory source</span></div>
+      <div class="type-row"><span class="tk">eyebrow .72rem/800</span><span class="sample" style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)">Fresh &amp; pulsing</span></div>
+      <div class="type-row"><span class="tk">tag .64rem/800</span><span class="sample" style="font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:var(--text-dim)">Weekly</span></div>
+      <div class="type-row"><span class="tk">tab .62rem/600</span><span class="sample" style="font-size:.62rem;font-weight:600">Discover</span></div>
+    </div>
+  </div>
+
+  <div class="grp">
+    <h2>Spacing scale</h2>
+    <p>4-based ramp. The gutter (page inset &amp; horizontal rhythm) is <b>--sp-5 = 20px</b>, used everywhere.</p>
+    <div class="panel">
+      <div class="scale-row"><span class="tk">--sp-1</span><div class="bar" style="width:4px"></div><span class="val">4px</span></div>
+      <div class="scale-row"><span class="tk">--sp-2</span><div class="bar" style="width:8px"></div><span class="val">8px</span></div>
+      <div class="scale-row"><span class="tk">--sp-3</span><div class="bar" style="width:12px"></div><span class="val">12px</span></div>
+      <div class="scale-row"><span class="tk">--sp-4</span><div class="bar" style="width:16px"></div><span class="val">16px</span></div>
+      <div class="scale-row"><span class="tk">--sp-5 / --gutter</span><div class="bar" style="width:20px"></div><span class="val">20px — gutter</span></div>
+      <div class="scale-row"><span class="tk">--sp-6</span><div class="bar" style="width:26px"></div><span class="val">26px</span></div>
+      <div class="scale-row"><span class="tk">--sp-7</span><div class="bar" style="width:32px"></div><span class="val">32px</span></div>
+    </div>
+  </div>
+
+  <div class="grp">
+    <h2>Radii</h2>
+    <p>Soft, rounded, playful — pill for actions, 20 for grouped lists/cards.</p>
+    <div class="panel"><div class="radii">
+      <div class="r"><div class="box" style="border-radius:var(--r-sm)"></div><div class="lab">--r-sm 12</div></div>
+      <div class="r"><div class="box" style="border-radius:var(--r-seg)"></div><div class="lab">--r-seg 9</div></div>
+      <div class="r"><div class="box" style="border-radius:var(--r-field)"></div><div class="lab">--r-field 11</div></div>
+      <div class="r"><div class="box" style="border-radius:var(--r-art)"></div><div class="lab">--r-art 14</div></div>
+      <div class="r"><div class="box" style="border-radius:var(--r-md)"></div><div class="lab">--r-md 16</div></div>
+      <div class="r"><div class="box" style="border-radius:var(--r-lg)"></div><div class="lab">--r-lg 20</div></div>
+      <div class="r"><div class="box" style="border-radius:var(--r-pill)"></div><div class="lab">--r-pill 999</div></div>
+    </div></div>
+  </div>
+
+  <div class="grp">
+    <h2>Elevation</h2>
+    <p>Restrained. Grouped lists float on a soft ambient shadow; the subscribe pill carries a coral glow.</p>
+    <div class="panel"><div class="elevs">
+      <div class="e" style="box-shadow:var(--elev-list)">--elev-list</div>
+      <div class="e" style="box-shadow:var(--elev-card)">--elev-card</div>
+      <div class="e" style="box-shadow:var(--elev-sub)">--elev-sub</div>
+      <div class="e" style="box-shadow:var(--elev-pop)">--elev-pop</div>
+    </div></div>
+  </div>
+
+  <div class="grp">
+    <h2>Motion</h2>
+    <p>Two easings do all the work. Reduced-motion collapses every animation.</p>
+    <div class="panel"><div class="motion">
+      <div class="m soft"><div class="lab">--ease-soft</div><div class="val">cubic-bezier(.22,.61,.36,1)</div><div class="track"><span class="dot"></span></div></div>
+      <div class="m spring"><div class="lab">--ease-spring</div><div class="val">cubic-bezier(.34,1.56,.64,1)</div><div class="track"><span class="dot"></span></div></div>
+    </div>
+    <p class="aa"><b>Durations.</b> --dur-fast .2s (state tint) · --dur-mid .3s (press/color) · --dur-row .55s (row entrance) · --dur-rise .6s (title/section reveal).</p>
+    </div>
+  </div>
+</div>
+<script>
+  const root = document.documentElement;
+  const tt = document.getElementById('tt');
+  const tgEmoji = document.getElementById('tgEmoji');
+  const tgLabel = document.getElementById('tgLabel');
+  root.setAttribute('data-theme', 'dark');
+  tt.addEventListener('click', () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    tgEmoji.textContent = dark ? '☀️' : '🌙';
+    tgLabel.textContent = dark ? 'Light' : 'Dark';
+  });
+</script>
