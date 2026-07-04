@@ -68,6 +68,9 @@
     --seg-thumb: #38313F;
     --field: rgba(120,120,128,.24);
     --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
     --tabbar-icon: #8B8291;
   }
 
@@ -93,6 +96,9 @@
     --seg-thumb: #FFFFFF;
     --field: rgba(118,118,128,.10);
     --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
     --tabbar-icon: #6C6C70;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -218,7 +224,7 @@
   /* ---------- scroll region ---------- */
   .content {
     flex: 1; overflow-y: auto; overflow-x: hidden;
-    padding: 54px var(--gutter) 116px;   /* top pad clears status bar */
+    padding: 54px var(--gutter) 104px;   /* top clears status bar; bottom clears floating tab bar */
     -webkit-overflow-scrolling: touch;
     position: relative; z-index: 2;
   }
@@ -284,45 +290,6 @@
   @keyframes idlePulse {
     0%,100% { box-shadow: 0 0 0 0 rgba(255,106,77,.0); }
     50% { box-shadow: 0 0 0 6px rgba(255,106,77,.16); }
-  }
-
-  /* ---------- provider segmented control (iOS style) ---------- */
-  .provider {
-    margin-top: var(--sp-4);
-    display: flex; flex-direction: column; gap: 8px;
-    opacity: 0; animation: rise .6s var(--ease-soft) .24s forwards;
-  }
-  .provider .lbl {
-    font-size: .74rem; font-weight: 700; color: var(--text-faint);
-    letter-spacing: .04em; text-transform: uppercase;
-    padding-left: 2px;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .seg {
-    position: relative; display: flex; padding: 2px;
-    background: var(--seg-track); border-radius: var(--r-seg);
-    height: 32px;
-  }
-  .seg button {
-    position: relative; z-index: 2; flex: 1;
-    border: none; background: none; cursor: pointer;
-    font-family: var(--font); font-size: .86rem; font-weight: 600;
-    color: var(--text); border-radius: calc(var(--r-seg) - 2px);
-    min-height: 28px; transition: color .3s, font-weight .2s;
-    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  }
-  .seg button.on { font-weight: 700; }
-  .seg button .prov-dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
-    opacity: 0; transform: scale(0); transition: all .3s var(--ease-spring);
-  }
-  .seg button.on .prov-dot { opacity: 1; transform: scale(1); }
-  .seg .thumb {
-    position: absolute; z-index: 1; top: 2px; left: 2px; bottom: 2px;
-    border-radius: calc(var(--r-seg) - 2px);
-    background: var(--seg-thumb);
-    box-shadow: 0 3px 8px -3px rgba(0,0,0,.28), 0 0 0 .5px rgba(0,0,0,.04);
-    transition: transform .34s var(--ease-spring), width .34s var(--ease-spring);
   }
 
   /* ---------- section header ---------- */
@@ -450,22 +417,23 @@
     opacity: 0; animation: rise .6s var(--ease-soft) .5s forwards;
   }
 
-  /* ---------- bottom tab bar: STANDARD edge-to-edge iOS ---------- */
+  /* ---------- bottom tab bar: FLOATING Liquid Glass (iOS 26) ---------- */
   .tabbar {
-    position: absolute; left: 0; right: 0; bottom: 0; z-index: 20;
-    height: 83px; display: flex; align-items: flex-start; justify-content: space-around;
-    padding: 8px 6px 0;
-    background: var(--bar-material);
-    backdrop-filter: blur(22px) saturate(180%);
-    -webkit-backdrop-filter: blur(22px) saturate(180%);
-    border-top: .5px solid var(--separator);
+    position: absolute; left: 12px; right: 12px; bottom: 22px; z-index: 20;
+    height: 60px; display: flex; align-items: center; justify-content: space-around;
+    padding: 0 6px; border-radius: 30px;
+    background: var(--tabbar-glass);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: .5px solid var(--tabbar-hairline);
+    box-shadow: var(--tabbar-shadow);
   }
   .tab {
     flex: 1; border: none; background: none; cursor: pointer;
-    display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 3px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
     color: var(--tabbar-icon); font-family: var(--font);
     font-size: .62rem; font-weight: 600; letter-spacing: .01em;
-    min-height: 48px; padding-top: 2px;
+    min-height: 44px; padding: 4px 0;
     transition: color .3s;
   }
   .tab svg { transition: transform .4s var(--ease-spring); }
@@ -484,7 +452,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
-    .row, .eyebrow, h1.big, .search, .provider, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
+    .row, .eyebrow, h1.big, .search, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
     .navbar { transition: none; }
   }
 
@@ -659,16 +627,6 @@
         </button>
       </label>
 
-      <!-- provider segmented control -->
-      <div class="provider">
-        <span class="lbl">Directory source</span>
-        <div class="seg" id="seg" role="tablist" aria-label="Directory source">
-          <span class="thumb" id="thumb"></span>
-          <button class="on" data-i="0" role="tab" aria-selected="true"><span class="prov-dot" aria-hidden="true"></span>iTunes</button>
-          <button data-i="1" role="tab" aria-selected="false"><span class="prov-dot" aria-hidden="true"></span>PodcastIndex</button>
-        </div>
-      </div>
-
       <div class="sec-head">
         <h2>Searching iTunes…</h2>
       </div>
@@ -685,8 +643,8 @@
 
     </div>
 
-    <!-- bottom tab bar: standard edge-to-edge iOS -->
-    <nav class="tabbar" aria-label="Primary">
+    <!-- bottom tab bar: floating Liquid Glass (iOS 26) -->
+        <nav class="tabbar" aria-label="Primary">
       <button class="tab active" aria-current="page">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M15.5 8.5 13.2 13l-4.7 2.5L10.8 11l4.7-2.5Z" fill="currentColor"/></svg>
         <span>Discover</span>
@@ -703,6 +661,10 @@
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <span>Downloads</span>
       </button>
+      <button class="tab">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9 5.3 5.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Settings</span>
+      </button>
     </nav>
 
     <div class="home-ind"></div>
@@ -711,18 +673,6 @@
 </div>
 
 <script>
-  const root = document.documentElement;
-  const tt = document.getElementById('tt');
-  const tgEmoji = document.getElementById('tgEmoji');
-  const tgLabel = document.getElementById('tgLabel');
-  root.setAttribute('data-theme', 'dark');
-  tt.addEventListener('click', () => {
-    const dark = root.getAttribute('data-theme') === 'dark';
-    root.setAttribute('data-theme', dark ? 'light' : 'dark');
-    tgEmoji.textContent = dark ? '☀️' : '🌙';
-    tgLabel.textContent = dark ? 'Light' : 'Dark';
-  });
-
   // theme toggle
   const root = document.documentElement;
   const tt = document.getElementById('tt');
@@ -746,21 +696,6 @@
     navbar.classList.toggle('show', past);
   }, { passive: true });
 
-  // segmented control
-  const seg = document.getElementById('seg');
-  const thumb = document.getElementById('thumb');
-  const segBtns = [...seg.querySelectorAll('button')];
-  function moveThumb(btn) {
-    thumb.style.width = btn.offsetWidth + 'px';
-    thumb.style.transform = `translateX(${btn.offsetLeft - 2}px)`;
-  }
-  requestAnimationFrame(() => moveThumb(segBtns[0]));
-  segBtns.forEach(btn => btn.addEventListener('click', () => {
-    segBtns.forEach(b => { b.classList.remove('on'); b.setAttribute('aria-selected','false'); });
-    btn.classList.add('on'); btn.setAttribute('aria-selected','true');
-    moveThumb(btn);
-  }));
-  window.addEventListener('resize', () => moveThumb(seg.querySelector('.on')));
 
   // subscribe toggle + pulse ring; copy = Subscribe / Subscribed
   document.querySelectorAll('.sub').forEach(btn => {

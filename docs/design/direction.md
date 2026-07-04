@@ -48,6 +48,9 @@ Brand ramp is theme-agnostic. Roles remap per theme.
 | `--seg-thumb` | `#38313F` |
 | `--field` | `rgba(120,120,128,.24)` |
 | `--bar-material` | `rgba(20,16,26,.72)` |
+| `--tabbar-glass` | `rgba(14,11,18,.94)` |
+| `--tabbar-hairline` | `rgba(255,255,255,.14)` |
+| `--tabbar-shadow` | `0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5)` |
 | `--tabbar-icon` | `#8B8291` |
 
 ### Light
@@ -70,6 +73,9 @@ Brand ramp is theme-agnostic. Roles remap per theme.
 | `--seg-thumb` | `#FFFFFF` |
 | `--field` | `rgba(118,118,128,.10)` |
 | `--bar-material` | `rgba(248,246,250,.78)` |
+| `--tabbar-glass` | `rgba(250,248,252,.96)` |
+| `--tabbar-hairline` | `rgba(60,60,67,.18)` |
+| `--tabbar-shadow` | `0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12)` |
 | `--tabbar-icon` | `#6C6C70` |
 
 ---
@@ -129,6 +135,36 @@ with on-accent text** — white on coral-deep 5.2 in light, `#2A0E04` on
 coral 6.4 in dark — instead of tinted coral-on-coral, which never cleared
 4.5.
 
+### Floating tab bar — labels pass over bright content
+
+Tab labels are small text (`.62rem` / ~9.9px, weight 600) and need **4.5:1**.
+The bar floats over scrolling content, so the worst case is **saturated album
+artwork** bleeding through the blur — not just white. Ratios below are measured
+against that worst backdrop (the app's own art gradient: grape `#7C6BFF`, pink
+`#FF4D8D`, blue `#2E8BFF`, mint `#34E0C4`), which lowers the effective bar
+luminance more than white does.
+
+The dark `--tabbar-glass` scrim is `rgba(14,11,18,.94)` — a dark base at high
+opacity, so it dominates any backdrop and was already safe. The light
+`--tabbar-glass` was a near-white fill at only 86% opacity, so saturated art
+bled through and dropped the effective bar, pulling both labels to ~4.2:1. It
+was raised to **`rgba(250,248,252,.96)`** (same color, higher opacity) so the
+bar stays near-white regardless of backdrop.
+
+Note the worst backdrop differs by theme: the dark bar is darkest, so its label
+contrast is *lowest over white* (art only makes the bar darker → higher ratio);
+the light bar is lightest, so its label contrast is *lowest over saturated art*.
+
+| Pair | Dark worst (over white) | Dark over art | Light worst (over art) | Light over surface/white |
+|---|---|---|---|---|
+| inactive `--tabbar-icon` | 4.69 | 4.88–5.04 | 4.74 | 4.94–4.97 |
+| active `--accent` (coral) | 6.10 | 6.35–6.56 | 4.74 | 4.95–4.97 |
+
+Both roles clear 4.5:1 in **both** themes across the full range of backdrops,
+bright and dark; the 26px icons clear the 3:1 graphical-object bar with room.
+Only opacity changed — the color roles (`--tabbar-icon`, `--accent`) and the
+glass fill color are unchanged.
+
 ---
 
 ## 3. Type scale
@@ -148,7 +184,9 @@ System rounded stack — no web fonts:
 | Row title | 1rem | 700 | -0.01em |
 | Body / input | 1rem | 500 | — |
 | Subhead / author | 0.82rem | 500 | — |
-| Provider label | 0.74rem | 700 | 0.04em, uppercase |
+| Settings group label | 0.72rem | 800 | 0.06em, uppercase |
+| Source name (row) | 1rem | 700 | -0.01em |
+| Badge / tag (Primary, Open index) | 0.62rem | 800 | 0.04em, uppercase |
 | Count pill | 0.74rem | 800 | — |
 | Eyebrow | 0.72rem | 800 | 0.12em, uppercase |
 | Tag | 0.64rem | 800 | 0.02em, uppercase |
@@ -178,7 +216,8 @@ snapped to the nearest token (row gap 13→`--sp-3`, row padding 11/14→`--sp-3
 14→`--sp-3`). The row separator inset is derived, not a rhythm step, so it is
 `calc(var(--sp-4) + 60px + var(--sp-3))` (gutter + 60px art + row gap = where
 the title starts). Three non-rhythm constants stay raw on purpose: the status/
-tab-bar clearances in `.content` padding (`54`/`116`), the 60px artwork size,
+tab-bar clearances in `.content` padding (`54`/`104`, the `104` reserving
+room under the floating tab bar), the 60px artwork size,
 and the 2px sub-token optical inset that aligns the section header to the
 title. Everything else on the rhythm scale uses a `--sp-*` token.
 
@@ -198,9 +237,15 @@ title. Everything else on the rhythm scale uses a `--sp-*` token.
 
 Artwork tiles in the row use `--r-art` (14, between `--r-field` and
 `--r-md`) — an intentional component detail carried from the base, now a
-named token. The segmented-control **inner** radius (button + thumb) is
-`calc(var(--r-seg) - 2px)` = 7 — the standard nested-corner (track radius
-minus the 2px track inset), so it stays coupled to `--r-seg`.
+named token. Source icon tiles in the Settings checklist use a fixed 13px
+corner (one step under `--r-art`) to read tighter at the 46px size.
+
+`--r-seg` (9) is **retained but no longer used by any screen** — the inline
+segmented provider control it powered was retired when sources moved to
+Settings (see §12). It stays in the token block for byte-identity across kit
+files; if a future segmented control returns, its inner corner is the
+standard nested value `calc(var(--r-seg) - 2px)` = 7. The iOS toggle switch
+in the sources checklist uses `--r-pill` for both track and knob.
 
 ---
 
@@ -270,7 +315,11 @@ animation.
 - **All icons are inline SVG**, `currentColor`, ~1.6–2px strokes, rounded
   caps/joins. No icon fonts, no external assets.
 - Tab icons: Discover = compass, Podcasts = grid, Up Next = queue,
-  Downloads = tray-down (from the locked base).
+  Downloads = tray-down (from the locked base), Settings = gear.
+- Sources checklist icons: Apple Podcasts = apple glyph on a coral→grape
+  tile, PodcastIndex = broadcast-wave glyph on a mint→blue tile, plus a
+  lock badge (not-yet-configured), a key glyph (Add API key), and a
+  three-line drag handle (reorder primary/fallback).
 - State badges (empty/no-results/error) are 84px rounded-square gradient
   tiles with a white glyph — decorative, so contrast rules don't gate the
   glyph.
@@ -284,16 +333,23 @@ animation.
 ## 10. Component & screen inventory
 
 - **Foundations:** `tokens.html`.
-- **Components:** app-shell, search-field, provider-picker, result-row,
+- **Components:** app-shell, search-field, sources-checklist, result-row,
   result-card, subscribe-button (default / subscribing / subscribed),
   section-header, buttons (primary / secondary / ghost), loading-skeleton,
-  empty-prompt, no-results, error.
+  empty-prompt, no-results, error. `provider-picker.html` is **repurposed**:
+  the old segmented picker was removed and the file now demonstrates the
+  Sources checklist (its gallery card is kept so no card dangles;
+  `sources-checklist.html` is the canonical copy).
 - **Discover screens (iPhone-framed):** first-run, typing, loading,
-  results, no-results, error, provider-switched.
+  results, no-results, error.
+- **Settings screens (iPhone-framed):** settings-sources.
 
-Every screen keeps the same header stack (large title → search → provider
-segmented control) so the source-of-truth chrome is identical across
-states; only the results region changes.
+Discover screens keep the same header stack (large title → search) so the
+source-of-truth chrome is identical across states; only the results region
+changes. **The inline provider control is gone** — choosing directories now
+lives in Settings (§12), not in Discover. Navigation is a **floating Liquid
+Glass tab bar** (iOS 26 style): Discover, Podcasts, Up Next, Downloads,
+Settings.
 
 ---
 
@@ -308,14 +364,87 @@ states; only the results region changes.
   `--field` lowered to 10% so the `text-dim` placeholder clears 4.5.
 - **Mint-deep in light** now clears AA as text (5.8–6.5 on bg/surface); the
   count pill label stays mint.
-- Segmented-thumb position for `provider-switched` is set via inline style
-  as a fallback; confirm the base thumb JS re-measures on load in the
-  target renderer.
+- **Dark tab-bar labels over bright content — RESOLVED.** The floating bar's
+  dark `--tabbar-glass` scrim was strengthened from `rgba(28,22,34,.86)` to
+  `rgba(14,11,18,.94)` (applied byte-identically to every kit file), so the
+  blurred bar stays dark over bright artwork/white (effective ≈ `rgb(28,26,32)`).
+  Inactive `--tabbar-icon` now clears 4.69:1 and active coral 6.10:1 over
+  white; both were already fine over the app's own dark bg. No color roles
+  changed. See §2.
+- **Light tab-bar labels over bright content — RESOLVED.** The earlier rework
+  fixed dark but left light asymmetric: the near-white `--tabbar-glass` fill sat
+  at only 86% opacity, so saturated album art bled through the blur and dropped
+  the effective bar, pulling inactive `#6C6C70` and active `#CA340F` labels to
+  ~4.2:1 over grape/pink/blue art (they only reached ~5.0 over pure white). The
+  light `--tabbar-glass` opacity was raised `.86 → .96` (same color, applied
+  byte-identically to every kit file), so the bar stays near-white regardless of
+  backdrop: worst-case labels now clear **4.74:1** over the app's own artwork.
+  No color roles changed; the glass fill color is unchanged. See §2.
+- **Search-order badge tint — RESOLVED.** The `.ord-num` digit
+  (`settings-sources`) is small bold accent text on an accent tint over white;
+  at 14% the tint pulled it to 4.23:1 in light. Lowered the tint `14% → 8%`
+  (accent-on-accent, so a lighter tint *raises* contrast): light now 4.64:1,
+  dark 5.60:1. Position still conveys order as a backstop.
+- **Kit convergence — RESOLVED.** The duplicate theme-toggle script (which
+  broke all JS on 6 of 7 screens) was removed; the three floating-tab-bar
+  tokens were added to `tokens.html` and the 10 components that lacked them;
+  the retired segmented `.provider`/`.seg` CSS was deleted from `tokens`,
+  `app-shell`, and the 9 other components (markup was already gone); every
+  tab bar now carries the same **five** items (Discover, Podcasts, Up Next,
+  Downloads, Settings) with byte-identical padding (`0 6px`) and 26px icons;
+  and `tokens.html` now documents the `.tabbar` sample and its tokens.
+- **Provider picker retired — RESOLVED.** The inline segmented source
+  control (and its `provider-switched` screen) was removed. Search sources
+  now live in **Settings → Sources** (see §12) as an opt-in checklist. The
+  `provider-picker.html` gallery card was repurposed to the Sources
+  checklist so no card dangles; `--r-seg` is retained-but-unused.
 - **Artwork 14px radius — RESOLVED.** Promoted to `--r-art: 14px` (added
   byte-identically to every kit file's radii block) and referenced by `.art`
   and `.sk-art`. The locked-base chrome no longer hardcodes rhythm/radii px:
   spacing uses `--sp-*`, radii use `--r-*`, the segmented inner corner uses
   `calc(var(--r-seg) - 2px)`, and the row separator inset uses a `calc()` of
-  tokens. Only device-chrome clearances (`54`/`116`), the 60px art size, and
+  tokens. Only device-chrome clearances (`54`/`104`), the 60px art size, and
   the 2px optical inset remain intentional raw constants.
 - Voice/mic affordance is visual only; no dictation behavior specified yet.
+
+---
+
+## 12. Search sources & navigation
+
+Sources are configured in **Settings → Sources**, never in Discover.
+
+**Navigation.** A **floating Liquid Glass tab bar** (iOS 26 style) carries
+Discover, Podcasts, Up Next, Downloads, and **Settings**. It floats inset
+from the screen edges (`left/right: 12px; bottom: 22px`, radius 30) over a
+`--tabbar-glass` blur with a `--tabbar-hairline` edge and `--tabbar-shadow`.
+`.content` reserves 104px of bottom padding so the last row clears the bar.
+
+**Source model (v1).**
+
+1. **Apple (iTunes) is the working default.** It ships **ON**, needs no key,
+   and is **primary** out of the box.
+2. **PodcastIndex is opt-in.** It is the open, community-run index, so it is
+   presented prominently and indie-forward (featured row, mint "Open index"
+   tag). But it is **inactive until the user supplies their own API key
+   (key + secret)**: the not-yet-configured row shows a lock badge and an
+   **"Add API key"** affordance instead of a toggle. Once a key exists it can
+   be enabled and set as primary.
+3. **Primary + fallback, no merge.** When more than one source is enabled,
+   the **primary** source is searched first; if it is unavailable or returns
+   nothing, the app **falls back** to the next enabled source. Results from
+   different sources are **never merged**. The user can see and reorder which
+   source is primary (drag handle / "Set as primary"); reorder is only
+   meaningful once a second source is enabled.
+
+**Controls.** The row uses the iOS **toggle switch** (`.switch`; track +
+knob on `--r-pill`, ON = mint `--accent-2` gradient) for enable/disable, a
+solid coral **`Primary`** badge, a mint **`Open index`** tag, and a ghost
+**Add API key** button. Keys live on the server, not in the client (logic on
+the server) — the UI only shows connection state (e.g. "key ending ••3F").
+
+**AA note.** New source-surface pairs stay within the honest AA envelope of
+§2: source name and sub-copy use `text` / `text-dim`; the `Primary` badge is
+white/`#2A0E04` on solid `--accent` (same on-accent pair as Subscribe, 5.2
+light / 6.4 dark); the mint tag and the key hint sit on `--text-faint` or
+`--accent-2`, all of which already clear 4.5. No new color roles were added
+beyond the floating-tab-bar tokens listed in §1.
