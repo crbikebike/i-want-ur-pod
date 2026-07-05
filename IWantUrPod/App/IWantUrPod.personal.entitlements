@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Personal-dev entitlements for installing to your own iPhone with a free/personal
+  Apple ID. Deliberately empty: com.apple.developer.carplay-audio (in
+  IWantUrPod.entitlements) is a managed entitlement Apple must approve per bundle
+  ID, and a personal signing account can't provision a build that carries it.
+  This file is only used by project.personal.yml — the committed CarPlay staging
+  in IWantUrPod.entitlements is untouched.
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+</dict>
+</plist>

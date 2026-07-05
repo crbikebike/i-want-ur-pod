@@ -1,0 +1,101 @@
+# Personal-dev XcodeGen spec — for installing IWantUrPod to your own iPhone
+# with a free/personal Apple ID signing account (no paid Apple Developer
+# Program membership, no CarPlay entitlement approval).
+#
+# Usage:
+#   1. cp project.personal.yml.template project.personal.yml   (gitignored — yours only)
+#   2. Edit DEVELOPMENT_TEAM below to your Team ID (Xcode → Settings → Accounts
+#      → select your Apple ID → Team ID shown under your Personal Team).
+#   3. Optionally change the bundle id suffix if com.iwanturpod.app.<team> collides.
+#   4. xcodegen generate --spec project.personal.yml && open IWantUrPod.xcodeproj
+#   5. Plug in your iPhone, select it as the run destination, press ⌘R.
+#
+# This does NOT touch project.yml or IWantUrPod.entitlements — the committed
+# CarPlay staging for M3 stays exactly as-is. This file just points the app
+# target at IWantUrPod.personal.entitlements (no CarPlay entitlement) and fills
+# in your personal Team ID, since a free account can't provision the managed
+# com.apple.developer.carplay-audio entitlement.
+name: IWantUrPod
+
+options:
+  bundleIdPrefix: com.iwanturpod
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+  minimumXcodeGenVersion: "2.38.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    DEVELOPMENT_TEAM: "REPLACE_WITH_YOUR_TEAM_ID"
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SWIFT_STRICT_CONCURRENCY: complete
+
+packages:
+  DesignSystem:
+    path: Packages/DesignSystem
+  PodcastModels:
+    path: Packages/PodcastModels
+  DirectoryKit:
+    path: Packages/DirectoryKit
+  FeedParsingKit:
+    path: Packages/FeedParsingKit
+  PlaybackKit:
+    path: Packages/PlaybackKit
+  DownloadKit:
+    path: Packages/DownloadKit
+  ChapterKit:
+    path: Packages/ChapterKit
+
+targets:
+  IWantUrPod:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: IWantUrPod
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.iwanturpod.app.personal
+        PRODUCT_NAME: IWantUrPod
+        INFOPLIST_FILE: IWantUrPod/App/Info.plist
+        CODE_SIGN_ENTITLEMENTS: IWantUrPod/App/IWantUrPod.personal.entitlements
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        SWIFT_EMIT_LOC_STRINGS: YES
+    dependencies:
+      - package: DesignSystem
+        product: DesignSystem
+      - package: PodcastModels
+        product: PodcastModels
+      - package: DirectoryKit
+        product: DirectoryKit
+      - package: FeedParsingKit
+        product: FeedParsingKit
+      - package: PlaybackKit
+        product: PlaybackKit
+      - package: DownloadKit
+        product: DownloadKit
+      - package: ChapterKit
+        product: ChapterKit
+
+schemes:
+  IWantUrPod:
+    build:
+      targets:
+        IWantUrPod: all
+    run:
+      config: Debug
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
