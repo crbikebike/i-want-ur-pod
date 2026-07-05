@@ -34,6 +34,7 @@ The visual system is built as self-contained HTML prototypes (a faithful proxy t
 
 - **Platform:** native iOS 17+, SwiftUI, Swift only. No sync in v1 (local-first, designed so sync can be added later).
 - **Sources:** Apple primary (no key); PodcastIndex opt-in with your own free API key (kept in Keychain, never committed). Rate-limit-safe by design; a proxy can be added later behind the same interface if needed.
+  - *Note for later:* PodcastIndex also exposes **keyless** Apple-shaped `/search` + `/lookup` endpoints — a client can search PodcastIndex with no key at all (a key only unlocks richer metadata: descriptions, episode enrichment, transcripts/chapters/V4V, trending). And PodcastIndex publishes a **weekly full-feeds SQLite dump** (~1.8 GB) they encourage for bulk use — if we ever run the optional proxy, it could back a **self-hosted search** with no live-API calls, no key, and no rate limits (trade-off: data up to a week stale, feeds-only, storage/refresh ops). Not for on-device; it's a backend-only option.
 - **CarPlay:** first-class goal; built as a seam in M1, activated at M3.
 - **Tooling:** XcodeGen generates the `.xcodeproj` (not committed). RSS parser package is `FeedParsingKit`. No CI yet — builds run on macOS/Xcode.
 
