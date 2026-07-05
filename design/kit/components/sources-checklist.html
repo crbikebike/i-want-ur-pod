@@ -1,0 +1,407 @@
+<!-- @dsCard group="Components" -->
+<title>Component · Sources checklist</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  :root {
+    /* --- brand ramp (theme-agnostic) --- */
+    --coral: #FF6A4D;
+    --coral-deep: #CA340F;
+    --mint: #34E0C4;
+    --mint-deep: #046B58;
+    --grape: #7C6BFF;
+
+    /* --- spacing scale (gutter = --sp-5 = 20px, used everywhere) --- */
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 20px;
+    --sp-6: 26px;
+    --sp-7: 32px;
+    --gutter: var(--sp-5);
+
+    /* --- radii --- */
+    --r-lg: 20px;
+    --r-md: 16px;
+    --r-sm: 12px;
+    --r-field: 11px;
+    --r-art: 14px;
+    --r-seg: 9px;
+    --r-pill: 999px;
+
+    /* --- motion --- */
+    --dur-fast: .2s;
+    --dur-mid: .3s;
+    --dur-row: .55s;
+    --dur-rise: .6s;
+    --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+    --ease-soft: cubic-bezier(.22, .61, .36, 1);
+
+    /* --- elevation --- */
+    --elev-list: 0 1px 0 var(--hairline), 0 8px 24px -18px rgba(0,0,0,.5);
+    --elev-card: 0 1px 0 var(--hairline), 0 12px 30px -20px rgba(0,0,0,.55);
+    --elev-sub: 0 6px 14px -8px var(--accent);
+    --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
+
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  /* ---------- DARK (hero) ---------- */
+  :root, :root[data-theme="dark"] {
+    --bg: #0E0B12;
+    --grouped-bg: #0E0B12;
+    --bg-glow-1: rgba(255,106,77,.10);
+    --bg-glow-2: rgba(52,224,196,.07);
+    --surface: #1C1722;
+    --surface-2: #262030;
+    --hairline: rgba(255,255,255,.09);
+    --separator: rgba(255,255,255,.12);
+    --text: #F8F3EF;
+    --text-dim: #ABA1B4;
+    --text-faint: #988DA1;
+    --accent: var(--coral);
+    --accent-2: var(--mint);
+    --on-accent: #2A0E04;
+    --chip: rgba(255,255,255,.08);
+    --chip-text: #F8F3EF;
+    --seg-track: rgba(120,120,128,.24);
+    --seg-thumb: #38313F;
+    --field: rgba(120,120,128,.24);
+    --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
+    --tabbar-icon: #8B8291;
+  }
+
+  /* ---------- LIGHT ---------- */
+  :root[data-theme="light"] {
+    --bg: #F2F1F6;
+    --grouped-bg: #F2F1F6;
+    --bg-glow-1: rgba(245,80,47,.09);
+    --bg-glow-2: rgba(6,169,139,.08);
+    --surface: #FFFFFF;
+    --surface-2: #F6F1EC;
+    --hairline: rgba(40,26,36,.10);
+    --separator: rgba(60,60,67,.18);
+    --text: #1A1420;
+    --text-dim: #6B6472;
+    --text-faint: #736A78;
+    --accent: var(--coral-deep);
+    --accent-2: var(--mint-deep);
+    --on-accent: #FFFFFF;
+    --chip: rgba(118,118,128,.12);
+    --chip-text: #1A1420;
+    --seg-track: rgba(118,118,128,.16);
+    --seg-thumb: #FFFFFF;
+    --field: rgba(118,118,128,.10);
+    --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
+    --tabbar-icon: #6C6C70;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: var(--font);
+    background:
+      radial-gradient(120% 60% at 85% -5%, #211a2b, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #17131e, transparent 55%),
+      #0a070e;
+    color: var(--text);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 28px 12px;
+    transition: background .5s var(--ease-soft);
+  }
+  :root[data-theme="light"] body {
+    background:
+      radial-gradient(120% 60% at 85% -5%, #f0e6f4, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #eef0f6, transparent 55%),
+      #e6e4ee;
+  }
+
+  /* ---------- theme toggle (fixed) ---------- */
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    height: 44px; padding: 0 16px 0 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: var(--r-pill);
+    background: rgba(30,24,38,.7);
+    backdrop-filter: blur(14px);
+    color: #F8F3EF; font-family: var(--font);
+    font-size: .82rem; font-weight: 700; letter-spacing: .01em;
+    cursor: pointer;
+    transition: transform .3s var(--ease-spring), background .3s;
+  }
+  :root[data-theme="light"] .theme-toggle {
+    background: rgba(255,255,255,.82);
+    border-color: rgba(40,26,36,.12);
+    color: #1A1420;
+  }
+  .theme-toggle:active { transform: scale(.92); }
+  .theme-toggle .tg-emoji { font-size: 1rem; transition: transform .5s var(--ease-spring); }
+  .theme-toggle:hover .tg-emoji { transform: rotate(-20deg) scale(1.15); }
+
+  @keyframes pulseBar { 0%,100%{ transform: scaleY(.4); } 50%{ transform: scaleY(1); } }
+
+  /* ---------- sources checklist (grouped inset list) ---------- */
+  .srclist {
+    background: var(--surface);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: var(--elev-list);
+  }
+  .srow {
+    display: flex; align-items: center; gap: var(--sp-3);
+    padding: var(--sp-3) var(--sp-4);
+    position: relative;
+  }
+  .srow-tall { align-items: flex-start; }
+  .srow-featured { background: color-mix(in srgb, var(--accent-2) 7%, transparent); }
+  .srow:not(:last-child)::after {
+    content: ""; position: absolute; left: calc(var(--sp-4) + 46px + var(--sp-3)); right: 0; bottom: 0;
+    height: .5px; background: var(--separator);
+  }
+
+  /* source icon tile */
+  .src-iconwrap { position: relative; flex: none; }
+  .src-ico {
+    width: 46px; height: 46px; border-radius: 13px;
+    position: relative; overflow: hidden;
+    display: grid; place-items: center; color: #fff;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.18), 0 4px 10px -6px rgba(0,0,0,.5);
+  }
+  .src-ico::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 26%, rgba(255,255,255,.4), transparent 45%),
+      radial-gradient(circle at 78% 82%, rgba(0,0,0,.2), transparent 55%);
+  }
+  .src-ico svg { position: relative; z-index: 1; width: 26px; height: 26px; }
+  .ic-apple { background: linear-gradient(140deg, #FF6A4D, #7C6BFF); }
+  .ic-pi { background: linear-gradient(140deg, #34E0C4, #2E8BFF); }
+  .src-lock {
+    position: absolute; right: -4px; bottom: -4px;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--surface); color: var(--text-dim);
+    display: grid; place-items: center;
+    box-shadow: 0 1px 4px -1px rgba(0,0,0,.4), 0 0 0 .5px var(--hairline);
+  }
+  .src-lock svg { width: 11px; height: 11px; }
+
+  .src-meta { flex: 1; min-width: 0; }
+  .src-top { display: flex; align-items: center; gap: var(--sp-2); flex-wrap: wrap; }
+  .src-name { font-size: 1rem; font-weight: 700; letter-spacing: -.01em; color: var(--text); }
+  .src-sub { margin-top: 2px; font-size: .82rem; font-weight: 500; color: var(--text-dim); line-height: 1.35; }
+  .src-pitch { margin-top: 6px; font-size: .82rem; font-weight: 500; color: var(--text-dim); line-height: 1.42; }
+
+  /* primary badge + open-index tag */
+  .pin {
+    font-size: .62rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--on-accent); background: var(--accent);
+    padding: 3px 8px; border-radius: var(--r-pill);
+  }
+  .tag-open {
+    font-size: .62rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--accent-2); background: color-mix(in srgb, var(--accent-2) 15%, transparent);
+    padding: 3px 8px; border-radius: var(--r-pill);
+  }
+
+  /* iOS toggle switch */
+  .switch { position: relative; flex: none; width: 51px; height: 31px; }
+  .switch input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; z-index: 2; }
+  .switch .track {
+    position: absolute; inset: 0; border-radius: var(--r-pill);
+    background: var(--seg-track); transition: background .3s var(--ease-soft);
+  }
+  .switch .knob {
+    position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%;
+    background: #fff; box-shadow: 0 2px 6px -1px rgba(0,0,0,.35), 0 0 0 .5px rgba(0,0,0,.06);
+    transition: transform .3s var(--ease-spring);
+  }
+  .switch input:checked ~ .track {
+    background: linear-gradient(135deg, var(--accent-2), color-mix(in srgb, var(--accent-2) 62%, var(--accent)));
+  }
+  .switch input:checked ~ .knob { transform: translateX(20px); }
+  .switch input:focus-visible ~ .track { box-shadow: 0 0 0 2px var(--accent); }
+
+  /* add-key affordance + hint */
+  .key-actions { margin-top: var(--sp-3); display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+  .key-hint {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: .74rem; font-weight: 600; color: var(--text-faint);
+  }
+  .key-hint svg { width: 12px; height: 12px; flex: none; }
+
+  /* generic ghost button (Add API key) + inline link button (Set as primary) */
+  .btn {
+    min-height: 44px; padding: 0 20px; border: none; cursor: pointer;
+    border-radius: var(--r-pill); font-family: var(--font);
+    font-size: .95rem; font-weight: 800; letter-spacing: .01em;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    transition: transform var(--dur-mid) var(--ease-spring), box-shadow var(--dur-mid), background var(--dur-mid), color var(--dur-mid);
+  }
+  .btn:active { transform: scale(.95); }
+  .btn svg { display: block; }
+  .btn-ghost {
+    color: var(--accent); background: transparent;
+    box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--accent) 60%, transparent);
+  }
+  .addkey { min-height: 38px; padding: 0 16px; font-size: .86rem; }
+  .addkey svg { width: 16px; height: 16px; }
+  .linkbtn {
+    border: none; background: none; cursor: pointer; padding: 0;
+    font-family: var(--font); font-size: .78rem; font-weight: 700; color: var(--accent);
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .linkbtn svg { width: 13px; height: 13px; }
+
+  /* footnote */
+  .foot-note {
+    margin: var(--sp-3) var(--sp-2) 0; font-size: .78rem; font-weight: 500; line-height: 1.45;
+    color: var(--text-faint);
+  }
+
+  /* ---------- kit stage (component gallery card) ---------- */
+  .stage { width: 360px; max-width: 100%; background: var(--grouped-bg);
+    border: .5px solid var(--separator); border-radius: 30px;
+    padding: var(--sp-6) var(--gutter) var(--sp-7);
+    box-shadow: var(--elev-pop); position: relative; z-index: 2;
+    transition: background .5s var(--ease-soft); }
+  .stage-cap { display: inline-flex; align-items: center; gap: 7px; margin-bottom: var(--sp-4);
+    font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  .stage-cap .eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 12px; }
+  .stage-cap .eq i { width: 3px; border-radius: 3px; background: var(--accent); animation: pulseBar 1s ease-in-out infinite; }
+  .stage-cap .eq i:nth-child(1){ height: 5px; } .stage-cap .eq i:nth-child(2){ height: 11px; animation-delay:.18s; } .stage-cap .eq i:nth-child(3){ height: 7px; animation-delay:.36s; }
+  .vlabel { font-size: .7rem; font-weight: 700; letter-spacing: .02em; color: var(--text-faint);
+    text-transform: uppercase; margin: var(--sp-5) 0 var(--sp-2); }
+  .vlabel:first-of-type { margin-top: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+  }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
+</style>
+<button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
+  <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
+</button>
+<main class="stage">
+  <div class="stage-cap"><span class="eq"><i></i><i></i><i></i></span>Sources checklist</div>
+
+  <!-- STATE 1: default — Apple on & primary, PodcastIndex needs a key -->
+  <p class="vlabel">Not yet configured (default)</p>
+  <div class="srclist">
+
+    <div class="srow">
+      <div class="src-iconwrap">
+        <div class="src-ico ic-apple">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.3 12.7c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.6.8-3.2.8-.6 0-1.6-.8-2.7-.7-1.4 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.4 2 1 0 1.3-.6 2.5-.6 1.2 0 1.5.6 2.5.6 1 0 1.7-.9 2.3-1.9.7-1.1 1-2.2 1-2.3-.1 0-1.9-.7-1.9-2.8zM14.7 6.3c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.8-.4 2.3-1.1z"/></svg>
+        </div>
+      </div>
+      <div class="src-meta">
+        <div class="src-top"><span class="src-name">Apple Podcasts</span><span class="pin">Primary</span></div>
+        <div class="src-sub">iTunes directory · No key needed</div>
+      </div>
+      <label class="switch" aria-label="Apple Podcasts source">
+        <input type="checkbox" checked aria-label="Enable Apple Podcasts">
+        <span class="track"></span><span class="knob"></span>
+      </label>
+    </div>
+
+    <div class="srow srow-tall srow-featured">
+      <div class="src-iconwrap">
+        <div class="src-ico ic-pi">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="2.4" fill="currentColor"/><path d="M8.2 8.2a5.4 5.4 0 0 0 0 7.6M15.8 8.2a5.4 5.4 0 0 1 0 7.6M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <span class="src-lock" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </div>
+      <div class="src-meta">
+        <div class="src-top"><span class="src-name">PodcastIndex</span><span class="tag-open">Open index</span></div>
+        <div class="src-sub">The independent, community-run podcast directory.</div>
+        <div class="src-pitch">Indie-first and free. Add your own API key (key + secret) to switch it on.</div>
+        <div class="key-actions">
+          <button class="btn btn-ghost addkey" type="button">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M11 11l7 7M16 16l2-2M18.5 18.5l1.5-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Add API key
+          </button>
+          <span class="key-hint">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Inactive until a key is added
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="foot-note">Primary is searched first; other enabled sources are fallback. Results are never merged.</p>
+
+  <!-- STATE 2: PodcastIndex key added — both enabled, primary is reorderable -->
+  <p class="vlabel">PodcastIndex key added</p>
+  <div class="srclist">
+
+    <div class="srow">
+      <div class="src-iconwrap">
+        <div class="src-ico ic-apple">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.3 12.7c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.6.8-3.2.8-.6 0-1.6-.8-2.7-.7-1.4 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.4 2 1 0 1.3-.6 2.5-.6 1.2 0 1.5.6 2.5.6 1 0 1.7-.9 2.3-1.9.7-1.1 1-2.2 1-2.3-.1 0-1.9-.7-1.9-2.8zM14.7 6.3c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.8-.4 2.3-1.1z"/></svg>
+        </div>
+      </div>
+      <div class="src-meta">
+        <div class="src-top"><span class="src-name">Apple Podcasts</span><span class="pin">Primary</span></div>
+        <div class="src-sub">iTunes directory · No key needed</div>
+      </div>
+      <label class="switch" aria-label="Apple Podcasts source">
+        <input type="checkbox" checked aria-label="Enable Apple Podcasts">
+        <span class="track"></span><span class="knob"></span>
+      </label>
+    </div>
+
+    <div class="srow srow-tall">
+      <div class="src-iconwrap">
+        <div class="src-ico ic-pi">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="2.4" fill="currentColor"/><path d="M8.2 8.2a5.4 5.4 0 0 0 0 7.6M15.8 8.2a5.4 5.4 0 0 1 0 7.6M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="src-meta">
+        <div class="src-top"><span class="src-name">PodcastIndex</span><span class="tag-open">Open index</span></div>
+        <div class="src-sub">Connected · key ending ••3F</div>
+        <div class="key-actions">
+          <button class="linkbtn" type="button">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 4v10M12 4 8.5 7.5M12 4l3.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Set as primary
+          </button>
+        </div>
+      </div>
+      <label class="switch" aria-label="PodcastIndex source">
+        <input type="checkbox" checked aria-label="Enable PodcastIndex">
+        <span class="track"></span><span class="knob"></span>
+      </label>
+    </div>
+
+  </div>
+  <p class="foot-note">With two sources on, drag or "Set as primary" to choose which one leads; the other becomes fallback.</p>
+</main>
+<script>
+  const root = document.documentElement;
+  const tt = document.getElementById('tt');
+  const tgEmoji = document.getElementById('tgEmoji');
+  const tgLabel = document.getElementById('tgLabel');
+  root.setAttribute('data-theme', 'dark');
+  tt.addEventListener('click', () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    tgEmoji.textContent = dark ? '☀️' : '🌙';
+    tgLabel.textContent = dark ? 'Light' : 'Dark';
+  });
+</script>

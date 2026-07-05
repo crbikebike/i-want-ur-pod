@@ -1,5 +1,6 @@
 <!-- @dsCard group="Components" -->
 <title>Component · Result card</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -68,6 +69,9 @@
     --seg-thumb: #38313F;
     --field: rgba(120,120,128,.24);
     --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
     --tabbar-icon: #8B8291;
   }
 
@@ -93,6 +97,9 @@
     --seg-thumb: #FFFFFF;
     --field: rgba(118,118,128,.10);
     --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
     --tabbar-icon: #6C6C70;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -286,45 +293,6 @@
     50% { box-shadow: 0 0 0 6px rgba(255,106,77,.16); }
   }
 
-  /* ---------- provider segmented control (iOS style) ---------- */
-  .provider {
-    margin-top: var(--sp-4);
-    display: flex; flex-direction: column; gap: 8px;
-    opacity: 0; animation: rise .6s var(--ease-soft) .24s forwards;
-  }
-  .provider .lbl {
-    font-size: .74rem; font-weight: 700; color: var(--text-faint);
-    letter-spacing: .04em; text-transform: uppercase;
-    padding-left: 2px;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .seg {
-    position: relative; display: flex; padding: 2px;
-    background: var(--seg-track); border-radius: var(--r-seg);
-    height: 32px;
-  }
-  .seg button {
-    position: relative; z-index: 2; flex: 1;
-    border: none; background: none; cursor: pointer;
-    font-family: var(--font); font-size: .86rem; font-weight: 600;
-    color: var(--text); border-radius: calc(var(--r-seg) - 2px);
-    min-height: 28px; transition: color .3s, font-weight .2s;
-    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  }
-  .seg button.on { font-weight: 700; }
-  .seg button .prov-dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
-    opacity: 0; transform: scale(0); transition: all .3s var(--ease-spring);
-  }
-  .seg button.on .prov-dot { opacity: 1; transform: scale(1); }
-  .seg .thumb {
-    position: absolute; z-index: 1; top: 2px; left: 2px; bottom: 2px;
-    border-radius: calc(var(--r-seg) - 2px);
-    background: var(--seg-thumb);
-    box-shadow: 0 3px 8px -3px rgba(0,0,0,.28), 0 0 0 .5px rgba(0,0,0,.04);
-    transition: transform .34s var(--ease-spring), width .34s var(--ease-spring);
-  }
-
   /* ---------- section header ---------- */
   .sec-head {
     margin: var(--sp-6) 2px var(--sp-1); display: flex; align-items: center; justify-content: space-between;
@@ -403,44 +371,38 @@
   }
   .row .tag.hot { color: var(--on-accent); background: var(--accent); }
 
-  /* subscribe button — pill, pulse ring, Subscribe -> Subscribed */
+  /* subscribe — compact icon-only circle, floats on the artwork corner */
   .sub {
-    flex: none; position: relative;
-    min-width: 44px; min-height: 34px; padding: 0 14px;
-    border: none; cursor: pointer; border-radius: var(--r-pill);
-    font-family: var(--font); font-size: .8rem; font-weight: 800; letter-spacing: .01em;
+    position: absolute; z-index: 3; right: 8px; bottom: 8px;
+    width: 34px; height: 34px; padding: 0;
+    border: none; cursor: pointer; border-radius: 50%;
     color: var(--on-accent);
     background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
-    box-shadow: 0 6px 14px -8px var(--accent);
-    display: inline-flex; align-items: center; gap: 5px;
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,.5), inset 0 0 0 .5px rgba(255,255,255,.28);
+    display: inline-flex; align-items: center; justify-content: center;
     transition: transform .3s var(--ease-spring), background .3s, color .3s, box-shadow .3s;
-    overflow: visible;
   }
   .sub .ico { display: inline-flex; transition: transform .4s var(--ease-spring); }
   .sub .ico svg { display: block; }
   .sub .ico-check { display: none; }
-  .sub:active { transform: scale(.9); }
+  .sub:active { transform: scale(.85); }
   .sub.done {
-    background: var(--chip);
-    color: var(--text);
-    box-shadow: none;
+    background: var(--surface); color: var(--accent-2);
+    box-shadow: 0 4px 12px -6px rgba(0,0,0,.5), inset 0 0 0 1.5px color-mix(in srgb, var(--accent-2) 55%, transparent);
   }
   .sub.done .ico-plus { display: none; }
   .sub.done .ico-check { display: inline-flex; }
-  /* radiating pulse ring on subscribe tap */
   .sub .ring {
-    position: absolute; inset: 0; border-radius: var(--r-pill);
+    position: absolute; inset: 0; border-radius: 50%;
     border: 2px solid var(--accent); opacity: 0; pointer-events: none;
   }
   .sub.pulsing .ring { animation: ringOut .55s var(--ease-soft) forwards; }
   @keyframes ringOut {
     0% { opacity: .8; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.55); }
+    100% { opacity: 0; transform: scale(1.7); }
   }
-
-  /* extra tap target guarantee: min 44 height via hit area */
   .sub::before {
-    content: ""; position: absolute; inset: -5px -2px; border-radius: var(--r-pill);
+    content: ""; position: absolute; inset: -5px; border-radius: 50%;
   }
 
   /* ---------- footer note (kept minimal, native-feeling) ---------- */
@@ -484,7 +446,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
-    .row, .eyebrow, h1.big, .search, .provider, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
+    .row, .eyebrow, h1.big, .search, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
     .navbar { transition: none; }
   }
 
@@ -580,22 +542,23 @@
   .sug .q b { font-weight: 800; color: var(--text); }
   .sug .arr { flex: none; color: var(--text-faint); }
 
-  /* result card (grid tile) */
-  .cardgrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin-top: var(--sp-3); }
-  .pcard { background: var(--surface); border-radius: var(--r-lg); padding: var(--sp-3);
-    box-shadow: var(--elev-list); display: flex; flex-direction: column; gap: var(--sp-2); }
+  /* result card (grid tile) — poster card matching Result view */
+  .cardgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-4) var(--sp-3); margin-top: var(--sp-3); }
+  .pcard { display: flex; flex-direction: column; gap: 9px; min-width: 0; }
   .pcard-art { width: 100%; aspect-ratio: 1 / 1; border-radius: var(--r-md); position: relative; overflow: hidden;
-    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 4px 10px -6px rgba(0,0,0,.5); }
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 8px 20px -12px rgba(0,0,0,.55);
+    transition: transform .3s var(--ease-spring); }
+  .pcard:active .pcard-art { transform: scale(.97); }
   .pcard-art::after { content: ""; position: absolute; inset: 0;
     background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.42), transparent 42%),
-                radial-gradient(circle at 78% 82%, rgba(0,0,0,.22), transparent 50%); }
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.28), transparent 55%); }
   .pcard-art .glyph { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
-    font-size: 2rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 2px 6px rgba(0,0,0,.3); }
-  .pcard-title { font-size: .98rem; font-weight: 800; letter-spacing: -.01em; color: var(--text);
+    font-size: 2.6rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 2px 8px rgba(0,0,0,.35); }
+  .pcard-meta { padding: 0 2px; min-width: 0; }
+  .pcard-title { font-size: .96rem; font-weight: 700; letter-spacing: -.01em; color: var(--text); line-height: 1.22;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pcard-author { margin-top: 3px; font-size: .8rem; font-weight: 500; color: var(--text-dim);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .pcard-author { font-size: .8rem; font-weight: 500; color: var(--text-dim);
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: -2px; }
-  .pcard .sub { align-self: flex-start; margin-top: var(--sp-1); }
 
   /* kit stage (component gallery cards; unused by phone screens) */
   .stage { width: 360px; max-width: 100%; background: var(--grouped-bg);
@@ -613,6 +576,12 @@
   .vlabel:first-of-type { margin-top: 0; }
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
 </style>
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
   <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
@@ -621,10 +590,10 @@
   <div class="stage-cap"><span class="eq"><i></i><i></i><i></i></span>Result card</div>
   <p class="vlabel">Discover grid card (2-up)</p>
   <div class="cardgrid" style="margin-top:0">
-    <div class="pcard"><div class="pcard-art a1"><span class="glyph">S</span></div><div class="pcard-title">Signal &amp; Static</div><div class="pcard-author">Mara Okonkwo</div><button class="sub" aria-label="Signal and Static"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Subscribe</span></button></div>
-    <div class="pcard"><div class="pcard-art a2"><span class="glyph">D</span></div><div class="pcard-title">Deep End Diaries</div><div class="pcard-author">Tidewater Collective</div><button class="sub done" aria-label="Deep End Diaries"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Subscribed</span></button></div>
-    <div class="pcard"><div class="pcard-art a4"><span class="glyph">O</span></div><div class="pcard-title">Orbit Notes</div><div class="pcard-author">Dr. Lena Farrow</div><button class="sub" aria-label="Orbit Notes"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Subscribe</span></button></div>
-    <div class="pcard"><div class="pcard-art a5"><span class="glyph">V</span></div><div class="pcard-title">Velvet Hour</div><div class="pcard-author">Sunday Radio Club</div><button class="sub" aria-label="Velvet Hour"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Subscribe</span></button></div>
+    <div class="pcard"><div class="pcard-art a1"><span class="glyph">A</span><button class="sub" aria-label="Acquired"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pcard-meta"><div class="pcard-title">Acquired</div><div class="pcard-author">Ben Gilbert &amp; David Rosenthal</div></div></div>
+    <div class="pcard"><div class="pcard-art a2"><span class="glyph">9</span><button class="sub done" aria-label="99% Invisible"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pcard-meta"><div class="pcard-title">99% Invisible</div><div class="pcard-author">Roman Mars</div></div></div>
+    <div class="pcard"><div class="pcard-art a4"><span class="glyph">B</span><button class="sub" aria-label="Behind the Bastards"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pcard-meta"><div class="pcard-title">Behind the Bastards</div><div class="pcard-author">Cool Zone Media</div></div></div>
+    <div class="pcard"><div class="pcard-art a5"><span class="glyph">B</span><button class="sub" aria-label="Bone Valley"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pcard-meta"><div class="pcard-title">Bone Valley</div><div class="pcard-author">Lava for Good</div></div></div>
   </div>
 </main>
 <script>
@@ -640,13 +609,13 @@
     tgLabel.textContent = dark ? 'Light' : 'Dark';
   });
   document.querySelectorAll('.sub').forEach(btn => {
-    if (btn.classList.contains('loading')) return;
-    const txt = btn.querySelector('.txt');
-    const raw = (btn.getAttribute('aria-label')||'Subscribe').replace(/^Subscrib(e to|ed to) /, '');
-    btn.addEventListener('click', () => {
+    const name = (btn.getAttribute('aria-label')||'').replace(/^Subscrib(e to|ed to) /, '');
+    btn.setAttribute('aria-label', (btn.classList.contains('done') ? 'Subscribed to ' : 'Subscribe to ') + name);
+    btn.setAttribute('aria-pressed', btn.classList.contains('done') ? 'true' : 'false');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const done = btn.classList.toggle('done');
-      txt.textContent = done ? 'Subscribed' : 'Subscribe';
-      btn.setAttribute('aria-label', (done ? 'Subscribed to ' : 'Subscribe to ') + raw);
+      btn.setAttribute('aria-label', (done ? 'Subscribed to ' : 'Subscribe to ') + name);
       btn.setAttribute('aria-pressed', done ? 'true' : 'false');
       btn.classList.remove('pulsing'); void btn.offsetWidth; btn.classList.add('pulsing');
     });

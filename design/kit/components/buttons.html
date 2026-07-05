@@ -1,5 +1,6 @@
 <!-- @dsCard group="Components" -->
 <title>Component · Buttons</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -68,6 +69,9 @@
     --seg-thumb: #38313F;
     --field: rgba(120,120,128,.24);
     --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
     --tabbar-icon: #8B8291;
   }
 
@@ -93,6 +97,9 @@
     --seg-thumb: #FFFFFF;
     --field: rgba(118,118,128,.10);
     --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
     --tabbar-icon: #6C6C70;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -286,45 +293,6 @@
     50% { box-shadow: 0 0 0 6px rgba(255,106,77,.16); }
   }
 
-  /* ---------- provider segmented control (iOS style) ---------- */
-  .provider {
-    margin-top: var(--sp-4);
-    display: flex; flex-direction: column; gap: 8px;
-    opacity: 0; animation: rise .6s var(--ease-soft) .24s forwards;
-  }
-  .provider .lbl {
-    font-size: .74rem; font-weight: 700; color: var(--text-faint);
-    letter-spacing: .04em; text-transform: uppercase;
-    padding-left: 2px;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .seg {
-    position: relative; display: flex; padding: 2px;
-    background: var(--seg-track); border-radius: var(--r-seg);
-    height: 32px;
-  }
-  .seg button {
-    position: relative; z-index: 2; flex: 1;
-    border: none; background: none; cursor: pointer;
-    font-family: var(--font); font-size: .86rem; font-weight: 600;
-    color: var(--text); border-radius: calc(var(--r-seg) - 2px);
-    min-height: 28px; transition: color .3s, font-weight .2s;
-    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  }
-  .seg button.on { font-weight: 700; }
-  .seg button .prov-dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
-    opacity: 0; transform: scale(0); transition: all .3s var(--ease-spring);
-  }
-  .seg button.on .prov-dot { opacity: 1; transform: scale(1); }
-  .seg .thumb {
-    position: absolute; z-index: 1; top: 2px; left: 2px; bottom: 2px;
-    border-radius: calc(var(--r-seg) - 2px);
-    background: var(--seg-thumb);
-    box-shadow: 0 3px 8px -3px rgba(0,0,0,.28), 0 0 0 .5px rgba(0,0,0,.04);
-    transition: transform .34s var(--ease-spring), width .34s var(--ease-spring);
-  }
-
   /* ---------- section header ---------- */
   .sec-head {
     margin: var(--sp-6) 2px var(--sp-1); display: flex; align-items: center; justify-content: space-between;
@@ -484,32 +452,46 @@
 
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
-    .row, .eyebrow, h1.big, .search, .provider, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
+    .row, .eyebrow, h1.big, .search, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
     .navbar { transition: none; }
   }
 
   /* ============ SHARED KIT EXTRAS (built on locked tokens) ============ */
 
-  /* generic buttons: primary / secondary / ghost */
+  /* generic buttons: primary (filled) / secondary (outline) / tertiary (tinted) */
   .btn {
     min-height: 44px; padding: 0 20px; border: none; cursor: pointer;
     border-radius: var(--r-pill); font-family: var(--font);
-    font-size: .95rem; font-weight: 800; letter-spacing: .01em;
+    font-size: .95rem; font-weight: 800; letter-spacing: .01em; line-height: 1;
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     transition: transform var(--dur-mid) var(--ease-spring), box-shadow var(--dur-mid), background var(--dur-mid), color var(--dur-mid);
   }
   .btn:active { transform: scale(.95); }
   .btn svg { display: block; }
+  /* Primary — soft accent gradient (dark); solid in light (gradient reads harsh there) */
   .btn-primary {
     color: var(--on-accent);
     background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
     box-shadow: var(--elev-sub);
   }
-  .btn-secondary { color: var(--text); background: var(--chip); }
-  .btn-ghost {
-    color: var(--accent); background: transparent;
-    box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--accent) 60%, transparent);
+  :root[data-theme="light"] .btn-primary {
+    background: var(--accent);
+    box-shadow: 0 6px 16px -10px var(--accent);
   }
+  .btn-primary:hover { filter: brightness(.96); }
+  /* Secondary — accent outline on transparent (the old “ghost” look) */
+  .btn-secondary {
+    color: var(--accent); background: transparent;
+    box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+  .btn-secondary:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  /* Tertiary — soft accent-tint fill; reads on dark, unlike a neutral gray */
+  .btn-tertiary {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    box-shadow: none;
+  }
+  .btn-tertiary:hover { background: color-mix(in srgb, var(--accent) 20%, transparent); }
 
   /* subscribe: subscribing (loading) state */
   .sub .ico-spin { display: none; }
@@ -613,6 +595,12 @@
   .vlabel:first-of-type { margin-top: 0; }
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
 </style>
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
   <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
@@ -622,11 +610,11 @@
   <p class="vlabel">Primary</p>
   <div class="rowgap"><button class="btn btn-primary">Subscribe all</button><button class="btn btn-primary"><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M3 2l9 5-9 5V2Z"/></svg> Play latest</button></div>
 
-  <p class="vlabel">Secondary (neutral)</p>
+  <p class="vlabel">Secondary — outline</p>
   <div class="rowgap"><button class="btn btn-secondary">Share</button><button class="btn btn-secondary">Add to Up Next</button></div>
 
-  <p class="vlabel">Ghost</p>
-  <div class="rowgap"><button class="btn btn-ghost">See all</button><button class="btn btn-ghost">Filters</button></div>
+  <p class="vlabel">Tertiary — tinted</p>
+  <div class="rowgap"><button class="btn btn-tertiary">See all</button><button class="btn btn-tertiary">Filters</button></div>
 </main>
 <script>
   const root = document.documentElement;

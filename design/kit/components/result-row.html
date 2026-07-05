@@ -1,5 +1,6 @@
 <!-- @dsCard group="Components" -->
 <title>Component · Result row</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -68,6 +69,9 @@
     --seg-thumb: #38313F;
     --field: rgba(120,120,128,.24);
     --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
     --tabbar-icon: #8B8291;
   }
 
@@ -93,6 +97,9 @@
     --seg-thumb: #FFFFFF;
     --field: rgba(118,118,128,.10);
     --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
     --tabbar-icon: #6C6C70;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -286,45 +293,6 @@
     50% { box-shadow: 0 0 0 6px rgba(255,106,77,.16); }
   }
 
-  /* ---------- provider segmented control (iOS style) ---------- */
-  .provider {
-    margin-top: var(--sp-4);
-    display: flex; flex-direction: column; gap: 8px;
-    opacity: 0; animation: rise .6s var(--ease-soft) .24s forwards;
-  }
-  .provider .lbl {
-    font-size: .74rem; font-weight: 700; color: var(--text-faint);
-    letter-spacing: .04em; text-transform: uppercase;
-    padding-left: 2px;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .seg {
-    position: relative; display: flex; padding: 2px;
-    background: var(--seg-track); border-radius: var(--r-seg);
-    height: 32px;
-  }
-  .seg button {
-    position: relative; z-index: 2; flex: 1;
-    border: none; background: none; cursor: pointer;
-    font-family: var(--font); font-size: .86rem; font-weight: 600;
-    color: var(--text); border-radius: calc(var(--r-seg) - 2px);
-    min-height: 28px; transition: color .3s, font-weight .2s;
-    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  }
-  .seg button.on { font-weight: 700; }
-  .seg button .prov-dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
-    opacity: 0; transform: scale(0); transition: all .3s var(--ease-spring);
-  }
-  .seg button.on .prov-dot { opacity: 1; transform: scale(1); }
-  .seg .thumb {
-    position: absolute; z-index: 1; top: 2px; left: 2px; bottom: 2px;
-    border-radius: calc(var(--r-seg) - 2px);
-    background: var(--seg-thumb);
-    box-shadow: 0 3px 8px -3px rgba(0,0,0,.28), 0 0 0 .5px rgba(0,0,0,.04);
-    transition: transform .34s var(--ease-spring), width .34s var(--ease-spring);
-  }
-
   /* ---------- section header ---------- */
   .sec-head {
     margin: var(--sp-6) 2px var(--sp-1); display: flex; align-items: center; justify-content: space-between;
@@ -339,45 +307,87 @@
   .sec-sub { margin: 2px 2px 0; font-size: .82rem; color: var(--text-faint); font-weight: 500;
     opacity: 0; animation: rise .6s var(--ease-soft) .32s forwards; }
 
-  /* ---------- results: grouped inset list (iOS) ---------- */
-  .list {
-    margin-top: var(--sp-3);
-    background: var(--surface);
-    border-radius: var(--r-lg);
-    overflow: hidden;
-    box-shadow: 0 1px 0 var(--hairline), 0 8px 24px -18px rgba(0,0,0,.5);
+  /* ---------- results: taxonomy sections, each a horizontal shelf ---------- */
+  .shelf { position: relative; }
+  .shelf + .shelf { margin-top: var(--sp-6); }
+  .shelf-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: var(--sp-3); padding: 0 2px; margin-bottom: var(--sp-3);
   }
-  .row {
-    display: flex; align-items: center; gap: var(--sp-3);
-    padding: var(--sp-3) var(--sp-4);
-    position: relative;
+  .shelf-head .sh-title {
+    font-size: 1.18rem; font-weight: 800; letter-spacing: -.015em; color: var(--text);
+    display: inline-flex; align-items: center; gap: 8px; min-width: 0;
+  }
+  .shelf-head .view-all {
+    flex: none; border: none; cursor: pointer; background: none;
+    font-family: var(--font); font-size: .82rem; font-weight: 800; color: var(--accent);
+    display: inline-flex; align-items: center; gap: 3px; padding: 2px 2px 2px 8px;
+    transition: transform var(--dur-mid) var(--ease-spring), opacity var(--dur-mid);
+  }
+  .shelf-head .view-all .n {
+    color: var(--text-faint); font-weight: 700; font-variant-numeric: tabular-nums; margin-right: 2px;
+  }
+  .shelf-head .view-all svg { transition: transform var(--dur-mid) var(--ease-spring); }
+  .shelf-head .view-all:active { transform: scale(.94); }
+  .shelf-head .view-all:hover svg { transform: translateX(2px); }
+
+  /* ---------- grid view (destination of "View all") ---------- */
+  #shelves.hidden, .gridview[hidden] { display: none; }
+  .gridview { animation: rise .4s var(--ease-soft) both; }
+  .grid-head { display: flex; align-items: center; gap: var(--sp-2); margin-bottom: var(--sp-4); }
+  .grid-back {
+    flex: none; width: 34px; height: 34px; border-radius: 50%; border: none; cursor: pointer;
+    background: var(--chip); color: var(--text);
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: transform var(--dur-mid) var(--ease-spring);
+  }
+  .grid-back:active { transform: scale(.88); }
+  .grid-head .gh-title { font-size: 1.34rem; font-weight: 800; letter-spacing: -.015em; color: var(--text); }
+  .grid-head .gh-count { font-size: .78rem; font-weight: 800; color: var(--text-faint); font-variant-numeric: tabular-nums; margin-left: auto; }
+  .podgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-4) var(--sp-3); }
+  .podgrid .pod { width: auto; min-width: 0; }
+  .podgrid .pod-meta { min-width: 0; }
+  .podgrid .pod-art { width: 100%; height: auto; aspect-ratio: 1 / 1; }
+  .shelf-head .sh-title.hot::before {
+    content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 0 0 var(--accent);
+    animation: idlePulse 2.6s var(--ease-soft) infinite;
+  }
+
+  /* horizontal scroll rail of poster cards */
+  .rail {
+    display: flex; gap: var(--sp-3);
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 2px 6px; margin: -4px -2px -6px;
+    scrollbar-width: none;
+  }
+  .rail::-webkit-scrollbar { height: 0; }
+
+  /* poster card — roomy: art, title (2 lines), studio, corner subscribe */
+  .pod {
+    flex: none; width: 150px; scroll-snap-align: start;
+    display: flex; flex-direction: column; gap: 9px;
     opacity: 0; transform: translateY(12px);
     animation: rowIn .55s var(--ease-spring) forwards;
-    transition: background .2s;
   }
-  /* inset hairline separators between cells, not around each card */
-  .row:not(:last-child)::after {
-    content: ""; position: absolute; left: calc(var(--sp-4) + 60px + var(--sp-3)); right: 0; bottom: 0;
-    height: .5px; background: var(--separator);
+  .pod-art {
+    position: relative; width: 150px; height: 150px; border-radius: var(--r-md);
+    overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 8px 20px -12px rgba(0,0,0,.55);
+    transition: transform .3s var(--ease-spring);
   }
-  .row:active { background: color-mix(in srgb, var(--text) 6%, transparent); }
-
-  /* album art gradient tiles */
-  .art {
-    flex: none; width: 60px; height: 60px; border-radius: var(--r-art);
-    position: relative; overflow: hidden;
-    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 4px 10px -6px rgba(0,0,0,.5);
-  }
-  .art::after {
+  .pod:active .pod-art { transform: scale(.97); }
+  .pod-art::after {
     content: ""; position: absolute; inset: 0;
     background:
       radial-gradient(circle at 30% 26%, rgba(255,255,255,.42), transparent 42%),
-      radial-gradient(circle at 78% 82%, rgba(0,0,0,.22), transparent 50%);
+      radial-gradient(circle at 78% 82%, rgba(0,0,0,.28), transparent 55%);
   }
-  .art .glyph {
+  .pod-art .glyph {
     position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
-    font-size: 1.45rem; font-weight: 900; color: rgba(255,255,255,.95);
-    text-shadow: 0 2px 6px rgba(0,0,0,.3);
+    font-size: 2.6rem; font-weight: 900; color: rgba(255,255,255,.95);
+    text-shadow: 0 2px 8px rgba(0,0,0,.35);
   }
   .a1 { background: linear-gradient(140deg, #FF7A4D, #FF4D8D); }
   .a2 { background: linear-gradient(140deg, #34E0C4, #2E8BFF); }
@@ -386,61 +396,51 @@
   .a5 { background: linear-gradient(140deg, #FF5E9A, #7C6BFF); }
   .a6 { background: linear-gradient(140deg, #22C1A6, #7ED957); }
 
-  .row .meta { flex: 1; min-width: 0; }
-  .row .rtitle {
-    font-size: 1rem; font-weight: 700; letter-spacing: -.01em;
+  .pod-meta { padding: 0 2px; }
+  .pod-title {
+    font-size: .96rem; font-weight: 700; letter-spacing: -.01em; color: var(--text);
+    line-height: 1.22;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .pod-studio {
+    margin-top: 3px; font-size: .8rem; font-weight: 500; color: var(--text-dim);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
-  .row .rauthor {
-    margin-top: 1px; font-size: .82rem; font-weight: 500; color: var(--text-dim);
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  }
-  .row .tags { margin-top: 6px; display: flex; gap: 6px; }
-  .row .tag {
-    font-size: .64rem; font-weight: 800; letter-spacing: .02em; text-transform: uppercase;
-    color: var(--text-dim); background: var(--chip);
-    padding: 3px 8px; border-radius: var(--r-pill);
-  }
-  .row .tag.hot { color: var(--on-accent); background: var(--accent); }
 
-  /* subscribe button — pill, pulse ring, Subscribe -> Subscribed */
+  /* subscribe — compact icon-only circle, floats on the artwork corner */
   .sub {
-    flex: none; position: relative;
-    min-width: 44px; min-height: 34px; padding: 0 14px;
-    border: none; cursor: pointer; border-radius: var(--r-pill);
-    font-family: var(--font); font-size: .8rem; font-weight: 800; letter-spacing: .01em;
+    position: absolute; z-index: 3; right: 8px; bottom: 8px;
+    width: 34px; height: 34px; padding: 0;
+    border: none; cursor: pointer; border-radius: 50%;
     color: var(--on-accent);
     background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
-    box-shadow: 0 6px 14px -8px var(--accent);
-    display: inline-flex; align-items: center; gap: 5px;
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,.5), inset 0 0 0 .5px rgba(255,255,255,.28);
+    display: inline-flex; align-items: center; justify-content: center;
     transition: transform .3s var(--ease-spring), background .3s, color .3s, box-shadow .3s;
-    overflow: visible;
   }
   .sub .ico { display: inline-flex; transition: transform .4s var(--ease-spring); }
   .sub .ico svg { display: block; }
   .sub .ico-check { display: none; }
-  .sub:active { transform: scale(.9); }
+  .sub:active { transform: scale(.85); }
   .sub.done {
-    background: var(--chip);
-    color: var(--text);
-    box-shadow: none;
+    background: var(--surface); color: var(--accent-2);
+    box-shadow: 0 4px 12px -6px rgba(0,0,0,.5), inset 0 0 0 1.5px color-mix(in srgb, var(--accent-2) 55%, transparent);
   }
   .sub.done .ico-plus { display: none; }
   .sub.done .ico-check { display: inline-flex; }
   /* radiating pulse ring on subscribe tap */
   .sub .ring {
-    position: absolute; inset: 0; border-radius: var(--r-pill);
+    position: absolute; inset: 0; border-radius: 50%;
     border: 2px solid var(--accent); opacity: 0; pointer-events: none;
   }
   .sub.pulsing .ring { animation: ringOut .55s var(--ease-soft) forwards; }
   @keyframes ringOut {
     0% { opacity: .8; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.55); }
+    100% { opacity: 0; transform: scale(1.7); }
   }
-
-  /* extra tap target guarantee: min 44 height via hit area */
+  /* guarantee a 44px hit target around the 34px circle */
   .sub::before {
-    content: ""; position: absolute; inset: -5px -2px; border-radius: var(--r-pill);
+    content: ""; position: absolute; inset: -5px; border-radius: 50%;
   }
 
   /* ---------- footer note (kept minimal, native-feeling) ---------- */
@@ -484,7 +484,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
-    .row, .eyebrow, h1.big, .search, .provider, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
+    .row, .eyebrow, h1.big, .search, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
     .navbar { transition: none; }
   }
 
@@ -613,18 +613,57 @@
   .vlabel:first-of-type { margin-top: 0; }
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
 </style>
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
   <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
 </button>
 <main class="stage">
   <div class="stage-cap"><span class="eq"><i></i><i></i><i></i></span>Result row</div>
-  <p class="vlabel">Grouped inset list</p>
-  <div class="list" id="list" style="margin-top:0">
-        <div class="row" style="animation-delay:.30s"><div class="art a1"><span class="glyph">S</span></div><div class="meta"><div class="rtitle">Signal &amp; Static</div><div class="rauthor">Mara Okonkwo</div><div class="tags"><span class="tag hot">🔥 Hot</span><span class="tag">Tech</span></div></div><button class="sub" aria-label="Signal and Static"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Subscribe</span></button></div>
-        <div class="row" style="animation-delay:.36s"><div class="art a2"><span class="glyph">D</span></div><div class="meta"><div class="rtitle">Deep End Diaries</div><div class="rauthor">The Tidewater Collective</div><div class="tags"><span class="tag">Stories</span><span class="tag">Weekly</span></div></div><button class="sub" aria-label="Deep End Diaries"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Subscribe</span></button></div>
-        <div class="row" style="animation-delay:.42s"><div class="art a3"><span class="glyph">T</span></div><div class="meta"><div class="rtitle">Toast to That</div><div class="rauthor">Priya &amp; Devon</div><div class="tags"><span class="tag hot">🔥 Hot</span><span class="tag">Comedy</span></div></div><button class="sub" aria-label="Toast to That"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Subscribe</span></button></div>
-        <div class="row" style="animation-delay:.48s"><div class="art a4"><span class="glyph">O</span></div><div class="meta"><div class="rtitle">Orbit Notes</div><div class="rauthor">Dr. Lena Farrow</div><div class="tags"><span class="tag">Science</span><span class="tag">Daily</span></div></div><button class="sub" aria-label="Orbit Notes"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Subscribe</span></button></div>
+  <p class="vlabel">Category shelves — horizontal results, stacked by taxonomy</p>
+  <div id="shelves" style="margin-top:0">
+
+    <section class="shelf">
+      <div class="shelf-head"><span class="sh-title hot">Trending now</span><button class="view-all" aria-label="View all Trending now"><span class="n">128</span>View all<svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      <div class="rail">
+        <article class="pod" style="animation-delay:.30s"><div class="pod-art a2"><span class="glyph">A</span><button class="sub" aria-label="Acquired"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pod-meta"><div class="pod-title">Acquired</div><div class="pod-studio">Ben Gilbert &amp; David Rosenthal</div></div></article>
+        <article class="pod" style="animation-delay:.36s"><div class="pod-art a3"><span class="glyph">B</span><button class="sub" aria-label="Behind the Bastards"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pod-meta"><div class="pod-title">Behind the Bastards</div><div class="pod-studio">Cool Zone Media</div></div></article>
+        <article class="pod" style="animation-delay:.42s"><div class="pod-art a1"><span class="glyph">9</span><button class="sub" aria-label="99% Invisible"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pod-meta"><div class="pod-title">99% Invisible</div><div class="pod-studio">Roman Mars</div></div></article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head"><span class="sh-title">True Crime</span><button class="view-all" aria-label="View all True Crime"><span class="n">64</span>View all<svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      <div class="rail">
+        <article class="pod" style="animation-delay:.30s"><div class="pod-art a4"><span class="glyph">B</span><button class="sub" aria-label="Bone Valley"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pod-meta"><div class="pod-title">Bone Valley</div><div class="pod-studio">Lava for Good</div></div></article>
+        <article class="pod" style="animation-delay:.36s"><div class="pod-art a5"><span class="glyph">S</span><button class="sub" aria-label="Serial"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pod-meta"><div class="pod-title">Serial</div><div class="pod-studio">Serial Productions &amp; NYT</div></div></article>
+        <article class="pod" style="animation-delay:.42s"><div class="pod-art a3"><span class="glyph">C</span><button class="sub" aria-label="Crime Junkie"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pod-meta"><div class="pod-title">Crime Junkie</div><div class="pod-studio">audiochuck</div></div></article>
+      </div>
+    </section>
+
+    <section class="shelf">
+      <div class="shelf-head"><span class="sh-title">Technology</span><button class="view-all" aria-label="View all Technology"><span class="n">41</span>View all<svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      <div class="rail">
+        <article class="pod" style="animation-delay:.30s"><div class="pod-art a6"><span class="glyph">L</span><button class="sub" aria-label="Lex Fridman Podcast"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pod-meta"><div class="pod-title">Lex Fridman Podcast</div><div class="pod-studio">Lex Fridman</div></div></article>
+        <article class="pod" style="animation-delay:.36s"><div class="pod-art a2"><span class="glyph">H</span><button class="sub" aria-label="Hard Fork"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pod-meta"><div class="pod-title">Hard Fork</div><div class="pod-studio">The New York Times</div></div></article>
+        <article class="pod" style="animation-delay:.42s"><div class="pod-art a4"><span class="glyph">D</span><button class="sub" aria-label="Darknet Diaries"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><div class="pod-meta"><div class="pod-title">Darknet Diaries</div><div class="pod-studio">Jack Rhysider</div></div></article>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="gridview" id="gridview" hidden>
+    <div class="grid-head">
+      <button class="grid-back" id="gridBack" aria-label="Back to shelves"><svg width="9" height="14" viewBox="0 0 9 14" fill="none"><path d="M7.5 1 1.5 7l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <span class="gh-title" id="ghTitle">Trending now</span>
+      <span class="gh-count" id="ghCount">128 shows</span>
+    </div>
+    <div class="podgrid" id="podgrid"></div>
   </div>
 </main>
 <script>
@@ -639,16 +678,85 @@
     tgEmoji.textContent = dark ? '☀️' : '🌙';
     tgLabel.textContent = dark ? 'Light' : 'Dark';
   });
-  document.querySelectorAll('.sub').forEach(btn => {
-    if (btn.classList.contains('loading')) return;
-    const txt = btn.querySelector('.txt');
-    const raw = (btn.getAttribute('aria-label')||'Subscribe').replace(/^Subscrib(e to|ed to) /, '');
-    btn.addEventListener('click', () => {
+  function wireSub(btn) {
+    const name = (btn.getAttribute('aria-label')||'').replace(/^Subscrib(e to|ed to) /, '');
+    btn.setAttribute('aria-label', 'Subscribe to ' + name);
+    btn.setAttribute('aria-pressed', 'false');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const done = btn.classList.toggle('done');
-      txt.textContent = done ? 'Subscribed' : 'Subscribe';
-      btn.setAttribute('aria-label', (done ? 'Subscribed to ' : 'Subscribe to ') + raw);
+      btn.setAttribute('aria-label', (done ? 'Subscribed to ' : 'Subscribe to ') + name);
       btn.setAttribute('aria-pressed', done ? 'true' : 'false');
       btn.classList.remove('pulsing'); void btn.offsetWidth; btn.classList.add('pulsing');
     });
+  }
+  document.querySelectorAll('.sub').forEach(wireSub);
+
+  /* ---------- View all -> grid view ---------- */
+  const CATALOG = {
+    'Trending now': { count: 128, pods: [
+      ['a2','A','Acquired','Ben Gilbert & David Rosenthal'],
+      ['a3','B','Behind the Bastards','Cool Zone Media'],
+      ['a1','9','99% Invisible','Roman Mars'],
+      ['a6','S','SmartLess','Jason, Will & Sean'],
+      ['a5','T','This American Life','WBEZ Chicago'],
+      ['a4','R','Radiolab','WNYC Studios'],
+    ]},
+    'True Crime': { count: 64, pods: [
+      ['a4','B','Bone Valley','Lava for Good'],
+      ['a5','S','Serial','Serial Productions & NYT'],
+      ['a3','C','Crime Junkie','audiochuck'],
+      ['a1','M','My Favorite Murder','Exactly Right'],
+      ['a2','C','Casefile','Casefile Presents'],
+      ['a6','D','Dr. Death','Wondery'],
+    ]},
+    'Technology': { count: 41, pods: [
+      ['a6','L','Lex Fridman Podcast','Lex Fridman'],
+      ['a2','H','Hard Fork','The New York Times'],
+      ['a4','D','Darknet Diaries','Jack Rhysider'],
+      ['a1','A','Acquired','Ben Gilbert & David Rosenthal'],
+      ['a3','T','TechStuff','iHeartPodcasts'],
+      ['a5','P','Pivot','New York Magazine'],
+    ]},
+  };
+  const PLUS = '<svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg>';
+  const CHECK = '<svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const shelvesEl = document.getElementById('shelves');
+  const gridEl = document.getElementById('gridview');
+  const podgrid = document.getElementById('podgrid');
+  const ghTitle = document.getElementById('ghTitle');
+  const ghCount = document.getElementById('ghCount');
+
+  function podCard(p, i) {
+    const [art, glyph, title, studio] = p;
+    const el = document.createElement('article');
+    el.className = 'pod';
+    el.style.animationDelay = (0.04 * i + 0.02).toFixed(2) + 's';
+    el.innerHTML =
+      '<div class="pod-art ' + art + '"><span class="glyph">' + glyph + '</span>' +
+        '<button class="sub" aria-label="' + title + '"><span class="ring"></span>' +
+          '<span class="ico ico-plus">' + PLUS + '</span>' +
+          '<span class="ico ico-check">' + CHECK + '</span></button></div>' +
+      '<div class="pod-meta"><div class="pod-title">' + title + '</div>' +
+        '<div class="pod-studio">' + studio + '</div></div>';
+    wireSub(el.querySelector('.sub'));
+    return el;
+  }
+  function openGrid(cat) {
+    const data = CATALOG[cat]; if (!data) return;
+    ghTitle.textContent = cat;
+    ghCount.textContent = data.count + ' shows';
+    podgrid.innerHTML = '';
+    data.pods.forEach((p, i) => podgrid.appendChild(podCard(p, i)));
+    shelvesEl.classList.add('hidden');
+    gridEl.hidden = false;
+  }
+  document.querySelectorAll('.view-all').forEach(btn => {
+    const cat = btn.closest('.shelf').querySelector('.sh-title').textContent.trim();
+    btn.addEventListener('click', () => openGrid(cat));
+  });
+  document.getElementById('gridBack').addEventListener('click', () => {
+    gridEl.hidden = true;
+    shelvesEl.classList.remove('hidden');
   });
 </script>

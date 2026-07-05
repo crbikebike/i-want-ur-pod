@@ -1,5 +1,6 @@
 <!-- @dsCard group="Discover" -->
 <title>Discover · Typing</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -68,6 +69,9 @@
     --seg-thumb: #38313F;
     --field: rgba(120,120,128,.24);
     --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
     --tabbar-icon: #8B8291;
   }
 
@@ -93,6 +97,9 @@
     --seg-thumb: #FFFFFF;
     --field: rgba(118,118,128,.10);
     --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
     --tabbar-icon: #6C6C70;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -218,7 +225,7 @@
   /* ---------- scroll region ---------- */
   .content {
     flex: 1; overflow-y: auto; overflow-x: hidden;
-    padding: 54px var(--gutter) 116px;   /* top pad clears status bar */
+    padding: 54px var(--gutter) 104px;   /* top clears status bar; bottom clears floating tab bar */
     -webkit-overflow-scrolling: touch;
     position: relative; z-index: 2;
   }
@@ -284,45 +291,6 @@
   @keyframes idlePulse {
     0%,100% { box-shadow: 0 0 0 0 rgba(255,106,77,.0); }
     50% { box-shadow: 0 0 0 6px rgba(255,106,77,.16); }
-  }
-
-  /* ---------- provider segmented control (iOS style) ---------- */
-  .provider {
-    margin-top: var(--sp-4);
-    display: flex; flex-direction: column; gap: 8px;
-    opacity: 0; animation: rise .6s var(--ease-soft) .24s forwards;
-  }
-  .provider .lbl {
-    font-size: .74rem; font-weight: 700; color: var(--text-faint);
-    letter-spacing: .04em; text-transform: uppercase;
-    padding-left: 2px;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .seg {
-    position: relative; display: flex; padding: 2px;
-    background: var(--seg-track); border-radius: var(--r-seg);
-    height: 32px;
-  }
-  .seg button {
-    position: relative; z-index: 2; flex: 1;
-    border: none; background: none; cursor: pointer;
-    font-family: var(--font); font-size: .86rem; font-weight: 600;
-    color: var(--text); border-radius: calc(var(--r-seg) - 2px);
-    min-height: 28px; transition: color .3s, font-weight .2s;
-    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  }
-  .seg button.on { font-weight: 700; }
-  .seg button .prov-dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
-    opacity: 0; transform: scale(0); transition: all .3s var(--ease-spring);
-  }
-  .seg button.on .prov-dot { opacity: 1; transform: scale(1); }
-  .seg .thumb {
-    position: absolute; z-index: 1; top: 2px; left: 2px; bottom: 2px;
-    border-radius: calc(var(--r-seg) - 2px);
-    background: var(--seg-thumb);
-    box-shadow: 0 3px 8px -3px rgba(0,0,0,.28), 0 0 0 .5px rgba(0,0,0,.04);
-    transition: transform .34s var(--ease-spring), width .34s var(--ease-spring);
   }
 
   /* ---------- section header ---------- */
@@ -450,22 +418,23 @@
     opacity: 0; animation: rise .6s var(--ease-soft) .5s forwards;
   }
 
-  /* ---------- bottom tab bar: STANDARD edge-to-edge iOS ---------- */
+  /* ---------- bottom tab bar: FLOATING Liquid Glass (iOS 26) ---------- */
   .tabbar {
-    position: absolute; left: 0; right: 0; bottom: 0; z-index: 20;
-    height: 83px; display: flex; align-items: flex-start; justify-content: space-around;
-    padding: 8px 6px 0;
-    background: var(--bar-material);
-    backdrop-filter: blur(22px) saturate(180%);
-    -webkit-backdrop-filter: blur(22px) saturate(180%);
-    border-top: .5px solid var(--separator);
+    position: absolute; left: 12px; right: 12px; bottom: 22px; z-index: 20;
+    height: 60px; display: flex; align-items: center; justify-content: space-around;
+    padding: 0 6px; border-radius: 30px;
+    background: var(--tabbar-glass);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: .5px solid var(--tabbar-hairline);
+    box-shadow: var(--tabbar-shadow);
   }
   .tab {
     flex: 1; border: none; background: none; cursor: pointer;
-    display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 3px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
     color: var(--tabbar-icon); font-family: var(--font);
     font-size: .62rem; font-weight: 600; letter-spacing: .01em;
-    min-height: 48px; padding-top: 2px;
+    min-height: 44px; padding: 4px 0;
     transition: color .3s;
   }
   .tab svg { transition: transform .4s var(--ease-spring); }
@@ -484,7 +453,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
-    .row, .eyebrow, h1.big, .search, .provider, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
+    .row, .eyebrow, h1.big, .search, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
     .navbar { transition: none; }
   }
 
@@ -539,46 +508,67 @@
   }
   @keyframes shimmer { 0% { background-position: 180% 0; } 100% { background-position: -80% 0; } }
 
-  /* big empty / no-results / error state */
-  .state { display: flex; flex-direction: column; align-items: center; text-align: center;
-    padding: var(--sp-7) var(--sp-4) var(--sp-6); gap: var(--sp-3); }
-  .state-badge {
-    width: 84px; height: 84px; border-radius: 26px; display: grid; place-items: center;
-    color: #FFFFFF; box-shadow: var(--elev-card); position: relative; overflow: hidden;
-    animation: badgePop .6s var(--ease-spring) both;
+  /* typeahead drawer — drops down from the search box, floats over content */
+  .search-wrap { position: relative; z-index: 40;
+    opacity: 0; animation: rise .6s var(--ease-soft) .18s forwards; }
+  .search-wrap .search { margin-top: 0; opacity: 1; animation: none; }
+  .drawer {
+    position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 50;
+    background: var(--surface); border-radius: var(--r-md); overflow: hidden;
+    box-shadow: var(--elev-pop), inset 0 0 0 .5px var(--hairline);
+    transform-origin: top center;
+    animation: drawerIn .22s var(--ease-spring) both;
   }
-  .state-badge::after { content: ""; position: absolute; inset: 0;
-    background: radial-gradient(circle at 30% 24%, rgba(255,255,255,.4), transparent 45%); }
-  .state-badge svg { position: relative; z-index: 2; }
-  .badge-discover { background: linear-gradient(140deg, var(--coral), var(--mint)); }
-  .badge-empty { background: linear-gradient(140deg, var(--grape), var(--coral)); }
-  .badge-error { background: linear-gradient(140deg, #FF7A4D, #FF3D6E); }
-  @keyframes badgePop { 0% { opacity: 0; transform: scale(.7) translateY(8px); } 100% { opacity: 1; transform: none; } }
-  .state-title { font-size: 1.28rem; font-weight: 800; letter-spacing: -.015em; color: var(--text); margin-top: var(--sp-2); }
-  .state-sub { font-size: .92rem; font-weight: 500; line-height: 1.45; color: var(--text-dim); max-width: 268px; }
-  .state-actions { margin-top: var(--sp-4); display: flex; flex-wrap: wrap; gap: var(--sp-2); justify-content: center; }
-
-  /* quick-suggestion chips row (first-run / empty) */
-  .chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); justify-content: center; margin-top: var(--sp-2); }
-  .qchip {
-    border: none; cursor: pointer; font-family: var(--font);
-    font-size: .82rem; font-weight: 700; color: var(--chip-text); background: var(--chip);
-    padding: 8px 14px; min-height: 36px; border-radius: var(--r-pill);
-    transition: transform var(--dur-mid) var(--ease-spring);
-  }
-  .qchip:active { transform: scale(.94); }
-
-  /* typing suggestions dropdown */
-  .suggest { margin-top: var(--sp-3); background: var(--surface);
-    border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--elev-list); }
-  .sug { display: flex; align-items: center; gap: 12px; padding: 0 14px; min-height: 48px; position: relative; cursor: pointer; }
-  .sug:not(:last-child)::after { content: ""; position: absolute; left: 46px; right: 0; bottom: 0; height: .5px; background: var(--separator); }
-  .sug:active { background: color-mix(in srgb, var(--text) 6%, transparent); }
-  .sug .sug-ico { flex: none; width: 20px; color: var(--text-faint); display: grid; place-items: center; }
-  .sug .q { flex: 1; font-size: .98rem; font-weight: 500; color: var(--text);
+  .drawer[hidden] { display: none; }
+  @keyframes drawerIn { from { opacity: 0; transform: translateY(-8px) scaleY(.96); } to { opacity: 1; transform: none; } }
+  .sug { display: flex; align-items: center; gap: 12px; padding: 8px 12px; min-height: 56px; position: relative; cursor: pointer;
+    transition: background .15s; }
+  .sug:not(:last-child)::after { content: ""; position: absolute; left: 64px; right: 0; bottom: 0; height: .5px; background: var(--separator); }
+  .sug:active, .sug:hover { background: color-mix(in srgb, var(--text) 6%, transparent); }
+  .sug-av { flex: none; width: 40px; height: 40px; border-radius: 10px; position: relative; overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 3px 8px -5px rgba(0,0,0,.5); }
+  .sug-av::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.4), transparent 46%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.24), transparent 55%); }
+  .sug-av .g { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 1.05rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 1px 3px rgba(0,0,0,.35); }
+  .sug .body { flex: 1; min-width: 0; }
+  .sug .t { font-size: .98rem; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sug .t b { font-weight: 800; }
+  .sug .s { margin-top: 1px; font-size: .8rem; font-weight: 500; color: var(--text-dim);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .sug .q b { font-weight: 800; color: var(--text); }
   .sug .arr { flex: none; color: var(--text-faint); }
+
+  /* underlying content — Result Row shelves the drawer floats over */
+  .shelf + .shelf { margin-top: var(--sp-6); }
+  .shelf-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); padding: 0 2px; margin-bottom: var(--sp-3); }
+  .shelf-head .sh-title { font-size: 1.14rem; font-weight: 800; letter-spacing: -.015em; color: var(--text); }
+  .shelf-head .sh-count { flex: none; font-size: .72rem; font-weight: 800; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+  .rail { display: flex; gap: var(--sp-3); overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; padding: 4px 2px 6px; margin: -4px -2px -6px; scrollbar-width: none; }
+  .rail::-webkit-scrollbar { height: 0; }
+  .pod { flex: none; width: 138px; scroll-snap-align: start; display: flex; flex-direction: column; gap: 9px; }
+  .pod-art { position: relative; width: 138px; height: 138px; border-radius: var(--r-md); overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 8px 20px -12px rgba(0,0,0,.55); }
+  .pod-art::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.42), transparent 42%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.28), transparent 55%); }
+  .pod-art .glyph { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 2.4rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 2px 8px rgba(0,0,0,.35); }
+  .pod-meta { padding: 0 2px; }
+  .pod-title { font-size: .92rem; font-weight: 700; letter-spacing: -.01em; color: var(--text); line-height: 1.22;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pod-studio { margin-top: 3px; font-size: .78rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pod .sub {
+    position: absolute; z-index: 3; right: 8px; bottom: 8px; width: 34px; height: 34px; padding: 0;
+    border: none; cursor: pointer; border-radius: 50%; color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,.5), inset 0 0 0 .5px rgba(255,255,255,.28);
+    display: inline-flex; align-items: center; justify-content: center; }
+  /* dim the underlying content while the typeahead drawer is open */
+  .content.drawer-open .under { filter: saturate(.9) brightness(.72); transition: filter .2s var(--ease-soft); }
+  .under { transition: filter .2s var(--ease-soft); margin-top: var(--sp-5); }
 
   /* result card (grid tile) */
   .cardgrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin-top: var(--sp-3); }
@@ -613,6 +603,12 @@
   .vlabel:first-of-type { margin-top: 0; }
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
 </style>
 
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
@@ -643,49 +639,50 @@
     <div class="content" id="content">
 
       <div class="titlewrap">
-        <span class="eyebrow">
-          <span class="eq"><i></i><i></i><i></i></span>
-          Searching
-        </span>
-        <h1 class="big">Discover<span class="pulse-dot" aria-hidden="true"></span></h1>
+        <h1 class="big">Discover</h1>
       </div>
 
-      <!-- search -->
-      <label class="search">
-        <svg class="mag" width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6.2" stroke="currentColor" stroke-width="2"/><path d="M13.8 13.8 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input type="text" placeholder="Shows, people, topics" value="orbit" aria-label="Search shows, people and topics">
-        <button class="mic" aria-label="Voice search">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="5.5" y="1" width="5" height="8.5" rx="2.5"/><path d="M3.5 7.5a4.5 4.5 0 0 0 9 0" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M8 12v2.5M5.5 14.5h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        </button>
-      </label>
+      <!-- search + typeahead drawer -->
+      <div class="search-wrap">
+        <label class="search">
+          <svg class="mag" width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6.2" stroke="currentColor" stroke-width="2"/><path d="M13.8 13.8 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="text" placeholder="Shows, people, topics" value="the" aria-label="Search shows, people and topics">
+          <button class="mic" aria-label="Voice search">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><rect x="5.5" y="1" width="5" height="8.5" rx="2.5"/><path d="M3.5 7.5a4.5 4.5 0 0 0 9 0" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M8 12v2.5M5.5 14.5h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </button>
+        </label>
 
-      <!-- provider segmented control -->
-      <div class="provider">
-        <span class="lbl">Directory source</span>
-        <div class="seg" id="seg" role="tablist" aria-label="Directory source">
-          <span class="thumb" id="thumb"></span>
-          <button class="on" data-i="0" role="tab" aria-selected="true"><span class="prov-dot" aria-hidden="true"></span>iTunes</button>
-          <button data-i="1" role="tab" aria-selected="false"><span class="prov-dot" aria-hidden="true"></span>PodcastIndex</button>
+        <div class="drawer" id="drawer">
+          <div class="sug"><span class="sug-av a2"><span class="g">T</span></span><div class="body"><div class="t"><b>The</b> Daily</div><div class="s">The New York Times</div></div><span class="arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sug"><span class="sug-av a3"><span class="g">T</span></span><div class="body"><div class="t"><b>The</b> Rest Is History</div><div class="s">Goalhanger</div></div><span class="arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sug"><span class="sug-av a5"><span class="g">T</span></span><div class="body"><div class="t"><b>The</b>ory of Everything</div><div class="s">Benjamen Walker</div></div><span class="arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="sug"><span class="sug-av a6"><span class="g">T</span></span><div class="body"><div class="t"><b>The</b> Ezra Klein Show</div><div class="s">The New York Times</div></div><span class="arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         </div>
       </div>
 
-      <div class="sec-head" style="animation-delay:.16s">
-        <h2>Suggestions</h2>
+      <div class="under">
+        <section class="shelf">
+          <div class="shelf-head"><span class="sh-title">Trending now</span><span class="sh-count">128</span></div>
+          <div class="rail">
+            <article class="pod"><div class="pod-art a2"><span class="glyph">A</span><button class="sub" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></button></div><div class="pod-meta"><div class="pod-title">Acquired</div><div class="pod-studio">Ben Gilbert &amp; David Rosenthal</div></div></article>
+            <article class="pod"><div class="pod-art a3"><span class="glyph">B</span><button class="sub" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></button></div><div class="pod-meta"><div class="pod-title">Behind the Bastards</div><div class="pod-studio">Cool Zone Media</div></div></article>
+            <article class="pod"><div class="pod-art a1"><span class="glyph">9</span><button class="sub" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></button></div><div class="pod-meta"><div class="pod-title">99% Invisible</div><div class="pod-studio">Roman Mars</div></div></article>
+          </div>
+        </section>
+        <section class="shelf">
+          <div class="shelf-head"><span class="sh-title">True Crime</span><span class="sh-count">64</span></div>
+          <div class="rail">
+            <article class="pod"><div class="pod-art a4"><span class="glyph">B</span><button class="sub" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></button></div><div class="pod-meta"><div class="pod-title">Bone Valley</div><div class="pod-studio">Lava for Good</div></div></article>
+            <article class="pod"><div class="pod-art a5"><span class="glyph">S</span><button class="sub" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></button></div><div class="pod-meta"><div class="pod-title">Serial</div><div class="pod-studio">Serial Productions &amp; NYT</div></div></article>
+            <article class="pod"><div class="pod-art a3"><span class="glyph">C</span><button class="sub" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></button></div><div class="pod-meta"><div class="pod-title">Crime Junkie</div><div class="pod-studio">audiochuck</div></div></article>
+          </div>
+        </section>
       </div>
-
-      <div class="suggest">
-        <div class="sug"><span class="sug-ico"><svg width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M2 12l4-4 3 3 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 5h4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="q"><b>orbit</b> notes</span><span class="arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-        <div class="sug"><span class="sug-ico"><svg width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M2 12l4-4 3 3 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 5h4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="q"><b>orbit</b>al mechanics daily</span><span class="arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-        <div class="sug"><span class="sug-ico"><svg width="17" height="17" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M9 5v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="q">the <b>orbit</b> lab</span><span class="arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-        <div class="sug"><span class="sug-ico"><svg width="17" height="17" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M9 5v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="q"><b>orbit</b>ing strangers</span><span class="arr"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      </div>
-
-      <p class="foot">Results update as you type</p>
 
     </div>
 
-    <!-- bottom tab bar: standard edge-to-edge iOS -->
-    <nav class="tabbar" aria-label="Primary">
+    <!-- bottom tab bar: floating Liquid Glass (iOS 26) -->
+        <nav class="tabbar" aria-label="Primary">
       <button class="tab active" aria-current="page">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M15.5 8.5 13.2 13l-4.7 2.5L10.8 11l4.7-2.5Z" fill="currentColor"/></svg>
         <span>Discover</span>
@@ -702,6 +699,10 @@
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <span>Downloads</span>
       </button>
+      <button class="tab">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 8h9M18.5 8H20M4 16h1.5M11 16h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="8" r="2.6" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="16" r="2.6" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Settings</span>
+      </button>
     </nav>
 
     <div class="home-ind"></div>
@@ -710,18 +711,6 @@
 </div>
 
 <script>
-  const root = document.documentElement;
-  const tt = document.getElementById('tt');
-  const tgEmoji = document.getElementById('tgEmoji');
-  const tgLabel = document.getElementById('tgLabel');
-  root.setAttribute('data-theme', 'dark');
-  tt.addEventListener('click', () => {
-    const dark = root.getAttribute('data-theme') === 'dark';
-    root.setAttribute('data-theme', dark ? 'light' : 'dark');
-    tgEmoji.textContent = dark ? '☀️' : '🌙';
-    tgLabel.textContent = dark ? 'Light' : 'Dark';
-  });
-
   // theme toggle
   const root = document.documentElement;
   const tt = document.getElementById('tt');
@@ -745,21 +734,6 @@
     navbar.classList.toggle('show', past);
   }, { passive: true });
 
-  // segmented control
-  const seg = document.getElementById('seg');
-  const thumb = document.getElementById('thumb');
-  const segBtns = [...seg.querySelectorAll('button')];
-  function moveThumb(btn) {
-    thumb.style.width = btn.offsetWidth + 'px';
-    thumb.style.transform = `translateX(${btn.offsetLeft - 2}px)`;
-  }
-  requestAnimationFrame(() => moveThumb(segBtns[0]));
-  segBtns.forEach(btn => btn.addEventListener('click', () => {
-    segBtns.forEach(b => { b.classList.remove('on'); b.setAttribute('aria-selected','false'); });
-    btn.classList.add('on'); btn.setAttribute('aria-selected','true');
-    moveThumb(btn);
-  }));
-  window.addEventListener('resize', () => moveThumb(seg.querySelector('.on')));
 
   // subscribe toggle + pulse ring; copy = Subscribe / Subscribed
   document.querySelectorAll('.sub').forEach(btn => {
@@ -773,6 +747,19 @@
       btn.classList.remove('pulsing'); void btn.offsetWidth; btn.classList.add('pulsing');
     });
   });
+
+  // typeahead drawer opens once the query reaches 3 characters (implicit)
+  const searchInput = document.querySelector('.search input');
+  const drawer = document.getElementById('drawer');
+  const MIN = 3;
+  const contentEl = document.getElementById('content');
+  function refreshGate() {
+    const open = searchInput.value.trim().length >= MIN;
+    drawer.hidden = !open;
+    contentEl.classList.toggle('drawer-open', open);
+  }
+  searchInput.addEventListener('input', refreshGate);
+  refreshGate();
 
   // tab bar active state
   document.querySelectorAll('.tab').forEach(tab => {

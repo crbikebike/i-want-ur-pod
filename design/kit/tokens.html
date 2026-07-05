@@ -1,5 +1,6 @@
 <!-- @dsCard group="Foundations" -->
 <title>Foundations · Tokens</title>
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -68,6 +69,9 @@
     --seg-thumb: #38313F;
     --field: rgba(120,120,128,.24);
     --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
     --tabbar-icon: #8B8291;
   }
 
@@ -93,6 +97,9 @@
     --seg-thumb: #FFFFFF;
     --field: rgba(118,118,128,.10);
     --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
     --tabbar-icon: #6C6C70;
   }
 
@@ -123,10 +130,10 @@
   :root[data-theme="light"] .theme-toggle { background: rgba(255,255,255,.82); border-color: rgba(40,26,36,.12); color: #1A1420; }
   .theme-toggle:active { transform: scale(.92); }
   .wrap { max-width: 880px; margin: 0 auto; }
-  .doc-h1 { font-size: 2.1rem; font-weight: 800; letter-spacing: -.02em; }
+  .doc-h1 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; letter-spacing: -.02em; }
   .doc-lead { margin-top: 8px; color: var(--text-dim); font-size: .98rem; font-weight: 500; max-width: 60ch; line-height: 1.5; }
   .grp { margin-top: 44px; }
-  .grp > h2 { font-size: 1.3rem; font-weight: 800; letter-spacing: -.01em; display: inline-flex; align-items: center; gap: 8px; }
+  .grp > h2 { font-family: var(--font-display); font-size: 1.14rem; font-weight: 700; letter-spacing: -.01em; display: inline-flex; align-items: center; gap: 8px; }
   .grp > p { margin-top: 4px; color: var(--text-faint); font-size: .86rem; font-weight: 500; }
   .panel { margin-top: 16px; background: var(--surface); border-radius: var(--r-lg);
     padding: 20px; box-shadow: var(--elev-list); }
@@ -164,6 +171,18 @@
   @keyframes slide { 0%,12% { left: 2px; } 50% { left: calc(100% - 12px); } 88%,100% { left: 2px; } }
   .aa { margin-top: 12px; font-size: .8rem; color: var(--text-dim); line-height: 1.5; }
   .aa b { color: var(--text); }
+  /* floating Liquid Glass tab bar sample (shown over bright artwork to prove label AA) */
+  .tokbar-stage { position: relative; border-radius: var(--r-lg); overflow: hidden;
+    background: linear-gradient(120deg, #FF7A4D, #FF4D8D 32%, #7C6BFF 62%, #34E0C4);
+    display: flex; align-items: flex-end; padding: 16px; }
+  .tokbar { width: 100%; height: 60px; display: flex; align-items: center; justify-content: space-around;
+    padding: 0 6px; border-radius: 30px; background: var(--tabbar-glass);
+    backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: .5px solid var(--tabbar-hairline); box-shadow: var(--tabbar-shadow); }
+  .tokbar .tab { flex: 1; border: none; background: none; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 3px; color: var(--tabbar-icon);
+    font-family: var(--font); font-size: .62rem; font-weight: 600; letter-spacing: .01em; }
+  .tokbar .tab.active { color: var(--accent); }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
 </style>
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
@@ -171,7 +190,7 @@
 </button>
 <div class="wrap">
   <h1 class="doc-h1">Design tokens</h1>
-  <p class="doc-lead">The single source of truth for “i want ur pod” — Playful Pulse, iOS-native. Coral primary, mint secondary, rounded type. Toggle the theme (top-right) to preview every role in light and dark. Dark is the hero.</p>
+  <p class="doc-lead">The single source of truth for “i want ur pod” — Playful Pulse, iOS-native. Coral primary, mint secondary, IBM Plex Mono titles over Roboto body. Toggle the theme (top-right) to preview every role in light and dark. Dark is the hero.</p>
 
   <div class="grp">
     <h2><span class="eq" style="display:inline-flex;gap:2px;align-items:flex-end;height:14px"><i style="width:3px;height:6px;border-radius:3px;background:var(--accent);display:inline-block"></i><i style="width:3px;height:13px;border-radius:3px;background:var(--accent);display:inline-block"></i><i style="width:3px;height:9px;border-radius:3px;background:var(--accent);display:inline-block"></i></span> Color roles</h2>
@@ -197,14 +216,14 @@
 
   <div class="grp">
     <h2>Type scale</h2>
-    <p>System rounded stack (ui-rounded / SF Pro Rounded). Weights 500–900.</p>
+    <p>Titles in <b>IBM Plex Mono</b> (humanist, open letterforms); body &amp; UI in <b>Roboto</b>.</p>
     <div class="panel">
-      <div class="type-row"><span class="tk">large-title 2.32rem/800</span><span class="sample" style="font-size:2.32rem;font-weight:800;letter-spacing:-.02em">Discover</span></div>
-      <div class="type-row"><span class="tk">section 1.34rem/800</span><span class="sample" style="font-size:1.34rem;font-weight:800;letter-spacing:-.015em">Trending now</span></div>
-      <div class="type-row"><span class="tk">nav-title 1.06rem/800</span><span class="sample" style="font-size:1.06rem;font-weight:800">Discover</span></div>
-      <div class="type-row"><span class="tk">row-title 1rem/700</span><span class="sample" style="font-size:1rem;font-weight:700">Signal &amp; Static</span></div>
+      <div class="type-row"><span class="tk">large-title 2.1rem/700 · mono</span><span class="sample" style="font-family:var(--font-display);font-size:2.1rem;font-weight:700;letter-spacing:-.02em">Discover</span></div>
+      <div class="type-row"><span class="tk">section 1.24rem/700 · mono</span><span class="sample" style="font-family:var(--font-display);font-size:1.24rem;font-weight:700;letter-spacing:-.01em">Trending now</span></div>
+      <div class="type-row"><span class="tk">nav-title 1.02rem/700 · mono</span><span class="sample" style="font-family:var(--font-display);font-size:1.02rem;font-weight:700">Discover</span></div>
+      <div class="type-row"><span class="tk">row-title 1rem/700</span><span class="sample" style="font-size:1rem;font-weight:700">99% Invisible</span></div>
       <div class="type-row"><span class="tk">body 1rem/500</span><span class="sample" style="font-size:1rem;font-weight:500">Shows, people, topics</span></div>
-      <div class="type-row"><span class="tk">subhead .82rem/500</span><span class="sample" style="font-size:.82rem;font-weight:500;color:var(--text-dim)">Mara Okonkwo</span></div>
+      <div class="type-row"><span class="tk">subhead .82rem/500</span><span class="sample" style="font-size:.82rem;font-weight:500;color:var(--text-dim)">Roman Mars</span></div>
       <div class="type-row"><span class="tk">provider .74rem/700</span><span class="sample" style="font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text-faint)">Directory source</span></div>
       <div class="type-row"><span class="tk">eyebrow .72rem/800</span><span class="sample" style="font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)">Fresh &amp; pulsing</span></div>
       <div class="type-row"><span class="tk">tag .64rem/800</span><span class="sample" style="font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.02em;color:var(--text-dim)">Weekly</span></div>
@@ -249,6 +268,23 @@
       <div class="e" style="box-shadow:var(--elev-sub)">--elev-sub</div>
       <div class="e" style="box-shadow:var(--elev-pop)">--elev-pop</div>
     </div></div>
+  </div>
+
+  <div class="grp">
+    <h2>Navigation — floating Liquid Glass tab bar</h2>
+    <p>iOS-26 style floating bar carrying five items: Discover, Podcasts, Up Next, Downloads, Settings. Blurred <b>--tabbar-glass</b> fill, <b>--tabbar-hairline</b> edge, <b>--tabbar-shadow</b> lift, inactive <b>--tabbar-icon</b>, active <b>--accent</b>. Shown over bright artwork to prove label contrast.</p>
+    <div class="panel">
+      <div class="tokbar-stage">
+        <nav class="tokbar" aria-label="Sample tab bar">
+          <button class="tab active"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M15.5 8.5 13.2 13l-4.7 2.5L10.8 11l4.7-2.5Z" fill="currentColor"/></svg><span>Discover</span></button>
+          <button class="tab"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="4" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/></svg><span>Podcasts</span></button>
+          <button class="tab"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M4 12h11M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17.5 13.5v5.2c0 .6-.7.9-1.2.5l-.9-.7M20 10.5l-2.5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Up Next</span></button>
+          <button class="tab"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Downloads</span></button>
+          <button class="tab"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 8h9M18.5 8H20M4 16h1.5M11 16h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="8" r="2.6" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="16" r="2.6" stroke="currentColor" stroke-width="2"/></svg><span>Settings</span></button>
+        </nav>
+      </div>
+      <p class="aa"><b>AA over bright content — worst case measured.</b> Labels are small text (.62rem/600), so the bar is 4.5:1. <b>Dark:</b> rgba(14,11,18,.94) stays dark over any backdrop; worst case (over white) inactive <b>--tabbar-icon</b> #8B8291 = <b>4.69:1</b>, active coral = <b>6.10:1</b>; over the app's saturated artwork both climb higher. <b>Light:</b> the near-white fill was raised to rgba(250,248,252,.96) so saturated art no longer bleeds through and drops the bar. Over the worst backdrop (grape/pink album art) inactive #6C6C70 = <b>4.74:1</b> and active #CA340F = <b>4.74:1</b>; over plain surface/white ≈4.95–4.97. All ≥ 4.5:1 small-text AA in both themes, over both bright and dark backdrops.</p>
+    </div>
   </div>
 
   <div class="grp">

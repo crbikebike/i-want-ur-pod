@@ -68,17 +68,20 @@
     --seg-thumb: #38313F;
     --field: rgba(120,120,128,.24);
     --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
     --tabbar-icon: #8B8291;
   }
 
   /* ---------- LIGHT ---------- */
   :root[data-theme="light"] {
-    --bg: #F2F1F6;
-    --grouped-bg: #F2F1F6;
+    --bg: #FBF5EF;
+    --grouped-bg: #FBF5EF;
     --bg-glow-1: rgba(245,80,47,.09);
     --bg-glow-2: rgba(6,169,139,.08);
     --surface: #FFFFFF;
-    --surface-2: #F6F1EC;
+    --surface-2: #FCEFE7;
     --hairline: rgba(40,26,36,.10);
     --separator: rgba(60,60,67,.18);
     --text: #1A1420;
@@ -87,12 +90,15 @@
     --accent: var(--coral-deep);
     --accent-2: var(--mint-deep);
     --on-accent: #FFFFFF;
-    --chip: rgba(118,118,128,.12);
+    --chip: #F1E7DF;
     --chip-text: #1A1420;
-    --seg-track: rgba(118,118,128,.16);
+    --seg-track: #EFE4DB;
     --seg-thumb: #FFFFFF;
-    --field: rgba(118,118,128,.10);
+    --field: #F3EAE2;
     --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
     --tabbar-icon: #6C6C70;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -113,9 +119,9 @@
   }
   :root[data-theme="light"] body {
     background:
-      radial-gradient(120% 60% at 85% -5%, #f0e6f4, transparent 60%),
-      radial-gradient(90% 50% at 0% 8%, #eef0f6, transparent 55%),
-      #e6e4ee;
+      radial-gradient(120% 60% at 85% -5%, #ffe9df, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #fff4ea, transparent 55%),
+      #f2e7dd;
   }
 
   /* ---------- theme toggle (fixed) ---------- */
@@ -286,45 +292,6 @@
     50% { box-shadow: 0 0 0 6px rgba(255,106,77,.16); }
   }
 
-  /* ---------- provider segmented control (iOS style) ---------- */
-  .provider {
-    margin-top: var(--sp-4);
-    display: flex; flex-direction: column; gap: 8px;
-    opacity: 0; animation: rise .6s var(--ease-soft) .24s forwards;
-  }
-  .provider .lbl {
-    font-size: .74rem; font-weight: 700; color: var(--text-faint);
-    letter-spacing: .04em; text-transform: uppercase;
-    padding-left: 2px;
-    display: inline-flex; align-items: center; gap: 6px;
-  }
-  .seg {
-    position: relative; display: flex; padding: 2px;
-    background: var(--seg-track); border-radius: var(--r-seg);
-    height: 32px;
-  }
-  .seg button {
-    position: relative; z-index: 2; flex: 1;
-    border: none; background: none; cursor: pointer;
-    font-family: var(--font); font-size: .86rem; font-weight: 600;
-    color: var(--text); border-radius: calc(var(--r-seg) - 2px);
-    min-height: 28px; transition: color .3s, font-weight .2s;
-    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  }
-  .seg button.on { font-weight: 700; }
-  .seg button .prov-dot {
-    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
-    opacity: 0; transform: scale(0); transition: all .3s var(--ease-spring);
-  }
-  .seg button.on .prov-dot { opacity: 1; transform: scale(1); }
-  .seg .thumb {
-    position: absolute; z-index: 1; top: 2px; left: 2px; bottom: 2px;
-    border-radius: calc(var(--r-seg) - 2px);
-    background: var(--seg-thumb);
-    box-shadow: 0 3px 8px -3px rgba(0,0,0,.28), 0 0 0 .5px rgba(0,0,0,.04);
-    transition: transform .34s var(--ease-spring), width .34s var(--ease-spring);
-  }
-
   /* ---------- section header ---------- */
   .sec-head {
     margin: var(--sp-6) 2px var(--sp-1); display: flex; align-items: center; justify-content: space-between;
@@ -484,7 +451,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
-    .row, .eyebrow, h1.big, .search, .provider, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
+    .row, .eyebrow, h1.big, .search, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
     .navbar { transition: none; }
   }
 
