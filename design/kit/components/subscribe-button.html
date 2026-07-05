@@ -1,5 +1,6 @@
 <!-- @dsCard group="Components" -->
 <title>Component · Subscribe button</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -370,45 +371,54 @@
   }
   .row .tag.hot { color: var(--on-accent); background: var(--accent); }
 
-  /* subscribe button — pill, pulse ring, Subscribe -> Subscribed */
+  /* subscribe button — compact icon-only circle, pulse ring, +/check/spinner */
   .sub {
     flex: none; position: relative;
-    min-width: 44px; min-height: 34px; padding: 0 14px;
-    border: none; cursor: pointer; border-radius: var(--r-pill);
-    font-family: var(--font); font-size: .8rem; font-weight: 800; letter-spacing: .01em;
+    width: 34px; height: 34px; padding: 0;
+    border: none; cursor: pointer; border-radius: 50%;
     color: var(--on-accent);
     background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
-    box-shadow: 0 6px 14px -8px var(--accent);
-    display: inline-flex; align-items: center; gap: 5px;
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,.4), inset 0 0 0 .5px rgba(255,255,255,.28);
+    display: inline-flex; align-items: center; justify-content: center;
     transition: transform .3s var(--ease-spring), background .3s, color .3s, box-shadow .3s;
-    overflow: visible;
   }
   .sub .ico { display: inline-flex; transition: transform .4s var(--ease-spring); }
   .sub .ico svg { display: block; }
   .sub .ico-check { display: none; }
-  .sub:active { transform: scale(.9); }
+  .sub:active { transform: scale(.85); }
   .sub.done {
-    background: var(--chip);
-    color: var(--text);
-    box-shadow: none;
+    background: var(--surface); color: var(--accent-2);
+    box-shadow: 0 4px 12px -6px rgba(0,0,0,.4), inset 0 0 0 1.5px color-mix(in srgb, var(--accent-2) 55%, transparent);
   }
   .sub.done .ico-plus { display: none; }
   .sub.done .ico-check { display: inline-flex; }
   /* radiating pulse ring on subscribe tap */
   .sub .ring {
-    position: absolute; inset: 0; border-radius: var(--r-pill);
+    position: absolute; inset: 0; border-radius: 50%;
     border: 2px solid var(--accent); opacity: 0; pointer-events: none;
   }
   .sub.pulsing .ring { animation: ringOut .55s var(--ease-soft) forwards; }
   @keyframes ringOut {
     0% { opacity: .8; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.55); }
+    100% { opacity: 0; transform: scale(1.7); }
   }
 
-  /* extra tap target guarantee: min 44 height via hit area */
+  /* 44px hit target around the 34px circle */
   .sub::before {
-    content: ""; position: absolute; inset: -5px -2px; border-radius: var(--r-pill);
+    content: ""; position: absolute; inset: -5px; border-radius: 50%;
   }
+
+  /* in-context: subscribe floating on album artwork corner */
+  .ctx-art {
+    width: 96px; height: 96px; border-radius: var(--r-md); position: relative; overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 8px 20px -12px rgba(0,0,0,.55);
+  }
+  .ctx-art::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.42), transparent 42%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.28), transparent 55%); }
+  .ctx-art .glyph { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 1.9rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 2px 8px rgba(0,0,0,.35); }
+  .ctx-art .sub { position: absolute; right: 6px; bottom: 6px; z-index: 3; }
 
   /* ---------- footer note (kept minimal, native-feeling) ---------- */
   .foot {
@@ -580,20 +590,30 @@
   .vlabel:first-of-type { margin-top: 0; }
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
 </style>
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
   <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
 </button>
 <main class="stage">
   <div class="stage-cap"><span class="eq"><i></i><i></i><i></i></span>Subscribe button</div>
-  <p class="vlabel">Default</p>
-  <div class="rowgap"><button class="sub" aria-label="Subscribe to sample show"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Subscribe</span></button><span style="color:var(--text-dim);font-size:.85rem">tap to subscribe</span></div>
+  <p class="vlabel">States</p>
+  <div class="rowgap" style="gap:var(--sp-6)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><button class="sub" aria-label="Subscribe to sample show"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span></button><span style="color:var(--text-dim);font-size:.72rem;font-weight:700">Default</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><button class="sub loading" aria-label="Subscribing to sample show"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span></button><span style="color:var(--text-dim);font-size:.72rem;font-weight:700">Subscribing</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px"><button class="sub done" aria-label="Subscribed to sample show"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span></button><span style="color:var(--text-dim);font-size:.72rem;font-weight:700">Subscribed</span></div>
+  </div>
 
-  <p class="vlabel">Subscribing (in-flight)</p>
-  <div class="rowgap"><button class="sub loading" aria-label="Subscribing to sample show"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Adding…</span></button><span style="color:var(--text-dim);font-size:.85rem">spinner, disabled</span></div>
-
-  <p class="vlabel">Subscribed</p>
-  <div class="rowgap"><button class="sub done" aria-label="Subscribed to sample show"><span class="ring"></span><span class="ico ico-plus"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span><span class="txt">Subscribed</span></button><span style="color:var(--text-dim);font-size:.85rem">neutral fill + check</span></div>
+  <p class="vlabel">In context — floats on album artwork</p>
+  <div class="rowgap" style="gap:var(--sp-4)">
+    <div class="ctx-art a2"><span class="glyph">A</span><button class="sub" aria-label="Acquired"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span></button></div>
+    <div class="ctx-art a5"><span class="glyph">9</span><button class="sub done" aria-label="99% Invisible"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ico ico-spin"><span class="spinner"></span></span></button></div>
+  </div>
 </main>
 <script>
   const root = document.documentElement;
@@ -609,12 +629,13 @@
   });
   document.querySelectorAll('.sub').forEach(btn => {
     if (btn.classList.contains('loading')) return;
-    const txt = btn.querySelector('.txt');
-    const raw = (btn.getAttribute('aria-label')||'Subscribe').replace(/^Subscrib(e to|ed to) /, '');
-    btn.addEventListener('click', () => {
+    const name = (btn.getAttribute('aria-label')||'').replace(/^Subscrib(e to|ed to|ing to) /, '');
+    btn.setAttribute('aria-label', (btn.classList.contains('done') ? 'Subscribed to ' : 'Subscribe to ') + name);
+    btn.setAttribute('aria-pressed', btn.classList.contains('done') ? 'true' : 'false');
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const done = btn.classList.toggle('done');
-      txt.textContent = done ? 'Subscribed' : 'Subscribe';
-      btn.setAttribute('aria-label', (done ? 'Subscribed to ' : 'Subscribe to ') + raw);
+      btn.setAttribute('aria-label', (done ? 'Subscribed to ' : 'Subscribe to ') + name);
       btn.setAttribute('aria-pressed', done ? 'true' : 'false');
       btn.classList.remove('pulsing'); void btn.offsetWidth; btn.classList.add('pulsing');
     });

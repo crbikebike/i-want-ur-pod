@@ -1,5 +1,6 @@
 <!-- @dsCard group="Components" -->
 <title>Component · Section header</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -580,22 +581,35 @@
   .vlabel:first-of-type { margin-top: 0; }
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
 </style>
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
   <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
 </button>
 <main class="stage">
   <div class="stage-cap"><span class="eq"><i></i><i></i><i></i></span>Section header</div>
-  <p class="vlabel">With count + subtitle</p>
+  <p class="vlabel" style="margin-top:0;color:var(--text-dim);text-transform:none;letter-spacing:0;font-weight:500;font-size:.86rem;line-height:1.45">The label band that tops a group of content — a settings group, the search states, a "Suggestions" list. Title, with an optional count or one-line subtitle. <em style="color:var(--text-faint)">(A Result Row shelf uses its own header with the "View all" link — this is the simpler, non-shelf version.)</em></p>
+
+  <p class="vlabel">Title only</p>
+  <div class="sec-head" style="opacity:1;animation:none;margin-top:0">
+    <h2>Search sources</h2>
+  </div>
+
+  <p class="vlabel">Title + subtitle</p>
   <div class="sec-head" style="opacity:1;animation:none;margin-top:0">
     <h2>Trending now</h2>
-    <span class="count">142 shows</span>
   </div>
   <p class="sec-sub" style="opacity:1;animation:none">Fresh picks pulsing across the network today</p>
 
-  <p class="vlabel">Plain</p>
+  <p class="vlabel">Title + count</p>
   <div class="sec-head" style="opacity:1;animation:none;margin-top:0">
-    <h2>Because you like Tech</h2>
+    <h2>Downloads</h2>
+    <span class="count">12 episodes</span>
   </div>
 </main>
 <script>

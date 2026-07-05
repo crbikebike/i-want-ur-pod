@@ -1,5 +1,6 @@
 <!-- @dsCard group="Discover" -->
 <title>Discover · No results</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -581,6 +582,12 @@
   .vlabel:first-of-type { margin-top: 0; }
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
 </style>
 
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
@@ -611,11 +618,7 @@
     <div class="content" id="content">
 
       <div class="titlewrap">
-        <span class="eyebrow">
-          <span class="eq"><i></i><i></i><i></i></span>
-          No matches
-        </span>
-        <h1 class="big">Discover<span class="pulse-dot" aria-hidden="true"></span></h1>
+        <h1 class="big">Discover</h1>
       </div>
 
       <!-- search -->
@@ -630,7 +633,7 @@
       <div class="state" style="margin-top:var(--sp-6)">
         <div class="state-badge badge-empty"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 11h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
         <div class="state-title">No shows found</div>
-        <div class="state-sub">Nothing matched “xyzzy podcast”. Try a different spelling or a broader term.</div>
+        <div class="state-sub">Nothing matched "xyzzy podcast". Try a different spelling or a broader term.</div>
         <div class="state-actions">
           <button class="btn btn-secondary">Clear search</button>
         </div>
@@ -657,7 +660,7 @@
         <span>Downloads</span>
       </button>
       <button class="tab">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9 5.3 5.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 8h9M18.5 8H20M4 16h1.5M11 16h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="8" r="2.6" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="16" r="2.6" stroke="currentColor" stroke-width="2"/></svg>
         <span>Settings</span>
       </button>
     </nav>

@@ -1,5 +1,6 @@
 <!-- @dsCard group="Components" -->
 <title>Component · Buttons</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -457,26 +458,40 @@
 
   /* ============ SHARED KIT EXTRAS (built on locked tokens) ============ */
 
-  /* generic buttons: primary / secondary / ghost */
+  /* generic buttons: primary (filled) / secondary (outline) / tertiary (tinted) */
   .btn {
     min-height: 44px; padding: 0 20px; border: none; cursor: pointer;
     border-radius: var(--r-pill); font-family: var(--font);
-    font-size: .95rem; font-weight: 800; letter-spacing: .01em;
+    font-size: .95rem; font-weight: 800; letter-spacing: .01em; line-height: 1;
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     transition: transform var(--dur-mid) var(--ease-spring), box-shadow var(--dur-mid), background var(--dur-mid), color var(--dur-mid);
   }
   .btn:active { transform: scale(.95); }
   .btn svg { display: block; }
+  /* Primary — soft accent gradient (dark); solid in light (gradient reads harsh there) */
   .btn-primary {
     color: var(--on-accent);
     background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
     box-shadow: var(--elev-sub);
   }
-  .btn-secondary { color: var(--text); background: var(--chip); }
-  .btn-ghost {
-    color: var(--accent); background: transparent;
-    box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--accent) 60%, transparent);
+  :root[data-theme="light"] .btn-primary {
+    background: var(--accent);
+    box-shadow: 0 6px 16px -10px var(--accent);
   }
+  .btn-primary:hover { filter: brightness(.96); }
+  /* Secondary — accent outline on transparent (the old “ghost” look) */
+  .btn-secondary {
+    color: var(--accent); background: transparent;
+    box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+  .btn-secondary:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  /* Tertiary — soft accent-tint fill; reads on dark, unlike a neutral gray */
+  .btn-tertiary {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    box-shadow: none;
+  }
+  .btn-tertiary:hover { background: color-mix(in srgb, var(--accent) 20%, transparent); }
 
   /* subscribe: subscribing (loading) state */
   .sub .ico-spin { display: none; }
@@ -580,6 +595,12 @@
   .vlabel:first-of-type { margin-top: 0; }
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
 </style>
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
   <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
@@ -589,11 +610,11 @@
   <p class="vlabel">Primary</p>
   <div class="rowgap"><button class="btn btn-primary">Subscribe all</button><button class="btn btn-primary"><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M3 2l9 5-9 5V2Z"/></svg> Play latest</button></div>
 
-  <p class="vlabel">Secondary (neutral)</p>
+  <p class="vlabel">Secondary — outline</p>
   <div class="rowgap"><button class="btn btn-secondary">Share</button><button class="btn btn-secondary">Add to Up Next</button></div>
 
-  <p class="vlabel">Ghost</p>
-  <div class="rowgap"><button class="btn btn-ghost">See all</button><button class="btn btn-ghost">Filters</button></div>
+  <p class="vlabel">Tertiary — tinted</p>
+  <div class="rowgap"><button class="btn btn-tertiary">See all</button><button class="btn btn-tertiary">Filters</button></div>
 </main>
 <script>
   const root = document.documentElement;

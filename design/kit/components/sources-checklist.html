@@ -1,5 +1,6 @@
 <!-- @dsCard group="Components" -->
 <title>Component · Sources checklist</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -284,6 +285,12 @@
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
   }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
 </style>
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
   <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>

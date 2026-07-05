@@ -1,5 +1,6 @@
 <!-- @dsCard group="Discover" -->
 <title>Discover · Loading</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
     /* --- brand ramp (theme-agnostic) --- */
@@ -42,8 +43,8 @@
     --elev-sub: 0 6px 14px -8px var(--accent);
     --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
 
-    --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-            "Segoe UI", system-ui, sans-serif;
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   /* ---------- DARK (hero) ---------- */
@@ -305,6 +306,15 @@
   }
   .sec-sub { margin: 2px 2px 0; font-size: .82rem; color: var(--text-faint); font-weight: 500;
     opacity: 0; animation: rise .6s var(--ease-soft) .32s forwards; }
+  .dots { display: inline-block; }
+  .dots i { font-style: normal; animation: dotPulse 1.4s var(--ease-soft) infinite; }
+  .dots i:nth-child(2) { animation-delay: .2s; }
+  .dots i:nth-child(3) { animation-delay: .4s; }
+  @keyframes dotPulse { 0%, 60%, 100% { opacity: .25; } 30% { opacity: 1; } }
+  .sec-head h2 { display: flex; align-items: baseline; min-width: 0; }
+  .sec-head .pre { flex: none; white-space: nowrap; }
+  .sec-head .q { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .sec-head .dots { flex: none; }
 
   /* ---------- results: grouped inset list (iOS) ---------- */
   .list {
@@ -507,6 +517,18 @@
   }
   @keyframes shimmer { 0% { background-position: 180% 0; } 100% { background-position: -80% 0; } }
 
+  /* loading skeleton — matches the Result Row shelves (horizontal poster rails) */
+  .sk-shelf { margin-top: var(--sp-5); }
+  .sk-shelf:first-child { margin-top: var(--sp-3); }
+  .sk-shelf-head { display: flex; align-items: center; justify-content: space-between; padding: 0 2px; margin-bottom: var(--sp-3); }
+  .sk-sh-title { width: 128px; height: 15px; border-radius: 6px; }
+  .sk-sh-count { width: 34px; height: 11px; border-radius: 6px; }
+  .sk-rail { display: flex; gap: var(--sp-3); overflow: hidden; }
+  .sk-pod { flex: none; width: 138px; display: flex; flex-direction: column; gap: 9px; }
+  .sk-pod-art { width: 138px; height: 138px; border-radius: var(--r-md); }
+  .sk-pod-line { height: 11px; border-radius: 6px; }
+  .sk-pod-line.w80 { width: 80%; } .sk-pod-line.w50 { width: 50%; }
+
   /* big empty / no-results / error state */
   .state { display: flex; flex-direction: column; align-items: center; text-align: center;
     padding: var(--sp-7) var(--sp-4) var(--sp-6); gap: var(--sp-3); }
@@ -581,6 +603,12 @@
   .vlabel:first-of-type { margin-top: 0; }
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
 </style>
 
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
@@ -611,11 +639,7 @@
     <div class="content" id="content">
 
       <div class="titlewrap">
-        <span class="eyebrow">
-          <span class="eq"><i></i><i></i><i></i></span>
-          Searching
-        </span>
-        <h1 class="big">Discover<span class="pulse-dot" aria-hidden="true"></span></h1>
+        <h1 class="big">Discover</h1>
       </div>
 
       <!-- search -->
@@ -628,17 +652,25 @@
       </label>
 
       <div class="sec-head">
-        <h2>Searching iTunes…</h2>
+        <h2><span class="pre">Searching for&nbsp;</span><span class="q">"<span id="q">orbit notes</span></span>"<span class="dots"><i>.</i><i>.</i><i>.</i></span></h2>
       </div>
-      <p class="sec-sub">Fetching matches for “orbit notes”</p>
 
-      <div class="sk-list">
-        <div class="sk-row"><div class="sk-art shimmer"></div><div class="sk-meta"><div class="sk-line w70 shimmer"></div><div class="sk-line w45 shimmer"></div><div class="sk-line w30 shimmer"></div></div><div class="sk-pill shimmer"></div></div>
-        <div class="sk-row"><div class="sk-art shimmer"></div><div class="sk-meta"><div class="sk-line w70 shimmer"></div><div class="sk-line w45 shimmer"></div><div class="sk-line w30 shimmer"></div></div><div class="sk-pill shimmer"></div></div>
-        <div class="sk-row"><div class="sk-art shimmer"></div><div class="sk-meta"><div class="sk-line w70 shimmer"></div><div class="sk-line w45 shimmer"></div><div class="sk-line w30 shimmer"></div></div><div class="sk-pill shimmer"></div></div>
-        <div class="sk-row"><div class="sk-art shimmer"></div><div class="sk-meta"><div class="sk-line w70 shimmer"></div><div class="sk-line w45 shimmer"></div><div class="sk-line w30 shimmer"></div></div><div class="sk-pill shimmer"></div></div>
-        <div class="sk-row"><div class="sk-art shimmer"></div><div class="sk-meta"><div class="sk-line w70 shimmer"></div><div class="sk-line w45 shimmer"></div><div class="sk-line w30 shimmer"></div></div><div class="sk-pill shimmer"></div></div>
-        <div class="sk-row"><div class="sk-art shimmer"></div><div class="sk-meta"><div class="sk-line w70 shimmer"></div><div class="sk-line w45 shimmer"></div><div class="sk-line w30 shimmer"></div></div><div class="sk-pill shimmer"></div></div>
+      <div class="sk-shelf">
+        <div class="sk-shelf-head"><div class="sk-sh-title shimmer"></div><div class="sk-sh-count shimmer"></div></div>
+        <div class="sk-rail">
+          <div class="sk-pod"><div class="sk-pod-art shimmer"></div><div class="sk-pod-line w80 shimmer"></div><div class="sk-pod-line w50 shimmer"></div></div>
+          <div class="sk-pod"><div class="sk-pod-art shimmer"></div><div class="sk-pod-line w80 shimmer"></div><div class="sk-pod-line w50 shimmer"></div></div>
+          <div class="sk-pod"><div class="sk-pod-art shimmer"></div><div class="sk-pod-line w80 shimmer"></div><div class="sk-pod-line w50 shimmer"></div></div>
+        </div>
+      </div>
+
+      <div class="sk-shelf">
+        <div class="sk-shelf-head"><div class="sk-sh-title shimmer"></div><div class="sk-sh-count shimmer"></div></div>
+        <div class="sk-rail">
+          <div class="sk-pod"><div class="sk-pod-art shimmer"></div><div class="sk-pod-line w80 shimmer"></div><div class="sk-pod-line w50 shimmer"></div></div>
+          <div class="sk-pod"><div class="sk-pod-art shimmer"></div><div class="sk-pod-line w80 shimmer"></div><div class="sk-pod-line w50 shimmer"></div></div>
+          <div class="sk-pod"><div class="sk-pod-art shimmer"></div><div class="sk-pod-line w80 shimmer"></div><div class="sk-pod-line w50 shimmer"></div></div>
+        </div>
       </div>
 
     </div>
@@ -662,7 +694,7 @@
         <span>Downloads</span>
       </button>
       <button class="tab">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9 5.3 5.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 8h9M18.5 8H20M4 16h1.5M11 16h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="8" r="2.6" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="16" r="2.6" stroke="currentColor" stroke-width="2"/></svg>
         <span>Settings</span>
       </button>
     </nav>

@@ -4,10 +4,10 @@
 **Identity:** coral primary + mint secondary, rounded system type, animated
 equalizer/pulse accents, gradient artwork tiles, first-class iOS chrome.
 
-This is the single source of truth. The locked base is
-`design/directions/d2-native/index.html`. Every kit file
-(`design/kit/**`) carries a **byte-identical color-role token block** — do
-not fork hues per file.
+This is the single source of truth. The Claude Design project
+"i-want-ur-pod" is the system of record; `design/kit/**` is a synced
+mirror of it. Every kit file (`design/kit/**`) carries a **byte-identical
+color-role token block** — do not fork hues per file.
 
 Dark is the hero. Both themes ship with a fixed top-right toggle that flips
 `data-theme` on the root.
@@ -57,9 +57,9 @@ Brand ramp is theme-agnostic. Roles remap per theme.
 
 | Role | Value |
 |---|---|
-| `--bg` / `--grouped-bg` | `#F2F1F6` |
+| `--bg` / `--grouped-bg` | `#FBF5EF` (warm cream) |
 | `--surface` | `#FFFFFF` |
-| `--surface-2` | `#F6F1EC` |
+| `--surface-2` | `#FCEFE7` (warm peach) |
 | `--text` | `#1A1420` |
 | `--text-dim` | `#6B6472` |
 | `--text-faint` | `#736A78` |
@@ -68,10 +68,10 @@ Brand ramp is theme-agnostic. Roles remap per theme.
 | `--on-accent` | `#FFFFFF` |
 | `--hairline` | `rgba(40,26,36,.10)` |
 | `--separator` | `rgba(60,60,67,.18)` |
-| `--chip` | `rgba(118,118,128,.12)` |
-| `--seg-track` | `rgba(118,118,128,.16)` |
+| `--chip` | `#F1E7DF` (warm) |
+| `--seg-track` | `#EFE4DB` (warm) |
 | `--seg-thumb` | `#FFFFFF` |
-| `--field` | `rgba(118,118,128,.10)` |
+| `--field` | `#F3EAE2` (warm) |
 | `--bar-material` | `rgba(248,246,250,.78)` |
 | `--tabbar-glass` | `rgba(250,248,252,.96)` |
 | `--tabbar-hairline` | `rgba(60,60,67,.18)` |
@@ -169,12 +169,20 @@ glass fill color are unchanged.
 
 ## 3. Type scale
 
-System rounded stack — no web fonts:
+Self-hosted brand fonts — **IBM Plex Mono** for display/titles, **Roboto**
+for body and UI. Both are pulled in via `design/kit/styles.css` (which
+imports `fonts/fonts.css`, which imports `fonts/ibm-plex-mono.css` and
+`fonts/roboto.css`):
 
 ```
---font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-        "Segoe UI", system-ui, sans-serif;
+--font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        system-ui, sans-serif;
+--font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 ```
+
+`--font-display` is used for large titles, section headers, inline nav
+titles, shelf headers, and state titles; everything else (body copy, row
+titles, labels, tabs) uses `--font`.
 
 | Role | Size | Weight | Tracking |
 |---|---|---|---|
@@ -333,15 +341,15 @@ animation.
 ## 10. Component & screen inventory
 
 - **Foundations:** `tokens.html`.
-- **Components:** app-shell, search-field, sources-checklist, result-row,
-  result-card, subscribe-button (default / subscribing / subscribed),
-  section-header, buttons (primary / secondary / ghost), loading-skeleton,
-  empty-prompt, no-results, error. `provider-picker.html` is **repurposed**:
-  the old segmented picker was removed and the file now demonstrates the
-  Sources checklist (its gallery card is kept so no card dangles;
-  `sources-checklist.html` is the canonical copy).
+- **Components:** search-field, sources-checklist, result-row, result-card,
+  subscribe-button (default / subscribing / subscribed), section-header,
+  buttons (primary / secondary / ghost), tab-bar (floating Liquid Glass tab
+  bar), no-results. `sources-checklist.html` is the canonical demonstration
+  of source selection: Apple Podcasts is primary and on by default with no
+  key required; PodcastIndex is opt-in and stays inactive until the user
+  adds their own API key.
 - **Discover screens (iPhone-framed):** first-run, typing, loading,
-  results, no-results, error.
+  no-results, error.
 - **Settings screens (iPhone-framed):** settings-sources.
 
 Discover screens keep the same header stack (large title → search) so the
@@ -405,6 +413,17 @@ Settings.
   `calc(var(--r-seg) - 2px)`, and the row separator inset uses a `calc()` of
   tokens. Only device-chrome clearances (`54`/`104`), the 60px art size, and
   the 2px optical inset remain intentional raw constants.
+- **Light neutrals warmed — RESOLVED (2026-07-04).** The iOS system-grey light
+  neutrals read as generic and dropped the coral brand in light mode. Warmed the
+  light-only neutral roles back toward the original d2 cream/peach, applied
+  byte-identically to every kit file and the locked base: `--bg` / `--grouped-bg`
+  `#F2F1F6 → #FBF5EF`, `--surface-2` `#F6F1EC → #FCEFE7`, `--chip` `→ #F1E7DF`,
+  `--seg-track` `→ #EFE4DB`, `--field` `→ #F3EAE2` (supersedes the 10% grey field
+  noted above), plus the gallery backdrop to warm cream. Accents, text roles, and
+  the tab-bar glass/icon were left untouched, so all documented AA holds. Re-measured
+  every text/accent pair on the warm surfaces — all clear 4.5 (tightest: text-dim on
+  chip 4.67, text-faint on surface-2 4.59, accent on surface-2 4.65). Dark mode
+  unchanged.
 - Voice/mic affordance is visual only; no dictation behavior specified yet.
 
 ---
