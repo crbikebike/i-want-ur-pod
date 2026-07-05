@@ -122,6 +122,21 @@ One screen that adapts to subscribe state. **Doc:**
   - Subscribing adds a row; unsubscribing removes it.
   - Tapping a row opens the E2 detail in subscribed state.
   - With no subscriptions, an empty state is shown (not a blank pane).
+- **E3-S2 — Populate episodes on subscribe.** *(Follow-up surfaced by the detail
+  episode-loading fix, commit `e62b912`.)* Subscribing from Discover/curated
+  currently stores a **metadata-only** `Podcast` (title/author/artwork/feedURL, no
+  episodes); the E2 detail backfills episodes on first open. Make the subscribe
+  action itself fetch + parse + upsert the feed so a subscribed show has its episodes
+  immediately — enabling episode counts on the Podcasts row and a non-empty
+  offline-open — without requiring a detail visit. Reuses `FeedFetcher` +
+  `FeedUpsert` (idempotent; preserves user-owned fields). **Depends on:** E0, E3-S1.
+  - After subscribing **online**, the stored `Podcast` has its episodes
+    (`episodes.count > 0`) without opening the detail screen.
+  - Subscribing is **best-effort on the network**: subscribing **offline** still
+    succeeds as a metadata-only row (no crash, no error surfaced), and episodes are
+    backfilled on the next online detail open (the E2 fallback already in place).
+  - Re-subscribing or later opening the detail does **not** duplicate episodes
+    (idempotent upsert on `feedURL`/`guid`).
 
 ### E4 — Playback, download-first *(Journey 6; lights up Journey 4)*
 
@@ -177,6 +192,54 @@ Download-first: an episode plays only from a completed local file — no streami
   - Scrubbing seeks and updates `playbackProgress`.
   - Dismissing returns to the mini-player with playback state intact.
 
+### E7 — Store resilience: recover instead of crash *(reliability; not one of the seven journeys)*
+
+Today `IWantUrPodApp` traps (`fatalError`) when `ModelSchema.makeContainer()` can't
+open the on-disk SwiftData store — so a schema change that lightweight migration
+can't handle **hard-crashes the app on every launch** until the user deletes and
+reinstalls (the `Podcast.summary` migration bug, fixed in commit `3220341`, was
+exactly this). This story replaces the trap with a **graceful reset**: if the store
+can't be opened, discard it and start fresh so the app always launches.
+
+**Home:** `ModelSchema.makeContainer` (`Packages/PodcastModels/.../ModelSchema.swift`)
++ app-scope wiring in `IWantUrPod/App/IWantUrPodApp.swift`. **Depends on:** nothing
+(pure hardening). **Doc:** self-contained (no `docs/spec/` doc needed).
+
+**Explicit trade-off — this is "option 2", chosen deliberately.** A reset
+**destroys all local data** — subscriptions, queue, download states, and playback
+progress — with **no recovery**, because v1 has no sync/backup. It trades a *visible
+crash* for *silent, unrecoverable data loss*, and is acceptable **only** while the
+local store is treated as disposable (pre-release). The data-preserving alternative
+(a `VersionedSchema` + `SchemaMigrationPlan`) is the correct answer once there is
+data worth keeping; it is recorded under **Parked → "Versioned schema migration"**
+and **supersedes this story before release**.
+
+- **E7-S1 — Recover-on-failure container.** `makeContainer(inMemory: false)` attempts
+  to open the on-disk store; on an **unrecoverable open/migration error** it deletes
+  the store files (`default.store` plus the `-wal`/`-shm` sidecars) and recreates an
+  empty container, returning a working container instead of throwing. Recovery is a
+  **last resort**, not a routine wipe.
+  - A fresh install (no existing store) opens normally and is **not** reset.
+  - A valid, openable existing store opens with its data intact and is **not** reset.
+  - A store that fails to open (simulate a corrupt/incompatible store file) yields a
+    **working, empty** container — `makeContainer` returns rather than throwing, and
+    `IWantUrPodApp.init` no longer reaches `fatalError`.
+  - The reset is **not silent**: it emits an `os_log` diagnostic recording that a
+    reset occurred and the underlying error, so it is observable in the field.
+- **E7-S2 — Reconcile orphaned downloads after a reset.** Downloaded audio lives
+  outside the SwiftData store (`DownloadStore`, keyed by `Episode.guid`), so a reset
+  leaves **orphaned files** that no `Episode` references. After a reset the download
+  directory is swept so freed space isn't leaked and no stale `.downloaded` state can
+  desync from disk.
+  - After a store reset, the `DownloadStore` directory contains no file lacking a
+    corresponding persisted `Episode` (post-reset, with an empty store, it is emptied).
+  - Determinate: seed the download dir with a file, trigger a store reset, assert the
+    directory is reconciled (the orphan is removed).
+
+*Testability:* the recovery + reconcile logic is a package-level seam exercised with a
+simulated bad store and a temp download directory — unit-testable via `swift test`
+without launching the app.
+
 ---
 
 ## Parked
@@ -194,6 +257,12 @@ Deliberately out of scope for these journeys — recorded so they aren't lost.
   shelf replaces it as the way in.
 - **Structured hosts / `podcast:person`.** Feeds don't reliably carry hosts; parked
   with the broader Podcasting 2.0 work.
+- **Versioned schema migration (`SchemaMigrationPlan`).** The data-preserving
+  alternative to **E7**'s reset-on-failure: define `VersionedSchema` versions and
+  migration stages so schema changes carry existing local data forward instead of
+  discarding it. **Supersedes E7 before release**, once there is on-device data
+  (subscriptions, queue, playback progress) worth keeping — a no-sync, local-first
+  app has no server to restore from.
 
 ---
 
