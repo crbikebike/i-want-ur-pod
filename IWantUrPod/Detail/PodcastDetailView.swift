@@ -88,7 +88,7 @@ public struct PodcastDetailView: View {
     @ViewBuilder
     private func descriptionSection(_ podcast: Podcast) -> some View {
         if !podcast.summary.isEmpty {
-            ExpandableText(podcast.summary, collapsedLineLimit: 4)
+            ExpandableText(podcast.summary.htmlToPlainText(), collapsedLineLimit: 4)
         }
     }
 
@@ -213,7 +213,7 @@ struct EpisodeRow: View {
                     .fixedSize(horizontal: false, vertical: true)
 
                 if !episode.summary.isEmpty {
-                    ExpandableText(episode.summary, collapsedLineLimit: 3)
+                    ExpandableText(episode.summary.htmlToPlainText(), collapsedLineLimit: 3)
                 }
 
                 playedMarker

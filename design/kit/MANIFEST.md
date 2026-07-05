@@ -96,6 +96,7 @@ design/kit/MANIFEST.md).` header instead of a `design/kit/*.html` citation, so
 |---|---|---|
 | `Components/RemoteArtwork.swift` | A remote-image counterpart to `ArtworkTile`: renders a podcast/episode's real artwork URL via `AsyncImage`, falling back to the same `.a1`–`.a6` gradient tile (via the internal `GradientArtwork`, honoring the caller's `cornerRadius`) when the URL is `nil` or hasn't resolved. First screen to show artwork loaded from a feed rather than a synthetic seed. | ✅ Implemented |
 | `Components/ExpandableText.swift` | A generic truncate/expand body-copy block (clamped line limit + "More"/"Less" toggle, shown only when the text actually overflows). Built for E2-S1's "long descriptions truncate with an expand affordance" requirement. | ✅ Implemented |
+| `HTMLText.swift` | **Data-only utility, no design source.** `String.htmlToPlainText()` / `decodingHTMLEntities()`: converts a feed's raw HTML description/summary into readable plain text (block tags → line breaks, other tags stripped, named + numeric entities decoded, whitespace collapsed). Applied at the two `ExpandableText` call sites in `PodcastDetailView` because `feed-field-mapping.md` keeps raw HTML in the model and leaves rendering/stripping to the display layer. | ✅ Implemented |
 
 **Show description source:** the detail screen's description is
 `Podcast.summary` — a feed-derived channel field (`<channel><description>` →
