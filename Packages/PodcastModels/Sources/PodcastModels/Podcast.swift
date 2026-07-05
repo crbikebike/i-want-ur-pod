@@ -33,12 +33,14 @@ public final class Podcast {
     /// Show-level description — `<channel><description>` → `<channel><itunes:summary>` → `""`.
     /// Feed-derived like `title`/`author`/`category`; updates on re-parse.
     ///
-    /// Additive migration note: this is a new, non-optional attribute with a
-    /// default value (`""`), which SwiftData's lightweight migration handles
-    /// automatically (existing rows get the default). Safe for this
-    /// pre-release, local-first app; `ModelSchema.models` is unchanged (same
-    /// types, just one more attribute on `Podcast`).
-    public var summary: String
+    /// Additive migration note: this is a new, non-optional attribute with an
+    /// **inline default value** (`= ""`). SwiftData's lightweight migration
+    /// requires the default to be declared on the stored property (not just in
+    /// the initializer) so existing rows can be migrated in place — without it,
+    /// opening a pre-existing store fails with "missing attribute values on
+    /// mandatory destination attribute". Safe for this pre-release, local-first
+    /// app; `ModelSchema.models` is unchanged (same types, one more attribute).
+    public var summary: String = ""
 
     /// Whether the user has subscribed to this show.
     public var isSubscribed: Bool
