@@ -261,6 +261,179 @@ final class DirectoryKitTests: XCTestCase {
             XCTAssertEqual(error as? SearchError, .rateLimited)
         }
     }
+
+    // MARK: - SearchCoordinator with the real Apple + PodcastIndex sources (§12.3)
+
+    /// An in-memory `PodcastIndexCredentialProviding` for tests — no Keychain.
+    private struct FakeCredentialStore: PodcastIndexCredentialProviding {
+        let credentials: PodcastIndexCredentials?
+        func podcastIndexCredentials() -> PodcastIndexCredentials? { credentials }
+    }
+
+    @MainActor
+    func testApplePrimarySuccess_returnsAppleResultsWithoutConsultingPodcastIndex() async throws {
+        let appleJSON = Data("""
+        { "resultCount": 1, "results": [
+          { "wrapperType": "track", "collectionName": "Reply All", "artistName": "Gimlet",
+            "feedUrl": "https://feeds.megaphone.fm/replyall" }
+        ] }
+        """.utf8)
+        let session = RoutingStubURLProtocol.makeSession(responses: [
+            "itunes.apple.com": .init(data: appleJSON, status: 200),
+        ])
+        let apple = ITunesSource(session: session)
+        // PodcastIndex has no credentials configured; if consulted it would
+        // throw .noKey rather than ever return data — this proves the
+        // coordinator never falls through when the primary wins.
+        let podcastIndex = PodcastIndexSource(isEnabled: true, credentialStore: FakeCredentialStore(credentials: nil))
+
+        let coordinator = SearchCoordinator(sources: [apple, podcastIndex])
+        let results = try await coordinator.search(term: "reply all")
+
+        XCTAssertEqual(results.map(\.title), ["Reply All"])
+    }
+
+    @MainActor
+    func testApplePrimaryFailure_fallsBackToPodcastIndex() async throws {
+        let piJSON = Data("""
+        { "status": true, "count": 1, "feeds": [
+          { "title": "Darknet Diaries", "author": "Jack Rhysider",
+            "url": "https://feeds.megaphone.fm/darknetdiaries" }
+        ] }
+        """.utf8)
+        // A single shared session, routed per-host, so Apple's 500 and
+        // PodcastIndex's 200 don't stomp on each other's canned response
+        // (unlike `StubURLProtocol`, which holds one global response).
+        let session = RoutingStubURLProtocol.makeSession(responses: [
+            "itunes.apple.com": .init(data: Data("{}".utf8), status: 500),
+            "api.podcastindex.org": .init(data: piJSON, status: 200),
+        ])
+        let apple = ITunesSource(session: session)
+        let podcastIndex = PodcastIndexSource(
+            isEnabled: true,
+            credentialStore: FakeCredentialStore(credentials: PodcastIndexCredentials(key: "k", secret: "s")),
+            session: session
+        )
+
+        let coordinator = SearchCoordinator(sources: [apple, podcastIndex])
+        let results = try await coordinator.search(term: "darknet")
+
+        // Apple (primary) failed; PodcastIndex (fallback) answered — and its
+        // result alone, never merged with anything from Apple.
+        XCTAssertEqual(results.map(\.title), ["Darknet Diaries"])
+    }
+
+    @MainActor
+    func testApplePrimaryAndPodcastIndexFallbackBothFail_surfacesError() async {
+        let session = RoutingStubURLProtocol.makeSession(responses: [
+            "itunes.apple.com": .init(data: Data("{}".utf8), status: 500),
+        ])
+        let apple = ITunesSource(session: session)
+        let podcastIndex = PodcastIndexSource(isEnabled: true, credentialStore: FakeCredentialStore(credentials: nil))
+
+        let coordinator = SearchCoordinator(sources: [apple, podcastIndex])
+        do {
+            _ = try await coordinator.search(term: "anything")
+            XCTFail("Expected every enabled source's failure to surface as an error")
+        } catch {
+            // Apple's 500 maps to .unavailable; PodcastIndex has no key so it
+            // throws .noKey — the last enabled source's error propagates.
+            XCTAssertEqual(error as? SearchError, .noKey)
+        }
+    }
+
+    // MARK: - CuratedEntry / CuratedListLoader (E1-S2)
+
+    func testCuratedListLoader_rendersEveryValidEntryInFileOrder() {
+        let json = Data("""
+        [
+          {"title":"Bone Valley","author":"Lava for Good","feedUrl":"https://example.com/bone-valley","blurb":"Start here."},
+          {"title":"Adrift","author":"Blanchard House","feedUrl":"https://example.com/adrift"}
+        ]
+        """.utf8)
+
+        let entries = CuratedListLoader.load(from: json)
+
+        XCTAssertEqual(entries.map(\.title), ["Bone Valley", "Adrift"])
+        XCTAssertEqual(entries.first?.blurb, "Start here.")
+        XCTAssertNil(entries.last?.blurb)
+    }
+
+    func testCuratedListLoader_skipsAMalformedEntryButKeepsTheRest() {
+        let json = Data("""
+        [
+          {"title":"Bone Valley","author":"Lava for Good","feedUrl":"https://example.com/bone-valley"},
+          {"title":"Missing feed URL","author":"Nobody"},
+          {"title":"Unparseable URL","author":"Nobody","feedUrl":""},
+          {"title":"Adrift","author":"Blanchard House","feedUrl":"https://example.com/adrift"}
+        ]
+        """.utf8)
+
+        let entries = CuratedListLoader.load(from: json)
+
+        // The two malformed rows (missing required `feedUrl`, and an
+        // unparseable empty-string URL) are skipped, not fatal — the rest of
+        // the shelf still renders, in file order.
+        XCTAssertEqual(entries.map(\.title), ["Bone Valley", "Adrift"])
+    }
+
+    func testCuratedListLoader_missingOrEmptyFileYieldsEmptyNotFatal() {
+        XCTAssertEqual(CuratedListLoader.load(from: Data()), [])
+        XCTAssertEqual(CuratedListLoader.load(from: Data("not json".utf8)), [])
+        XCTAssertEqual(CuratedListLoader.load(from: Data("[]".utf8)), [])
+    }
+
+    func testCuratedEntry_projectsToSearchResultForSharedSubscribeFlow() {
+        let entry = CuratedEntry(
+            title: "Bone Valley",
+            author: "Lava for Good",
+            feedURL: URL(string: "https://example.com/bone-valley")!,
+            category: "True Crime",
+            blurb: "Start here."
+        )
+        let result = entry.searchResult
+        XCTAssertEqual(result.title, entry.title)
+        XCTAssertEqual(result.feedURL, entry.feedURL)
+        XCTAssertEqual(result.id, entry.id)
+    }
+}
+
+// MARK: - Per-host routing stub (Apple + PodcastIndex in the same test)
+
+/// A `URLProtocol` that returns a different canned response per request host,
+/// unlike `StubURLProtocol` (above), whose single global response can't
+/// represent "Apple fails, PodcastIndex succeeds" in one test without one
+/// session's setup clobbering the other's.
+private final class RoutingStubURLProtocol: URLProtocol {
+    struct Response { let data: Data; let status: Int }
+
+    static var responsesByHost: [String: Response] = [:]
+
+    static func makeSession(responses: [String: Response]) -> URLSession {
+        responsesByHost = responses
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [RoutingStubURLProtocol.self]
+        return URLSession(configuration: config)
+    }
+
+    override class func canInit(with request: URLRequest) -> Bool { true }
+    override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
+
+    override func startLoading() {
+        let url = request.url ?? URL(string: "https://example.com")!
+        let match = url.host.flatMap { Self.responsesByHost[$0] } ?? Response(data: Data(), status: 404)
+        let response = HTTPURLResponse(
+            url: url,
+            statusCode: match.status,
+            httpVersion: "HTTP/1.1",
+            headerFields: ["Content-Type": "application/json"]
+        )!
+        client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+        client?.urlProtocol(self, didLoad: match.data)
+        client?.urlProtocolDidFinishLoading(self)
+    }
+
+    override func stopLoading() {}
 }
 
 // MARK: - Test doubles

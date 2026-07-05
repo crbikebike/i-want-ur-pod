@@ -106,6 +106,38 @@ each episode's `summary` in the rows. (Author/publisher and category are still
 shown alongside, since RSS carries no structured host list — see E2-S1's
 "hosts / channel / studio" note.)
 
+## E1 — First-Run & Curated Discovery — composed, no kit mock
+
+E1-S1's once-only explainer is **not** a translation of `screens/first-run.html`
+(that file's real content is the multi-step onboarding wizard above, still
+unbuilt and out of scope). E1-S2's curated shelf reuses `result-row.html`'s
+shelf pattern (via `ResultShelf`, already implemented) rather than needing a
+new kit mock. Both new files below carry a `// Composed from
+docs/design/direction.md tokens — no design/kit source (see
+design/kit/MANIFEST.md).`-style header instead of a `design/kit/*.html`
+citation.
+
+| Swift file | Real bespoke content | Status |
+|---|---|---|
+| `IWantUrPod/Discover/FirstRunExplainerView.swift` | A small, once-only intro screen (badge, headline, one-paragraph pitch, "Get started") presented as a `fullScreenCover` on `DiscoverView`, gated by `FirstRunGate`. Deliberately lightweight — not the kit's unbuilt multi-step wizard. | ✅ Implemented |
+| `IWantUrPod/Discover/FirstRunGate.swift` | A `UserDefaults`-backed flag (`hasSeenFirstRun` / `markSeen()` / `reset()`) gating the explainer. Not a UI component — no kit citation needed; listed here for completeness since it's new in E1. | ✅ Implemented |
+| `IWantUrPod/Discover/CuratedShelf.swift` | Renders the bundled `curated-start-here.json` picks (`DirectoryKit.CuratedEntry`, decoded by `CuratedListLoader`) as a **vertical list of editorial cards** under a `SectionHeader`, in file order. Deliberately distinct from search's horizontal gradient `ResultShelf`: each card shows **real artwork** (`RemoteArtwork`, gradient fallback), title, author · category, corner `SubscribeButton`, and the editorial `blurb` as the hero — marked by a coral→mint gradient hairline (the section's one signature, echoing the Discover title's pulse-dot). Same per-item `SubscribeButton` state pattern as `ShelvesList`; tap a card → E2 detail by `feedUrl`. | ✅ Implemented |
+
+## Podcasts tab (E3-S1) — composed, no kit mock
+
+There is no `design/kit/screens/podcasts.html` or list-row mock — the kit's
+only flat-row pattern (`components/loading-skeleton.html`'s `.sk-row`) is
+called out above as a dead pattern with no consumer, and `result-row.html`'s
+real content is the horizontal category-shelf gallery, not a vertical list.
+Per the same precedent as Podcast Detail (E2), both files below carry a
+`// Composed from docs/design/direction.md tokens — no design/kit source (see
+design/kit/MANIFEST.md).` header instead of a `design/kit/*.html` citation.
+
+| Swift file | Real bespoke content | Status |
+|---|---|---|
+| `IWantUrPod/Library/PodcastsScreen.swift` | The Podcasts tab: a vertical list of subscribed shows, newest `dateAdded` first, each row a `RemoteArtwork` tile + title/author (mirrors `PodcastDetailView.swift`'s `EpisodeRow` shape, scaled down) that pushes its `feedURL` into the shared E2 detail screen. Empty state via `EmptyStateView(kind: .firstRun, …)`. Owns its own `NavigationStack` and reserves `AppShell.tabBarReservedPadding`. | ✅ Implemented |
+| `IWantUrPod/Library/PodcastsListProvider.swift` | The testable seam behind the list: fetches every `Podcast` from a `ModelContext` (or takes an already-fetched `[Podcast]`, for the live `@Query` case) and filters/sorts in plain Swift — avoiding the non-Sendable `KeyPath` warning a `#Predicate { $0.isSubscribed }` triggers under this project's strict concurrency setting (same precedent as `PodcastDetailViewModelTests.swift`). Not a UI component — no kit citation needed; listed here for completeness since it's new in E3. | ✅ Implemented |
+
 ## Shared Swift-side infrastructure (no single kit file; cross-cutting)
 
 | Swift file | Source | Notes |

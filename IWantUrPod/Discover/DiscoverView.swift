@@ -24,6 +24,11 @@ public struct DiscoverView: View {
     /// a pure view switch).
     @State private var path = NavigationPath()
 
+    /// Gates the once-only first-run explainer (E1-S1). Settings' reset
+    /// control clears the same `UserDefaults` key this reads on appear.
+    private let firstRunGate: FirstRunGate
+    @State private var showFirstRunExplainer = false
+
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
 
@@ -33,11 +38,13 @@ public struct DiscoverView: View {
     /// - Parameter coordinator: The search orchestrator injected from the app.
     public init(coordinator: SearchCoordinator) {
         _viewModel = State(initialValue: DiscoverViewModel(coordinator: coordinator))
+        self.firstRunGate = FirstRunGate()
     }
 
     /// Inject a pre-built view model (previews / testing).
-    init(viewModel: DiscoverViewModel) {
+    init(viewModel: DiscoverViewModel, firstRunGate: FirstRunGate = FirstRunGate()) {
         _viewModel = State(initialValue: viewModel)
+        self.firstRunGate = firstRunGate
     }
 
     public var body: some View {
@@ -71,6 +78,21 @@ public struct DiscoverView: View {
             .navigationDestination(for: URL.self) { feedURL in
                 PodcastDetailScreen(feedURL: feedURL)
             }
+        }
+        .onAppear {
+            // Gate check happens on every appearance (not just launch) so a
+            // Settings reset re-shows the explainer the next time this tab is
+            // visited, without needing to relaunch the app.
+            if !firstRunGate.hasSeenFirstRun {
+                showFirstRunExplainer = true
+            }
+        }
+        .fullScreenCover(isPresented: $showFirstRunExplainer) {
+            FirstRunExplainerView {
+                firstRunGate.markSeen()
+                showFirstRunExplainer = false
+            }
+            .themedPalette()
         }
     }
 
@@ -141,13 +163,26 @@ public struct DiscoverView: View {
     }
 
     private var firstRunState: some View {
-        EmptyStateView(
-            kind: .firstRun,
-            title: "Find your next listen",
-            message: "Search millions of shows by name, host, or topic — or start from a popular pick."
-        ) {
-            GhostButton(title: "True Crime") { viewModel.search(for: "True Crime") }
-            GhostButton(title: "Technology") { viewModel.search(for: "Technology") }
+        VStack(alignment: .leading, spacing: 0) {
+            // E1-S2: the bundled curated "start here" shelf, in file order.
+            // Empty (no entries) is silent — `CuratedShelf` renders nothing —
+            // so a missing/unreadable bundle file degrades to just the prompt
+            // below rather than an empty gap.
+            CuratedShelf(
+                entries: viewModel.curatedEntries,
+                onSubscribe: subscribe,
+                onSelect: { entry in path.append(entry.feedURL) }
+            )
+
+            EmptyStateView(
+                kind: .firstRun,
+                title: "Find your next listen",
+                message: "Search millions of shows by name, host, or topic — or start from a popular pick."
+            ) {
+                GhostButton(title: "True Crime") { viewModel.search(for: "True Crime") }
+                GhostButton(title: "Technology") { viewModel.search(for: "Technology") }
+            }
+            .padding(.top, viewModel.curatedEntries.isEmpty ? 0 : Spacing.sp6)
         }
     }
 

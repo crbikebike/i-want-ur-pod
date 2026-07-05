@@ -127,6 +127,12 @@ public struct SourcesView: View {
                 orderCard
                 footnote("Primary is searched first. If it's unavailable or finds nothing, we fall back to the next enabled source — results are never merged. Enable a second source to pick which one leads.")
                     .padding(.top, Spacing.sp3)
+
+                groupLabel("About")
+                    .padding(.top, Spacing.sp6)
+                showFirstRunButton
+                footnote("Re-show the one-time intro to i want ur pod's story-driven focus, next time you open Discover.")
+                    .padding(.top, Spacing.sp3)
             }
             .padding(.horizontal, Spacing.gutter)
             .padding(.top, Spacing.sp4)
@@ -229,6 +235,32 @@ public struct SourcesView: View {
 
     private var removeKeyButton: some View {
         GhostButton(title: "Remove PodcastIndex key") { showKeySheet = true }
+    }
+
+    // MARK: About (E1-S1 — re-show the first-run explainer)
+
+    /// Resets the ``FirstRunGate`` flag so `DiscoverView` presents the
+    /// once-only explainer again the next time Discover appears (no relaunch
+    /// needed — the gate is checked on every `onAppear`).
+    private var showFirstRunButton: some View {
+        card {
+            Button {
+                FirstRunGate().reset()
+            } label: {
+                HStack(spacing: Spacing.sp3) {
+                    Text("Show first-run intro again")
+                        .typeStyle(Typography.rowTitleStyle)
+                        .foregroundStyle(palette.text)
+                    Spacer(minLength: 0)
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(palette.textFaint)
+                }
+                .padding(.vertical, Spacing.sp3)
+                .padding(.horizontal, Spacing.sp4)
+            }
+            .buttonStyle(.plain)
+        }
     }
 
     // MARK: Search-order list (.srclist of .orow)

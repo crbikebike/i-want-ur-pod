@@ -10,9 +10,9 @@ import PodcastModels
 import DirectoryKit
 
 /// The app's root view: the selected tab's screen drawn full-bleed with the
-/// floating `LiquidGlassTabBar` pinned over the bottom. For M1 the Discover and
-/// Settings destinations are real screens; Podcasts, Up Next, and Downloads are
-/// placeholders that arrive in later milestones (see ROADMAP.md).
+/// floating `LiquidGlassTabBar` pinned over the bottom. For M1 the Discover,
+/// Podcasts, and Settings destinations are real screens; Up Next and Downloads
+/// are placeholders that arrive in later milestones (see ROADMAP.md).
 public struct AppShell: View {
 
     /// Vertical inset from the bottom safe area to the tab bar (kit `bottom: 22px`).
@@ -43,15 +43,15 @@ public struct AppShell: View {
         }
     }
 
-    /// Resolve the selected tab to its screen. Discover and Settings are the two
-    /// live M1 destinations; the rest are milestone placeholders.
+    /// Resolve the selected tab to its screen. Discover, Podcasts, and Settings
+    /// are the live M1 destinations; the rest are milestone placeholders.
     @ViewBuilder
     private var content: some View {
         switch selection {
         case .discover:
             DiscoverScreen()
         case .podcasts:
-            PlaceholderScreen(tab: .podcasts)
+            PodcastsScreen()
         case .upNext:
             PlaceholderScreen(tab: .upNext)
         case .downloads:

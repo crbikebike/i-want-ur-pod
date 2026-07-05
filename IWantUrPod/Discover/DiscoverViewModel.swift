@@ -40,6 +40,12 @@ public final class DiscoverViewModel {
     /// The current screen state. Read-only to callers; the model owns transitions.
     public private(set) var state: State = .firstRun
 
+    /// The bundled curated "start here" picks (E1-S2), decoded once at init via
+    /// DirectoryKit's pure `CuratedListLoader`. Rendered by `DiscoverView` on
+    /// the `.firstRun` (empty-query/idle) state, in file order. Empty when the
+    /// bundle resource is missing or unreadable — never fatal.
+    public private(set) var curatedEntries: [CuratedEntry]
+
     private let coordinator: SearchCoordinator
     private let debounce: Duration
     private let minimumCharacters: Int
@@ -51,14 +57,32 @@ public final class DiscoverViewModel {
     ///   - coordinator: The search orchestrator (primary + fallback sources).
     ///   - debounce: How long to wait after the last keystroke before searching.
     ///   - minimumCharacters: The shortest query that triggers a search.
+    ///   - curatedBundle: Where to look up `curated-start-here.json` — overridable
+    ///     for previews/tests; defaults to the app's main bundle.
     public init(
         coordinator: SearchCoordinator,
         debounce: Duration = .milliseconds(320),
-        minimumCharacters: Int = 2
+        minimumCharacters: Int = 2,
+        curatedBundle: Bundle = .main
     ) {
         self.coordinator = coordinator
         self.debounce = debounce
         self.minimumCharacters = minimumCharacters
+        self.curatedEntries = Self.loadCuratedEntries(from: curatedBundle)
+    }
+
+    /// App owns the bundle I/O (per docs/spec/curated-list.schema.md); the
+    /// decoding itself stays in DirectoryKit's pure `CuratedListLoader`. A
+    /// missing resource or unreadable file resolves to `Data()`, which the
+    /// loader maps to `[]` rather than throwing.
+    private static func loadCuratedEntries(from bundle: Bundle) -> [CuratedEntry] {
+        guard
+            let url = bundle.url(forResource: "curated-start-here", withExtension: "json"),
+            let data = try? Data(contentsOf: url)
+        else {
+            return []
+        }
+        return CuratedListLoader.load(from: data)
     }
 
     // MARK: - Intents
