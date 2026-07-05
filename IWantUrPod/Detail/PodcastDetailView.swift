@@ -11,6 +11,8 @@ import SwiftUI
 import SwiftData
 import DesignSystem
 import PodcastModels
+import DownloadKit
+import PlaybackKit
 
 /// Presents a loaded/loading/error `PodcastDetailViewModel`: large artwork,
 /// title, author/publisher, a Subscribe control (E2-S2), and the episode list
@@ -174,13 +176,27 @@ public struct PodcastDetailView: View {
     }
 }
 
-// MARK: - Episode row (E2-S1 list item, E2-S3 played marker / remaining hint)
+// MARK: - Episode row (E2-S1 list item, E2-S3 played marker / remaining hint,
+// E4-S1 download control)
 
-private struct EpisodeRow: View {
+struct EpisodeRow: View {
     let episode: Episode
     let artworkURL: URL?
 
+    /// Whether the Play affordance renders for `episode` — the exact
+    /// predicate `playControl` below switches on. Exposed as a static, pure
+    /// function (rather than left inline) so `IWantUrPodTests` can assert
+    /// "Play offered iff downloaded" against the real rendering condition
+    /// without a view-inspection dependency. Not `private`/`fileprivate` (and
+    /// the type itself no longer `private`) for the same reason.
+    static func isPlayOffered(for episode: Episode) -> Bool {
+        episode.downloadState.isDownloaded
+    }
+
     @Environment(\.palette) private var palette
+    @Environment(\.modelContext) private var modelContext
+    @Environment(DownloadManager.self) private var downloadManager
+    @Environment(PlaybackEngine.self) private var playbackEngine
 
     var body: some View {
         HStack(alignment: .top, spacing: Spacing.sp3) {
@@ -200,12 +216,21 @@ private struct EpisodeRow: View {
                 }
 
                 playedMarker
+                HStack(spacing: Spacing.sp2) {
+                    downloadControl
+                    playControl
+                }
+                .padding(.top, Spacing.sp1)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .accessibilityElement(children: .combine)
     }
 
+    /// Played marker / remaining-time hint (E2-S3 shell, made live by E4-S2's
+    /// writes to `Episode.playbackProgress`). Reads `Episode.isPlayed`
+    /// (model-computed, ≥0.98) and `Episode.remainingTime` directly — no
+    /// duplicated threshold logic here.
     @ViewBuilder
     private var playedMarker: some View {
         HStack(spacing: Spacing.sp1) {
@@ -223,6 +248,88 @@ private struct EpisodeRow: View {
             }
         }
         .padding(.top, 2)
+    }
+
+    // MARK: - Play control (E4-S2)
+    //
+    // Composed from tokens — no design/kit mock for this affordance (see
+    // design/kit/MANIFEST.md's Podcast Detail entry, which already covers
+    // this file as composed rather than kit-translated). Play is offered
+    // **iff** the episode is downloaded (playback-state-machine.md's
+    // download-first guard); otherwise only the Download control above
+    // shows.
+    @ViewBuilder
+    private var playControl: some View {
+        if Self.isPlayOffered(for: episode) {
+            if isCurrentAndPlaying {
+                SecondaryButton(title: "Pause") { playbackEngine.pause() }
+            } else if isCurrentAndPaused {
+                PrimaryButton(title: "Resume") { playbackEngine.resume() }
+            } else {
+                PrimaryButton(title: "Play") { playbackEngine.load(episode: episode, context: modelContext) }
+            }
+        }
+    }
+
+    private var isCurrentEpisode: Bool {
+        playbackEngine.currentEpisode?.id == episode.id
+    }
+
+    private var isCurrentAndPlaying: Bool {
+        isCurrentEpisode && playbackEngine.state == .playing
+    }
+
+    private var isCurrentAndPaused: Bool {
+        isCurrentEpisode && playbackEngine.state == .paused
+    }
+
+    // MARK: - Download control (E4-S1)
+    //
+    // Composed from tokens — no design/kit mock for this affordance (see
+    // design/kit/MANIFEST.md's Podcast Detail entry). Play itself is E4-S2's
+    // responsibility (playback-state-machine.md: Play is offered only when
+    // `.downloaded`); this row never offers Play, only Download/Downloaded.
+    @ViewBuilder
+    private var downloadControl: some View {
+        switch episode.downloadState {
+        case .notDownloaded:
+            SecondaryButton(title: "Download") { startDownload() }
+
+        case .downloading(let progress):
+            HStack(spacing: Spacing.sp2) {
+                ProgressView(value: progress)
+                    .tint(palette.accent)
+                    .frame(width: 72)
+                Text("\(Int((progress * 100).rounded()))%")
+                    .typeStyle(Typography.subheadStyle)
+                    .foregroundStyle(palette.textFaint)
+            }
+
+        case .downloaded:
+            HStack(spacing: Spacing.sp1) {
+                Image(systemName: "arrow.down.circle.fill")
+                    .foregroundStyle(palette.accent2)
+                    .font(.system(size: 12, weight: .bold))
+                Text("Downloaded")
+                    .typeStyle(Typography.subheadStyle)
+                    .foregroundStyle(palette.textFaint)
+            }
+
+        case .failed(let message):
+            HStack(spacing: Spacing.sp2) {
+                SecondaryButton(title: "Retry") { startDownload() }
+                if let message {
+                    Text(message)
+                        .typeStyle(Typography.subheadStyle)
+                        .foregroundStyle(palette.textFaint)
+                        .lineLimit(1)
+                }
+            }
+        }
+    }
+
+    private func startDownload() {
+        Task { await downloadManager.download(episode, context: modelContext) }
     }
 
     /// "N min left" from `Episode.remainingTime` — the E2-S3 shell hint,
@@ -315,6 +422,8 @@ private func makePreviewModelContext() -> ModelContext {
         PodcastDetailView(viewModel: PodcastDetailViewModel(previewPodcast: podcast, modelContext: context))
     }
     .themedPalette()
+    .environment(DownloadManager())
+    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
     .environment(\.colorScheme, .dark)
 }
 
@@ -325,6 +434,8 @@ private func makePreviewModelContext() -> ModelContext {
         PodcastDetailView(viewModel: PodcastDetailViewModel(previewPodcast: podcast, modelContext: context))
     }
     .themedPalette()
+    .environment(DownloadManager())
+    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
     .environment(\.colorScheme, .dark)
 }
 
@@ -335,6 +446,8 @@ private func makePreviewModelContext() -> ModelContext {
         PodcastDetailView(viewModel: PodcastDetailViewModel(previewPodcast: podcast, modelContext: context))
     }
     .themedPalette()
+    .environment(DownloadManager())
+    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
     .environment(\.colorScheme, .light)
 }
 
@@ -345,6 +458,8 @@ private func makePreviewModelContext() -> ModelContext {
         PodcastDetailView(viewModel: PodcastDetailViewModel(previewPodcast: podcast, modelContext: context))
     }
     .themedPalette()
+    .environment(DownloadManager())
+    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
     .environment(\.colorScheme, .light)
 }
 
@@ -354,6 +469,8 @@ private func makePreviewModelContext() -> ModelContext {
         PodcastDetailView(viewModel: PodcastDetailViewModel(previewState: .loading, modelContext: context))
     }
     .themedPalette()
+    .environment(DownloadManager())
+    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
     .environment(\.colorScheme, .dark)
 }
 
@@ -366,6 +483,8 @@ private func makePreviewModelContext() -> ModelContext {
         ))
     }
     .themedPalette()
+    .environment(DownloadManager())
+    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
     .environment(\.colorScheme, .dark)
 }
 #endif
