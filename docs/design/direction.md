@@ -189,6 +189,7 @@ titles, labels, tabs) uses `--font`.
 | Large title | 2.32rem | 800 | -0.02em |
 | Section (h2) | 1.34rem | 800 | -0.015em |
 | Nav title (inline) | 1.06rem | 800 | -0.01em |
+| Shelf header (`.sh-title`) | 1.18rem | 800 | -0.015em |
 | Row title | 1rem | 700 | -0.01em |
 | Body / input | 1rem | 500 | — |
 | Subhead / author | 0.82rem | 500 | — |
@@ -340,17 +341,58 @@ animation.
 
 ## 10. Component & screen inventory
 
-- **Foundations:** `tokens.html`.
-- **Components:** search-field, sources-checklist, result-row, result-card,
-  subscribe-button (default / subscribing / subscribed), section-header,
-  buttons (primary / secondary / ghost), tab-bar (floating Liquid Glass tab
-  bar), no-results. `sources-checklist.html` is the canonical demonstration
-  of source selection: Apple Podcasts is primary and on by default with no
-  key required; PodcastIndex is opt-in and stays inactive until the user
-  adds their own API key.
-- **Discover screens (iPhone-framed):** first-run, typing, loading,
-  no-results, error.
-- **Settings screens (iPhone-framed):** settings-sources.
+**This section is a summary only. `design/kit/MANIFEST.md` is the enforced,
+authoritative, per-file inventory** (path, real bespoke content, Swift
+implementation, status) — check it, not just this list, before translating
+or extending anything.
+
+**The "SHARED KIT EXTRAS" trap:** every file under `design/kit/` mixes a
+unique, bespoke top section with an identical copy-pasted boilerplate CSS
+block near the bottom (`.state`, `.chips`, `.sk-row`, `.cardgrid`, `.btn`,
+etc. — repeated verbatim across files for authoring consistency). That
+shared block is **not** the file's real content. Two components were
+mistranslated by reading the shared block instead of the file's actual
+bespoke markup — `ResultRow.swift` (fixed: rebuilt as `ResultShelf`/`PodCard`/
+`PodGrid`, the kit's actual results pattern) and the Discover first-run state
+(not yet fixed — see `design/kit/MANIFEST.md`). Always identify a file's
+bespoke content first, and confirm it's actually *instantiated in the body* —
+not just declared in the `<style>` block — before treating a CSS class as
+real; `.list`/`.row` looked like a legitimate shared pattern but turned out to
+be dead code nowhere used in any current screen.
+
+- **Foundations:** `design/kit/tokens.html`.
+- **Components** (`design/kit/components/`):
+  - `search-field.html` — search input (default/focused/filled states).
+  - `sources-checklist.html` — the canonical demonstration of source
+    selection: Apple Podcasts is primary and on by default with no key
+    required; PodcastIndex is opt-in and stays inactive until the user adds
+    their own API key.
+  - `result-row.html` — **category shelves** (horizontal rails grouped by
+    taxonomy, "View all" → 2-up grid), despite the name. Not a flat row —
+    confirmed the kit's only current results pattern. Implemented as
+    `ResultShelf`/`PodCard`/`PodGrid`.
+  - `result-card.html` — 2-up poster grid card.
+  - `subscribe-button.html` — circular +/check control (default/subscribing/subscribed).
+  - `section-header.html` — the generic label band (simpler, non-shelf
+    header; shelves get their own header with a "View all" link).
+  - `buttons.html` — primary / secondary / ghost (ghost ⇔ kit's `.btn-tertiary`).
+  - `tab-bar.html` — floating Liquid Glass tab bar.
+  - `no-results.html` — the empty-state card in isolation (badge/title/message/actions).
+  - `loading-skeleton.html` — flat shimmering `.sk-row` list placeholder.
+    **Dead pattern, no consumer**: `screens/loading.html`'s shelf/rail
+    skeleton is the one actually used (below).
+- **Discover screens** (`design/kit/screens/`, iPhone-framed):
+  - `first-run.html` — **a multi-step guided onboarding wizard** (existing-app
+    import via OPML, or favorite-show/topic pickers → personalized shelf
+    results), not a static empty state. **No Swift implementation exists**;
+    the Discover `.firstRun` state currently renders a placeholder
+    `EmptyStateView`, not this flow — see `EmptyStateView.swift`.
+  - `typing.html` — search field mid-typing + a typeahead suggestions drawer.
+  - `loading.html` — in-screen "Searching for…" over shimmering shelf/rail skeletons.
+  - `no-results.html` — full screen wrapping the `no-results.html` component card.
+  - `error.html` — full screen wrapping the same `.state` card, error copy.
+- **Settings screens:** `settings-sources.html` — full Settings screen
+  wrapping the `sources-checklist.html` rows.
 
 Discover screens keep the same header stack (large title → search) so the
 source-of-truth chrome is identical across states; only the results region

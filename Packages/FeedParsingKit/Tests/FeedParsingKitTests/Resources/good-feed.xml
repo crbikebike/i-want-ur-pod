@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>The Story Hour</title>
+    <description>A weekly show about the stories behind the stories.</description>
+    <link>https://example.com/story-hour</link>
+    <itunes:author>Story Hour Media</itunes:author>
+    <itunes:image href="https://example.com/art.jpg"/>
+    <itunes:category text="Society &amp; Culture"/>
+    <category>Documentary</category>
+    <item>
+      <title>Episode One: The Beginning</title>
+      <guid>story-hour-ep-1</guid>
+      <description>The first episode of our story.</description>
+      <pubDate>Wed, 01 Jan 2025 08:00:00 GMT</pubDate>
+      <itunes:duration>01:02:03</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <enclosure url="https://example.com/audio/ep1.mp3" type="audio/mpeg" length="123456"/>
+    </item>
+    <item>
+      <title>Episode Two: The Middle</title>
+      <guid>story-hour-ep-2</guid>
+      <itunes:summary>The middle of the story.</itunes:summary>
+      <pubDate>Wed, 08 Jan 2025 08:00:00 GMT</pubDate>
+      <itunes:duration>45:30</itunes:duration>
+      <itunes:explicit>yes</itunes:explicit>
+      <itunes:image href="https://example.com/art-ep2.jpg"/>
+      <enclosure url="https://example.com/audio/ep2.mp3" type="audio/mpeg" length="654321"/>
+    </item>
+  </channel>
+</rss>
