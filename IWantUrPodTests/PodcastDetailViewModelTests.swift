@@ -152,18 +152,30 @@ final class PodcastDetailViewModelTests: XCTestCase {
                        "An episode with no artwork should fall back to the show artwork.")
     }
 
-    func test_load_whenAlreadyInStore_showsExistingPodcastWithoutFetching() async throws {
+    func test_load_whenAlreadyInStoreWithEpisodes_showsExistingWithoutFetching() async throws {
         let container = try makeContainer()
         let context = ModelContext(container)
 
-        let existing = Podcast(title: "Already Subscribed", feedURL: feedURL, isSubscribed: true)
+        // A show that already has its episodes cached — the store-first fast
+        // path applies and must NOT hit the network.
+        let cached = Episode(
+            guid: "cached-1",
+            title: "Cached Episode",
+            audioURL: URL(string: "https://cdn.example.com/cached-1.mp3")!
+        )
+        let existing = Podcast(
+            title: "Already Subscribed",
+            feedURL: feedURL,
+            isSubscribed: true,
+            episodes: [cached]
+        )
         context.insert(existing)
         try context.save()
 
         // A fetcher that would fail the test if it were ever called.
         struct FailIfCalled: FeedFetching {
             func fetch(url: URL) async throws -> ParsedFeed {
-                XCTFail("Store-first load should not fetch when the podcast already exists.")
+                XCTFail("Store-first load should not fetch when the podcast already has episodes.")
                 throw FeedError.malformedFeed(reason: "unexpected fetch")
             }
         }
@@ -176,6 +188,30 @@ final class PodcastDetailViewModelTests: XCTestCase {
         }
         XCTAssertEqual(podcast.title, "Already Subscribed")
         XCTAssertTrue(podcast.isSubscribed)
+        XCTAssertEqual(viewModel.episodes.count, 1)
+    }
+
+    /// Regression: a show subscribed from Discover/curated is inserted with
+    /// metadata only (no episodes). Opening its detail must fetch the feed to
+    /// populate episodes — not show an empty list — while preserving the
+    /// existing subscription.
+    func test_load_whenInStoreButHasNoEpisodes_fetchesToPopulateAndPreservesSubscription() async throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+
+        let bare = Podcast(title: "Subscribed, No Episodes", feedURL: feedURL, isSubscribed: true)
+        context.insert(bare)
+        try context.save()
+
+        let ep = makeEpisode(guid: "e1", title: "Episode 1", publishDate: Date(timeIntervalSince1970: 1_000))
+        let fetcher = StubFetcher(result: .success(makeFeed(episodes: [ep])))
+
+        let viewModel = PodcastDetailViewModel(feedURL: feedURL, modelContext: context, fetcher: fetcher)
+        await viewModel.load()
+
+        XCTAssertEqual(viewModel.episodes.count, 1, "A stored show with no episodes must fetch to populate them.")
+        XCTAssertTrue(viewModel.isSubscribed, "Populating episodes must not drop the existing subscription.")
+        XCTAssertEqual(try context.fetch(FetchDescriptor<Podcast>()).count, 1, "No duplicate Podcast row.")
     }
 
     func test_load_whenFetchFails_reportsTypedErrorMessage() async throws {

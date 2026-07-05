@@ -66,15 +66,36 @@ public final class PodcastDetailViewModel {
             // isn't `Sendable` (an error under the Swift 6 language mode). The
             // podcast list is local-first and modest in size, so filtering in
             // Swift is the simpler, warning-free option.
-            if let existing = try modelContext.fetch(FetchDescriptor<Podcast>()).first(where: { $0.feedURL == feedURL }) {
+            let existing = try modelContext.fetch(FetchDescriptor<Podcast>()).first(where: { $0.feedURL == feedURL })
+
+            // Store-first fast path — but ONLY when the stored show already has
+            // its episodes. A show subscribed from Discover/curated is inserted
+            // metadata-only (no episodes) by the subscribe flow, so an existing
+            // row with an empty `episodes` must still fetch the feed to populate
+            // them. `FeedUpsert` is idempotent and preserves user-owned fields
+            // (isSubscribed/dateAdded/downloadState/playbackProgress), so
+            // upserting onto the existing row fills in episodes without dropping
+            // the subscription.
+            if let existing, !existing.episodes.isEmpty {
                 state = .loaded(existing)
                 return
             }
 
-            let parsed = try await fetcher.fetch(url: feedURL)
-            let podcast = try FeedUpsert.upsert(parsed, into: modelContext)
-            try modelContext.save()
-            state = .loaded(podcast)
+            do {
+                let parsed = try await fetcher.fetch(url: feedURL)
+                let podcast = try FeedUpsert.upsert(parsed, into: modelContext)
+                try modelContext.save()
+                state = .loaded(podcast)
+            } catch {
+                // A refresh failed (e.g. offline). If we have a cached row —
+                // even a bare, episode-less one — show it so the header still
+                // renders, rather than an error screen.
+                if let existing {
+                    state = .loaded(existing)
+                } else {
+                    state = .error(Self.message(for: error))
+                }
+            }
         } catch {
             state = .error(Self.message(for: error))
         }
