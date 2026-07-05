@@ -1,0 +1,115 @@
+# XcodeGen project spec for "i want ur pod".
+# Source of truth for the generated IWantUrPod.xcodeproj (the .xcodeproj itself
+# is never committed — see .gitignore). Regenerate with: xcodegen generate
+#
+# Build refs: ROADMAP.md §Building / §M1 (XcodeGen scaffold, seven local Swift
+# packages, thin SwiftUI app target, CarPlay seam + entitlement staged for M3).
+name: IWantUrPod
+
+options:
+  bundleIdPrefix: com.iwanturpod
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+  minimumXcodeGenVersion: "2.38.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    DEVELOPMENT_TEAM: ""            # filled in per-developer / signing profile
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SWIFT_STRICT_CONCURRENCY: complete
+
+# Local Swift packages — the seven milestone modules under Packages/*.
+# Names match each package's Package.swift `name`. Milestones M2–M5 packages
+# (FeedParsingKit, PlaybackKit, DownloadKit, ChapterKit) are stubs today but
+# are linked now so the seam exists and later agents drop code straight in.
+packages:
+  DesignSystem:
+    path: Packages/DesignSystem
+  PodcastModels:
+    path: Packages/PodcastModels
+  DirectoryKit:
+    path: Packages/DirectoryKit
+  FeedParsingKit:
+    path: Packages/FeedParsingKit
+  PlaybackKit:
+    path: Packages/PlaybackKit
+  DownloadKit:
+    path: Packages/DownloadKit
+  ChapterKit:
+    path: Packages/ChapterKit
+
+targets:
+  IWantUrPod:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: IWantUrPod
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.iwanturpod.app
+        PRODUCT_NAME: IWantUrPod
+        INFOPLIST_FILE: IWantUrPod/App/Info.plist
+        CODE_SIGN_ENTITLEMENTS: IWantUrPod/App/IWantUrPod.entitlements
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        SWIFT_EMIT_LOC_STRINGS: YES
+    dependencies:
+      - package: DesignSystem
+        product: DesignSystem
+      - package: PodcastModels
+        product: PodcastModels
+      - package: DirectoryKit
+        product: DirectoryKit
+      - package: FeedParsingKit
+        product: FeedParsingKit
+      - package: PlaybackKit
+        product: PlaybackKit
+      - package: DownloadKit
+        product: DownloadKit
+      - package: ChapterKit
+        product: ChapterKit
+
+  IWantUrPodTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: IWantUrPodTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.iwanturpod.app.tests
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: IWantUrPod
+      - package: PodcastModels
+        product: PodcastModels
+      - package: DirectoryKit
+        product: DirectoryKit
+
+schemes:
+  IWantUrPod:
+    build:
+      targets:
+        IWantUrPod: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - IWantUrPodTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
