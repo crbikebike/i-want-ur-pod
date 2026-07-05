@@ -64,7 +64,10 @@ final class DownloadManagerTests: XCTestCase {
 
         XCTAssertEqual(episode.downloadState, .downloaded)
         XCTAssertTrue(store.fileExists(forGuid: episode.guid))
-        XCTAssertEqual(store.localURL(forGuid: episode.guid), manager.localURL(for: episode))
+        let resolved = try XCTUnwrap(manager.localURL(for: episode))
+        XCTAssertEqual(resolved, store.existingFileURL(forGuid: episode.guid))
+        // A real, decodable audio extension (never the old `.audio`).
+        XCTAssertEqual(resolved.pathExtension, "mp3")
     }
 
     // MARK: - Failure -> retry
@@ -130,10 +133,9 @@ final class DownloadManagerTests: XCTestCase {
 
         await manager.download(episode, context: context)
 
-        let expectedPath = store.localURL(forGuid: "abc-123-guid")
+        let expectedPath = try XCTUnwrap(store.existingFileURL(forGuid: "abc-123-guid"))
         XCTAssertTrue(FileManager.default.fileExists(atPath: expectedPath.path))
-
-        // Same guid always maps to the same path (stable across relaunches).
-        XCTAssertEqual(store.localURL(forGuid: "abc-123-guid"), expectedPath)
+        // Written with a real audio extension so AVFoundation can decode it.
+        XCTAssertEqual(expectedPath.pathExtension, "mp3")
     }
 }

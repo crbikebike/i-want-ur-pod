@@ -2,20 +2,34 @@
 // Architecture source: this story's build brief. `DownloadState` carries no
 // file path (frozen model, PodcastModels/DownloadState.swift), so the local
 // file location is derived on demand from `Episode.guid`. This is also how a
-// later Play (E4-S2) resolves the local URL for a `.downloaded` episode —
-// hence `localURL(forGuid:)` is public.
+// later Play (E4-S2) resolves the local URL for a `.downloaded` episode.
+//
+// The stored file keeps a REAL audio extension (e.g. `.mp3`, `.m4a`): AVURLAsset
+// / AVPlayer resolve the media format from the file extension's UTI, and a
+// non-media extension (the old `.audio`) makes an otherwise-valid MP3
+// undecodable ("media format not supported", AVFoundation error -11828). The
+// digest names the file; the extension is derived from the enclosure URL. The
+// reader resolves by the digest stem (any extension), so it never depends on
+// which extension was chosen at write time.
 import Foundation
 import CryptoKit
 
-/// Maps an episode's `guid` to a stable local file URL under Application
-/// Support, and moves completed downloads into place there.
+/// Maps an episode's `guid` to a stable local file under Application Support,
+/// and moves completed downloads into place there.
 ///
-/// The mapping is a pure function of `guid` (via a SHA-256 hex digest, so
-/// path length/character-set are always filesystem-safe regardless of what
-/// characters a feed's `<guid>` contains) — no state to persist, and stable
-/// across app relaunches.
+/// The stem is a pure function of `guid` (a SHA-256 hex digest, so path
+/// length/character-set are always filesystem-safe regardless of the feed's
+/// `<guid>`); the extension reflects the audio container so AVFoundation can
+/// decode it.
 public struct DownloadStore {
     private let baseDirectory: URL
+
+    /// Audio container extensions we accept from a feed's enclosure URL. Any
+    /// other (or a missing) extension falls back to `mp3` — the podcast norm.
+    static let knownAudioExtensions: Set<String> = [
+        "mp3", "m4a", "m4b", "aac", "mp4", "wav", "aif", "aiff", "caf",
+        "flac", "opus", "ogg", "oga"
+    ]
 
     /// - Parameter baseDirectory: Override for tests (a temp directory).
     ///   Defaults to `<Application Support>/Downloads` for the live app.
@@ -31,44 +45,82 @@ public struct DownloadStore {
         }
     }
 
-    /// The deterministic local file URL for `guid`. Stable across calls and
-    /// across relaunches; does not imply the file exists yet.
-    public func localURL(forGuid guid: String) -> URL {
+    /// A validated, filesystem-safe audio extension for `sourceURL`'s enclosure:
+    /// the URL's path extension if it's a recognized audio container, else `mp3`.
+    public static func audioExtension(for sourceURL: URL) -> String {
+        let ext = sourceURL.pathExtension.lowercased()
+        return knownAudioExtensions.contains(ext) ? ext : "mp3"
+    }
+
+    /// The write destination for `guid` with the given (already-validated)
+    /// audio `fileExtension`. Does not imply the file exists yet.
+    public func destinationURL(forGuid guid: String, fileExtension: String) -> URL {
         baseDirectory
             .appendingPathComponent(Self.digest(for: guid))
-            .appendingPathExtension("audio")
+            .appendingPathExtension(Self.knownAudioExtensions.contains(fileExtension.lowercased()) ? fileExtension.lowercased() : "mp3")
+    }
+
+    /// The existing local file for `guid`, whatever its extension — the read
+    /// side resolves by digest stem so it's independent of the write-time
+    /// extension. `nil` if no download is present.
+    public func existingFileURL(forGuid guid: String) -> URL? {
+        let stem = Self.digest(for: guid)
+        guard let entries = try? FileManager.default.contentsOfDirectory(
+            at: baseDirectory,
+            includingPropertiesForKeys: nil
+        ) else { return nil }
+        // Ignore the legacy `.audio` extension: files written by earlier builds
+        // are undecodable by AVFoundation, so treat them as absent (a
+        // re-download replaces them with a real audio extension) rather than
+        // resolving to an unplayable file.
+        return entries.first {
+            $0.deletingPathExtension().lastPathComponent == stem
+                && $0.pathExtension.lowercased() != "audio"
+        }
     }
 
     /// Whether a complete local file already exists for `guid`.
     public func fileExists(forGuid guid: String) -> Bool {
-        FileManager.default.fileExists(atPath: localURL(forGuid: guid).path)
+        existingFileURL(forGuid: guid) != nil
     }
 
     /// Moves a completed download's temp file into the store at `guid`'s
-    /// deterministic path, creating the Downloads directory if needed and
-    /// replacing any prior file at that path (a retry after `.failed`, or a
-    /// re-download).
+    /// deterministic stem with `fileExtension`, creating the Downloads
+    /// directory if needed and replacing any prior file for this guid (a retry
+    /// after `.failed`, a re-download, or a stale legacy-extension file).
     ///
-    /// - Returns: The destination URL (same as ``localURL(forGuid:)``).
+    /// - Returns: The destination URL.
     @discardableResult
-    public func moveIntoStore(from tempURL: URL, guid: String) throws -> URL {
+    public func moveIntoStore(from tempURL: URL, guid: String, fileExtension: String) throws -> URL {
         try FileManager.default.createDirectory(
             at: baseDirectory,
             withIntermediateDirectories: true
         )
-        let destination = localURL(forGuid: guid)
-        if FileManager.default.fileExists(atPath: destination.path) {
-            try FileManager.default.removeItem(at: destination)
-        }
+        // Purge any prior file(s) for this guid — including a legacy `.audio`
+        // one that `existingFileURL` intentionally ignores — so a re-download
+        // never leaves an orphan behind.
+        purgeFiles(forGuid: guid)
+        let destination = destinationURL(forGuid: guid, fileExtension: fileExtension)
         try FileManager.default.moveItem(at: tempURL, to: destination)
         return destination
     }
 
-    /// Removes the local file for `guid`, if any. No-op if nothing is there.
+    /// Removes the local file(s) for `guid`, if any (including a legacy
+    /// `.audio` file). No-op if nothing is there.
     public func remove(forGuid guid: String) throws {
-        let url = localURL(forGuid: guid)
-        guard FileManager.default.fileExists(atPath: url.path) else { return }
-        try FileManager.default.removeItem(at: url)
+        purgeFiles(forGuid: guid)
+    }
+
+    /// Deletes every file whose stem matches `guid`'s digest, any extension.
+    private func purgeFiles(forGuid guid: String) {
+        let stem = Self.digest(for: guid)
+        guard let entries = try? FileManager.default.contentsOfDirectory(
+            at: baseDirectory,
+            includingPropertiesForKeys: nil
+        ) else { return }
+        for entry in entries where entry.deletingPathExtension().lastPathComponent == stem {
+            try? FileManager.default.removeItem(at: entry)
+        }
     }
 
     private static func digest(for guid: String) -> String {

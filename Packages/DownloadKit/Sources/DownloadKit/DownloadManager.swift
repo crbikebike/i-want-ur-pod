@@ -60,7 +60,11 @@ public final class DownloadManager {
                 let monotonic = Self.clampMonotonic(value, previous: episode.downloadState.fractionComplete)
                 episode.downloadState = .downloading(progress: monotonic)
             }
-            try store.moveIntoStore(from: tempURL, guid: episode.guid)
+            // Preserve a real audio extension so AVFoundation can decode the
+            // file on playback (a non-media extension makes a valid MP3
+            // unplayable — the `.audio` bug). Derived from the enclosure URL.
+            let ext = DownloadStore.audioExtension(for: episode.audioURL)
+            try store.moveIntoStore(from: tempURL, guid: episode.guid, fileExtension: ext)
             episode.downloadState = .downloaded
             try context.save()
         } catch {
@@ -72,7 +76,7 @@ public final class DownloadManager {
     /// The local file URL for a `.downloaded` episode (E4-S2 resolves
     /// playback against this). `nil` when no file is on disk yet.
     public func localURL(for episode: Episode) -> URL? {
-        store.fileExists(forGuid: episode.guid) ? store.localURL(forGuid: episode.guid) : nil
+        store.existingFileURL(forGuid: episode.guid)
     }
 
     /// Clamps `new` so progress reported to the UI never decreases relative
