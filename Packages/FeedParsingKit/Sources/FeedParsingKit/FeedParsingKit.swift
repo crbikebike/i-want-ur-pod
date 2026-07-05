@@ -1,9 +1,11 @@
-// FeedParsingKit — M2 milestone namespace stub.
-
-/// Namespace for the RSS/Atom podcast feed parsing layer.
+// FeedParsingKit — RSS/iTunes podcast feed parsing + upsert.
+// Field mapping source of truth: docs/spec/feed-field-mapping.md
+//
+// Layering (see individual files for detail):
+//  - ParsedFeed / ParsedEpisode / FeedError: pure value types, no SwiftData.
+//  - FeedParser: streaming XMLParser decode of a feed body → ParsedFeed.
+//  - FeedFetcher: URLSession fetch entry point, maps HTTP/network failures
+//    to FeedError and hands successful bodies to FeedParser.
+//  - FeedUpsert: the only file in this target that imports SwiftData —
+//    matches/creates Podcast + Episode rows from a ParsedFeed.
 public enum FeedParsingKit {}
-
-// MARK: - Milestone M2
-// Lands here: RSS/Atom + iTunes/Podcast-namespace feed parsing, streaming
-// XML decoding into PodcastModels' Podcast/Episode/Chapter, feed fetching,
-// conditional GET / ETag caching, and enclosure/artwork resolution.

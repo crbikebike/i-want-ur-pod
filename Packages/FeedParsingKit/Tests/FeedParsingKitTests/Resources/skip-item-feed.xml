@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Mixed Bag</title>
+    <itunes:author>Mixed Bag Media</itunes:author>
+    <item>
+      <title>Good Episode</title>
+      <guid>mixed-bag-ep-1</guid>
+      <pubDate>Wed, 01 Jan 2025 08:00:00 GMT</pubDate>
+      <enclosure url="https://example.com/audio/good.mp3" type="audio/mpeg" length="1"/>
+    </item>
+    <item>
+      <title>No Guid, No Enclosure</title>
+      <description>This item has neither a guid nor an enclosure and must be skipped.</description>
+    </item>
+  </channel>
+</rss>

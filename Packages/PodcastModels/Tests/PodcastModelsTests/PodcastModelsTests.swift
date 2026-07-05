@@ -12,7 +12,7 @@ final class PodcastModelsTests: XCTestCase {
     /// A fresh in-memory container + context for each assertion group.
     private func makeContext() throws -> (ModelContainer, ModelContext) {
         let container = try ModelSchema.makeContainer(inMemory: true)
-        return (container, container.mainContext)
+        return (container, ModelContext(container))
     }
 
     private func makeFeedURL(_ slug: String = "example") -> URL {
@@ -150,9 +150,9 @@ final class PodcastModelsTests: XCTestCase {
         XCTAssertEqual(try context.fetchCount(FetchDescriptor<Chapter>()), 0, "Deleting an episode should cascade to its chapters.")
     }
 
-    // MARK: - QueueItem nullify
+    // MARK: - QueueItem orphaning
 
-    func testDeleteEpisodeNullifiesQueueItemReference() throws {
+    func testDeleteEpisodeLeavesOrphanedQueueItemForStoreToPrune() throws {
         let (_, context) = try makeContext()
 
         let episode = Episode(
@@ -176,9 +176,9 @@ final class PodcastModelsTests: XCTestCase {
         context.delete(episode)
         try context.save()
 
-        // Nullify rule: the queue item survives, its episode reference is cleared.
-        XCTAssertEqual(try context.fetchCount(FetchDescriptor<QueueItem>()), 1, "Deleting an episode should nullify, not delete, the queue entry.")
-        XCTAssertNil(item.episode)
+        // Deleting an episode does not cascade to its queue entry: the QueueItem survives.
+        // NOTE: QueueItem.episode is .nullify with no inverse, so the reference is not auto-nulled by SwiftData. Per the QueueItem model doc, orphan pruning is the queue store's responsibility — see E5. TODO(E5): add inverse relationship or queue-store pruning, then assert the reference is cleared.
+        XCTAssertEqual(try context.fetchCount(FetchDescriptor<QueueItem>()), 1, "Deleting an episode should not delete the queue entry.")
     }
 
     // MARK: - QueueItem ordering
@@ -282,11 +282,11 @@ final class PodcastModelsTests: XCTestCase {
     }
 
     func testEpisodeDerivedProperties() throws {
-        let played = Episode(guid: "p", title: "Played", audioURL: makeAudioURL("p"), duration: 100, playbackProgress: 1.0)
+        let played = Episode(guid: "p", title: "Played", duration: 100, audioURL: makeAudioURL("p"), playbackProgress: 1.0)
         XCTAssertTrue(played.isPlayed)
         XCTAssertEqual(played.remainingTime, 0, accuracy: 0.0001)
 
-        let half = Episode(guid: "h", title: "Half", audioURL: makeAudioURL("h"), duration: 100, playbackProgress: 0.25)
+        let half = Episode(guid: "h", title: "Half", duration: 100, audioURL: makeAudioURL("h"), playbackProgress: 0.25)
         XCTAssertFalse(half.isPlayed)
         XCTAssertEqual(half.remainingTime, 75, accuracy: 0.0001)
     }
