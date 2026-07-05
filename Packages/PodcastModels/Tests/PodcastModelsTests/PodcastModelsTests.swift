@@ -152,8 +152,8 @@ final class PodcastModelsTests: XCTestCase {
 
     // MARK: - QueueItem orphaning
 
-    func testDeleteEpisodeLeavesOrphanedQueueItemForStoreToPrune() throws {
-        let (_, context) = try makeContext()
+    func testDeleteEpisodeNullifiesQueueItemReferenceForStoreToPrune() throws {
+        let (container, context) = try makeContext()
 
         let episode = Episode(
             guid: "queued",
@@ -176,9 +176,21 @@ final class PodcastModelsTests: XCTestCase {
         context.delete(episode)
         try context.save()
 
-        // Deleting an episode does not cascade to its queue entry: the QueueItem survives.
-        // NOTE: QueueItem.episode is .nullify with no inverse, so the reference is not auto-nulled by SwiftData. Per the QueueItem model doc, orphan pruning is the queue store's responsibility — see E5. TODO(E5): add inverse relationship or queue-store pruning, then assert the reference is cleared.
+        // Deleting an episode does not cascade to its queue entry: the
+        // QueueItem row survives, but its `episode` reference is nullified —
+        // the inverse relationship declared on `Episode.queueItems` (E5 fix,
+        // see that property's doc comment) makes SwiftData's `.nullify` rule
+        // actually fire. Orphan pruning of the surviving row is the queue
+        // store's job (invariant 3, docs/spec/queue-semantics.md), not
+        // exercised here.
         XCTAssertEqual(try context.fetchCount(FetchDescriptor<QueueItem>()), 1, "Deleting an episode should not delete the queue entry.")
+
+        // Re-fetch from a fresh context to prove the nullified state is
+        // actually persisted, not just an in-memory side effect on `item`.
+        let freshContext = ModelContext(container)
+        let survivors = try freshContext.fetch(FetchDescriptor<QueueItem>())
+        XCTAssertEqual(survivors.count, 1)
+        XCTAssertNil(survivors.first?.episode, "SwiftData should nullify QueueItem.episode when its Episode is deleted, per the Episode.queueItems inverse relationship.")
     }
 
     // MARK: - QueueItem ordering

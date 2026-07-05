@@ -50,6 +50,32 @@ public final class Episode {
     @Relationship(deleteRule: .cascade, inverse: \Chapter.episode)
     public var chapters: [Chapter]
 
+    /// `QueueItem`s (Up Next entries) referencing this episode.
+    ///
+    /// **Inverse-relationship fix (E5, deferred defect from M1):** SwiftData's
+    /// delete rule is interpreted from the *inverse* (to-many) side, exactly
+    /// like `Podcast.episodes` (`.cascade`, inverse `\Episode.podcast`) and
+    /// `Episode.chapters` above (`.cascade`, inverse `\Chapter.episode`).
+    /// `QueueItem.episode` previously declared `deleteRule: .nullify` on the
+    /// to-one side with **no inverse declared at all**, so SwiftData had no
+    /// pairing to apply the rule to and the reference was never actually
+    /// nulled when an `Episode` was deleted (`QueueItem` survived with a
+    /// dangling, non-nil `episode` until the queue store happened to notice).
+    /// Declaring the inverse here, on the to-many side, with `.nullify`,
+    /// mirrors the working cascade pairs above: deleting an `Episode` nulls
+    /// `episode` on every referencing `QueueItem` (the `QueueItem` row itself
+    /// is *not* deleted — orphan pruning of such rows remains the queue
+    /// store's job, per this file's doc comment and `queue-semantics.md`
+    /// invariant 3). `QueueItem.episode` itself stays a plain optional
+    /// property (no `@Relationship` macro) — the inverse is declared on
+    /// exactly one side, here.
+    ///
+    /// Additive migration note: a new relationship array with no stored
+    /// scalar data; SwiftData's lightweight migration handles this
+    /// automatically. `ModelSchema.models` is unchanged (same four types).
+    @Relationship(deleteRule: .nullify, inverse: \QueueItem.episode)
+    public var queueItems: [QueueItem]
+
     public init(
         id: UUID = UUID(),
         guid: String,
@@ -63,7 +89,8 @@ public final class Episode {
         playbackProgress: Double = 0,
         isExplicit: Bool = false,
         podcast: Podcast? = nil,
-        chapters: [Chapter] = []
+        chapters: [Chapter] = [],
+        queueItems: [QueueItem] = []
     ) {
         self.id = id
         self.guid = guid
@@ -78,6 +105,7 @@ public final class Episode {
         self.isExplicit = isExplicit
         self.podcast = podcast
         self.chapters = chapters
+        self.queueItems = queueItems
     }
 
     /// Whether the episode has been listened to effectively in full.

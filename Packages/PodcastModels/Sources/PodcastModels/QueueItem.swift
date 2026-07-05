@@ -9,6 +9,17 @@ import SwiftData
 /// sooner). Each item points at the `Episode` it will play. If the referenced
 /// episode is deleted the reference is nullified, and such orphaned items
 /// should be pruned by the queue store.
+///
+/// **Inverse-relationship fix (E5):** the `.nullify` delete rule for this
+/// pairing is declared on `Episode.queueItems` (the to-many/inverse side),
+/// matching how `Podcast.episodes` and `Episode.chapters` declare their
+/// cascade rules on the to-many side with the to-one side left as a plain
+/// property. `episode` below is intentionally *not* annotated with
+/// `@Relationship` — the inverse must be declared on exactly one side of the
+/// pair, and putting `deleteRule: .nullify` here with no inverse is exactly
+/// the bug this fixes: SwiftData had nothing to pair it with, so deleting an
+/// `Episode` never actually nulled this reference. See `Episode.queueItems`'s
+/// doc comment for the full explanation.
 @Model
 public final class QueueItem {
     /// Stable synthetic identifier.
@@ -17,8 +28,9 @@ public final class QueueItem {
     /// Sort position within the queue (ascending plays sooner).
     public var order: Int
 
-    /// The episode this queue entry will play.
-    @Relationship(deleteRule: .nullify)
+    /// The episode this queue entry will play. Nulled by SwiftData when the
+    /// episode is deleted (delete rule declared on `Episode.queueItems`, the
+    /// inverse side — see that property's doc comment).
     public var episode: Episode?
 
     public init(

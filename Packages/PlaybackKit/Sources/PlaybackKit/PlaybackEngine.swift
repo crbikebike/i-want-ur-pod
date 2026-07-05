@@ -28,6 +28,30 @@ public final class PlaybackEngine {
     /// `.failed` so the UI can tell which row is "current"); `nil` at `.idle`.
     public private(set) var currentEpisode: Episode?
 
+    /// Smooth, per-tick playback position as a fraction (`0...1`) of the
+    /// current episode's duration, for in-app UI (E6-S2's Now Playing
+    /// scrubber + elapsed label). **Decoupled from the 5s model-persistence
+    /// cadence:** `Episode.playbackProgress` is only written every 5s (and on
+    /// pause/finish/seek), which makes an in-app bar that reads it stall then
+    /// jump every 5 seconds. This value instead updates on every ~1s player
+    /// time tick (and on load/seek/pause/finish/idle), so the bar advances
+    /// smoothly like the lock screen does, without forcing a model write each
+    /// tick. `0` when no episode is loaded.
+    public private(set) var displayProgress: Double = 0
+
+    /// Fired after the engine reaches `.finished`, with the episode that just
+    /// finished (E5-S3 auto-advance seam, `docs/spec/queue-semantics.md`).
+    ///
+    /// `PlaybackKit` intentionally has no notion of a queue or `QueueItem`
+    /// (its `Package.swift` depends only on `PodcastModels`, not any app-level
+    /// queue logic) — this closure is how `IWantUrPodApp` couples the two
+    /// without either package depending on the other. The app wires this in
+    /// `init()` to a small coordinator that asks the queue store to drop the
+    /// finished episode's entry, then either `load(episode:context:)`s the new
+    /// head or, if the queue is empty, calls ``returnToIdle()``. Mirrors the
+    /// `localURLResolver` seam's decoupling pattern above.
+    public var onFinished: ((Episode) -> Void)?
+
     /// How often progress is written while playing, per the spec's "at least
     /// every 5s while playing" cadence. `var` (not `let`) only so tests can
     /// shrink it; production always uses the 5s default.
@@ -121,6 +145,7 @@ public final class PlaybackEngine {
             player.seek(toFraction: episode.playbackProgress)
         }
         lastPersistedTime = player.currentTime
+        updateDisplayProgress(seconds: player.currentTime)
 
         player.play()
         state = .playing
@@ -134,6 +159,7 @@ public final class PlaybackEngine {
         player.pause()
         state = .paused
         persist(episode: episode, time: player.currentTime)
+        updateDisplayProgress(seconds: player.currentTime)
         publishNowPlaying()
     }
 
@@ -152,6 +178,7 @@ public final class PlaybackEngine {
         let clamped = min(max(fraction, 0), 1)
         player.seek(toFraction: clamped)
         persist(episode: episode, time: player.currentTime)
+        updateDisplayProgress(seconds: player.currentTime)
         publishNowPlaying()
     }
 
@@ -161,6 +188,20 @@ public final class PlaybackEngine {
         guard let episode = currentEpisode, episode.duration > 0 else { return }
         let targetSeconds = min(max(player.currentTime + seconds, 0), episode.duration)
         seek(toFraction: targetSeconds / episode.duration)
+    }
+
+    /// Returns the engine to `.idle` with no current episode, publishing an
+    /// empty Now Playing state (mini-player hides, per `navigation-map.md`).
+    ///
+    /// Used by the app's auto-advance coupling (E5-S3) when the just-finished
+    /// episode's queue entry is removed and the queue is left empty — the
+    /// spec's "finished --queue empty--> idle" transition, which stops
+    /// cleanly rather than lingering at `.finished` or erroring.
+    public func returnToIdle() {
+        currentEpisode = nil
+        displayProgress = 0
+        state = .idle
+        publishNowPlaying()
     }
 
     /// Call from the app's scene-phase observer on backgrounding. Forces a
@@ -178,6 +219,9 @@ public final class PlaybackEngine {
         if time - lastPersistedTime >= persistenceInterval {
             persist(episode: episode, time: time)
         }
+        // Advance the smooth in-app display value on every tick, independent
+        // of the 5s persistence write above.
+        updateDisplayProgress(seconds: time)
         publishNowPlaying(elapsedOverride: time)
     }
 
@@ -186,8 +230,21 @@ public final class PlaybackEngine {
         episode.playbackProgress = 1.0
         try? modelContext?.save()
         lastPersistedTime = player.currentTime
+        displayProgress = 1.0
         state = .finished
         publishNowPlaying()
+        onFinished?(episode)
+    }
+
+    /// Recomputes the smooth `displayProgress` fraction from an absolute
+    /// `seconds` position and the current episode's duration. A zero/unknown
+    /// duration leaves it at `0` (mirrors `persist`'s guard).
+    private func updateDisplayProgress(seconds: TimeInterval) {
+        guard let episode = currentEpisode, episode.duration > 0 else {
+            displayProgress = 0
+            return
+        }
+        displayProgress = min(max(seconds / episode.duration, 0), 1)
     }
 
     /// The item failed to become playable *after* `load` returned (async

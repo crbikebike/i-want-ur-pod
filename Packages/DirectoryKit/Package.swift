@@ -7,7 +7,8 @@ import PackageDescription
 let package = Package(
     name: "DirectoryKit",
     platforms: [
-        .iOS(.v17)
+        .iOS(.v17),
+        .macOS(.v14)
     ],
     products: [
         .library(

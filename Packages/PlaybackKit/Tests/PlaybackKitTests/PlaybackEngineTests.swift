@@ -153,6 +153,52 @@ final class PlaybackEngineTests: XCTestCase {
         XCTAssertEqual(reloaded.first?.playbackProgress ?? -1, 0.5, accuracy: 0.001)
     }
 
+    // MARK: - Smooth display progress (E6-S2), decoupled from the 5s write
+
+    func test_displayProgress_updatesOnEveryTick_withoutRequiringAModelWrite() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(duration: 100)
+        context.insert(episode)
+
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub, persistenceInterval: 5)
+        engine.load(episode: episode, context: context)
+
+        XCTAssertEqual(engine.displayProgress, 0, accuracy: 0.001)
+
+        // A ~1s tick under the 5s persistence boundary: the model is NOT
+        // written yet, but displayProgress advances smoothly regardless.
+        stub.advanceTime(by: 1)
+        XCTAssertEqual(episode.playbackProgress, 0, accuracy: 0.001, "no model write under the 5s interval")
+        XCTAssertEqual(engine.displayProgress, 0.01, accuracy: 0.001, "displayProgress tracks every tick")
+
+        stub.advanceTime(by: 2) // cumulative 3s, still under 5s
+        XCTAssertEqual(episode.playbackProgress, 0, accuracy: 0.001)
+        XCTAssertEqual(engine.displayProgress, 0.03, accuracy: 0.001)
+
+        // Crossing 5s: now the model write happens AND displayProgress stays
+        // in step (proving they agree, just on different cadences).
+        stub.advanceTime(by: 2) // cumulative 5s
+        XCTAssertEqual(episode.playbackProgress, 0.05, accuracy: 0.001)
+        XCTAssertEqual(engine.displayProgress, 0.05, accuracy: 0.001)
+    }
+
+    func test_displayProgress_reflectsSeek_andResetsToZeroOnIdle() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(duration: 200)
+        context.insert(episode)
+
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub)
+        engine.load(episode: episode, context: context)
+
+        engine.seek(toFraction: 0.5)
+        XCTAssertEqual(engine.displayProgress, 0.5, accuracy: 0.001)
+
+        engine.returnToIdle()
+        XCTAssertEqual(engine.displayProgress, 0, accuracy: 0.001)
+    }
+
     // MARK: - Play to end -> isPlayed
 
     func test_playToEnd_setsIsPlayedTrue() throws {
@@ -291,5 +337,56 @@ final class PlaybackEngineTests: XCTestCase {
         XCTAssertEqual(engine.state, .playing)
         XCTAssertEqual(engine.currentEpisode?.guid, "second")
         XCTAssertEqual(stub.loadedURLs.count, 2)
+    }
+
+    // MARK: - E5-S3 auto-advance seam
+
+    func test_onFinished_firesWithTheFinishedEpisode_afterReachingFinished() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(guid: "finishing")
+        context.insert(episode)
+
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub)
+        engine.load(episode: episode, context: context)
+
+        var firedWith: Episode?
+        engine.onFinished = { finished in firedWith = finished }
+
+        stub.finish()
+
+        XCTAssertEqual(engine.state, .finished, "onFinished must fire after the state machine reaches .finished, not instead of it")
+        XCTAssertEqual(firedWith?.guid, "finishing")
+    }
+
+    func test_onFinished_isOptional_noCrashWhenUnset() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode()
+        context.insert(episode)
+
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub)
+        engine.load(episode: episode, context: context)
+
+        stub.finish() // no onFinished set — must not trap
+
+        XCTAssertEqual(engine.state, .finished)
+    }
+
+    func test_returnToIdle_clearsCurrentEpisodeAndGoesIdle() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode()
+        context.insert(episode)
+
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub)
+        engine.load(episode: episode, context: context)
+        stub.finish()
+        XCTAssertEqual(engine.state, .finished)
+
+        engine.returnToIdle()
+
+        XCTAssertEqual(engine.state, .idle)
+        XCTAssertNil(engine.currentEpisode)
     }
 }

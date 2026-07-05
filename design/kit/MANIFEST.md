@@ -138,6 +138,43 @@ design/kit/MANIFEST.md).` header instead of a `design/kit/*.html` citation.
 | `IWantUrPod/Library/PodcastsScreen.swift` | The Podcasts tab: a vertical list of subscribed shows, newest `dateAdded` first, each row a `RemoteArtwork` tile + title/author (mirrors `PodcastDetailView.swift`'s `EpisodeRow` shape, scaled down) that pushes its `feedURL` into the shared E2 detail screen. Empty state via `EmptyStateView(kind: .firstRun, …)`. Owns its own `NavigationStack` and reserves `AppShell.tabBarReservedPadding`. | ✅ Implemented |
 | `IWantUrPod/Library/PodcastsListProvider.swift` | The testable seam behind the list: fetches every `Podcast` from a `ModelContext` (or takes an already-fetched `[Podcast]`, for the live `@Query` case) and filters/sorts in plain Swift — avoiding the non-Sendable `KeyPath` warning a `#Predicate { $0.isSubscribed }` triggers under this project's strict concurrency setting (same precedent as `PodcastDetailViewModelTests.swift`). Not a UI component — no kit citation needed; listed here for completeness since it's new in E3. | ✅ Implemented |
 
+## Up Next tab (E5) — composed, no kit mock
+
+There is no `design/kit/screens/up-next.html` or reorderable-list mock —
+same precedent as Podcast Detail (E2) and the Podcasts tab (E3): compose from
+`docs/design/direction.md` tokens + existing components. Unlike
+`PodcastsScreen.swift`'s plain `ScrollView`, this screen uses a real `List`
+because drag-to-reorder (`.onMove`) and swipe-to-remove (`.swipeActions`) are
+native `List` affordances. Every new file below carries a `// Composed from
+docs/design/direction.md tokens — no design/kit source (see
+design/kit/MANIFEST.md).` header instead of a `design/kit/*.html` citation.
+
+| Swift file | Real bespoke content | Status |
+|---|---|---|
+| `IWantUrPod/UpNext/UpNextScreen.swift` | The Up Next tab: a `List` of queued episodes in `QueueStore.items` order, each row a `RemoteArtwork` tile + episode/show title `VStack` (mirrors `PodcastsScreen.swift`'s `PodcastRow` shape). Drag reorders via `.onMove` → `QueueStore.move(fromOffsets:toOffset:)`; left swipe removes via `.swipeActions` → `QueueStore.remove(_:)`. Empty state via `EmptyStateView(kind: .firstRun, …)`. Owns its own `NavigationStack` and reserves `AppShell.tabBarReservedPadding`. | ✅ Implemented |
+| `IWantUrPod/UpNext/QueueStore.swift` | The app-scoped `@Observable` queue service (E5-S1/S2/S3): add-to-tail with re-add no-op, contiguous-order reorder/remove, and orphan pruning (docs/spec/queue-semantics.md's four invariants). Not a UI component — no kit citation needed; listed for completeness since it's new in E5. Created once in `IWantUrPodApp`, injected via `.environment` (`AppQueue.swift`), same pattern as `DownloadManager`/`PlaybackEngine`. | ✅ Implemented |
+| `IWantUrPod/UpNext/QueueAutoAdvanceCoordinator.swift` | Couples `PlaybackEngine.onFinished` to `QueueStore` for E5-S3 auto-advance, kept out of `PlaybackKit` itself so that package stays decoupled from `QueueItem`/`QueueStore`. Not a UI component — no kit citation needed. | ✅ Implemented |
+| `IWantUrPod/Detail/PodcastDetailView.swift` (`EpisodeRow.queueControl`) | The "Add to Up Next" control (E5-S1) added to the existing episode row: a `GhostButton` calling `QueueStore.add(episode)` when not yet queued, or an "In Up Next" checkmark label when it is. Composed from tokens, no kit mock (same precedent as the row's existing download/play controls). | ✅ Implemented |
+
+## Now Playing (E6) — composed, no kit mock
+
+There is no `design/kit/screens/now-playing.html` or mini-player mock —
+navigation-map.md's "Persistent chrome placement" specifies the mini-player's
+*placement* (shell chrome, above the tab bar) and the Now Playing sheet's
+*content* (large artwork, details, transport) but no kit file backs either.
+Same precedent as Podcast Detail (E2)/Podcasts (E3)/Up Next (E5): compose
+from `docs/design/direction.md` tokens + existing components. Every new file
+below carries a `// Composed from docs/design/direction.md tokens — no
+design/kit source (see design/kit/MANIFEST.md).` header instead of a
+`design/kit/*.html` citation.
+
+| Swift file | Real bespoke content | Status |
+|---|---|---|
+| `IWantUrPod/NowPlaying/MiniPlayer.swift` | E6-S1's persistent bar: `RemoteArtwork` thumb + title/show + a trailing play/pause control, drawn as translucent glass (mirrors `LiquidGlassTabBar`'s material/hairline/shadow treatment so the two chrome pieces read as one system) directly above the tab bar. Reads the app-scoped `PlaybackEngine` from the environment; visible iff `PlaybackTransport.isMiniPlayerPresented(for:)`. Tapping the row presents the Now Playing sheet; tapping the trailing control toggles play/pause without presenting it. | ✅ Implemented |
+| `IWantUrPod/NowPlaying/NowPlayingSheet.swift` | E6-S2's full view, presented as a `.sheet` from `AppShell`: large `RemoteArtwork`, episode/show title, a `Slider` scrubber (seeks via `PlaybackEngine.seek(toFraction:)` on release, persisting `Episode.playbackProgress`), and skip-back-15/play-pause/skip-forward-30 transport. Reads the same injected `PlaybackEngine`; dismissing returns to the mini-player with state intact since this view owns no playback state itself. | ✅ Implemented |
+| `IWantUrPod/NowPlaying/PlaybackTransport.swift` | The testable seam behind both views: `isMiniPlayerPresented(for state:)` (mini-player visibility), `playPauseAction(for state:)`, and `playPauseSymbolName(for state:)` — pure `PlaybackState` → behavior mappings, exercised directly by `IWantUrPodTests/NowPlayingTests.swift` without needing a live engine. Not a UI component — no kit citation needed; listed for completeness since it's new in E6. | ✅ Implemented |
+| `IWantUrPod/App/AppShell.swift` (`miniPlayerHeight`/`miniPlayerReservedPadding`, mini-player + `.sheet` wiring) | The frozen-nav-contract-preserving integration: `AppShell` draws `MiniPlayer` as shell chrome above `LiquidGlassTabBar` (never inside a tab's content), applies the combined bottom reserve to `content`'s own frame when the mini-player is visible (so every screen's existing 104pt internal reserve still clears both the bar and the mini-player, with no screen needing to change), and presents `NowPlayingSheet` via `.sheet(isPresented:)` when the mini-player is tapped. | ✅ Implemented |
+
 ## Shared Swift-side infrastructure (no single kit file; cross-cutting)
 
 | Swift file | Source | Notes |

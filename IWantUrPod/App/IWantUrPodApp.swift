@@ -38,6 +38,14 @@ struct IWantUrPodApp: App {
     /// Play control reads the one instance.
     @State private var playbackEngine: PlaybackEngine
 
+    /// The single, shared Up Next queue store (E5). Wraps
+    /// `modelContainer.mainContext` — the same context every other screen's
+    /// `@Environment(\.modelContext)`/`@Query` resolves — so queue mutations
+    /// are immediately consistent with the rest of the store. Injected via
+    /// `.environment` so `UpNextScreen` and `PodcastDetailView`'s "Add to Up
+    /// Next" control read the one instance.
+    @State private var queueStore: QueueStore
+
     /// Tracks scene-phase transitions so backgrounding forces a progress
     /// write per the spec's "on backgrounding" persistence-cadence rule
     /// (docs/spec/playback-state-machine.md).
@@ -46,9 +54,12 @@ struct IWantUrPodApp: App {
     init() {
         let downloadManager = DownloadManager()
         _downloadManager = State(initialValue: downloadManager)
-        _playbackEngine = State(initialValue: PlaybackEngine(
+
+        let playbackEngine = PlaybackEngine(
             localURLResolver: { episode in downloadManager.localURL(for: episode) }
-        ))
+        )
+        _playbackEngine = State(initialValue: playbackEngine)
+
         // Register the bundled brand display face (IBM Plex Mono), shipped as a
         // DesignSystem SPM resource in Bundle.module. Because it lives outside the
         // app bundle it cannot be picked up via Info.plist UIAppFonts, so it must
@@ -57,12 +68,31 @@ struct IWantUrPodApp: App {
         // to the system font. See DesignSystem/FontRegistration.swift.
         FontRegistration.registerFonts()
 
+        let container: ModelContainer
         do {
-            modelContainer = try ModelSchema.makeContainer()
+            container = try ModelSchema.makeContainer()
         } catch {
             // A schema that cannot open the persistent store is a programmer
             // error, not a recoverable runtime condition.
             fatalError("Failed to create the shared ModelContainer: \(error)")
+        }
+        modelContainer = container
+
+        let queueStore = QueueStore(context: container.mainContext)
+        _queueStore = State(initialValue: queueStore)
+
+        // Auto-advance (E5-S3): couple PlaybackEngine's finished callback to
+        // the queue store via QueueAutoAdvanceCoordinator, keeping PlaybackKit
+        // itself decoupled from QueueItem/QueueStore-specific logic (see
+        // PlaybackEngine.onFinished's doc comment).
+        playbackEngine.onFinished = { [weak playbackEngine] finishedEpisode in
+            guard let playbackEngine else { return }
+            QueueAutoAdvanceCoordinator.handleFinished(
+                finishedEpisode,
+                queueStore: queueStore,
+                playbackEngine: playbackEngine,
+                context: container.mainContext
+            )
         }
     }
 
@@ -78,6 +108,8 @@ struct IWantUrPodApp: App {
                 .downloadManager(downloadManager)
                 // Share one PlaybackEngine across every screen (E4-S2/S3).
                 .playbackEngine(playbackEngine)
+                // Share one QueueStore across every screen (E5).
+                .queueStore(queueStore)
         }
         .modelContainer(modelContainer)
         .onChange(of: scenePhase) { _, newPhase in

@@ -197,6 +197,7 @@ struct EpisodeRow: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(DownloadManager.self) private var downloadManager
     @Environment(PlaybackEngine.self) private var playbackEngine
+    @Environment(QueueStore.self) private var queueStore
 
     var body: some View {
         HStack(alignment: .top, spacing: Spacing.sp3) {
@@ -221,6 +222,8 @@ struct EpisodeRow: View {
                     playControl
                 }
                 .padding(.top, Spacing.sp1)
+                queueControl
+                    .padding(.top, Spacing.sp1)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -332,6 +335,31 @@ struct EpisodeRow: View {
         Task { await downloadManager.download(episode, context: modelContext) }
     }
 
+    // MARK: - Add to Up Next (E5-S1)
+    //
+    // Composed from tokens — no design/kit mock for this affordance (same
+    // precedent as the download/play controls above). Tapping Play (above)
+    // never requires an episode to be queued first — queue-semantics.md:
+    // "an episode can therefore be 'currently playing' without ever having
+    // been queued." This control is purely additive to the Up Next list.
+    @ViewBuilder
+    private var queueControl: some View {
+        if queueStore.isQueued(episode) {
+            HStack(spacing: Spacing.sp1) {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundStyle(palette.accent2)
+                    .font(.system(size: 12, weight: .bold))
+                Text("In Up Next")
+                    .typeStyle(Typography.subheadStyle)
+                    .foregroundStyle(palette.textFaint)
+            }
+        } else {
+            GhostButton(title: "Add to Up Next") {
+                queueStore.add(episode)
+            }
+        }
+    }
+
     /// "N min left" from `Episode.remainingTime` — the E2-S3 shell hint,
     /// real once E4-S2/S3 start writing `playbackProgress`.
     private var remainingLabel: String {
@@ -424,6 +452,7 @@ private func makePreviewModelContext() -> ModelContext {
     .themedPalette()
     .environment(DownloadManager())
     .environment(PlaybackEngine(localURLResolver: { _ in nil }))
+    .environment(QueueStore(context: context))
     .environment(\.colorScheme, .dark)
 }
 
@@ -436,6 +465,7 @@ private func makePreviewModelContext() -> ModelContext {
     .themedPalette()
     .environment(DownloadManager())
     .environment(PlaybackEngine(localURLResolver: { _ in nil }))
+    .environment(QueueStore(context: context))
     .environment(\.colorScheme, .dark)
 }
 
@@ -448,6 +478,7 @@ private func makePreviewModelContext() -> ModelContext {
     .themedPalette()
     .environment(DownloadManager())
     .environment(PlaybackEngine(localURLResolver: { _ in nil }))
+    .environment(QueueStore(context: context))
     .environment(\.colorScheme, .light)
 }
 
@@ -460,6 +491,7 @@ private func makePreviewModelContext() -> ModelContext {
     .themedPalette()
     .environment(DownloadManager())
     .environment(PlaybackEngine(localURLResolver: { _ in nil }))
+    .environment(QueueStore(context: context))
     .environment(\.colorScheme, .light)
 }
 
@@ -471,6 +503,7 @@ private func makePreviewModelContext() -> ModelContext {
     .themedPalette()
     .environment(DownloadManager())
     .environment(PlaybackEngine(localURLResolver: { _ in nil }))
+    .environment(QueueStore(context: context))
     .environment(\.colorScheme, .dark)
 }
 
@@ -485,6 +518,7 @@ private func makePreviewModelContext() -> ModelContext {
     .themedPalette()
     .environment(DownloadManager())
     .environment(PlaybackEngine(localURLResolver: { _ in nil }))
+    .environment(QueueStore(context: context))
     .environment(\.colorScheme, .dark)
 }
 #endif
