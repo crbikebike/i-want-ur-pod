@@ -51,6 +51,10 @@ public enum Typography {
     public static var section: Font { display(21.44, .heavy) }
     /// Nav title (inline) — 1.06rem / 800 / -0.01em. Display face.
     public static var navTitle: Font { display(16.96, .heavy) }
+    /// Shelf header (result-row.html `.sh-title`) — 1.18rem / 800 / -0.015em.
+    /// Display face, per direction.md §3's prose ("shelf headers" use
+    /// `--font-display`) — filling a gap the type-scale table itself omitted.
+    public static var shelfTitle: Font { display(18.88, .heavy) }
     /// Row title — 1rem / 700 / -0.01em. UI face.
     public static var rowTitle: Font { ui(16, .bold) }
     /// Body / input — 1rem / 500. UI face.
@@ -73,6 +77,7 @@ public enum Typography {
     public static var displayLargeTitleStyle: TypeStyle { .init(font: displayLargeTitle, tracking: -0.742) }
     public static var sectionStyle: TypeStyle { .init(font: section, tracking: -0.322) }
     public static var navTitleStyle: TypeStyle { .init(font: navTitle, tracking: -0.170) }
+    public static var shelfTitleStyle: TypeStyle { .init(font: shelfTitle, tracking: -0.283) }
     public static var rowTitleStyle: TypeStyle { .init(font: rowTitle, tracking: -0.160) }
     public static var bodyStyle: TypeStyle { .init(font: body) }
     public static var subheadStyle: TypeStyle { .init(font: subhead) }

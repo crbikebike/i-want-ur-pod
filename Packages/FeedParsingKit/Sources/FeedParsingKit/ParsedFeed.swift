@@ -27,6 +27,9 @@ public struct ParsedFeed: Sendable, Hashable {
     /// First `<itunes:category text>` → `<category>` → `""`.
     public var category: String
 
+    /// `<channel><description>` → `<channel><itunes:summary>` → `""`.
+    public var summary: String
+
     /// One entry per playable `<item>` (skips already applied).
     public var episodes: [ParsedEpisode]
 
@@ -37,6 +40,7 @@ public struct ParsedFeed: Sendable, Hashable {
         homeURL: URL? = nil,
         artworkURL: URL? = nil,
         category: String = "",
+        summary: String = "",
         episodes: [ParsedEpisode] = []
     ) {
         self.feedURL = feedURL
@@ -45,6 +49,7 @@ public struct ParsedFeed: Sendable, Hashable {
         self.homeURL = homeURL
         self.artworkURL = artworkURL
         self.category = category
+        self.summary = summary
         self.episodes = episodes
     }
 }

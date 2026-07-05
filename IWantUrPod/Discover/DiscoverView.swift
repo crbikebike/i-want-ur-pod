@@ -1,9 +1,12 @@
-// Translated from design/kit/screens/{first-run,typing,loading,no-results,error}.html.
+// Translated from design/kit/screens/{typing,loading,no-results,error}.html.
+// NOTE: the `.firstRun` branch below is an interim placeholder, not a
+// translation of design/kit/screens/first-run.html — see EmptyStateView.swift
+// and design/kit/MANIFEST.md.
 // The Discover screen: a display-face "Discover" large title (IBM Plex Mono),
 // a DesignSystem `SearchField`, and a body that renders one branch per
-// `DiscoverViewModel.State` using LoadingSkeleton, SectionHeader, ResultRow
-// (via SearchResultsList), and EmptyStateView. Subscribing persists a Podcast
-// into SwiftData.
+// `DiscoverViewModel.State` using LoadingSkeleton, ResultShelf (via
+// ShelvesList), and EmptyStateView. Subscribing persists a Podcast into
+// SwiftData.
 import SwiftUI
 import SwiftData
 import DesignSystem
@@ -13,6 +16,13 @@ import PodcastModels
 /// The Discover tab — search the podcast directory and subscribe to shows.
 public struct DiscoverView: View {
     @State private var viewModel: DiscoverViewModel
+
+    /// Pushed feed URLs — every entry point (curated shelf, search result)
+    /// navigates by pushing a `feedURL`, per navigation-map.md's frozen
+    /// contract ("one adaptive screen … keyed by feedURL"). Lives inside this
+    /// tab's own `NavigationStack`, not in `AppShell` (whose tab switch stays
+    /// a pure view switch).
+    @State private var path = NavigationPath()
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
@@ -33,26 +43,35 @@ public struct DiscoverView: View {
     public var body: some View {
         @Bindable var viewModel = viewModel
 
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                titleBar
+        NavigationStack(path: $path) {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    titleBar
 
-                SearchField(
-                    text: $viewModel.query,
-                    placeholder: "Shows, people, topics",
-                    onSubmit: { viewModel.submit() }
-                )
-                .padding(.top, Spacing.sp4)   // .search margin-top: --sp-4
+                    SearchField(
+                        text: $viewModel.query,
+                        placeholder: "Shows, people, topics",
+                        onSubmit: { viewModel.submit() }
+                    )
+                    .padding(.top, Spacing.sp4)   // .search margin-top: --sp-4
 
-                content
-                    .padding(.top, Spacing.sp5)
+                    content
+                        .padding(.top, Spacing.sp5)
+                }
+                .padding(.horizontal, Spacing.gutter)
+                .padding(.top, Spacing.sp5)
+                .padding(.bottom, tabBarClearance)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(.horizontal, Spacing.gutter)
-            .padding(.top, Spacing.sp5)
-            .padding(.bottom, tabBarClearance)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(palette.groupedBg.ignoresSafeArea())
+            // Discover draws its own large title (h1.big above) rather than
+            // using UIKit's nav bar chrome — hide the bar on this root screen
+            // only; pushed destinations (Podcast Detail) show their own.
+            .toolbar(.hidden, for: .navigationBar)
+            .navigationDestination(for: URL.self) { feedURL in
+                PodcastDetailScreen(feedURL: feedURL)
+            }
         }
-        .background(palette.groupedBg.ignoresSafeArea())
     }
 
     // MARK: - Large title (.titlewrap / h1.big)
@@ -95,11 +114,11 @@ public struct DiscoverView: View {
             loadingState
 
         case .results(let results):
-            VStack(alignment: .leading, spacing: 0) {
-                SectionHeader(title: "Results", count: results.count)
-                SearchResultsList(results: results, onSubscribe: subscribe)
-                    .padding(.top, Spacing.sp3)
-            }
+            ShelvesList(
+                results: results,
+                onSubscribe: subscribe,
+                onSelect: { result in path.append(result.feedURL) }
+            )
 
         case .noResults:
             EmptyStateView(
@@ -145,10 +164,7 @@ public struct DiscoverView: View {
     }
 
     private var loadingState: some View {
-        VStack(alignment: .leading, spacing: Spacing.sp3) {
-            SectionHeader(title: "Searching \u{201C}\(viewModel.query)\u{201D}")
-            LoadingSkeleton(rows: 6)
-        }
+        LoadingSkeleton()
     }
 
     // MARK: - Persistence

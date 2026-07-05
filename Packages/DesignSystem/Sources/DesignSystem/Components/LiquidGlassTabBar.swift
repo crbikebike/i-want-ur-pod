@@ -113,8 +113,25 @@ private struct TabCell: View {
                     ) { view, value in
                         view.scaleEffect(value.scale).offset(y: value.offsetY)
                     } keyframes: { _ in
-                        bounceScale
-                        bounceOffset
+                        // kit @keyframes bounceIn: translateY 2→-2→0, scale .85→1.1→1.
+                        KeyframeTrack(\.scale) {
+                            if isSelected && !reduceMotion {
+                                SpringKeyframe(0.85, duration: 0.001)
+                                CubicKeyframe(1.12, duration: Motion.durMid * 0.6)
+                                SpringKeyframe(1.0, duration: Motion.durMid * 0.4)
+                            } else {
+                                CubicKeyframe(1.0, duration: 0.001)
+                            }
+                        }
+                        KeyframeTrack(\.offsetY) {
+                            if isSelected && !reduceMotion {
+                                CubicKeyframe(2, duration: 0.001)
+                                CubicKeyframe(-2, duration: Motion.durMid * 0.6)
+                                SpringKeyframe(0, duration: Motion.durMid * 0.4)
+                            } else {
+                                CubicKeyframe(0, duration: 0.001)
+                            }
+                        }
                     }
 
                 Text(tab.title)
@@ -134,30 +151,6 @@ private struct TabCell: View {
         .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }
 
-    // kit @keyframes bounceIn: translateY 2→-2→0, scale .85→1.1→1.
-    private var bounceScale: KeyframeTrack<BounceValues, CGFloat, some Keyframes<CGFloat>> {
-        KeyframeTrack(\.scale) {
-            if isSelected && !reduceMotion {
-                SpringKeyframe(0.85, duration: 0.001)
-                CubicKeyframe(1.12, duration: Motion.durMid * 0.6)
-                SpringKeyframe(1.0, duration: Motion.durMid * 0.4)
-            } else {
-                CubicKeyframe(1.0, duration: 0.001)
-            }
-        }
-    }
-
-    private var bounceOffset: KeyframeTrack<BounceValues, CGFloat, some Keyframes<CGFloat>> {
-        KeyframeTrack(\.offsetY) {
-            if isSelected && !reduceMotion {
-                CubicKeyframe(2, duration: 0.001)
-                CubicKeyframe(-2, duration: Motion.durMid * 0.6)
-                SpringKeyframe(0, duration: Motion.durMid * 0.4)
-            } else {
-                CubicKeyframe(0, duration: 0.001)
-            }
-        }
-    }
 }
 
 /// Animatable pair driven by `keyframeAnimator` for the bounce-in glyph.

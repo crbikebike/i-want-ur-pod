@@ -4,6 +4,7 @@
 //  and enablement via this coordinator.
 import Foundation
 import Observation
+import SwiftUI
 
 /// Orchestrates podcast search across an ordered list of ``DirectorySource``s
 /// using the primary + fallback model of §12.3.

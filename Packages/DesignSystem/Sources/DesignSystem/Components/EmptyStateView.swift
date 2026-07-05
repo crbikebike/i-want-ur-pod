@@ -1,4 +1,17 @@
-// Translated from design/kit/components/no-results.html (SHARED KIT EXTRAS: .state / .state-badge / .state-title / .state-sub / .state-actions).
+// Translated from design/kit/components/no-results.html and
+// design/kit/screens/{no-results,error}.html (SHARED KIT EXTRAS: .state /
+// .state-badge / .state-title / .state-sub / .state-actions) — correct and
+// confirmed for the `.noResults` and `.error` cases only.
+//
+// `.firstRun` is an INTERIM PLACEHOLDER, not a translation of anything in the
+// kit: design/kit/screens/first-run.html's real content is a multi-step guided
+// onboarding wizard (existing-app import, favorite-show picker, topic picker,
+// personalized results), which has no Swift implementation and is out of scope
+// here. Reusing this generic `.state` block for `.firstRun` is exactly how the
+// original mistranslation happened — see design/kit/MANIFEST.md before
+// building the real wizard; don't extend this enum further without checking
+// there first.
+//
 // A centered large-state block for the three empty conditions — first run,
 // no results, and error — built on the locked token set. An 84px gradient
 // badge with a white decorative glyph springs in, followed by a display-face
@@ -11,6 +24,9 @@ import SwiftUI
 /// selects the badge gradient and default glyph (direction.md §9 "State badges").
 public enum EmptyKind: Sendable, Hashable, CaseIterable {
     /// First run / cold start — coral→mint "discover" badge.
+    ///
+    /// PLACEHOLDER: stands in for the unbuilt onboarding wizard
+    /// (design/kit/screens/first-run.html). Not a real kit translation.
     case firstRun
     /// A search that matched nothing — grape→coral "empty" badge.
     case noResults
@@ -89,9 +105,9 @@ public struct EmptyStateView<Actions: View>: View {
     // MARK: - Badge (.state-badge)
 
     /// state-badge corner: 26px — a one-off in the kit, no matching radius token.
-    private static let badgeCorner: CGFloat = 26
+    private static var badgeCorner: CGFloat { 26 }
     /// state-badge size: 84×84 — a one-off in the kit, no matching spacing token.
-    private static let badgeSize: CGFloat = 84
+    private static var badgeSize: CGFloat { 84 }
 
     private var badgeShape: RoundedRectangle {
         RoundedRectangle(cornerRadius: Self.badgeCorner, style: .continuous)

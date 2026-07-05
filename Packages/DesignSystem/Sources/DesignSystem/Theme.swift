@@ -37,6 +37,15 @@ public enum Brand {
     public static let grape = Color(hex: 0x7C6BFF)
 }
 
+/// One-off decorative kit hues that appear in more than one place in the kit
+/// with no matching theme role (direction.md has no §1 entry for these).
+/// Named here so they're defined once instead of hand-copied per call site.
+enum KitLiteralColors {
+    /// The PodcastIndex icon gradient's blue stop, also reused as one of the
+    /// `.a2` artwork-tile gradient stops (`ArtworkTile.swift`).
+    static let podcastIndexBlue = Color(hex: 0x2E8BFF)
+}
+
 /// Every semantic color role, resolved for one theme. Role → value mapping
 /// is direction.md §1; brand hues stay constant, roles remap per theme.
 public struct ThemePalette: Sendable {

@@ -10,7 +10,7 @@ final class FeedUpsertTests: XCTestCase {
 
     private let feedURL = URL(string: "https://example.com/feed.xml")!
 
-    private func makeFeed(episodeTitle: String, podcastTitle: String) -> ParsedFeed {
+    private func makeFeed(episodeTitle: String, podcastTitle: String, summary: String = "Original summary text") -> ParsedFeed {
         ParsedFeed(
             feedURL: feedURL,
             title: podcastTitle,
@@ -18,6 +18,7 @@ final class FeedUpsertTests: XCTestCase {
             homeURL: nil,
             artworkURL: URL(string: "https://example.com/art.jpg"),
             category: "Society & Culture",
+            summary: summary,
             episodes: [
                 ParsedEpisode(
                     guid: "ep-1",
@@ -52,8 +53,9 @@ final class FeedUpsertTests: XCTestCase {
         let context = ModelContext(container)
 
         // First upsert.
-        let firstFeed = makeFeed(episodeTitle: "Original Title", podcastTitle: "Original Show")
+        let firstFeed = makeFeed(episodeTitle: "Original Title", podcastTitle: "Original Show", summary: "Original show summary.")
         let podcast = try FeedUpsert.upsert(firstFeed, into: context)
+        XCTAssertEqual(podcast.summary, "Original show summary.")
 
         // Simulate user-owned state accruing after the first import.
         podcast.isSubscribed = true
@@ -66,7 +68,7 @@ final class FeedUpsertTests: XCTestCase {
         try context.save()
 
         // Second upsert: feed-derived fields changed, identities the same.
-        let secondFeed = makeFeed(episodeTitle: "Updated Title", podcastTitle: "Updated Show")
+        let secondFeed = makeFeed(episodeTitle: "Updated Title", podcastTitle: "Updated Show", summary: "Updated show summary.")
         let podcastAgain = try FeedUpsert.upsert(secondFeed, into: context)
 
         // No duplicate rows.
@@ -76,6 +78,7 @@ final class FeedUpsertTests: XCTestCase {
 
         // Feed-derived fields updated.
         XCTAssertEqual(podcastAgain.title, "Updated Show")
+        XCTAssertEqual(podcastAgain.summary, "Updated show summary.")
         let updatedEpisode = podcastAgain.episodes[0]
         XCTAssertEqual(updatedEpisode.title, "Updated Title")
         XCTAssertEqual(updatedEpisode.guid, "ep-1")

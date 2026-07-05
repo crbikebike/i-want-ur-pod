@@ -6,8 +6,8 @@
 // kit lives in `SubscribeButton`, not here. Colors/sizing come only from the
 // active ThemePalette + Spacing/Radius/Typography tokens.
 //
-// `ArtworkStyle` (the .a1–.a6 gradient placeholder) is owned by the result-row
-// component per DesignSystemAPI.swift; this file consumes its `gradient` and its
+// `ArtworkStyle` (the .a1–.a6 gradient placeholder) is owned by ArtworkTile.swift
+// per DesignSystemAPI.swift; this file consumes its `gradient` and its
 // `init(seed:)` (the same members `ArtworkTile` relies on) and does not redefine it.
 import SwiftUI
 

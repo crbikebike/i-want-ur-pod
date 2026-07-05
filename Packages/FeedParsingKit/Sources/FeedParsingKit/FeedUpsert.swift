@@ -33,6 +33,7 @@ public enum FeedUpsert {
             podcast.homeURL = feed.homeURL
             podcast.artworkURL = feed.artworkURL
             podcast.category = feed.category
+            podcast.summary = feed.summary
             // isSubscribed / dateAdded are user-owned — left untouched.
         } else {
             podcast = Podcast(
@@ -41,7 +42,8 @@ public enum FeedUpsert {
                 feedURL: feed.feedURL,
                 homeURL: feed.homeURL,
                 artworkURL: feed.artworkURL,
-                category: feed.category
+                category: feed.category,
+                summary: feed.summary
             )
             context.insert(podcast)
         }

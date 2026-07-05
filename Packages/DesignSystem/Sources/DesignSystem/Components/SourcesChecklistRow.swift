@@ -7,10 +7,11 @@
 //
 // All structural color/spacing/radius/motion come only from the active
 // ThemePalette and the Spacing/Radius/Typography/Elevation/Motion tokens.
-// The single exception is the PodcastIndex icon gradient's blue stop (#2E8BFF):
-// it is a decorative kit hue with no theme role, carried literally exactly as
-// design/kit/components/result-row.html (`.a2`) already does — brand-ramp
-// tokens are reused for every stop that matches a brand hue.
+// The single exception is the PodcastIndex icon gradient's blue stop: a
+// decorative kit hue with no theme role, shared with `ArtworkTile.swift`'s
+// `.a2` stop via `KitLiteralColors.podcastIndexBlue` (Theme.swift) rather than
+// a hand-copied literal — brand-ramp tokens are reused for every stop that
+// matches a brand hue.
 import SwiftUI
 
 // MARK: - iOS switch (.switch)
@@ -75,8 +76,8 @@ private struct SourceIconTile: View {
         switch icon {
         // .ic-apple — linear-gradient(140deg, coral, grape)
         case .apple:        return [Brand.coral, Brand.grape]
-        // .ic-pi — linear-gradient(140deg, mint, #2E8BFF) (decorative kit blue, no role)
-        case .podcastIndex: return [Brand.mint, Color(hex: 0x2E8BFF)]
+        // .ic-pi — linear-gradient(140deg, mint, podcastIndexBlue) (decorative kit blue, no role)
+        case .podcastIndex: return [Brand.mint, KitLiteralColors.podcastIndexBlue]
         }
     }
 

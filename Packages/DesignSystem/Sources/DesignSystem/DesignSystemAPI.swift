@@ -16,9 +16,14 @@
 // ── Search (design/kit/components/search-field.html) ──────────────────────
 //   SearchField(text: Binding<String>, placeholder: String, onSubmit: () -> Void)
 //
-// ── Result row & artwork (design/kit/components/result-row.html) ───────────
-//   ResultRow(title: String, author: String, artwork: ArtworkStyle,
-//             trailing: () -> some View)
+// ── Category shelves & artwork (design/kit/components/result-row.html) ─────
+//   ResultShelf<Item, Trailing>(title: String, items: [Item], totalCount: Int?,
+//               onViewAll: (() -> Void)?, onSelect: (Item) -> Void,
+//               itemTitle:, itemAuthor:, itemArtwork:, trailing: (Item) -> some View)
+//   PodCard<Trailing>(title: String, author: String, artwork: ArtworkStyle,
+//           trailing: () -> some View)
+//   PodGrid<Item, Trailing>(items: [Item], onSelect:, itemTitle:, itemAuthor:,
+//           itemArtwork:, trailing: (Item) -> some View)   // "View all" destination
 //   ArtworkTile(seed: Int, initial: String)
 //   // ArtworkStyle: gradient-tile style for placeholders (.a1….a6, §9).
 //
@@ -42,7 +47,7 @@
 //                             // ghost button, lock badge when unconfigured.
 //
 // ── Loading / empty states (design/kit/screens/*, §9) ─────────────────────
-//   LoadingSkeleton(rows: Int)
+//   LoadingSkeleton(shelves: Int)   // design/kit/screens/loading.html shelf/rail skeleton
 //   EmptyStateView(kind: EmptyKind, title: String, message: String,
 //                  actions: () -> some View)
 //   // enum EmptyKind { case firstRun, noResults, error }

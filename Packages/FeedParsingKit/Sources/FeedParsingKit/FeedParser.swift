@@ -44,6 +44,7 @@ public enum FeedParser {
 
         let artworkURL = delegate.channelArtworkURLFromItunes ?? delegate.channelArtworkURLFromImage
         let category = firstNonEmpty(delegate.channelCategoryFromItunes, delegate.channelCategoryPlain) ?? ""
+        let summary = firstNonEmpty(delegate.channelDescription, delegate.channelItunesSummary) ?? ""
 
         return ParsedFeed(
             feedURL: feedURL,
@@ -52,6 +53,7 @@ public enum FeedParser {
             homeURL: delegate.channelHomeURL,
             artworkURL: artworkURL,
             category: category,
+            summary: summary,
             episodes: delegate.episodes
         )
     }
@@ -82,6 +84,8 @@ private final class FeedParserDelegate: NSObject, XMLParserDelegate {
     private(set) var channelArtworkURLFromImage: URL?
     private(set) var channelCategoryFromItunes: String?
     private(set) var channelCategoryPlain: String?
+    private(set) var channelDescription: String?
+    private(set) var channelItunesSummary: String?
 
     private(set) var episodes: [ParsedEpisode] = []
 
@@ -209,13 +213,17 @@ private final class FeedParserDelegate: NSObject, XMLParserDelegate {
             }
 
         case "description":
-            if insideItem, !text.isEmpty {
-                currentDescription = text
+            if insideItem {
+                if !text.isEmpty { currentDescription = text }
+            } else if channelDescription == nil, !text.isEmpty {
+                channelDescription = text
             }
 
         case "itunes:summary":
-            if insideItem, !text.isEmpty {
-                currentItunesSummary = text
+            if insideItem {
+                if !text.isEmpty { currentItunesSummary = text }
+            } else if channelItunesSummary == nil, !text.isEmpty {
+                channelItunesSummary = text
             }
 
         case "content:encoded":

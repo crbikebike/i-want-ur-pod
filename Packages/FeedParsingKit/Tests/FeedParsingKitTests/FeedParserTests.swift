@@ -26,6 +26,7 @@ final class FeedParserTests: XCTestCase {
         XCTAssertEqual(feed.artworkURL, URL(string: "https://example.com/art.jpg"))
         XCTAssertEqual(feed.category, "Society & Culture")
         XCTAssertEqual(feed.homeURL, URL(string: "https://example.com/story-hour"))
+        XCTAssertEqual(feed.summary, "A weekly show about the stories behind the stories.")
         XCTAssertEqual(feed.episodes.count, 2)
     }
 
@@ -68,6 +69,7 @@ final class FeedParserTests: XCTestCase {
 
         XCTAssertEqual(feed.title, "Empty Show")
         XCTAssertEqual(feed.episodes, [])
+        XCTAssertEqual(feed.summary, "")
     }
 
     // MARK: - Error cases at the parse layer
@@ -148,6 +150,29 @@ final class FeedParserTests: XCTestCase {
     func test_category_fallsBackToPlainCategory_whenNoItunesCategory() throws {
         let feed = try parseInline("<category>True Crime</category>")
         XCTAssertEqual(feed.category, "True Crime")
+    }
+
+    func test_summary_usesChannelDescription_whenPresent() throws {
+        let feed = try parseInline("<description>A show about stories.</description>")
+        XCTAssertEqual(feed.summary, "A show about stories.")
+    }
+
+    func test_summary_fallsBackToChannelItunesSummary_whenNoDescription() throws {
+        let feed = try parseInline("<itunes:summary>A show, summarized.</itunes:summary>")
+        XCTAssertEqual(feed.summary, "A show, summarized.")
+    }
+
+    func test_summary_defaultsToEmpty_whenNeitherPresent() throws {
+        let feed = try parseInline("<link>https://example.com</link>")
+        XCTAssertEqual(feed.summary, "")
+    }
+
+    func test_summary_prefersChannelDescription_overItunesSummary() throws {
+        let feed = try parseInline("""
+        <description>Channel description wins.</description>
+        <itunes:summary>Itunes summary loses.</itunes:summary>
+        """)
+        XCTAssertEqual(feed.summary, "Channel description wins.")
     }
 
     func test_episodeTitle_fallsBackToItunesTitle_whenNoTitle() throws {

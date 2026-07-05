@@ -1,8 +1,10 @@
-// Translated from design/kit/components/loading-skeleton.html (.sk-list / .sk-row / .sk-art / .sk-line / .sk-pill + .shimmer, SHARED KIT EXTRAS).
-// A placeholder for the results list while a search is in flight: a grouped
-// inset list (`--surface` + `--elev-list` + `--r-lg`) of shimmer rows, each
-// mirroring `.sk-row` geometry — a 60pt art tile, a three-line meta stack
-// (70% / 45% / 30% widths), and a trailing 74×30 subscribe-pill placeholder.
+// Translated from design/kit/screens/loading.html (.sk-shelf / .sk-shelf-head /
+// .sk-rail / .sk-pod / .sk-pod-art / .sk-pod-line + .shimmer, SHARED KIT EXTRAS).
+// A placeholder for the shelf gallery (`ResultShelf`) while a search is in
+// flight: shimmering shelf headers over rails of square `.sk-pod-art` blocks,
+// each with two shimmer lines — mirroring the real `PodCard`'s shape at the
+// same 150pt width. Distinct from `components/loading-skeleton.html`'s flat
+// `.sk-row` list, which has no current consumer (see design/kit/MANIFEST.md).
 //
 // All fills come from the active ThemePalette (`--chip` base, a swept `--text`
 // highlight for the shimmer band) and the Spacing/Radius/Elevation/Motion
@@ -61,7 +63,7 @@ private struct ShimmerModifier: ViewModifier {
 // MARK: - Skeleton primitives
 
 /// A single shimmer block: a `--chip`-filled rounded rect with the sweep on top.
-/// Sizes come from the frame the parent applies (art tile, pill, or a line).
+/// Sizes come from the frame the parent applies (art tile or a line).
 private struct SkeletonBlock: View {
     var cornerRadius: CGFloat
 
@@ -74,76 +76,79 @@ private struct SkeletonBlock: View {
     }
 }
 
-/// One `.sk-line`: an 11pt-tall bar filling `fraction` of the available width
-/// (the kit's `.w70` / `.w45` / `.w30`), pinned leading.
+/// One `.sk-sh-title`/`.sk-sh-count`/`.sk-pod-line`: an 11pt-tall bar filling
+/// `fraction` of the available width, pinned leading.
 private struct SkeletonLine: View {
     var fraction: CGFloat
 
     var body: some View {
         GeometryReader { geo in
-            SkeletonBlock(cornerRadius: 6) // .sk-line { border-radius: 6px }
+            SkeletonBlock(cornerRadius: 6) // { border-radius: 6px }
                 .frame(width: geo.size.width * fraction, height: 11)
         }
-        .frame(height: 11) // .sk-line { height: 11px }
+        .frame(height: 11)
     }
 }
 
-/// One `.sk-row`: 60pt art tile · three-line meta · 74×30 pill placeholder.
-private struct SkeletonRow: View {
+/// One `.sk-pod`: a 138×138 art placeholder + two shimmer lines (w80/w50),
+/// matching `PodCard`'s shape at the kit's skeleton width.
+private struct SkeletonPod: View {
     var body: some View {
-        HStack(spacing: Spacing.sp3) { // .sk-row { gap: --sp-3 }
-            SkeletonBlock(cornerRadius: Radius.rArt14)
-                .frame(width: 60, height: 60) // .sk-art
+        VStack(alignment: .leading, spacing: 9) {   // .sk-pod { gap: 9px }
+            SkeletonBlock(cornerRadius: Radius.rMd16)
+                .frame(width: 138, height: 138)   // .sk-pod-art
 
-            VStack(alignment: .leading, spacing: Spacing.sp2) { // .sk-meta { gap: 8px }
-                SkeletonLine(fraction: 0.70) // .w70
-                SkeletonLine(fraction: 0.45) // .w45
-                SkeletonLine(fraction: 0.30) // .w30
-            }
-            .frame(maxWidth: .infinity, alignment: .leading) // .sk-meta { flex: 1 }
-
-            SkeletonBlock(cornerRadius: Radius.rPill999)
-                .frame(width: 74, height: 30) // .sk-pill
+            SkeletonLine(fraction: 0.80)   // .w80
+                .padding(.horizontal, 2)
+            SkeletonLine(fraction: 0.50)   // .w50
+                .padding(.horizontal, 2)
         }
-        .padding(.vertical, Spacing.sp3)   // .sk-row padding-block --sp-3
-        .padding(.horizontal, Spacing.sp4) // .sk-row padding-inline --sp-4
+        .frame(width: 138)
+    }
+}
+
+/// One `.sk-shelf`: a shimmering title + count header over a `.sk-rail` of
+/// three `.sk-pod` placeholders.
+private struct SkeletonShelf: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: Spacing.sp3) {   // .sk-shelf-head margin-bottom
+            HStack {
+                SkeletonLine(fraction: 1)
+                    .frame(width: 110)
+                Spacer(minLength: Spacing.sp3)
+                SkeletonLine(fraction: 1)
+                    .frame(width: 60)
+            }
+            .padding(.horizontal, 2)
+
+            HStack(spacing: Spacing.sp3) {   // .sk-rail { gap: --sp-3 }
+                SkeletonPod()
+                SkeletonPod()
+                SkeletonPod()
+            }
+        }
     }
 }
 
 // MARK: - Loading skeleton (public)
 
-/// A grouped inset list of shimmer rows shown while search results load.
-/// Mirrors the kit's `.sk-list`: floats on `--surface` with `--r-lg` corners,
-/// `--elev-list` elevation, and hairline separators inset past the art tile.
+/// A stack of shimmering shelf placeholders shown while search results load —
+/// mirrors `screens/loading.html`'s shelf/rail skeleton, matching the shape
+/// `ResultShelf`/`PodCard` render once results arrive.
 public struct LoadingSkeleton: View {
-    private let rows: Int
+    private let shelves: Int
 
-    @Environment(\.palette) private var palette
-
-    /// - Parameter rows: number of placeholder rows (defaults to 4, as in the kit).
-    public init(rows: Int = 4) {
-        self.rows = max(0, rows)
+    /// - Parameter shelves: number of placeholder shelves (defaults to 2, as in the kit).
+    public init(shelves: Int = 2) {
+        self.shelves = max(0, shelves)
     }
 
     public var body: some View {
-        VStack(spacing: 0) {
-            ForEach(0..<rows, id: \.self) { index in
-                SkeletonRow()
-                if index < rows - 1 {
-                    // .sk-row::after — inset hairline past the 60pt art + gap.
-                    Rectangle()
-                        .fill(palette.separator)
-                        .frame(height: 0.5)
-                        .padding(.leading, Spacing.sp4 + 60 + Spacing.sp3)
-                }
+        VStack(alignment: .leading, spacing: Spacing.sp5) {   // .sk-shelf margin-top
+            ForEach(0..<shelves, id: \.self) { _ in
+                SkeletonShelf()
             }
         }
-        .background(
-            palette.surface,
-            in: RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous)
-        )
-        .clipShape(RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous))
-        .elevList(hairline: palette.hairline)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Loading results")
         .accessibilityAddTraits(.updatesFrequently)
@@ -157,11 +162,10 @@ private struct LoadingSkeletonPreviewHost: View {
     @Environment(\.palette) private var palette
 
     var body: some View {
-        VStack(spacing: Spacing.sp5) {
-            LoadingSkeleton()          // default 4 rows
-            LoadingSkeleton(rows: 2)   // shorter placeholder
+        ScrollView {
+            LoadingSkeleton()
+                .padding(Spacing.gutter)
         }
-        .padding(Spacing.gutter)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(palette.groupedBg)
     }

@@ -78,10 +78,10 @@ public struct KeychainStore: Sendable {
     // MARK: - Load
 
     /// The stored API key, or `nil` if none is saved.
-    public var apiKey: String? { get(account: keyAccount) }
+    public var apiKey: String? { readValue(account: keyAccount) }
 
     /// The stored API secret, or `nil` if none is saved.
-    public var apiSecret: String? { get(account: secretAccount) }
+    public var apiSecret: String? { readValue(account: secretAccount) }
 
     /// Loads the complete ``Credentials`` pair.
     ///
@@ -162,7 +162,7 @@ public struct KeychainStore: Sendable {
     }
 
     /// Reads the stored string for `account`, or `nil` if absent / unreadable.
-    private func get(account: String) -> String? {
+    private func readValue(account: String) -> String? {
         var query = baseQuery(account: account)
         query[kSecReturnData as String] = true
         query[kSecMatchLimit as String] = kSecMatchLimitOne

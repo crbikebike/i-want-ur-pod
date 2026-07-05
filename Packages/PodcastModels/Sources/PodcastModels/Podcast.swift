@@ -30,6 +30,16 @@ public final class Podcast {
     /// Primary category label (freeform, sourced from the feed).
     public var category: String
 
+    /// Show-level description — `<channel><description>` → `<channel><itunes:summary>` → `""`.
+    /// Feed-derived like `title`/`author`/`category`; updates on re-parse.
+    ///
+    /// Additive migration note: this is a new, non-optional attribute with a
+    /// default value (`""`), which SwiftData's lightweight migration handles
+    /// automatically (existing rows get the default). Safe for this
+    /// pre-release, local-first app; `ModelSchema.models` is unchanged (same
+    /// types, just one more attribute on `Podcast`).
+    public var summary: String
+
     /// Whether the user has subscribed to this show.
     public var isSubscribed: Bool
 
@@ -48,6 +58,7 @@ public final class Podcast {
         homeURL: URL? = nil,
         artworkURL: URL? = nil,
         category: String = "",
+        summary: String = "",
         isSubscribed: Bool = false,
         dateAdded: Date = .now,
         episodes: [Episode] = []
@@ -59,6 +70,7 @@ public final class Podcast {
         self.homeURL = homeURL
         self.artworkURL = artworkURL
         self.category = category
+        self.summary = summary
         self.isSubscribed = isSubscribed
         self.dateAdded = dateAdded
         self.episodes = episodes
