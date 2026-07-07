@@ -1,5 +1,5 @@
-<!-- @dsCard group="Components" -->
-<title>Component · Tab bar</title>
+<!-- @dsCard group="Home" -->
+<title>Home</title>
 <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
@@ -225,7 +225,7 @@
   /* ---------- scroll region ---------- */
   .content {
     flex: 1; overflow-y: auto; overflow-x: hidden;
-    padding: 54px var(--gutter) 116px;   /* top pad clears status bar */
+    padding: 54px var(--gutter) 104px;   /* top clears status bar; bottom clears floating tab bar */
     -webkit-overflow-scrolling: touch;
     position: relative; z-index: 2;
   }
@@ -508,46 +508,67 @@
   }
   @keyframes shimmer { 0% { background-position: 180% 0; } 100% { background-position: -80% 0; } }
 
-  /* big empty / no-results / error state */
-  .state { display: flex; flex-direction: column; align-items: center; text-align: center;
-    padding: var(--sp-7) var(--sp-4) var(--sp-6); gap: var(--sp-3); }
-  .state-badge {
-    width: 84px; height: 84px; border-radius: 26px; display: grid; place-items: center;
-    color: #FFFFFF; box-shadow: var(--elev-card); position: relative; overflow: hidden;
-    animation: badgePop .6s var(--ease-spring) both;
+  /* typeahead drawer — drops down from the search box, floats over content */
+  .search-wrap { position: relative; z-index: 40;
+    opacity: 0; animation: rise .6s var(--ease-soft) .18s forwards; }
+  .search-wrap .search { margin-top: 0; opacity: 1; animation: none; }
+  .drawer {
+    position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 50;
+    background: var(--surface); border-radius: var(--r-md); overflow: hidden;
+    box-shadow: var(--elev-pop), inset 0 0 0 .5px var(--hairline);
+    transform-origin: top center;
+    animation: drawerIn .22s var(--ease-spring) both;
   }
-  .state-badge::after { content: ""; position: absolute; inset: 0;
-    background: radial-gradient(circle at 30% 24%, rgba(255,255,255,.4), transparent 45%); }
-  .state-badge svg { position: relative; z-index: 2; }
-  .badge-discover { background: linear-gradient(140deg, var(--coral), var(--mint)); }
-  .badge-empty { background: linear-gradient(140deg, var(--grape), var(--coral)); }
-  .badge-error { background: linear-gradient(140deg, #FF7A4D, #FF3D6E); }
-  @keyframes badgePop { 0% { opacity: 0; transform: scale(.7) translateY(8px); } 100% { opacity: 1; transform: none; } }
-  .state-title { font-size: 1.28rem; font-weight: 800; letter-spacing: -.015em; color: var(--text); margin-top: var(--sp-2); }
-  .state-sub { font-size: .92rem; font-weight: 500; line-height: 1.45; color: var(--text-dim); max-width: 268px; }
-  .state-actions { margin-top: var(--sp-4); display: flex; flex-wrap: wrap; gap: var(--sp-2); justify-content: center; }
-
-  /* quick-suggestion chips row (first-run / empty) */
-  .chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); justify-content: center; margin-top: var(--sp-2); }
-  .qchip {
-    border: none; cursor: pointer; font-family: var(--font);
-    font-size: .82rem; font-weight: 700; color: var(--chip-text); background: var(--chip);
-    padding: 8px 14px; min-height: 36px; border-radius: var(--r-pill);
-    transition: transform var(--dur-mid) var(--ease-spring);
-  }
-  .qchip:active { transform: scale(.94); }
-
-  /* typing suggestions dropdown */
-  .suggest { margin-top: var(--sp-3); background: var(--surface);
-    border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--elev-list); }
-  .sug { display: flex; align-items: center; gap: 12px; padding: 0 14px; min-height: 48px; position: relative; cursor: pointer; }
-  .sug:not(:last-child)::after { content: ""; position: absolute; left: 46px; right: 0; bottom: 0; height: .5px; background: var(--separator); }
-  .sug:active { background: color-mix(in srgb, var(--text) 6%, transparent); }
-  .sug .sug-ico { flex: none; width: 20px; color: var(--text-faint); display: grid; place-items: center; }
-  .sug .q { flex: 1; font-size: .98rem; font-weight: 500; color: var(--text);
+  .drawer[hidden] { display: none; }
+  @keyframes drawerIn { from { opacity: 0; transform: translateY(-8px) scaleY(.96); } to { opacity: 1; transform: none; } }
+  .sug { display: flex; align-items: center; gap: 12px; padding: 8px 12px; min-height: 56px; position: relative; cursor: pointer;
+    transition: background .15s; }
+  .sug:not(:last-child)::after { content: ""; position: absolute; left: 64px; right: 0; bottom: 0; height: .5px; background: var(--separator); }
+  .sug:active, .sug:hover { background: color-mix(in srgb, var(--text) 6%, transparent); }
+  .sug-av { flex: none; width: 40px; height: 40px; border-radius: 10px; position: relative; overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 3px 8px -5px rgba(0,0,0,.5); }
+  .sug-av::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.4), transparent 46%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.24), transparent 55%); }
+  .sug-av .g { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 1.05rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 1px 3px rgba(0,0,0,.35); }
+  .sug .body { flex: 1; min-width: 0; }
+  .sug .t { font-size: .98rem; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sug .t b { font-weight: 800; }
+  .sug .s { margin-top: 1px; font-size: .8rem; font-weight: 500; color: var(--text-dim);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .sug .q b { font-weight: 800; color: var(--text); }
   .sug .arr { flex: none; color: var(--text-faint); }
+
+  /* underlying content — Result Row shelves the drawer floats over */
+  .shelf + .shelf { margin-top: var(--sp-6); }
+  .shelf-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); padding: 0 2px; margin-bottom: var(--sp-3); }
+  .shelf-head .sh-title { font-size: 1.14rem; font-weight: 800; letter-spacing: -.015em; color: var(--text); }
+  .shelf-head .sh-count { flex: none; font-size: .72rem; font-weight: 800; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+  .rail { display: flex; gap: var(--sp-3); overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; padding: 4px 2px 6px; margin: -4px -2px -6px; scrollbar-width: none; }
+  .rail::-webkit-scrollbar { height: 0; }
+  .pod { flex: none; width: 138px; scroll-snap-align: start; display: flex; flex-direction: column; gap: 9px; }
+  .pod-art { position: relative; width: 138px; height: 138px; border-radius: var(--r-md); overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 8px 20px -12px rgba(0,0,0,.55); }
+  .pod-art::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.42), transparent 42%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.28), transparent 55%); }
+  .pod-art .glyph { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 2.4rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 2px 8px rgba(0,0,0,.35); }
+  .pod-meta { padding: 0 2px; }
+  .pod-title { font-size: .92rem; font-weight: 700; letter-spacing: -.01em; color: var(--text); line-height: 1.22;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pod-studio { margin-top: 3px; font-size: .78rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pod .sub {
+    position: absolute; z-index: 3; right: 8px; bottom: 8px; width: 34px; height: 34px; min-width: 0; min-height: 0; padding: 0;
+    border: none; cursor: pointer; border-radius: 50%; color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,.5), inset 0 0 0 .5px rgba(255,255,255,.28);
+    display: inline-flex; align-items: center; justify-content: center; }
+  /* dim the underlying content while the typeahead drawer is open */
+  .content.drawer-open .under { filter: saturate(.9) brightness(.72); transition: filter .2s var(--ease-soft); }
+  .under { transition: filter .2s var(--ease-soft); margin-top: var(--sp-5); }
 
   /* result card (grid tile) */
   .cardgrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin-top: var(--sp-3); }
@@ -583,90 +604,137 @@
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
 
-  /* floating Liquid Glass sample (mirrors the in-app floating bar) */
-  .shell-tabbar { position: relative; display: flex; align-items: center; justify-content: space-around;
-    height: 60px; margin: 6px 6px 2px; padding: 0 6px; border-radius: 30px;
-    background: var(--tabbar-glass); backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%); border: .5px solid var(--tabbar-hairline);
-    box-shadow: var(--tabbar-shadow); }
-
-  /* ---------- search takeover state of the bar ----------
-     When Search is tapped the icons collapse and the SAME glass bar becomes a
-     search field: Home stays pinned left, a ✕ cancels on the right. In-app it
-     detaches from bottom:22px and pins just above the keyboard. Children are
-     parent-agnostic so both .tabbar (screens) and .shell-tabbar (gallery) can
-     wear `.takeover`. */
-  .tabbar.takeover, .shell-tabbar.takeover { justify-content: flex-start; gap: var(--sp-2); padding: 0 8px; }
-  .tb-home, .tb-cancel {
-    flex: none; width: 40px; height: 40px; border-radius: 50%;
-    border: none; background: none; cursor: pointer; display: grid; place-items: center;
-    transition: transform .4s var(--ease-spring), color .3s;
-  }
-  .tb-home { color: var(--tabbar-icon); }
-  .tb-cancel { color: var(--text-faint); }
-  .tb-home:active, .tb-cancel:active { transform: scale(.85); }
-  .tb-field {
-    flex: 1; min-width: 0; height: 40px; display: flex; align-items: center; gap: 8px;
-    padding: 0 12px; background: var(--field); border-radius: var(--r-field);
-    transition: box-shadow .25s;
-  }
-  .tb-field:focus-within { box-shadow: 0 0 0 2px var(--accent); }
-  .tb-field svg.mag { flex: none; color: var(--text-faint); }
-  .tb-field input {
-    flex: 1; min-width: 0; border: none; background: none; outline: none;
-    font-family: var(--font); font-size: 1rem; font-weight: 500; color: var(--text);
-  }
-  .tb-field input::placeholder { color: var(--text-dim); font-weight: 500; }
-
   /* @font-display-titles */
   h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
   .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
     font-family: var(--font-display); font-weight: 700; }
 
 </style>
+<style>
+  /* ---------- top-right utility: Settings gear (reached here, not a tab) ---------- */
+  .util-gear {
+    position: absolute; top: 58px; right: var(--gutter); z-index: 26;
+    width: 40px; height: 40px; border-radius: 50%;
+    display: grid; place-items: center; border: none; cursor: pointer;
+    background: var(--chip); color: var(--text);
+    box-shadow: inset 0 0 0 .5px var(--hairline);
+    transition: transform .3s var(--ease-spring), background .3s;
+  }
+  .util-gear:active { transform: scale(.9); }
+  /* the large title shares its row with the gear — keep clear of it */
+  .titlewrap { padding-right: 52px; }
+  /* small trailing "See all" link in a section header */
+  .see-all { font-size: .82rem; font-weight: 800; letter-spacing: .01em;
+    color: var(--accent); text-decoration: none; }
+</style>
+
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
   <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
 </button>
-<main class="stage">
-  <div class="stage-cap"><span class="eq"><i></i><i></i><i></i></span>Tab bar</div>
-  <p class="vlabel">Floating Liquid Glass tab bar (Home active)</p>
-    <nav class="shell-tabbar" aria-label="Primary sample">
-    <button class="tab active" aria-current="page">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3.5 11.2 12 4l8.5 7.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.8 9.7v9.5c0 .6.5 1.1 1.1 1.1h10.2c.6 0 1.1-.5 1.1-1.1V9.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.6 20.3v-5.1c0-.5.4-.9.9-.9h3c.5 0 .9.4.9.9v5.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Home</span>
-    </button>
-    <button class="tab">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="4" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/></svg>
-      <span>Shows</span>
-    </button>
-    <button class="tab">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M4 12h11M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17.5 13.5v5.2c0 .6-.7.9-1.2.5l-.9-.7M20 10.5l-2.5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Up Next</span>
-    </button>
-    <button class="tab">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M15.8 15.8 20.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <span>Search</span>
-    </button>
-  </nav>
 
-  <p class="vlabel">Search takeover (bar becomes the search field)</p>
-  <nav class="shell-tabbar takeover" aria-label="Search takeover sample">
-    <button class="tb-home" aria-label="Home">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.5 11.2 12 4l8.5 7.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.8 9.7v9.5c0 .6.5 1.1 1.1 1.1h10.2c.6 0 1.1-.5 1.1-1.1V9.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.6 20.3v-5.1c0-.5.4-.9.9-.9h3c.5 0 .9.4.9.9v5.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <div class="tb-field">
-      <svg class="mag" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M15.8 15.8 20.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <input type="text" placeholder="Shows, people, topics" aria-label="Search">
+<div class="phone">
+  <div class="notch"></div>
+  <div class="screen">
+
+    <!-- status bar -->
+    <div class="statusbar">
+      <span>9:41</span>
+      <span class="sb-right">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="4.5" width="3" height="7.5" rx="1"/><rect x="9" y="2" width="3" height="10" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
+        <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.4c2 0 3.9.8 5.3 2.1l1.2-1.3A9.4 9.4 0 0 0 8.5.6 9.4 9.4 0 0 0 2 3.2l1.2 1.3A7.4 7.4 0 0 1 8.5 2.4Z"/><path d="M8.5 6c1 0 2 .4 2.7 1.1l1.2-1.3A6 6 0 0 0 8.5 4a6 6 0 0 0-3.9 1.8l1.2 1.3A4 4 0 0 1 8.5 6Z"/><circle cx="8.5" cy="9.6" r="1.7"/></svg>
+        <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="1" y="1" width="21" height="10" rx="3" stroke="currentColor" stroke-width="1.2" opacity=".5"/><rect x="2.6" y="2.6" width="16" height="6.8" rx="1.6" fill="currentColor"/><rect x="23.4" y="4" width="1.8" height="4" rx="1" fill="currentColor" opacity=".6"/></svg>
+      </span>
     </div>
-    <button class="tb-cancel" aria-label="Cancel search">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-  </nav>
 
-  <p class="vlabel">Over bright artwork (glass legibility)</p>
-  <div style="border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(120deg,#FF7A4D,#FF4D8D 32%,#7C6BFF 62%,#34E0C4);padding:22px 0 8px">
-    <nav class="shell-tabbar" aria-label="Primary sample over artwork" style="margin-left:12px;margin-right:12px">
-      <button class="tab">
+
+    <!-- top-right Settings gear -->
+    <button class="util-gear" aria-label="Settings">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 8h9M18.5 8H20M4 16h1.5M11 16h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="8" r="2.6" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="16" r="2.6" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+
+    <!-- scroll content -->
+    <div class="content" id="content">
+
+      <div class="titlewrap">
+        <h1 class="big">Home<span class="pulse-dot"></span></h1>
+      </div>
+
+      <!-- Up Next peek -->
+      <div class="sec-head">
+        <h2>Up Next</h2>
+        <a class="see-all" href="#">See all</a>
+      </div>
+      <div class="list">
+        <div class="row">
+          <span class="art" style="background-image:url(../art/20k-hertz.jpg);background-size:cover;background-position:center"></span>
+          <div class="meta">
+            <div class="rtitle">The Sample-Rate Wars</div>
+            <div class="rauthor">Twenty Thousand Hertz · 18 min left</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="art" style="background-image:url(../art/song-exploder.jpg);background-size:cover;background-position:center"></span>
+          <div class="meta">
+            <div class="rtitle">Cold Open, Warm Ending</div>
+            <div class="rauthor">Song Exploder · 42 min</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- New episodes -->
+      <div class="sec-head">
+        <h2>New episodes</h2>
+        <a class="see-all" href="#">See all</a>
+      </div>
+      <div class="list">
+        <div class="row">
+          <span class="art" style="background-image:url(../art/acquired.jpg);background-size:cover;background-position:center"></span>
+          <div class="meta">
+            <div class="rtitle">Building Acquired, Episode 300</div>
+            <div class="rauthor">Acquired · Today</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="art" style="background-image:url(../art/99pi.jpg);background-size:cover;background-position:center"></span>
+          <div class="meta">
+            <div class="rtitle">The Beauty of Bike Lanes</div>
+            <div class="rauthor">99% Invisible · Yesterday</div>
+          </div>
+        </div>
+        <div class="row">
+          <span class="art" style="background-image:url(../art/rest-is-history.jpg);background-size:cover;background-position:center"></span>
+          <div class="meta">
+            <div class="rtitle">Rome's Last Good Emperor</div>
+            <div class="rauthor">The Rest Is History · 2d ago</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shows for you (recommendations placeholder) -->
+      <section class="shelf" style="margin-top:var(--sp-6)">
+        <div class="shelf-head"><span class="sh-title">Shows for you</span><span class="sh-count">picked</span></div>
+        <div class="rail">
+          <article class="pod"><div class="pod-art" style="background-image:url(../art/acquired.jpg);background-size:cover;background-position:center"><button class="sub" aria-label="Subscribe to Acquired"><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 6 11l5.5-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ring"></span></button></div><div class="pod-meta"><div class="pod-title">Acquired</div><div class="pod-studio">Ben Gilbert &amp; David Rosenthal</div></div></article>
+          <article class="pod"><div class="pod-art" style="background-image:url(../art/search-engine.jpg);background-size:cover;background-position:center"><button class="sub" aria-label="Subscribe to Search Engine"><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 6 11l5.5-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ring"></span></button></div><div class="pod-meta"><div class="pod-title">Search Engine</div><div class="pod-studio">PJ Vogt</div></div></article>
+          <article class="pod"><div class="pod-art" style="background-image:url(../art/radiolab.jpg);background-size:cover;background-position:center"><button class="sub" aria-label="Subscribe to Radiolab"><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 6 11l5.5-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ring"></span></button></div><div class="pod-meta"><div class="pod-title">Radiolab</div><div class="pod-studio">WNYC Studios</div></div></article>
+        </div>
+      </section>
+
+      <!-- Our favorites (editorial placeholder) -->
+      <section class="shelf">
+        <div class="shelf-head"><span class="sh-title">Our favorites</span><span class="sh-count">staff</span></div>
+        <div class="rail">
+          <article class="pod"><div class="pod-art" style="background-image:url(../art/99pi.jpg);background-size:cover;background-position:center"><button class="sub" aria-label="Subscribe to 99% Invisible"><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 6 11l5.5-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ring"></span></button></div><div class="pod-meta"><div class="pod-title">99% Invisible</div><div class="pod-studio">Roman Mars</div></div></article>
+          <article class="pod"><div class="pod-art" style="background-image:url(../art/bone-valley.jpg);background-size:cover;background-position:center"><button class="sub" aria-label="Subscribe to Bone Valley"><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 6 11l5.5-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ring"></span></button></div><div class="pod-meta"><div class="pod-title">Bone Valley</div><div class="pod-studio">Lava for Good</div></div></article>
+          <article class="pod"><div class="pod-art" style="background-image:url(../art/the-daily.jpg);background-size:cover;background-position:center"><button class="sub" aria-label="Subscribe to The Daily"><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 6 11l5.5-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ring"></span></button></div><div class="pod-meta"><div class="pod-title">The Daily</div><div class="pod-studio">The New York Times</div></div></article>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- bottom tab bar: floating Liquid Glass (iOS 26) — Home active -->
+    <nav class="tabbar" aria-label="Primary">
+      <button class="tab active" aria-current="page">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3.5 11.2 12 4l8.5 7.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.8 9.7v9.5c0 .6.5 1.1 1.1 1.1h10.2c.6 0 1.1-.5 1.1-1.1V9.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.6 20.3v-5.1c0-.5.4-.9.9-.9h3c.5 0 .9.4.9.9v5.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Home</span>
       </button>
@@ -678,14 +746,19 @@
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M4 12h11M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17.5 13.5v5.2c0 .6-.7.9-1.2.5l-.9-.7M20 10.5l-2.5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Up Next</span>
       </button>
-      <button class="tab active" aria-current="page">
+      <button class="tab">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M15.8 15.8 20.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <span>Search</span>
       </button>
     </nav>
+
+    <div class="home-ind"></div>
+
   </div>
-</main>
+</div>
+
 <script>
+  // theme toggle
   const root = document.documentElement;
   const tt = document.getElementById('tt');
   const tgEmoji = document.getElementById('tgEmoji');
@@ -697,12 +770,23 @@
     tgEmoji.textContent = dark ? '☀️' : '🌙';
     tgLabel.textContent = dark ? 'Light' : 'Dark';
   });
-  document.querySelectorAll('.shell-tabbar').forEach(bar => {
-    bar.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        bar.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.removeAttribute('aria-current'); });
-        tab.classList.add('active'); tab.setAttribute('aria-current','page');
-      });
+
+  // subscribe toggle + pulse ring (null-safe: icon-only buttons have no .txt)
+  document.querySelectorAll('.sub').forEach(btn => {
+    const txt = btn.querySelector('.txt');
+    btn.addEventListener('click', () => {
+      const done = btn.classList.toggle('done');
+      if (txt) txt.textContent = done ? 'Subscribed' : 'Subscribe';
+      btn.setAttribute('aria-pressed', done ? 'true' : 'false');
+      btn.classList.remove('pulsing'); void btn.offsetWidth; btn.classList.add('pulsing');
+    });
+  });
+
+  // tab bar active state
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.removeAttribute('aria-current'); });
+      tab.classList.add('active'); tab.setAttribute('aria-current','page');
     });
   });
 </script>

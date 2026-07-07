@@ -1,5 +1,5 @@
-<!-- @dsCard group="Components" -->
-<title>Component · Tab bar</title>
+<!-- @dsCard group="Search" -->
+<title>Search · Error</title>
 <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
@@ -225,7 +225,7 @@
   /* ---------- scroll region ---------- */
   .content {
     flex: 1; overflow-y: auto; overflow-x: hidden;
-    padding: 54px var(--gutter) 116px;   /* top pad clears status bar */
+    padding: 54px var(--gutter) 104px;   /* top clears status bar; bottom clears floating tab bar */
     -webkit-overflow-scrolling: touch;
     position: relative; z-index: 2;
   }
@@ -251,8 +251,8 @@
 
   h1.big {
     font-size: 2.32rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.04;
-    margin-top: 4px;
-    display: inline-flex; align-items: center; gap: var(--sp-2);
+    margin-top: 6px;
+    display: flex; align-items: center; gap: var(--sp-2); width: fit-content;
     opacity: 0; animation: rise .6s var(--ease-soft) .12s forwards;
   }
   /* a single lively coral dot as the accent, not a headline swap */
@@ -583,20 +583,20 @@
   .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
   .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
 
-  /* floating Liquid Glass sample (mirrors the in-app floating bar) */
-  .shell-tabbar { position: relative; display: flex; align-items: center; justify-content: space-around;
-    height: 60px; margin: 6px 6px 2px; padding: 0 6px; border-radius: 30px;
-    background: var(--tabbar-glass); backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%); border: .5px solid var(--tabbar-hairline);
-    box-shadow: var(--tabbar-shadow); }
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
 
-  /* ---------- search takeover state of the bar ----------
-     When Search is tapped the icons collapse and the SAME glass bar becomes a
-     search field: Home stays pinned left, a ✕ cancels on the right. In-app it
-     detaches from bottom:22px and pins just above the keyboard. Children are
-     parent-agnostic so both .tabbar (screens) and .shell-tabbar (gallery) can
-     wear `.takeover`. */
-  .tabbar.takeover, .shell-tabbar.takeover { justify-content: flex-start; gap: var(--sp-2); padding: 0 8px; }
+</style>
+
+<style>
+  /* ---------- search takeover state of the floating bar ----------
+     Tapping Search collapses the icons; the SAME glass bar becomes the search
+     field — Home pinned left, a ✕ to cancel on the right. In-app it detaches
+     from bottom:22px and rises just above the keyboard; shown here at rest.
+     Built only on locked tokens (--field, --r-field, --tabbar-* on .tabbar). */
+  .tabbar.takeover { justify-content: flex-start; gap: var(--sp-2); padding: 0 8px; }
   .tb-home, .tb-cancel {
     flex: none; width: 40px; height: 40px; border-radius: 50%;
     border: none; background: none; cursor: pointer; display: grid; place-items: center;
@@ -617,75 +617,69 @@
     font-family: var(--font); font-size: 1rem; font-weight: 500; color: var(--text);
   }
   .tb-field input::placeholder { color: var(--text-dim); font-weight: 500; }
-
-  /* @font-display-titles */
-  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
-  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
-    font-family: var(--font-display); font-weight: 700; }
-
 </style>
+
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
   <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
 </button>
-<main class="stage">
-  <div class="stage-cap"><span class="eq"><i></i><i></i><i></i></span>Tab bar</div>
-  <p class="vlabel">Floating Liquid Glass tab bar (Home active)</p>
-    <nav class="shell-tabbar" aria-label="Primary sample">
-    <button class="tab active" aria-current="page">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3.5 11.2 12 4l8.5 7.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.8 9.7v9.5c0 .6.5 1.1 1.1 1.1h10.2c.6 0 1.1-.5 1.1-1.1V9.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.6 20.3v-5.1c0-.5.4-.9.9-.9h3c.5 0 .9.4.9.9v5.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Home</span>
-    </button>
-    <button class="tab">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="4" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/></svg>
-      <span>Shows</span>
-    </button>
-    <button class="tab">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M4 12h11M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17.5 13.5v5.2c0 .6-.7.9-1.2.5l-.9-.7M20 10.5l-2.5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Up Next</span>
-    </button>
-    <button class="tab">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M15.8 15.8 20.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <span>Search</span>
-    </button>
-  </nav>
 
-  <p class="vlabel">Search takeover (bar becomes the search field)</p>
-  <nav class="shell-tabbar takeover" aria-label="Search takeover sample">
-    <button class="tb-home" aria-label="Home">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.5 11.2 12 4l8.5 7.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.8 9.7v9.5c0 .6.5 1.1 1.1 1.1h10.2c.6 0 1.1-.5 1.1-1.1V9.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.6 20.3v-5.1c0-.5.4-.9.9-.9h3c.5 0 .9.4.9.9v5.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <div class="tb-field">
-      <svg class="mag" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M15.8 15.8 20.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <input type="text" placeholder="Shows, people, topics" aria-label="Search">
+<div class="phone">
+  <div class="notch"></div>
+  <div class="screen">
+
+    <!-- status bar -->
+    <div class="statusbar">
+      <span>9:41</span>
+      <span class="sb-right">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="4.5" width="3" height="7.5" rx="1"/><rect x="9" y="2" width="3" height="10" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
+        <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.4c2 0 3.9.8 5.3 2.1l1.2-1.3A9.4 9.4 0 0 0 8.5.6 9.4 9.4 0 0 0 2 3.2l1.2 1.3A7.4 7.4 0 0 1 8.5 2.4Z"/><path d="M8.5 6c1 0 2 .4 2.7 1.1l1.2-1.3A6 6 0 0 0 8.5 4a6 6 0 0 0-3.9 1.8l1.2 1.3A4 4 0 0 1 8.5 6Z"/><circle cx="8.5" cy="9.6" r="1.7"/></svg>
+        <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="1" y="1" width="21" height="10" rx="3" stroke="currentColor" stroke-width="1.2" opacity=".5"/><rect x="2.6" y="2.6" width="16" height="6.8" rx="1.6" fill="currentColor"/><rect x="23.4" y="4" width="1.8" height="4" rx="1" fill="currentColor" opacity=".6"/></svg>
+      </span>
     </div>
-    <button class="tb-cancel" aria-label="Cancel search">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-  </nav>
 
-  <p class="vlabel">Over bright artwork (glass legibility)</p>
-  <div style="border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(120deg,#FF7A4D,#FF4D8D 32%,#7C6BFF 62%,#34E0C4);padding:22px 0 8px">
-    <nav class="shell-tabbar" aria-label="Primary sample over artwork" style="margin-left:12px;margin-right:12px">
-      <button class="tab">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3.5 11.2 12 4l8.5 7.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.8 9.7v9.5c0 .6.5 1.1 1.1 1.1h10.2c.6 0 1.1-.5 1.1-1.1V9.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.6 20.3v-5.1c0-.5.4-.9.9-.9h3c.5 0 .9.4.9.9v5.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Home</span>
+    <!-- inline nav bar -->
+    <div class="navbar" id="navbar" aria-hidden="true">
+      <span class="nav-eq"><i></i><i></i><i></i></span>
+      <span class="nav-title">Search</span>
+    </div>
+
+    <!-- scroll content -->
+    <div class="content" id="content">
+
+      <div class="state" style="margin-top:var(--sp-6)">
+        <div class="state-badge badge-error"><svg width="38" height="38" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div class="state-title">Couldn't reach the directory</div>
+        <div class="state-sub">The search service didn't respond. Check your connection and try again.</div>
+        <div class="state-actions">
+          <button class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M15 9a6 6 0 1 1-1.8-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15 3v3h-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Retry</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- bottom tab bar: floating Liquid Glass (iOS 26) -->
+            <!-- search takeover: the floating bar IS the search field (Home left, cancel right).
+         In-app it rises above the keyboard; shown here at its resting position. -->
+    <nav class="tabbar takeover" aria-label="Search">
+      <button class="tb-home" aria-label="Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.5 11.2 12 4l8.5 7.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.8 9.7v9.5c0 .6.5 1.1 1.1 1.1h10.2c.6 0 1.1-.5 1.1-1.1V9.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.6 20.3v-5.1c0-.5.4-.9.9-.9h3c.5 0 .9.4.9.9v5.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <button class="tab">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="4" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/></svg>
-        <span>Shows</span>
-      </button>
-      <button class="tab">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M4 12h11M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17.5 13.5v5.2c0 .6-.7.9-1.2.5l-.9-.7M20 10.5l-2.5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Up Next</span>
-      </button>
-      <button class="tab active" aria-current="page">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M15.8 15.8 20.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <span>Search</span>
+      <div class="tb-field">
+        <svg class="mag" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M15.8 15.8 20.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Shows, people, topics" value="orbit notes" aria-label="Search">
+      </div>
+      <button class="tb-cancel" aria-label="Cancel search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
     </nav>
+
+    <div class="home-ind"></div>
+
   </div>
-</main>
+</div>
+
 <script>
+  // theme toggle
   const root = document.documentElement;
   const tt = document.getElementById('tt');
   const tgEmoji = document.getElementById('tgEmoji');
@@ -697,12 +691,20 @@
     tgEmoji.textContent = dark ? '☀️' : '🌙';
     tgLabel.textContent = dark ? 'Light' : 'Dark';
   });
-  document.querySelectorAll('.shell-tabbar').forEach(bar => {
-    bar.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        bar.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.removeAttribute('aria-current'); });
-        tab.classList.add('active'); tab.setAttribute('aria-current','page');
-      });
+
+  // subscribe toggle + pulse ring (null-safe: icon-only buttons have no .txt)
+  document.querySelectorAll('.sub').forEach(btn => {
+    const txt = btn.querySelector('.txt');
+    btn.addEventListener('click', () => {
+      const done = btn.classList.toggle('done');
+      if (txt) txt.textContent = done ? 'Subscribed' : 'Subscribe';
+      btn.setAttribute('aria-pressed', done ? 'true' : 'false');
+      btn.classList.remove('pulsing'); void btn.offsetWidth; btn.classList.add('pulsing');
     });
   });
+
+  // the takeover field: cancel (x) clears the query in this static mock
+  document.querySelectorAll('.tb-cancel').forEach(x => x.addEventListener('click', () => {
+    const inp = document.querySelector('.tb-field input'); if (inp) { inp.value = ''; inp.focus(); }
+  }));
 </script>
