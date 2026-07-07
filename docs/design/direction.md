@@ -559,7 +559,12 @@ PodcastIndex is deferred to a later milestone.
   derivation was generalized beyond those two prototype shows — added safe
   title patterns (`Chapter N`, trailing `(Part N)`/`, Part N`/`- Ep. N`) and an
   `itunes:season` fallback for unstructured titles, per E8-S6's "season data,
-  or title patterns" criterion.
+  or title patterns" criterion. **Refinement (2026-07-07):** the season
+  fallback moved from all-or-nothing (whole show) to per-season, so teaser
+  feeds like Serial (one full episode + a trailer per season, rarely
+  reaching the title pass's 2-episode threshold) get a named arc card per
+  otherwise-arcless season instead of collapsing to whichever single season
+  happens to form a title arc.
 
 ---
 
