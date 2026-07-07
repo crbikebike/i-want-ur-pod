@@ -73,6 +73,9 @@ public enum FeedUpsert {
                 existing.audioURL = parsedEpisode.audioURL
                 existing.remoteArtworkURL = parsedEpisode.remoteArtworkURL
                 existing.isExplicit = parsedEpisode.isExplicit
+                existing.season = parsedEpisode.season
+                existing.episodeNumber = parsedEpisode.episodeNumber
+                existing.episodeType = parsedEpisode.episodeType
                 // downloadState / playbackProgress are user-owned — left untouched.
             } else {
                 let episode = Episode(
@@ -84,6 +87,9 @@ public enum FeedUpsert {
                     audioURL: parsedEpisode.audioURL,
                     remoteArtworkURL: parsedEpisode.remoteArtworkURL,
                     isExplicit: parsedEpisode.isExplicit,
+                    season: parsedEpisode.season,
+                    episodeNumber: parsedEpisode.episodeNumber,
+                    episodeType: parsedEpisode.episodeType,
                     podcast: podcast
                 )
                 context.insert(episode)

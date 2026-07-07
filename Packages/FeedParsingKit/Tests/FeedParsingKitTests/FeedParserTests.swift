@@ -259,4 +259,49 @@ final class FeedParserTests: XCTestCase {
         """)
         XCTAssertEqual(feed.episodes.first?.duration, 0)
     }
+
+    // MARK: - itunes:season / itunes:episode / itunes:episodeType (E2 story arcs)
+
+    func test_seasonEpisodeAndEpisodeType_parseWhenPresent() throws {
+        let feed = try parseInline("""
+        <item>
+          <guid>se1</guid>
+          <itunes:season>97</itunes:season>
+          <itunes:episode>5</itunes:episode>
+          <itunes:episodeType>full</itunes:episodeType>
+          <enclosure url="https://example.com/se1.mp3" type="audio/mpeg"/>
+        </item>
+        """)
+        let episode = try XCTUnwrap(feed.episodes.first)
+        XCTAssertEqual(episode.season, 97)
+        XCTAssertEqual(episode.episodeNumber, 5)
+        XCTAssertEqual(episode.episodeType, "full")
+    }
+
+    func test_seasonEpisodeAndEpisodeType_areNilWhenAbsent() throws {
+        let feed = try parseInline("""
+        <item>
+          <guid>se2</guid>
+          <enclosure url="https://example.com/se2.mp3" type="audio/mpeg"/>
+        </item>
+        """)
+        let episode = try XCTUnwrap(feed.episodes.first)
+        XCTAssertNil(episode.season)
+        XCTAssertNil(episode.episodeNumber)
+        XCTAssertNil(episode.episodeType)
+    }
+
+    func test_seasonAndEpisode_ignoreJunkValuesGracefully() throws {
+        let feed = try parseInline("""
+        <item>
+          <guid>se3</guid>
+          <itunes:season>not-a-number</itunes:season>
+          <itunes:episode>-3</itunes:episode>
+          <enclosure url="https://example.com/se3.mp3" type="audio/mpeg"/>
+        </item>
+        """)
+        let episode = try XCTUnwrap(feed.episodes.first)
+        XCTAssertNil(episode.season, "Non-numeric season should be ignored, not crash or default to 0.")
+        XCTAssertNil(episode.episodeNumber, "Non-positive episode numbers should be ignored.")
+    }
 }

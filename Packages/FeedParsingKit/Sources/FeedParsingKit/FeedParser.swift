@@ -102,6 +102,9 @@ private final class FeedParserDelegate: NSObject, XMLParserDelegate {
     private var currentDuration: TimeInterval?
     private var currentIsExplicit = false
     private var currentRemoteArtworkURL: URL?
+    private var currentSeason: Int?
+    private var currentEpisodeNumber: Int?
+    private var currentEpisodeType: String?
 
     private var insideItem: Bool { elementStack.contains("item") }
 
@@ -246,6 +249,21 @@ private final class FeedParserDelegate: NSObject, XMLParserDelegate {
                 currentIsExplicit = ["yes", "true"].contains(text.lowercased())
             }
 
+        case "itunes:season":
+            if insideItem, let season = Self.parsePositiveInt(text) {
+                currentSeason = season
+            }
+
+        case "itunes:episode":
+            if insideItem, let episodeNumber = Self.parsePositiveInt(text) {
+                currentEpisodeNumber = episodeNumber
+            }
+
+        case "itunes:episodeType":
+            if insideItem, !text.isEmpty {
+                currentEpisodeType = text
+            }
+
         case "item":
             finalizeCurrentItem()
 
@@ -271,6 +289,9 @@ private final class FeedParserDelegate: NSObject, XMLParserDelegate {
         currentDuration = nil
         currentIsExplicit = false
         currentRemoteArtworkURL = nil
+        currentSeason = nil
+        currentEpisodeNumber = nil
+        currentEpisodeType = nil
     }
 
     /// Builds a `ParsedEpisode` from the current item scratch state and
@@ -303,7 +324,10 @@ private final class FeedParserDelegate: NSObject, XMLParserDelegate {
                 duration: currentDuration ?? 0,
                 audioURL: audioURL,
                 remoteArtworkURL: currentRemoteArtworkURL,
-                isExplicit: currentIsExplicit
+                isExplicit: currentIsExplicit,
+                season: currentSeason,
+                episodeNumber: currentEpisodeNumber,
+                episodeType: currentEpisodeType
             )
         )
     }
@@ -351,5 +375,14 @@ private final class FeedParserDelegate: NSObject, XMLParserDelegate {
         default:
             return nil
         }
+    }
+
+    /// Parses `<itunes:season>` / `<itunes:episode>`, accepting only a
+    /// positive integer. Junk (non-numeric, zero, negative, or a value with
+    /// trailing garbage) is ignored gracefully rather than defaulted/clamped.
+    fileprivate static func parsePositiveInt(_ value: String) -> Int? {
+        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let parsed = Int(trimmed), parsed > 0 else { return nil }
+        return parsed
     }
 }
