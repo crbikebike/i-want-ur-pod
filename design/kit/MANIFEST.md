@@ -39,6 +39,15 @@ the file's real, bespoke markup:
   placeholder in `EmptyStateView.swift`; building the real wizard is tracked
   separately and out of scope.
 
+**2026-07-06 kit reconciliation:** the design kit was regenerated on branch
+`m1` and overlaid onto `main`. Several `screens/*.html` files were renamed
+(the old Discover/search screens all gained a `search-` prefix; the Settings
+screen dropped its Sources content) and eight new files were added (`home.html`,
+`shows.html`, `up-next.html`, `search-start.html`, `search-results.html`, two
+`podcast-detail-<slug>.html` real-data mocks, and a generated `prototype.html`),
+alongside new non-UI tooling (`build-detail.py`, `build-prototype.py`,
+`data/`, `art/`). See each section below for the current names and content.
+
 When translating or auditing a kit file: identify its bespoke content first
 (usually everything before the "SHARED KIT EXTRAS" comment marker), and treat
 the shared block as decoration it also happens to consume — never as the
@@ -50,7 +59,8 @@ file's defining content.
 |---|---|
 | `tokens.html` | Canonical CSS variable reference (colors, spacing, radii, motion, elevation) — copied verbatim into every other kit file's `:root`. |
 | `styles.css` | 3-line root stylesheet (`@import "fonts/fonts.css"`). Not UI. |
-| `fonts/*.css` | `@font-face` declarations for IBM Plex Mono + Roboto. Not UI. |
+| `fonts/*.css` (`fonts.css`, `ibm-plex-mono.css`, `roboto.css`) | `@font-face` declarations for IBM Plex Mono + Roboto. Not UI. |
+| `fonts/IBMPlexMono-Regular.ttf` | The actual font binary `ibm-plex-mono.css` points at. Not UI. |
 
 ## Components (`design/kit/components/`)
 
@@ -59,35 +69,73 @@ file's defining content.
 | `buttons.html` | Primary (filled) / Secondary (outline) / Tertiary (soft tint) pill buttons. | `Components/Buttons.swift` (`PrimaryButton`/`SecondaryButton`/`GhostButton` — `ghost` ⇔ kit's `.btn-tertiary`, documented in-code). | ✅ Implemented |
 | `search-field.html` | The search input in default/focused/filled states. | `Components/SearchField.swift` | ✅ Implemented |
 | `section-header.html` | The generic label band above a content group (title / title+subtitle / title+count). Explicitly notes a shelf uses its own header instead. | `Components/SectionHeader.swift` | ✅ Implemented |
-| `sources-checklist.html` | Isolated Apple/PodcastIndex source-selection rows (toggle, Primary badge, lock + Add API key). Canonical for source-selection behavior. | `Components/SourcesChecklistRow.swift` | ✅ Implemented |
+| `sources-checklist.html` | **RETIRED, still present on disk.** Isolated Apple/PodcastIndex source-selection rows (toggle, Primary badge, lock + Add API key). v1 ships Apple-only — no source picker in the app — so this file is no longer live design intent, but it's kept in the kit and this entry stays registered because `Components/SourcesChecklistRow.swift` still cites it (see below); don't delete either side until that Swift file is retired too. | `Components/SourcesChecklistRow.swift` | ✅ Implemented (component itself unused by any current screen — its former consumer, `IWantUrPod/Settings/SourcesView.swift`, was deleted in the E8-S4 dock-IA pass; `AppSources` now seeds only `ITunesSource`, Apple-only, §12) |
 | `subscribe-button.html` | Circular +/check control: default / subscribing (spinner) / subscribed, plus in-context on artwork. | `Components/SubscribeButton.swift` | ✅ Implemented |
-| `tab-bar.html` | Floating "Liquid Glass" 5-item bottom tab bar. | `Components/LiquidGlassTabBar.swift` | ✅ Implemented |
+| `tab-bar.html` | **Updated 2026-07-06.** Floating "Liquid Glass" bottom dock — now **four** items (Home · Shows · Up Next · Search, was five), plus a **search-takeover** variant (the dock's Search slot expands into the full-screen search flow rather than switching a tab). | `Components/LiquidGlassTabBar.swift` | ✅ Implemented — four-item `AppTab` (home/shows/upNext/search) + the search-takeover state (Home glyph pinned left, `--field`-styled text field, ✕ cancel), driven by bindings the app (`AppShell`) supplies. |
 | `loading-skeleton.html` | Flat shimmering `.sk-row` placeholder list (art + 3 lines + trailing pill). **Dead pattern**: no current screen shows results as a flat list, so this has no consumer. | — | ❌ Not implemented / superseded by `screens/loading.html`'s shelf skeleton (see below). Do not build a flat-row skeleton against this file. |
 | `no-results.html` | Isolated empty-state card: badge, "No shows found" title, message, actions. | `Components/EmptyStateView.swift` (`EmptyKind.noResults`) | ✅ Implemented |
 | `result-card.html` | 2-up poster grid card: square gradient artwork + subscribe + title/author. | `Components/ResultCard.swift` | ✅ Implemented |
 | `result-row.html` | **Category shelves** — horizontal scrolling rails of podcasts grouped by taxonomy ("Trending now", "True Crime", …), each with "View all" → expandable 2-up grid. **Not a flat row** despite the name — confirmed the kit's *only* current results pattern (verified against actual `<body>` usage across every screen, not just this file's `<style>`). | `Components/ResultShelf.swift` (`ResultShelf`, `PodCard`, `PodGrid`) | ✅ Implemented |
 
-## Discover screens (`design/kit/screens/`, iPhone-framed)
+## Search takeover screens (`design/kit/screens/`, iPhone-framed)
+
+**Renamed 2026-07-06** — these four used to live under a Discover tab
+(`typing.html`, `loading.html`, `no-results.html`, `error.html`); the kit now
+treats search as a full-screen **takeover** reached from the dock's Search
+slot (see `tab-bar.html`'s new search-takeover variant, above), not a
+standalone tab, hence the `search-` prefix.
 
 | Path | Real bespoke content | Swift implementation | Status |
 |---|---|---|---|
-| `typing.html` | Search field mid-typing + a typeahead suggestions drawer; its actual "matches" content (the `.under` section) renders shelves of `.pod` cards, confirming `result-row.html`'s shelf pattern is the real results design, not a flat list. | `IWantUrPod/Discover/DiscoverView.swift` (`.typing` state for the drawer; `.results` state → `ShelvesList` for the shelf content) | ✅ Implemented |
-| `loading.html` | "Searching for '…'" header over shimmering shelf/rail skeletons (`.sk-shelf`/`.sk-rail`/`.sk-pod`). | `Components/LoadingSkeleton.swift`, used by `IWantUrPod/Discover/DiscoverView.swift` (`.loading` state) | ✅ Implemented |
-| `no-results.html` | Full Discover screen (status bar, nav bar, search field with a query) wrapping the `.state` empty card. | `IWantUrPod/Discover/DiscoverView.swift` (`.noResults` state) | ✅ Implemented |
-| `error.html` | Full Discover screen, `.state` card reading "Couldn't reach the directory" + Retry action. | `IWantUrPod/Discover/DiscoverView.swift` (`.error` state) | ✅ Implemented |
-| `first-run.html` | **A multi-step guided onboarding wizard**: "Do you already listen to podcasts?" (app picker → OPML import walkthrough, or "starting fresh") → favorite-shows picker → topic picker → personalized category-shelf recommendations → "Start listening". Has a progress bar and back/skip navigation. **Not a static empty state.** | — | ❌ Not implemented. `DiscoverView.swift`'s `.firstRun` state renders a placeholder `EmptyStateView(kind: .firstRun, …)` instead — explicitly documented as a placeholder in `EmptyStateView.swift`, not a translation of this file. Building the real wizard is a separate, tracked feature. |
+| `search-typing.html` (was `typing.html`) | Search field mid-typing + a typeahead suggestions drawer; its actual "matches" content (the `.under` section) renders shelves of `.pod` cards, confirming `result-row.html`'s shelf pattern is the real results design, not a flat list. | `IWantUrPod/Search/SearchScreen.swift` (`.typing` state for the drawer; `.results` state → `ShelvesList` for the shelf content) | ✅ Implemented |
+| `search-loading.html` (was `loading.html`) | "Searching for '…'" header over shimmering shelf/rail skeletons (`.sk-shelf`/`.sk-rail`/`.sk-pod`). | `Components/LoadingSkeleton.swift`, used by `IWantUrPod/Search/SearchScreen.swift` (`.loading` state) | ✅ Implemented |
+| `search-noresults.html` (was `no-results.html`) | Full search-takeover screen (status bar, nav bar, search field with a query) wrapping the `.state` empty card. | `IWantUrPod/Search/SearchScreen.swift` (`.noResults` state) | ✅ Implemented |
+| `search-error.html` (was `error.html`) | Full search-takeover screen, `.state` card reading "Couldn't reach the directory" + Retry action. | `IWantUrPod/Search/SearchScreen.swift` (`.error` state) | ✅ Implemented |
+| `search-start.html` | **New.** The takeover's rest state before typing starts — inline nav bar + search field, content area reserved for suggestions (same treatment Discover's first-run/empty state used). | `IWantUrPod/Search/SearchScreen.swift` (`.firstRun` state) | ✅ Implemented — the field itself now lives in `LiquidGlassTabBar`'s takeover, not this screen; the content area reuses the same curated-shelf + prompt treatment the retired Discover tab's empty state used. |
+| `search-results.html` | **New.** Results layout: a featured "top result" (the strongest match, called out distinctly) above the usual `result-row.html` "More shows" shelves, each show row offering inline Subscribe. | `IWantUrPod/Search/SearchScreen.swift` / `ShelvesList.swift` (`.results` state) — top-result featured treatment not yet broken out as its own view. | ⚠️ Shelf portion implemented via `ShelvesList`; the distinct "top result" featured treatment is not yet translated. |
+| `first-run.html` | **A multi-step guided onboarding wizard**: "Do you already listen to podcasts?" (app picker → OPML import walkthrough, or "starting fresh") → favorite-shows picker → topic picker → personalized category-shelf recommendations → "Start listening". Has a progress bar and back/skip navigation. **Not a static empty state.** Unchanged by the 2026-07-06 rename. | — | ❌ Not implemented. `SearchScreen.swift`'s `.firstRun` state renders a placeholder `EmptyStateView(kind: .firstRun, …)` instead — explicitly documented as a placeholder in `EmptyStateView.swift`, not a translation of this file. Building the real wizard is a separate, tracked feature. |
 
-## Settings screens
+## Home / Shows / Up Next screens (`design/kit/screens/`, iPhone-framed) — new 2026-07-06
+
+Three new top-level dock destinations (Home replaces Discover as the default
+landing tab; Shows and Up Next get their own top-level mocks for the first
+time, superseding the composed-no-kit-mock Podcasts/Up Next entries further
+below).
 
 | Path | Real bespoke content | Swift implementation | Status |
 |---|---|---|---|
-| `settings-sources.html` | Full Settings screen (title, lede copy, grouped label) wrapping the same rows as `components/sources-checklist.html`. | `IWantUrPod/Settings/SourcesView.swift` | ✅ Implemented |
+| `home.html` | The Home landing feed: status bar + top-right Settings gear (pushed, not a tab), then a scrolling stack of an "Up Next" peek, a "New episodes" shelf, a "Shows for you" recommendations shelf (placeholder), and an "Our favorites" editorial shelf (placeholder), over the four-item dock. | `IWantUrPod/Home/HomeScreen.swift` | ✅ Implemented (E8-S2) — Home is now the dock's default/first destination; the first-run explainer gate (E1-S1) moved here from the retired Discover tab. |
+| `shows.html` | The subscribed-shows screen: status bar + Settings gear, a grid/list of shows the person has subscribed to, with room reserved below for recommendations (placeholder). Supersedes the composed `PodcastsScreen.swift` entry's plain vertical list (see "Podcasts tab (E3-S1)" below) — kit now specifies a grid. | `IWantUrPod/Library/PodcastsScreen.swift` | ⚠️ Tab label + large title now read "Shows" (E8-S3) and the top-right Settings gear was added (E8-S4), but the list is still a plain vertical list per the E3-S1 composed-no-kit-mock precedent — not yet reconciled to this kit mock's grid layout. |
+| `up-next.html` | The queue screen: status bar + Settings gear, each row showing inline download state — a "downloaded" treatment and a distinct "not downloaded" treatment/button per row — over the dock. Supersedes the composed `UpNextScreen.swift` entry (see "Up Next tab (E5)" below), which didn't have per-row download affordances. | `IWantUrPod/UpNext/UpNextScreen.swift` | ✅ Implemented — E8-S5 added the inline per-row `DownloadState` icon/action (reusing `PodcastDetailView`'s `EpisodeIconButton`); E8-S4 added the top-right Settings gear. |
 
-## Podcast Detail (E2) — composed, no kit mock
+## Settings screen (`design/kit/screens/settings.html`)
 
-There is no `design/kit/screens/podcast-detail.html` — ROADMAP.md E2 explicitly
-says to compose this screen from `docs/design/direction.md` tokens + existing
-components rather than wait on a kit mock. Every new file below carries a
+**Replaces `settings-sources.html` (removed 2026-07-06).** v1 ships **Apple-only**
+search — PodcastIndex and the source picker are deferred — so Settings no longer
+hosts a Sources section at all.
+
+| Path | Real bespoke content | Swift implementation | Status |
+|---|---|---|---|
+| `settings.html` | A **pushed** screen (reached via the top-right gear on Home/Shows/Up Next — not a tab, and not itself in the dock), whose only section is **"Manage downloaded episodes"**: a list of local downloads, each row with a Remove control that deletes the local audio file while leaving the episode in its feed (not un-subscribing or hiding it). Has its own "Done" affordance back to the tab the gear was tapped from. | `IWantUrPod/Settings/SettingsScreen.swift` | ✅ Implemented (E8-S4) — `SourcesView.swift` was deleted; `SettingsScreen` lists every `Episode` with `downloadState == .downloaded`, each row removable via the new `DownloadManager.remove(_:context:)` seam. **Deviation:** a minimal "Show first-run intro again" footer row is kept below the one section (not literally "exactly one section") because E1-S1/`FirstRunGateTests` require Settings to re-open the first-run explainer — see the CAVEAT note in `SettingsScreen.swift`'s header comment. |
+
+## Podcast Detail (E2) — composed, no kit mock (historical); kit mocks now exist
+
+**Update 2026-07-06: this is no longer true as originally written.** The kit
+now ships two real, data-driven Podcast Detail mocks —
+`screens/podcast-detail-american-history-tellers.html` and
+`screens/podcast-detail-explorers-podcast.html` (see the new section just
+below) — and reconciling `PodcastDetailView.swift` toward them (compact icon
+controls, arc/season episode metadata, a Story-arcs shelf) is in progress on
+this branch (`kit-reconcile`). The paragraph and table below describe the
+screen's **original, pre-kit-mock composed history**; they're kept for
+context, not overwritten, since most of the files they document (`RemoteArtwork`,
+`ExpandableText`, `HTMLText`) remain accurate and un-superseded. Once the
+reconciliation lands, this section should gain a `Swift implementation`
+pointer to the new kit files the same way other sections do.
+
+There was no `design/kit/screens/podcast-detail.html` at the time — ROADMAP.md E2
+explicitly said to compose this screen from `docs/design/direction.md` tokens +
+existing components rather than wait on a kit mock. Every new file below carries a
 `// Composed from docs/design/direction.md tokens — no design/kit source (see
 design/kit/MANIFEST.md).` header instead of a `design/kit/*.html` citation, so
 `scripts/verify-design-manifest.sh` has nothing to check against them.
@@ -107,6 +155,36 @@ each episode's `summary` in the rows. (Author/publisher and category are still
 shown alongside, since RSS carries no structured host list — see E2-S1's
 "hosts / channel / studio" note.)
 
+## Podcast Detail kit mocks (`design/kit/screens/podcast-detail-*.html`) — new 2026-07-06
+
+Two real-data-driven Podcast Detail mocks, generated by `build-detail.py` (see
+"Non-UI tooling & assets" below) from `data/<slug>.json`. Both share layout:
+header (art, title, author, category, Subscribe, clamped description), a
+horizontal **Story arcs** shelf (each card: season badge when the feed has one,
+arc name, episode count, an "Add all" control to queue the whole arc), then the
+episode list with **compact icon controls** (download / play / add-to-Up-Next
+— replacing the oversized buttons + redundant "Downloaded" text the current
+`PodcastDetailView.swift` uses) and each row showing `arc · S·E · date ·
+duration` (or `arc · Part N · date · duration` when there's no season number).
+
+| Path | Real bespoke content | Swift implementation | Status |
+|---|---|---|---|
+| `podcast-detail-american-history-tellers.html` | Real episode/arc data from `data/american-history-tellers.json`. This feed sets `<itunes:season>`, so arcs render **with season badges** and `S·E` in each row. | `IWantUrPod/Detail/PodcastDetailView.swift` (reconciliation in progress, this branch) | ⚠️ In progress — current `PodcastDetailView.swift` predates this mock; compact icon controls and the Story-arcs shelf are not yet built. |
+| `podcast-detail-explorers-podcast.html` | Real episode/arc data from `data/explorers-podcast.json`. This feed has **no** `<itunes:season>`, so it's the graceful-degrade case: arcs render as `arc · Part N` with no season badge, falling back to date · duration only for singles. | `IWantUrPod/Detail/PodcastDetailView.swift` (reconciliation in progress, this branch) | ⚠️ In progress — same as above; also needs `FeedParser`/`Episode` to gain `season`/`episodeNumber`/derived-arc fields (see `docs/design/direction.md` §11 Swift follow-ups). |
+
+## Prototype & non-UI tooling/assets — new 2026-07-06
+
+| Path | Real content | Notes |
+|---|---|---|
+| `screens/prototype.html` | A **generated**, self-contained clickable prototype stitching every screen together (each screen isolated in an `<iframe srcdoc>`, plus a small parent controller wiring dock navigation, the Settings gear, the search takeover, and an edge-state jump control). | **Not a design source to translate** — it's an artifact of the other screens, regenerated by `build-prototype.py` whenever a screen changes. No Swift citation should ever point at this file. |
+| `build-detail.py` | Generator script: reads `data/<slug>.json` and emits `screens/podcast-detail-<slug>.html`. | Tooling, not UI. Not a translation target. |
+| `build-prototype.py` | Generator script: stitches all current screens into `screens/prototype.html`. | Tooling, not UI. Not a translation target. |
+| `data/README.md` | Explains the `data/<slug>.json` schema (`show`, `episodes[]`, `arcs[]`, `counts`) and how story arcs are derived from RSS episode-title structure (`scripts/fetch-podcast-episodes.py`), plus how `<itunes:season>` is optional and drives the season-badge / graceful-degrade split. | Docs, not UI. |
+| `data/american-history-tellers.json`, `data/explorers-podcast.json` | Real per-show episode + derived-arc fixtures backing the two `podcast-detail-*.html` mocks above (and, eventually, `FeedParser`/`Episode` test fixtures for the same season/arc fields). | Data, not UI. Not a translation target — a data source for the detail screens. |
+| `art/README.md` | Explains the `art/<slug>.jpg` cover-art cache and `art/podcasts.json` metadata (title/author/feedUrl/artworkUrl/genre), and how to regenerate via `scripts/fetch-podcast-art.py`. | Docs, not UI. |
+| `art/podcasts.json` | Directory metadata (one entry per slug) backing real names/authors/feeds/artwork used across the newer mocks (home/shows/detail screens) instead of invented fixtures. | Data, not UI. |
+| `art/*.jpg` — `20k-hertz.jpg`, `99pi.jpg`, `acquired.jpg`, `american-history-tellers.jpg`, `behind-the-bastards.jpg`, `bone-valley.jpg`, `crime-junkie.jpg`, `dead-to-me.jpg`, `empire.jpg`, `explorers-podcast.jpg`, `ezra-klein.jpg`, `fall-of-civilizations.jpg`, `hardcore-history.jpg`, `radiolab.jpg`, `rest-is-history.jpg`, `revolutions.jpg`, `search-engine.jpg`, `serial.jpg`, `song-exploder.jpg`, `the-ancients.jpg`, `the-daily.jpg`, `theory-of-everything.jpg` | 300×300 real podcast cover art, Apple-sourced, used by the newer mocks for realistic artwork instead of gradient placeholders. | Assets, not UI markup. Not a translation target — same role as remote artwork URLs the app already fetches via `RemoteArtwork`. |
+
 ## E1 — First-Run & Curated Discovery — composed, no kit mock
 
 E1-S1's once-only explainer is **not** a translation of `screens/first-run.html`
@@ -120,35 +198,50 @@ citation.
 
 | Swift file | Real bespoke content | Status |
 |---|---|---|
-| `IWantUrPod/Discover/FirstRunExplainerView.swift` | A small, once-only intro screen (badge, headline, one-paragraph pitch, "Get started") presented as a `fullScreenCover` on `DiscoverView`, gated by `FirstRunGate`. Deliberately lightweight — not the kit's unbuilt multi-step wizard. | ✅ Implemented |
-| `IWantUrPod/Discover/FirstRunGate.swift` | A `UserDefaults`-backed flag (`hasSeenFirstRun` / `markSeen()` / `reset()`) gating the explainer. Not a UI component — no kit citation needed; listed here for completeness since it's new in E1. | ✅ Implemented |
-| `IWantUrPod/Discover/CuratedShelf.swift` | Renders the bundled `curated-start-here.json` picks (`DirectoryKit.CuratedEntry`, decoded by `CuratedListLoader`) as a **vertical list of editorial cards** under a `SectionHeader`, in file order. Deliberately distinct from search's horizontal gradient `ResultShelf`: each card shows **real artwork** (`RemoteArtwork`, gradient fallback), title, author · category, corner `SubscribeButton`, and the editorial `blurb` as the hero — marked by a coral→mint gradient hairline (the section's one signature, echoing the Discover title's pulse-dot). Same per-item `SubscribeButton` state pattern as `ShelvesList`; tap a card → E2 detail by `feedUrl`. | ✅ Implemented |
+| `IWantUrPod/Home/FirstRunExplainerView.swift` | A small, once-only intro screen (badge, headline, one-paragraph pitch, "Get started") presented as a `fullScreenCover` on `HomeScreen` (moved from the retired Discover tab, E8-S1), gated by `FirstRunGate`. Deliberately lightweight — not the kit's unbuilt multi-step wizard. | ✅ Implemented |
+| `IWantUrPod/Home/FirstRunGate.swift` | A `UserDefaults`-backed flag (`hasSeenFirstRun` / `markSeen()` / `reset()`) gating the explainer. Not a UI component — no kit citation needed; listed here for completeness since it's new in E1. | ✅ Implemented |
+| `IWantUrPod/Search/CuratedShelf.swift` | Renders the bundled `curated-start-here.json` picks (`DirectoryKit.CuratedEntry`, decoded by `CuratedListLoader`) as a **vertical list of editorial cards** under a `SectionHeader`, in file order. Deliberately distinct from search's horizontal gradient `ResultShelf`: each card shows **real artwork** (`RemoteArtwork`, gradient fallback), title, author · category, corner `SubscribeButton`, and the editorial `blurb` as the hero — marked by a coral→mint gradient hairline (the section's one signature, echoing the Discover title's pulse-dot). Same per-item `SubscribeButton` state pattern as `ShelvesList`; tap a card → E2 detail by `feedUrl`. | ✅ Implemented |
 
-## Podcasts tab (E3-S1) — composed, no kit mock
+## Podcasts tab (E3-S1) — composed, no kit mock (historical); superseded by `shows.html`
 
-There is no `design/kit/screens/podcasts.html` or list-row mock — the kit's
-only flat-row pattern (`components/loading-skeleton.html`'s `.sk-row`) is
-called out above as a dead pattern with no consumer, and `result-row.html`'s
-real content is the horizontal category-shelf gallery, not a vertical list.
-Per the same precedent as Podcast Detail (E2), both files below carry a
-`// Composed from docs/design/direction.md tokens — no design/kit source (see
-design/kit/MANIFEST.md).` header instead of a `design/kit/*.html` citation.
+**Update 2026-07-06:** this is no longer literally true — see `shows.html` in
+"Home / Shows / Up Next screens" above, which now specifies this tab (renamed
+"Shows" in the kit) as a grid, not a vertical list. The paragraph and table
+below describe the screen's original composed history and remain accurate for
+what's actually built today; `PodcastsScreen.swift` has not yet been
+reconciled to `shows.html`'s grid layout.
+
+At the time, there was no `design/kit/screens/podcasts.html` or list-row mock —
+the kit's only flat-row pattern (`components/loading-skeleton.html`'s
+`.sk-row`) is called out above as a dead pattern with no consumer, and
+`result-row.html`'s real content is the horizontal category-shelf gallery,
+not a vertical list. Per the same precedent as Podcast Detail (E2), both
+files below carry a `// Composed from docs/design/direction.md tokens — no
+design/kit source (see design/kit/MANIFEST.md).` header instead of a
+`design/kit/*.html` citation.
 
 | Swift file | Real bespoke content | Status |
 |---|---|---|
 | `IWantUrPod/Library/PodcastsScreen.swift` | The Podcasts tab: a vertical list of subscribed shows, newest `dateAdded` first, each row a `RemoteArtwork` tile + title/author (mirrors `PodcastDetailView.swift`'s `EpisodeRow` shape, scaled down) that pushes its `feedURL` into the shared E2 detail screen. Empty state via `EmptyStateView(kind: .firstRun, …)`. Owns its own `NavigationStack` and reserves `AppShell.tabBarReservedPadding`. | ✅ Implemented |
 | `IWantUrPod/Library/PodcastsListProvider.swift` | The testable seam behind the list: fetches every `Podcast` from a `ModelContext` (or takes an already-fetched `[Podcast]`, for the live `@Query` case) and filters/sorts in plain Swift — avoiding the non-Sendable `KeyPath` warning a `#Predicate { $0.isSubscribed }` triggers under this project's strict concurrency setting (same precedent as `PodcastDetailViewModelTests.swift`). Not a UI component — no kit citation needed; listed here for completeness since it's new in E3. | ✅ Implemented |
 
-## Up Next tab (E5) — composed, no kit mock
+## Up Next tab (E5) — composed, no kit mock (historical); superseded by `up-next.html`
 
-There is no `design/kit/screens/up-next.html` or reorderable-list mock —
-same precedent as Podcast Detail (E2) and the Podcasts tab (E3): compose from
-`docs/design/direction.md` tokens + existing components. Unlike
-`PodcastsScreen.swift`'s plain `ScrollView`, this screen uses a real `List`
-because drag-to-reorder (`.onMove`) and swipe-to-remove (`.swipeActions`) are
-native `List` affordances. Every new file below carries a `// Composed from
-docs/design/direction.md tokens — no design/kit source (see
-design/kit/MANIFEST.md).` header instead of a `design/kit/*.html` citation.
+**Update 2026-07-06:** this is no longer literally true — see `up-next.html`
+in "Home / Shows / Up Next screens" above, which now specifies inline
+per-row download state/button that `UpNextScreen.swift` doesn't yet have.
+The paragraph and table below describe the screen's original composed
+history and remain accurate for what's actually built today.
+
+At the time, there was no `design/kit/screens/up-next.html` or
+reorderable-list mock — same precedent as Podcast Detail (E2) and the
+Podcasts tab (E3): compose from `docs/design/direction.md` tokens + existing
+components. Unlike `PodcastsScreen.swift`'s plain `ScrollView`, this screen
+uses a real `List` because drag-to-reorder (`.onMove`) and swipe-to-remove
+(`.swipeActions`) are native `List` affordances. Every new file below carries
+a `// Composed from docs/design/direction.md tokens — no design/kit source
+(see design/kit/MANIFEST.md).` header instead of a `design/kit/*.html`
+citation.
 
 | Swift file | Real bespoke content | Status |
 |---|---|---|
@@ -180,7 +273,7 @@ design/kit source (see design/kit/MANIFEST.md).` header instead of a
 
 | Swift file | Source | Notes |
 |---|---|---|
-| `IWantUrPod/Discover/ShelvesList.swift` | Groups the Discover `.results([SearchResult])` state by `category` into one `ResultShelf` per taxonomy (`result-row.html`'s shelf pattern), with a `PodGrid` sheet for "View all". | App-side composition; not itself a kit translation. |
+| `IWantUrPod/Search/ShelvesList.swift` | Groups the Discover `.results([SearchResult])` state by `category` into one `ResultShelf` per taxonomy (`result-row.html`'s shelf pattern), with a `PodGrid` sheet for "View all". | App-side composition; not itself a kit translation. |
 | `Components/ArtworkTile.swift` (`ArtworkStyle`/`GradientArtwork`/`ArtworkTile`) | The `.a1`–`.a6` gradient tile classes, shared across the result-card poster grid and the shelf gallery's `PodCard`. | Extracted to its own file rather than owned by any one card component — see file header. |
 | `Theme.swift` (`KitLiteralColors`) | One-off decorative kit hues with no theme role (currently: the PodcastIndex icon blue, shared with the `.a2` artwork stop). | Named constant instead of a hand-copied hex literal per call site. |
 | `Typography.swift` (`Typography.shelfTitle`/`shelfTitleStyle`) | `result-row.html`'s `.sh-title` (1.18rem/800/-0.015em, display face) — a type role direction.md §3's prose calls out ("shelf headers" use `--font-display`) but the table itself omitted. | Table gap filled in `docs/design/direction.md` §3 alongside this addition. |

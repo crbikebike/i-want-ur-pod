@@ -1,9 +1,13 @@
 // Composed from docs/design/direction.md tokens — no design/kit source (see
 // design/kit/MANIFEST.md). ROADMAP.md E3-S1: the Podcasts tab lists the
 // user's subscribed shows, newest `dateAdded` first, each row pushing its
-// `feedURL` into the same adaptive Podcast Detail screen (E2) the Discover
-// tab and search results use (navigation-map.md — "Podcasts (E3) → subscribed
-// row → Podcast Detail (E2, subscribed state)").
+// `feedURL` into the same adaptive Podcast Detail screen (E2) the search
+// takeover uses (navigation-map.md — "Podcasts (E3) → subscribed row →
+// Podcast Detail (E2, subscribed state)").
+//
+// ROADMAP.md E8-S3: the dock IA renames this surface "Shows" (label + large
+// title only — no route/model/persisted-state changes). E8-S4 adds the
+// top-right gear pushing `SettingsScreen()`, matching Home's `.util-gear`.
 //
 // Mirrors `IWantUrPod/Detail/PodcastDetailView.swift`'s row style (a
 // `RemoteArtwork` + title/author `VStack`, composed from tokens — no kit row
@@ -39,19 +43,28 @@ public struct PodcastsScreen: View {
 
     public var body: some View {
         NavigationStack(path: $path) {
-            Group {
-                if subscribedPodcasts.isEmpty {
-                    emptyState
-                } else {
-                    list
+            ZStack(alignment: .topTrailing) {
+                Group {
+                    if subscribedPodcasts.isEmpty {
+                        emptyState
+                    } else {
+                        list
+                    }
                 }
+
+                SettingsGearButton { path.append(SettingsRoute.settings) }
+                    .padding(.top, Spacing.sp5)
+                    .padding(.trailing, Spacing.gutter)
             }
             .background(palette.groupedBg.ignoresSafeArea())
-            // Draws its own large title below, matching Discover's root
-            // screen — pushed destinations (Podcast Detail) show their own.
+            // Draws its own large title below, matching the search takeover's
+            // root — pushed destinations (Podcast Detail) show their own.
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: URL.self) { feedURL in
                 PodcastDetailScreen(feedURL: feedURL)
+            }
+            .navigationDestination(for: SettingsRoute.self) { _ in
+                SettingsScreen()
             }
         }
     }
@@ -97,7 +110,7 @@ public struct PodcastsScreen: View {
                 EmptyStateView(
                     kind: .firstRun,
                     title: "No shows yet",
-                    message: "Subscribe to a show from Discover and it'll show up here."
+                    message: "Subscribe to a show from Search and it'll show up here."
                 ) {
                     EmptyView()
                 }
@@ -108,13 +121,15 @@ public struct PodcastsScreen: View {
         }
     }
 
-    // MARK: - Large title (mirrors DiscoverView's `.titlewrap` / h1.big)
+    // MARK: - Large title (shows.html's `.titlewrap` / h1.big; `padding-right:
+    // 52px` reserves room for the floating gear on the same row)
 
     private var titleBar: some View {
-        Text("Podcasts")
+        Text("Shows")
             .typeStyle(Typography.displayLargeTitleStyle)
             .foregroundStyle(palette.text)
             .padding(.horizontal, 2)
+            .padding(.trailing, 50)
             .accessibilityAddTraits(.isHeader)
     }
 }

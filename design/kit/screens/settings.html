@@ -1,5 +1,5 @@
 <!-- @dsCard group="Settings" -->
-<title>Settings · Sources</title>
+<title>Settings</title>
 <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
   :root {
@@ -458,6 +458,49 @@
 
 </style>
 
+<style>
+  /* Settings is reached from the top-right gear on Home/Shows/Up Next and pushed
+     over the current tab — it is no longer a tab itself, so this screen shows a
+     Done affordance instead of the primary dock. */
+  .done-btn {
+    position: absolute; top: 60px; right: var(--gutter); z-index: 26;
+    height: 36px; padding: 0 6px; border: none; background: none; cursor: pointer;
+    font-family: var(--font); font-size: 1rem; font-weight: 800; color: var(--accent);
+  }
+  .done-btn:active { opacity: .6; }
+  .titlewrap { padding-right: 60px; }
+
+  /* gradient artwork utilities (match the rest of the kit) */
+  .a1 { background: linear-gradient(140deg, #FF7A4D, #FF4D8D); }
+  .a2 { background: linear-gradient(140deg, #34E0C4, #2E8BFF); }
+  .a3 { background: linear-gradient(140deg, #FFC24D, #FF6A4D); }
+  .a4 { background: linear-gradient(140deg, #7C6BFF, #34E0C4); }
+  .a5 { background: linear-gradient(140deg, #FF5E9A, #7C6BFF); }
+  .a6 { background: linear-gradient(140deg, #22C1A6, #7ED957); }
+
+  /* ---------- manage downloaded episodes ---------- */
+  .dl-head { display: flex; align-items: baseline; justify-content: space-between;
+    gap: 12px; margin-top: var(--sp-3); }
+  .dl-total { font-size: .82rem; font-weight: 700; color: var(--text-dim); white-space: nowrap; }
+  .dllist { display: flex; flex-direction: column; margin-top: var(--sp-2);
+    background: var(--surface); border-radius: var(--r-lg); box-shadow: var(--elev-list); overflow: hidden; }
+  .drow { display: flex; align-items: center; gap: var(--sp-3); padding: 12px var(--sp-3); }
+  .drow + .drow { border-top: .5px solid var(--separator); }
+  .dl-art { flex: none; width: 48px; height: 48px; border-radius: 12px; position: relative; overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 3px 8px -5px rgba(0,0,0,.5); }
+  .dl-art .g { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 1.15rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 1px 4px rgba(0,0,0,.3); }
+  .dl-body { flex: 1; min-width: 0; }
+  .dl-title { font-size: .95rem; font-weight: 800; letter-spacing: -.01em; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .dl-sub { margin-top: 2px; font-size: .8rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .dl-remove { flex: none; width: 36px; height: 36px; border-radius: 50%; border: none; cursor: pointer;
+    display: grid; place-items: center; background: var(--chip); color: var(--text-dim);
+    transition: transform .3s var(--ease-spring), background .3s, color .3s; }
+  .dl-remove:active { transform: scale(.86); }
+</style>
+
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
   <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
 </button>
@@ -476,113 +519,75 @@
       </span>
     </div>
 
-    <!-- inline nav bar -->
-    <div class="navbar" id="navbar" aria-hidden="true">
-      <span class="nav-eq"><i></i><i></i><i></i></span>
-      <span class="nav-title">Sources</span>
-    </div>
+    <!-- pushed from the gear: Done returns to the tab you came from -->
+    <button class="done-btn" aria-label="Done">Done</button>
 
     <!-- scroll content -->
     <div class="content" id="content">
 
       <div class="titlewrap">
-        <h1 class="big">Sources</h1>
+        <h1 class="big">Settings</h1>
       </div>
+      <p class="sec-sub" style="margin-top:0">Opened from the gear in the top-right of Home, Shows, and Up Next.</p>
 
-      <p class="lede">Choose which directories i want ur pod searches. Your primary source runs first — the rest are fallback, never merged.</p>
-
-      <!-- ===== SEARCH SOURCES checklist ===== -->
-      <p class="grp-label">Search sources</p>
-      <div class="srclist">
-
-        <!-- Apple: working default, ON, no key needed -->
-        <div class="srow">
-          <div class="src-iconwrap">
-            <div class="src-ico ic-apple">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.3 12.7c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.6.8-3.2.8-.6 0-1.6-.8-2.7-.7-1.4 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.4 2 1 0 1.3-.6 2.5-.6 1.2 0 1.5.6 2.5.6 1 0 1.7-.9 2.3-1.9.7-1.1 1-2.2 1-2.3-.1 0-1.9-.7-1.9-2.8zM14.7 6.3c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.8-.4 2.3-1.1z"/></svg>
-            </div>
-          </div>
-          <div class="src-meta">
-            <div class="src-top"><span class="src-name">Apple Podcasts</span><span class="pin">Primary</span></div>
-            <div class="src-sub">iTunes directory · Works out of the box, no key needed</div>
-          </div>
-          <label class="switch" aria-label="Apple Podcasts source">
-            <input type="checkbox" checked aria-label="Enable Apple Podcasts">
-            <span class="track"></span><span class="knob"></span>
-          </label>
-        </div>
-
-        <!-- PodcastIndex: opt-in, needs a user key, shown not-yet-configured -->
-        <div class="srow srow-tall srow-featured">
-          <div class="src-iconwrap">
-            <div class="src-ico ic-pi">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="2.4" fill="currentColor"/><path d="M8.2 8.2a5.4 5.4 0 0 0 0 7.6M15.8 8.2a5.4 5.4 0 0 1 0 7.6M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </div>
-            <span class="src-lock" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </span>
-          </div>
-          <div class="src-meta">
-            <div class="src-top"><span class="src-name">PodcastIndex</span><span class="tag-open">Open index</span></div>
-            <div class="src-sub">The independent, community-run podcast directory.</div>
-            <div class="src-pitch">Indie-first and free. Bring your own API key (key + secret) to switch it on and set it as a search source.</div>
-            <div class="key-actions">
-              <button class="btn btn-ghost addkey" type="button">
-                <svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M11 11l7 7M16 16l2-2M18.5 18.5l1.5-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Add API key
-              </button>
-              <span class="key-hint">
-                <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                Inactive until a key is added
-              </span>
-            </div>
-          </div>
-        </div>
-
+      <!-- ===== MANAGE DOWNLOADED EPISODES (the only section for now) ===== -->
+      <div class="dl-head">
+        <p class="grp-label" style="margin:0">Downloaded episodes</p>
+        <span class="dl-total" id="dlTotal">6 episodes · 1.4 GB</span>
       </div>
-      <p class="foot-note">Add your PodcastIndex key + secret to enable it. Keys are stored on the server and never shipped to the app.</p>
-
-      <!-- ===== SEARCH ORDER (primary + fallback) ===== -->
-      <p class="grp-label">Search order</p>
-      <div class="srclist">
-        <div class="orow">
-          <span class="ord-num">1</span>
-          <div class="ord-meta"><span class="src-name">Apple Podcasts</span><span class="pin">Primary</span></div>
-          <span class="drag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 8h8M8 12h8M8 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      <div class="dllist" id="dllist">
+        <div class="drow">
+          <div class="dl-art" style="background-image:url(../art/20k-hertz.jpg);background-size:cover;background-position:center"></div>
+          <div class="dl-body">
+            <div class="dl-title">The Sample-Rate Wars</div>
+            <div class="dl-sub">Twenty Thousand Hertz · 84 MB · 42 min</div>
+          </div>
+          <button class="dl-remove" aria-label="Remove download of The Sample-Rate Wars"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9.5 7V5.5A1.5 1.5 0 0 1 11 4h2a1.5 1.5 0 0 1 1.5 1.5V7M6.7 7l.8 11.5a1.5 1.5 0 0 0 1.5 1.4h6a1.5 1.5 0 0 0 1.5-1.4L18.3 7M10 10.5v5M14 10.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
-        <div class="orow ord-off">
-          <span class="ord-num">2</span>
-          <div class="ord-meta"><span class="src-name">PodcastIndex</span><span class="ord-muted">Add key to enable</span></div>
-          <span class="drag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 8h8M8 12h8M8 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <div class="drow">
+          <div class="dl-art" style="background-image:url(../art/song-exploder.jpg);background-size:cover;background-position:center"></div>
+          <div class="dl-body">
+            <div class="dl-title">Cold Open, Warm Ending</div>
+            <div class="dl-sub">Song Exploder · 96 MB · 48 min</div>
+          </div>
+          <button class="dl-remove" aria-label="Remove download of Cold Open, Warm Ending"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9.5 7V5.5A1.5 1.5 0 0 1 11 4h2a1.5 1.5 0 0 1 1.5 1.5V7M6.7 7l.8 11.5a1.5 1.5 0 0 0 1.5 1.4h6a1.5 1.5 0 0 0 1.5-1.4L18.3 7M10 10.5v5M14 10.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="drow">
+          <div class="dl-art" style="background-image:url(../art/acquired.jpg);background-size:cover;background-position:center"></div>
+          <div class="dl-body">
+            <div class="dl-title">Building Acquired, Episode 300</div>
+            <div class="dl-sub">Acquired · 210 MB · 3h 6m</div>
+          </div>
+          <button class="dl-remove" aria-label="Remove download of Building Acquired, Episode 300"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9.5 7V5.5A1.5 1.5 0 0 1 11 4h2a1.5 1.5 0 0 1 1.5 1.5V7M6.7 7l.8 11.5a1.5 1.5 0 0 0 1.5 1.4h6a1.5 1.5 0 0 0 1.5-1.4L18.3 7M10 10.5v5M14 10.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="drow">
+          <div class="dl-art" style="background-image:url(../art/99pi.jpg);background-size:cover;background-position:center"></div>
+          <div class="dl-body">
+            <div class="dl-title">The Beauty of Bike Lanes</div>
+            <div class="dl-sub">99% Invisible · 61 MB · 31 min</div>
+          </div>
+          <button class="dl-remove" aria-label="Remove download of The Beauty of Bike Lanes"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9.5 7V5.5A1.5 1.5 0 0 1 11 4h2a1.5 1.5 0 0 1 1.5 1.5V7M6.7 7l.8 11.5a1.5 1.5 0 0 0 1.5 1.4h6a1.5 1.5 0 0 0 1.5-1.4L18.3 7M10 10.5v5M14 10.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="drow">
+          <div class="dl-art" style="background-image:url(../art/rest-is-history.jpg);background-size:cover;background-position:center"></div>
+          <div class="dl-body">
+            <div class="dl-title">Rome's Last Good Emperor</div>
+            <div class="dl-sub">The Rest Is History · 118 MB · 58 min</div>
+          </div>
+          <button class="dl-remove" aria-label="Remove download of Rome's Last Good Emperor"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9.5 7V5.5A1.5 1.5 0 0 1 11 4h2a1.5 1.5 0 0 1 1.5 1.5V7M6.7 7l.8 11.5a1.5 1.5 0 0 0 1.5 1.4h6a1.5 1.5 0 0 0 1.5-1.4L18.3 7M10 10.5v5M14 10.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="drow">
+          <div class="dl-art" style="background-image:url(../art/bone-valley.jpg);background-size:cover;background-position:center"></div>
+          <div class="dl-body">
+            <div class="dl-title">The Sardine Collapse</div>
+            <div class="dl-sub">Bone Valley · 77 MB · 39 min</div>
+          </div>
+          <button class="dl-remove" aria-label="Remove download of The Sardine Collapse"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9.5 7V5.5A1.5 1.5 0 0 1 11 4h2a1.5 1.5 0 0 1 1.5 1.5V7M6.7 7l.8 11.5a1.5 1.5 0 0 0 1.5 1.4h6a1.5 1.5 0 0 0 1.5-1.4L18.3 7M10 10.5v5M14 10.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
       </div>
-      <p class="foot-note">Primary is searched first. If it's unavailable or finds nothing, we fall back to the next enabled source — results are never merged. Enable a second source to drag and pick which one leads.</p>
+      <p class="foot-note">Removing an episode deletes the downloaded audio from this device. The episode stays in your feeds and can be downloaded again from Up Next.</p>
 
     </div>
-
-    <!-- bottom tab bar: floating Liquid Glass (iOS 26) — Settings active -->
-        <nav class="tabbar" aria-label="Primary">
-      <button class="tab">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M15.5 8.5 13.2 13l-4.7 2.5L10.8 11l4.7-2.5Z" fill="currentColor"/></svg>
-        <span>Discover</span>
-      </button>
-      <button class="tab">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="4" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="4" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="7" height="7" rx="2" stroke="currentColor" stroke-width="2"/></svg>
-        <span>Podcasts</span>
-      </button>
-      <button class="tab">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 7h11M4 12h11M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17.5 13.5v5.2c0 .6-.7.9-1.2.5l-.9-.7M20 10.5l-2.5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Up Next</span>
-      </button>
-      <button class="tab">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <span>Downloads</span>
-      </button>
-      <button class="tab active" aria-current="page">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 8h9M18.5 8H20M4 16h1.5M11 16h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="15.5" cy="8" r="2.6" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="16" r="2.6" stroke="currentColor" stroke-width="2"/></svg>
-        <span>Settings</span>
-      </button>
-    </nav>
 
     <div class="home-ind"></div>
 
@@ -599,24 +604,18 @@
   tt.addEventListener('click', () => {
     const dark = root.getAttribute('data-theme') === 'dark';
     root.setAttribute('data-theme', dark ? 'light' : 'dark');
-    tgEmoji.textContent = dark ? '☀️' : '🌙';
+    tgEmoji.textContent = dark ? '\u2600\ufe0f' : '\ud83c\udf19';
     tgLabel.textContent = dark ? 'Light' : 'Dark';
   });
 
-  // iOS large-title -> inline-title condense on scroll
-  const content = document.getElementById('content');
-  const navbar = document.getElementById('navbar');
-  const bigTitle = document.querySelector('h1.big');
-  content.addEventListener('scroll', () => {
-    const past = content.scrollTop > (bigTitle.offsetTop + bigTitle.offsetHeight - 40);
-    navbar.classList.toggle('show', past);
-  }, { passive: true });
-
-  // tab bar active state
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.removeAttribute('aria-current'); });
-      tab.classList.add('active'); tab.setAttribute('aria-current','page');
+  // remove a downloaded episode (mock: delete the local file -> drop the row)
+  document.querySelectorAll('.dl-remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const row = btn.closest('.drow');
+      row.style.transition = 'opacity .22s var(--ease-soft), transform .22s var(--ease-soft)';
+      row.style.opacity = '0';
+      row.style.transform = 'translateX(14px)';
+      setTimeout(() => row.remove(), 210);
     });
   });
 </script>

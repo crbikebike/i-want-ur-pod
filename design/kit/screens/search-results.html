@@ -1,0 +1,776 @@
+<!-- @dsCard group="Search" -->
+<title>Search · Results</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  :root {
+    /* --- brand ramp (theme-agnostic) --- */
+    --coral: #FF6A4D;
+    --coral-deep: #CA340F;
+    --mint: #34E0C4;
+    --mint-deep: #046B58;
+    --grape: #7C6BFF;
+
+    /* --- spacing scale (gutter = --sp-5 = 20px, used everywhere) --- */
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 20px;
+    --sp-6: 26px;
+    --sp-7: 32px;
+    --gutter: var(--sp-5);
+
+    /* --- radii --- */
+    --r-lg: 20px;
+    --r-md: 16px;
+    --r-sm: 12px;
+    --r-field: 11px;
+    --r-art: 14px;
+    --r-seg: 9px;
+    --r-pill: 999px;
+
+    /* --- motion --- */
+    --dur-fast: .2s;
+    --dur-mid: .3s;
+    --dur-row: .55s;
+    --dur-rise: .6s;
+    --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+    --ease-soft: cubic-bezier(.22, .61, .36, 1);
+
+    /* --- elevation --- */
+    --elev-list: 0 1px 0 var(--hairline), 0 8px 24px -18px rgba(0,0,0,.5);
+    --elev-card: 0 1px 0 var(--hairline), 0 12px 30px -20px rgba(0,0,0,.55);
+    --elev-sub: 0 6px 14px -8px var(--accent);
+    --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
+
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  /* ---------- DARK (hero) ---------- */
+  :root, :root[data-theme="dark"] {
+    --bg: #0E0B12;
+    --grouped-bg: #0E0B12;
+    --bg-glow-1: rgba(255,106,77,.10);
+    --bg-glow-2: rgba(52,224,196,.07);
+    --surface: #1C1722;
+    --surface-2: #262030;
+    --hairline: rgba(255,255,255,.09);
+    --separator: rgba(255,255,255,.12);
+    --text: #F8F3EF;
+    --text-dim: #ABA1B4;
+    --text-faint: #988DA1;
+    --accent: var(--coral);
+    --accent-2: var(--mint);
+    --on-accent: #2A0E04;
+    --chip: rgba(255,255,255,.08);
+    --chip-text: #F8F3EF;
+    --seg-track: rgba(120,120,128,.24);
+    --seg-thumb: #38313F;
+    --field: rgba(120,120,128,.24);
+    --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
+    --tabbar-icon: #8B8291;
+  }
+
+  /* ---------- LIGHT ---------- */
+  :root[data-theme="light"] {
+    --bg: #F2F1F6;
+    --grouped-bg: #F2F1F6;
+    --bg-glow-1: rgba(245,80,47,.09);
+    --bg-glow-2: rgba(6,169,139,.08);
+    --surface: #FFFFFF;
+    --surface-2: #F6F1EC;
+    --hairline: rgba(40,26,36,.10);
+    --separator: rgba(60,60,67,.18);
+    --text: #1A1420;
+    --text-dim: #6B6472;
+    --text-faint: #736A78;
+    --accent: var(--coral-deep);
+    --accent-2: var(--mint-deep);
+    --on-accent: #FFFFFF;
+    --chip: rgba(118,118,128,.12);
+    --chip-text: #1A1420;
+    --seg-track: rgba(118,118,128,.16);
+    --seg-thumb: #FFFFFF;
+    --field: rgba(118,118,128,.10);
+    --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
+    --tabbar-icon: #6C6C70;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: var(--font);
+    /* Neutral desk backdrop so the phone reads as the hero, not a webpage. */
+    background:
+      radial-gradient(120% 60% at 85% -5%, #211a2b, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #17131e, transparent 55%),
+      #0a070e;
+    color: var(--text);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 28px 12px;
+    transition: background .5s var(--ease-soft);
+  }
+  :root[data-theme="light"] body {
+    background:
+      radial-gradient(120% 60% at 85% -5%, #f0e6f4, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #eef0f6, transparent 55%),
+      #e6e4ee;
+  }
+
+  /* ---------- theme toggle (fixed) ---------- */
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    height: 44px; padding: 0 16px 0 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: var(--r-pill);
+    background: rgba(30,24,38,.7);
+    backdrop-filter: blur(14px);
+    color: #F8F3EF; font-family: var(--font);
+    font-size: .82rem; font-weight: 700; letter-spacing: .01em;
+    cursor: pointer;
+    transition: transform .3s var(--ease-spring), background .3s;
+  }
+  :root[data-theme="light"] .theme-toggle {
+    background: rgba(255,255,255,.82);
+    border-color: rgba(40,26,36,.12);
+    color: #1A1420;
+  }
+  .theme-toggle:active { transform: scale(.92); }
+  .theme-toggle .tg-emoji { font-size: 1rem; transition: transform .5s var(--ease-spring); }
+  .theme-toggle:hover .tg-emoji { transform: rotate(-20deg) scale(1.15); }
+
+  /* ---------- phone frame ---------- */
+  .phone {
+    position: relative;
+    width: 390px; height: 844px;
+    border-radius: 54px;
+    background: var(--bg);
+    box-shadow:
+      0 0 0 12px #050308,
+      0 0 0 14px #322838,
+      0 50px 90px -30px rgba(0,0,0,.85);
+    overflow: hidden;
+    transition: background .5s var(--ease-soft);
+  }
+  /* ambient brand glow — restrained accent, pinned to top only,
+     no longer a full-bleed wash fighting the native surfaces */
+  .phone::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(58% 20% at 92% 0%, var(--bg-glow-1), transparent 70%),
+      radial-gradient(46% 16% at 2% 6%, var(--bg-glow-2), transparent 72%);
+  }
+
+  .screen {
+    position: absolute; inset: 0; z-index: 1;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    background: var(--grouped-bg);
+    transition: background .5s var(--ease-soft);
+  }
+  /* keep glow visible above the grouped bg but below content */
+  .screen { background: transparent; }
+  .phone { background: var(--grouped-bg); }
+
+  /* ---------- status bar ---------- */
+  .statusbar {
+    height: 54px; flex: none;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 0 28px 8px; font-size: .82rem; font-weight: 700;
+    position: relative; z-index: 30;
+  }
+  .statusbar .sb-right { display: flex; align-items: center; gap: 6px; }
+  .sb-right svg { display: block; }
+  .notch {
+    position: absolute; top: 11px; left: 50%; transform: translateX(-50%);
+    width: 118px; height: 30px; border-radius: 18px; background: #050308; z-index: 40;
+  }
+
+  /* ---------- iOS navigation bar (inline title, appears on scroll) ---------- */
+  .navbar {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 25;
+    height: 96px; flex: none;
+    display: flex; align-items: flex-end; justify-content: center;
+    padding-bottom: 10px;
+    background: var(--bar-material);
+    backdrop-filter: blur(22px) saturate(180%);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    border-bottom: .5px solid var(--separator);
+    opacity: 0; pointer-events: none;
+    transition: opacity .25s var(--ease-soft);
+  }
+  .navbar.show { opacity: 1; }
+  .navbar .nav-eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 13px; margin-right: 8px; }
+  .navbar .nav-eq i {
+    width: 3px; border-radius: 3px; background: var(--accent);
+    animation: pulseBar 1s ease-in-out infinite;
+  }
+  .navbar .nav-eq i:nth-child(1){ height: 6px; animation-delay: 0s; }
+  .navbar .nav-eq i:nth-child(2){ height: 12px; animation-delay: .18s; }
+  .navbar .nav-eq i:nth-child(3){ height: 8px; animation-delay: .36s; }
+  .navbar .nav-title {
+    font-size: 1.06rem; font-weight: 800; letter-spacing: -.01em; color: var(--text);
+    display: inline-flex; align-items: center;
+  }
+
+  /* ---------- scroll region ---------- */
+  .content {
+    flex: 1; overflow-y: auto; overflow-x: hidden;
+    padding: 54px var(--gutter) 104px;   /* top clears status bar; bottom clears floating tab bar */
+    -webkit-overflow-scrolling: touch;
+    position: relative; z-index: 2;
+  }
+  .content::-webkit-scrollbar { width: 0; }
+
+  /* ---------- large title (literal "Discover") ---------- */
+  .titlewrap { padding: 2px 2px 4px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0; animation: rise .6s var(--ease-soft) .05s forwards;
+  }
+  .eyebrow .eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 12px; }
+  .eyebrow .eq i {
+    width: 3px; border-radius: 3px; background: var(--accent);
+    animation: pulseBar 1s ease-in-out infinite;
+  }
+  .eyebrow .eq i:nth-child(1){ height: 5px; animation-delay: 0s; }
+  .eyebrow .eq i:nth-child(2){ height: 11px; animation-delay: .18s; }
+  .eyebrow .eq i:nth-child(3){ height: 7px; animation-delay: .36s; }
+  @keyframes pulseBar { 0%,100%{ transform: scaleY(.4); } 50%{ transform: scaleY(1); } }
+
+  h1.big {
+    font-size: 2.32rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.04;
+    margin-top: 4px;
+    display: inline-flex; align-items: center; gap: var(--sp-2);
+    opacity: 0; animation: rise .6s var(--ease-soft) .12s forwards;
+  }
+  /* a single lively coral dot as the accent, not a headline swap */
+  h1.big .pulse-dot {
+    width: 11px; height: 11px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 0 0 0 var(--accent);
+    animation: idlePulse 2.6s var(--ease-soft) infinite;
+  }
+
+  /* ---------- iOS search field ---------- */
+  .search {
+    margin-top: var(--sp-4); height: 40px;
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 6px 0 12px;
+    background: var(--field); border: none;
+    border-radius: var(--r-field);
+    opacity: 0; animation: rise .6s var(--ease-soft) .18s forwards;
+    transition: box-shadow .25s;
+  }
+  .search:focus-within { box-shadow: 0 0 0 2px var(--accent); }
+  .search svg.mag { flex: none; color: var(--text-faint); }
+  .search input {
+    flex: 1; border: none; background: none; outline: none;
+    font-family: var(--font); font-size: 1.0rem; font-weight: 500; color: var(--text);
+    min-width: 0;
+  }
+  .search input::placeholder { color: var(--text-dim); font-weight: 500; }
+  .search .mic {
+    flex: none; width: 30px; height: 30px; border-radius: 50%;
+    display: grid; place-items: center; border: none; cursor: pointer;
+    background: transparent; color: var(--text-faint);
+    transition: color .3s, transform .3s var(--ease-spring);
+  }
+  .search .mic:active { transform: scale(.85); }
+  @keyframes idlePulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(255,106,77,.0); }
+    50% { box-shadow: 0 0 0 6px rgba(255,106,77,.16); }
+  }
+
+  /* ---------- section header ---------- */
+  .sec-head {
+    margin: var(--sp-6) 2px var(--sp-1); display: flex; align-items: center; justify-content: space-between;
+    opacity: 0; animation: rise .6s var(--ease-soft) .3s forwards;
+  }
+  .sec-head h2 { font-size: 1.34rem; font-weight: 800; letter-spacing: -.015em; }
+  .sec-head .count {
+    font-size: .74rem; font-weight: 800; color: var(--accent-2);
+    background: color-mix(in srgb, var(--accent-2) 15%, transparent);
+    padding: 4px 10px; border-radius: var(--r-pill);
+  }
+  .sec-sub { margin: 2px 2px 0; font-size: .82rem; color: var(--text-faint); font-weight: 500;
+    opacity: 0; animation: rise .6s var(--ease-soft) .32s forwards; }
+
+  /* ---------- results: grouped inset list (iOS) ---------- */
+  .list {
+    margin-top: var(--sp-3);
+    background: var(--surface);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: 0 1px 0 var(--hairline), 0 8px 24px -18px rgba(0,0,0,.5);
+  }
+  .row {
+    display: flex; align-items: center; gap: var(--sp-3);
+    padding: var(--sp-3) var(--sp-4);
+    position: relative;
+    opacity: 0; transform: translateY(12px);
+    animation: rowIn .55s var(--ease-spring) forwards;
+    transition: background .2s;
+  }
+  /* inset hairline separators between cells, not around each card */
+  .row:not(:last-child)::after {
+    content: ""; position: absolute; left: calc(var(--sp-4) + 60px + var(--sp-3)); right: 0; bottom: 0;
+    height: .5px; background: var(--separator);
+  }
+  .row:active { background: color-mix(in srgb, var(--text) 6%, transparent); }
+
+  /* album art gradient tiles */
+  .art {
+    flex: none; width: 60px; height: 60px; border-radius: var(--r-art);
+    position: relative; overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 4px 10px -6px rgba(0,0,0,.5);
+  }
+  .art::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 26%, rgba(255,255,255,.42), transparent 42%),
+      radial-gradient(circle at 78% 82%, rgba(0,0,0,.22), transparent 50%);
+  }
+  .art .glyph {
+    position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 1.45rem; font-weight: 900; color: rgba(255,255,255,.95);
+    text-shadow: 0 2px 6px rgba(0,0,0,.3);
+  }
+  .a1 { background: linear-gradient(140deg, #FF7A4D, #FF4D8D); }
+  .a2 { background: linear-gradient(140deg, #34E0C4, #2E8BFF); }
+  .a3 { background: linear-gradient(140deg, #FFC24D, #FF6A4D); }
+  .a4 { background: linear-gradient(140deg, #7C6BFF, #34E0C4); }
+  .a5 { background: linear-gradient(140deg, #FF5E9A, #7C6BFF); }
+  .a6 { background: linear-gradient(140deg, #22C1A6, #7ED957); }
+
+  .row .meta { flex: 1; min-width: 0; }
+  .row .rtitle {
+    font-size: 1rem; font-weight: 700; letter-spacing: -.01em;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .row .rauthor {
+    margin-top: 1px; font-size: .82rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .row .tags { margin-top: 6px; display: flex; gap: 6px; }
+  .row .tag {
+    font-size: .64rem; font-weight: 800; letter-spacing: .02em; text-transform: uppercase;
+    color: var(--text-dim); background: var(--chip);
+    padding: 3px 8px; border-radius: var(--r-pill);
+  }
+  .row .tag.hot { color: var(--on-accent); background: var(--accent); }
+
+  /* subscribe button — pill, pulse ring, Subscribe -> Subscribed */
+  .sub {
+    flex: none; position: relative;
+    min-width: 44px; min-height: 34px; padding: 0 14px;
+    border: none; cursor: pointer; border-radius: var(--r-pill);
+    font-family: var(--font); font-size: .8rem; font-weight: 800; letter-spacing: .01em;
+    color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: 0 6px 14px -8px var(--accent);
+    display: inline-flex; align-items: center; gap: 5px;
+    transition: transform .3s var(--ease-spring), background .3s, color .3s, box-shadow .3s;
+    overflow: visible;
+  }
+  .sub .ico { display: inline-flex; transition: transform .4s var(--ease-spring); }
+  .sub .ico svg { display: block; }
+  .sub .ico-check { display: none; }
+  .sub:active { transform: scale(.9); }
+  .sub.done {
+    background: var(--chip);
+    color: var(--text);
+    box-shadow: none;
+  }
+  .sub.done .ico-plus { display: none; }
+  .sub.done .ico-check { display: inline-flex; }
+  /* radiating pulse ring on subscribe tap */
+  .sub .ring {
+    position: absolute; inset: 0; border-radius: var(--r-pill);
+    border: 2px solid var(--accent); opacity: 0; pointer-events: none;
+  }
+  .sub.pulsing .ring { animation: ringOut .55s var(--ease-soft) forwards; }
+  @keyframes ringOut {
+    0% { opacity: .8; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.55); }
+  }
+
+  /* extra tap target guarantee: min 44 height via hit area */
+  .sub::before {
+    content: ""; position: absolute; inset: -5px -2px; border-radius: var(--r-pill);
+  }
+
+  /* ---------- footer note (kept minimal, native-feeling) ---------- */
+  .foot {
+    margin: 18px 6px 0; font-size: .76rem; color: var(--text-faint); font-weight: 500;
+    text-align: center;
+    opacity: 0; animation: rise .6s var(--ease-soft) .5s forwards;
+  }
+
+  /* ---------- bottom tab bar: FLOATING Liquid Glass (iOS 26) ---------- */
+  .tabbar {
+    position: absolute; left: 12px; right: 12px; bottom: 22px; z-index: 20;
+    height: 60px; display: flex; align-items: center; justify-content: space-around;
+    padding: 0 6px; border-radius: 30px;
+    background: var(--tabbar-glass);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: .5px solid var(--tabbar-hairline);
+    box-shadow: var(--tabbar-shadow);
+  }
+  .tab {
+    flex: 1; border: none; background: none; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+    color: var(--tabbar-icon); font-family: var(--font);
+    font-size: .62rem; font-weight: 600; letter-spacing: .01em;
+    min-height: 44px; padding: 4px 0;
+    transition: color .3s;
+  }
+  .tab svg { transition: transform .4s var(--ease-spring); }
+  .tab:active svg { transform: scale(.85); }
+  .tab.active { color: var(--accent); }
+  .tab.active svg { animation: bounceIn .5s var(--ease-spring); }
+  @keyframes bounceIn { 0%{ transform: translateY(2px) scale(.85);} 60%{ transform: translateY(-2px) scale(1.1);} 100%{ transform: translateY(0) scale(1);} }
+
+  /* ---------- home indicator ---------- */
+  .home-ind { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    width: 134px; height: 5px; border-radius: 3px; background: var(--text); opacity: .3; z-index: 25; }
+
+  /* ---------- keyframes ---------- */
+  @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @keyframes rowIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+    .row, .eyebrow, h1.big, .search, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
+    .navbar { transition: none; }
+  }
+
+  /* ============ SHARED KIT EXTRAS (built on locked tokens) ============ */
+
+  /* generic buttons: primary / secondary / ghost */
+  .btn {
+    min-height: 44px; padding: 0 20px; border: none; cursor: pointer;
+    border-radius: var(--r-pill); font-family: var(--font);
+    font-size: .95rem; font-weight: 800; letter-spacing: .01em;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    transition: transform var(--dur-mid) var(--ease-spring), box-shadow var(--dur-mid), background var(--dur-mid), color var(--dur-mid);
+  }
+  .btn:active { transform: scale(.95); }
+  .btn svg { display: block; }
+  .btn-primary {
+    color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: var(--elev-sub);
+  }
+  .btn-secondary { color: var(--text); background: var(--chip); }
+  .btn-ghost {
+    color: var(--accent); background: transparent;
+    box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--accent) 60%, transparent);
+  }
+
+  /* subscribe: subscribing (loading) state */
+  .sub .ico-spin { display: none; }
+  .sub.loading { pointer-events: none; }
+  .sub.loading .ico-plus, .sub.loading .ico-check { display: none; }
+  .sub.loading .ico-spin { display: inline-flex; }
+  .sub .spinner {
+    width: 12px; height: 12px; border-radius: 50%;
+    border: 2px solid color-mix(in srgb, var(--on-accent) 45%, transparent);
+    border-top-color: var(--on-accent); animation: spin .7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* loading skeleton */
+  .sk-list { margin-top: var(--sp-3); background: var(--surface);
+    border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--elev-list); }
+  .sk-row { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-3) var(--sp-4); position: relative; }
+  .sk-row:not(:last-child)::after { content: ""; position: absolute; left: calc(var(--sp-4) + 60px + var(--sp-3)); right: 0; bottom: 0; height: .5px; background: var(--separator); }
+  .sk-art { flex: none; width: 60px; height: 60px; border-radius: var(--r-art); }
+  .sk-meta { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .sk-line { height: 11px; border-radius: 6px; }
+  .sk-line.w70 { width: 70%; } .sk-line.w45 { width: 45%; } .sk-line.w30 { width: 30%; }
+  .sk-pill { flex: none; width: 74px; height: 30px; border-radius: var(--r-pill); }
+  .shimmer {
+    background: linear-gradient(100deg, var(--chip) 30%, color-mix(in srgb, var(--text) 12%, var(--chip)) 50%, var(--chip) 70%);
+    background-size: 220% 100%; animation: shimmer 1.4s var(--ease-soft) infinite;
+  }
+  @keyframes shimmer { 0% { background-position: 180% 0; } 100% { background-position: -80% 0; } }
+
+  /* typeahead drawer — drops down from the search box, floats over content */
+  .search-wrap { position: relative; z-index: 40;
+    opacity: 0; animation: rise .6s var(--ease-soft) .18s forwards; }
+  .search-wrap .search { margin-top: 0; opacity: 1; animation: none; }
+  .drawer {
+    position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 50;
+    background: var(--surface); border-radius: var(--r-md); overflow: hidden;
+    box-shadow: var(--elev-pop), inset 0 0 0 .5px var(--hairline);
+    transform-origin: top center;
+    animation: drawerIn .22s var(--ease-spring) both;
+  }
+  .drawer[hidden] { display: none; }
+  @keyframes drawerIn { from { opacity: 0; transform: translateY(-8px) scaleY(.96); } to { opacity: 1; transform: none; } }
+  .sug { display: flex; align-items: center; gap: 12px; padding: 8px 12px; min-height: 56px; position: relative; cursor: pointer;
+    transition: background .15s; }
+  .sug:not(:last-child)::after { content: ""; position: absolute; left: 64px; right: 0; bottom: 0; height: .5px; background: var(--separator); }
+  .sug:active, .sug:hover { background: color-mix(in srgb, var(--text) 6%, transparent); }
+  .sug-av { flex: none; width: 40px; height: 40px; border-radius: 10px; position: relative; overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 3px 8px -5px rgba(0,0,0,.5); }
+  .sug-av::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.4), transparent 46%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.24), transparent 55%); }
+  .sug-av .g { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 1.05rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 1px 3px rgba(0,0,0,.35); }
+  .sug .body { flex: 1; min-width: 0; }
+  .sug .t { font-size: .98rem; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sug .t b { font-weight: 800; }
+  .sug .s { margin-top: 1px; font-size: .8rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sug .arr { flex: none; color: var(--text-faint); }
+
+  /* underlying content — Result Row shelves the drawer floats over */
+  .shelf + .shelf { margin-top: var(--sp-6); }
+  .shelf-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); padding: 0 2px; margin-bottom: var(--sp-3); }
+  .shelf-head .sh-title { font-size: 1.14rem; font-weight: 800; letter-spacing: -.015em; color: var(--text); }
+  .shelf-head .sh-count { flex: none; font-size: .72rem; font-weight: 800; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+  .rail { display: flex; gap: var(--sp-3); overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; padding: 4px 2px 6px; margin: -4px -2px -6px; scrollbar-width: none; }
+  .rail::-webkit-scrollbar { height: 0; }
+  .pod { flex: none; width: 138px; scroll-snap-align: start; display: flex; flex-direction: column; gap: 9px; }
+  .pod-art { position: relative; width: 138px; height: 138px; border-radius: var(--r-md); overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 8px 20px -12px rgba(0,0,0,.55); }
+  .pod-art::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.42), transparent 42%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.28), transparent 55%); }
+  .pod-art .glyph { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 2.4rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 2px 8px rgba(0,0,0,.35); }
+  .pod-meta { padding: 0 2px; }
+  .pod-title { font-size: .92rem; font-weight: 700; letter-spacing: -.01em; color: var(--text); line-height: 1.22;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .pod-studio { margin-top: 3px; font-size: .78rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pod .sub {
+    position: absolute; z-index: 3; right: 8px; bottom: 8px; width: 34px; height: 34px; min-width: 0; min-height: 0; padding: 0;
+    border: none; cursor: pointer; border-radius: 50%; color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,.5), inset 0 0 0 .5px rgba(255,255,255,.28);
+    display: inline-flex; align-items: center; justify-content: center; }
+  /* dim the underlying content while the typeahead drawer is open */
+  .content.drawer-open .under { filter: saturate(.9) brightness(.72); transition: filter .2s var(--ease-soft); }
+  .under { transition: filter .2s var(--ease-soft); margin-top: var(--sp-5); }
+
+  /* result card (grid tile) */
+  .cardgrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin-top: var(--sp-3); }
+  .pcard { background: var(--surface); border-radius: var(--r-lg); padding: var(--sp-3);
+    box-shadow: var(--elev-list); display: flex; flex-direction: column; gap: var(--sp-2); }
+  .pcard-art { width: 100%; aspect-ratio: 1 / 1; border-radius: var(--r-md); position: relative; overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 4px 10px -6px rgba(0,0,0,.5); }
+  .pcard-art::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.42), transparent 42%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.22), transparent 50%); }
+  .pcard-art .glyph { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 2rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 2px 6px rgba(0,0,0,.3); }
+  .pcard-title { font-size: .98rem; font-weight: 800; letter-spacing: -.01em; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pcard-author { font-size: .8rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: -2px; }
+  .pcard .sub { align-self: flex-start; margin-top: var(--sp-1); }
+
+  /* kit stage (component gallery cards; unused by phone screens) */
+  .stage { width: 360px; max-width: 100%; background: var(--grouped-bg);
+    border: .5px solid var(--separator); border-radius: 30px;
+    padding: var(--sp-6) var(--gutter) var(--sp-7);
+    box-shadow: var(--elev-pop); position: relative; z-index: 2;
+    transition: background .5s var(--ease-soft); }
+  .stage-cap { display: inline-flex; align-items: center; gap: 7px; margin-bottom: var(--sp-4);
+    font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  .stage-cap .eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 12px; }
+  .stage-cap .eq i { width: 3px; border-radius: 3px; background: var(--accent); animation: pulseBar 1s ease-in-out infinite; }
+  .stage-cap .eq i:nth-child(1){ height: 5px; } .stage-cap .eq i:nth-child(2){ height: 11px; animation-delay:.18s; } .stage-cap .eq i:nth-child(3){ height: 7px; animation-delay:.36s; }
+  .vlabel { font-size: .7rem; font-weight: 700; letter-spacing: .02em; color: var(--text-faint);
+    text-transform: uppercase; margin: var(--sp-5) 0 var(--sp-2); }
+  .vlabel:first-of-type { margin-top: 0; }
+  .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
+  .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+
+  /* @font-display-titles */
+  h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+    font-family: var(--font-display); font-weight: 700; }
+
+</style>
+
+<style>
+  /* ---------- search takeover state of the floating bar ----------
+     Tapping Search collapses the icons; the SAME glass bar becomes the search
+     field — Home pinned left, a ✕ to cancel on the right. In-app it detaches
+     from bottom:22px and rises just above the keyboard; shown here at rest.
+     Built only on locked tokens (--field, --r-field, --tabbar-* on .tabbar). */
+  .tabbar.takeover { justify-content: flex-start; gap: var(--sp-2); padding: 0 8px; }
+  .tb-home, .tb-cancel {
+    flex: none; width: 40px; height: 40px; border-radius: 50%;
+    border: none; background: none; cursor: pointer; display: grid; place-items: center;
+    transition: transform .4s var(--ease-spring), color .3s;
+  }
+  .tb-home { color: var(--tabbar-icon); }
+  .tb-cancel { color: var(--text-faint); }
+  .tb-home:active, .tb-cancel:active { transform: scale(.85); }
+  .tb-field {
+    flex: 1; min-width: 0; height: 40px; display: flex; align-items: center; gap: 8px;
+    padding: 0 12px; background: var(--field); border-radius: var(--r-field);
+    transition: box-shadow .25s;
+  }
+  .tb-field:focus-within { box-shadow: 0 0 0 2px var(--accent); }
+  .tb-field svg.mag { flex: none; color: var(--text-faint); }
+  .tb-field input {
+    flex: 1; min-width: 0; border: none; background: none; outline: none;
+    font-family: var(--font); font-size: 1rem; font-weight: 500; color: var(--text);
+  }
+  .tb-field input::placeholder { color: var(--text-dim); font-weight: 500; }
+
+  /* ---------- search results: top-result hero + rows ---------- */
+  .topresult { display: flex; gap: var(--sp-3); align-items: center;
+    background: var(--surface); border-radius: var(--r-lg); padding: var(--sp-3);
+    box-shadow: var(--elev-list); margin-top: var(--sp-3); }
+  .tr-art { flex: none; width: 76px; height: 76px; border-radius: var(--r-md);
+    position: relative; overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 4px 10px -6px rgba(0,0,0,.5); }
+  .tr-art::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.42), transparent 42%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.22), transparent 50%); }
+  .tr-art .glyph { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2;
+    font-size: 1.7rem; font-weight: 900; color: rgba(255,255,255,.95); text-shadow: 0 2px 6px rgba(0,0,0,.3); }
+  .tr-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+  .tr-title { font-size: 1.08rem; font-weight: 800; letter-spacing: -.01em; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tr-author { font-size: .84rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .topresult .sub { margin-top: var(--sp-2); align-self: flex-start; }
+  /* result rows reuse the .sug rhythm; trailing circular subscribe instead of the arrow */
+  .reslist .sug { cursor: default; }
+  .reslist .sub { position: static; flex: none; width: 34px; height: 34px;
+    min-width: 0; min-height: 0; padding: 0; border-radius: 50%;
+    justify-content: center; gap: 0; }
+</style>
+
+<button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
+  <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
+</button>
+
+<div class="phone">
+  <div class="notch"></div>
+  <div class="screen">
+
+    <!-- status bar -->
+    <div class="statusbar">
+      <span>9:41</span>
+      <span class="sb-right">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="4.5" width="3" height="7.5" rx="1"/><rect x="9" y="2" width="3" height="10" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
+        <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.4c2 0 3.9.8 5.3 2.1l1.2-1.3A9.4 9.4 0 0 0 8.5.6 9.4 9.4 0 0 0 2 3.2l1.2 1.3A7.4 7.4 0 0 1 8.5 2.4Z"/><path d="M8.5 6c1 0 2 .4 2.7 1.1l1.2-1.3A6 6 0 0 0 8.5 4a6 6 0 0 0-3.9 1.8l1.2 1.3A4 4 0 0 1 8.5 6Z"/><circle cx="8.5" cy="9.6" r="1.7"/></svg>
+        <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="1" y="1" width="21" height="10" rx="3" stroke="currentColor" stroke-width="1.2" opacity=".5"/><rect x="2.6" y="2.6" width="16" height="6.8" rx="1.6" fill="currentColor"/><rect x="23.4" y="4" width="1.8" height="4" rx="1" fill="currentColor" opacity=".6"/></svg>
+      </span>
+    </div>
+
+    <!-- inline nav bar -->
+    <div class="navbar" id="navbar" aria-hidden="true">
+      <span class="nav-eq"><i></i><i></i><i></i></span>
+      <span class="nav-title">Search</span>
+    </div>
+
+    <!-- scroll content -->
+    <div class="content" id="content">
+
+      <div class="sec-head">
+        <h2>Results for “history”</h2>
+      </div>
+
+      <!-- top result: the strongest match, featured -->
+      <article class="topresult">
+        <div class="tr-art" style="background-image:url(../art/rest-is-history.jpg);background-size:cover;background-position:center"></div>
+        <div class="tr-body">
+          <div class="tr-title">The Rest Is History</div>
+          <div class="tr-author">Goalhanger</div>
+          <button class="sub" aria-pressed="false" aria-label="Subscribe to The Rest Is History">
+            <span class="ring"></span>
+            <span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+            <span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="txt">Subscribe</span>
+          </button>
+        </div>
+      </article>
+
+      <div class="sec-head" style="margin-top: var(--sp-5)">
+        <h2>More shows</h2>
+      </div>
+      <div class="list reslist">
+          <div class="sug"><span class="sug-av" style="background-image:url(../art/hardcore-history.jpg);background-size:cover;background-position:center"></span><div class="body"><div class="t">Hardcore History</div><div class="s">Dan Carlin</div></div><button class="sub" aria-pressed="false" aria-label="Subscribe to Hardcore History"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div>
+          <div class="sug"><span class="sug-av" style="background-image:url(../art/fall-of-civilizations.jpg);background-size:cover;background-position:center"></span><div class="body"><div class="t">Fall of Civilizations</div><div class="s">Paul Cooper</div></div><button class="sub done" aria-pressed="true" aria-label="Subscribe to Fall of Civilizations"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div>
+          <div class="sug"><span class="sug-av" style="background-image:url(../art/the-ancients.jpg);background-size:cover;background-position:center"></span><div class="body"><div class="t">The Ancients</div><div class="s">History Hit</div></div><button class="sub" aria-pressed="false" aria-label="Subscribe to The Ancients"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div>
+          <div class="sug"><span class="sug-av" style="background-image:url(../art/empire.jpg);background-size:cover;background-position:center"></span><div class="body"><div class="t">Empire</div><div class="s">Goalhanger</div></div><button class="sub" aria-pressed="false" aria-label="Subscribe to Empire"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div>
+          <div class="sug"><span class="sug-av" style="background-image:url(../art/dead-to-me.jpg);background-size:cover;background-position:center"></span><div class="body"><div class="t">You're Dead to Me</div><div class="s">BBC Radio 4</div></div><button class="sub" aria-pressed="false" aria-label="Subscribe to You're Dead to Me"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div>
+          <div class="sug"><span class="sug-av" style="background-image:url(../art/revolutions.jpg);background-size:cover;background-position:center"></span><div class="body"><div class="t">Revolutions</div><div class="s">Mike Duncan</div></div><button class="sub" aria-pressed="false" aria-label="Subscribe to Revolutions"><span class="ring"></span><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div>
+      </div>
+
+    </div>
+
+    <!-- search takeover: the floating bar IS the search field (Home left, cancel right).
+         In-app it rises above the keyboard; shown here at its resting position. -->
+    <nav class="tabbar takeover" aria-label="Search">
+      <button class="tb-home" aria-label="Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.5 11.2 12 4l8.5 7.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.8 9.7v9.5c0 .6.5 1.1 1.1 1.1h10.2c.6 0 1.1-.5 1.1-1.1V9.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.6 20.3v-5.1c0-.5.4-.9.9-.9h3c.5 0 .9.4.9.9v5.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="tb-field">
+        <svg class="mag" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M15.8 15.8 20.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Shows, people, topics" value="history" aria-label="Search">
+      </div>
+      <button class="tb-cancel" aria-label="Cancel search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6 18 18M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+
+    <div class="home-ind"></div>
+
+  </div>
+</div>
+
+<script>
+  // theme toggle
+  const root = document.documentElement;
+  const tt = document.getElementById('tt');
+  const tgEmoji = document.getElementById('tgEmoji');
+  const tgLabel = document.getElementById('tgLabel');
+  root.setAttribute('data-theme', 'dark');
+  tt.addEventListener('click', () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    tgEmoji.textContent = dark ? '☀️' : '🌙';
+    tgLabel.textContent = dark ? 'Light' : 'Dark';
+  });
+
+  // subscribe toggle + pulse ring (null-safe: icon-only buttons have no .txt)
+  document.querySelectorAll('.sub').forEach(btn => {
+    const txt = btn.querySelector('.txt');
+    btn.addEventListener('click', () => {
+      const done = btn.classList.toggle('done');
+      if (txt) txt.textContent = done ? 'Subscribed' : 'Subscribe';
+      btn.setAttribute('aria-pressed', done ? 'true' : 'false');
+      btn.classList.remove('pulsing'); void btn.offsetWidth; btn.classList.add('pulsing');
+    });
+  });
+
+  // the takeover field: cancel (x) clears the query in this static mock
+  document.querySelectorAll('.tb-cancel').forEach(x => x.addEventListener('click', () => {
+    const inp = document.querySelector('.tb-field input'); if (inp) { inp.value = ''; inp.focus(); }
+  }));
+</script>

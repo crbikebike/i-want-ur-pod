@@ -1,5 +1,5 @@
 // Translated from design/kit/components/no-results.html and
-// design/kit/screens/{no-results,error}.html (SHARED KIT EXTRAS: .state /
+// design/kit/screens/{search-noresults,search-error}.html (SHARED KIT EXTRAS: .state /
 // .state-badge / .state-title / .state-sub / .state-actions) — correct and
 // confirmed for the `.noResults` and `.error` cases only.
 //

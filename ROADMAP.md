@@ -10,6 +10,14 @@ each with **determinate (testable) acceptance criteria**.
 
 **Status:** M0.5 (Design) and M1 (Foundations) complete — models, DirectoryKit
 search, Discover, and the CarPlay seam exist. This roadmap covers what comes next.
+Since M0.5 landed, the design kit picked up two more rounds of decisions: a
+**2026-07-05 IA revision** (the tab bar is now a four-item dock — Home · Shows ·
+Up Next · Search — replacing Discover/Podcasts/Up Next/Downloads/Settings) and
+**2026-07-06** decisions (v1 searches **Apple only**, no source picker; **Podcast
+Detail** gained real feed data + a story-arcs shelf). The kit is updated and
+the SwiftUI translation shipped as **E8** (2026-07-06) — see below. Journeys/epics
+below still describe screens by their pre-revision names where that's how they
+shipped; each affected spot has a note pointing at the new names.
 
 ---
 
@@ -31,6 +39,8 @@ search, Discover, and the CarPlay seam exist. This roadmap covers what comes nex
 1. **First run** — we explain the story-driven focus, then show suggested places to start. → **E1**
 2. **Podcast detail** — larger artwork, description, publisher, episode list. → **E2**
 3. **Subscribe** — add a show; it appears on the Podcasts list; open its detail. → **E3** (+E2)
+   *(the dock IA renames this surface Podcasts → Shows per the 2026-07-05
+   revision; translation tracked in E8-S3.)*
 4. **Played/unplayed** — a subscribed show marks which episodes are played. → **E2-S3 / E4-S3**
 5. **Up Next queue** — add episodes, drag to reorder, swipe to remove. → **E5**
 6. **Download & play** — download an episode, then play it. → **E4**
@@ -75,6 +85,13 @@ The first real domino: every journey past first-run needs "feed URL → `Podcast
 [`navigation-map.md`](docs/spec/navigation-map.md). Reuses live `DirectoryKit` +
 `DiscoverScreen`. **Depends on:** E0, E2 (tap-through).
 
+*The dock IA (2026-07-05) renames "Discover" throughout this epic: the
+curated shelf moves to the new **Home** landing feed, and keyword search
+moves to the **Search takeover** (no standalone Discover tab). This epic's
+stories still describe the pre-revision Discover surface as originally
+built; the SwiftUI translation to Home + Search takeover is tracked in E8-S1
+and E8-S2.*
+
 - **E1-S1 — First-run explainer.** A once-only intro to the story-driven focus, shown
   before Discover; re-openable from Settings.
   - Fresh install shows it before Discover; a relaunch does not.
@@ -87,8 +104,8 @@ The first real domino: every journey past first-run needs "feed URL → `Podcast
   - Tapping an entry opens the E2 detail for its `feedUrl`.
 - **E1-S3 — Keyword search.** Search reachable from Discover, reusing
   `SearchCoordinator` and the existing states (typing/loading/results/no-results/error).
-  - A query returns results from the primary source (Apple) with PodcastIndex fallback
-    per §12.3.
+  - A query returns results from the primary source (Apple); v1 is Apple-only,
+    no fallback source (§12).
   - An empty query shows the curated/idle state; a source error shows the error state
     without crashing.
 
@@ -118,7 +135,9 @@ One screen that adapts to subscribe state. **Doc:**
 **Depends on:** E2.
 
 - **E3-S1 — Podcasts tab.** A tabular list of subscribed shows (artwork + title +
-  author), sorted by `dateAdded` (newest first).
+  author), sorted by `dateAdded` (newest first). *(The dock IA renames this
+  surface Podcasts → Shows per the 2026-07-05 revision; see `shows.html` and
+  E8-S3.)*
   - Subscribing adds a row; unsubscribing removes it.
   - Tapping a row opens the E2 detail in subscribed state.
   - With no subscriptions, an empty state is shown (not a blank pane).
@@ -240,6 +259,82 @@ and **supersedes this story before release**.
 simulated bad store and a temp download directory — unit-testable via `swift test`
 without launching the app.
 
+### E8 — Dock IA & design-kit translation pass *(✅ shipped 2026-07-06)*
+
+The 2026-07-05/06 design rounds locked a new information architecture and a
+real-data Podcast Detail screen into the kit — but the SwiftUI app still shows
+the pre-revision five-tab bar (Discover, Podcasts, Up Next, Downloads,
+Settings) and a Discover-era detail screen. This epic is the translation pass
+that brings the app in line with the design's source of truth. **Docs:**
+[`docs/design/direction.md`](docs/design/direction.md) §10–§12 (component/screen
+inventory, open issues, navigation) and [`design/kit/MANIFEST.md`](design/kit/MANIFEST.md)
+(per-file authoritative status). **Depends on:** E1–E3 (surfaces being
+translated already exist in some form).
+
+- **E8-S1 — Four-item dock + Search takeover.** Replace the five-item tab bar
+  with **Home · Shows · Up Next · Search**; tapping Search turns the bar
+  itself into a search field.
+  - The tab bar shows exactly four destinations, in order: Home, Shows, Up
+    Next, Search. Discover, Downloads, and Settings are no longer tab-bar
+    items.
+  - Tapping Search collapses the icons and presents a search field in the
+    same bar position, with Home pinned to its left and a ✕ to cancel.
+  - The takeover field rises to sit just above the keyboard when focused,
+    and the results/suggestions region fills the rest of the screen.
+  - Dismissing the takeover (✕ or a completed search's back action) restores
+    the four-icon bar with the previously active tab still selected.
+- **E8-S2 — Home landing feed.** A new Home screen replaces Discover as the
+  first destination, per `design/kit/screens/home.html`.
+  - Home renders, in order: an Up Next peek, a new-episodes shelf, a shows-
+    for-you shelf, and an our-favorites shelf.
+  - Each shelf that has no content renders nothing (no empty shelf chrome),
+    rather than a blank gap or a crash.
+  - Tapping an item in any shelf opens the E2 Podcast Detail (or the episode,
+    for the Up Next peek) for its underlying feed/episode.
+- **E8-S3 — Shows tab.** Rename/translate the existing Podcasts tab (E3-S1)
+  to **Shows**, matching `design/kit/screens/shows.html`.
+  - The tab bar label reads "Shows"; the screen content and behavior are
+    otherwise unchanged from E3-S1 (subscribed shows, sorted by `dateAdded`).
+  - No route, model, or persisted-state name changes are required — this is
+    a UI-surface rename only.
+- **E8-S4 — Settings as a pushed gear screen.** Move Settings off the tab bar
+  to a top-right gear, and reduce its content to downloads management.
+  - A gear glyph in the top-right corner of Home/Shows/Up Next pushes the
+    Settings screen (with a Done/back affordance to return).
+  - Settings is no longer a tab-bar destination.
+  - Settings shows exactly one section, **Manage downloaded episodes** — a
+    list of downloaded episodes, each removable (removing deletes the local
+    audio file; the `Episode` record and its feed membership are untouched).
+  - `SourcesView.swift` and any in-app source-picker UI are removed; the
+    live source roster is trimmed to Apple only (§12). `DirectoryKit` keeps
+    `PodcastIndexSource` + the fallback coordinator as dormant, unused code
+    (not deleted) per the Key decisions note above.
+- **E8-S5 — Inline download state on Up Next rows.** With Downloads no
+  longer a tab, each Up Next row surfaces download state directly.
+  - Each Up Next row shows the episode's current `DownloadState`
+    (not-downloaded / downloading / downloaded / failed) via an inline icon.
+  - Each row offers a download action when not already downloaded, reusing
+    `DownloadKit` (E4-S1) — tapping it drives the same state machine.
+  - There is no standalone Downloads tab or screen; downloaded-episode
+    management lives only in Settings (E8-S4).
+- **E8-S6 — Podcast Detail reconcile: compact controls + story arcs.**
+  *(Shipped 2026-07-06.)* Bring `PodcastDetailView` in line with
+  `design/kit/screens/podcast-detail-<slug>.html`.
+  - Download / play / add-to-Up-Next controls render as compact icon-only
+    buttons (no redundant "Downloaded" text label).
+  - Episode rows show `season · episode` (when available) plus publish date
+    and duration.
+  - `FeedParser` parses `<itunes:season>`, `<itunes:episode>`, and
+    `<itunes:episodeType>` when present; `Episode` gains `season` and
+    `episodeNumber` fields (+ a derived-arc field) populated from parsing.
+  - A horizontal **Story arcs** shelf renders above the episode list when
+    the show's episodes carry derivable arc structure (season data, or
+    title patterns `Arc | Title | N` / `Arc - Part N`); each arc card has an
+    **"Add all"** control that enqueues every episode in the arc to Up Next.
+  - A show with no derivable arcs (no seasons, no matching title structure)
+    renders the episode list without the Story arcs shelf — no crash, no
+    empty shelf.
+
 ---
 
 ## Parked
@@ -275,9 +370,25 @@ Carried forward and new:
 - **First run is curated, not imported.** A hand-maintained bundled JSON
   ([`curated-list.schema.md`](docs/spec/curated-list.schema.md)) — no backend, works
   offline. Editorial upkeep is an accepted, recurring chore.
-- **Search stays** alongside curated browse. Apple (`ITunesSource`) primary, no key;
-  PodcastIndex opt-in with your own free key in Keychain. Primary + fallback, **never
-  merged** (§12.3). Sources are chosen in Settings, not inline.
+- **Sources: Apple only for v1** — the keyless iTunes Search API (`ITunesSource`),
+  zero-config, no in-app source picker. **PodcastIndex is deferred** to a later
+  milestone (it would add an optional second source with its own key handling);
+  the code keeps `PodcastIndexSource` + the fallback coordinator as dormant
+  groundwork so adding it later is low-friction.
+  - *Note for later:* PodcastIndex also exposes **keyless** Apple-shaped `/search`
+    + `/lookup` endpoints — a client can search PodcastIndex with no key at all (a
+    key only unlocks richer metadata: descriptions, episode enrichment,
+    transcripts/chapters/V4V, trending). And PodcastIndex publishes a **weekly
+    full-feeds SQLite dump** (~1.8 GB) they encourage for bulk use — if we ever
+    run an optional proxy, it could back a **self-hosted search** with no
+    live-API calls, no key, and no rate limits (trade-off: data up to a week
+    stale, feeds-only, storage/refresh ops). Not for on-device; backend-only.
+- **Dock IA (2026-07-05/06):** navigation is a **four-item dock** — Home · Shows ·
+  Up Next · Search. Search has no standalone tab; tapping it turns the dock
+  itself into a search field (**search takeover**). **Settings** moved to a
+  top-right gear (pushed screen); **Downloads** left the dock — download state
+  and a download button are inline on Up Next rows instead. See
+  `direction.md` §10–§12 and **E8**.
 - **Download-first playback.** An episode plays only from a completed local file; no
   streaming in v1. Simplest path, fully offline, no buffering/seek-over-network edge
   cases.

@@ -34,6 +34,17 @@ public struct ParsedEpisode: Sendable, Hashable {
     /// `<itunes:explicit>` == yes/true → `false`.
     public var isExplicit: Bool
 
+    /// `<itunes:season>` → `nil`. Only set when the feed carries a positive
+    /// integer (junk/non-numeric/non-positive values are dropped, not
+    /// clamped or defaulted to 0).
+    public var season: Int?
+
+    /// `<itunes:episode>` → `nil`. Same positive-int-or-nil rule as `season`.
+    public var episodeNumber: Int?
+
+    /// `<itunes:episodeType>` (e.g. "full" / "trailer" / "bonus") → `nil`.
+    public var episodeType: String?
+
     public init(
         guid: String,
         title: String,
@@ -42,7 +53,10 @@ public struct ParsedEpisode: Sendable, Hashable {
         duration: TimeInterval = 0,
         audioURL: URL,
         remoteArtworkURL: URL? = nil,
-        isExplicit: Bool = false
+        isExplicit: Bool = false,
+        season: Int? = nil,
+        episodeNumber: Int? = nil,
+        episodeType: String? = nil
     ) {
         self.guid = guid
         self.title = title
@@ -52,5 +66,8 @@ public struct ParsedEpisode: Sendable, Hashable {
         self.audioURL = audioURL
         self.remoteArtworkURL = remoteArtworkURL
         self.isExplicit = isExplicit
+        self.season = season
+        self.episodeNumber = episodeNumber
+        self.episodeType = episodeType
     }
 }

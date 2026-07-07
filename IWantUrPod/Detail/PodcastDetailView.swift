@@ -1,6 +1,13 @@
-// The one adaptive Podcast Detail screen (navigation-map.md). Composed from
-// docs/design/direction.md tokens + existing DesignSystem primitives — there
-// is no design/kit mock for this screen (see design/kit/MANIFEST.md).
+// Translated from design/kit/screens/podcast-detail-american-history-tellers.html
+// (real-data + story arcs — the "Season 97", `S97 · E5` case) with the
+// no-season graceful-degrade variant from
+// design/kit/screens/podcast-detail-explorers-podcast.html (`arc · Part N`,
+// no season badge). Both are the same anatomy (`pd-*` header, `arc-*` shelf,
+// `ep-*` rows) over the shared kit chrome — see design/kit/MANIFEST.md's
+// Podcast Detail entry. Header (artwork/title/author/category/Subscribe) and
+// the description clamp were already close to the kit and are unchanged;
+// the story-arcs shelf and the episode rows' compact icon controls below are
+// this reconciliation's new ground (docs/design/direction.md §11).
 //
 // Show-level description: `Podcast.summary` (feed-field-mapping.md's Podcast
 // table — `<channel><description>` → `<channel><itunes:summary>` → `""`) is
@@ -15,12 +22,15 @@ import DownloadKit
 import PlaybackKit
 
 /// Presents a loaded/loading/error `PodcastDetailViewModel`: large artwork,
-/// title, author/publisher, a Subscribe control (E2-S2), and the episode list
-/// newest-first with played markers / remaining-time hints (E2-S3 shell).
+/// title, author/publisher, a Subscribe control (E2-S2), a **Story arcs**
+/// shelf (when the feed's episode titles derive any — direction.md §11),
+/// and the episode list newest-first with played markers / remaining-time
+/// hints (E2-S3 shell).
 public struct PodcastDetailView: View {
     @State private var viewModel: PodcastDetailViewModel
 
     @Environment(\.palette) private var palette
+    @Environment(QueueStore.self) private var queueStore
 
     public init(viewModel: PodcastDetailViewModel) {
         _viewModel = State(initialValue: viewModel)
@@ -78,6 +88,7 @@ public struct PodcastDetailView: View {
         VStack(alignment: .leading, spacing: Spacing.sp6) {
             header(podcast)
             descriptionSection(podcast)
+            arcsShelf
             episodesSection
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -142,6 +153,43 @@ public struct PodcastDetailView: View {
         }
     }
 
+    // MARK: - Story arcs shelf (direction.md §11: "Add all" queues the whole arc)
+    //
+    // Translated from the kit's `.arc-rail` / `.arc-card` (both podcast-detail-*
+    // mocks share this markup — AHT's cards show a "Season N" badge because its
+    // feed sets `<itunes:season>`; Explorers' don't, and the badge is simply
+    // omitted, matching the kit's graceful degrade). Hidden entirely when no
+    // arcs derive from the episode titles (singles-only feeds look like today).
+    @ViewBuilder
+    private var arcsShelf: some View {
+        if !viewModel.arcs.isEmpty {
+            VStack(alignment: .leading, spacing: Spacing.sp1) {
+                SectionHeader(title: "Story arcs")
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .top, spacing: Spacing.sp3) {
+                        ForEach(viewModel.arcs) { arc in
+                            ArcCard(
+                                arc: arc,
+                                artworkURL: viewModel.artworkURL(for: arc.episodes[0]),
+                                isAdded: arc.episodes.allSatisfy { queueStore.isQueued($0) }
+                            ) {
+                                // Queue oldest-first so playback proceeds Part 1 → N,
+                                // even though `arc.episodes` itself is newest-first
+                                // (matching the main episode list's ordering).
+                                for episode in arc.episodes.reversed() {
+                                    queueStore.add(episode)
+                                }
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 2)   // optical inset matching SectionHeader
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+
     // MARK: - Episodes (E2-S1 list, E2-S3 played markers)
 
     private var episodesSection: some View {
@@ -155,8 +203,15 @@ public struct PodcastDetailView: View {
             } else {
                 VStack(spacing: Spacing.sp4) {
                     ForEach(viewModel.episodes, id: \.id) { episode in
+                        let arcInfo = viewModel.arcInfo(for: episode)
                         VStack(spacing: Spacing.sp4) {
-                            EpisodeRow(episode: episode, artworkURL: viewModel.artworkURL(for: episode))
+                            EpisodeRow(
+                                episode: episode,
+                                artworkURL: viewModel.artworkURL(for: episode),
+                                arcName: arcInfo.arcName,
+                                displayTitle: arcInfo.displayTitle,
+                                part: arcInfo.part
+                            )
                             Divider().overlay(palette.hairline)
                         }
                     }
@@ -176,12 +231,99 @@ public struct PodcastDetailView: View {
     }
 }
 
+// MARK: - Arc card (`.arc-card` — cover + optional season badge, name, count, Add all)
+
+private struct ArcCard: View {
+    let arc: Arc
+    let artworkURL: URL?
+    let isAdded: Bool
+    let onAddAll: () -> Void
+
+    @Environment(\.palette) private var palette
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: Spacing.sp2) {
+            RemoteArtwork(url: artworkURL, seed: seed, initial: initial, cornerRadius: Radius.rSm12)
+                .frame(height: 94)
+                .overlay(alignment: .topLeading) {
+                    if let season = arc.season {
+                        Text("Season \(season)")
+                            .typeStyle(Typography.badgeStyle)
+                            .foregroundStyle(palette.text)
+                            .padding(.horizontal, Spacing.sp2)
+                            .padding(.vertical, 4)
+                            .background(.ultraThinMaterial, in: Capsule())
+                            .padding(Spacing.sp2)
+                    }
+                }
+                .accessibilityHidden(true)
+
+            Text(arc.name)
+                .typeStyle(Typography.rowTitleStyle)
+                .foregroundStyle(palette.text)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
+
+            Text("\(arc.episodes.count) episodes")
+                .typeStyle(Typography.subheadStyle)
+                .foregroundStyle(palette.textDim)
+
+            addAllButton
+        }
+        .frame(width: 150, alignment: .leading)
+        .accessibilityElement(children: .combine)
+    }
+
+    private var addAllButton: some View {
+        Button(action: onAddAll) {
+            HStack(spacing: Spacing.sp1) {
+                Image(systemName: isAdded ? "checkmark" : "plus")
+                    .font(.system(size: 12, weight: .heavy))
+                Text(isAdded ? "Added" : "Add all \(arc.episodes.count)")
+                    .typeStyle(Typography.subheadStyle)
+                    .lineLimit(1)
+            }
+            .foregroundStyle(isAdded ? palette.accent2 : palette.accent)
+            .padding(.horizontal, Spacing.sp3)
+            .padding(.vertical, Spacing.sp1)
+            .frame(maxWidth: .infinity)
+            .background(
+                Capsule(style: .continuous)
+                    .fill(isAdded ? palette.accent2.opacity(0.16) : palette.accent.opacity(0.14))
+            )
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(isAdded ? "Added all \(arc.episodes.count) episodes" : "Add all \(arc.episodes.count) episodes")
+    }
+
+    private var seed: Int {
+        arc.name.unicodeScalars.reduce(0) { $0 &+ Int($1.value) }
+    }
+
+    private var initial: String {
+        guard let first = arc.name.first(where: { !$0.isWhitespace }) else { return "?" }
+        return String(first).uppercased()
+    }
+}
+
 // MARK: - Episode row (E2-S1 list item, E2-S3 played marker / remaining hint,
-// E4-S1 download control)
+// E4-S1 download control, direction.md §11 arc/season/episode meta)
 
 struct EpisodeRow: View {
     let episode: Episode
     let artworkURL: URL?
+
+    /// Arc presentation info (`PodcastDetailViewModel.arcInfo(for:)`): `nil`
+    /// arcName for a single. `displayTitle` is the arc-stripped title shown
+    /// as this row's title (so rows read "A Devil of a Whipping", not
+    /// "American Revolution | A Devil of a Whipping | 5" — the kit's rows
+    /// show the bare episode title, with the arc surfaced separately in the
+    /// meta line below). `part` is the title-derived part number, used as a
+    /// fallback in the meta line when the feed has no `<itunes:episode>`
+    /// (the Explorers graceful-degrade case: "Part 4" instead of "E4").
+    let arcName: String?
+    let displayTitle: String
+    let part: Int?
 
     /// Whether the Play affordance renders for `episode` — the exact
     /// predicate `playControl` below switches on. Exposed as a static, pure
@@ -206,29 +348,92 @@ struct EpisodeRow: View {
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: Spacing.sp1) {
-                Text(episode.title)
+                Text(displayTitle)
                     .typeStyle(Typography.rowTitleStyle)
                     .foregroundStyle(palette.text)
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
+
+                metaLine
 
                 if !episode.summary.isEmpty {
                     ExpandableText(episode.summary.htmlToPlainText(), collapsedLineLimit: 3)
                 }
 
                 playedMarker
-                HStack(spacing: Spacing.sp2) {
+
+                HStack(spacing: Spacing.sp3) {
                     downloadControl
                     playControl
+                    queueControl
                 }
                 .padding(.top, Spacing.sp1)
-                queueControl
-                    .padding(.top, Spacing.sp1)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .accessibilityElement(children: .combine)
     }
+
+    // MARK: - Meta line (`.ep-meta` — arc · S·E/Part · date · duration)
+    //
+    // Translated from the kit's `.ep-meta`/`.ep-arc`: `arc · S3 · E5 · Jul 1,
+    // 2026 · 41 min` when the feed sets season+episode (AHT); `arc · Part 4 ·
+    // date · min` when it doesn't (Explorers); missing segments are omitted
+    // gracefully rather than rendering empty dots.
+    @ViewBuilder
+    private var metaLine: some View {
+        let segments = metaSegments
+        if !segments.isEmpty {
+            HStack(spacing: 4) {
+                ForEach(Array(segments.enumerated()), id: \.offset) { index, segment in
+                    if index > 0 {
+                        Text("·")
+                            .typeStyle(Typography.subheadStyle)
+                            .foregroundStyle(palette.textFaint)
+                    }
+                    Text(segment.text)
+                        .typeStyle(Typography.subheadStyle)
+                        .foregroundStyle(segment.isArc ? palette.accent2 : palette.textDim)
+                        .fontWeight(segment.isArc ? .heavy : nil)
+                }
+            }
+            .lineLimit(1)
+        }
+    }
+
+    private struct MetaSegment {
+        let text: String
+        var isArc: Bool = false
+    }
+
+    private var metaSegments: [MetaSegment] {
+        var segments: [MetaSegment] = []
+        if let arcName {
+            segments.append(MetaSegment(text: arcName, isArc: true))
+        }
+        if let season = episode.season {
+            segments.append(MetaSegment(text: "S\(season)"))
+        }
+        if let episodeNumber = episode.episodeNumber {
+            segments.append(MetaSegment(text: "E\(episodeNumber)"))
+        } else if let part {
+            segments.append(MetaSegment(text: "Part \(part)"))
+        }
+        segments.append(MetaSegment(text: Self.dateFormatter.string(from: episode.publishDate)))
+        segments.append(MetaSegment(text: "\(durationMinutes) min"))
+        return segments
+    }
+
+    private var durationMinutes: Int {
+        max(Int((episode.duration / 60).rounded()), 0)
+    }
+
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
+    }()
 
     /// Played marker / remaining-time hint (E2-S3 shell, made live by E4-S2's
     /// writes to `Episode.playbackProgress`). Reads `Episode.isPlayed`
@@ -255,21 +460,36 @@ struct EpisodeRow: View {
 
     // MARK: - Play control (E4-S2)
     //
-    // Composed from tokens — no design/kit mock for this affordance (see
-    // design/kit/MANIFEST.md's Podcast Detail entry, which already covers
-    // this file as composed rather than kit-translated). Play is offered
-    // **iff** the episode is downloaded (playback-state-machine.md's
-    // download-first guard); otherwise only the Download control above
-    // shows.
+    // Translated from the kit's `.ep-btn.play` — a filled accent circle with
+    // a play/pause glyph. Play is offered **iff** the episode is downloaded
+    // (playback-state-machine.md's download-first guard, `isPlayOffered`
+    // above); otherwise this control doesn't render at all (only Download
+    // shows). Toggles to a pause glyph while this episode is the one
+    // current+playing; a resume tap uses the same play glyph.
     @ViewBuilder
     private var playControl: some View {
         if Self.isPlayOffered(for: episode) {
             if isCurrentAndPlaying {
-                SecondaryButton(title: "Pause") { playbackEngine.pause() }
+                EpisodeIconButton(
+                    systemImage: "pause.fill",
+                    style: .filledAccent,
+                    accessibilityLabel: "Pause",
+                    action: { playbackEngine.pause() }
+                )
             } else if isCurrentAndPaused {
-                PrimaryButton(title: "Resume") { playbackEngine.resume() }
+                EpisodeIconButton(
+                    systemImage: "play.fill",
+                    style: .filledAccent,
+                    accessibilityLabel: "Resume",
+                    action: { playbackEngine.resume() }
+                )
             } else {
-                PrimaryButton(title: "Play") { playbackEngine.load(episode: episode, context: modelContext) }
+                EpisodeIconButton(
+                    systemImage: "play.fill",
+                    style: .filledAccent,
+                    accessibilityLabel: "Play",
+                    action: { playbackEngine.load(episode: episode, context: modelContext) }
+                )
             }
         }
     }
@@ -288,39 +508,51 @@ struct EpisodeRow: View {
 
     // MARK: - Download control (E4-S1)
     //
-    // Composed from tokens — no design/kit mock for this affordance (see
-    // design/kit/MANIFEST.md's Podcast Detail entry). Play itself is E4-S2's
-    // responsibility (playback-state-machine.md: Play is offered only when
-    // `.downloaded`); this row never offers Play, only Download/Downloaded.
+    // Translated from the kit's `.ep-btn.ep-dl` — a compact chip circle that
+    // swaps its glyph per `DownloadState`: `arrow.down` (idle) → a circular
+    // progress ring (downloading) → a mint checkmark (`.ep-dl.done`,
+    // non-interactive) → a retry arrow (failed, with the failure message as
+    // a caption underneath when present).
     @ViewBuilder
     private var downloadControl: some View {
         switch episode.downloadState {
         case .notDownloaded:
-            SecondaryButton(title: "Download") { startDownload() }
+            EpisodeIconButton(
+                systemImage: "arrow.down",
+                style: .chip,
+                accessibilityLabel: "Download",
+                action: startDownload
+            )
 
         case .downloading(let progress):
-            HStack(spacing: Spacing.sp2) {
+            ZStack {
+                Circle()
+                    .fill(palette.chip)
                 ProgressView(value: progress)
+                    .progressViewStyle(.circular)
                     .tint(palette.accent)
-                    .frame(width: 72)
-                Text("\(Int((progress * 100).rounded()))%")
-                    .typeStyle(Typography.subheadStyle)
-                    .foregroundStyle(palette.textFaint)
+                    .scaleEffect(0.7)
             }
+            .frame(width: EpisodeIconButton.diameter, height: EpisodeIconButton.diameter)
+            .accessibilityLabel("Downloading, \(Int((progress * 100).rounded())) percent")
 
         case .downloaded:
-            HStack(spacing: Spacing.sp1) {
-                Image(systemName: "arrow.down.circle.fill")
-                    .foregroundStyle(palette.accent2)
-                    .font(.system(size: 12, weight: .bold))
-                Text("Downloaded")
-                    .typeStyle(Typography.subheadStyle)
-                    .foregroundStyle(palette.textFaint)
-            }
+            EpisodeIconButton(
+                systemImage: "checkmark",
+                style: .done,
+                accessibilityLabel: "Downloaded",
+                action: {}
+            )
+            .allowsHitTesting(false)
 
         case .failed(let message):
-            HStack(spacing: Spacing.sp2) {
-                SecondaryButton(title: "Retry") { startDownload() }
+            VStack(alignment: .leading, spacing: 2) {
+                EpisodeIconButton(
+                    systemImage: "arrow.clockwise",
+                    style: .chip,
+                    accessibilityLabel: "Retry download",
+                    action: startDownload
+                )
                 if let message {
                     Text(message)
                         .typeStyle(Typography.subheadStyle)
@@ -337,26 +569,28 @@ struct EpisodeRow: View {
 
     // MARK: - Add to Up Next (E5-S1)
     //
-    // Composed from tokens — no design/kit mock for this affordance (same
-    // precedent as the download/play controls above). Tapping Play (above)
-    // never requires an episode to be queued first — queue-semantics.md:
-    // "an episode can therefore be 'currently playing' without ever having
-    // been queued." This control is purely additive to the Up Next list.
+    // Translated from the kit's `.ep-btn.ep-add` — a plus chip that flips to
+    // a mint checkmark once queued. Tapping Play (above) never requires an
+    // episode to be queued first — queue-semantics.md: "an episode can
+    // therefore be 'currently playing' without ever having been queued."
+    // This control is purely additive to the Up Next list.
     @ViewBuilder
     private var queueControl: some View {
         if queueStore.isQueued(episode) {
-            HStack(spacing: Spacing.sp1) {
-                Image(systemName: "checkmark.circle.fill")
-                    .foregroundStyle(palette.accent2)
-                    .font(.system(size: 12, weight: .bold))
-                Text("In Up Next")
-                    .typeStyle(Typography.subheadStyle)
-                    .foregroundStyle(palette.textFaint)
-            }
+            EpisodeIconButton(
+                systemImage: "checkmark",
+                style: .done,
+                accessibilityLabel: "In Up Next",
+                action: {}
+            )
+            .allowsHitTesting(false)
         } else {
-            GhostButton(title: "Add to Up Next") {
-                queueStore.add(episode)
-            }
+            EpisodeIconButton(
+                systemImage: "plus",
+                style: .chip,
+                accessibilityLabel: "Add to Up Next",
+                action: { queueStore.add(episode) }
+            )
         }
     }
 
@@ -377,58 +611,128 @@ struct EpisodeRow: View {
     }
 }
 
+// MARK: - Compact icon control (`.ep-btn` — shared 38pt circular button)
+
+/// The kit's `.ep-btn`: a 38pt circular icon-only button in one of three
+/// roles — a neutral chip fill (Download idle/retry, Add to Up Next idle), a
+/// filled accent circle (Play/Pause/Resume), or a mint "done" tint (Downloaded
+/// / In Up Next, both non-interactive here).
+struct EpisodeIconButton: View {
+    enum Style { case chip, filledAccent, done }
+
+    static let diameter: CGFloat = 38
+
+    let systemImage: String
+    let style: Style
+    let accessibilityLabel: String
+    let action: () -> Void
+
+    @Environment(\.palette) private var palette
+    @Environment(\.colorScheme) private var colorScheme
+
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: systemImage)
+                .font(.system(size: 15, weight: .bold))
+                .foregroundStyle(foreground)
+                .frame(width: Self.diameter, height: Self.diameter)
+                .background(background)
+                .clipShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(accessibilityLabel)
+    }
+
+    private var foreground: Color {
+        switch style {
+        case .chip: return palette.text
+        case .filledAccent: return palette.onAccent
+        case .done: return palette.accent2
+        }
+    }
+
+    @ViewBuilder private var background: some View {
+        switch style {
+        case .chip:
+            Circle().fill(palette.chip)
+        case .filledAccent:
+            if colorScheme == .dark {
+                Circle().fill(
+                    LinearGradient(colors: [palette.accent, palette.accent2], startPoint: .topLeading, endPoint: .bottomTrailing)
+                )
+            } else {
+                Circle().fill(palette.accent)
+            }
+        case .done:
+            Circle().fill(palette.accent2.opacity(0.16))
+        }
+    }
+}
+
 // MARK: - Preview
 
 #if DEBUG
 @MainActor
 private func previewPodcast(isSubscribed: Bool, in context: ModelContext) -> Podcast {
     let podcast = Podcast(
-        title: "Behind the Bastards",
-        author: "Cool Zone Media",
-        feedURL: URL(string: "https://feeds.example.com/bastards")!,
+        title: "American History Tellers",
+        author: "Wondery",
+        feedURL: URL(string: "https://feeds.example.com/aht")!,
         artworkURL: nil,
         category: "History",
         summary: """
-        A deep dive into the worst people in history and the terrible things \
-        they did, told with equal parts rage and dark comedy. Every episode \
-        traces one figure's rise from ordinary grievance to full-blown \
-        catastrophe.
+        The Cold War, Prohibition, the Gold Rush, the Space Race. Every part \
+        of your life can be traced to our history — we'll take you to the \
+        events, the times, and the people that shaped America, and show you \
+        how it still affects you today.
         """,
         isSubscribed: isSubscribed
     )
     let episodes = [
         Episode(
-            guid: "ep-3",
-            title: "The Fall of the Grifter King, Part Three",
-            summary: """
-            In our finale, the empire collapses under the weight of its own \
-            paperwork. We trace the last six months through court filings, \
-            leaked emails, and one extremely ill-advised podcast appearance \
-            that started this whole investigation in the first place.
-            """,
+            guid: "ep-5",
+            title: "American Revolution | A Devil of a Whipping | 5",
+            summary: "The war turns south — and turns brutal.",
             publishDate: Date(timeIntervalSince1970: 1_700_000_000),
-            duration: 3600,
-            audioURL: URL(string: "https://cdn.example.com/ep3.mp3")!,
-            playbackProgress: 1.0,
+            duration: 41 * 60,
+            audioURL: URL(string: "https://cdn.example.com/ep5.mp3")!,
+            downloadState: .downloaded,
+            playbackProgress: 0,
+            season: 97,
+            episodeNumber: 5,
             podcast: podcast
         ),
         Episode(
-            guid: "ep-2",
-            title: "The Fall of the Grifter King, Part Two",
-            summary: "The middle chapter, where things get worse.",
+            guid: "ep-4",
+            title: "American Revolution | Saratoga | 4",
+            summary: "A turning-point battle draws France into the war.",
             publishDate: Date(timeIntervalSince1970: 1_699_000_000),
-            duration: 3200,
-            audioURL: URL(string: "https://cdn.example.com/ep2.mp3")!,
+            duration: 39 * 60,
+            audioURL: URL(string: "https://cdn.example.com/ep4.mp3")!,
             playbackProgress: 0.4,
+            season: 97,
+            episodeNumber: 4,
             podcast: podcast
         ),
         Episode(
-            guid: "ep-1",
-            title: "The Fall of the Grifter King, Part One",
+            guid: "ep-single",
+            title: "Foul Play",
+            summary: "A bonus short between seasons.",
+            publishDate: Date(timeIntervalSince1970: 1_698_500_000),
+            duration: 7 * 60,
+            audioURL: URL(string: "https://cdn.example.com/ep-single.mp3")!,
+            podcast: podcast
+        ),
+        Episode(
+            guid: "ep-3",
+            title: "American Revolution | The Times That Try Men's Souls | 3",
             summary: "",
             publishDate: Date(timeIntervalSince1970: 1_698_000_000),
-            duration: 2800,
-            audioURL: URL(string: "https://cdn.example.com/ep1.mp3")!,
+            duration: 37 * 60,
+            audioURL: URL(string: "https://cdn.example.com/ep3.mp3")!,
+            downloadState: .downloading(progress: 0.6),
+            season: 97,
+            episodeNumber: 3,
             podcast: podcast
         )
     ]

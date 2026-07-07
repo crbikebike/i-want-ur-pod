@@ -1,6 +1,6 @@
 // The six gradient artwork placeholders (`.a1`–`.a6`) shared by every kit
 // surface that shows podcast art without a remote image: the flat search
-// results list (design/kit/screens/{typing,no-results}.html `.art`), the
+// results list (design/kit/screens/{search-typing,search-noresults}.html `.art`), the
 // result-card poster grid (design/kit/components/result-card.html `.pcard-art`),
 // and the not-yet-built category-shelf gallery (design/kit/components/result-row.html
 // `.pod-art`). Extracted here — rather than owned by any one row/card component —

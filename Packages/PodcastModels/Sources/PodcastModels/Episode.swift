@@ -42,6 +42,20 @@ public final class Episode {
     /// Whether the item is flagged explicit.
     public var isExplicit: Bool
 
+    /// `<itunes:season>`, when the feed sets one. Feed-derived — optional so
+    /// this remains a lightweight-migration-safe addition (see
+    /// `ModelSchema.swift` / ROADMAP E7's migration-crash postmortem: never
+    /// add a non-optional stored property without a default).
+    public var season: Int?
+
+    /// `<itunes:episode>`, when the feed sets one. Feed-derived, optional —
+    /// same migration-safety rule as `season`.
+    public var episodeNumber: Int?
+
+    /// `<itunes:episodeType>` (e.g. "full" / "trailer" / "bonus"), when the
+    /// feed sets one. Feed-derived, optional — same migration-safety rule.
+    public var episodeType: String?
+
     /// The owning show. Nullified detachment is not expected — episodes are
     /// cascade-deleted with their podcast.
     public var podcast: Podcast?
@@ -88,6 +102,9 @@ public final class Episode {
         downloadState: DownloadState = .notDownloaded,
         playbackProgress: Double = 0,
         isExplicit: Bool = false,
+        season: Int? = nil,
+        episodeNumber: Int? = nil,
+        episodeType: String? = nil,
         podcast: Podcast? = nil,
         chapters: [Chapter] = [],
         queueItems: [QueueItem] = []
@@ -103,6 +120,9 @@ public final class Episode {
         self.downloadState = downloadState
         self.playbackProgress = min(max(playbackProgress, 0), 1)
         self.isExplicit = isExplicit
+        self.season = season
+        self.episodeNumber = episodeNumber
+        self.episodeType = episodeType
         self.podcast = podcast
         self.chapters = chapters
         self.queueItems = queueItems

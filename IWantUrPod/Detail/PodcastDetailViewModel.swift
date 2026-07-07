@@ -116,6 +116,24 @@ public final class PodcastDetailViewModel {
         return episode.remoteArtworkURL ?? podcast.artworkURL
     }
 
+    // MARK: - Story arcs (direction.md §11: real-data Podcast Detail + story arcs)
+
+    /// Story arcs derived from `episodes`' title structure (`PodcastModels`'
+    /// `ArcDerivation`), newest-arc-first. Empty for a feed with no
+    /// multi-part arcs — the view hides its "Story arcs" shelf entirely in
+    /// that case (graceful degrade for singles-only feeds).
+    public var arcs: [Arc] {
+        ArcDerivation.groupIntoArcs(episodes)
+    }
+
+    /// Per-episode arc presentation info for the episode-row meta line: the
+    /// arc name (`nil` for a single), a display title with the arc noise
+    /// stripped, and the part/episode-within-arc number parsed from the
+    /// title (used as a fallback when the feed has no `itunes:episode`).
+    public func arcInfo(for episode: Episode) -> (arcName: String?, displayTitle: String, part: Int?) {
+        ArcDerivation.derive(fromTitle: episode.title)
+    }
+
     // MARK: - Subscribe (E2-S2)
 
     /// Whether the loaded podcast is subscribed. `false` while loading/erroring.

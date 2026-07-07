@@ -1,6 +1,7 @@
 // Tests for E1-S1's once-only first-run explainer gate. Determinate criteria
 // from ROADMAP.md E1-S1:
-//   - fresh install shows it before Discover (hasSeenFirstRun == false)
+//   - fresh install shows it before the first destination (hasSeenFirstRun ==
+//     false) — Home as of the E8-S1 dock-IA revision, Discover before it
 //   - a relaunch (re-reading the flag) does not re-show it
 //   - the persisted flag is resettable from Settings, which re-shows it
 // Runs on the iOS simulator target alongside the rest of IWantUrPodTests; an
