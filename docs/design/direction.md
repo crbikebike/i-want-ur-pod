@@ -555,7 +555,11 @@ PodcastIndex is deferred to a later milestone.
   `<itunes:season>` / `<itunes:episode>` / `<itunes:episodeType>` in `FeedParser.swift`;
   add `season` / `episodeNumber` (+ a derived-arc field) to `Episode`; reconcile
   `PodcastDetailView` to this design (compact controls, arcs shelf, add-all — this
-  reconcile is in progress on this branch).
+  reconcile is in progress on this branch). **Addendum (2026-07-07):** arc
+  derivation was generalized beyond those two prototype shows — added safe
+  title patterns (`Chapter N`, trailing `(Part N)`/`, Part N`/`- Ep. N`) and an
+  `itunes:season` fallback for unstructured titles, per E8-S6's "season data,
+  or title patterns" criterion.
 
 ---
 

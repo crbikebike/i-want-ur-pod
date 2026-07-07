@@ -47,6 +47,31 @@ public enum ArcDerivation {
         try! NSRegularExpression(pattern: #"^(.+?)\s*-\s*Part\s*(\d+)\s*(?:-\s*(.*))?$"#, options: [.caseInsensitive])
     }()
 
+    /// `Chapter N | Title` / `Chapter N: Title` (Bone Valley). No arc name
+    /// lives in the title here — these shows group by `itunes:season`
+    /// instead (see `groupBySeason`), so this pattern only extracts the
+    /// display title and part number.
+    private static let chapterArcPattern: NSRegularExpression = {
+        try! NSRegularExpression(pattern: #"^Chapter\s*(\d+)\s*[|:]\s*(.+)$"#, options: [.caseInsensitive])
+    }()
+
+    /// Trailing `(Part N)` / `[Part N]` (Fall of Civilizations). Anchored at
+    /// `$` so a mid-title `(Part N)` (e.g. inside a longer parenthetical)
+    /// can't fire.
+    private static let trailingParenPartArcPattern: NSRegularExpression = {
+        try! NSRegularExpression(pattern: #"^(.+?)\s*[(\[]\s*Part\s*(\d+)\s*[)\]]\s*$"#, options: [.caseInsensitive])
+    }()
+
+    /// Trailing `, Part N`.
+    private static let trailingCommaPartArcPattern: NSRegularExpression = {
+        try! NSRegularExpression(pattern: #"^(.+?),\s*Part\s*(\d+)\s*$"#, options: [.caseInsensitive])
+    }()
+
+    /// Trailing `- Ep. N` / `- Ep N` / `- Episode N` (Serial).
+    private static let trailingEpArcPattern: NSRegularExpression = {
+        try! NSRegularExpression(pattern: #"^(.+?)\s*-\s*Ep(?:isode|\.)?\s*(\d+)\s*$"#, options: [.caseInsensitive])
+    }()
+
     /// Derives `(arcName, displayTitle, part)` from a raw episode title.
     ///
     /// - Returns: `arcName` is `nil` for a "single" (no arc structure
@@ -81,6 +106,33 @@ public enum ArcDerivation {
             return (arc.isEmpty ? nil : arc, displayTitle, part)
         }
 
+        if let match = firstMatch(chapterArcPattern, in: cleaned) {
+            let part = Int(string(cleaned, match, 1).trimmed)
+            let episodeTitle = string(cleaned, match, 2).trimmed
+            return (nil, episodeTitle.isEmpty ? cleaned : episodeTitle, part)
+        }
+
+        if let match = firstMatch(trailingParenPartArcPattern, in: cleaned) {
+            let arc = string(cleaned, match, 1).trimmed
+            let part = Int(string(cleaned, match, 2).trimmed)
+            let displayTitle = part.map { "Part \($0)" } ?? cleaned
+            return (arc.isEmpty ? nil : arc, displayTitle, part)
+        }
+
+        if let match = firstMatch(trailingCommaPartArcPattern, in: cleaned) {
+            let arc = string(cleaned, match, 1).trimmed
+            let part = Int(string(cleaned, match, 2).trimmed)
+            let displayTitle = part.map { "Part \($0)" } ?? cleaned
+            return (arc.isEmpty ? nil : arc, displayTitle, part)
+        }
+
+        if let match = firstMatch(trailingEpArcPattern, in: cleaned) {
+            let arc = string(cleaned, match, 1).trimmed
+            let part = Int(string(cleaned, match, 2).trimmed)
+            let displayTitle = part.map { "Ep. \($0)" } ?? cleaned
+            return (arc.isEmpty ? nil : arc, displayTitle, part)
+        }
+
         return (nil, cleaned, nil)
     }
 
@@ -93,7 +145,22 @@ public enum ArcDerivation {
     /// isn't a series yet (matches `design/kit/data/american-history-tellers.json`'s
     /// `arcs` array, whose entries are already multi-part story groupings —
     /// there is no such thing as a 1-episode "arc" in that data).
+    ///
+    /// **Precedence (ROADMAP E8-S6: "season data, or title patterns"):**
+    /// title-derived arcs win whenever there are any. The `itunes:season`
+    /// fallback below only runs when the title pass finds **zero** arcs for
+    /// the whole show — this is all-or-nothing so a show with both signals
+    /// (e.g. American History Tellers, which sets `itunes:season` per arc
+    /// *and* has pipe-style titles) never gets junk "Season N" cards sitting
+    /// next to its named arcs.
     public static func groupIntoArcs(_ episodes: [Episode]) -> [Arc] {
+        let titleArcs = groupByTitle(episodes)
+        guard titleArcs.isEmpty else { return titleArcs }
+        return groupBySeason(episodes)
+    }
+
+    /// Groups episodes into arcs by title structure alone (see `derive(fromTitle:)`).
+    private static func groupByTitle(_ episodes: [Episode]) -> [Arc] {
         var order: [String] = []
         var membersByName: [String: [Episode]] = [:]
 
@@ -116,6 +183,32 @@ public enum ArcDerivation {
         // `order` was built in encounter order over a newest-first input, so
         // the first episode seen for an arc is its newest — `order` is
         // already sorted by arc recency. No further sort needed.
+    }
+
+    /// Fallback grouping by `itunes:season`, used only when `groupByTitle`
+    /// finds no arcs (see the precedence note on `groupIntoArcs`). Episodes
+    /// without a season are excluded; groups need **2 or more** members
+    /// (same "not a series yet" rule as the title pass); arcs are named
+    /// `"Season N"` and ordered newest-season-first.
+    private static func groupBySeason(_ episodes: [Episode]) -> [Arc] {
+        var order: [Int] = []
+        var membersBySeason: [Int: [Episode]] = [:]
+
+        for episode in episodes {
+            guard let season = episode.season else { continue }
+            if membersBySeason[season] == nil {
+                membersBySeason[season] = []
+                order.append(season)
+            }
+            membersBySeason[season, default: []].append(episode)
+        }
+
+        return order
+            .compactMap { season -> Arc? in
+                guard let members = membersBySeason[season], members.count >= 2 else { return nil }
+                return Arc(name: "Season \(season)", season: season, episodes: members)
+            }
+            .sorted { ($0.season ?? Int.min) > ($1.season ?? Int.min) }
     }
 
     // MARK: - Helpers
