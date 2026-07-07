@@ -14,8 +14,8 @@ Since M0.5 landed, the design kit picked up two more rounds of decisions: a
 **2026-07-05 IA revision** (the tab bar is now a four-item dock — Home · Shows ·
 Up Next · Search — replacing Discover/Podcasts/Up Next/Downloads/Settings) and
 **2026-07-06** decisions (v1 searches **Apple only**, no source picker; **Podcast
-Detail** gained real feed data + a story-arcs shelf). The kit is updated; the
-SwiftUI translation of the new IA is pending — see **E8** below. Journeys/epics
+Detail** gained real feed data + a story-arcs shelf). The kit is updated and
+the SwiftUI translation shipped as **E8** (2026-07-06) — see below. Journeys/epics
 below still describe screens by their pre-revision names where that's how they
 shipped; each affected spot has a note pointing at the new names.
 
@@ -259,7 +259,7 @@ and **supersedes this story before release**.
 simulated bad store and a temp download directory — unit-testable via `swift test`
 without launching the app.
 
-### E8 — Dock IA & design-kit translation pass *(design-locked in the kit, Swift pending)*
+### E8 — Dock IA & design-kit translation pass *(✅ shipped 2026-07-06)*
 
 The 2026-07-05/06 design rounds locked a new information architecture and a
 real-data Podcast Detail screen into the kit — but the SwiftUI app still shows
@@ -318,7 +318,7 @@ translated already exist in some form).
   - There is no standalone Downloads tab or screen; downloaded-episode
     management lives only in Settings (E8-S4).
 - **E8-S6 — Podcast Detail reconcile: compact controls + story arcs.**
-  *(In progress on this branch.)* Bring `PodcastDetailView` in line with
+  *(Shipped 2026-07-06.)* Bring `PodcastDetailView` in line with
   `design/kit/screens/podcast-detail-<slug>.html`.
   - Download / play / add-to-Up-Next controls render as compact icon-only
     buttons (no redundant "Downloaded" text label).
