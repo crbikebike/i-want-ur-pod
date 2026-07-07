@@ -38,13 +38,18 @@
 //   SectionHeader(title: String, count: Int?)
 //
 // ── Floating Liquid Glass tab bar (design/kit/components/tab-bar.html, §12) ─
-//   LiquidGlassTabBar(selection: Binding<AppTab>)
-//   // enum AppTab { case discover, podcasts, upNext, downloads, settings }
+//   LiquidGlassTabBar(selection: Binding<AppTab>, searchQuery: Binding<String>,
+//                     onCancelSearch: () -> Void)
+//   // enum AppTab { case home, shows, upNext, search } — four-item dock
+//   // (2026-07-05 IA revision). Tapping .search is a takeover: the bar's
+//   // icons collapse into a Home glyph + search field + cancel (✕); the app
+//   // drives `selection`/`searchQuery` and supplies `onCancelSearch` to
+//   // restore the previously active tab.
 //
 // ── Sources checklist (design/kit/components/sources-checklist.html, §12) ──
-//   SourcesChecklistRow(...)  // iOS switch toggle, solid coral "Primary"
-//                             // badge, mint "Open index" tag, "Add API key"
-//                             // ghost button, lock badge when unconfigured.
+//   SourcesChecklistRow(...)  // RETIRED from the app (v1 is Apple-only, no
+//                             // source picker, §12) but kept in DesignSystem
+//                             // as dormant groundwork; no in-app consumer.
 //
 // ── Loading / empty states (design/kit/screens/*, §9) ─────────────────────
 //   LoadingSkeleton(shelves: Int)   // design/kit/screens/search-loading.html shelf/rail skeleton

@@ -9,10 +9,20 @@
 // `RemoteArtwork` tile + title/subtitle `VStack`) — this screen uses a real
 // `List` (rather than `PodcastsScreen`'s plain `ScrollView`) because drag
 // reorder and swipe actions are native `List` affordances.
+//
+// ROADMAP.md E8-S5: with the Downloads tab retired, each row now also
+// translates design/kit/screens/up-next.html's `.dl` row control — a compact
+// circular affordance that swaps idle "download" for a mint "downloaded"
+// check (that file's `.dl`/`.dl.done` pair is the binary sketch; the real
+// four-state `DownloadState` — notDownloaded/downloading/downloaded/failed —
+// mirrors `PodcastDetailView.swift`'s `EpisodeIconButton`-based
+// `downloadControl` exactly, reusing that same control for consistency
+// rather than inventing a new one).
 import SwiftUI
 import SwiftData
 import DesignSystem
 import PodcastModels
+import DownloadKit
 
 /// The Up Next tab: every queued episode, ordered by `QueueStore.items`
 /// (ascending `order` — index 0 plays next). Reads the shared, app-scoped
@@ -22,19 +32,30 @@ public struct UpNextScreen: View {
     @Environment(QueueStore.self) private var queueStore
     @Environment(\.palette) private var palette
 
+    @State private var path = NavigationPath()
+
     public init() {}
 
     public var body: some View {
-        NavigationStack {
-            Group {
-                if queueStore.items.isEmpty {
-                    emptyState
-                } else {
-                    list
+        NavigationStack(path: $path) {
+            ZStack(alignment: .topTrailing) {
+                Group {
+                    if queueStore.items.isEmpty {
+                        emptyState
+                    } else {
+                        list
+                    }
                 }
+
+                SettingsGearButton { path.append(SettingsRoute.settings) }
+                    .padding(.top, Spacing.sp5)
+                    .padding(.trailing, Spacing.gutter)
             }
             .background(palette.groupedBg.ignoresSafeArea())
             .toolbar(.hidden, for: .navigationBar)
+            .navigationDestination(for: SettingsRoute.self) { _ in
+                SettingsScreen()
+            }
         }
         .onAppear { queueStore.reload() }
     }
@@ -107,18 +128,22 @@ public struct UpNextScreen: View {
             .typeStyle(Typography.displayLargeTitleStyle)
             .foregroundStyle(palette.text)
             .padding(.horizontal, Spacing.gutter + 2)
+            .padding(.trailing, 50)   // reserves room for the floating gear (E8-S4)
             .accessibilityAddTraits(.isHeader)
     }
 }
 
 // MARK: - Queue row
 
-/// One queued episode: artwork + episode title + owning show title. Same
-/// shape as `PodcastsScreen`'s `PodcastRow` scaled to the queue's data.
+/// One queued episode: artwork + episode title + owning show title + an
+/// inline download control (E8-S5). Same shape as `PodcastsScreen`'s
+/// `PodcastRow` scaled to the queue's data.
 private struct QueueRow: View {
     let item: QueueItem
 
     @Environment(\.palette) private var palette
+    @Environment(\.modelContext) private var modelContext
+    @Environment(DownloadManager.self) private var downloadManager
 
     var body: some View {
         if let episode = item.episode {
@@ -142,11 +167,81 @@ private struct QueueRow: View {
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
+
+                downloadControl(for: episode)
             }
             .padding(.vertical, Spacing.sp2)
             .accessibilityElement(children: .combine)
-            .accessibilityLabel("\(episode.title), \(episode.podcast?.title ?? "")")
+            .accessibilityLabel(accessibilityLabel(for: episode))
         }
+    }
+
+    // MARK: - Download control (E8-S5)
+    //
+    // Translated from design/kit/screens/up-next.html's `.dl` row button
+    // (idle "download into tray" glyph flipping to a mint done-check) — the
+    // same compact circular control as `PodcastDetailView.swift`'s
+    // `EpisodeIconButton`/`downloadControl`, reused verbatim (rather than
+    // reinvented) so both screens present download state identically. Adds
+    // the two states the kit's binary mock collapses into "not done": a
+    // spinning progress ring while `.downloading`, and a tappable retry
+    // glyph (plus failure message) for `.failed`.
+    @ViewBuilder
+    private func downloadControl(for episode: Episode) -> some View {
+        switch episode.downloadState {
+        case .notDownloaded:
+            EpisodeIconButton(
+                systemImage: "arrow.down",
+                style: .chip,
+                accessibilityLabel: "Download",
+                action: { startDownload(episode) }
+            )
+
+        case .downloading(let progress):
+            ZStack {
+                Circle()
+                    .fill(palette.chip)
+                ProgressView(value: progress)
+                    .progressViewStyle(.circular)
+                    .tint(palette.accent)
+                    .scaleEffect(0.7)
+            }
+            .frame(width: EpisodeIconButton.diameter, height: EpisodeIconButton.diameter)
+            .accessibilityLabel("Downloading, \(Int((progress * 100).rounded())) percent")
+
+        case .downloaded:
+            EpisodeIconButton(
+                systemImage: "checkmark",
+                style: .done,
+                accessibilityLabel: "Downloaded",
+                action: {}
+            )
+            .allowsHitTesting(false)
+
+        case .failed(let message):
+            VStack(alignment: .trailing, spacing: 2) {
+                EpisodeIconButton(
+                    systemImage: "arrow.clockwise",
+                    style: .chip,
+                    accessibilityLabel: "Retry download",
+                    action: { startDownload(episode) }
+                )
+                if let message {
+                    Text(message)
+                        .typeStyle(Typography.subheadStyle)
+                        .foregroundStyle(palette.textFaint)
+                        .lineLimit(1)
+                }
+            }
+        }
+    }
+
+    private func startDownload(_ episode: Episode) {
+        Task { await downloadManager.download(episode, context: modelContext) }
+    }
+
+    private func accessibilityLabel(for episode: Episode) -> String {
+        "\(episode.title), \(episode.podcast?.title ?? "")"
     }
 
     private func artworkURL(for episode: Episode) -> URL? {
@@ -180,9 +275,9 @@ private func previewContainer(populated: Bool) -> ModelContainer {
         context.insert(podcast)
 
         let episodes = [
-            Episode(guid: "queue-1", title: "The Fall of the Grifter King, Part One", audioURL: URL(string: "https://cdn.example.com/ep1.mp3")!, podcast: podcast),
-            Episode(guid: "queue-2", title: "The Fall of the Grifter King, Part Two", audioURL: URL(string: "https://cdn.example.com/ep2.mp3")!, podcast: podcast),
-            Episode(guid: "queue-3", title: "A Bonus Episode About Nothing In Particular", audioURL: URL(string: "https://cdn.example.com/ep3.mp3")!, podcast: podcast)
+            Episode(guid: "queue-1", title: "The Fall of the Grifter King, Part One", audioURL: URL(string: "https://cdn.example.com/ep1.mp3")!, downloadState: .downloaded, podcast: podcast),
+            Episode(guid: "queue-2", title: "The Fall of the Grifter King, Part Two", audioURL: URL(string: "https://cdn.example.com/ep2.mp3")!, downloadState: .downloading(progress: 0.4), podcast: podcast),
+            Episode(guid: "queue-3", title: "A Bonus Episode About Nothing In Particular", audioURL: URL(string: "https://cdn.example.com/ep3.mp3")!, downloadState: .failed(message: "Check your connection and try again."), podcast: podcast)
         ]
         for episode in episodes { context.insert(episode) }
         for (index, episode) in episodes.enumerated() {
@@ -204,6 +299,7 @@ private func previewQueueStore(populated: Bool) -> QueueStore {
         .themedPalette()
         .environment(\.colorScheme, .dark)
         .environment(previewQueueStore(populated: true))
+        .environment(DownloadManager())
 }
 
 #Preview("Up Next — populated (light)") {
@@ -211,6 +307,7 @@ private func previewQueueStore(populated: Bool) -> QueueStore {
         .themedPalette()
         .environment(\.colorScheme, .light)
         .environment(previewQueueStore(populated: true))
+        .environment(DownloadManager())
 }
 
 #Preview("Up Next — empty (dark)") {
@@ -218,6 +315,7 @@ private func previewQueueStore(populated: Bool) -> QueueStore {
         .themedPalette()
         .environment(\.colorScheme, .dark)
         .environment(previewQueueStore(populated: false))
+        .environment(DownloadManager())
 }
 
 #Preview("Up Next — empty (light)") {
@@ -225,5 +323,6 @@ private func previewQueueStore(populated: Bool) -> QueueStore {
         .themedPalette()
         .environment(\.colorScheme, .light)
         .environment(previewQueueStore(populated: false))
+        .environment(DownloadManager())
 }
 #endif

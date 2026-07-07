@@ -79,6 +79,19 @@ public final class DownloadManager {
         store.existingFileURL(forGuid: episode.guid)
     }
 
+    /// Removes a downloaded episode's local audio file and resets its state
+    /// back to `.notDownloaded` (E8-S4's Settings "Manage downloaded
+    /// episodes" — removing a row deletes the file while the `Episode`
+    /// record and its feed membership stay untouched). Safe to call even if
+    /// no file exists (`DownloadStore.remove(forGuid:)` is a no-op then);
+    /// the state reset + `context.save()` still happen so a desynced
+    /// `.downloaded` state can't linger.
+    public func remove(_ episode: Episode, context: ModelContext) {
+        try? store.remove(forGuid: episode.guid)
+        episode.downloadState = .notDownloaded
+        try? context.save()
+    }
+
     /// Clamps `new` so progress reported to the UI never decreases relative
     /// to `previous`, and stays within `0...1`.
     static func clampMonotonic(_ new: Double, previous: Double) -> Double {

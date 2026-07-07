@@ -10,8 +10,8 @@
 import SwiftUI
 import DesignSystem
 
-/// The once-only explainer shown before Discover on a fresh install (E1-S1).
-/// Presented as a `fullScreenCover` by `DiscoverView`, gated by
+/// The once-only explainer shown before Home on a fresh install (E1-S1).
+/// Presented as a `fullScreenCover` by `HomeScreen`, gated by
 /// ``FirstRunGate``. Re-openable from Settings via a control that resets the
 /// gate.
 struct FirstRunExplainerView: View {

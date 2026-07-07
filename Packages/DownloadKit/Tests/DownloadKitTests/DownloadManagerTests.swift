@@ -138,4 +138,41 @@ final class DownloadManagerTests: XCTestCase {
         // Written with a real audio extension so AVFoundation can decode it.
         XCTAssertEqual(expectedPath.pathExtension, "mp3")
     }
+
+    // MARK: - Remove (E8-S4: Settings "Manage downloaded episodes")
+
+    func test_remove_deletesLocalFile_andResetsStateToNotDownloaded() async throws {
+        let context = try makeContext()
+        let episode = makeEpisode(guid: "remove-me")
+        context.insert(episode)
+
+        let store = DownloadStore(baseDirectory: try makeTempStoreDirectory())
+        let stub = StubDownloader(progressSequence: [1.0], outcome: .success)
+        let manager = DownloadManager(downloader: stub, store: store)
+
+        await manager.download(episode, context: context)
+        XCTAssertEqual(episode.downloadState, .downloaded)
+        let downloadedPath = try XCTUnwrap(store.existingFileURL(forGuid: episode.guid))
+        XCTAssertTrue(FileManager.default.fileExists(atPath: downloadedPath.path))
+
+        manager.remove(episode, context: context)
+
+        XCTAssertEqual(episode.downloadState, .notDownloaded, "removing must reset downloadState so no stale .downloaded UI can desync from disk")
+        XCTAssertFalse(FileManager.default.fileExists(atPath: downloadedPath.path), "removing must delete the local audio file")
+        XCTAssertNil(store.existingFileURL(forGuid: episode.guid))
+    }
+
+    func test_remove_whenNoFileExists_isSafeNoOp() throws {
+        let context = try makeContext()
+        let episode = makeEpisode(guid: "never-downloaded")
+        context.insert(episode)
+        XCTAssertEqual(episode.downloadState, .notDownloaded)
+
+        let store = DownloadStore(baseDirectory: try makeTempStoreDirectory())
+        let manager = DownloadManager(store: store)
+
+        manager.remove(episode, context: context)
+
+        XCTAssertEqual(episode.downloadState, .notDownloaded)
+    }
 }

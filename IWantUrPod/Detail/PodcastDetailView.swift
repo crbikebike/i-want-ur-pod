@@ -617,7 +617,7 @@ struct EpisodeRow: View {
 /// roles — a neutral chip fill (Download idle/retry, Add to Up Next idle), a
 /// filled accent circle (Play/Pause/Resume), or a mint "done" tint (Downloaded
 /// / In Up Next, both non-interactive here).
-private struct EpisodeIconButton: View {
+struct EpisodeIconButton: View {
     enum Style { case chip, filledAccent, done }
 
     static let diameter: CGFloat = 38

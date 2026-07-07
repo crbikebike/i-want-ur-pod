@@ -1,5 +1,7 @@
 // Once-only first-run explainer gate (E1-S1). Doc: ROADMAP.md E1-S1 ("A
 // once-only intro … shown before Discover; re-openable from Settings").
+// E8-S1 moved the gated destination from the retired Discover tab to Home,
+// the dock IA's new first destination — see `HomeScreen.swift`.
 //
 // Persistence choice: a single boolean flag in `UserDefaults` — the simplest
 // mechanism for "has this device seen the explainer", with no user content to
@@ -9,14 +11,14 @@
 import Foundation
 
 /// Tracks whether the once-only first-run explainer has been shown and
-/// dismissed. `DiscoverView` presents the explainer as a `fullScreenCover`
+/// dismissed. `HomeScreen` presents the explainer as a `fullScreenCover`
 /// while `!hasSeenFirstRun`; Settings' "Show first-run intro again" control
-/// calls `reset()` so it reappears the next time Discover is shown.
+/// calls `reset()` so it reappears the next time Home is shown.
 ///
 /// Not `Sendable`: it wraps a `UserDefaults` (a non-`Sendable` reference type),
 /// and it doesn't need to cross concurrency domains — it's read/written on the
-/// main actor from `DiscoverView`/`SourcesView`. Declaring `Sendable` here would
-/// be an error under the Swift 6 language mode.
+/// main actor from `HomeScreen`/`SettingsScreen`. Declaring `Sendable` here
+/// would be an error under the Swift 6 language mode.
 public struct FirstRunGate {
     private let defaults: UserDefaults
     private static let hasSeenKey = "com.iwanturpod.firstRun.hasSeen"
