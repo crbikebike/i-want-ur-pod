@@ -1,5 +1,5 @@
-// Discover search state machine. Drives design/kit/screens/{first-run,typing,
-// loading,no-results,error}.html — one `State` per screen. Search flows through
+// Discover search state machine. Drives design/kit/screens/{first-run,search-typing,
+// search-loading,search-noresults,search-error}.html — one `State` per screen. Search flows through
 // DirectoryKit's SearchCoordinator (primary + fallback, docs/design/direction.md §12).
 import Foundation
 import Observation

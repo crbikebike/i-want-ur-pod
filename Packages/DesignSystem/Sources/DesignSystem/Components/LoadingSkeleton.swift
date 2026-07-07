@@ -1,4 +1,4 @@
-// Translated from design/kit/screens/loading.html (.sk-shelf / .sk-shelf-head /
+// Translated from design/kit/screens/search-loading.html (.sk-shelf / .sk-shelf-head /
 // .sk-rail / .sk-pod / .sk-pod-art / .sk-pod-line + .shimmer, SHARED KIT EXTRAS).
 // A placeholder for the shelf gallery (`ResultShelf`) while a search is in
 // flight: shimmering shelf headers over rails of square `.sk-pod-art` blocks,

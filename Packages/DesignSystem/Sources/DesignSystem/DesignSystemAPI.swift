@@ -47,7 +47,7 @@
 //                             // ghost button, lock badge when unconfigured.
 //
 // ── Loading / empty states (design/kit/screens/*, §9) ─────────────────────
-//   LoadingSkeleton(shelves: Int)   // design/kit/screens/loading.html shelf/rail skeleton
+//   LoadingSkeleton(shelves: Int)   // design/kit/screens/search-loading.html shelf/rail skeleton
 //   EmptyStateView(kind: EmptyKind, title: String, message: String,
 //                  actions: () -> some View)
 //   // enum EmptyKind { case firstRun, noResults, error }

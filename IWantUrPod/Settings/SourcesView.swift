@@ -1,4 +1,4 @@
-// Translated from design/kit/screens/settings-sources.html (docs/design/direction.md §12).
+// Translated from the retired settings-sources kit screen (removed 2026-07-06 — v1 is Apple-only, no source picker; see design/kit/MANIFEST.md and docs/design/direction.md §12). Removing this screen is part of the pending dock-IA SwiftUI pass.
 // Settings → Sources: the grouped opt-in search-source checklist. Apple
 // Podcasts is the keyless primary and ships ON; PodcastIndex is opt-in and
 // stays locked until the user adds an API key + secret via the "Add API key"

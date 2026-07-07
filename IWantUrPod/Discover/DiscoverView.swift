@@ -1,4 +1,4 @@
-// Translated from design/kit/screens/{typing,loading,no-results,error}.html.
+// Translated from design/kit/screens/{search-typing,search-loading,search-noresults,search-error}.html.
 // NOTE: the `.firstRun` branch below is an interim placeholder, not a
 // translation of design/kit/screens/first-run.html — see EmptyStateView.swift
 // and design/kit/MANIFEST.md.
