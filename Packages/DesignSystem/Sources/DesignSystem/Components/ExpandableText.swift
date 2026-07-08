@@ -12,6 +12,8 @@ import SwiftUI
 public struct ExpandableText: View {
     private let text: String
     private let collapsedLineLimit: Int
+    private let textStyle: TypeStyle
+    private let actionFont: Font
 
     @Environment(\.palette) private var palette
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -21,15 +23,26 @@ public struct ExpandableText: View {
     /// - Parameters:
     ///   - text: The body copy to render.
     ///   - collapsedLineLimit: Lines shown before truncating (defaults to 4).
-    public init(_ text: String, collapsedLineLimit: Int = 4) {
+    ///   - textStyle: The body type token (defaults to `bodyStyle`; Podcast
+    ///     Detail passes `detailBodyStyle` for the kit's `.pd-desc`).
+    ///   - actionFont: The "More"/"Less" toggle font (defaults to heavy subhead;
+    ///     Podcast Detail passes `expandLabel` for the kit's `.pd-more`).
+    public init(
+        _ text: String,
+        collapsedLineLimit: Int = 4,
+        textStyle: TypeStyle = Typography.bodyStyle,
+        actionFont: Font = Typography.subhead.weight(.heavy)
+    ) {
         self.text = text
         self.collapsedLineLimit = collapsedLineLimit
+        self.textStyle = textStyle
+        self.actionFont = actionFont
     }
 
     public var body: some View {
         VStack(alignment: .leading, spacing: Spacing.sp2) {
             Text(text)
-                .typeStyle(Typography.bodyStyle)
+                .typeStyle(textStyle)
                 .foregroundStyle(palette.textDim)
                 .lineSpacing(4)
                 .lineLimit(expanded ? nil : collapsedLineLimit)
@@ -41,7 +54,7 @@ public struct ExpandableText: View {
                         expanded.toggle()
                     }
                 }
-                .font(Typography.subhead.weight(.heavy))
+                .font(actionFont)
                 .foregroundStyle(palette.accent)
                 .buttonStyle(.plain)
                 .accessibilityHint(expanded ? "Collapses the description" : "Expands the full description")
@@ -62,14 +75,14 @@ public struct ExpandableText: View {
     private var measurement: some View {
         ZStack {
             Text(text)                                    // unclamped
-                .typeStyle(Typography.bodyStyle)
+                .typeStyle(textStyle)
                 .lineSpacing(4)
                 .background(GeometryReader { geo in
                     Color.clear.preference(key: FullHeightKey.self, value: geo.size.height)
                 })
 
             Text(text)                                    // clamped
-                .typeStyle(Typography.bodyStyle)
+                .typeStyle(textStyle)
                 .lineSpacing(4)
                 .lineLimit(collapsedLineLimit)
                 .background(GeometryReader { geo in

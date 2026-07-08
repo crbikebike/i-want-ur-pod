@@ -159,11 +159,9 @@ public struct GroupedList<Item, ID: Hashable, RowContent: View>: View {
         }
         .background(palette.surface)
         .clipShape(RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous)
-                .strokeBorder(palette.hairline, lineWidth: 1)
-        )
-        .shadow(color: Color(hex: 0x000000, alpha: 0.28), radius: 12, x: 0, y: 8)
+        // kit `.list`: `0 1px 0 hairline, 0 8px 24px -18px black` — the top
+        // hairline + soft float `--elev-list` already expresses (not a 4-side border).
+        .elevList(hairline: palette.hairline)
     }
 }
 

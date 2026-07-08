@@ -38,6 +38,16 @@ public struct SectionHeader: View {
         self.subtitle = subtitle
     }
 
+    /// Title with BOTH a trailing mint count pill and a `.sec-sub` line beneath
+    /// — the Up Next "Queue" header (up-next.html: `.sec-head` count + a
+    /// sibling `.sec-sub`). The body already lays out count and subtitle
+    /// independently; this init is what lets a caller supply both at once.
+    public init(title: String, count: Int, subtitle: String) {
+        self.title = title
+        self.count = count
+        self.subtitle = subtitle
+    }
+
     public var body: some View {
         VStack(alignment: .leading, spacing: 2) {   // .sec-sub margin-top: 2px
             // .sec-head — space-between title / count row.
@@ -54,11 +64,10 @@ public struct SectionHeader: View {
             }
 
             if let subtitle {
-                Text(subtitle)                       // .sec-sub
+                Text(subtitle)                       // .sec-sub — wraps (kit has no nowrap)
                     .typeStyle(Typography.subheadStyle)
                     .foregroundStyle(palette.textFaint)
-                    .lineLimit(1)
-                    .truncationMode(.tail)
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
         // .sec-head margin: --sp-6 (top) 2px (sides) --sp-1 (bottom); the 2px is
@@ -83,7 +92,7 @@ private struct CountPill: View {
 
     var body: some View {
         Text(count, format: .number)
-            .font(.system(size: 11.84, weight: .heavy))   // 0.74rem / 800
+            .font(Typography.countBadge)                    // .sec-head .count — 0.74rem / 800
             .foregroundStyle(palette.accent2)
             .padding(.vertical, 4)                          // .count padding: 4px 10px
             .padding(.horizontal, 10)

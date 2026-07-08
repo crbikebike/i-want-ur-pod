@@ -43,14 +43,14 @@ public struct TopResultCard: View {
                         .frame(width: artSize, height: artSize)
 
                     VStack(alignment: .leading, spacing: 3) {
-                        Text(result.title)
-                            .typeStyle(Typography.rowTitleStyle)
+                        Text(result.title)                    // .tr-title
+                            .typeStyle(Typography.heroTitleStyle)
                             .foregroundStyle(palette.text)
                             .lineLimit(1)
                             .truncationMode(.tail)
 
-                        Text(result.author)
-                            .typeStyle(Typography.subheadStyle)
+                        Text(result.author)                   // .tr-author
+                            .typeStyle(Typography.heroAuthorStyle)
                             .foregroundStyle(palette.textDim)
                             .lineLimit(1)
                             .truncationMode(.tail)
@@ -87,7 +87,7 @@ public struct TopResultCard: View {
                 switch subscribeState {
                 case .idle:
                     Image(systemName: "plus")
-                        .font(.system(size: 13, weight: .bold))
+                        .font(.system(size: 15, weight: .bold))   // .sub .ico svg — kit 15×15
                 case .subscribing:
                     ProgressView()
                         .progressViewStyle(.circular)
@@ -95,12 +95,11 @@ public struct TopResultCard: View {
                         .scaleEffect(0.7)
                 case .subscribed:
                     Image(systemName: "checkmark")
-                        .font(.system(size: 13, weight: .bold))
+                        .font(.system(size: 15, weight: .bold))   // .sub .ico svg — kit 15×15
                 }
 
-                Text(pillTitle)
-                    .typeStyle(Typography.subheadStyle)
-                    .fontWeight(.heavy)
+                Text(pillTitle)                               // .sub pill label .8rem/800/.01em
+                    .typeStyle(Typography.pillButtonLabelStyle)
             }
             .foregroundStyle(pillForeground)
             .padding(.horizontal, Spacing.sp3)

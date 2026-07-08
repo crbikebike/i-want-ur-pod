@@ -225,27 +225,26 @@ design/kit source (see design/kit/MANIFEST.md).` header instead of a
 | `IWantUrPod/Library/PodcastsScreen.swift` | The Podcasts tab: a vertical list of subscribed shows, newest `dateAdded` first, each row a `RemoteArtwork` tile + title/author (mirrors `PodcastDetailView.swift`'s `EpisodeRow` shape, scaled down) that pushes its `feedURL` into the shared E2 detail screen. Empty state via `EmptyStateView(kind: .firstRun, …)`. Owns its own `NavigationStack` and reserves `AppShell.tabBarReservedPadding`. | ✅ Implemented |
 | `IWantUrPod/Library/PodcastsListProvider.swift` | The testable seam behind the list: fetches every `Podcast` from a `ModelContext` (or takes an already-fetched `[Podcast]`, for the live `@Query` case) and filters/sorts in plain Swift — avoiding the non-Sendable `KeyPath` warning a `#Predicate { $0.isSubscribed }` triggers under this project's strict concurrency setting (same precedent as `PodcastDetailViewModelTests.swift`). Not a UI component — no kit citation needed; listed here for completeness since it's new in E3. | ✅ Implemented |
 
-## Up Next tab (E5) — composed, no kit mock (historical); superseded by `up-next.html`
+## Up Next tab (E5) — now reconciled to `up-next.html`
 
-**Update 2026-07-06:** this is no longer literally true — see `up-next.html`
-in "Home / Shows / Up Next screens" above, which now specifies inline
-per-row download state/button that `UpNextScreen.swift` doesn't yet have.
-The paragraph and table below describe the screen's original composed
-history and remain accurate for what's actually built today.
+**Update 2026-07-08:** `UpNextScreen.swift` has been rebuilt to match
+`design/kit/screens/up-next.html` exactly (see "Home / Shows / Up Next
+screens" above) — the historical "composed, no kit mock" note below is
+retained for provenance only. The screen no longer uses a `List`: matching
+the kit's grouped-inset surface card (with `.grip` handle + `elev-list`
+shadow) required a hand-built card, so reorder is a grip-drag gesture and
+remove is a row context menu (the order rules are unchanged — see
+`docs/spec/queue-semantics.md`'s "UI mechanism" notes).
 
-At the time, there was no `design/kit/screens/up-next.html` or
-reorderable-list mock — same precedent as Podcast Detail (E2) and the
-Podcasts tab (E3): compose from `docs/design/direction.md` tokens + existing
-components. Unlike `PodcastsScreen.swift`'s plain `ScrollView`, this screen
-uses a real `List` because drag-to-reorder (`.onMove`) and swipe-to-remove
-(`.swipeActions`) are native `List` affordances. Every new file below carries
-a `// Composed from docs/design/direction.md tokens — no design/kit source
-(see design/kit/MANIFEST.md).` header instead of a `design/kit/*.html`
-citation.
+_Historical:_ At first there was no `design/kit/screens/up-next.html` — same
+precedent as Podcast Detail (E2) and the Podcasts tab (E3): compose from
+`docs/design/direction.md` tokens + existing components, using a real `List`
+for native `.onMove`/`.swipeActions`. That precedent no longer applies now
+that the kit screen exists and the screen cites it.
 
 | Swift file | Real bespoke content | Status |
 |---|---|---|
-| `IWantUrPod/UpNext/UpNextScreen.swift` | The Up Next tab: a `List` of queued episodes in `QueueStore.items` order, each row a `RemoteArtwork` tile + episode/show title `VStack` (mirrors `PodcastsScreen.swift`'s `PodcastRow` shape). Drag reorders via `.onMove` → `QueueStore.move(fromOffsets:toOffset:)`; left swipe removes via `.swipeActions` → `QueueStore.remove(_:)`. Empty state via `EmptyStateView(kind: .firstRun, …)`. Owns its own `NavigationStack` and reserves `AppShell.tabBarReservedPadding`. | ✅ Implemented |
+| `IWantUrPod/UpNext/UpNextScreen.swift` | The Up Next tab, translated from `up-next.html`: pulse-dot large title + Settings gear, a "Queue" `SectionHeader` (count pill + `.sec-sub`), and a grouped-inset surface card (`palette.surface` / `rLg20` / `.elevList`) of rows — each a `.grip` 2×3 dot handle, 60pt `RemoteArtwork`, title + "Show · time" subtitle (`HomeFeedProvider.durationLabel`), and a 40pt `EpisodeIconButton` download control — plus the centered `.foot` note. Reorder = hand-rolled grip-drag → `QueueStore.move(fromOffsets:toOffset:)`; remove = row context menu → `QueueStore.remove(_:)`. Empty state via `EmptyStateView(kind: .firstRun, …)`. Owns its own `NavigationStack` and reserves `AppShell.tabBarReservedPadding`. | ✅ Implemented |
 | `IWantUrPod/UpNext/QueueStore.swift` | The app-scoped `@Observable` queue service (E5-S1/S2/S3): add-to-tail with re-add no-op, contiguous-order reorder/remove, and orphan pruning (docs/spec/queue-semantics.md's four invariants). Not a UI component — no kit citation needed; listed for completeness since it's new in E5. Created once in `IWantUrPodApp`, injected via `.environment` (`AppQueue.swift`), same pattern as `DownloadManager`/`PlaybackEngine`. | ✅ Implemented |
 | `IWantUrPod/UpNext/QueueAutoAdvanceCoordinator.swift` | Couples `PlaybackEngine.onFinished` to `QueueStore` for E5-S3 auto-advance, kept out of `PlaybackKit` itself so that package stays decoupled from `QueueItem`/`QueueStore`. Not a UI component — no kit citation needed. | ✅ Implemented |
 | `IWantUrPod/Detail/PodcastDetailView.swift` (`EpisodeRow.queueControl`) | The "Add to Up Next" control (E5-S1) added to the existing episode row: a `GhostButton` calling `QueueStore.add(episode)` when not yet queued, or an "In Up Next" checkmark label when it is. Composed from tokens, no kit mock (same precedent as the row's existing download/play controls). | ✅ Implemented |

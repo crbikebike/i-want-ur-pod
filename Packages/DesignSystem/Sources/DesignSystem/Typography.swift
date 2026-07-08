@@ -72,6 +72,50 @@ public enum Typography {
     /// Tab label — 0.62rem / 600 / 0.01em. UI face.
     public static var tabLabel: Font { ui(9.92, .semibold) }
 
+    // MARK: Roles — search + Podcast Detail reconciliation
+    // Exact kit values verified against design/kit/screens/{search-results,
+    // podcast-detail-*}.html; see docs/design/token-audit.md. All UI face
+    // (Roboto/system) — none carry `--font-display`.
+
+    /// Story-arc card title (`.arc-name`) — 0.92rem / 800 / -0.01em.
+    public static var arcCardTitle: Font { ui(14.72, .heavy) }
+    /// Story-arc card meta / "N episodes" (`.arc-parts`) — 0.76rem / 600.
+    public static var arcCardMeta: Font { ui(12.16, .semibold) }
+    /// Season badge over an arc cover (`.arc-season`) — 0.68rem / 800.
+    public static var seasonBadge: Font { ui(10.88, .heavy) }
+    /// Filled pill-button label (`.sub` subscribe pill / `.arc-add`) — 0.8rem / 800.
+    /// (`.sub` adds 0.01em tracking; `.arc-add` carries none — see the two styles.)
+    public static var pillButtonLabel: Font { ui(12.8, .heavy) }
+    /// Top-result hero title (`.tr-title`) — 1.08rem / 800 / -0.01em.
+    public static var heroTitle: Font { ui(17.28, .heavy) }
+    /// Top-result hero author (`.tr-author`) — 0.84rem / 500 (distinct from subhead's 0.82).
+    public static var heroAuthor: Font { ui(13.44, .medium) }
+    /// Section count pill (`.sec-head .count`) — 0.74rem / 800.
+    public static var countBadge: Font { ui(11.84, .heavy) }
+    /// Episode row title (`.ep-title`) — 0.98rem / 700 / -0.01em.
+    public static var episodeTitle: Font { ui(15.68, .bold) }
+    /// Episode row meta line (`.ep-meta`) — 0.78rem / 600.
+    public static var episodeMeta: Font { ui(12.48, .semibold) }
+    /// Emphasised meta segment (`.ep-arc` — the arc name inside a meta line):
+    /// the meta size at 800, paired with an accent-2 color at the call site.
+    public static var metaEmphasis: Font { ui(12.48, .heavy) }
+    /// "Played" marker (`.ep-played`) — 0.72rem / 800, accent-2 at the call site.
+    public static var shelfBadge: Font { ui(11.52, .heavy) }
+    /// Podcast Detail header title (`.pd-title`) — 1.28rem / 800 / -0.02em.
+    /// UI face (explicitly NOT the mono `--font-display` title role).
+    public static var podcastDetailTitle: Font { ui(20.48, .heavy) }
+    /// Podcast Detail author (`.pd-author`) — 0.88rem / 600.
+    public static var detailAuthor: Font { ui(14.08, .semibold) }
+    /// Podcast Detail category (`.pd-cat`) — 0.72rem / 800 / 0.07em, uppercase.
+    public static var categoryLabel: Font { ui(11.52, .heavy) }
+    /// Podcast Detail description body (`.pd-desc`) — 0.88rem / 400.
+    public static var detailBody: Font { ui(14.08, .regular) }
+    /// Expand / "More" affordance (`.pd-more`) — 0.82rem / 800.
+    public static var expandLabel: Font { ui(13.12, .heavy) }
+    /// Centered footer note (`.foot`) — 0.76rem / 500, `--text-faint` at the
+    /// call site. Same size as `.arc-parts` but a lighter (medium) weight.
+    public static var footnote: Font { ui(12.16, .medium) }
+
     // MARK: Roles (full TypeStyle tokens — carry tracking + case)
 
     public static var displayLargeTitleStyle: TypeStyle { .init(font: displayLargeTitle, tracking: -0.742) }
@@ -86,6 +130,28 @@ public enum Typography {
     public static var eyebrowStyle: TypeStyle { .init(font: eyebrow, tracking: 1.382, uppercase: true) }
     public static var tagStyle: TypeStyle { .init(font: tag, tracking: 0.205, uppercase: true) }
     public static var tabLabelStyle: TypeStyle { .init(font: tabLabel, tracking: 0.099) }
+
+    // Search + Podcast Detail reconciliation styles (tracking = em × px).
+    public static var arcCardTitleStyle: TypeStyle { .init(font: arcCardTitle, tracking: -0.147) }   // -0.01em
+    public static var arcCardMetaStyle: TypeStyle { .init(font: arcCardMeta) }
+    public static var seasonBadgeStyle: TypeStyle { .init(font: seasonBadge) }
+    /// `.sub` subscribe pill — 0.01em tracking.
+    public static var pillButtonLabelStyle: TypeStyle { .init(font: pillButtonLabel, tracking: 0.128) }
+    /// `.arc-add` — no tracking (differs from `.sub` on this axis only).
+    public static var arcAddLabelStyle: TypeStyle { .init(font: pillButtonLabel) }
+    public static var heroTitleStyle: TypeStyle { .init(font: heroTitle, tracking: -0.173) }          // -0.01em
+    public static var heroAuthorStyle: TypeStyle { .init(font: heroAuthor) }
+    public static var countBadgeStyle: TypeStyle { .init(font: countBadge) }
+    public static var episodeTitleStyle: TypeStyle { .init(font: episodeTitle, tracking: -0.157) }    // -0.01em
+    public static var episodeMetaStyle: TypeStyle { .init(font: episodeMeta) }
+    public static var metaEmphasisStyle: TypeStyle { .init(font: metaEmphasis) }
+    public static var shelfBadgeStyle: TypeStyle { .init(font: shelfBadge) }
+    public static var podcastDetailTitleStyle: TypeStyle { .init(font: podcastDetailTitle, tracking: -0.410) } // -0.02em
+    public static var detailAuthorStyle: TypeStyle { .init(font: detailAuthor) }
+    public static var categoryLabelStyle: TypeStyle { .init(font: categoryLabel, tracking: 0.806, uppercase: true) } // 0.07em
+    public static var detailBodyStyle: TypeStyle { .init(font: detailBody) }
+    public static var expandLabelStyle: TypeStyle { .init(font: expandLabel) }
+    public static var footnoteStyle: TypeStyle { .init(font: footnote) }
 }
 
 public extension View {

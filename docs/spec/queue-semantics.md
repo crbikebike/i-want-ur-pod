@@ -33,9 +33,20 @@ Moving an item to a new position rewrites `order` on the affected span so invari
 holds (contiguous ascending). Use the same index-shift semantics as SwiftUI's
 `onMove`; then normalize `order` across the list.
 
+> **UI mechanism.** `UpNextScreen` renders the queue as the kit's grouped-inset
+> surface card (`design/kit/screens/up-next.html`), not a `List`, so it can carry
+> the kit's `.grip` handle and `elev-list` shadow. Reorder is therefore a
+> hand-rolled grip-drag gesture that computes a target index and calls
+> `QueueStore.move(fromOffsets:toOffset:)` — the *order rules above are unchanged*;
+> only the gesture source differs from `List.onMove`.
+
 ### Remove — left swipe (E5-S2)
 Delete the `QueueItem` (not the `Episode`) and re-normalize `order` on the remaining
 items. Removing an item that is **not** current has no effect on playback.
+
+> **UI mechanism.** With no `List` to host `.swipeActions`, removal is offered via
+> the row's context menu ("Remove from Queue") → `QueueStore.remove(_:)`. Same
+> delete-the-`QueueItem`-not-the-`Episode` semantics.
 
 ### Removing the current item
 If the currently-playing episode's queue entry is removed while it is playing,

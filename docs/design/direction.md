@@ -201,6 +201,29 @@ titles, labels, tabs) uses `--font`.
 | Tag | 0.64rem | 800 | 0.02em, uppercase |
 | Tab label | 0.62rem | 600 | 0.01em |
 
+**Search + Podcast Detail roles** (kit-exact, 2026-07 reconciliation — all
+`--font`; verified per-screen, see `docs/design/token-audit.md`). These back the
+Swift `Typography` tokens of the same name:
+
+| Role | Kit selector | Size | Weight | Tracking |
+|---|---|---|---|---|
+| Podcast Detail title | `.pd-title` | 1.28rem | 800 | -0.02em |
+| Hero (top result) title | `.tr-title` | 1.08rem | 800 | -0.01em |
+| Episode title | `.ep-title` | 0.98rem | 700 | -0.01em |
+| Arc-card title | `.arc-name` | 0.92rem | 800 | -0.01em |
+| Detail description body | `.pd-desc` | 0.88rem | 400 | — |
+| Detail author | `.pd-author` | 0.88rem | 600 | — |
+| Hero author | `.tr-author` | 0.84rem | 500 | — |
+| Expand / "More" | `.pd-more` | 0.82rem | 800 | — |
+| Pill-button label | `.sub` / `.arc-add` | 0.8rem | 800 | 0.01em (`.sub`) / — (`.arc-add`) |
+| Episode meta / emphasis | `.ep-meta` / `.ep-arc` | 0.78rem | 600 / 800 | — |
+| Arc-card meta | `.arc-parts` | 0.76rem | 600 | — |
+| Footer note | `.foot` | 0.76rem | 500 | — |
+| Count pill | `.sec-head .count` | 0.74rem | 800 | — |
+| Category label | `.pd-cat` | 0.72rem | 800 | 0.07em, uppercase |
+| Played marker | `.ep-played` | 0.72rem | 800 | — |
+| Season badge | `.arc-season` | 0.68rem | 800 | — |
+
 ---
 
 ## 4. Spacing

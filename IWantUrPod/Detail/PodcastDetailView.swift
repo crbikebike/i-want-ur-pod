@@ -99,7 +99,13 @@ public struct PodcastDetailView: View {
     @ViewBuilder
     private func descriptionSection(_ podcast: Podcast) -> some View {
         if !podcast.summary.isEmpty {
-            ExpandableText(podcast.summary.htmlToPlainText(), collapsedLineLimit: 4)
+            // .pd-desc body + .pd-more toggle.
+            ExpandableText(
+                podcast.summary.htmlToPlainText(),
+                collapsedLineLimit: 4,
+                textStyle: Typography.detailBodyStyle,
+                actionFont: Typography.expandLabel
+            )
         }
     }
 
@@ -117,20 +123,20 @@ public struct PodcastDetailView: View {
             .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: Spacing.sp2) {
-                Text(podcast.title)
-                    .typeStyle(Typography.sectionStyle)
+                Text(podcast.title)                            // .pd-title — UI face, NOT mono
+                    .typeStyle(Typography.podcastDetailTitleStyle)
                     .foregroundStyle(palette.text)
                     .fixedSize(horizontal: false, vertical: true)
 
                 if !podcast.author.isEmpty {
-                    Text(podcast.author)                       // publisher/author (E2-S1 "hosts" note)
-                        .typeStyle(Typography.subheadStyle)
+                    Text(podcast.author)                       // .pd-author
+                        .typeStyle(Typography.detailAuthorStyle)
                         .foregroundStyle(palette.textDim)
                 }
 
                 if !podcast.category.isEmpty {
-                    Text(podcast.category)
-                        .typeStyle(Typography.tagStyle)
+                    Text(podcast.category)                     // .pd-cat
+                        .typeStyle(Typography.categoryLabelStyle)
                         .foregroundStyle(palette.accent2)
                 }
 
@@ -246,7 +252,7 @@ private struct ArcCard: View {
             cover
 
             Text(arc.name)                                    // .arc-name
-                .typeStyle(Typography.rowTitleStyle)
+                .typeStyle(Typography.arcCardTitleStyle)
                 .foregroundStyle(palette.text)
                 // .arc-name { min-height: 2.3em; -webkit-line-clamp: 2 } — always
                 // reserve two lines so a one-line arc name occupies the same
@@ -255,7 +261,7 @@ private struct ArcCard: View {
                 .lineLimit(2, reservesSpace: true)
 
             Text("\(arc.episodes.count) episodes")            // .arc-parts
-                .typeStyle(Typography.subheadStyle)
+                .typeStyle(Typography.arcCardMetaStyle)
                 .foregroundStyle(palette.textDim)
 
             addAllButton
@@ -297,7 +303,7 @@ private struct ArcCard: View {
     @ViewBuilder private var seasonBadge: some View {
         if let season = arc.season {                          // .arc-season
             Text("Season \(season)")
-                .font(.system(size: 10.9, weight: .heavy))    // .68rem/800, title-case (not badgeStyle's caps)
+                .typeStyle(Typography.seasonBadgeStyle)       // .arc-season .68rem/800, title-case
                 .foregroundStyle(.white)
                 .padding(.horizontal, Spacing.sp2)            // 3px 8px
                 .padding(.vertical, 3)
@@ -311,10 +317,10 @@ private struct ArcCard: View {
     private var addAllButton: some View {
         Button(action: onAddAll) {
             HStack(spacing: 6) {                              // .arc-add { gap: 6px }
-                Image(systemName: "plus")                     // plus SVG (unchanged in added state, per kit JS)
-                    .font(.system(size: 13, weight: .heavy))
+                Image(systemName: "plus")                     // .arc-add svg — kit 15×15
+                    .font(.system(size: 15, weight: .heavy))
                 Text(isAdded ? "Added" : "Add all \(arc.episodes.count)")
-                    .font(.system(size: 12.8, weight: .heavy))  // .8rem/800
+                    .typeStyle(Typography.arcAddLabelStyle)    // .arc-add .8rem/800, no tracking
                     .lineLimit(1)
             }
             .foregroundStyle(isAdded ? palette.accent2 : palette.onAccent)
@@ -402,8 +408,8 @@ struct EpisodeRow: View {
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: Spacing.sp1) {
-                Text(displayTitle)
-                    .typeStyle(Typography.rowTitleStyle)
+                Text(displayTitle)                             // .ep-title
+                    .typeStyle(Typography.episodeTitleStyle)
                     .foregroundStyle(palette.text)
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
@@ -441,14 +447,15 @@ struct EpisodeRow: View {
             HStack(spacing: 4) {
                 ForEach(Array(segments.enumerated()), id: \.offset) { index, segment in
                     if index > 0 {
-                        Text("·")
-                            .typeStyle(Typography.subheadStyle)
+                        Text("·")                              // .ep-meta separator
+                            .typeStyle(Typography.episodeMetaStyle)
                             .foregroundStyle(palette.textFaint)
                     }
+                    // `.ep-arc` is `.ep-meta` at weight 800 in accent-2; other
+                    // segments are the plain `.ep-meta` role.
                     Text(segment.text)
-                        .typeStyle(Typography.subheadStyle)
+                        .typeStyle(segment.isArc ? Typography.metaEmphasisStyle : Typography.episodeMetaStyle)
                         .foregroundStyle(segment.isArc ? palette.accent2 : palette.textDim)
-                        .fontWeight(segment.isArc ? .heavy : nil)
                 }
             }
             .lineLimit(1)
@@ -497,12 +504,12 @@ struct EpisodeRow: View {
     private var playedMarker: some View {
         HStack(spacing: Spacing.sp1) {
             if episode.isPlayed {
-                Image(systemName: "checkmark.circle.fill")
+                Image(systemName: "checkmark.circle.fill")    // .ep-played ✓
                     .foregroundStyle(palette.accent2)
                     .font(.system(size: 12, weight: .bold))
-                Text("Played")
-                    .typeStyle(Typography.subheadStyle)
-                    .foregroundStyle(palette.textFaint)
+                Text("Played")                                 // .ep-played .72rem/800, accent-2
+                    .typeStyle(Typography.shelfBadgeStyle)
+                    .foregroundStyle(palette.accent2)
             } else {
                 Text(remainingLabel)
                     .typeStyle(Typography.subheadStyle)
@@ -674,12 +681,28 @@ struct EpisodeRow: View {
 struct EpisodeIconButton: View {
     enum Style { case chip, filledAccent, done }
 
+    /// The detail screen's `.ep-btn` default; Up Next's `.dl` passes 40.
     static let diameter: CGFloat = 38
 
     let systemImage: String
     let style: Style
+    let diameter: CGFloat
     let accessibilityLabel: String
     let action: () -> Void
+
+    init(
+        systemImage: String,
+        style: Style,
+        diameter: CGFloat = EpisodeIconButton.diameter,
+        accessibilityLabel: String,
+        action: @escaping () -> Void
+    ) {
+        self.systemImage = systemImage
+        self.style = style
+        self.diameter = diameter
+        self.accessibilityLabel = accessibilityLabel
+        self.action = action
+    }
 
     @Environment(\.palette) private var palette
     @Environment(\.colorScheme) private var colorScheme
@@ -689,7 +712,7 @@ struct EpisodeIconButton: View {
             Image(systemName: systemImage)
                 .font(.system(size: 15, weight: .bold))
                 .foregroundStyle(foreground)
-                .frame(width: Self.diameter, height: Self.diameter)
+                .frame(width: diameter, height: diameter)
                 .background(background)
                 .clipShape(Circle())
         }
