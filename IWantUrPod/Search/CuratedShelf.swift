@@ -1,19 +1,12 @@
-// Composed from docs/design/direction.md tokens + the DesignSystem
-// `RemoteArtwork`/`SubscribeButton`/`SectionHeader` components — no design/kit
-// source (E1-S2's curated "start here" section has no separate kit mock; see
-// design/kit/MANIFEST.md). Schema + loader behavior:
-// docs/spec/curated-list.schema.md.
-//
-// Deliberately NOT the horizontal gradient `ResultShelf` that search results
-// use: the curated list's value over raw search is the editorial `blurb`
-// ("why start here?"), and a one-sentence blurb reads far better in a vertical
-// card than a 150pt rail cell. So this renders a vertical stack of editorial
-// cards, each showing REAL artwork (via `RemoteArtwork`, gradient fallback),
-// title, author · category, the corner Subscribe control, and the blurb set
-// against a coral→mint gradient hairline — the single accent that marks a card
-// as a human pick (echoing the Discover title's pulse-dot), not an algorithm
-// result. Behavior matches the search shelf: file order, tap a card → E2
-// detail keyed by `feedUrl`, corner Subscribe drives the same state machine.
+// Translated from design/kit/screens/search-start.html (and the same shelves
+// beneath search-typing.html): the rest/browse state's horizontal category
+// rails ("Trending now", "True Crime") of poster pods, each with a corner
+// Subscribe. Backed by the bundled curated "start here" picks (E1-S2, schema
+// docs/spec/curated-list.schema.md) grouped by category into one `ResultShelf`
+// rail per taxonomy — the kit's shelf/rail pattern (`result-row.html` via
+// `ResultShelf`/`PodCard`), not the earlier vertical editorial cards. Behavior:
+// file order preserved, tap a pod → E2 detail keyed by `feedUrl`, the corner
+// Subscribe drives the same per-item state machine `ShelvesList` uses.
 import SwiftUI
 import DesignSystem
 import DirectoryKit
@@ -22,30 +15,52 @@ struct CuratedShelf: View {
     let entries: [CuratedEntry]
     /// Called the moment an entry is subscribed — the parent persists the show.
     var onSubscribe: (SearchResult) -> Void = { _ in }
-    /// Called when a card (not its subscribe button) is tapped.
+    /// Called when a pod (not its subscribe button) is tapped.
     var onSelect: (CuratedEntry) -> Void = { _ in }
 
     @State private var states: [String: SubscribeState] = [:]
 
+    private struct Shelf: Identifiable {
+        let id: String   // category name (or the fallback bucket label)
+        let items: [CuratedEntry]
+    }
+
+    /// The fallback shelf title for entries with no category — the kit's rest
+    /// state leads with a "Trending now" browse rail; uncategorised curated
+    /// picks fold into a single "Popular now" rail.
+    private static let fallbackTitle = "Popular now"
+
+    /// Groups `entries` by `category`, preserving first-seen order (file order).
+    private var shelves: [Shelf] {
+        var order: [String] = []
+        var groups: [String: [CuratedEntry]] = [:]
+        for entry in entries {
+            let key = (entry.category?.isEmpty == false) ? entry.category! : Self.fallbackTitle
+            if groups[key] == nil {
+                order.append(key)
+                groups[key] = []
+            }
+            groups[key, default: []].append(entry)
+        }
+        return order.map { Shelf(id: $0, items: groups[$0] ?? []) }
+    }
+
     var body: some View {
         if !entries.isEmpty {
-            VStack(alignment: .leading, spacing: Spacing.sp3) {
-                SectionHeader(
-                    title: "Start here",
-                    subtitle: "Story-driven picks — a place to begin."
-                )
-
-                ForEach(entries) { entry in
-                    Button {
-                        onSelect(entry)
-                    } label: {
-                        CuratedCard(
-                            entry: entry,
-                            subscribeState: states[entry.id] ?? .idle,
-                            onSubscribe: { subscribe(entry) }
-                        )
+            VStack(alignment: .leading, spacing: Spacing.sp6) {   // .shelf gap
+                ForEach(shelves) { shelf in
+                    ResultShelf(
+                        title: shelf.id,
+                        items: shelf.items,
+                        onSelect: onSelect,
+                        itemTitle: { $0.title },
+                        itemAuthor: { $0.author },
+                        itemArtwork: { artwork(for: $0) }
+                    ) { entry in
+                        SubscribeButton(state: states[entry.id] ?? .idle) {
+                            subscribe(entry)
+                        }
                     }
-                    .buttonStyle(.plain)
                 }
             }
         }
@@ -66,108 +81,13 @@ struct CuratedShelf: View {
             break
         }
     }
-}
 
-// MARK: - Curated card
-
-/// One editorial curated pick: artwork + title + author·category + corner
-/// Subscribe, with the `blurb` as the hero beneath, marked by a coral→mint
-/// gradient rule. Composed from tokens (`Spacing`/`Radius`/`Typography` +
-/// the active `ThemePalette`).
-private struct CuratedCard: View {
-    let entry: CuratedEntry
-    let subscribeState: SubscribeState
-    let onSubscribe: () -> Void
-
-    @Environment(\.palette) private var palette
-
-    /// Seed the gradient fallback from the title so a missing/slow artwork URL
-    /// still resolves to a stable tile (same scheme as the search shelf).
-    private var seed: Int {
-        entry.title.unicodeScalars.reduce(0) { $0 &+ Int($1.value) }
-    }
-
-    private var initial: String {
-        guard let first = entry.title.first(where: { !$0.isWhitespace }) else { return "?" }
-        return String(first).uppercased()
-    }
-
-    /// "Author · Category" — the category folds into the author line rather
-    /// than earning its own row, keeping the blurb the loudest thing on the card.
-    private var authorLine: String {
-        if let category = entry.category, !category.isEmpty {
-            return "\(entry.author) · \(category)"
-        }
-        return entry.author
-    }
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: Spacing.sp3) {
-            HStack(alignment: .top, spacing: Spacing.sp3) {
-                RemoteArtwork(
-                    url: entry.artworkURL,
-                    seed: seed,
-                    initial: initial,
-                    cornerRadius: Radius.rMd16
-                )
-                .frame(width: 64, height: 64)
-
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(entry.title)
-                        .typeStyle(Typography.rowTitleStyle)
-                        .foregroundStyle(palette.text)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.leading)
-                        .fixedSize(horizontal: false, vertical: true)
-
-                    Text(authorLine)
-                        .typeStyle(Typography.subheadStyle)
-                        .foregroundStyle(palette.textDim)
-                        .lineLimit(1)
-                        .truncationMode(.tail)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-
-                SubscribeButton(state: subscribeState, action: onSubscribe)
-            }
-
-            if let blurb = entry.blurb, !blurb.isEmpty {
-                HStack(alignment: .top, spacing: Spacing.sp3) {
-                    // The one signature: a coral→mint gradient hairline that
-                    // marks this as an editorial pick (echoes the Discover
-                    // title's pulse-dot). Stretches to the blurb's height.
-                    RoundedRectangle(cornerRadius: 1, style: .continuous)
-                        .fill(
-                            LinearGradient(
-                                colors: [palette.accent, palette.accent2],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                        )
-                        .frame(width: 2.5)
-                        .accessibilityHidden(true)
-
-                    Text(blurb)
-                        .typeStyle(Typography.bodyStyle)
-                        .foregroundStyle(palette.textDim)
-                        .lineSpacing(3)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
-            }
-        }
-        .padding(Spacing.sp4)
-        .background(palette.surface, in: RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous))
-        .clipShape(RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous))
-        .elevList(hairline: palette.hairline)
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(accessibilityLabel)
-    }
-
-    private var accessibilityLabel: String {
-        var parts = [entry.title, authorLine]
-        if let blurb = entry.blurb, !blurb.isEmpty { parts.append(blurb) }
-        return parts.joined(separator: ". ")
+    /// Deterministic gradient tile per pick, seeded from the title so the same
+    /// show always gets the same `.a1…a6` placeholder (same scheme as
+    /// `ShelvesList.artwork(for:)`).
+    private func artwork(for entry: CuratedEntry) -> ArtworkStyle {
+        let seed = entry.title.unicodeScalars.reduce(0) { $0 &+ Int($1.value) }
+        return ArtworkStyle(seed: seed)
     }
 }
 

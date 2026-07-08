@@ -47,7 +47,8 @@ final class PodcastDetailViewModelTests: XCTestCase {
         guid: String,
         title: String,
         publishDate: Date,
-        remoteArtworkURL: URL? = nil
+        remoteArtworkURL: URL? = nil,
+        season: Int? = nil
     ) -> ParsedEpisode {
         ParsedEpisode(
             guid: guid,
@@ -56,7 +57,8 @@ final class PodcastDetailViewModelTests: XCTestCase {
             publishDate: publishDate,
             duration: 1800,
             audioURL: URL(string: "https://cdn.example.com/\(guid).mp3")!,
-            remoteArtworkURL: remoteArtworkURL
+            remoteArtworkURL: remoteArtworkURL,
+            season: season
         )
     }
 
@@ -152,12 +154,12 @@ final class PodcastDetailViewModelTests: XCTestCase {
                        "An episode with no artwork should fall back to the show artwork.")
     }
 
-    func test_load_whenAlreadyInStoreWithEpisodes_showsExistingWithoutFetching() async throws {
+    /// Store-first render must be instant even when the background refresh
+    /// fails (e.g. offline) — the stored data stands, no `.error` state.
+    func test_load_whenAlreadyInStoreWithEpisodes_showsExistingEvenIfRefreshFails() async throws {
         let container = try makeContainer()
         let context = ModelContext(container)
 
-        // A show that already has its episodes cached — the store-first fast
-        // path applies and must NOT hit the network.
         let cached = Episode(
             guid: "cached-1",
             title: "Cached Episode",
@@ -172,23 +174,109 @@ final class PodcastDetailViewModelTests: XCTestCase {
         context.insert(existing)
         try context.save()
 
-        // A fetcher that would fail the test if it were ever called.
-        struct FailIfCalled: FeedFetching {
-            func fetch(url: URL) async throws -> ParsedFeed {
-                XCTFail("Store-first load should not fetch when the podcast already has episodes.")
-                throw FeedError.malformedFeed(reason: "unexpected fetch")
-            }
-        }
+        let fetcher = StubFetcher(result: .failure(FeedError.httpStatus(500)))
 
-        let viewModel = PodcastDetailViewModel(feedURL: feedURL, modelContext: context, fetcher: FailIfCalled())
+        let viewModel = PodcastDetailViewModel(feedURL: feedURL, modelContext: context, fetcher: fetcher)
+        await viewModel.load()
+
+        guard case .loaded(let podcast) = viewModel.state else {
+            return XCTFail("Expected .loaded (stored data survives a failed background refresh), got \(viewModel.state)")
+        }
+        XCTAssertEqual(podcast.title, "Already Subscribed")
+        XCTAssertTrue(podcast.isSubscribed)
+        XCTAssertEqual(viewModel.episodes.count, 1)
+    }
+
+    /// The Bone Valley case: a stored show with episodes still refreshes from
+    /// the feed on `load()`, so feed-derived fields added after the episodes
+    /// were first stored (like `season`) get backfilled, and newly published
+    /// episodes get appended.
+    func test_load_whenAlreadyInStoreWithEpisodes_refreshesFromFeedAndBackfillsSeasonAndAppendsNewEpisodes() async throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+
+        let cached = Episode(
+            guid: "cached-1",
+            title: "Cached Episode",
+            audioURL: URL(string: "https://cdn.example.com/cached-1.mp3")!,
+            season: nil
+        )
+        let existing = Podcast(
+            title: "Already Subscribed",
+            feedURL: feedURL,
+            isSubscribed: true,
+            episodes: [cached]
+        )
+        context.insert(existing)
+        try context.save()
+
+        let refreshedCached = makeEpisode(
+            guid: "cached-1",
+            title: "Cached Episode",
+            publishDate: Date(timeIntervalSince1970: 1_000),
+            season: 1
+        )
+        let brandNew = makeEpisode(
+            guid: "new-ep",
+            title: "New Episode",
+            publishDate: Date(timeIntervalSince1970: 2_000),
+            season: 1
+        )
+        let fetcher = StubFetcher(result: .success(makeFeed(episodes: [refreshedCached, brandNew])))
+
+        let viewModel = PodcastDetailViewModel(feedURL: feedURL, modelContext: context, fetcher: fetcher)
         await viewModel.load()
 
         guard case .loaded(let podcast) = viewModel.state else {
             return XCTFail("Expected .loaded, got \(viewModel.state)")
         }
-        XCTAssertEqual(podcast.title, "Already Subscribed")
-        XCTAssertTrue(podcast.isSubscribed)
-        XCTAssertEqual(viewModel.episodes.count, 1)
+        XCTAssertEqual(viewModel.episodes.count, 2, "The refresh should append the newly published episode.")
+        let refreshed = try XCTUnwrap(podcast.episodes.first { $0.guid == "cached-1" })
+        XCTAssertEqual(refreshed.season, 1, "The refresh should backfill season on the previously-stored episode.")
+        XCTAssertTrue(podcast.episodes.contains { $0.guid == "new-ep" })
+    }
+
+    /// FeedUpsert already guarantees user-owned fields survive a re-upsert;
+    /// assert it holds at the view-model level too, since `load()` now always
+    /// triggers a refresh for a stored show with episodes.
+    func test_load_whenAlreadyInStoreWithEpisodes_refreshPreservesUserOwnedFields() async throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+
+        let cached = Episode(
+            guid: "cached-1",
+            title: "Cached Episode",
+            audioURL: URL(string: "https://cdn.example.com/cached-1.mp3")!,
+            playbackProgress: 0.42
+        )
+        let existing = Podcast(
+            title: "Already Subscribed",
+            feedURL: feedURL,
+            isSubscribed: true,
+            episodes: [cached]
+        )
+        context.insert(existing)
+        try context.save()
+
+        let refreshedCached = makeEpisode(
+            guid: "cached-1",
+            title: "Cached Episode (retitled upstream)",
+            publishDate: Date(timeIntervalSince1970: 1_000)
+        )
+        let fetcher = StubFetcher(result: .success(makeFeed(episodes: [refreshedCached])))
+
+        let viewModel = PodcastDetailViewModel(feedURL: feedURL, modelContext: context, fetcher: fetcher)
+        await viewModel.load()
+
+        guard case .loaded(let podcast) = viewModel.state else {
+            return XCTFail("Expected .loaded, got \(viewModel.state)")
+        }
+        XCTAssertTrue(podcast.isSubscribed, "isSubscribed is user-owned and must survive the refresh.")
+        let refreshed = try XCTUnwrap(podcast.episodes.first { $0.guid == "cached-1" })
+        XCTAssertEqual(refreshed.playbackProgress, 0.42, accuracy: 0.0001,
+                        "playbackProgress is user-owned and must survive the refresh.")
+        XCTAssertEqual(refreshed.title, "Cached Episode (retitled upstream)",
+                        "Feed-derived fields like title ARE updated by the refresh.")
     }
 
     /// Regression: a show subscribed from Discover/curated is inserted with

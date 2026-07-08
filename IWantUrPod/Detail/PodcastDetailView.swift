@@ -242,57 +242,100 @@ private struct ArcCard: View {
     @Environment(\.palette) private var palette
 
     var body: some View {
-        VStack(alignment: .leading, spacing: Spacing.sp2) {
-            RemoteArtwork(url: artworkURL, seed: seed, initial: initial, cornerRadius: Radius.rSm12)
-                .frame(height: 94)
-                .overlay(alignment: .topLeading) {
-                    if let season = arc.season {
-                        Text("Season \(season)")
-                            .typeStyle(Typography.badgeStyle)
-                            .foregroundStyle(palette.text)
-                            .padding(.horizontal, Spacing.sp2)
-                            .padding(.vertical, 4)
-                            .background(.ultraThinMaterial, in: Capsule())
-                            .padding(Spacing.sp2)
-                    }
-                }
-                .accessibilityHidden(true)
+        VStack(alignment: .leading, spacing: Spacing.sp2) {   // .arc-card { gap: 8px }
+            cover
 
-            Text(arc.name)
+            Text(arc.name)                                    // .arc-name
                 .typeStyle(Typography.rowTitleStyle)
                 .foregroundStyle(palette.text)
-                .lineLimit(2)
-                .fixedSize(horizontal: false, vertical: true)
+                // .arc-name { min-height: 2.3em; -webkit-line-clamp: 2 } — always
+                // reserve two lines so a one-line arc name occupies the same
+                // height as a two-line one, keeping the count + "Add all" button
+                // aligned across cards in the rail.
+                .lineLimit(2, reservesSpace: true)
 
-            Text("\(arc.episodes.count) episodes")
+            Text("\(arc.episodes.count) episodes")            // .arc-parts
                 .typeStyle(Typography.subheadStyle)
                 .foregroundStyle(palette.textDim)
 
             addAllButton
         }
-        .frame(width: 150, alignment: .leading)
+        .padding(Spacing.sp3)                                  // .arc-card { padding: --sp-3 }
+        .frame(width: 176, alignment: .leading)               // .arc-card { width: 176px }
+        .background(palette.surface, in: RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous))
+        .elevList(hairline: palette.hairline)                 // --elev-list: surface float
         .accessibilityElement(children: .combine)
     }
 
+    /// `.arc-cover` — a 16:10 cover-cropped image (falling back to the seeded
+    /// gradient tile) with an inset white hairline and the optional season badge.
+    /// Can't reuse `RemoteArtwork`, which hard-forces a square aspect.
+    private var cover: some View {
+        RoundedRectangle(cornerRadius: Radius.rSm12, style: .continuous)
+            .fill(ArtworkStyle(seed: seed).gradient)          // fallback (no image yet / nil)
+            .overlay {
+                if let artworkURL {
+                    AsyncImage(url: artworkURL) { image in
+                        image.resizable().scaledToFill()      // background-size: cover
+                    } placeholder: {
+                        Color.clear                           // gradient shows through
+                    }
+                }
+            }
+            .aspectRatio(16.0 / 10.0, contentMode: .fit)      // .arc-cover { aspect-ratio: 16/10 }
+            .frame(maxWidth: .infinity)
+            .clipShape(RoundedRectangle(cornerRadius: Radius.rSm12, style: .continuous))
+            .overlay {                                        // inset 0 0 0 .5px rgba(255,255,255,.14)
+                RoundedRectangle(cornerRadius: Radius.rSm12, style: .continuous)
+                    .strokeBorder(Color.white.opacity(0.14), lineWidth: 0.5)
+            }
+            .overlay(alignment: .topLeading) { seasonBadge }
+            .accessibilityHidden(true)
+    }
+
+    @ViewBuilder private var seasonBadge: some View {
+        if let season = arc.season {                          // .arc-season
+            Text("Season \(season)")
+                .font(.system(size: 10.9, weight: .heavy))    // .68rem/800, title-case (not badgeStyle's caps)
+                .foregroundStyle(.white)
+                .padding(.horizontal, Spacing.sp2)            // 3px 8px
+                .padding(.vertical, 3)
+                .background(Color(hex: 0x0A070E, alpha: 0.62), in: Capsule())
+                .padding(Spacing.sp2)                         // top: 8px, left: 8px
+        }
+    }
+
+    /// `.arc-add` — a filled 135° accent→accent-2 gradient pill (not a tinted
+    /// outline). Added state flips to a `--chip` fill with `--accent-2` text.
     private var addAllButton: some View {
         Button(action: onAddAll) {
-            HStack(spacing: Spacing.sp1) {
-                Image(systemName: isAdded ? "checkmark" : "plus")
-                    .font(.system(size: 12, weight: .heavy))
+            HStack(spacing: 6) {                              // .arc-add { gap: 6px }
+                Image(systemName: "plus")                     // plus SVG (unchanged in added state, per kit JS)
+                    .font(.system(size: 13, weight: .heavy))
                 Text(isAdded ? "Added" : "Add all \(arc.episodes.count)")
-                    .typeStyle(Typography.subheadStyle)
+                    .font(.system(size: 12.8, weight: .heavy))  // .8rem/800
                     .lineLimit(1)
             }
-            .foregroundStyle(isAdded ? palette.accent2 : palette.accent)
-            .padding(.horizontal, Spacing.sp3)
-            .padding(.vertical, Spacing.sp1)
-            .frame(maxWidth: .infinity)
-            .background(
-                Capsule(style: .continuous)
-                    .fill(isAdded ? palette.accent2.opacity(0.16) : palette.accent.opacity(0.14))
-            )
+            .foregroundStyle(isAdded ? palette.accent2 : palette.onAccent)
+            .frame(maxWidth: .infinity, minHeight: 34)        // .arc-add { height: 34px }
+            .background {
+                if isAdded {
+                    Capsule(style: .continuous).fill(palette.chip)
+                } else {
+                    // linear-gradient(135deg, accent, color-mix(accent 55%, accent-2))
+                    Capsule(style: .continuous).fill(
+                        LinearGradient(
+                            // color-mix(in srgb, accent 55%, accent-2) — 45% toward accent-2.
+                            colors: [palette.accent, palette.accent.mix(with: palette.accent2, by: 0.45)],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                }
+            }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(ArcAddPressStyle())                      // .arc-add:active { scale .94 }
         .accessibilityLabel(isAdded ? "Added all \(arc.episodes.count) episodes" : "Add all \(arc.episodes.count) episodes")
     }
 
@@ -303,6 +346,17 @@ private struct ArcCard: View {
     private var initial: String {
         guard let first = arc.name.first(where: { !$0.isWhitespace }) else { return "?" }
         return String(first).uppercased()
+    }
+}
+
+/// `.arc-add:active { transform: scale(.94) }` — press feedback for the Add-all pill.
+private struct ArcAddPressStyle: ButtonStyle {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed && !reduceMotion ? 0.94 : 1)
+            .animation(Motion.easeSpring(), value: configuration.isPressed)
     }
 }
 

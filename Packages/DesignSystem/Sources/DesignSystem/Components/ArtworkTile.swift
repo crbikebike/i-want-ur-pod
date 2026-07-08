@@ -43,8 +43,9 @@ public enum ArtworkStyle: Int, CaseIterable, Sendable, Hashable {
     }
 
     /// The tile's 140°-style linear gradient (top-leading → bottom-trailing),
-    /// consumed by poster tiles such as `ResultCard`.
-    var gradient: LinearGradient {
+    /// consumed by poster tiles such as `ResultCard`, and by the Story-arcs
+    /// 16:10 cover fallback (which can't reuse the square `GradientArtwork`).
+    public var gradient: LinearGradient {
         LinearGradient(colors: stops, startPoint: .topLeading, endPoint: .bottomTrailing)
     }
 }

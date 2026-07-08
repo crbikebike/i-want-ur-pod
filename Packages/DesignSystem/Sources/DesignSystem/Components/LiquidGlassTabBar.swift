@@ -68,6 +68,7 @@ public struct LiquidGlassTabBar: View {
     @Binding private var selection: AppTab
     @Binding private var searchQuery: String
     private let onCancelSearch: () -> Void
+    private let onSubmitSearch: () -> Void
 
     @Environment(\.palette) private var palette
     @Environment(\.colorScheme) private var colorScheme
@@ -80,14 +81,18 @@ public struct LiquidGlassTabBar: View {
     ///     search state (e.g. a view model's `query`).
     ///   - onCancelSearch: Called when ✕ is tapped — the caller restores
     ///     whichever tab was active before Search.
+    ///   - onSubmitSearch: Called when the field's keyboard "Search"/Return is
+    ///     pressed — the caller commits the query to its full results screen.
     public init(
         selection: Binding<AppTab>,
         searchQuery: Binding<String> = .constant(""),
-        onCancelSearch: @escaping () -> Void = {}
+        onCancelSearch: @escaping () -> Void = {},
+        onSubmitSearch: @escaping () -> Void = {}
     ) {
         self._selection = selection
         self._searchQuery = searchQuery
         self.onCancelSearch = onCancelSearch
+        self.onSubmitSearch = onSubmitSearch
     }
 
     private var isTakeoverActive: Bool { selection == .search }
@@ -182,6 +187,7 @@ public struct LiquidGlassTabBar: View {
                 .autocorrectionDisabled()
                 .foregroundStyle(palette.text)
                 .submitLabel(.search)
+                .onSubmit(onSubmitSearch)
         }
         .padding(.horizontal, Spacing.sp3)
         .frame(height: 40)

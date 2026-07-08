@@ -12,12 +12,19 @@ import FeedParsingKit
 
 /// View model for the one adaptive Podcast Detail screen.
 ///
-/// **Store-first**: on `load()`, looks up an existing `Podcast` by `feedURL`
-/// in the injected `ModelContext`. If found, shows it immediately with no
-/// network call (this is how a subscribed show — reached from the Podcasts
-/// tab in E3, or re-visited from Discover — opens instantly). If absent,
-/// fetches the feed via the injected `FeedFetching` seam and upserts it via
-/// `FeedUpsert` (E0), then shows the freshly-persisted `Podcast`.
+/// **Store-first render, then refresh**: on `load()`, looks up an existing
+/// `Podcast` by `feedURL` in the injected `ModelContext`. If found (and it
+/// already has episodes), it's shown immediately with no wait on the network
+/// (this is how a subscribed show — reached from the Podcasts tab in E3, or
+/// re-visited from Discover — opens instantly). The loader then still fetches
+/// the feed in the background and upserts it via `FeedUpsert` (E0) so newly
+/// published episodes and feed-derived field updates (e.g. season/episode
+/// numbers) make it into the store; a failed background refresh is swallowed
+/// silently and the store-first render stands. If no stored row exists (or it
+/// has no episodes yet), the fetch is on the critical path: it fetches the
+/// feed via the injected `FeedFetching` seam and upserts it via `FeedUpsert`,
+/// then shows the freshly-persisted `Podcast`, or an `.error` state if that
+/// fetch fails.
 @MainActor
 @Observable
 public final class PodcastDetailViewModel {
@@ -72,12 +79,35 @@ public final class PodcastDetailViewModel {
             // its episodes. A show subscribed from Discover/curated is inserted
             // metadata-only (no episodes) by the subscribe flow, so an existing
             // row with an empty `episodes` must still fetch the feed to populate
-            // them. `FeedUpsert` is idempotent and preserves user-owned fields
-            // (isSubscribed/dateAdded/downloadState/playbackProgress), so
-            // upserting onto the existing row fills in episodes without dropping
-            // the subscription.
+            // them (that case falls through to the fetch-on-critical-path
+            // branch below). `FeedUpsert` is idempotent and preserves
+            // user-owned fields (isSubscribed/dateAdded/downloadState/
+            // playbackProgress), so upserting onto the existing row fills in
+            // episodes without dropping the subscription.
             if let existing, !existing.episodes.isEmpty {
+                // Render instantly from the store — no waiting on the network.
                 state = .loaded(existing)
+
+                // Then refresh in the background so newly published episodes
+                // and feed-derived field updates (season/episodeNumber/
+                // episodeType, etc.) land in the store. Best-effort: a failed
+                // refresh (e.g. offline) is swallowed silently and the
+                // store-first render stands (matches E3-S2's best-effort-on-
+                // the-network semantics — offline detail open must keep
+                // working from the store, never show an error over live data).
+                do {
+                    let parsed = try await fetcher.fetch(url: feedURL)
+                    let podcast = try FeedUpsert.upsert(parsed, into: modelContext)
+                    try modelContext.save()
+                    // SwiftData's @Observable relationship would re-render the
+                    // view on its own, but re-setting `state` keeps `podcast`
+                    // (and thus `episodes`/`arcs`/etc., all derived from
+                    // `state`) unambiguously pointing at the just-upserted row.
+                    state = .loaded(podcast)
+                } catch {
+                    // Refresh failed — the stored data already rendered above
+                    // stands. No `.error` state.
+                }
                 return
             }
 

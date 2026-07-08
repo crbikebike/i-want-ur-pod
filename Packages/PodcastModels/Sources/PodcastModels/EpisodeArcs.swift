@@ -8,7 +8,12 @@ import Foundation
 /// One derived narrative arc grouping episodes that share a title structure
 /// (`Arc | Title | N` or `Arc - Part N - Subtitle`).
 public struct Arc: Sendable, Hashable, Identifiable {
-    public var id: String { name }
+    /// Unique per arc even when a title arc and a season-fallback card land on
+    /// the same `name` (theoretically possible — e.g. a title arc called
+    /// "Season 4" colliding with a literal `Season 4` fallback card). Title
+    /// arcs use a bare `name`; season-fallback cards suffix `#<season>` so
+    /// they can never collide with a title arc's id.
+    public var id: String
 
     /// The arc's display name (e.g. "American Revolution", "Heinrich Barth").
     public var name: String
@@ -20,6 +25,24 @@ public struct Arc: Sendable, Hashable, Identifiable {
     /// The arc's member episodes, in the same order they were passed in
     /// (callers pass newest-first, so this stays newest-first too).
     public var episodes: [Episode]
+
+    public init(id: String, name: String, season: Int?, episodes: [Episode]) {
+        self.id = id
+        self.name = name
+        self.season = season
+        self.episodes = episodes
+    }
+
+    /// Convenience for title arcs, whose `id` is just the (unique-by-construction) name.
+    fileprivate init(titleArcName name: String, season: Int?, episodes: [Episode]) {
+        self.init(id: name, name: name, season: season, episodes: episodes)
+    }
+
+    /// Convenience for season-fallback cards, whose `id` is suffixed with the
+    /// season to guarantee no collision with a title arc's id.
+    fileprivate init(seasonCardName name: String, season: Int, episodes: [Episode]) {
+        self.init(id: "\(name)#\(season)", name: name, season: season, episodes: episodes)
+    }
 }
 
 /// Derives story arcs from episode-title structure (`docs/design/direction.md`
@@ -45,6 +68,41 @@ public enum ArcDerivation {
     /// `Arc - Part N - Subtitle` (The Explorers Podcast). Subtitle is optional.
     private static let partArcPattern: NSRegularExpression = {
         try! NSRegularExpression(pattern: #"^(.+?)\s*-\s*Part\s*(\d+)\s*(?:-\s*(.*))?$"#, options: [.caseInsensitive])
+    }()
+
+    /// `Chapter N | Title` / `Chapter N: Title` (Bone Valley). No arc name
+    /// lives in the title here — these shows group by `itunes:season`
+    /// instead (see `groupBySeason`), so this pattern only extracts the
+    /// display title and part number.
+    private static let chapterArcPattern: NSRegularExpression = {
+        try! NSRegularExpression(pattern: #"^Chapter\s*(\d+)\s*[|:]\s*(.+)$"#, options: [.caseInsensitive])
+    }()
+
+    /// Trailing `(Part N)` / `[Part N]` (Fall of Civilizations). Anchored at
+    /// `$` so a mid-title `(Part N)` (e.g. inside a longer parenthetical)
+    /// can't fire.
+    private static let trailingParenPartArcPattern: NSRegularExpression = {
+        try! NSRegularExpression(pattern: #"^(.+?)\s*[(\[]\s*Part\s*(\d+)\s*[)\]]\s*$"#, options: [.caseInsensitive])
+    }()
+
+    /// Trailing `, Part N`.
+    private static let trailingCommaPartArcPattern: NSRegularExpression = {
+        try! NSRegularExpression(pattern: #"^(.+?),\s*Part\s*(\d+)\s*$"#, options: [.caseInsensitive])
+    }()
+
+    /// Trailing `- Ep. N` / `- Ep N` / `- Episode N` (Serial).
+    private static let trailingEpArcPattern: NSRegularExpression = {
+        try! NSRegularExpression(pattern: #"^(.+?)\s*-\s*Ep(?:isode|\.)?\s*(\d+)\s*$"#, options: [.caseInsensitive])
+    }()
+
+    /// Trailing `- Chapter N` (Serial's serialized-book seasons, e.g. "The
+    /// Idiot - Chapter 1"). End-anchored so it can't fire on the pre-existing
+    /// start-anchored `chapterArcPattern` (`^Chapter N | Title` — Bone
+    /// Valley), which is checked first and extracts no arc name; this one
+    /// does extract an arc name, since here it's the part before "Chapter"
+    /// that names the arc.
+    private static let trailingChapterArcPattern: NSRegularExpression = {
+        try! NSRegularExpression(pattern: #"^(.+?)\s*-\s*Chapter\s*(\d+)\s*$"#, options: [.caseInsensitive])
     }()
 
     /// Derives `(arcName, displayTitle, part)` from a raw episode title.
@@ -81,6 +139,40 @@ public enum ArcDerivation {
             return (arc.isEmpty ? nil : arc, displayTitle, part)
         }
 
+        if let match = firstMatch(chapterArcPattern, in: cleaned) {
+            let part = Int(string(cleaned, match, 1).trimmed)
+            let episodeTitle = string(cleaned, match, 2).trimmed
+            return (nil, episodeTitle.isEmpty ? cleaned : episodeTitle, part)
+        }
+
+        if let match = firstMatch(trailingParenPartArcPattern, in: cleaned) {
+            let arc = string(cleaned, match, 1).trimmed
+            let part = Int(string(cleaned, match, 2).trimmed)
+            let displayTitle = part.map { "Part \($0)" } ?? cleaned
+            return (arc.isEmpty ? nil : arc, displayTitle, part)
+        }
+
+        if let match = firstMatch(trailingCommaPartArcPattern, in: cleaned) {
+            let arc = string(cleaned, match, 1).trimmed
+            let part = Int(string(cleaned, match, 2).trimmed)
+            let displayTitle = part.map { "Part \($0)" } ?? cleaned
+            return (arc.isEmpty ? nil : arc, displayTitle, part)
+        }
+
+        if let match = firstMatch(trailingEpArcPattern, in: cleaned) {
+            let arc = string(cleaned, match, 1).trimmed
+            let part = Int(string(cleaned, match, 2).trimmed)
+            let displayTitle = part.map { "Ep. \($0)" } ?? cleaned
+            return (arc.isEmpty ? nil : arc, displayTitle, part)
+        }
+
+        if let match = firstMatch(trailingChapterArcPattern, in: cleaned) {
+            let arc = string(cleaned, match, 1).trimmed
+            let part = Int(string(cleaned, match, 2).trimmed)
+            let displayTitle = part.map { "Chapter \($0)" } ?? cleaned
+            return (arc.isEmpty ? nil : arc, displayTitle, part)
+        }
+
         return (nil, cleaned, nil)
     }
 
@@ -93,7 +185,48 @@ public enum ArcDerivation {
     /// isn't a series yet (matches `design/kit/data/american-history-tellers.json`'s
     /// `arcs` array, whose entries are already multi-part story groupings —
     /// there is no such thing as a 1-episode "arc" in that data).
+    ///
+    /// **Precedence (ROADMAP E8-S6: "season data, or title patterns"),
+    /// per-season since 2026-07-07:** title-derived arcs (`groupByTitle`) win
+    /// unconditionally — their membership, names, and order are untouched by
+    /// what follows. The `itunes:season` fallback then runs **per season**,
+    /// not all-or-nothing for the whole show: a season is only eligible for
+    /// a fallback card when **none** of its episodes already belong to a
+    /// title arc. This fixes teaser feeds like Serial, where most seasons
+    /// carry one full episode + a trailer (never reaching the title pass's
+    /// 2-episode threshold) alongside a few seasons that *do* form title
+    /// arcs — under the old all-or-nothing rule, the one title arc that
+    /// existed suppressed the season fallback for every other season,
+    /// collapsing the whole show to a single arc. It still protects shows
+    /// like American History Tellers (which sets `itunes:season` per arc
+    /// *and* has pipe-style titles, plus ~2-3 cross-promo episodes per
+    /// season that aren't part of the arc): because AHT's arc-bearing
+    /// seasons always have a title-arc member, they're ineligible for a
+    /// fallback card, so the cross-promo leftovers stay singles rather than
+    /// forming junk "Season N" cards. See `groupBySeason` for the per-season
+    /// eligibility and naming rules, and `mergeByRecency` for how the two
+    /// arc lists are combined into one shelf ordering.
     public static func groupIntoArcs(_ episodes: [Episode]) -> [Arc] {
+        let titleArcs = groupByTitle(episodes)
+        let titleArcMemberGUIDs = Set(titleArcs.flatMap(\.episodes).map(\.guid))
+        let seasonCards = groupBySeason(episodes, excludingSeasonsOf: titleArcMemberGUIDs)
+        return mergeByRecency(titleArcs, seasonCards)
+    }
+
+    /// Merges two newest-first-ordered arc lists into one, ordered by the
+    /// recency of each arc's newest episode. Both `groupByTitle` and
+    /// `groupBySeason` build their members by iterating a newest-first
+    /// input, so `episodes.first` is always an arc's newest episode.
+    private static func mergeByRecency(_ lhs: [Arc], _ rhs: [Arc]) -> [Arc] {
+        (lhs + rhs).sorted { arcA, arcB in
+            let dateA = arcA.episodes.first?.publishDate ?? .distantPast
+            let dateB = arcB.episodes.first?.publishDate ?? .distantPast
+            return dateA > dateB
+        }
+    }
+
+    /// Groups episodes into arcs by title structure alone (see `derive(fromTitle:)`).
+    private static func groupByTitle(_ episodes: [Episode]) -> [Arc] {
         var order: [String] = []
         var membersByName: [String: [Episode]] = [:]
 
@@ -111,11 +244,71 @@ public enum ArcDerivation {
             guard let members = membersByName[name], members.count >= 2 else { return nil }
             let seasons = Set(members.compactMap(\.season))
             let season = seasons.count == 1 ? seasons.first : nil
-            return Arc(name: name, season: season, episodes: members)
+            return Arc(titleArcName: name, season: season, episodes: members)
         }
         // `order` was built in encounter order over a newest-first input, so
         // the first episode seen for an arc is its newest — `order` is
         // already sorted by arc recency. No further sort needed.
+    }
+
+    /// Fallback grouping by `itunes:season`, per-season since 2026-07-07 (see
+    /// the precedence note on `groupIntoArcs`). A season is **excluded**
+    /// entirely when any of its episodes' guids appear in
+    /// `excludedGUIDs` (the membership of the title arcs already found) —
+    /// that season's leftovers (trailers, cross-promos) stay singles rather
+    /// than forming a redundant or junk card. Episodes without a season are
+    /// always excluded. Remaining seasons need **2 or more** members (same
+    /// "not a series yet" rule as the title pass).
+    ///
+    /// Naming: a season card is named after the **most frequent non-nil
+    /// `arcName`** that `derive(fromTitle:)` extracts from its members' —
+    /// this recovers a real series name (e.g. Serial's "The Preventionist")
+    /// even when the title itself couldn't reach the title pass's 2-episode
+    /// threshold (one full episode + a trailer, where the trailer derives no
+    /// arc name). Ties, or no non-nil arc name among the members at all,
+    /// fall back to the generic `"Season N"`.
+    private static func groupBySeason(_ episodes: [Episode], excludingSeasonsOf excludedGUIDs: Set<String>) -> [Arc] {
+        var order: [Int] = []
+        var membersBySeason: [Int: [Episode]] = [:]
+        var excludedSeasons: Set<Int> = []
+
+        for episode in episodes {
+            guard let season = episode.season else { continue }
+            if excludedGUIDs.contains(episode.guid) {
+                excludedSeasons.insert(season)
+            }
+            if membersBySeason[season] == nil {
+                membersBySeason[season] = []
+                order.append(season)
+            }
+            membersBySeason[season, default: []].append(episode)
+        }
+
+        return order
+            .compactMap { season -> Arc? in
+                guard !excludedSeasons.contains(season) else { return nil }
+                guard let members = membersBySeason[season], members.count >= 2 else { return nil }
+                return Arc(seasonCardName: seasonCardName(for: members, season: season), season: season, episodes: members)
+            }
+            .sorted { ($0.season ?? Int.min) > ($1.season ?? Int.min) }
+    }
+
+    /// The most frequent non-nil `arcName` `derive(fromTitle:)` extracts
+    /// across `members`; `"Season N"` on a tie or when no member derives a
+    /// name at all.
+    private static func seasonCardName(for members: [Episode], season: Int) -> String {
+        var counts: [String: Int] = [:]
+        for member in members {
+            let (arcName, _, _) = derive(fromTitle: member.title)
+            guard let arcName else { continue }
+            counts[arcName, default: 0] += 1
+        }
+        let maxCount = counts.values.max() ?? 0
+        let topNames = counts.filter { $0.value == maxCount }.keys
+        guard maxCount > 0, topNames.count == 1, let winner = topNames.first else {
+            return "Season \(season)"
+        }
+        return winner
     }
 
     // MARK: - Helpers

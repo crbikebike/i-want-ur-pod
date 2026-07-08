@@ -100,7 +100,8 @@ public struct AppShell: View {
                 LiquidGlassTabBar(
                     selection: tabSelectionBinding,
                     searchQuery: searchQueryBinding,
-                    onCancelSearch: { selection = previousTab }
+                    onCancelSearch: { selection = previousTab },
+                    onSubmitSearch: { searchViewModel?.submit() }
                 )
             }
             .padding(.bottom, Self.tabBarBottomInset)

@@ -1,33 +1,45 @@
-// Discover search state machine. Drives design/kit/screens/{first-run,search-typing,
-// search-loading,search-noresults,search-error}.html — one `State` per screen. Search flows through
-// DirectoryKit's SearchCoordinator (primary + fallback, docs/design/direction.md §12).
+// Search state machine. Drives design/kit/screens/{search-start,search-typing,
+// search-loading,search-results,search-noresults,search-error}.html — one `State`
+// per screen. Search flows through DirectoryKit's SearchCoordinator (primary +
+// fallback, docs/design/direction.md §12).
+//
+// The kit is a two-screen flow: while you type, `.typing` shows a live
+// *suggestions* list (search-typing.html); committing (keyboard Return →
+// `submit()`) promotes to the full `.results` screen (search-results.html) with
+// its featured top result. Tapping a suggestion opens the show directly, so the
+// full results screen is a deliberate commit, not an auto-transition — the only
+// way both kit screens are reachable.
 import Foundation
 import Observation
 import DirectoryKit
 
-/// View model for the Discover screen.
+/// View model for the Search takeover.
 ///
 /// Owns the debounced search `query`, resolves it to a `State` that maps 1:1
-/// onto the kit's Discover screens, and delegates the actual lookup to an
-/// injected ``SearchCoordinator``. A query change cancels any in-flight work,
-/// debounces, then searches; `submit()` searches immediately.
+/// onto the kit's search screens, and delegates the actual lookup to an
+/// injected ``SearchCoordinator``. Typing debounces then fetches *suggestions*
+/// into `.typing(_)`; `submit()` commits to the full `.results` screen (reusing
+/// the last fetch when the query is unchanged, else fetching with the
+/// loading/error path).
 @MainActor
 @Observable
 public final class DiscoverViewModel {
 
-    /// One state per Discover screen in the kit.
+    /// One state per search screen in the kit.
     public enum State: Equatable, Sendable {
-        /// Empty query — the discovery prompt (`first-run.html`).
+        /// Empty query — the rest/browse state (`search-start.html`).
         case firstRun
-        /// A query too short to search yet, or awaiting the debounce (`typing.html`).
-        case typing
-        /// A search is in flight (`loading.html`).
+        /// Mid-typing: live typeahead suggestions, empty until the first fetch
+        /// resolves (`search-typing.html`).
+        case typing([SearchResult])
+        /// A committed search is in flight (`search-loading.html`).
         case loading
-        /// A non-empty result set (the grouped results list).
+        /// A committed, non-empty result set — top result + "More shows"
+        /// (`search-results.html`).
         case results([SearchResult])
-        /// A completed search that matched nothing (`no-results.html`).
+        /// A completed search that matched nothing (`search-noresults.html`).
         case noResults
-        /// The search failed; carries a human-readable message (`error.html`).
+        /// The search failed; carries a human-readable message (`search-error.html`).
         case error(String)
     }
 
@@ -52,6 +64,12 @@ public final class DiscoverViewModel {
 
     private var debounceTask: Task<Void, Never>?
     private var searchTask: Task<Void, Never>?
+
+    /// The most recent successful fetch and the term it was for, so `submit()`
+    /// can promote already-loaded suggestions to the full results screen without
+    /// a redundant round-trip when the query hasn't changed.
+    private var lastResults: [SearchResult] = []
+    private var lastResultsTerm: String?
 
     /// - Parameters:
     ///   - coordinator: The search orchestrator (primary + fallback sources).
@@ -87,16 +105,27 @@ public final class DiscoverViewModel {
 
     // MARK: - Intents
 
-    /// Search immediately, bypassing the debounce (keyboard "Search" / return).
+    /// Commit the current query to the full results screen (keyboard "Search" /
+    /// Return). Reuses the last suggestion fetch when it's for the same term,
+    /// otherwise runs a fresh search with the loading/error path.
     public func submit() {
         debounceTask?.cancel()
+        debounceTask = nil
         let term = trimmedQuery
         guard !term.isEmpty else {
             cancelAll()
             state = .firstRun
             return
         }
-        startSearch(term: term)
+        // Already have live suggestions for this exact term → promote straight
+        // to results without a redundant round-trip.
+        if term == lastResultsTerm {
+            searchTask?.cancel()
+            searchTask = nil
+            state = lastResults.isEmpty ? .noResults : .results(lastResults)
+            return
+        }
+        startSearch(term: term, committed: true)
     }
 
     /// Re-run the last query — the error state's "Retry" action.
@@ -104,13 +133,13 @@ public final class DiscoverViewModel {
         submit()
     }
 
-    /// Clear the query and return to the first-run prompt — the no-results
-    /// state's "Clear search" action.
+    /// Clear the query and return to the rest state — the no-results state's
+    /// "Clear search" action.
     public func clear() {
         query = ""   // triggers `queryDidChange()` → `.firstRun`
     }
 
-    /// Seed the field with a suggestion and search it (first-run suggestion chips).
+    /// Seed the field with a suggestion and search it.
     public func search(for suggestion: String) {
         query = suggestion
     }
@@ -126,42 +155,62 @@ public final class DiscoverViewModel {
         let term = trimmedQuery
 
         if term.isEmpty {
+            lastResultsTerm = nil
+            lastResults = []
             state = .firstRun
             return
         }
         if term.count < minimumCharacters {
-            state = .typing
+            // Too short to fetch — show the suggestions state with nothing yet
+            // (the browse rail sits beneath it in the screen).
+            state = .typing([])
             return
         }
 
-        state = .typing
+        // Keep whatever suggestions are already on screen while the next fetch
+        // debounces, so the list doesn't flash empty on every keystroke.
+        if case .typing = state {} else { state = .typing([]) }
         debounceTask = Task { [weak self, debounce] in
             try? await Task.sleep(for: debounce)
             guard !Task.isCancelled, let self else { return }
-            self.startSearch(term: term)
+            self.startSearch(term: term, committed: false)
         }
     }
 
-    private func startSearch(term: String) {
+    /// - Parameter committed: `true` for a `submit()`-driven full search (shows
+    ///   the loading skeleton, then the results/no-results/error screen);
+    ///   `false` for a live typeahead fetch (resolves into `.typing(_)` and
+    ///   swallows errors so mid-typing never shows an error card).
+    private func startSearch(term: String, committed: Bool) {
         searchTask?.cancel()
         searchTask = Task { [weak self] in
-            await self?.performSearch(term: term)
+            await self?.performSearch(term: term, committed: committed)
         }
     }
 
-    private func performSearch(term: String) async {
-        state = .loading
+    private func performSearch(term: String, committed: Bool) async {
+        if committed { state = .loading }
         do {
             let results = try await coordinator.search(term: term)
             guard !Task.isCancelled else { return }
             // Ignore a resolution that no longer matches the current query.
             guard term == trimmedQuery else { return }
-            state = results.isEmpty ? .noResults : .results(results)
+            lastResults = results
+            lastResultsTerm = term
+            if committed {
+                state = results.isEmpty ? .noResults : .results(results)
+            } else {
+                state = .typing(results)
+            }
         } catch is CancellationError {
             // Superseded by a newer query — leave state to the newer task.
         } catch {
             guard !Task.isCancelled, term == trimmedQuery else { return }
-            state = .error(Self.message(for: error))
+            // Mid-typing failures stay quiet (keep the suggestions/browse view);
+            // only a committed search surfaces the error screen.
+            if committed {
+                state = .error(Self.message(for: error))
+            }
         }
     }
 
