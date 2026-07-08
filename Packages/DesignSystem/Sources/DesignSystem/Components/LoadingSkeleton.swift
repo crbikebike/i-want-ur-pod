@@ -121,11 +121,19 @@ private struct SkeletonShelf: View {
             }
             .padding(.horizontal, 2)
 
-            HStack(spacing: Spacing.sp3) {   // .sk-rail { gap: --sp-3 }
-                SkeletonPod()
-                SkeletonPod()
-                SkeletonPod()
+            // A horizontal rail like `ResultShelf`'s — scrolls/clips at the
+            // trailing edge (kit `.sk-rail` overflow: hidden) rather than
+            // imposing a >viewport minimum width on the whole skeleton (which
+            // would shove the "Searching for …" header off the leading gutter).
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: Spacing.sp3) {   // .sk-rail { gap: --sp-3 }
+                    SkeletonPod()
+                    SkeletonPod()
+                    SkeletonPod()
+                }
+                .padding(.vertical, 4)
             }
+            .scrollDisabled(true)   // decorative placeholder — not interactive
         }
     }
 }
@@ -149,6 +157,7 @@ public struct LoadingSkeleton: View {
                 SkeletonShelf()
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Loading results")
         .accessibilityAddTraits(.updatesFrequently)

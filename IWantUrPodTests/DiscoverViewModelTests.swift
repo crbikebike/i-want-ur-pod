@@ -46,4 +46,76 @@ final class DiscoverViewModelTests: XCTestCase {
         )
         XCTAssertEqual(viewModel.curatedEntries, [], "A bundle without the curated resource must degrade to an empty shelf, not crash")
     }
+
+    // MARK: - Two-screen flow (search-typing → search-results)
+
+    /// A query below `minimumCharacters` shows the suggestions screen with an
+    /// empty list (the browse rail sits beneath it) — never `.loading`.
+    func test_shortQuery_isTypingWithNoSuggestions() {
+        let viewModel = DiscoverViewModel(coordinator: makeCoordinator(), minimumCharacters: 2)
+        viewModel.query = "A"
+        XCTAssertEqual(viewModel.state, .typing([]))
+    }
+
+    /// Typing a searchable query debounces then resolves into live suggestions
+    /// in `.typing(_)` — NOT the committed `.results` screen (that needs submit).
+    func test_typing_resolvesToSuggestions_notResults() async {
+        let viewModel = DiscoverViewModel(
+            coordinator: makeCoordinator(),
+            debounce: .milliseconds(1),
+            minimumCharacters: 2
+        )
+        viewModel.query = "Acq"
+
+        await waitUntil { if case .typing(let s) = viewModel.state { return !s.isEmpty } else { return false } }
+
+        guard case .typing(let suggestions) = viewModel.state else {
+            return XCTFail("Expected .typing(matches), got \(viewModel.state)")
+        }
+        XCTAssertEqual(suggestions.first?.title, "Acquired")
+    }
+
+    /// Committing (keyboard Return → `submit()`) promotes the loaded suggestions
+    /// to the full results screen.
+    func test_submit_promotesSuggestionsToResults() async {
+        let viewModel = DiscoverViewModel(
+            coordinator: makeCoordinator(),
+            debounce: .milliseconds(1),
+            minimumCharacters: 2
+        )
+        viewModel.query = "Acq"
+        await waitUntil { if case .typing(let s) = viewModel.state { return !s.isEmpty } else { return false } }
+
+        viewModel.submit()
+
+        guard case .results(let results) = viewModel.state else {
+            return XCTFail("Expected .results after submit, got \(viewModel.state)")
+        }
+        XCTAssertEqual(results.first?.title, "Acquired")
+    }
+
+    /// Submitting an empty query returns to the rest state, never a blank search.
+    func test_submit_withEmptyQuery_returnsFirstRun() {
+        let viewModel = DiscoverViewModel(coordinator: makeCoordinator())
+        viewModel.submit()
+        XCTAssertEqual(viewModel.state, .firstRun)
+    }
+
+    // MARK: - Helpers
+
+    /// Polls `condition` until true or a timeout, yielding between checks so the
+    /// view model's debounce + fetch tasks can run.
+    private func waitUntil(
+        timeout: Duration = .seconds(2),
+        _ condition: () -> Bool,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) async {
+        let deadline = ContinuousClock.now + timeout
+        while ContinuousClock.now < deadline {
+            if condition() { return }
+            try? await Task.sleep(for: .milliseconds(5))
+        }
+        XCTAssertTrue(condition(), "Timed out waiting for condition", file: file, line: line)
+    }
 }
