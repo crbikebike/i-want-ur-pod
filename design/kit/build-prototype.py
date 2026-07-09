@@ -31,6 +31,7 @@ SCREEN_FILES = [
     ("search-results",   "search-results.html",    "Results"),
     ("search-noresults", "search-noresults.html",  "No results"),
     ("search-error",     "search-error.html",      "Error"),
+    ("add-feed-url",     "add-feed-url.html",      "Add feed"),
     ("settings",         "settings.html",          "Settings"),
     ("detail-aht",       "podcast-detail-american-history-tellers.html", "Detail · AHT"),
     ("detail-explorers", "podcast-detail-explorers-podcast.html",        "Detail · Explorers"),
@@ -40,7 +41,7 @@ SCREEN_FILES = [
 # Which buttons appear in the out-of-frame "jump" strip (name -> label).
 JUMP = ["home", "shows", "up-next", "search-start", "search-typing",
         "search-loading", "search-results", "search-noresults", "search-error",
-        "settings", "detail-aht", "detail-explorers", "first-run"]
+        "add-feed-url", "settings", "detail-aht", "detail-explorers", "first-run"]
 
 
 def esc_for_template_literal(s: str) -> str:
@@ -195,6 +196,7 @@ const NAMES = {
   'home':'Home','shows':'Shows','up-next':'Up Next','search-start':'Search',
   'search-typing':'Search · typing','search-loading':'Search · loading',
   'search-noresults':'Search · no results','search-error':'Search · error',
+  'add-feed-url':'Add feed by URL',
   'settings':'Settings','detail-aht':'Detail · American History Tellers',
   'detail-explorers':'Detail · The Explorers Podcast','first-run':'Onboarding'
 };
@@ -309,6 +311,35 @@ function wire(doc, name, opts){
   // auto-advance (loading -> noresults) so Enter feels live
   if(opts.after){
     setTimeout(() => { if(current === name) nav(opts.after, { value: opts.value }); }, 950);
+  }
+
+  // --- Add-feed-by-URL entry points -> the shared sheet ---
+  //     Search "Have a podcast URL?" (.urlcta) + Settings "Add premium…" (.srow-tap)
+  doc.querySelectorAll('.urlcta, .srow-tap').forEach(el =>
+    el.addEventListener('click', e => go(e, 'add-feed-url')));
+  //     Search no-results "Add a direct link" primary action (matched by label)
+  doc.querySelectorAll('.state-actions .btn').forEach(el => {
+    if((el.textContent || '').toLowerCase().includes('direct link'))
+      el.addEventListener('click', e => go(e, 'add-feed-url'));
+  });
+
+  // --- inside the Add-feed sheet: Cancel backs out; Add runs the happy path ---
+  if(name === 'add-feed-url'){
+    const cancel2 = doc.querySelector('.afu-cancel');
+    if(cancel2) cancel2.addEventListener('click', e => go(e, prevScreen));
+    const add = doc.querySelector('#addBtn');
+    const sheet = doc.getElementById('sheet');
+    let advancing = false;   // latch: the screen's own inline JS also flips ready->loading
+    if(add && sheet) add.addEventListener('click', () => {
+      if(advancing) return;
+      advancing = true;
+      sheet.setAttribute('data-state', 'loading');               // Checking…
+      setTimeout(() => {
+        if(current !== name) return;
+        sheet.setAttribute('data-state', 'success');             // Added ✓
+        setTimeout(() => { if(current === name) nav('detail-aht'); }, 1100);  // -> Podcast Detail
+      }, 900);
+    });
   }
 
   // --- onboarding: final CTA lands on Home ---

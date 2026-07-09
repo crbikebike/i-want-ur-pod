@@ -1,0 +1,499 @@
+<!-- @dsCard group="Search" -->
+<title>Add Feed by URL</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  :root {
+    /* --- brand ramp (theme-agnostic) --- */
+    --coral: #FF6A4D;
+    --coral-deep: #CA340F;
+    --mint: #34E0C4;
+    --mint-deep: #046B58;
+    --grape: #7C6BFF;
+
+    /* --- spacing scale (gutter = --sp-5 = 20px, used everywhere) --- */
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 20px;
+    --sp-6: 26px;
+    --sp-7: 32px;
+    --gutter: var(--sp-5);
+
+    /* --- radii --- */
+    --r-lg: 20px;
+    --r-md: 16px;
+    --r-sm: 12px;
+    --r-field: 11px;
+    --r-art: 14px;
+    --r-seg: 9px;
+    --r-pill: 999px;
+
+    /* --- motion --- */
+    --dur-fast: .2s;
+    --dur-mid: .3s;
+    --dur-row: .55s;
+    --dur-rise: .6s;
+    --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+    --ease-soft: cubic-bezier(.22, .61, .36, 1);
+
+    /* --- elevation --- */
+    --elev-list: 0 1px 0 var(--hairline), 0 8px 24px -18px rgba(0,0,0,.5);
+    --elev-card: 0 1px 0 var(--hairline), 0 12px 30px -20px rgba(0,0,0,.55);
+    --elev-sub: 0 6px 14px -8px var(--accent);
+    --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
+
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  /* ---------- DARK (hero) ---------- */
+  :root, :root[data-theme="dark"] {
+    --bg: #0E0B12;
+    --grouped-bg: #0E0B12;
+    --bg-glow-1: rgba(255,106,77,.10);
+    --bg-glow-2: rgba(52,224,196,.07);
+    --surface: #1C1722;
+    --surface-2: #262030;
+    --hairline: rgba(255,255,255,.09);
+    --separator: rgba(255,255,255,.12);
+    --text: #F8F3EF;
+    --text-dim: #ABA1B4;
+    --text-faint: #988DA1;
+    --accent: var(--coral);
+    --accent-2: var(--mint);
+    --on-accent: #2A0E04;
+    --chip: rgba(255,255,255,.08);
+    --chip-text: #F8F3EF;
+    --seg-track: rgba(120,120,128,.24);
+    --seg-thumb: #38313F;
+    --field: rgba(120,120,128,.24);
+    --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
+    --tabbar-icon: #8B8291;
+  }
+
+  /* ---------- LIGHT ---------- */
+  :root[data-theme="light"] {
+    --bg: #F2F1F6;
+    --grouped-bg: #F2F1F6;
+    --bg-glow-1: rgba(245,80,47,.09);
+    --bg-glow-2: rgba(6,169,139,.08);
+    --surface: #FFFFFF;
+    --surface-2: #F6F1EC;
+    --hairline: rgba(40,26,36,.10);
+    --separator: rgba(60,60,67,.18);
+    --text: #1A1420;
+    --text-dim: #6B6472;
+    --text-faint: #736A78;
+    --accent: var(--coral-deep);
+    --accent-2: var(--mint-deep);
+    --on-accent: #FFFFFF;
+    --chip: rgba(118,118,128,.12);
+    --chip-text: #1A1420;
+    --seg-track: rgba(118,118,128,.16);
+    --seg-thumb: #FFFFFF;
+    --field: rgba(118,118,128,.10);
+    --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
+    --tabbar-icon: #6C6C70;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: var(--font);
+    background:
+      radial-gradient(120% 60% at 85% -5%, #211a2b, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #17131e, transparent 55%),
+      #0a070e;
+    color: var(--text);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 28px 12px;
+    transition: background .5s var(--ease-soft);
+  }
+  :root[data-theme="light"] body {
+    background:
+      radial-gradient(120% 60% at 85% -5%, #f0e6f4, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #eef0f6, transparent 55%),
+      #e6e4ee;
+  }
+
+  /* ---------- theme toggle (fixed) ---------- */
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    height: 44px; padding: 0 16px 0 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: var(--r-pill);
+    background: rgba(30,24,38,.7);
+    backdrop-filter: blur(14px);
+    color: #F8F3EF; font-family: var(--font);
+    font-size: .82rem; font-weight: 700; letter-spacing: .01em;
+    cursor: pointer;
+    transition: transform .3s var(--ease-spring), background .3s;
+  }
+  :root[data-theme="light"] .theme-toggle {
+    background: rgba(255,255,255,.82);
+    border-color: rgba(40,26,36,.12);
+    color: #1A1420;
+  }
+  .theme-toggle:active { transform: scale(.92); }
+  .theme-toggle .tg-emoji { font-size: 1rem; transition: transform .5s var(--ease-spring); }
+  .theme-toggle:hover .tg-emoji { transform: rotate(-20deg) scale(1.15); }
+
+  /* ---------- state switcher (authoring aid, top-left; not part of the UI) ---------- */
+  .state-switch {
+    position: fixed; top: 16px; left: 16px; z-index: 100;
+    display: inline-flex; gap: 4px; padding: 4px;
+    border-radius: var(--r-pill);
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(30,24,38,.7); backdrop-filter: blur(14px);
+  }
+  :root[data-theme="light"] .state-switch { background: rgba(255,255,255,.82); border-color: rgba(40,26,36,.12); }
+  .state-switch button {
+    border: none; cursor: pointer; font-family: var(--font);
+    font-size: .72rem; font-weight: 800; letter-spacing: .01em;
+    padding: 6px 11px; border-radius: var(--r-pill);
+    background: transparent; color: var(--text-faint);
+    transition: background .2s, color .2s;
+  }
+  :root[data-theme="dark"] .state-switch button { color: #C6BCCF; }
+  .state-switch button.on { background: var(--accent); color: var(--on-accent); }
+
+  /* ---------- phone frame ---------- */
+  .phone {
+    position: relative;
+    width: 390px; height: 844px;
+    border-radius: 54px;
+    background: var(--bg);
+    box-shadow:
+      0 0 0 12px #050308,
+      0 0 0 14px #322838,
+      0 50px 90px -30px rgba(0,0,0,.85);
+    overflow: hidden;
+    transition: background .5s var(--ease-soft);
+  }
+  .phone::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(58% 20% at 92% 0%, var(--bg-glow-1), transparent 70%),
+      radial-gradient(46% 16% at 2% 6%, var(--bg-glow-2), transparent 72%);
+  }
+  .phone { background: var(--grouped-bg); }
+
+  .screen {
+    position: absolute; inset: 0; z-index: 1;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    background: transparent;
+    transition: background .5s var(--ease-soft);
+  }
+
+  /* ---------- status bar ---------- */
+  .statusbar {
+    height: 54px; flex: none;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 0 28px 8px; font-size: .82rem; font-weight: 700;
+    position: relative; z-index: 30;
+  }
+  .statusbar .sb-right { display: flex; align-items: center; gap: 6px; }
+  .sb-right svg { display: block; }
+  .notch {
+    position: absolute; top: 11px; left: 50%; transform: translateX(-50%);
+    width: 118px; height: 30px; border-radius: 18px; background: #050308; z-index: 40;
+  }
+
+  /* ---------- underlying (dimmed) screen — the surface the sheet is presented over ---------- */
+  .under {
+    position: absolute; inset: 0; z-index: 2;
+    padding: 54px var(--gutter) 0;
+    filter: saturate(.85) brightness(.5);
+    transition: filter .3s var(--ease-soft);
+  }
+  .under .u-title { font-family: var(--font-display); font-weight: 700; font-size: 2.32rem;
+    letter-spacing: -.02em; color: var(--text); }
+  .under .u-hint { margin-top: var(--sp-3); font-size: .82rem; color: var(--text-faint); font-weight: 500; }
+  .under .u-rail { display: flex; gap: var(--sp-3); margin-top: var(--sp-6); }
+  .under .u-pod { flex: none; width: 138px; height: 138px; border-radius: var(--r-md);
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 8px 20px -12px rgba(0,0,0,.55); }
+  .up1 { background: linear-gradient(140deg, #FF7A4D, #FF4D8D); }
+  .up2 { background: linear-gradient(140deg, #34E0C4, #2E8BFF); }
+  .up3 { background: linear-gradient(140deg, #7C6BFF, #34E0C4); }
+
+  /* ---------- scrim ---------- */
+  .scrim {
+    position: absolute; inset: 0; z-index: 10;
+    background: rgba(6,4,10,.5);
+    -webkit-backdrop-filter: blur(1px); backdrop-filter: blur(1px);
+  }
+  :root[data-theme="light"] .scrim { background: rgba(20,16,26,.28); }
+
+  /* ============ ADD-FEED-BY-URL SHEET (afu-, built only on locked tokens) ============ */
+  .afu-sheet {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 20;
+    background: var(--surface);
+    border-radius: 26px 26px 0 0;
+    box-shadow: var(--elev-pop), 0 -0.5px 0 var(--hairline);
+    padding: var(--sp-2) var(--gutter) calc(var(--sp-4) + env(safe-area-inset-bottom, 0px));
+    animation: sheetIn .42s var(--ease-spring) both;
+  }
+  @keyframes sheetIn { from { transform: translateY(102%); } to { transform: none; } }
+
+  .afu-grabber { width: 38px; height: 5px; border-radius: 3px; background: var(--separator);
+    margin: 6px auto var(--sp-2); }
+
+  .afu-head { display: flex; align-items: center; justify-content: space-between; min-height: 34px; }
+  .afu-cancel {
+    border: none; background: none; cursor: pointer; font-family: var(--font);
+    font-size: 1rem; font-weight: 700; color: var(--accent); padding: 6px 2px;
+  }
+  .afu-cancel:active { opacity: .6; }
+  .afu-title { font-family: var(--font-display); font-weight: 700; font-size: 1.12rem;
+    letter-spacing: -.01em; color: var(--text); }
+  .afu-head .afu-spacer { width: 52px; }   /* balances Cancel so the title stays centered */
+
+  .afu-lede { margin: var(--sp-2) 2px var(--sp-3); font-size: .92rem; font-weight: 500;
+    line-height: 1.45; color: var(--text-dim); }
+
+  /* URL field — the locked search-field look (--field / --r-field), full width, with a Paste affordance */
+  .afu-fieldwrap { display: flex; align-items: center; gap: var(--sp-2); }
+  .afu-field {
+    flex: 1; min-width: 0; height: 48px;
+    display: flex; align-items: center; gap: 8px; padding: 0 8px 0 14px;
+    background: var(--field); border-radius: var(--r-field);
+    transition: box-shadow .25s;
+  }
+  .afu-field.focused { box-shadow: 0 0 0 2px var(--accent); }
+  .afu-field.bad { box-shadow: 0 0 0 2px #FF5A6E; }
+  .afu-field svg.link { flex: none; color: var(--text-faint); }
+  .afu-field input {
+    flex: 1; min-width: 0; border: none; background: none; outline: none;
+    font-family: var(--font); font-size: 1rem; font-weight: 500; color: var(--text);
+  }
+  .afu-field input::placeholder { color: var(--text-dim); font-weight: 500; }
+  .afu-paste {
+    flex: none; border: none; cursor: pointer; font-family: var(--font);
+    font-size: .82rem; font-weight: 800; color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    padding: 8px 12px; border-radius: var(--r-pill); min-height: 34px;
+    transition: transform .3s var(--ease-spring);
+  }
+  .afu-paste:active { transform: scale(.92); }
+
+  /* inline note under the field — neutral hint OR error tint */
+  .afu-note {
+    display: flex; align-items: flex-start; gap: 7px;
+    margin: var(--sp-3) 2px 0; font-size: .8rem; font-weight: 500; line-height: 1.4;
+    color: var(--text-faint);
+  }
+  .afu-note svg { flex: none; margin-top: 1px; }
+  .afu-note.error { color: #FF7A6A; }
+  :root[data-theme="light"] .afu-note.error { color: #D8322B; }
+  .afu-note.error .n-lock { display: none; }
+
+  /* primary Add button — full width, reuses the locked .btn-primary treatment */
+  .afu-add {
+    margin-top: var(--sp-3); width: 100%; min-height: 48px;
+    border: none; cursor: pointer; border-radius: var(--r-pill);
+    font-family: var(--font); font-size: 1rem; font-weight: 800; letter-spacing: .01em;
+    color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: var(--elev-sub);
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    transition: transform var(--dur-mid) var(--ease-spring), box-shadow var(--dur-mid), background var(--dur-mid), opacity var(--dur-mid);
+  }
+  .afu-add:active { transform: scale(.97); }
+  .afu-add:disabled { background: var(--chip); color: var(--text-faint); box-shadow: none; cursor: default; }
+  .afu-add .spinner {
+    width: 15px; height: 15px; border-radius: 50%;
+    border: 2px solid color-mix(in srgb, var(--on-accent) 45%, transparent);
+    border-top-color: var(--on-accent); animation: spin .7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* success moment — a check confirmation shown briefly before the sheet dismisses to Podcast Detail */
+  .afu-success { display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: var(--sp-3) var(--sp-2) var(--sp-4); gap: var(--sp-3); }
+  .afu-check {
+    width: 72px; height: 72px; border-radius: 22px; display: grid; place-items: center;
+    color: #fff; box-shadow: var(--elev-card); position: relative; overflow: hidden;
+    background: linear-gradient(140deg, var(--mint), var(--coral));
+    animation: badgePop .5s var(--ease-spring) both;
+  }
+  .afu-check::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 24%, rgba(255,255,255,.42), transparent 46%); }
+  .afu-check svg { position: relative; z-index: 2; }
+  @keyframes badgePop { 0% { opacity: 0; transform: scale(.7) translateY(8px); } 100% { opacity: 1; transform: none; } }
+  .afu-success .s-title { font-family: var(--font-display); font-weight: 700; font-size: 1.14rem;
+    letter-spacing: -.015em; color: var(--text); }
+  .afu-success .s-sub { font-size: .9rem; font-weight: 500; color: var(--text-dim); max-width: 250px; line-height: 1.42; }
+
+  /* privacy footnote */
+  .afu-foot {
+    display: flex; align-items: flex-start; gap: 7px;
+    margin: var(--sp-3) 2px 0; font-size: .76rem; font-weight: 500; line-height: 1.45;
+    color: var(--text-faint);
+  }
+  .afu-foot svg { flex: none; margin-top: 1px; }
+
+  /* home indicator */
+  .home-ind { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    width: 134px; height: 5px; border-radius: 3px; background: var(--text); opacity: .3; z-index: 25; }
+
+  /* per-state visibility (driven by data-state on .afu-sheet).
+     HIDE-ONLY rules, so a shown element keeps its own class's display value. */
+  .afu-sheet[data-state="success"] .form-part          { display: none; }   /* form gone once added */
+  .afu-sheet:not([data-state="success"]) .only-success { display: none; }   /* success block only on success */
+  .afu-sheet:not([data-state="ready"])   .when-ready   { display: none; }   /* neutral hint only when ready */
+  .afu-sheet:not([data-state="error"])   .when-error   { display: none; }   /* error note only on error */
+  .afu-sheet:not([data-state="loading"]) .when-loading { display: none; }   /* spinner + "Checking…" only while loading */
+  .afu-sheet[data-state="loading"]       .when-label   { display: none; }   /* "Add feed" label hidden while loading */
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; }
+  }
+</style>
+
+<button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
+  <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
+</button>
+
+<div class="state-switch" id="stateSwitch" role="tablist" aria-label="Sheet state (authoring)">
+  <button data-set="ready" class="on">Ready</button>
+  <button data-set="loading">Checking</button>
+  <button data-set="error">Error</button>
+  <button data-set="success">Added</button>
+</div>
+
+<div class="phone">
+  <div class="notch"></div>
+  <div class="screen">
+
+    <!-- status bar -->
+    <div class="statusbar">
+      <span>9:41</span>
+      <span class="sb-right">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="4.5" width="3" height="7.5" rx="1"/><rect x="9" y="2" width="3" height="10" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
+        <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.4c2 0 3.9.8 5.3 2.1l1.2-1.3A9.4 9.4 0 0 0 8.5.6 9.4 9.4 0 0 0 2 3.2l1.2 1.3A7.4 7.4 0 0 1 8.5 2.4Z"/><path d="M8.5 6c1 0 2 .4 2.7 1.1l1.2-1.3A6 6 0 0 0 8.5 4a6 6 0 0 0-3.9 1.8l1.2 1.3A4 4 0 0 1 8.5 6Z"/><circle cx="8.5" cy="9.6" r="1.7"/></svg>
+        <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="1" y="1" width="21" height="10" rx="3" stroke="currentColor" stroke-width="1.2" opacity=".5"/><rect x="2.6" y="2.6" width="16" height="6.8" rx="1.6" fill="currentColor"/><rect x="23.4" y="4" width="1.8" height="4" rx="1" fill="currentColor" opacity=".6"/></svg>
+      </span>
+    </div>
+
+    <!-- the surface the sheet is presented over (Search), dimmed behind the scrim -->
+    <div class="under" aria-hidden="true">
+      <div class="u-title">Search</div>
+      <div class="u-hint">Search millions of shows by name, host, or topic.</div>
+      <div class="u-rail"><div class="u-pod up1"></div><div class="u-pod up2"></div><div class="u-pod up3"></div></div>
+    </div>
+
+    <div class="scrim"></div>
+
+    <!-- ===== Add Feed by URL sheet ===== -->
+    <section class="afu-sheet" id="sheet" data-state="ready" aria-label="Add a feed">
+      <div class="afu-grabber"></div>
+
+      <div class="afu-head">
+        <button class="afu-cancel">Cancel</button>
+        <span class="afu-title">Add a feed</span>
+        <span class="afu-spacer"></span>
+      </div>
+
+      <!-- FORM (ready / loading / error all share this) -->
+      <div class="form-part">
+        <p class="afu-lede">Paste a podcast&rsquo;s RSS link &mdash; including private or premium feeds, like an ad&#8209;free member link.</p>
+
+        <div class="afu-fieldwrap">
+          <label class="afu-field focused" id="field">
+            <svg class="link" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 15 15 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M11 7.5 12.6 6a3.7 3.7 0 0 1 5.2 5.2L16.2 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 16.5 11.4 18a3.7 3.7 0 0 1-5.2-5.2L7.8 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <input id="urlInput" type="url" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false"
+                   placeholder="https://…" value="https://feeds.supportingcast.fm/tal-partners/8f2c…" aria-label="Feed URL">
+          </label>
+          <button class="afu-paste" id="pasteBtn">Paste</button>
+        </div>
+
+        <!-- neutral hint (ready) -->
+        <div class="afu-note when-ready">
+          <svg class="n-info" width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 11v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.6" r="1.2" fill="currentColor"/></svg>
+          <span>Works with Patreon, Supercast, Supporting Cast, or any RSS feed link.</span>
+        </div>
+
+        <!-- error (premium / expired link is the headline case) -->
+        <div class="afu-note error when-error">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3 2.5 20h19L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="1.1" fill="currentColor"/></svg>
+          <span>This link didn&rsquo;t work. Private feed links can expire &mdash; grab a fresh one from the show and try again.</span>
+        </div>
+
+        <button class="afu-add" id="addBtn">
+          <span class="when-loading spinner" aria-hidden="true"></span>
+          <span class="when-loading">Checking&hellip;</span>
+          <span class="when-label">Add feed</span>
+        </button>
+
+        <p class="afu-foot">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Private links are stored only on this device and never shared.</span>
+        </p>
+      </div>
+
+      <!-- SUCCESS (shown briefly, then the sheet dismisses to the show) -->
+      <div class="afu-success only-success">
+        <div class="afu-check">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M5 12.5 10 17.5 19.5 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="s-title">Added to your shows</div>
+        <div class="s-sub">Opening This American Life Partners&hellip;</div>
+      </div>
+
+    </section>
+
+    <div class="home-ind"></div>
+
+  </div>
+</div>
+
+<script>
+  // theme toggle
+  const root = document.documentElement;
+  const tt = document.getElementById('tt');
+  const tgEmoji = document.getElementById('tgEmoji');
+  const tgLabel = document.getElementById('tgLabel');
+  root.setAttribute('data-theme', 'dark');
+  tt.addEventListener('click', () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    tgEmoji.textContent = dark ? '☀️' : '🌙';
+    tgLabel.textContent = dark ? 'Light' : 'Dark';
+  });
+
+  // authoring state switcher: flip the sheet between its four states
+  const sheet = document.getElementById('sheet');
+  const field = document.getElementById('field');
+  document.querySelectorAll('#stateSwitch button').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('#stateSwitch button').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      const s = b.dataset.set;
+      sheet.setAttribute('data-state', s);
+      field.classList.toggle('bad', s === 'error');
+      field.classList.toggle('focused', s === 'ready');
+    });
+  });
+
+  // paste affordance (mock: drop a sample tokenized URL into the field)
+  document.getElementById('pasteBtn').addEventListener('click', () => {
+    document.getElementById('urlInput').value = 'https://feeds.supportingcast.fm/tal-partners/8f2c9e1a4b';
+  });
+
+  // Add tap: ready -> loading (static mock; real flow fetches + upserts, then success -> dismiss)
+  document.getElementById('addBtn').addEventListener('click', () => {
+    if (sheet.getAttribute('data-state') === 'ready') {
+      document.querySelector('#stateSwitch button[data-set="loading"]').click();
+    }
+  });
+</script>
