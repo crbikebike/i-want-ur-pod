@@ -637,6 +637,21 @@
     font-family: var(--font); font-size: 1rem; font-weight: 500; color: var(--text);
   }
   .tb-field input::placeholder { color: var(--text-dim); font-weight: 500; }
+
+  /* ---------- "Have a podcast URL?" affordance (opens add-feed-url.html) ----------
+     A quiet, single grouped-inset row under the browse shelves for people who
+     already hold a direct/private feed link. Built only on locked tokens. */
+  .urlcta {
+    margin: var(--sp-6) 0 var(--sp-2); width: 100%; min-height: 48px;
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    padding: 0 var(--sp-4); border: none; cursor: pointer;
+    background: var(--surface); border-radius: var(--r-md); box-shadow: var(--elev-list);
+    font-family: var(--font); font-size: .92rem; font-weight: 700; color: var(--accent);
+    transition: transform var(--dur-mid) var(--ease-spring);
+    opacity: 0; animation: rise .6s var(--ease-soft) .4s forwards;
+  }
+  .urlcta:active { transform: scale(.98); }
+  .urlcta svg { flex: none; }
 </style>
 
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
@@ -687,6 +702,13 @@
           <article class="pod"><div class="pod-art" style="background-image:url(../art/crime-junkie.jpg);background-size:cover;background-position:center"><button class="sub" aria-label="Subscribe to Crime Junkie"><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 6 11l5.5-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ring"></span></button></div><div class="pod-meta"><div class="pod-title">Crime Junkie</div><div class="pod-studio">audiochuck</div></div></article>
         </div>
       </section>
+
+      <!-- direct-link affordance: for people who already hold a private/premium feed URL -->
+      <button class="urlcta" aria-label="Add a podcast by URL">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 15 15 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M11 7.5 12.6 6a3.7 3.7 0 0 1 5.2 5.2L16.2 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 16.5 11.4 18a3.7 3.7 0 0 1-5.2-5.2L7.8 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Have a podcast URL? Add it directly
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
 
     </div>
 

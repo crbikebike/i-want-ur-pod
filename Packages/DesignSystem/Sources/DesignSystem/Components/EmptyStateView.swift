@@ -83,7 +83,12 @@ public struct EmptyStateView<Actions: View>: View {
                 .frame(maxWidth: 268)                     // .state-sub max-width
                 .padding(.top, Spacing.sp3)               // .state gap
 
-            HStack(spacing: Spacing.sp2) {                // .state-actions (gap --sp-2)
+            // .state-actions: `flex-wrap: wrap; justify-content: center`. On a
+            // phone the primary+secondary don't fit on one line, so the kit
+            // wraps them into a centered vertical stack (see the signed-off
+            // search-noresults render) — a VStack reproduces that faithfully,
+            // and is identical to a row for the single-action states.
+            VStack(spacing: Spacing.sp2) {                // .state-actions (gap --sp-2)
                 actions
             }
             .padding(.top, Spacing.sp4)                   // .state-actions margin-top

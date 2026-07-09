@@ -499,6 +499,12 @@
     display: grid; place-items: center; background: var(--chip); color: var(--text-dim);
     transition: transform .3s var(--ease-spring), background .3s, color .3s; }
   .dl-remove:active { transform: scale(.86); }
+
+  /* ---------- Feeds section (reuses the retired-but-present .srclist/.srow vocabulary) ---------- */
+  .ic-feed { background: linear-gradient(140deg, var(--coral), var(--mint)); }
+  .srow-tap { cursor: pointer; }
+  .srow-tap:active { background: color-mix(in srgb, var(--text) 6%, transparent); }
+  .src-chev { flex: none; color: var(--text-faint); }
 </style>
 
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
@@ -529,6 +535,24 @@
         <h1 class="big">Settings</h1>
       </div>
       <p class="sec-sub" style="margin-top:0">Opened from the gear in the top-right of Home, Shows, and Up Next.</p>
+
+      <!-- ===== FEEDS: add a premium / custom podcast URL (opens add-feed-url.html) ===== -->
+      <p class="grp-label">Feeds</p>
+      <div class="srclist">
+        <div class="srow srow-tap" role="button" tabindex="0" aria-label="Add premium or custom podcast URL">
+          <div class="src-iconwrap">
+            <div class="src-ico ic-feed">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 15 15 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M11 7.5 12.6 6a3.7 3.7 0 0 1 5.2 5.2L16.2 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 16.5 11.4 18a3.7 3.7 0 0 1-5.2-5.2L7.8 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="src-meta">
+            <div class="src-top"><span class="src-name">Add premium or custom podcast URL</span></div>
+            <div class="src-sub">Ad-free member feeds, Patreon, or any RSS link</div>
+          </div>
+          <svg class="src-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <p class="foot-note">Paste a show&rsquo;s RSS link to follow it directly. Private links are stored only on this device and never shared.</p>
 
       <!-- ===== MANAGE DOWNLOADED EPISODES (the only section for now) ===== -->
       <div class="dl-head">

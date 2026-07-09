@@ -35,6 +35,11 @@ public struct SearchScreen: View {
     /// by `SearchResult.id` (the feed URL), same pattern the curated rail uses.
     @State private var subscribeStates: [String: SubscribeState] = [:]
 
+    /// Drives the `AddFeedSheet` presentation from either the `.firstRun`
+    /// `.urlcta` row or the `.noResults` "Add a direct link" empty-state
+    /// action (search-start.html:707, search-noresults.html:654).
+    @State private var isAddingFeed = false
+
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
 
@@ -55,6 +60,15 @@ public struct SearchScreen: View {
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: URL.self) { feedURL in
                 PodcastDetailScreen(feedURL: feedURL)
+            }
+            .sheet(isPresented: $isAddingFeed) {
+                // `AddFeedSheet` dismisses itself on success (see its own
+                // `.task`-driven `onChange(of: viewModel.state)`); appending
+                // to `path` here — rather than also flipping
+                // `isAddingFeed = false` — avoids racing that self-dismiss
+                // with our own, so the push still lands once the sheet is
+                // gone.
+                AddFeedSheet(onSubscribed: { feedURL in path.append(feedURL) })
             }
         }
     }
@@ -83,12 +97,16 @@ public struct SearchScreen: View {
             resultsState(results)
 
         case .noResults:
+            // search-noresults.html:649-660: message mentions the direct-link
+            // fallback, and `.state-actions` leads with `.btn-primary "Add a
+            // direct link"` before `.btn-secondary "Clear search"`.
             EmptyStateView(
                 kind: .noResults,
                 title: "No shows found",
-                message: "Nothing matched \u{201C}\(viewModel.query)\u{201D}. Try a different spelling or a broader term."
+                message: "Nothing matched \u{201C}\(viewModel.query)\u{201D}. Try a different spelling \u{2014} or, if you have a direct link to the show, add it."
             ) {
-                SecondaryButton(title: "Clear search") { viewModel.clear() }
+                PrimaryButton(title: "Add a direct link", systemImage: "link") { isAddingFeed = true }
+                NeutralButton(title: "Clear search") { viewModel.clear() }
             }
 
         case .error(let message):
@@ -115,7 +133,39 @@ public struct SearchScreen: View {
                 .padding(.bottom, Spacing.sp5)
 
             browseRails
+
+            // `.urlcta` (search-start.html:644-654, 707-711): a quiet
+            // grouped-inset row under the browse shelves for people who
+            // already hold a direct/private feed link.
+            urlCTAButton
+                .padding(.top, Spacing.sp6)
+                .padding(.bottom, Spacing.sp2)
         }
+    }
+
+    /// `.urlcta` — full-width row, `--surface` fill, `--r-md` corner,
+    /// `--elev-list`, accent-colored label between a link glyph and a
+    /// trailing chevron (search-start.html:644-654).
+    private var urlCTAButton: some View {
+        Button {
+            isAddingFeed = true
+        } label: {
+            HStack(spacing: 7) {
+                Image(systemName: "link")
+                    .font(.system(size: 15, weight: .semibold))
+                Text("Have a podcast URL? Add it directly")
+                    .typeStyle(Typography.urlCTALabelStyle)
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 13, weight: .semibold))
+            }
+            .foregroundStyle(palette.accent)
+            .frame(maxWidth: .infinity, minHeight: 48)
+            .padding(.horizontal, Spacing.sp4)
+            .background(palette.surface, in: RoundedRectangle(cornerRadius: Radius.rMd16, style: .continuous))
+            .elevList(hairline: palette.hairline)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Add a podcast by URL")
     }
 
     /// The bundled curated "start here" picks as the kit's browse shelf/rails

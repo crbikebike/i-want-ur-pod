@@ -12,6 +12,7 @@ private enum PillVariant {
     case primary   // .btn-primary  — filled accent (gradient on dark, solid on light)
     case secondary // .btn-secondary — accent outline on transparent
     case ghost     // .btn-tertiary  — soft accent-tint fill
+    case neutral   // .btn-secondary on the state screens — chip fill, text-colored label
 }
 
 /// One `ButtonStyle` driving all three roles. Matches `.btn`: min-height 44,
@@ -52,18 +53,22 @@ private struct PillButtonStyle: ButtonStyle {
         switch variant {
         case .primary:              return palette.onAccent
         case .secondary, .ghost:    return palette.accent
+        case .neutral:              return palette.text
         }
     }
 
     @ViewBuilder private var background: some View {
         switch variant {
         case .primary:
-            // Dark: soft accent→accent-2 gradient. Light: solid accent
-            // (the gradient reads harsh there, per the kit).
+            // Dark: soft accent gradient — `linear-gradient(135deg, accent,
+            // color-mix(in srgb, accent 55%, accent-2))` (buttons.html:474).
+            // The end stop is accent mixed 45% toward accent-2, NOT full
+            // accent-2 (that reads far too green). Light: solid accent (the
+            // gradient reads harsh there, per the kit's light override).
             if colorScheme == .dark {
                 shape.fill(
                     LinearGradient(
-                        colors: [palette.accent, palette.accent2],
+                        colors: [palette.accent, palette.accent.mixed(with: palette.accent2, by: 0.45)],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
@@ -75,6 +80,10 @@ private struct PillButtonStyle: ButtonStyle {
             shape.fill(Color.clear)
         case .ghost:
             shape.fill(palette.accent.opacity(0.14))
+        case .neutral:
+            // `.btn-secondary` on the state screens: `background: var(--chip)`
+            // (search-noresults.html:477).
+            shape.fill(palette.chip)
         }
     }
 
@@ -103,18 +112,30 @@ private struct PillShadow: ViewModifier {
 // MARK: - Public buttons
 
 /// Filled accent pill — the kit's `.btn-primary`. Highest-emphasis action.
+/// An optional leading SF Symbol matches the kit's `.btn svg` + `gap: 8`.
 public struct PrimaryButton: View {
     private let title: String
+    private let systemImage: String?
     private let action: () -> Void
 
-    public init(title: String, action: @escaping () -> Void) {
+    public init(title: String, systemImage: String? = nil, action: @escaping () -> Void) {
         self.title = title
+        self.systemImage = systemImage
         self.action = action
     }
 
     public var body: some View {
-        Button(title, action: action)
-            .buttonStyle(PillButtonStyle(variant: .primary))
+        Button(action: action) {
+            if let systemImage {
+                HStack(spacing: 8) {   // .btn gap: 8
+                    Image(systemName: systemImage)
+                    Text(title)
+                }
+            } else {
+                Text(title)
+            }
+        }
+        .buttonStyle(PillButtonStyle(variant: .primary))
     }
 }
 
@@ -131,6 +152,24 @@ public struct SecondaryButton: View {
     public var body: some View {
         Button(title, action: action)
             .buttonStyle(PillButtonStyle(variant: .secondary))
+    }
+}
+
+/// Neutral chip pill with a text-colored label — the kit's `.btn-secondary`
+/// as used on the large state screens (search-noresults / search-error), a
+/// filled `--chip` rather than the accent outline of `SecondaryButton`.
+public struct NeutralButton: View {
+    private let title: String
+    private let action: () -> Void
+
+    public init(title: String, action: @escaping () -> Void) {
+        self.title = title
+        self.action = action
+    }
+
+    public var body: some View {
+        Button(title, action: action)
+            .buttonStyle(PillButtonStyle(variant: .neutral))
     }
 }
 

@@ -1,5 +1,10 @@
 // Color hex initializers. Design source: docs/design/direction.md §1 (color roles).
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 public extension Color {
     /// Create a Color from a packed hex integer, e.g. `Color(hex: 0xFF6A4D)`.
@@ -62,5 +67,35 @@ public extension Color {
         }
 
         self.init(.sRGB, red: r, green: g, blue: b, opacity: alpha ?? a)
+    }
+
+    /// Blend `self` toward `other` by `amount` (0…1) in the sRGB space — the
+    /// exact semantics of CSS `color-mix(in srgb, self (1-amount), other amount)`.
+    /// Used for kit gradients expressed as `color-mix` (e.g. `.btn-primary`'s
+    /// `color-mix(in srgb, accent 55%, accent-2)` → `accent.mixed(with: accent2,
+    /// by: 0.45)`), so the exact mixed value is computed from the live palette
+    /// rather than hardcoded as a near-miss constant.
+    func mixed(with other: Color, by amount: Double) -> Color {
+        let t = min(max(amount, 0), 1)
+        let a = Self.srgbComponents(of: self)
+        let b = Self.srgbComponents(of: other)
+        return Color(.sRGB,
+                     red: a.r * (1 - t) + b.r * t,
+                     green: a.g * (1 - t) + b.g * t,
+                     blue: a.b * (1 - t) + b.b * t,
+                     opacity: a.a * (1 - t) + b.a * t)
+    }
+
+    private static func srgbComponents(of color: Color) -> (r: Double, g: Double, b: Double, a: Double) {
+        #if canImport(UIKit)
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        UIColor(color).getRed(&r, green: &g, blue: &b, alpha: &a)
+        return (Double(r), Double(g), Double(b), Double(a))
+        #elseif canImport(AppKit)
+        let ns = NSColor(color).usingColorSpace(.sRGB) ?? .black
+        return (Double(ns.redComponent), Double(ns.greenComponent), Double(ns.blueComponent), Double(ns.alphaComponent))
+        #else
+        return (0, 0, 0, 1)
+        #endif
     }
 }

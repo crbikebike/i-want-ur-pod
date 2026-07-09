@@ -40,10 +40,17 @@ public enum Brand {
 /// One-off decorative kit hues that appear in more than one place in the kit
 /// with no matching theme role (direction.md has no §1 entry for these).
 /// Named here so they're defined once instead of hand-copied per call site.
-enum KitLiteralColors {
+public enum KitLiteralColors {
     /// The PodcastIndex icon gradient's blue stop, also reused as one of the
     /// `.a2` artwork-tile gradient stops (`ArtworkTile.swift`).
     static let podcastIndexBlue = Color(hex: 0x2E8BFF)
+
+    /// `.afu-field.bad`'s focus ring (design/kit/screens/add-feed-url.html:273)
+    /// — a literal `#FF5A6E` with no light-theme override in the kit, so it's
+    /// theme-agnostic like the brand ramp rather than a `ThemePalette` role.
+    /// Public (unlike `podcastIndexBlue`, package-internal only) because
+    /// `AddFeedSheet` (app target) needs it for the field's error ring.
+    public static let errorRing = Color(hex: 0xFF5A6E)
 }
 
 /// Every semantic color role, resolved for one theme. Role → value mapping
@@ -64,6 +71,12 @@ public struct ThemePalette: Sendable {
     public let accent: Color
     public let accent2: Color
     public let onAccent: Color
+
+    /// `.afu-note.error` text/icon color (design/kit/screens/add-feed-url.html:296-297)
+    /// — a themed pair (`#FF7A6A` dark / `#D8322B` light) distinct from the
+    /// theme-agnostic `KitLiteralColors.errorRing`, so it's a `ThemePalette`
+    /// role rather than a `Brand` constant.
+    public let errorText: Color
 
     // Lines & fills
     public let hairline: Color
@@ -98,6 +111,7 @@ public struct ThemePalette: Sendable {
         accent: Color(hex: 0xFF6A4D),      // coral
         accent2: Color(hex: 0x34E0C4),     // mint
         onAccent: Color(hex: 0x2A0E04),
+        errorText: Color(hex: 0xFF7A6A),
         hairline: Color(hex: 0xFFFFFF, alpha: 0.09),
         separator: Color(hex: 0xFFFFFF, alpha: 0.12),
         chip: Color(hex: 0xFFFFFF, alpha: 0.08),
@@ -122,6 +136,7 @@ public struct ThemePalette: Sendable {
         accent: Color(hex: 0xCA340F),      // coral-deep
         accent2: Color(hex: 0x046B58),     // mint-deep
         onAccent: Color(hex: 0xFFFFFF),
+        errorText: Color(hex: 0xD8322B),
         hairline: Color(hex: 0x281A24, alpha: 0.10),
         separator: Color(hex: 0x3C3C43, alpha: 0.18),
         chip: Color(hex: 0xF1E7DF),
