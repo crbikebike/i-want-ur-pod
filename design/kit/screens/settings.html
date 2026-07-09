@@ -505,6 +505,9 @@
   .srow-tap { cursor: pointer; }
   .srow-tap:active { background: color-mix(in srgb, var(--text) 6%, transparent); }
   .src-chev { flex: none; color: var(--text-faint); }
+
+  /* ---------- Listening history entry point (same .srclist/.srow vocabulary) ---------- */
+  .ic-history { background: linear-gradient(140deg, var(--grape), var(--mint)); }
 </style>
 
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
@@ -553,6 +556,23 @@
         </div>
       </div>
       <p class="foot-note">Paste a show&rsquo;s RSS link to follow it directly. Private links are stored only on this device and never shared.</p>
+
+      <!-- ===== HISTORY: entry point to listening-history.html ===== -->
+      <p class="grp-label">History</p>
+      <div class="srclist">
+        <div class="srow srow-tap srow-history" role="button" tabindex="0" aria-label="Listening history">
+          <div class="src-iconwrap">
+            <div class="src-ico ic-history">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+          <div class="src-meta">
+            <div class="src-top"><span class="src-name">Listening history</span></div>
+            <div class="src-sub">Episodes you&rsquo;ve played, and for how long</div>
+          </div>
+          <svg class="src-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
 
       <!-- ===== MANAGE DOWNLOADED EPISODES (the only section for now) ===== -->
       <div class="dl-head">

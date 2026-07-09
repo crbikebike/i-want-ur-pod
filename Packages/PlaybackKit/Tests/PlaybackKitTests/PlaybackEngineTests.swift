@@ -52,13 +52,39 @@ final class PlaybackEngineTests: XCTestCase {
 
     private func makeEngine(
         player: StubAudioPlayer = StubAudioPlayer(),
-        persistenceInterval: TimeInterval = 5
+        persistenceInterval: TimeInterval = 5,
+        now: @escaping () -> Date = Date.init
     ) -> PlaybackEngine {
         PlaybackEngine(
             player: player,
             localURLResolver: makeResolver(),
-            persistenceInterval: persistenceInterval
+            persistenceInterval: persistenceInterval,
+            now: now
         )
+    }
+
+    /// A small mutable clock test helper: `advance(by:)` moves wall-clock
+    /// time forward deterministically, and the closure captures the box so
+    /// the engine reads the current instant on every call to `now()`.
+    private final class TestClock {
+        private(set) var current: Date
+        init(start: Date = Date(timeIntervalSince1970: 1_000_000)) {
+            current = start
+        }
+        func advance(by seconds: TimeInterval) {
+            current = current.addingTimeInterval(seconds)
+        }
+        func now() -> Date { current }
+    }
+
+    /// Advances `clock` and `stub` together in ~1s increments (mirroring a
+    /// live player's periodic time observer), so accumulated deltas stay
+    /// under the engine's per-tick cap rather than landing in one big jump.
+    private func advancePlayingClock(_ clock: TestClock, _ stub: StubAudioPlayer, bySeconds seconds: Int) {
+        for _ in 0..<seconds {
+            clock.advance(by: 1)
+            stub.advanceTime(by: 1)
+        }
     }
 
     // MARK: - Download-first guard
@@ -478,5 +504,177 @@ final class PlaybackEngineTests: XCTestCase {
 
         engine.skip(by: -SkipInterval.back)                  // 10 - 15 → clamp to 0
         XCTAssertEqual(try XCTUnwrap(stub.seekedFractions.last), 0.0, accuracy: 0.0001)
+    }
+
+    // MARK: - Listening-history session tracking (Wave 1)
+
+    func test_onDidFinishListening_firesOnceOnFinish_withAccumulatedWallClock() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(guid: "history-ep", duration: 100)
+        context.insert(episode)
+
+        let clock = TestClock()
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub, now: clock.now)
+
+        var calls: [(Episode, Date, TimeInterval)] = []
+        engine.onDidFinishListening = { episode, startedAt, seconds in
+            calls.append((episode, startedAt, seconds))
+        }
+
+        let loadTime = clock.current
+        engine.load(episode: episode, context: context)
+
+        clock.advance(by: 1)
+        stub.advanceTime(by: 1)
+        clock.advance(by: 1)
+        stub.advanceTime(by: 1)
+        clock.advance(by: 1)
+        stub.advanceTime(by: 1)
+
+        stub.finish()
+
+        XCTAssertEqual(calls.count, 1, "exactly one session must be emitted")
+        let (finishedEpisode, startedAt, listenedSeconds) = try XCTUnwrap(calls.first)
+        XCTAssertEqual(finishedEpisode.guid, "history-ep")
+        XCTAssertEqual(startedAt, loadTime)
+        XCTAssertEqual(listenedSeconds, 3, accuracy: 0.01)
+    }
+
+    func test_onDidFinishListening_pauseDoesNotAccumulate() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(duration: 100)
+        context.insert(episode)
+
+        let clock = TestClock()
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub, now: clock.now)
+
+        var calls: [(Episode, Date, TimeInterval)] = []
+        engine.onDidFinishListening = { episode, startedAt, seconds in
+            calls.append((episode, startedAt, seconds))
+        }
+
+        engine.load(episode: episode, context: context)
+
+        clock.advance(by: 1)
+        stub.advanceTime(by: 1) // 1s playing
+
+        engine.pause()
+        // Simulate wall-clock passing while paused — must not be counted.
+        clock.advance(by: 10)
+
+        engine.resume()
+        clock.advance(by: 1)
+        stub.advanceTime(by: 1) // another 1s playing after resume
+
+        stub.finish()
+
+        XCTAssertEqual(calls.count, 1, "pause/resume must remain ONE session, not split into two")
+        let (_, _, listenedSeconds) = try XCTUnwrap(calls.first)
+        XCTAssertEqual(listenedSeconds, 2, accuracy: 0.01, "only the two playing seconds count, not the 10s paused gap")
+    }
+
+    func test_onDidFinishListening_newLoad_finalizesPriorSession_andStartsFresh() throws {
+        let context = ModelContext(try makeContainer())
+        let first = makeEpisode(guid: "first-history", duration: 100)
+        let second = makeEpisode(guid: "second-history", duration: 100)
+        context.insert(first)
+        context.insert(second)
+
+        let clock = TestClock()
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub, now: clock.now)
+
+        var calls: [(Episode, Date, TimeInterval)] = []
+        engine.onDidFinishListening = { episode, startedAt, seconds in
+            calls.append((episode, startedAt, seconds))
+        }
+
+        engine.load(episode: first, context: context)
+        advancePlayingClock(clock, stub, bySeconds: 4)
+
+        // Loading a new episode finalizes the prior session.
+        engine.load(episode: second, context: context)
+
+        XCTAssertEqual(calls.count, 1, "loading a new episode must finalize the prior session")
+        XCTAssertEqual(calls.first?.0.guid, "first-history")
+        XCTAssertEqual(calls.first?.2 ?? -1, 4, accuracy: 0.01)
+
+        advancePlayingClock(clock, stub, bySeconds: 6)
+        stub.finish()
+
+        XCTAssertEqual(calls.count, 2)
+        XCTAssertEqual(calls.last?.0.guid, "second-history")
+        XCTAssertEqual(calls.last?.2 ?? -1, 6, accuracy: 0.01)
+    }
+
+    func test_onDidFinishListening_underTwoSecondThreshold_emitsNothing() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(duration: 100)
+        context.insert(episode)
+
+        let clock = TestClock()
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub, now: clock.now)
+
+        var calls: [(Episode, Date, TimeInterval)] = []
+        engine.onDidFinishListening = { episode, startedAt, seconds in
+            calls.append((episode, startedAt, seconds))
+        }
+
+        engine.load(episode: episode, context: context)
+        clock.advance(by: 1)
+        stub.advanceTime(by: 1) // only 1s, below the 2s threshold
+
+        engine.returnToIdle()
+
+        XCTAssertTrue(calls.isEmpty, "a session under the 2s threshold must emit nothing")
+    }
+
+    func test_onDidFinishListening_finalizesOnAppBackgrounding() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(duration: 100)
+        context.insert(episode)
+
+        let clock = TestClock()
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub, now: clock.now)
+
+        var calls: [(Episode, Date, TimeInterval)] = []
+        engine.onDidFinishListening = { episode, startedAt, seconds in
+            calls.append((episode, startedAt, seconds))
+        }
+
+        engine.load(episode: episode, context: context)
+        advancePlayingClock(clock, stub, bySeconds: 3)
+
+        engine.handleAppBackgrounding()
+
+        XCTAssertEqual(calls.count, 1, "backgrounding must finalize the in-progress session")
+        XCTAssertEqual(calls.first?.2 ?? -1, 3, accuracy: 0.01)
+    }
+
+    func test_onDidFinishListening_finalizesOnReturnToIdle() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(duration: 100)
+        context.insert(episode)
+
+        let clock = TestClock()
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub, now: clock.now)
+
+        var calls: [(Episode, Date, TimeInterval)] = []
+        engine.onDidFinishListening = { episode, startedAt, seconds in
+            calls.append((episode, startedAt, seconds))
+        }
+
+        engine.load(episode: episode, context: context)
+        advancePlayingClock(clock, stub, bySeconds: 3)
+
+        engine.returnToIdle()
+
+        XCTAssertEqual(calls.count, 1)
+        XCTAssertEqual(calls.first?.2 ?? -1, 3, accuracy: 0.01)
     }
 }
