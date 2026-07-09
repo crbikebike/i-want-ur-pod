@@ -26,6 +26,15 @@ public struct SettingsScreen: View {
     /// avoid a `#Predicate` over an associated-value enum case).
     @Query(sort: \Episode.publishDate, order: .reverse) private var allEpisodes: [Episode]
 
+    /// Drives the `AddFeedSheet` presentation from the Feeds row.
+    @State private var isAddingFeed = false
+    /// On success, pushes Podcast Detail onto Settings' own ambient
+    /// `NavigationStack` (see the `.navigationDestination(item:)` below) —
+    /// Settings has no `.navigationDestination(for: URL.self)` of its own
+    /// since it's always reached pushed from Home/Shows/Up Next's gear,
+    /// inside whichever tab's stack that is.
+    @State private var pushedFeedURL: URL?
+
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
     @Environment(DownloadManager.self) private var downloadManager
@@ -40,6 +49,9 @@ public struct SettingsScreen: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
                 titleBar
+
+                feedsSection
+                    .padding(.top, Spacing.sp6)
 
                 groupLabel("Downloaded episodes")
                     .padding(.top, Spacing.sp6)
@@ -68,6 +80,16 @@ public struct SettingsScreen: View {
         // affordance back to the tab the gear was tapped from" (settings.html).
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("")
+        .sheet(isPresented: $isAddingFeed) {
+            // Mirrors `SearchScreen`'s sheet: `AddFeedSheet` dismisses itself
+            // on success, so this only records the feed URL — pushing it
+            // (below) after the sheet is gone avoids racing the two dismiss/
+            // push animations.
+            AddFeedSheet(onSubscribed: { feedURL in pushedFeedURL = feedURL })
+        }
+        .navigationDestination(item: $pushedFeedURL) { feedURL in
+            PodcastDetailScreen(feedURL: feedURL)
+        }
     }
 
     // MARK: - Header (h1.big "Settings")
@@ -78,6 +100,56 @@ public struct SettingsScreen: View {
             .foregroundStyle(palette.text)
             .padding(.horizontal, 2)
             .accessibilityAddTraits(.isHeader)
+    }
+
+    // MARK: - Feeds (.srow / .ic-feed, settings.html:539-555)
+
+    private var feedsSection: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            groupLabel("Feeds")
+
+            card {
+                Button {
+                    isAddingFeed = true
+                } label: {
+                    HStack(spacing: Spacing.sp3) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: Radius.rIcon13, style: .continuous)
+                                .fill(
+                                    LinearGradient(colors: [palette.coral, palette.mint],
+                                                   startPoint: .topLeading, endPoint: .bottomTrailing)
+                                )
+                            Image(systemName: "link")
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundStyle(.white)
+                        }
+                        .frame(width: 46, height: 46)
+
+                        VStack(alignment: .leading, spacing: Spacing.sp1) {
+                            Text("Add premium or custom podcast URL")
+                                .typeStyle(Typography.rowTitleStyle)
+                                .foregroundStyle(palette.text)
+                            Text("Ad-free member feeds, Patreon, or any RSS link")
+                                .typeStyle(Typography.subheadStyle)
+                                .foregroundStyle(palette.textDim)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundStyle(palette.textFaint)
+                    }
+                    .padding(.vertical, Spacing.sp3)
+                    .padding(.horizontal, Spacing.sp4)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Add premium or custom podcast URL")
+                .accessibilityHint("Ad-free member feeds, Patreon, or any RSS link")
+            }
+
+            footnote("Paste a show\u{2019}s RSS link to follow it directly. Private links are stored only on this device and never shared.")
+                .padding(.top, Spacing.sp3)
+        }
     }
 
     // MARK: - Downloads list (.dllist / .drow)

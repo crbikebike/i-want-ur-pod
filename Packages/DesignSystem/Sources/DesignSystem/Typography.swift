@@ -145,6 +145,38 @@ public enum Typography {
     /// Standalone chip (`.tag` / `.tag.hot`) — 0.64rem / 800 / +0.02em, uppercase.
     public static var tagChip: Font { ui(10.24, .heavy) }
 
+    // MARK: Roles — Add Feed by URL sheet reconciliation
+    // Exact kit values verified against design/kit/screens/add-feed-url.html's
+    // `.afu-title` / `.afu-lede` / `.afu-paste` / `.afu-note` / `.afu-add` /
+    // `.afu-success .s-title` / `.s-sub`. None of the existing roles above
+    // land on these exact size/weight/tracking combinations, so they're new
+    // tokens rather than near-miss reuses.
+
+    /// Sheet header title (`.afu-title`) — 1.12rem / 700 / -0.01em. Display face.
+    public static var sheetTitle: Font { display(17.92, .bold) }
+    /// Sheet lede copy (`.afu-lede`) — 0.92rem / 500, no tracking. UI face.
+    public static var sheetLede: Font { ui(14.72, .medium) }
+    /// Paste pill label (`.afu-paste`) — 0.82rem / 800, no tracking. UI face.
+    public static var pasteLabel: Font { ui(13.12, .heavy) }
+    /// Inline hint/error note (`.afu-note`) — 0.8rem / 500. UI face.
+    public static var noteText: Font { ui(12.8, .medium) }
+    /// Full-width Add button label (`.afu-add`) — 1rem / 800 / 0.01em. UI face.
+    public static var addButtonLabel: Font { ui(16, .heavy) }
+    /// Success title (`.afu-success .s-title`) — 1.14rem / 700 / -0.015em. Display face.
+    public static var successTitle: Font { display(18.24, .bold) }
+    /// Success subtitle (`.afu-success .s-sub`) — 0.9rem / 500. UI face.
+    public static var successSubtitle: Font { ui(14.4, .medium) }
+
+    // MARK: Roles — Search "Add a podcast by URL" CTA reconciliation
+    // Exact kit value verified against design/kit/screens/search-start.html's
+    // `.urlcta` (line 649) — 0.92rem / 700, no tracking. Distinct from
+    // `showCardTitle` (14.72/700 but carries -0.01em tracking) and
+    // `arcCardTitle` (14.72/800), so it's its own token rather than a
+    // near-miss reuse of either.
+
+    /// Search's "Have a podcast URL?" CTA row label (`.urlcta`) — 0.92rem / 700, no tracking. UI face.
+    public static var urlCTALabel: Font { ui(14.72, .bold) }
+
     // MARK: Roles (full TypeStyle tokens — carry tracking + case)
 
     public static var displayLargeTitleStyle: TypeStyle { .init(font: displayLargeTitle, tracking: -0.742) }
@@ -195,6 +227,18 @@ public enum Typography {
     /// `.tag` / `.tag.hot` — tracking only; uppercasing is applied by `TagChip`
     /// itself (not baked into the token) so non-chip callers can opt out.
     public static var tagChipStyle: TypeStyle { .init(font: tagChip, tracking: 0.2048) }  // +0.02em
+
+    // Add Feed by URL sheet reconciliation styles (tracking = em × px).
+    public static var sheetTitleStyle: TypeStyle { .init(font: sheetTitle, tracking: -0.1792) }        // -0.01em
+    public static var sheetLedeStyle: TypeStyle { .init(font: sheetLede) }
+    public static var pasteLabelStyle: TypeStyle { .init(font: pasteLabel) }
+    public static var noteTextStyle: TypeStyle { .init(font: noteText) }
+    public static var addButtonLabelStyle: TypeStyle { .init(font: addButtonLabel, tracking: 0.16) }   // 0.01em
+    public static var successTitleStyle: TypeStyle { .init(font: successTitle, tracking: -0.2736) }    // -0.015em
+    public static var successSubtitleStyle: TypeStyle { .init(font: successSubtitle) }
+
+    /// `.urlcta` — no tracking.
+    public static var urlCTALabelStyle: TypeStyle { .init(font: urlCTALabel) }
 }
 
 public extension View {
