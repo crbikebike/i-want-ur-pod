@@ -49,26 +49,53 @@ struct MiniPlayer: View {
 
                 Spacer(minLength: Spacing.sp2)
 
-                Button(action: togglePlayPause) {
-                    if playbackEngine.state == .preparing {
-                        // `.preparing` (E6: auto-download-then-play) has no
-                        // sensible play/pause glyph — a spinner in the same
-                        // 32×32 slot, matching `PlaybackTransport
-                        // .playPauseAction`'s existing `.none` no-op for this
-                        // state.
-                        ProgressView()
-                            .progressViewStyle(.circular)
-                            .tint(palette.accent)
-                            .frame(width: 32, height: 32)
-                    } else {
-                        Image(systemName: PlaybackTransport.playPauseSymbolName(for: playbackEngine.state))
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundStyle(palette.accent)
-                            .frame(width: 32, height: 32)
+                // Trailing transport cluster: rewind · play/pause · skip. Each
+                // is a nested plain-style button inside the row's own tap target
+                // (the same shape play/pause already used) so tapping a control
+                // seeks/toggles in place without presenting the Now Playing
+                // sheet, while tapping the row opens it.
+                HStack(spacing: Spacing.sp3) {
+                    SeekButton(
+                        direction: .backward,
+                        seconds: Int(SkipInterval.back),
+                        diameter: 30,
+                        accessibilityLabel: "Skip back \(Int(SkipInterval.back)) seconds"
+                    ) {
+                        playbackEngine.skip(by: -SkipInterval.back)
                     }
+                    .disabled(episode == nil)
+
+                    Button(action: togglePlayPause) {
+                        if playbackEngine.state == .preparing {
+                            // `.preparing` (E6: auto-download-then-play) has no
+                            // sensible play/pause glyph — a spinner in the same
+                            // 32×32 slot, matching `PlaybackTransport
+                            // .playPauseAction`'s existing `.none` no-op for this
+                            // state.
+                            ProgressView()
+                                .progressViewStyle(.circular)
+                                .tint(palette.accent)
+                                .frame(width: 32, height: 32)
+                        } else {
+                            Image(systemName: PlaybackTransport.playPauseSymbolName(for: playbackEngine.state))
+                                .font(.system(size: 18, weight: .bold))
+                                .foregroundStyle(palette.accent)
+                                .frame(width: 32, height: 32)
+                        }
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(playbackEngine.state == .preparing ? "Preparing" : (playbackEngine.state == .playing ? "Pause" : "Play"))
+
+                    SeekButton(
+                        direction: .forward,
+                        seconds: Int(SkipInterval.forward),
+                        diameter: 30,
+                        accessibilityLabel: "Skip forward \(Int(SkipInterval.forward)) seconds"
+                    ) {
+                        playbackEngine.skip(by: SkipInterval.forward)
+                    }
+                    .disabled(episode == nil)
                 }
-                .buttonStyle(.plain)
-                .accessibilityLabel(playbackEngine.state == .preparing ? "Preparing" : (playbackEngine.state == .playing ? "Pause" : "Play"))
             }
             .padding(.horizontal, Spacing.sp3)
             .padding(.vertical, Spacing.sp2)

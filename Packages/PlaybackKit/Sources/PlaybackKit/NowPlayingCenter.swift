@@ -60,14 +60,14 @@ final class NowPlayingCenter {
             return .success
         }
 
-        center.skipForwardCommand.preferredIntervals = [30]
+        center.skipForwardCommand.preferredIntervals = [NSNumber(value: SkipInterval.forward)]
         center.skipForwardCommand.isEnabled = true
         center.skipForwardCommand.addTarget { _ in
             onSkipForward()
             return .success
         }
 
-        center.skipBackwardCommand.preferredIntervals = [15]
+        center.skipBackwardCommand.preferredIntervals = [NSNumber(value: SkipInterval.back)]
         center.skipBackwardCommand.isEnabled = true
         center.skipBackwardCommand.addTarget { _ in
             onSkipBackward()

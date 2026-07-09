@@ -6,7 +6,8 @@
 // builders link against the same API. Do not change these signatures without
 // coordinating every caller. The supporting enums (ArtworkStyle, SubscribeState,
 // AppTab, EmptyKind) are owned/defined by the component layer, not the token
-// layer, and must match the shapes below.
+// layer, and must match the shapes below. (SeekDirection is likewise owned by
+// the component layer.)
 //
 // ── Buttons (design/kit/components/buttons.html) ──────────────────────────
 //   PrimaryButton(title: String, action: () -> Void)
@@ -33,6 +34,11 @@
 // ── Subscribe (design/kit/components/subscribe-button.html) ────────────────
 //   SubscribeButton(state: SubscribeState, action: () -> Void)
 //   // enum SubscribeState { case idle, subscribing, subscribed }
+//
+// ── Seek (design/kit/components/seek-button.html) ─────────────────────────
+//   SeekButton(direction: SeekDirection, seconds: Int, diameter: CGFloat,
+//              accessibilityLabel: String, action: () -> Void)
+//   // enum SeekDirection { case backward, forward }
 //
 // ── Section header (design/kit/components/section-header.html) ─────────────
 //   SectionHeader(title: String, count: Int?)

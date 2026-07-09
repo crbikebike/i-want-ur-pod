@@ -249,22 +249,27 @@ that the kit screen exists and the screen cites it.
 | `IWantUrPod/UpNext/QueueAutoAdvanceCoordinator.swift` | Couples `PlaybackEngine.onFinished` to `QueueStore` for E5-S3 auto-advance, kept out of `PlaybackKit` itself so that package stays decoupled from `QueueItem`/`QueueStore`. Not a UI component — no kit citation needed. | ✅ Implemented |
 | `IWantUrPod/Detail/PodcastDetailView.swift` (`EpisodeRow.queueControl`) | The "Add to Up Next" control (E5-S1) added to the existing episode row: a `GhostButton` calling `QueueStore.add(episode)` when not yet queued, or an "In Up Next" checkmark label when it is. Composed from tokens, no kit mock (same precedent as the row's existing download/play controls). | ✅ Implemented |
 
-## Now Playing (E6) — composed, no kit mock
+## Now Playing (E6) — mostly composed; seek control now has a kit mock
 
-There is no `design/kit/screens/now-playing.html` or mini-player mock —
-navigation-map.md's "Persistent chrome placement" specifies the mini-player's
-*placement* (shell chrome, above the tab bar) and the Now Playing sheet's
-*content* (large artwork, details, transport) but no kit file backs either.
-Same precedent as Podcast Detail (E2)/Podcasts (E3)/Up Next (E5): compose
-from `docs/design/direction.md` tokens + existing components. Every new file
-below carries a `// Composed from docs/design/direction.md tokens — no
-design/kit source (see design/kit/MANIFEST.md).` header instead of a
-`design/kit/*.html` citation.
+There is no `design/kit/screens/now-playing.html` or mini-player-container
+mock — navigation-map.md's "Persistent chrome placement" specifies the
+mini-player's *placement* (shell chrome, above the tab bar) and the Now
+Playing sheet's *content* (large artwork, details, transport) but no kit file
+backs either container. Same precedent as Podcast Detail (E2)/Podcasts
+(E3)/Up Next (E5): compose from `docs/design/direction.md` tokens + existing
+components. Every new file below still carries a `// Composed from
+docs/design/direction.md tokens — no design/kit source (see
+design/kit/MANIFEST.md).` header instead of a `design/kit/*.html` citation,
+**except** the rewind/skip-ahead transport control itself, which is now a
+proper `DesignSystem` component backed by a kit mock (see below) — the two
+containers (mini-player bar, Now Playing sheet) that host it remain
+composed-no-mock.
 
 | Swift file | Real bespoke content | Status |
 |---|---|---|
 | `IWantUrPod/NowPlaying/MiniPlayer.swift` | E6-S1's persistent bar: `RemoteArtwork` thumb + title/show + a trailing play/pause control, drawn as translucent glass (mirrors `LiquidGlassTabBar`'s material/hairline/shadow treatment so the two chrome pieces read as one system) directly above the tab bar. Reads the app-scoped `PlaybackEngine` from the environment; visible iff `PlaybackTransport.isMiniPlayerPresented(for:)`. Tapping the row presents the Now Playing sheet; tapping the trailing control toggles play/pause without presenting it. | ✅ Implemented |
 | `IWantUrPod/NowPlaying/NowPlayingSheet.swift` | E6-S2's full view, presented as a `.sheet` from `AppShell`: large `RemoteArtwork`, episode/show title, a `Slider` scrubber (seeks via `PlaybackEngine.seek(toFraction:)` on release, persisting `Episode.playbackProgress`), and skip-back-15/play-pause/skip-forward-30 transport. Reads the same injected `PlaybackEngine`; dismissing returns to the mini-player with state intact since this view owns no playback state itself. | ✅ Implemented |
+| `Packages/DesignSystem/Sources/DesignSystem/Components/SeekButton.swift` | The icon-only rewind/skip-ahead transport control (`SeekButton(direction:seconds:diameter:accessibilityLabel:action:)`), translated from `design/kit/components/seek-button.html`'s `.seek-btn`: an SF Symbol curved arrow (`gobackward`/`goforward`) with the seconds numeral (from `PlaybackKit`'s `SkipInterval`) overlaid as data-driven text so one component serves both the 15s rewind and 30s skip-ahead at both the mini-player's ~30pt size and the Now Playing sheet's ~44pt size. Not yet wired into `MiniPlayer.swift`/`NowPlayingSheet.swift` — component only. | ✅ Implemented |
 | `IWantUrPod/NowPlaying/PlaybackTransport.swift` | The testable seam behind both views: `isMiniPlayerPresented(for state:)` (mini-player visibility), `playPauseAction(for state:)`, and `playPauseSymbolName(for state:)` — pure `PlaybackState` → behavior mappings, exercised directly by `IWantUrPodTests/NowPlayingTests.swift` without needing a live engine. Not a UI component — no kit citation needed; listed for completeness since it's new in E6. | ✅ Implemented |
 | `IWantUrPod/App/AppShell.swift` (`miniPlayerHeight`/`miniPlayerReservedPadding`, mini-player + `.sheet` wiring) | The frozen-nav-contract-preserving integration: `AppShell` draws `MiniPlayer` as shell chrome above `LiquidGlassTabBar` (never inside a tab's content), applies the combined bottom reserve to `content`'s own frame when the mini-player is visible (so every screen's existing 104pt internal reserve still clears both the bar and the mini-player, with no screen needing to change), and presents `NowPlayingSheet` via `.sheet(isPresented:)` when the mini-player is tapped. | ✅ Implemented |
 
