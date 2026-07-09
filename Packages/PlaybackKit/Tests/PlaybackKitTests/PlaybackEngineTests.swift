@@ -250,6 +250,54 @@ final class PlaybackEngineTests: XCTestCase {
         XCTAssertEqual(engine.state, .playing)
     }
 
+    // MARK: - Preparing (download-in-progress) state
+
+    func test_beginPreparing_setsPreparingState_evenForNotDownloadedEpisode() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(downloadState: .notDownloaded)
+        context.insert(episode)
+
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub)
+
+        engine.beginPreparing(episode: episode, context: context)
+
+        XCTAssertEqual(engine.state, .preparing)
+        XCTAssertEqual(engine.currentEpisode?.guid, episode.guid)
+        XCTAssertEqual(engine.displayProgress, 0, accuracy: 0.001)
+        XCTAssertEqual(stub.loadedURLs.count, 0, "must never touch the player while merely preparing")
+        XCTAssertEqual(stub.playCallCount, 0)
+    }
+
+    func test_failPreparation_whilePreparing_movesToFailed() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(downloadState: .notDownloaded)
+        context.insert(episode)
+
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub)
+        engine.beginPreparing(episode: episode, context: context)
+
+        engine.failPreparation("download failed")
+
+        XCTAssertEqual(engine.state, .failed("download failed"))
+    }
+
+    func test_failPreparation_outsidePreparing_isNoOp() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode()
+        context.insert(episode)
+
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub)
+        engine.load(episode: episode, context: context)
+        XCTAssertEqual(engine.state, .playing)
+
+        engine.failPreparation("stale failure")
+
+        XCTAssertEqual(engine.state, .playing, "a failure from a superseded preparation must not clobber an unrelated state")
+    }
+
     // MARK: - State machine transitions
 
     func test_pauseAndResume_toggleState() throws {

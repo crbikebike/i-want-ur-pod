@@ -92,6 +92,56 @@ final class QueueStoreTests: XCTestCase {
         XCTAssertEqual(reloadedStore.items.first?.episode?.guid, "persist")
     }
 
+    // MARK: - insertAtFront (E6 universal play intent)
+
+    func test_insertAtFront_intoEmptyQueue_landsAtIndexZero() throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+        let podcast = makePodcast(context)
+        let episode = makeEpisode(context, guid: "front-only", podcast: podcast)
+        try context.save()
+
+        let store = QueueStore(context: context)
+        XCTAssertTrue(store.insertAtFront(episode))
+
+        XCTAssertEqual(store.items.map { $0.episode?.guid }, ["front-only"])
+        XCTAssertEqual(store.items.map(\.order), [0])
+    }
+
+    func test_insertAtFront_intoPopulatedQueue_landsFirst_andRenormalizes() throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+        let podcast = makePodcast(context)
+        let first = makeEpisode(context, guid: "a", podcast: podcast)
+        let second = makeEpisode(context, guid: "b", podcast: podcast)
+        let front = makeEpisode(context, guid: "front", podcast: podcast)
+        try context.save()
+
+        let store = QueueStore(context: context)
+        store.add(first)
+        store.add(second)
+
+        XCTAssertTrue(store.insertAtFront(front))
+
+        XCTAssertEqual(store.items.map { $0.episode?.guid }, ["front", "a", "b"])
+        XCTAssertEqual(store.items.map(\.order), [0, 1, 2], "order must renormalize to contiguous 0,1,2 with the new item first")
+    }
+
+    func test_insertAtFront_alreadyQueuedEpisode_isNoOp() throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+        let podcast = makePodcast(context)
+        let episode = makeEpisode(context, guid: "already-queued", podcast: podcast)
+        try context.save()
+
+        let store = QueueStore(context: context)
+        store.add(episode)
+        let countBefore = store.items.count
+
+        XCTAssertFalse(store.insertAtFront(episode), "an already-queued episode must not be inserted again")
+        XCTAssertEqual(store.items.count, countBefore)
+    }
+
     // MARK: - Drag reorder rewrites order contiguously
 
     func test_move_rewritesOrderContiguously_noGaps() throws {

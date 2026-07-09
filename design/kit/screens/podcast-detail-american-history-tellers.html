@@ -700,7 +700,7 @@
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .ep-meta { margin-top: 3px; font-size: .78rem; font-weight: 600; color: var(--text-dim); }
   .ep-arc { color: var(--accent-2); font-weight: 800; }
-  .ep-ctls { display: flex; align-items: center; gap: var(--sp-2); margin-top: 10px; }
+  .ep-ctls { display: flex; align-items: center; justify-content: flex-end; gap: var(--sp-2); margin-top: 10px; }
   .ep-btn { flex: none; width: 38px; height: 38px; border-radius: 50%; border: none; cursor: pointer;
     display: grid; place-items: center; background: var(--chip); color: var(--text-dim);
     transition: transform .25s var(--ease-spring), background .3s, color .3s; }
@@ -889,9 +889,9 @@
           <div class="ep-title">A Devil of a Whipping</div>
           <div class="ep-meta"><span class="ep-arc">American Revolution</span> · S97 · E5 · Jul 1, 2026 · 41 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl done" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="American Revolution" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl done" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -902,9 +902,9 @@
           <div class="ep-title">Saratoga</div>
           <div class="ep-meta"><span class="ep-arc">American Revolution</span> · S97 · E4 · Jun 24, 2026 · 39 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl done" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add added" data-arc="American Revolution" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl done" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -915,9 +915,9 @@
           <div class="ep-title">Foul Play</div>
           <div class="ep-meta">Jun 22, 2026 · 7 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -928,9 +928,9 @@
           <div class="ep-title">The Times That Try Men's Souls</div>
           <div class="ep-meta"><span class="ep-arc">American Revolution</span> · S97 · E3 · Jun 17, 2026 · 37 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="American Revolution" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -941,9 +941,9 @@
           <div class="ep-title">Tis' Time to Part</div>
           <div class="ep-meta"><span class="ep-arc">American Revolution</span> · S97 · E2 · Jun 10, 2026 · 41 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="American Revolution" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -954,9 +954,9 @@
           <div class="ep-title">- Dr. Death: The Cowboy</div>
           <div class="ep-meta">Jun 9, 2026 · 6 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl done" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl done" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -967,9 +967,9 @@
           <div class="ep-title">Liberty or Death</div>
           <div class="ep-meta"><span class="ep-arc">American Revolution</span> · S97 · E1 · Jun 3, 2026 · 42 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="American Revolution" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -980,9 +980,9 @@
           <div class="ep-title">The Business of Discovery</div>
           <div class="ep-meta"><span class="ep-arc">Edison vs. Tesla</span> · S96 · E4 · May 27, 2026 · 37 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Edison vs. Tesla" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             <span class="ep-played">✓ Played</span>
           </div>
         </div>
@@ -993,9 +993,9 @@
           <div class="ep-title">Triumph of Illumination</div>
           <div class="ep-meta"><span class="ep-arc">Edison vs. Tesla</span> · S96 · E3 · May 20, 2026 · 42 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Edison vs. Tesla" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1006,9 +1006,9 @@
           <div class="ep-title">Work of the World</div>
           <div class="ep-meta"><span class="ep-arc">Edison vs. Tesla</span> · S96 · E2 · May 13, 2026 · 41 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl done" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Edison vs. Tesla" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl done" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1019,9 +1019,9 @@
           <div class="ep-title">Prometheus’ Fire</div>
           <div class="ep-meta"><span class="ep-arc">Edison vs. Tesla</span> · S96 · E1 · May 6, 2026 · 40 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Edison vs. Tesla" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1032,9 +1032,9 @@
           <div class="ep-title">After the Storm</div>
           <div class="ep-meta"><span class="ep-arc">The 1900 Galveston Hurricane</span> · S95 · E4 · Apr 29, 2026 · 38 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The 1900 Galveston Hurricane" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1045,9 +1045,9 @@
           <div class="ep-title">City of Doom</div>
           <div class="ep-meta"><span class="ep-arc">The 1900 Galveston Hurricane</span> · S95 · E3 · Apr 22, 2026 · 37 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The 1900 Galveston Hurricane" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             <span class="ep-played">✓ Played</span>
           </div>
         </div>
@@ -1058,9 +1058,9 @@
           <div class="ep-title">Night of Terrors</div>
           <div class="ep-meta"><span class="ep-arc">The 1900 Galveston Hurricane</span> · S95 · E2 · Apr 15, 2026 · 33 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The 1900 Galveston Hurricane" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1071,9 +1071,9 @@
           <div class="ep-title">An Absurd Delusion</div>
           <div class="ep-meta"><span class="ep-arc">The 1900 Galveston Hurricane</span> · S95 · E1 · Apr 8, 2026 · 34 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The 1900 Galveston Hurricane" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1084,9 +1084,9 @@
           <div class="ep-title">Harper Lee: Mockingbird</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S94 · E6 · Apr 1, 2026 · 40 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1097,9 +1097,9 @@
           <div class="ep-title">James Baldwin: The Exile</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S94 · E5 · Mar 25, 2026 · 41 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1110,9 +1110,9 @@
           <div class="ep-title">John Steinbeck: The Observer</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S94 · E4 · Mar 18, 2026 · 40 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1123,9 +1123,9 @@
           <div class="ep-title">Mark Twain: Voice of a Nation</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S94 · E3 · Mar 11, 2026 · 41 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1136,9 +1136,9 @@
           <div class="ep-title">Louisa May Alcott: The Breadwinner</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S94 · E2 · Mar 4, 2026 · 39 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1149,9 +1149,9 @@
           <div class="ep-title">Edgar Allan Poe: Master of Macabre</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S94 · E1 · Feb 25, 2026 · 41 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1162,9 +1162,9 @@
           <div class="ep-title">St. Valentines Day Massacre: Closing In On Capone  | 3</div>
           <div class="ep-meta">S93 · E3 · Feb 18, 2026 · 36 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1175,9 +1175,9 @@
           <div class="ep-title">Public Enemy No. 1</div>
           <div class="ep-meta"><span class="ep-arc">St. Valentines Day Massacre</span> · S93 · E2 · Feb 11, 2026 · 38 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="St. Valentines Day Massacre" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1188,9 +1188,9 @@
           <div class="ep-title">The Land of Bilk and Money</div>
           <div class="ep-meta"><span class="ep-arc">St. Valentines Day Massacre</span> · S93 · E1 · Feb 4, 2026 · 39 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="St. Valentines Day Massacre" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1201,9 +1201,9 @@
           <div class="ep-title">There Is No Patent</div>
           <div class="ep-meta"><span class="ep-arc">Conquering Polio</span> · S92 · E4 · Jan 28, 2026 · 36 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Conquering Polio" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1214,9 +1214,9 @@
           <div class="ep-title">The Cutter Fiasco</div>
           <div class="ep-meta"><span class="ep-arc">Conquering Polio</span> · S92 · E3 · Jan 21, 2026 · 36 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Conquering Polio" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1227,9 +1227,9 @@
           <div class="ep-title">Beyond the Microscope</div>
           <div class="ep-meta"><span class="ep-arc">Conquering Polio</span> · S92 · E2 · Jan 14, 2026 · 39 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Conquering Polio" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1240,9 +1240,9 @@
           <div class="ep-title">Indian Summer</div>
           <div class="ep-meta"><span class="ep-arc">The Ice King</span> · S91 · E4 · Jan 7, 2026 · 36 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The Ice King" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1253,9 +1253,9 @@
           <div class="ep-title">The March of Dimes</div>
           <div class="ep-meta"><span class="ep-arc">Conquering Polio</span> · S92 · E1 · Jan 7, 2026 · 40 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Conquering Polio" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1266,9 +1266,9 @@
           <div class="ep-title">Slippery Business</div>
           <div class="ep-meta"><span class="ep-arc">The Ice King</span> · S91 · E3 · Dec 24, 2025 · 33 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The Ice King" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1279,9 +1279,9 @@
           <div class="ep-title">Frozen Assets</div>
           <div class="ep-meta"><span class="ep-arc">The Ice King</span> · S91 · E2 · Dec 17, 2025 · 34 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The Ice King" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1292,9 +1292,9 @@
           <div class="ep-title">No Joke</div>
           <div class="ep-meta"><span class="ep-arc">The Ice King</span> · S91 · E1 · Dec 10, 2025 · 35 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The Ice King" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1305,9 +1305,9 @@
           <div class="ep-title">The Thanksgiving Myth</div>
           <div class="ep-meta"><span class="ep-arc">The Mayflower</span> · S90 · E5 · Dec 3, 2025 · 39 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The Mayflower" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1318,9 +1318,9 @@
           <div class="ep-title">Cutthroats</div>
           <div class="ep-meta"><span class="ep-arc">The Mayflower</span> · S90 · E4 · Nov 26, 2025 · 35 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The Mayflower" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1331,9 +1331,9 @@
           <div class="ep-title">The First Thanksgiving</div>
           <div class="ep-meta"><span class="ep-arc">The Mayflower</span> · S90 · E3 · Nov 19, 2025 · 34 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The Mayflower" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1344,9 +1344,9 @@
           <div class="ep-title">A Sea of Troubles</div>
           <div class="ep-meta"><span class="ep-arc">The Mayflower</span> · S90 · E2 · Nov 12, 2025 · 35 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The Mayflower" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1357,9 +1357,9 @@
           <div class="ep-title">Saints and Strangers</div>
           <div class="ep-meta"><span class="ep-arc">The Mayflower</span> · S90 · E1 · Nov 5, 2025 · 33 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="The Mayflower" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1370,9 +1370,9 @@
           <div class="ep-title">Vendetta</div>
           <div class="ep-meta"><span class="ep-arc">Shootout at the O.K. Corral</span> · S89 · E4 · Oct 29, 2025 · 37 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Shootout at the O.K. Corral" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1383,9 +1383,9 @@
           <div class="ep-title">Thirty Seconds</div>
           <div class="ep-meta"><span class="ep-arc">Shootout at the O.K. Corral</span> · S89 · E3 · Oct 22, 2025 · 37 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Shootout at the O.K. Corral" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1396,9 +1396,9 @@
           <div class="ep-title">Law and Disorder</div>
           <div class="ep-meta"><span class="ep-arc">Shootout at the O.K. Corral</span> · S89 · E2 · Oct 15, 2025 · 35 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Shootout at the O.K. Corral" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1409,9 +1409,9 @@
           <div class="ep-title">The Road to Tombstone</div>
           <div class="ep-meta"><span class="ep-arc">Shootout at the O.K. Corral</span> · S89 · E1 · Oct 8, 2025 · 38 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Shootout at the O.K. Corral" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1422,9 +1422,9 @@
           <div class="ep-title">Escape from Libby Prison</div>
           <div class="ep-meta"><span class="ep-arc">Daring Prison Escapes</span> · S88 · E5 · Oct 1, 2025 · 40 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Daring Prison Escapes" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1435,9 +1435,9 @@
           <div class="ep-title">Nazis in the Arizona Desert</div>
           <div class="ep-meta"><span class="ep-arc">Daring Prison Escapes</span> · S88 · E4 · Sep 24, 2025 · 37 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Daring Prison Escapes" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1448,9 +1448,9 @@
           <div class="ep-title">Escape from Leavenworth</div>
           <div class="ep-meta"><span class="ep-arc">Daring Prison Escapes</span> · S88 · E3 · Sep 17, 2025 · 34 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Daring Prison Escapes" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1461,9 +1461,9 @@
           <div class="ep-title">Fleeing the Rock</div>
           <div class="ep-meta"><span class="ep-arc">Daring Prison Escapes</span> · S88 · E2 · Sep 10, 2025 · 35 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Daring Prison Escapes" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1474,9 +1474,9 @@
           <div class="ep-title">Bastille of the Confederacy</div>
           <div class="ep-meta"><span class="ep-arc">Daring Prison Escapes</span> · S88 · E1 · Sep 3, 2025 · 40 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Daring Prison Escapes" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1487,9 +1487,9 @@
           <div class="ep-title">The Enduring Message of James Baldwin</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E7 · Jan 3, 2024 · 38 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1500,9 +1500,9 @@
           <div class="ep-title">Harper Lee: Mockingbird</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E6 · Dec 27, 2023 · 40 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1513,9 +1513,9 @@
           <div class="ep-title">James Baldwin: The Exile</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E5 · Dec 20, 2023 · 41 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1526,9 +1526,9 @@
           <div class="ep-title">John Steinbeck: The Observer</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E4 · Dec 13, 2023 · 40 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1539,9 +1539,9 @@
           <div class="ep-title">Mark Twain: Voice of a Nation</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E3 · Dec 6, 2023 · 41 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1552,9 +1552,9 @@
           <div class="ep-title">Louisa May Alcott: The Breadwinner</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E2 · Nov 29, 2023 · 39 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -1565,9 +1565,9 @@
           <div class="ep-title">Edgar Allan Poe: Master of Macabre</div>
           <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E1 · Nov 22, 2023 · 41 min</div>
           <div class="ep-ctls">
-            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-            
+            <button class="ep-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5.2v13.6L18.5 12z"/></svg></button>
             <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>

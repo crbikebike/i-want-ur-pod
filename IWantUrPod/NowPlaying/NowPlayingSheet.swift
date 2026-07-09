@@ -141,14 +141,22 @@ struct NowPlayingSheet: View {
             .accessibilityLabel("Skip back 15 seconds")
 
             Button(action: togglePlayPause) {
-                Image(systemName: PlaybackTransport.playPauseSymbolName(for: playbackEngine.state))
-                    .font(.system(size: 40, weight: .bold))
-                    .frame(width: 64, height: 64)
+                if playbackEngine.state == .preparing {
+                    // `.preparing` (E6: auto-download-then-play) — same
+                    // spinner-in-place-of-glyph treatment as `MiniPlayer`.
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .frame(width: 64, height: 64)
+                } else {
+                    Image(systemName: PlaybackTransport.playPauseSymbolName(for: playbackEngine.state))
+                        .font(.system(size: 40, weight: .bold))
+                        .frame(width: 64, height: 64)
+                }
             }
             .buttonStyle(.plain)
             .foregroundStyle(palette.accent)
             .disabled(episode == nil)
-            .accessibilityLabel(playbackEngine.state == .playing ? "Pause" : "Play")
+            .accessibilityLabel(playbackEngine.state == .preparing ? "Preparing" : (playbackEngine.state == .playing ? "Pause" : "Play"))
 
             Button {
                 playbackEngine.skip(by: 30)

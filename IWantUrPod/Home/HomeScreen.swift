@@ -1,18 +1,22 @@
 // Translated from design/kit/screens/home.html (its bespoke content: the
 // large "Home" title with pulse-dot, the top-right `.util-gear` Settings
-// button, the "Up Next" and "New episodes" `.sec-head`/`.list`/`.row` groups,
-// and the "Shows for you"/"Our favorites" `.shelf`/`.rail`/`.pod` shelves —
-// see design/kit/MANIFEST.md's "Home / Shows / Up Next screens" entry; the
-// `.tabbar`/`.statusbar`/`.notch`/theme-toggle chrome is the shared kit frame
-// AppShell + LiquidGlassTabBar already own, not re-translated here).
+// button, the "Up Next" and "New episodes" `.sec-head`/`.rail`/`.pn`/`.ep-card`
+// playable rails, and the "Shows for you"/"Our favorites" `.shelf`/`.rail`/
+// `.pod` shelves — see design/kit/MANIFEST.md's "Home / Shows / Up Next
+// screens" entry; the `.tabbar`/`.statusbar`/`.notch`/theme-toggle chrome is
+// the shared kit frame AppShell + LiquidGlassTabBar already own, not
+// re-translated here).
 //
 // ROADMAP.md E8-S2: Home replaces Discover as the first tab destination.
-// Renders four sections in kit order — an Up Next peek, a New episodes
-// shelf, a Shows-for-you shelf, and an Our-favorites shelf — each rendering
-// nothing (no header, no empty chrome) when it has no content. Data sources:
-//   - Up Next peek:     the shared `QueueStore` (E5), first few queued items.
+// Renders four sections in kit order — an Up Next rail, a New episodes rail,
+// a Shows-for-you shelf, and an Our-favorites shelf — each rendering nothing
+// (no header, no empty chrome) when it has no content. Data sources:
+//   - Up Next rail:     the shared `QueueStore` (E5), the full queue —
+//                        `UpNextTile`s (`.pn`) scroll horizontally rather
+//                        than being capped to a short vertical peek.
 //   - New episodes:     `HomeFeedProvider.recentEpisodes` over every
-//                        subscribed show's episodes (SwiftData `@Query`).
+//                        subscribed show's episodes (SwiftData `@Query`) —
+//                        `NewEpisodeCard`s (`.ep-card`) in a horizontal rail.
 //   - Shows for you:     the bundled curated list, minus already-subscribed
 //                        shows — an honest degrade; see
 //                        `HomeFeedProvider.recommendedEntries`'s doc comment
@@ -22,21 +26,28 @@
 //                        `CuratedListLoader` DiscoverViewModel uses — not
 //                        duplicated, just re-invoked; see
 //                        `HomeFeedProvider.loadCuratedEntries`).
-// Tapping any show (Up Next peek's owning show, a New-episodes row, or a
-// shelf card) pushes its `feedURL` into the same `PodcastDetailScreen` (E2)
-// every other screen uses. The top-right gear pushes the existing
+// Both rails' cards are playable: tapping a tile's `PlayButton` fires the
+// universal play intent via `PlaybackIntentCoordinator.play(_:context:)` —
+// already-downloaded episodes play immediately, otherwise it auto-queues,
+// auto-downloads, and auto-plays on completion (E6); tapping the rest of a
+// tile opens its owning show. Every other card tap (a shelf's
+// `.pod`) pushes its `feedURL` into the same `PodcastDetailScreen` (E2) every
+// other screen uses. The top-right gear pushes the existing
 // `SettingsScreen()` (E8-S4's entry point).
 //
-// Kit's `.see-all` trailing links on the Up Next/New-episodes headers are not
-// wired to a destination — no "queue" or "all new episodes" screen exists in
-// scope (Up Next itself is one tab away, already reachable) — so this
-// translation omits them rather than shipping a dead link; `SectionHeader`'s
-// title-only variant is used instead of a bespoke header.
+// Kit's `.see-all` trailing link on the Up Next header now switches to the
+// Up Next tab (`onSeeAllUpNext`, wired by `AppShell`) — Up Next itself is one
+// tab away, already reachable, so this is a real destination unlike the New
+// Episodes header's `.see-all` (no "all new episodes" screen exists in
+// scope, so that header stays the title-only `SectionHeader` variant with no
+// trailing affordance).
 import SwiftUI
 import SwiftData
 import DesignSystem
 import DirectoryKit
 import PodcastModels
+import PlaybackKit
+import DownloadKit
 
 /// The Home tab's entry point (ROADMAP.md E8-S2), referenced by `AppShell` as
 /// a no-arg view. Owns its own `NavigationStack` (frozen nav contract — every
@@ -50,6 +61,8 @@ public struct HomeScreen: View {
     @Query(sort: \Episode.publishDate, order: .reverse) private var allEpisodes: [Episode]
 
     @Environment(QueueStore.self) private var queueStore
+    @Environment(PlaybackEngine.self) private var playbackEngine
+    @Environment(PlaybackIntentCoordinator.self) private var playbackIntent
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
 
@@ -66,16 +79,19 @@ public struct HomeScreen: View {
     private let firstRunGate = FirstRunGate()
     @State private var showFirstRunExplainer = false
 
-    public init() {}
+    /// Fired by the Up Next header's "See all" (kit `.see-all`) — switches
+    /// the app to the Up Next tab. Defaulted so existing no-arg call sites
+    /// (previews) keep compiling; `AppShell` supplies the real tab switch.
+    private let onSeeAllUpNext: () -> Void
+
+    public init(onSeeAllUpNext: @escaping () -> Void = {}) {
+        self.onSeeAllUpNext = onSeeAllUpNext
+    }
 
     // MARK: - Derived data
 
     private var subscribedFeedURLs: Set<URL> {
         Set(allPodcasts.filter(\.isSubscribed).map(\.feedURL))
-    }
-
-    private var upNextPeekItems: [QueueItem] {
-        Array(queueStore.items.prefix(3))
     }
 
     private var recentEpisodes: [Episode] {
@@ -93,7 +109,7 @@ public struct HomeScreen: View {
                     VStack(alignment: .leading, spacing: 0) {
                         titleBar
 
-                        upNextPeekSection
+                        upNextSection
                         newEpisodesSection
                         showsForYouSection
                         ourFavoritesSection
@@ -176,56 +192,77 @@ public struct HomeScreen: View {
         SettingsGearButton { path.append(SettingsRoute.settings) }
     }
 
-    // MARK: - Up Next peek (.sec-head "Up Next" / .list)
+    // MARK: - Up Next (.sec-head "Up Next" + .see-all / .rail of .pn)
 
     @ViewBuilder
-    private var upNextPeekSection: some View {
-        if !upNextPeekItems.isEmpty {
-            SectionHeader(title: "Up Next")
+    private var upNextSection: some View {
+        if !queueStore.items.isEmpty {
+            upNextHeader
 
-            GroupedRowList(items: upNextPeekItems, onSelect: openQueueItem) { item in
-                if let episode = item.episode {
-                    EpisodeRowContent(
-                        episode: episode,
-                        subtitle: upNextSubtitle(for: episode)
-                    )
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: Spacing.sp3) {   // .rail { gap: --sp-3 }
+                    ForEach(Array(queueStore.items.enumerated()), id: \.offset) { _, item in
+                        if let episode = item.episode {
+                            UpNextTile(
+                                episode: episode,
+                                onPlay: { playbackIntent.play(episode, context: modelContext) },
+                                onOpenShow: { openQueueItem(item) }
+                            )
+                        }
+                    }
                 }
+                .padding(.horizontal, 2)   // optical inset matching SectionHeader
             }
         }
     }
 
-    private func upNextSubtitle(for episode: Episode) -> String {
-        let show = episode.podcast?.title ?? ""
-        guard let duration = HomeFeedProvider.durationLabel(for: episode) else { return show }
-        return show.isEmpty ? duration : "\(show) · \(duration)"
+    /// `SectionHeader` has no trailing-accessory slot (same limitation
+    /// `PodcastDetailView.episodesHeader` works around) — a custom title +
+    /// `Spacer` + "See all" row instead, matching kit's `.see-all` link
+    /// styling (accent text, no chip/background).
+    private var upNextHeader: some View {
+        HStack(alignment: .center, spacing: Spacing.sp2) {
+            SectionHeader(title: "Up Next")
+            Spacer(minLength: 0)
+            Button(action: onSeeAllUpNext) {
+                Text("See all")
+                    .font(Typography.subhead.weight(.bold))
+                    .foregroundStyle(palette.accent)
+            }
+            .buttonStyle(.plain)
+            .padding(.top, Spacing.sp1)   // roughly aligns with SectionHeader's own bottom inset
+        }
     }
 
-    /// Up Next peek rows open the queued episode's show detail — the E2
-    /// screen is keyed by `feedURL`, not by episode, so "open the episode"
-    /// resolves to its owning show's Podcast Detail (acceptable per E8-S2's
-    /// criterion: "opens the E2 Podcast Detail (or the episode...)").
+    /// Up Next rows open the queued episode's show detail — the E2 screen is
+    /// keyed by `feedURL`, not by episode, so "open the episode" resolves to
+    /// its owning show's Podcast Detail (acceptable per E8-S2's criterion:
+    /// "opens the E2 Podcast Detail (or the episode...)").
     private func openQueueItem(_ item: QueueItem) {
         guard let feedURL = item.episode?.podcast?.feedURL else { return }
         path.append(feedURL)
     }
 
-    // MARK: - New episodes (.sec-head "New episodes" / .list)
+    // MARK: - New episodes (.sec-head "New episodes" / .rail of .ep-card)
 
     @ViewBuilder
     private var newEpisodesSection: some View {
         if !recentEpisodes.isEmpty {
             SectionHeader(title: "New episodes")
 
-            GroupedRowList(items: recentEpisodes, onSelect: openEpisodeShow) { episode in
-                EpisodeRowContent(episode: episode, subtitle: newEpisodeSubtitle(for: episode))
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: Spacing.sp3) {   // .rail { gap: --sp-3 }
+                    ForEach(recentEpisodes, id: \.guid) { episode in
+                        NewEpisodeCard(
+                            episode: episode,
+                            onPlay: { playbackIntent.play(episode, context: modelContext) },
+                            onOpenShow: { openEpisodeShow(episode) }
+                        )
+                    }
+                }
+                .padding(.horizontal, 2)   // optical inset matching SectionHeader
             }
         }
-    }
-
-    private func newEpisodeSubtitle(for episode: Episode) -> String {
-        let show = episode.podcast?.title ?? ""
-        let when = HomeFeedProvider.relativeDayLabel(for: episode.publishDate)
-        return show.isEmpty ? when : "\(show) · \(when)"
     }
 
     private func openEpisodeShow(_ episode: Episode) {
@@ -315,96 +352,194 @@ public struct HomeScreen: View {
     }
 }
 
-// MARK: - Grouped row list (.list / .row)
+// MARK: - Up Next tile (.pn / .pn-art / .pn-play / .pn-meta)
 
-/// The kit's `.list`/`.row` grouped-inset-list surface: a rounded `surface`
-/// card containing plain rows separated by inset hairlines, mirroring
-/// `PodcastsScreen`'s row shape but grouped into one elevated card (as
-/// `home.html`'s Up Next/New-episodes sections render, rather than
-/// `PodcastsScreen`'s bare vertical stack).
-private struct GroupedRowList<Item, RowContent: View>: View {
-    let items: [Item]
-    let onSelect: (Item) -> Void
-    let row: (Item) -> RowContent
+// Translated from design/kit/screens/home.html `.pn` / `.pn-art` / `.pn-play`
+// / `.pn-meta` / `.pn-title` / `.pn-time` (the "Up Next: horizontal
+// square-tile slider" rail, lines ~589-604 for the CSS, ~717-760 for the
+// markup). A private struct (not a standalone file) matching this project's
+// explicit-file-reference precedent — the same reason `PodcastPosterCard`
+// lives inside `PodcastsScreen.swift` and `GroupedRowList` used to live here.
+//
+/// One `.pn` tile in the Up Next rail: a 112×112 square of artwork with a
+/// centered play button, and a title/time pair beneath it. Playing fires the
+/// universal intent (the caller wires `onPlay` to
+/// `PlaybackIntentCoordinator.play(_:context:)`); tapping the tile body
+/// anywhere else opens the episode's owning show (same "open the show" resolution
+/// `HomeScreen`'s prior `.list`/`.row` translation used, since Podcast
+/// Detail is keyed by `feedURL`, not by episode).
+private struct UpNextTile: View {
+    let episode: Episode
+    let onPlay: () -> Void
+    let onOpenShow: () -> Void
 
     @Environment(\.palette) private var palette
 
-    init(
-        items: [Item],
-        onSelect: @escaping (Item) -> Void,
-        @ViewBuilder row: @escaping (Item) -> RowContent
-    ) {
-        self.items = items
-        self.onSelect = onSelect
-        self.row = row
-    }
-
     var body: some View {
-        VStack(spacing: 0) {
-            // `Item` here is a SwiftData `@Model` (Episode/QueueItem), which
-            // does not conform to `Identifiable` in this codebase (see
-            // `PodcastsScreen`/`UpNextScreen`'s precedent of always passing an
-            // explicit `id:` to `ForEach` rather than relying on it) — index
-            // the array instead of requiring an `Identifiable` constraint.
-            ForEach(Array(items.enumerated()), id: \.offset) { index, item in
-                Button {
-                    onSelect(item)
-                } label: {
-                    row(item)
-                        .padding(.horizontal, Spacing.sp4)
-                        .padding(.vertical, Spacing.sp3)
-                }
-                .buttonStyle(.plain)
+        VStack(alignment: .leading, spacing: 8) {   // .pn { gap: 8px }
+            ZStack {   // .pn-art — the play button floats centered over the artwork
+                RemoteArtwork(url: artworkURL, seed: seed, initial: initial, cornerRadius: Radius.rMd16)
+                    .frame(width: 112, height: 112)
 
-                if index != items.count - 1 {
-                    Divider()
-                        .overlay(palette.separator)
-                        .padding(.leading, Spacing.sp4 + 60 + Spacing.sp3)
-                }
+                // A real `Button` on top of the tap-target below wins its own
+                // hit area — same isolation `ArcCard`'s "Add all" button
+                // relies on, just overlapping here instead of a sibling below.
+                PlayButton(diameter: 40, accessibilityLabel: "Play \(episode.title)", action: onPlay)
+            }
+            .contentShape(Rectangle())
+            .onTapGesture(perform: onOpenShow)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(episode.title)
+            .accessibilityAddTraits(.isButton)
+
+            VStack(alignment: .leading, spacing: 0) {   // .pn-meta
+                Text(episode.title)   // .pn-title
+                    .typeStyle(Typography.upNextTileTitleStyle)
+                    .foregroundStyle(palette.text)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+
+                Text(timeLabel)   // .pn-time { margin-top: 2px }
+                    .typeStyle(Typography.upNextTileTimeStyle)
+                    .foregroundStyle(palette.textDim)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+                    .padding(.top, 2)
             }
         }
-        .background(palette.surface, in: RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous))
-        .clipShape(RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous))
-        .elevList(hairline: palette.hairline)
+        .frame(width: 112, alignment: .leading)
+    }
+
+    /// "· 18 min left" — kit's exact leading-dot copy, from the episode's
+    /// remaining (unplayed) whole minutes.
+    private var timeLabel: String {
+        let minutes = Int((episode.remainingTime / 60).rounded())
+        return "· \(minutes) min left"
+    }
+
+    private var artworkURL: URL? { episode.remoteArtworkURL ?? episode.podcast?.artworkURL }
+
+    private var seed: Int {
+        episode.guid.unicodeScalars.reduce(0) { $0 &+ Int($1.value) }
+    }
+
+    private var initial: String {
+        guard let first = episode.title.first(where: { !$0.isWhitespace }) else { return "?" }
+        return String(first).uppercased()
     }
 }
 
-// MARK: - Episode row content (.art / .rtitle / .rauthor)
+// MARK: - New episode card (.ep-card / .ep-art / .ep-play / .ep-meta)
 
-/// One `.row`: a 60pt `RemoteArtwork` tile beside a title + single subtitle
-/// line — shared by the Up Next peek and New-episodes sections (their only
-/// difference is what the caller composes into `subtitle`).
-private struct EpisodeRowContent: View {
+// Translated from design/kit/screens/home.html `.ep-card` / `.ep-art` /
+// `.ep-play` / `.ep-meta` / `.ep-title` / `.ep-podcast` / `.ep-date` (the
+// "New episodes: tall engaging carousel" rail, lines ~606-620 for the CSS,
+// ~762-808 for the markup). Also a private struct, same rationale as
+// `UpNextTile` above.
+//
+/// One `.ep-card` in the New Episodes rail: a 200×200 square of artwork with
+/// a corner-pinned smart tag and a corner-pinned play button, and a
+/// title/podcast/date stack beneath it. Playing fires the universal intent
+/// (`PlaybackIntentCoordinator.play(_:context:)`); tapping the card body
+/// anywhere else opens the episode's owning show.
+private struct NewEpisodeCard: View {
     let episode: Episode
-    let subtitle: String
+    let onPlay: () -> Void
+    let onOpenShow: () -> Void
 
     @Environment(\.palette) private var palette
 
     var body: some View {
-        HStack(alignment: .center, spacing: Spacing.sp3) {
-            RemoteArtwork(url: artworkURL, seed: seed, initial: initial)
-                .frame(width: 60, height: 60)
-                .accessibilityHidden(true)
+        VStack(alignment: .leading, spacing: 0) {
+            ZStack(alignment: .topLeading) {   // .ep-art
+                RemoteArtwork(url: artworkURL, seed: seed, initial: initial, cornerRadius: Radius.rMd16)
+                    .frame(width: 200, height: 200)
 
-            VStack(alignment: .leading, spacing: 1) {
-                Text(episode.title)
-                    .typeStyle(Typography.rowTitleStyle)
+                if let tag {
+                    tag
+                        .padding(9)   // .ep-art .tag { top: 9px; left: 9px }
+                }
+
+                // A real `Button` on top of the tap-target below wins its own
+                // hit area — same isolation `UpNextTile`'s overlaid play
+                // button relies on.
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        PlayButton(diameter: 38, accessibilityLabel: "Play \(episode.title)", action: onPlay)
+                    }
+                }
+                .padding(9)   // .ep-play { right: 9px; bottom: 9px }
+            }
+            .contentShape(Rectangle())
+            .onTapGesture(perform: onOpenShow)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(episode.title)
+            .accessibilityAddTraits(.isButton)
+
+            VStack(alignment: .leading, spacing: 0) {   // .ep-meta { padding: --sp-2 2px 0 }
+                Text(episode.title)   // .ep-title { margin-top: 4px }
+                    .typeStyle(Typography.newEpisodeTitleStyle)
                     .foregroundStyle(palette.text)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
+                    .padding(.top, 4)
 
-                if !subtitle.isEmpty {
-                    Text(subtitle)
-                        .typeStyle(Typography.subheadStyle)
-                        .foregroundStyle(palette.textDim)
-                        .lineLimit(1)
-                        .truncationMode(.tail)
-                }
+                Text(podcastName)   // .ep-podcast { margin-top: 4px }
+                    .typeStyle(Typography.newEpisodePodcastStyle)
+                    .foregroundStyle(palette.textDim)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+                    .padding(.top, 4)
+
+                Text(dateLabel)   // .ep-date { margin-top: 2px }
+                    .typeStyle(Typography.newEpisodeDateStyle)
+                    .foregroundStyle(palette.textFaint)
+                    .padding(.top, 2)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 2)
+            .padding(.top, Spacing.sp2)
         }
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(subtitle.isEmpty ? episode.title : "\(episode.title). \(subtitle)")
+        .frame(width: 200, alignment: .leading)
+    }
+
+    // MARK: - Smart tag
+    //
+    // Precedence: a genuinely new drop (published within the last 48h) beats
+    // everything else and gets the `.hot` accent treatment; otherwise a
+    // title-derived Story-arc part number (matching Detail's arc shelf); then
+    // an `itunes:season`/episode number pair; otherwise no chip at all.
+    private var tag: TagChip? {
+        if isNew {
+            return TagChip("New", style: .hot)
+        } else if let arcName {
+            return TagChip(arcPart.map { "\(arcName) · Part \($0)" } ?? arcName)
+        } else if let season = episode.season, let episodeNumber = episode.episodeNumber {
+            return TagChip("S\(season) · E\(episodeNumber)")
+        } else {
+            return nil
+        }
+    }
+
+    private var isNew: Bool {
+        Date.now.timeIntervalSince(episode.publishDate) < 48 * 60 * 60
+    }
+
+    private var arcName: String? {
+        ArcDerivation.derive(fromTitle: episode.title).arcName
+    }
+
+    private var arcPart: Int? {
+        ArcDerivation.derive(fromTitle: episode.title).part
+    }
+
+    private var podcastName: String { episode.podcast?.title ?? "" }
+
+    /// "Today" / "Yesterday" / "Nd ago" — same copy `HomeFeedProvider`
+    /// already derives for the (now-removed) `.list`/`.row` translation.
+    private var dateLabel: String {
+        HomeFeedProvider.relativeDayLabel(for: episode.publishDate)
     }
 
     private var artworkURL: URL? { episode.remoteArtworkURL ?? episode.podcast?.artworkURL }
@@ -463,26 +598,41 @@ private func previewQueueStore(populated: Bool) -> QueueStore {
 }
 
 #Preview("Home — populated (dark)") {
+    let queueStore = previewQueueStore(populated: true)
+    let playbackEngine = PlaybackEngine(localURLResolver: { _ in nil })
+    let downloadManager = DownloadManager()
     HomeScreen()
         .themedPalette()
         .environment(\.colorScheme, .dark)
-        .environment(previewQueueStore(populated: true))
+        .environment(queueStore)
+        .environment(playbackEngine)
+        .environment(PlaybackIntentCoordinator(playbackEngine: playbackEngine, downloadManager: downloadManager, queueStore: queueStore))
         .modelContainer(previewContainer(populated: true))
 }
 
 #Preview("Home — populated (light)") {
+    let queueStore = previewQueueStore(populated: true)
+    let playbackEngine = PlaybackEngine(localURLResolver: { _ in nil })
+    let downloadManager = DownloadManager()
     HomeScreen()
         .themedPalette()
         .environment(\.colorScheme, .light)
-        .environment(previewQueueStore(populated: true))
+        .environment(queueStore)
+        .environment(playbackEngine)
+        .environment(PlaybackIntentCoordinator(playbackEngine: playbackEngine, downloadManager: downloadManager, queueStore: queueStore))
         .modelContainer(previewContainer(populated: true))
 }
 
 #Preview("Home — empty (dark)") {
+    let queueStore = previewQueueStore(populated: false)
+    let playbackEngine = PlaybackEngine(localURLResolver: { _ in nil })
+    let downloadManager = DownloadManager()
     HomeScreen()
         .themedPalette()
         .environment(\.colorScheme, .dark)
-        .environment(previewQueueStore(populated: false))
+        .environment(queueStore)
+        .environment(playbackEngine)
+        .environment(PlaybackIntentCoordinator(playbackEngine: playbackEngine, downloadManager: downloadManager, queueStore: queueStore))
         .modelContainer(previewContainer(populated: false))
 }
 #endif

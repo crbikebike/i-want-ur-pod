@@ -50,13 +50,25 @@ struct MiniPlayer: View {
                 Spacer(minLength: Spacing.sp2)
 
                 Button(action: togglePlayPause) {
-                    Image(systemName: PlaybackTransport.playPauseSymbolName(for: playbackEngine.state))
-                        .font(.system(size: 18, weight: .bold))
-                        .foregroundStyle(palette.accent)
-                        .frame(width: 32, height: 32)
+                    if playbackEngine.state == .preparing {
+                        // `.preparing` (E6: auto-download-then-play) has no
+                        // sensible play/pause glyph — a spinner in the same
+                        // 32×32 slot, matching `PlaybackTransport
+                        // .playPauseAction`'s existing `.none` no-op for this
+                        // state.
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                            .tint(palette.accent)
+                            .frame(width: 32, height: 32)
+                    } else {
+                        Image(systemName: PlaybackTransport.playPauseSymbolName(for: playbackEngine.state))
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundStyle(palette.accent)
+                            .frame(width: 32, height: 32)
+                    }
                 }
                 .buttonStyle(.plain)
-                .accessibilityLabel(playbackEngine.state == .playing ? "Pause" : "Play")
+                .accessibilityLabel(playbackEngine.state == .preparing ? "Preparing" : (playbackEngine.state == .playing ? "Pause" : "Play"))
             }
             .padding(.horizontal, Spacing.sp3)
             .padding(.vertical, Spacing.sp2)

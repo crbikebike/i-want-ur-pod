@@ -7,6 +7,9 @@ import Foundation
 ///
 /// ```
 /// idle --load(downloaded episode)--> loading
+/// idle --play(not-downloaded episode)--> preparing
+/// preparing --download finished--> loading
+/// preparing --download failed--> failed
 /// loading --ready--> playing            loading --error--> failed
 /// playing <--pause / play--> paused
 /// playing --reach end--> finished
@@ -18,6 +21,9 @@ import Foundation
 public enum PlaybackState: Equatable, Sendable {
     /// No episode loaded. Mini-player hidden (E6, not built here).
     case idle
+    /// This episode is the current item, but its audio is still downloading;
+    /// playback has not begun. Mini-player is shown (non-idle).
+    case preparing
     /// A downloaded file is being prepared for the player.
     case loading
     /// Audio advancing; progress ticking.
