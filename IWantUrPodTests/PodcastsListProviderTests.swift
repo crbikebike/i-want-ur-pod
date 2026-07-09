@@ -70,22 +70,57 @@ final class PodcastsListProviderTests: XCTestCase {
         XCTAssertTrue(try PodcastsListProvider.subscribedPodcasts(from: context).isEmpty)
     }
 
-    // MARK: - Sorted by dateAdded, newest first
+    // MARK: - Sorted alphabetically by title, dateAdded irrelevant
 
-    func test_list_isSortedByDateAddedNewestFirst() throws {
+    func test_list_isSortedAlphabeticallyByTitle() throws {
         let context = try makeContext()
-        let oldest = makePodcast(title: "Oldest", feedURL: "https://example.com/oldest", isSubscribed: true, dateAdded: Date(timeIntervalSince1970: 1_000))
-        let middle = makePodcast(title: "Middle", feedURL: "https://example.com/middle", isSubscribed: true, dateAdded: Date(timeIntervalSince1970: 5_000))
-        let newest = makePodcast(title: "Newest", feedURL: "https://example.com/newest", isSubscribed: true, dateAdded: Date(timeIntervalSince1970: 9_000))
-        // Inserted out of order to verify sorting, not insertion order.
-        for podcast in [oldest, newest, middle] {
+        let zebra = makePodcast(title: "Zebra Cast", feedURL: "https://example.com/zebra", isSubscribed: true, dateAdded: Date(timeIntervalSince1970: 9_000))
+        let middle = makePodcast(title: "Middle Show", feedURL: "https://example.com/middle", isSubscribed: true, dateAdded: Date(timeIntervalSince1970: 5_000))
+        let acquired = makePodcast(title: "Acquired", feedURL: "https://example.com/acquired3", isSubscribed: true, dateAdded: Date(timeIntervalSince1970: 1_000))
+        // Inserted out of alphabetical (and dateAdded) order to verify the
+        // sort key, not insertion or dateAdded order.
+        for podcast in [zebra, acquired, middle] {
             context.insert(podcast)
         }
         try context.save()
 
         let result = try PodcastsListProvider.subscribedPodcasts(from: context)
 
-        XCTAssertEqual(result.map(\.title), ["Newest", "Middle", "Oldest"])
+        XCTAssertEqual(result.map(\.title), ["Acquired", "Middle Show", "Zebra Cast"])
+    }
+
+    // MARK: - sortKey: article-insensitive, diacritic/case-insensitive
+
+    func test_sortKey_stripsALeadingArticle() {
+        XCTAssertEqual(PodcastsListProvider.sortKey(for: makePodcast(title: "The Daily", feedURL: "https://example.com/the-daily", isSubscribed: true, dateAdded: .now)), "daily")
+        XCTAssertEqual(PodcastsListProvider.sortKey(for: makePodcast(title: "A History Of", feedURL: "https://example.com/a-history", isSubscribed: true, dateAdded: .now)), "history of")
+        XCTAssertEqual(PodcastsListProvider.sortKey(for: makePodcast(title: "An Arm And A Leg", feedURL: "https://example.com/an-arm", isSubscribed: true, dateAdded: .now)), "arm and a leg")
+    }
+
+    func test_sortKey_onlyStripsAnArticleWhenFollowedByMoreText() {
+        // "A" alone (no trailing word) keeps its leading "a" — it's the whole
+        // title, not an article introducing one.
+        XCTAssertEqual(PodcastsListProvider.sortKey(for: makePodcast(title: "A", feedURL: "https://example.com/just-a", isSubscribed: true, dateAdded: .now)), "a")
+    }
+
+    func test_sortKey_foldsDiacriticsAndCase() {
+        XCTAssertEqual(PodcastsListProvider.sortKey(for: makePodcast(title: "Café Society", feedURL: "https://example.com/cafe", isSubscribed: true, dateAdded: .now)), "cafe society")
+        XCTAssertEqual(PodcastsListProvider.sortKey(for: makePodcast(title: "ZEBRA", feedURL: "https://example.com/zebra-caps", isSubscribed: true, dateAdded: .now)), "zebra")
+    }
+
+    func test_list_articlesAreIgnoredWhenSorting() throws {
+        let context = try makeContext()
+        let theDaily = makePodcast(title: "The Daily", feedURL: "https://example.com/the-daily2", isSubscribed: true, dateAdded: .now)
+        let acquired = makePodcast(title: "Acquired", feedURL: "https://example.com/acquired4", isSubscribed: true, dateAdded: .now)
+        for podcast in [theDaily, acquired] {
+            context.insert(podcast)
+        }
+        try context.save()
+
+        let result = try PodcastsListProvider.subscribedPodcasts(from: context)
+
+        // "The Daily" sorts as "Daily" (D), after "Acquired" (A).
+        XCTAssertEqual(result.map(\.title), ["Acquired", "The Daily"])
     }
 
     // MARK: - Empty state: no subscribed shows returns empty
@@ -99,12 +134,12 @@ final class PodcastsListProviderTests: XCTestCase {
     // MARK: - sortedSubscribed (pure array function backing the live @Query)
 
     func test_sortedSubscribed_filtersAndSortsAPlainArray() {
-        let oldest = makePodcast(title: "Oldest", feedURL: "https://example.com/oldest2", isSubscribed: true, dateAdded: Date(timeIntervalSince1970: 1_000))
-        let newest = makePodcast(title: "Newest", feedURL: "https://example.com/newest2", isSubscribed: true, dateAdded: Date(timeIntervalSince1970: 9_000))
-        let notSubscribed = makePodcast(title: "Skip", feedURL: "https://example.com/skip2", isSubscribed: false, dateAdded: Date(timeIntervalSince1970: 5_000))
+        let zebra = makePodcast(title: "Zebra Cast", feedURL: "https://example.com/zebra2", isSubscribed: true, dateAdded: Date(timeIntervalSince1970: 1_000))
+        let acquired = makePodcast(title: "Acquired", feedURL: "https://example.com/acquired5", isSubscribed: true, dateAdded: Date(timeIntervalSince1970: 9_000))
+        let notSubscribed = makePodcast(title: "Middle Show", feedURL: "https://example.com/skip2", isSubscribed: false, dateAdded: Date(timeIntervalSince1970: 5_000))
 
-        let result = PodcastsListProvider.sortedSubscribed([oldest, notSubscribed, newest])
+        let result = PodcastsListProvider.sortedSubscribed([zebra, notSubscribed, acquired])
 
-        XCTAssertEqual(result.map(\.title), ["Newest", "Oldest"])
+        XCTAssertEqual(result.map(\.title), ["Acquired", "Zebra Cast"])
     }
 }

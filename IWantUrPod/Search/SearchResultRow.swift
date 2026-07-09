@@ -109,7 +109,7 @@ public struct SearchResultRow<Trailing: View>: View {
         }
     }
 
-    // MARK: - Artwork fallback idiom (mirrors PodcastsScreen.PodcastRow)
+    // MARK: - Artwork fallback idiom (mirrors PodcastsScreen.PodcastPosterCard)
 
     private var seed: Int {
         title.unicodeScalars.reduce(0) { $0 &+ Int($1.value) }

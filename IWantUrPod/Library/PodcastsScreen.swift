@@ -1,26 +1,24 @@
-// Composed from docs/design/direction.md tokens — no design/kit source (see
-// design/kit/MANIFEST.md). ROADMAP.md E3-S1: the Podcasts tab lists the
-// user's subscribed shows, newest `dateAdded` first, each row pushing its
-// `feedURL` into the same adaptive Podcast Detail screen (E2) the search
-// takeover uses (navigation-map.md — "Podcasts (E3) → subscribed row →
-// Podcast Detail (E2, subscribed state)").
+// Composed from docs/design/direction.md tokens, matched exactly against
+// design/kit/screens/shows.html's `.cardgrid` of `.pod` poster cards.
+// ROADMAP.md E3-S1: the Podcasts tab lists the user's subscribed shows,
+// alphabetized by title, each card pushing its `feedURL` into the same
+// adaptive Podcast Detail screen (E2) the search takeover uses
+// (navigation-map.md — "Podcasts (E3) → subscribed card → Podcast Detail
+// (E2, subscribed state)").
 //
 // ROADMAP.md E8-S3: the dock IA renames this surface "Shows" (label + large
 // title only — no route/model/persisted-state changes). E8-S4 adds the
 // top-right gear pushing `SettingsScreen()`, matching Home's `.util-gear`.
 //
-// Mirrors `IWantUrPod/Detail/PodcastDetailView.swift`'s row style (a
-// `RemoteArtwork` + title/author `VStack`, composed from tokens — no kit row
-// mock exists; see MANIFEST.md's note that the kit's only flat-row pattern
-// is a dead/superseded skeleton with no consumer) rather than reusing the
-// Discover shelf/grid components, since this is a plain vertical list, not a
-// horizontal rail or 2-up poster grid.
+// A 2-up `LazyVGrid` of `PodcastPosterCard`s (`.pod-art` square artwork +
+// `.pod-meta` title/author, gap `--sp-3` between cards) — the kit's own
+// `.cardgrid`/`.pod` pattern for "Your shows", not a flat row list.
 import SwiftUI
 import SwiftData
 import DesignSystem
 import PodcastModels
 
-/// The Podcasts tab: every subscribed show, newest-first. Owns its own
+/// The Podcasts tab: every subscribed show, alphabetized. Owns its own
 /// `NavigationStack` (per the frozen nav contract — `AppShell`'s tab switch
 /// stays a pure view switch) and reserves the floating tab bar's 104pt gap.
 public struct PodcastsScreen: View {
@@ -69,7 +67,14 @@ public struct PodcastsScreen: View {
         }
     }
 
-    // MARK: - Populated list
+    // MARK: - Populated grid
+
+    /// Two flexible columns, `--sp-3` gap on both axes — `.cardgrid { grid-
+    /// template-columns: 1fr 1fr; gap: var(--sp-3) }`.
+    private static let gridColumns = [
+        GridItem(.flexible(), spacing: Spacing.sp3),
+        GridItem(.flexible(), spacing: Spacing.sp3)
+    ]
 
     private var list: some View {
         ScrollView {
@@ -78,18 +83,14 @@ public struct PodcastsScreen: View {
                     .padding(.top, Spacing.sp5)
                     .padding(.bottom, Spacing.sp5)
 
-                VStack(spacing: Spacing.sp4) {
+                LazyVGrid(columns: Self.gridColumns, spacing: Spacing.sp3) {
                     ForEach(subscribedPodcasts, id: \.id) { podcast in
                         Button {
                             path.append(podcast.feedURL)
                         } label: {
-                            PodcastRow(podcast: podcast)
+                            PodcastPosterCard(podcast: podcast)
                         }
                         .buttonStyle(.plain)
-
-                        if podcast.id != subscribedPodcasts.last?.id {
-                            Divider().overlay(palette.hairline)
-                        }
                     }
                 }
             }
@@ -134,45 +135,47 @@ public struct PodcastsScreen: View {
     }
 }
 
-// MARK: - Podcast row
+// MARK: - Podcast poster card
 
-/// One subscribed show: artwork + title + author. Same shape as
-/// `PodcastDetailView`'s `EpisodeRow` (a `RemoteArtwork` tile beside a
-/// leading title/author `VStack`) scaled down to a compact 60pt row.
-private struct PodcastRow: View {
+/// One subscribed show as a poster tile: square artwork over a title/author
+/// meta block — `shows.html`'s `.pod` (`.pod-art` + `.pod-meta`). No
+/// subscribe control (unlike the Discover/Search `PodCard`): everything in
+/// this grid is already subscribed.
+private struct PodcastPosterCard: View {
     let podcast: Podcast
 
     @Environment(\.palette) private var palette
 
     var body: some View {
-        HStack(alignment: .center, spacing: Spacing.sp3) {
-            RemoteArtwork(url: podcast.artworkURL, seed: seed, initial: initial)
-                .frame(width: 60, height: 60)
+        VStack(alignment: .leading, spacing: 9) {   // .pod { gap: 9px }
+            RemoteArtwork(url: podcast.artworkURL, seed: seed, initial: initial, cornerRadius: Radius.rMd16)
+                .overlay {
+                    // .pod-art { box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), ... }
+                    // — the app's existing inset-hairline idiom (SettingsGearButton,
+                    // SourcesChecklistRow) stands in for the kit's literal white
+                    // inset + drop shadow rather than a new one-off shadow token.
+                    RoundedRectangle(cornerRadius: Radius.rMd16, style: .continuous)
+                        .strokeBorder(palette.hairline, lineWidth: 0.5)
+                }
                 .accessibilityHidden(true)
 
-            VStack(alignment: .leading, spacing: Spacing.sp1) {
+            VStack(alignment: .leading, spacing: 3) {   // .pod-meta, .pod-studio margin-top: 3px
                 Text(podcast.title)
-                    .typeStyle(Typography.rowTitleStyle)
+                    .typeStyle(Typography.showCardTitleStyle)   // .pod-title
                     .foregroundStyle(palette.text)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
 
                 if !podcast.author.isEmpty {
                     Text(podcast.author)
-                        .typeStyle(Typography.subheadStyle)
+                        .typeStyle(Typography.showCardStudioStyle)   // .pod-studio
                         .foregroundStyle(palette.textDim)
                         .lineLimit(1)
                         .truncationMode(.tail)
                 }
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-
-            Image(systemName: "chevron.right")
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(palette.textFaint)
-                .accessibilityHidden(true)
+            .padding(.horizontal, 2)   // .pod-meta { padding: 0 2px }
         }
-        .padding(.vertical, Spacing.sp2)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(podcast.title), \(podcast.author)")
     }

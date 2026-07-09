@@ -116,6 +116,17 @@ public enum Typography {
     /// call site. Same size as `.arc-parts` but a lighter (medium) weight.
     public static var footnote: Font { ui(12.16, .medium) }
 
+    // MARK: Roles — Shows tab (poster grid) reconciliation
+    // Exact kit values verified against design/kit/screens/shows.html's
+    // `.pod-title` / `.pod-studio`. Distinct from `arcCardTitle`/`episodeMeta`
+    // despite matching sizes — those are 800/600 weight, these are 700/500 —
+    // so they're their own tokens rather than reused near-misses.
+
+    /// Poster card title (`.pod-title`) — 0.92rem / 700 / -0.01em, 2-line clamp.
+    public static var showCardTitle: Font { ui(14.72, .bold) }
+    /// Poster card studio/author (`.pod-studio`) — 0.78rem / 500, 1-line ellipsis.
+    public static var showCardStudio: Font { ui(12.48, .medium) }
+
     // MARK: Roles (full TypeStyle tokens — carry tracking + case)
 
     public static var displayLargeTitleStyle: TypeStyle { .init(font: displayLargeTitle, tracking: -0.742) }
@@ -152,6 +163,10 @@ public enum Typography {
     public static var detailBodyStyle: TypeStyle { .init(font: detailBody) }
     public static var expandLabelStyle: TypeStyle { .init(font: expandLabel) }
     public static var footnoteStyle: TypeStyle { .init(font: footnote) }
+
+    /// `.pod-title` — same -0.01em-at-0.92rem math as `arcCardTitleStyle`.
+    public static var showCardTitleStyle: TypeStyle { .init(font: showCardTitle, tracking: -0.147) }
+    public static var showCardStudioStyle: TypeStyle { .init(font: showCardStudio) }
 }
 
 public extension View {

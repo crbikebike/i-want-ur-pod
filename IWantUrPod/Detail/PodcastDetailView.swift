@@ -179,7 +179,9 @@ public struct PodcastDetailView: View {
                 SectionHeader(title: "Story arcs")
 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .top, spacing: Spacing.sp3) {
+                    // LazyHStack: lazily renders arc cards as they scroll into
+                    // view — docs/design/data-loading.md.
+                    LazyHStack(alignment: .top, spacing: Spacing.sp3) {
                         ForEach(viewModel.arcs) { arc in
                             ArcCard(
                                 arc: arc,
@@ -283,7 +285,10 @@ public struct PodcastDetailView: View {
                     .typeStyle(Typography.bodyStyle)
                     .foregroundStyle(palette.textFaint)
             } else {
-                VStack(spacing: Spacing.sp4) {
+                // LazyVStack: lazily renders episode rows as they scroll into
+                // view, so long shows (hundreds of episodes) don't render
+                // every row eagerly — docs/design/data-loading.md.
+                LazyVStack(spacing: Spacing.sp4) {
                     ForEach(shownEpisodes, id: \.id) { episode in
                         let arcInfo = viewModel.arcInfo(for: episode)
                         VStack(spacing: Spacing.sp4) {

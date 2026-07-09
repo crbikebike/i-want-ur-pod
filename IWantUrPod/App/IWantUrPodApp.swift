@@ -52,6 +52,15 @@ struct IWantUrPodApp: App {
     @Environment(\.scenePhase) private var scenePhase
 
     init() {
+        // Route all read-path remote loads (AsyncImage artwork, FeedFetcher via
+        // URLSession.shared) through a generous persistent cache so artwork and
+        // feeds aren't re-downloaded on every appearance / relaunch. See
+        // docs/design/data-loading.md (HTTP cache principle).
+        URLCache.shared = URLCache(
+            memoryCapacity: 50 * 1024 * 1024,      // 50 MB
+            diskCapacity: 500 * 1024 * 1024        // 500 MB
+        )
+
         let downloadManager = DownloadManager()
         _downloadManager = State(initialValue: downloadManager)
 
