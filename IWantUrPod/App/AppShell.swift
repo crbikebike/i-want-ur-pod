@@ -171,7 +171,7 @@ public struct AppShell: View {
     private var content: some View {
         switch selection {
         case .home:
-            HomeScreen()
+            HomeScreen(onSeeAllUpNext: { selection = .upNext })
         case .shows:
             PodcastsScreen()
         case .upNext:
