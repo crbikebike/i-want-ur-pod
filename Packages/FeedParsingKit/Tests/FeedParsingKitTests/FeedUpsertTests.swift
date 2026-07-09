@@ -34,14 +34,14 @@ final class FeedUpsertTests: XCTestCase {
         )
     }
 
-    private func makeEpisode(guid: String, title: String) -> ParsedEpisode {
+    private func makeEpisode(guid: String, title: String, audioURL: URL? = nil) -> ParsedEpisode {
         ParsedEpisode(
             guid: guid,
             title: title,
             summary: "",
             publishDate: Date(timeIntervalSince1970: 1_000_000),
             duration: 100,
-            audioURL: URL(string: "https://example.com/audio/\(guid).mp3")!,
+            audioURL: audioURL ?? URL(string: "https://example.com/audio/\(guid).mp3")!,
             remoteArtworkURL: nil,
             isExplicit: false
         )
@@ -161,5 +161,78 @@ final class FeedUpsertTests: XCTestCase {
         let existing = podcastAgain.episodes.first { $0.guid == "ep-1" }
         XCTAssertEqual(existing?.playbackProgress ?? -1, 0.3, accuracy: 0.0001)
         XCTAssertTrue(podcastAgain.isSubscribed)
+    }
+
+    // Bone Valley Season 3 shape: the feed lists the same episode twice with
+    // identical audio (same enclosure URL) under two different guids. That's
+    // one real episode, so it must upsert to exactly one Episode row.
+    @MainActor
+    func test_sameAudioDifferentGuid_upsertsToSingleEpisode() throws {
+        let container = try ModelSchema.makeContainer(inMemory: true)
+        let context = ModelContext(container)
+
+        let sharedAudio = URL(string: "https://example.com/audio/chapter-1.mp3")!
+        let feed = ParsedFeed(
+            feedURL: feedURL,
+            title: "Re-ingested Show",
+            episodes: [
+                makeEpisode(guid: "guid-original", title: "Chapter 1", audioURL: sharedAudio),
+                makeEpisode(guid: "guid-reissue", title: "Chapter 1", audioURL: sharedAudio)
+            ]
+        )
+
+        let podcast = try FeedUpsert.upsert(feed, into: context)
+        try context.save()
+
+        XCTAssertEqual(podcast.episodes.count, 1, "Two items sharing one audio URL are one episode.")
+        XCTAssertEqual(try context.fetch(FetchDescriptor<Episode>()).count, 1)
+        // Keep-first by audio.
+        XCTAssertEqual(podcast.episodes[0].guid, "guid-original")
+
+        // A later refresh still listing both guids must not re-introduce the
+        // duplicate (the second guid maps onto the survivor by audio URL).
+        let again = try FeedUpsert.upsert(feed, into: context)
+        try context.save()
+        XCTAssertEqual(again.episodes.count, 1)
+        XCTAssertEqual(try context.fetch(FetchDescriptor<Episode>()).count, 1)
+    }
+
+    // Self-heal: a store already carrying two rows for one audio URL (persisted
+    // before dedupe shipped) is pruned to one on the next upsert — keeping the
+    // copy the user has touched (downloaded) so queue/download state survives.
+    @MainActor
+    func test_preexistingDuplicateRows_prunedToSingle_keepingUserState() throws {
+        let container = try ModelSchema.makeContainer(inMemory: true)
+        let context = ModelContext(container)
+        let sharedAudio = URL(string: "https://example.com/audio/chapter-1.mp3")!
+
+        // Seed the store the way a pre-dedupe import would have: one Podcast
+        // with two Episode rows, same audio, different guids. The downloaded
+        // one is the copy the user cares about.
+        let podcast = Podcast(title: "Legacy Show", feedURL: feedURL)
+        context.insert(podcast)
+        let plain = Episode(guid: "guid-a", title: "Chapter 1", publishDate: Date(timeIntervalSince1970: 1_000_000), duration: 100, audioURL: sharedAudio, podcast: podcast)
+        let downloaded = Episode(guid: "guid-b", title: "Chapter 1", publishDate: Date(timeIntervalSince1970: 1_000_000), duration: 100, audioURL: sharedAudio, podcast: podcast)
+        downloaded.downloadState = .downloaded
+        context.insert(plain)
+        context.insert(downloaded)
+        podcast.episodes.append(contentsOf: [plain, downloaded])
+        try context.save()
+        XCTAssertEqual(try context.fetch(FetchDescriptor<Episode>()).count, 2)
+
+        // Any subsequent upsert of the feed triggers the prune.
+        let feed = ParsedFeed(
+            feedURL: feedURL,
+            title: "Legacy Show",
+            episodes: [makeEpisode(guid: "guid-b", title: "Chapter 1", audioURL: sharedAudio)]
+        )
+        let result = try FeedUpsert.upsert(feed, into: context)
+        try context.save()
+
+        XCTAssertEqual(result.episodes.count, 1, "The duplicate pair collapses to one row.")
+        XCTAssertEqual(try context.fetch(FetchDescriptor<Episode>()).count, 1)
+        let survivor = result.episodes[0]
+        XCTAssertEqual(survivor.guid, "guid-b", "The downloaded copy is the one kept.")
+        XCTAssertEqual(survivor.downloadState, .downloaded)
     }
 }

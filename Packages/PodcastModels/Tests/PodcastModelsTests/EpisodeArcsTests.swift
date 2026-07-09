@@ -29,6 +29,27 @@ final class EpisodeArcsTests: XCTestCase {
         XCTAssertEqual(result.part, 4)
     }
 
+    func test_derive_partStyle_romanNumeral_normalizesToArabic() {
+        // Bone Valley's "Kevin is Next" bonus mixes numeral styles across its
+        // two parts ("Part I" and "Part 2"). A Roman-numeral part must parse
+        // like its Arabic sibling so the pair renders consistently and forms
+        // one arc — displayTitle normalizes to the Arabic "Part 1".
+        let result = ArcDerivation.derive(fromTitle: "Kevin is Next - Part I")
+        XCTAssertEqual(result.arcName, "Kevin is Next")
+        XCTAssertEqual(result.displayTitle, "Part 1")
+        XCTAssertEqual(result.part, 1)
+    }
+
+    func test_derive_partStyle_nonCanonicalRomanToken_isNotAnArc() {
+        // "MILD" is all Roman-numeral letters but not a canonical numeral —
+        // the strict validator rejects it, so "Part MILD" must NOT be read as
+        // a part number and the title stays a plain single.
+        let result = ArcDerivation.derive(fromTitle: "Sound Lab - Part MILD")
+        XCTAssertNil(result.arcName)
+        XCTAssertEqual(result.displayTitle, "Sound Lab - Part MILD")
+        XCTAssertNil(result.part)
+    }
+
     func test_derive_stripsNoisePrefix_thenParsesPipeStyle() {
         let result = ArcDerivation.derive(fromTitle: "Encore: X | Y | 2")
         XCTAssertEqual(result.arcName, "X")
@@ -369,6 +390,30 @@ final class EpisodeArcsTests: XCTestCase {
         XCTAssertEqual(arcs[0].episodes.count, 2)
         XCTAssertEqual(arcs[1].episodes.count, 2)
         XCTAssertTrue(arcs.allSatisfy { $0.name != "Season 2" }, "Season 2 already has a title-arc member (Kevin), so its leftover chapters stay singles rather than forming a redundant card.")
+    }
+
+    func test_groupIntoArcs_boneValleyReal_minorityBonusArcCoexistsWithSeasonCard() {
+        // Real Bone Valley Season 2: a season dominated by "Chapter N | Title"
+        // episodes (grouped by season, no arc name) plus a small "Kevin is
+        // Next" bonus (Part I / Part 2, mixed numerals). The bonus is a
+        // minority (2 of 6 = 33%), so it must NOT suppress the season card:
+        // Season 2 keeps a card for its 4 chapter leftovers AND "Kevin is Next"
+        // stands as its own 2-part arc. The season card is named "Season 2",
+        // not hijacked by the lone bonus arc name.
+        let episodes = [
+            makeEpisode(title: "Kevin is Next - Part 2", publishDate: Date(timeIntervalSince1970: 6000), season: 2),
+            makeEpisode(title: "Kevin is Next - Part I", publishDate: Date(timeIntervalSince1970: 5500), season: 2),
+            makeEpisode(title: "Chapter 4 | Delta", publishDate: Date(timeIntervalSince1970: 5000), season: 2),
+            makeEpisode(title: "Chapter 3 | Gamma", publishDate: Date(timeIntervalSince1970: 4000), season: 2),
+            makeEpisode(title: "Chapter 2 | Beta", publishDate: Date(timeIntervalSince1970: 3000), season: 2),
+            makeEpisode(title: "Chapter 1 | Alpha", publishDate: Date(timeIntervalSince1970: 2000), season: 2),
+        ]
+
+        let arcs = ArcDerivation.groupIntoArcs(episodes)
+
+        XCTAssertEqual(Set(arcs.map(\.name)), ["Kevin is Next", "Season 2"], "The minority bonus arc coexists with the season card; the season card is NOT named after the bonus.")
+        XCTAssertEqual(arcs.first(where: { $0.name == "Kevin is Next" })?.episodes.count, 2)
+        XCTAssertEqual(arcs.first(where: { $0.name == "Season 2" })?.episodes.count, 4, "The season card holds only the 4 non-arc chapter leftovers — the two Kevin episodes live in their own arc, not double-listed.")
     }
 
     func test_groupIntoArcs_arcIDsAreUniqueAcrossTitleArcsAndSeasonCards() {

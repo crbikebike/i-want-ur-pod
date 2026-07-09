@@ -48,35 +48,49 @@ public enum FeedUpsert {
             context.insert(podcast)
         }
 
+        // Self-heal any content-duplicate rows already persisted (a feed that
+        // lists one real episode twice under different guids — same audio —
+        // would have created two rows before this dedupe shipped, e.g. Bone
+        // Valley's re-ingested Season 3). Collapse each `audioURL` group to a
+        // single survivor, preferring the copy the user has touched so queue /
+        // download / progress state is never severed.
+        pruneAudioDuplicates(of: podcast, in: context)
+
         var existingByGuid: [String: Episode] = [:]
+        var existingByAudioURL: [URL: Episode] = [:]
         for episode in podcast.episodes {
             existingByGuid[episode.guid] = episode
+            existingByAudioURL[episode.audioURL] = episode
         }
-        // Guids already handled during THIS upsert — guards against a feed
-        // that lists the same guid twice creating two rows that violate
-        // Episode's `@Attribute(.unique) guid` (which throws on save). The
-        // first occurrence wins; later duplicates in the same batch are
-        // ignored (keep-first).
-        var handledThisBatch: Set<String> = []
+        // Identities already handled during THIS upsert. `handledGuids` guards
+        // against a feed that lists the same guid twice creating two rows that
+        // violate Episode's `@Attribute(.unique) guid` (which throws on save).
+        // `handledAudioURLs` extends the same keep-first guard to items that
+        // share an audio URL under different guids — one real episode. First
+        // occurrence wins; later duplicates in the batch are ignored.
+        var handledGuids: Set<String> = []
+        var handledAudioURLs: Set<URL> = []
 
         for parsedEpisode in feed.episodes {
-            if handledThisBatch.contains(parsedEpisode.guid) {
+            if handledGuids.contains(parsedEpisode.guid) || handledAudioURLs.contains(parsedEpisode.audioURL) {
                 continue
             }
-            handledThisBatch.insert(parsedEpisode.guid)
+            handledGuids.insert(parsedEpisode.guid)
+            handledAudioURLs.insert(parsedEpisode.audioURL)
+
+            // A new guid whose audio already belongs to a persisted episode is
+            // the same episode re-issued under a fresh guid: update that
+            // surviving row's feed-derived fields instead of inserting a
+            // second one, so the re-issue never re-enters. The row keeps its
+            // original guid (a stable identity for user-owned state).
+            if existingByGuid[parsedEpisode.guid] == nil,
+               let sameAudio = existingByAudioURL[parsedEpisode.audioURL] {
+                apply(parsedEpisode, to: sameAudio, keepingGuid: true)
+                continue
+            }
 
             if let existing = existingByGuid[parsedEpisode.guid] {
-                existing.title = parsedEpisode.title
-                existing.summary = parsedEpisode.summary
-                existing.publishDate = parsedEpisode.publishDate
-                existing.duration = parsedEpisode.duration
-                existing.audioURL = parsedEpisode.audioURL
-                existing.remoteArtworkURL = parsedEpisode.remoteArtworkURL
-                existing.isExplicit = parsedEpisode.isExplicit
-                existing.season = parsedEpisode.season
-                existing.episodeNumber = parsedEpisode.episodeNumber
-                existing.episodeType = parsedEpisode.episodeType
-                // downloadState / playbackProgress are user-owned — left untouched.
+                apply(parsedEpisode, to: existing, keepingGuid: false)
             } else {
                 let episode = Episode(
                     guid: parsedEpisode.guid,
@@ -95,8 +109,9 @@ public enum FeedUpsert {
                 context.insert(episode)
                 podcast.episodes.append(episode)
                 // Track for match on the NEXT upsert (already guarded within
-                // this batch by handledThisBatch above).
+                // this batch by handledGuids / handledAudioURLs above).
                 existingByGuid[parsedEpisode.guid] = episode
+                existingByAudioURL[parsedEpisode.audioURL] = episode
             }
         }
 
@@ -105,5 +120,54 @@ public enum FeedUpsert {
         // Pruning/orphan handling is deferred (not an oversight).
 
         return podcast
+    }
+
+    /// Copies the feed-derived fields of `parsed` onto `episode`. User-owned
+    /// fields (`downloadState`, `playbackProgress`) are never touched. When
+    /// `keepingGuid` is true the episode's `guid` is left as-is — used when a
+    /// re-issued item (new guid, same audio) folds onto an existing row so its
+    /// stable identity, and the user state keyed to it, is preserved.
+    @MainActor
+    private static func apply(_ parsed: ParsedEpisode, to episode: Episode, keepingGuid: Bool) {
+        if !keepingGuid { episode.guid = parsed.guid }
+        episode.title = parsed.title
+        episode.summary = parsed.summary
+        episode.publishDate = parsed.publishDate
+        episode.duration = parsed.duration
+        episode.audioURL = parsed.audioURL
+        episode.remoteArtworkURL = parsed.remoteArtworkURL
+        episode.isExplicit = parsed.isExplicit
+        episode.season = parsed.season
+        episode.episodeNumber = parsed.episodeNumber
+        episode.episodeType = parsed.episodeType
+    }
+
+    /// Collapses any group of persisted episodes that share an `audioURL` down
+    /// to a single survivor, deleting the rest. This heals stores that already
+    /// hold content-duplicate rows (one real episode listed under two guids —
+    /// see the Bone Valley Season 3 case). The survivor is the copy the user
+    /// has touched — downloaded, partially played, or queued — falling back to
+    /// the first seen, so a `QueueItem`'s `.nullify` reference is never orphaned
+    /// by deleting the episode it points at.
+    @MainActor
+    private static func pruneAudioDuplicates(of podcast: Podcast, in context: ModelContext) {
+        var byAudioURL: [URL: [Episode]] = [:]
+        for episode in podcast.episodes {
+            byAudioURL[episode.audioURL, default: []].append(episode)
+        }
+        for (_, group) in byAudioURL where group.count > 1 {
+            let survivor = group.first { hasUserState($0) } ?? group[0]
+            for duplicate in group where duplicate !== survivor {
+                podcast.episodes.removeAll { $0 === duplicate }
+                context.delete(duplicate)
+            }
+        }
+    }
+
+    /// Whether the user has interacted with `episode` — the signal the prune
+    /// tie-break protects (downloaded, played into, or sitting in the queue).
+    @MainActor
+    private static func hasUserState(_ episode: Episode) -> Bool {
+        episode.downloadState.isDownloaded || episode.playbackProgress > 0 || !episode.queueItems.isEmpty
     }
 }
