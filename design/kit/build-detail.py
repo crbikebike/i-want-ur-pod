@@ -62,7 +62,9 @@ DETAIL_CSS = """
   .arc-rail::-webkit-scrollbar { height: 0; }
   .arc-card { flex: none; width: 176px; scroll-snap-align: start; background: var(--surface);
     border-radius: var(--r-lg); box-shadow: var(--elev-list); padding: var(--sp-3);
-    display: flex; flex-direction: column; gap: 8px; }
+    display: flex; flex-direction: column; gap: 8px; cursor: pointer;
+    transition: box-shadow .25s var(--ease-soft); }
+  .arc-card.active { box-shadow: var(--elev-list), inset 0 0 0 2px var(--accent); }
   .arc-cover { width: 100%; aspect-ratio: 16 / 10; border-radius: var(--r-sm); background-size: cover;
     background-position: center; position: relative; overflow: hidden;
     box-shadow: inset 0 0 0 .5px rgba(255,255,255,.14); }
@@ -82,6 +84,8 @@ DETAIL_CSS = """
   /* episode rows */
   .ep { display: flex; gap: var(--sp-3); padding: var(--sp-4) 0; border-top: .5px solid var(--separator); }
   .ep:first-of-type { border-top: none; }
+  .ep.ep-extra { display: none; }        /* deeper-feed rows: shown only when their arc is filtered */
+  .ep.first-shown { border-top: none; }  /* first visible row in a filtered view */
   .ep-art { flex: none; width: 56px; height: 56px; border-radius: var(--r-sm); background-size: cover;
     background-position: center; box-shadow: inset 0 0 0 .5px rgba(255,255,255,.14); }
   .ep-body { flex: 1; min-width: 0; }
@@ -105,6 +109,15 @@ DETAIL_CSS = """
   .ep-add.added .ico-check { display: inline-flex; }
   .ep-played { margin-left: auto; align-self: center; font-size: .72rem; font-weight: 800; color: var(--accent-2);
     display: inline-flex; align-items: center; gap: 4px; }
+  /* episodes-header filter chip */
+  .sec-right { display: flex; align-items: center; gap: var(--sp-2); }
+  .ep-filter { border: none; cursor: pointer; font-family: var(--font);
+    font-size: .74rem; font-weight: 800; color: var(--accent-2);
+    background: color-mix(in srgb, var(--accent-2) 15%, transparent);
+    padding: 4px 10px; border-radius: var(--r-pill);
+    display: inline-flex; align-items: center; gap: 6px; }
+  .ep-filter[hidden] { display: none; }
+  .ep-filter .ef-x { font-weight: 600; opacity: .8; }
 """
 
 SCRIPT = """<script>
@@ -130,7 +143,8 @@ SCRIPT = """<script>
   });
   // "Add all" on an arc card -> confirm, and mark that arc's rows as queued
   document.querySelectorAll('.arc-add').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();               // don't also trigger the card's filter
       const added = btn.classList.toggle('added');
       btn.querySelector('.lbl').textContent = added ? 'Added' : ('Add all ' + btn.dataset.count);
       const arc = btn.dataset.arc;
@@ -139,6 +153,49 @@ SCRIPT = """<script>
       });
     });
   });
+  // tap an arc card body -> filter the episode list to that arc; tap again to clear
+  const epRows = document.querySelectorAll('.ep');
+  const cards = document.querySelectorAll('.arc-card');
+  const epFilter = document.querySelector('.ep-filter');
+  const efName = document.querySelector('.ef-name');
+  const epCount = document.querySelector('.sec-right .count');
+  function applyFilter(arc){
+    cards.forEach(c => c.classList.toggle('active', arc != null && c.dataset.arc === arc));
+    let first = true;
+    epRows.forEach(row => {
+      if (arc == null){
+        row.style.display = '';                 // fall back to CSS (ep-extra stays hidden)
+        row.classList.remove('first-shown');
+        return;
+      }
+      const show = row.dataset.arc === arc;
+      row.style.display = show ? 'flex' : 'none';  // 'flex' overrides .ep-extra's display:none
+      row.classList.toggle('first-shown', show && first);
+      if (show) first = false;
+    });
+    if (arc == null){
+      epFilter.hidden = true;
+      if (epCount) epCount.hidden = false;
+    } else {
+      efName.textContent = arc;
+      epFilter.hidden = false;
+      if (epCount) epCount.hidden = true;
+    }
+  }
+  cards.forEach(card => {
+    const toggle = () => {
+      const arc = card.dataset.arc;
+      applyFilter(card.classList.contains('active') ? null : arc);
+    };
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.arc-add')) return;   // let "Add all" do its own thing
+      toggle();
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+  if (epFilter) epFilter.addEventListener('click', () => applyFilter(null));
   // per-row compact controls
   document.querySelectorAll('.ep-dl').forEach(b => b.addEventListener('click', () => b.classList.toggle('done')));
   document.querySelectorAll('.ep-add').forEach(b => b.addEventListener('click', () => b.classList.toggle('added')));
@@ -185,7 +242,7 @@ def arc_card(arc, art_slug):
     season = (f'<span class="arc-season">Season {arc["season"]}</span>' if arc.get("season") else "")
     name = esc(arc["name"])
     count = arc["parts"]
-    return f'''        <div class="arc-card">
+    return f'''        <div class="arc-card" data-arc="{esc(arc["name"])}" role="button" tabindex="0" aria-label="Filter episodes by {esc(arc["name"])}">
           <div class="arc-cover" style="background-image:url(../art/{art_slug}.jpg)">{season}</div>
           <div class="arc-name">{name}</div>
           <div class="arc-parts">{count} episode{"s" if count != 1 else ""}</div>
@@ -196,7 +253,7 @@ def arc_card(arc, art_slug):
         </div>'''
 
 
-def episode_row(ep, art_slug, state):
+def episode_row(ep, art_slug, state, extra=False):
     # title: episode title if present, else the raw title (singles)
     title = esc(ep["episodeTitle"] or ep["rawTitle"])
     bits = []
@@ -215,7 +272,8 @@ def episode_row(ep, art_slug, state):
     add_cls = "ep-btn ep-add added" if state.get("queued") else "ep-btn ep-add"
     play = (f'<button class="ep-btn play" aria-label="Play">{ICO_PLAY}</button>' if state.get("downloaded") else "")
     played = ('<span class="ep-played">✓ Played</span>' if state.get("played") else "")
-    return f'''      <div class="ep">
+    ep_cls = "ep ep-extra" if extra else "ep"
+    return f'''      <div class="{ep_cls}" data-arc="{esc(ep["arc"] or "")}">
         <div class="ep-art" style="background-image:url(../art/{art_slug}.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">{title}</div>
@@ -248,8 +306,17 @@ def build(slug: str):
     head, chrome, nav, closing = scaffold()
     head = head + DETAIL_CSS + "</style>"
 
+    shown_arcs = {a["name"] for a in data["arcs"][:ARCS_SHOWN]}
     arcs = "\n".join(arc_card(a, art) for a in data["arcs"][:ARCS_SHOWN])
-    eps = "\n".join(episode_row(e, art, state_for(i)) for i, e in enumerate(data["episodes"][:EPISODES_SHOWN]))
+    # Default view = newest EPISODES_SHOWN rows. Also render (hidden) every deeper
+    # episode that belongs to a shelf arc, so tapping any arc card filters to real
+    # episodes. Feed order is preserved throughout.
+    ep_rows = []
+    for i, e in enumerate(data["episodes"]):
+        default = i < EPISODES_SHOWN
+        if default or e["arc"] in shown_arcs:
+            ep_rows.append(episode_row(e, art, state_for(i), extra=not default))
+    eps = "\n".join(ep_rows)
     cat = esc(show["category"] or "Podcast")
     desc = esc(show["summary"][:600].rstrip())
 
@@ -287,7 +354,10 @@ def build(slug: str):
 
       <div class="sec-head" style="margin-top: var(--sp-5)">
         <h2>Episodes</h2>
-        <span class="count">{data["counts"]["episodes"]}</span>
+        <div class="sec-right">
+          <span class="count">{data["counts"]["episodes"]}</span>
+          <button class="ep-filter" hidden>Showing: <span class="ef-name"></span> <span class="ef-x">✕</span></button>
+        </div>
       </div>
       <div class="eplist">
 {eps}
@@ -301,7 +371,7 @@ def build(slug: str):
     html = re.sub(r'<title>[^<]*</title>', f'<title>{esc(show["title"])} · Detail</title>', html, count=1)
     out = SCREENS / f"podcast-detail-{slug}.html"
     out.write_text(html)
-    print(f"wrote {out.relative_to(HERE.parent.parent)}  ({len(data['arcs'][:ARCS_SHOWN])} arcs, {len(data['episodes'][:EPISODES_SHOWN])} episodes shown)")
+    print(f"wrote {out.relative_to(HERE.parent.parent)}  ({len(data['arcs'][:ARCS_SHOWN])} arcs, {len(ep_rows)} episode rows: {EPISODES_SHOWN} default + {len(ep_rows) - EPISODES_SHOWN} hidden arc rows)")
 
 
 def main():

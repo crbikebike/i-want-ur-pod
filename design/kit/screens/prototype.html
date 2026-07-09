@@ -8196,7 +8196,9 @@ const SCREENS = {
   .arc-rail::-webkit-scrollbar { height: 0; }
   .arc-card { flex: none; width: 176px; scroll-snap-align: start; background: var(--surface);
     border-radius: var(--r-lg); box-shadow: var(--elev-list); padding: var(--sp-3);
-    display: flex; flex-direction: column; gap: 8px; }
+    display: flex; flex-direction: column; gap: 8px; cursor: pointer;
+    transition: box-shadow .25s var(--ease-soft); }
+  .arc-card.active { box-shadow: var(--elev-list), inset 0 0 0 2px var(--accent); }
   .arc-cover { width: 100%; aspect-ratio: 16 / 10; border-radius: var(--r-sm); background-size: cover;
     background-position: center; position: relative; overflow: hidden;
     box-shadow: inset 0 0 0 .5px rgba(255,255,255,.14); }
@@ -8216,6 +8218,8 @@ const SCREENS = {
   /* episode rows */
   .ep { display: flex; gap: var(--sp-3); padding: var(--sp-4) 0; border-top: .5px solid var(--separator); }
   .ep:first-of-type { border-top: none; }
+  .ep.ep-extra { display: none; }        /* deeper-feed rows: shown only when their arc is filtered */
+  .ep.first-shown { border-top: none; }  /* first visible row in a filtered view */
   .ep-art { flex: none; width: 56px; height: 56px; border-radius: var(--r-sm); background-size: cover;
     background-position: center; box-shadow: inset 0 0 0 .5px rgba(255,255,255,.14); }
   .ep-body { flex: 1; min-width: 0; }
@@ -8239,6 +8243,15 @@ const SCREENS = {
   .ep-add.added .ico-check { display: inline-flex; }
   .ep-played { margin-left: auto; align-self: center; font-size: .72rem; font-weight: 800; color: var(--accent-2);
     display: inline-flex; align-items: center; gap: 4px; }
+  /* episodes-header filter chip */
+  .sec-right { display: flex; align-items: center; gap: var(--sp-2); }
+  .ep-filter { border: none; cursor: pointer; font-family: var(--font);
+    font-size: .74rem; font-weight: 800; color: var(--accent-2);
+    background: color-mix(in srgb, var(--accent-2) 15%, transparent);
+    padding: 4px 10px; border-radius: var(--r-pill);
+    display: inline-flex; align-items: center; gap: 6px; }
+  .ep-filter[hidden] { display: none; }
+  .ep-filter .ef-x { font-weight: 600; opacity: .8; }
 </style>
 
 
@@ -8297,7 +8310,7 @@ const SCREENS = {
            badge shows only when the feed carries <itunes:season>. "Add all" queues the
            whole arc in order. When a feed has neither arcs nor seasons, this shelf is omitted. -->
       <div class="arc-rail">
-        <div class="arc-card">
+        <div class="arc-card" data-arc="American Revolution" role="button" tabindex="0" aria-label="Filter episodes by American Revolution">
           <div class="arc-cover" style="background-image:url(../art/american-history-tellers.jpg)"><span class="arc-season">Season 97</span></div>
           <div class="arc-name">American Revolution</div>
           <div class="arc-parts">5 episodes</div>
@@ -8306,7 +8319,7 @@ const SCREENS = {
             <span class="lbl">Add all 5</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Edison vs. Tesla" role="button" tabindex="0" aria-label="Filter episodes by Edison vs. Tesla">
           <div class="arc-cover" style="background-image:url(../art/american-history-tellers.jpg)"><span class="arc-season">Season 96</span></div>
           <div class="arc-name">Edison vs. Tesla</div>
           <div class="arc-parts">4 episodes</div>
@@ -8315,7 +8328,7 @@ const SCREENS = {
             <span class="lbl">Add all 4</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="The 1900 Galveston Hurricane" role="button" tabindex="0" aria-label="Filter episodes by The 1900 Galveston Hurricane">
           <div class="arc-cover" style="background-image:url(../art/american-history-tellers.jpg)"><span class="arc-season">Season 95</span></div>
           <div class="arc-name">The 1900 Galveston Hurricane</div>
           <div class="arc-parts">4 episodes</div>
@@ -8324,7 +8337,7 @@ const SCREENS = {
             <span class="lbl">Add all 4</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Great American Authors" role="button" tabindex="0" aria-label="Filter episodes by Great American Authors">
           <div class="arc-cover" style="background-image:url(../art/american-history-tellers.jpg)"><span class="arc-season">Season 94</span></div>
           <div class="arc-name">Great American Authors</div>
           <div class="arc-parts">13 episodes</div>
@@ -8333,7 +8346,7 @@ const SCREENS = {
             <span class="lbl">Add all 13</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="St. Valentines Day Massacre" role="button" tabindex="0" aria-label="Filter episodes by St. Valentines Day Massacre">
           <div class="arc-cover" style="background-image:url(../art/american-history-tellers.jpg)"><span class="arc-season">Season 93</span></div>
           <div class="arc-name">St. Valentines Day Massacre</div>
           <div class="arc-parts">2 episodes</div>
@@ -8342,7 +8355,7 @@ const SCREENS = {
             <span class="lbl">Add all 2</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Conquering Polio" role="button" tabindex="0" aria-label="Filter episodes by Conquering Polio">
           <div class="arc-cover" style="background-image:url(../art/american-history-tellers.jpg)"><span class="arc-season">Season 92</span></div>
           <div class="arc-name">Conquering Polio</div>
           <div class="arc-parts">4 episodes</div>
@@ -8351,7 +8364,7 @@ const SCREENS = {
             <span class="lbl">Add all 4</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="The Ice King" role="button" tabindex="0" aria-label="Filter episodes by The Ice King">
           <div class="arc-cover" style="background-image:url(../art/american-history-tellers.jpg)"><span class="arc-season">Season 91</span></div>
           <div class="arc-name">The Ice King</div>
           <div class="arc-parts">4 episodes</div>
@@ -8360,7 +8373,7 @@ const SCREENS = {
             <span class="lbl">Add all 4</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="The Mayflower" role="button" tabindex="0" aria-label="Filter episodes by The Mayflower">
           <div class="arc-cover" style="background-image:url(../art/american-history-tellers.jpg)"><span class="arc-season">Season 90</span></div>
           <div class="arc-name">The Mayflower</div>
           <div class="arc-parts">5 episodes</div>
@@ -8369,7 +8382,7 @@ const SCREENS = {
             <span class="lbl">Add all 5</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Shootout at the O.K. Corral" role="button" tabindex="0" aria-label="Filter episodes by Shootout at the O.K. Corral">
           <div class="arc-cover" style="background-image:url(../art/american-history-tellers.jpg)"><span class="arc-season">Season 89</span></div>
           <div class="arc-name">Shootout at the O.K. Corral</div>
           <div class="arc-parts">4 episodes</div>
@@ -8378,7 +8391,7 @@ const SCREENS = {
             <span class="lbl">Add all 4</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Daring Prison Escapes" role="button" tabindex="0" aria-label="Filter episodes by Daring Prison Escapes">
           <div class="arc-cover" style="background-image:url(../art/american-history-tellers.jpg)"><span class="arc-season">Season 88</span></div>
           <div class="arc-name">Daring Prison Escapes</div>
           <div class="arc-parts">5 episodes</div>
@@ -8391,10 +8404,13 @@ const SCREENS = {
 
       <div class="sec-head" style="margin-top: var(--sp-5)">
         <h2>Episodes</h2>
-        <span class="count">487</span>
+        <div class="sec-right">
+          <span class="count">487</span>
+          <button class="ep-filter" hidden>Showing: <span class="ef-name"></span> <span class="ef-x">✕</span></button>
+        </div>
       </div>
       <div class="eplist">
-      <div class="ep">
+      <div class="ep" data-arc="American Revolution">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">A Devil of a Whipping</div>
@@ -8407,7 +8423,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="American Revolution">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Saratoga</div>
@@ -8420,7 +8436,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Foul Play</div>
@@ -8433,7 +8449,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="American Revolution">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Times That Try Men's Souls</div>
@@ -8446,7 +8462,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="American Revolution">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Tis' Time to Part</div>
@@ -8459,7 +8475,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">- Dr. Death: The Cowboy</div>
@@ -8472,7 +8488,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="American Revolution">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Liberty or Death</div>
@@ -8485,7 +8501,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Edison vs. Tesla">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Business of Discovery</div>
@@ -8498,7 +8514,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Edison vs. Tesla">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Triumph of Illumination</div>
@@ -8511,7 +8527,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Edison vs. Tesla">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Work of the World</div>
@@ -8524,7 +8540,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Edison vs. Tesla">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Prometheus’ Fire</div>
@@ -8537,7 +8553,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="The 1900 Galveston Hurricane">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">After the Storm</div>
@@ -8550,7 +8566,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="The 1900 Galveston Hurricane">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">City of Doom</div>
@@ -8563,7 +8579,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="The 1900 Galveston Hurricane">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Night of Terrors</div>
@@ -8576,7 +8592,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="The 1900 Galveston Hurricane">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">An Absurd Delusion</div>
@@ -8589,7 +8605,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Great American Authors">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Harper Lee: Mockingbird</div>
@@ -8602,7 +8618,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Great American Authors">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">James Baldwin: The Exile</div>
@@ -8615,7 +8631,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Great American Authors">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">John Steinbeck: The Observer</div>
@@ -8628,7 +8644,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Great American Authors">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Mark Twain: Voice of a Nation</div>
@@ -8641,7 +8657,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Great American Authors">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Louisa May Alcott: The Breadwinner</div>
@@ -8654,7 +8670,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Great American Authors">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Edgar Allan Poe: Master of Macabre</div>
@@ -8667,7 +8683,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">St. Valentines Day Massacre: Closing In On Capone  | 3</div>
@@ -8680,7 +8696,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="St. Valentines Day Massacre">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Public Enemy No. 1</div>
@@ -8693,7 +8709,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="St. Valentines Day Massacre">
         <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Land of Bilk and Money</div>
@@ -8702,6 +8718,383 @@ const SCREENS = {
             <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
             <button class="ep-btn ep-add" data-arc="St. Valentines Day Massacre" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Conquering Polio">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">There Is No Patent</div>
+          <div class="ep-meta"><span class="ep-arc">Conquering Polio</span> · S92 · E4 · Jan 28, 2026 · 36 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Conquering Polio" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Conquering Polio">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The Cutter Fiasco</div>
+          <div class="ep-meta"><span class="ep-arc">Conquering Polio</span> · S92 · E3 · Jan 21, 2026 · 36 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Conquering Polio" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Conquering Polio">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Beyond the Microscope</div>
+          <div class="ep-meta"><span class="ep-arc">Conquering Polio</span> · S92 · E2 · Jan 14, 2026 · 39 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Conquering Polio" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="The Ice King">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Indian Summer</div>
+          <div class="ep-meta"><span class="ep-arc">The Ice King</span> · S91 · E4 · Jan 7, 2026 · 36 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="The Ice King" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Conquering Polio">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The March of Dimes</div>
+          <div class="ep-meta"><span class="ep-arc">Conquering Polio</span> · S92 · E1 · Jan 7, 2026 · 40 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Conquering Polio" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="The Ice King">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Slippery Business</div>
+          <div class="ep-meta"><span class="ep-arc">The Ice King</span> · S91 · E3 · Dec 24, 2025 · 33 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="The Ice King" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="The Ice King">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Frozen Assets</div>
+          <div class="ep-meta"><span class="ep-arc">The Ice King</span> · S91 · E2 · Dec 17, 2025 · 34 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="The Ice King" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="The Ice King">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">No Joke</div>
+          <div class="ep-meta"><span class="ep-arc">The Ice King</span> · S91 · E1 · Dec 10, 2025 · 35 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="The Ice King" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="The Mayflower">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The Thanksgiving Myth</div>
+          <div class="ep-meta"><span class="ep-arc">The Mayflower</span> · S90 · E5 · Dec 3, 2025 · 39 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="The Mayflower" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="The Mayflower">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Cutthroats</div>
+          <div class="ep-meta"><span class="ep-arc">The Mayflower</span> · S90 · E4 · Nov 26, 2025 · 35 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="The Mayflower" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="The Mayflower">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The First Thanksgiving</div>
+          <div class="ep-meta"><span class="ep-arc">The Mayflower</span> · S90 · E3 · Nov 19, 2025 · 34 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="The Mayflower" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="The Mayflower">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">A Sea of Troubles</div>
+          <div class="ep-meta"><span class="ep-arc">The Mayflower</span> · S90 · E2 · Nov 12, 2025 · 35 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="The Mayflower" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="The Mayflower">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Saints and Strangers</div>
+          <div class="ep-meta"><span class="ep-arc">The Mayflower</span> · S90 · E1 · Nov 5, 2025 · 33 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="The Mayflower" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Shootout at the O.K. Corral">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Vendetta</div>
+          <div class="ep-meta"><span class="ep-arc">Shootout at the O.K. Corral</span> · S89 · E4 · Oct 29, 2025 · 37 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Shootout at the O.K. Corral" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Shootout at the O.K. Corral">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Thirty Seconds</div>
+          <div class="ep-meta"><span class="ep-arc">Shootout at the O.K. Corral</span> · S89 · E3 · Oct 22, 2025 · 37 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Shootout at the O.K. Corral" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Shootout at the O.K. Corral">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Law and Disorder</div>
+          <div class="ep-meta"><span class="ep-arc">Shootout at the O.K. Corral</span> · S89 · E2 · Oct 15, 2025 · 35 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Shootout at the O.K. Corral" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Shootout at the O.K. Corral">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The Road to Tombstone</div>
+          <div class="ep-meta"><span class="ep-arc">Shootout at the O.K. Corral</span> · S89 · E1 · Oct 8, 2025 · 38 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Shootout at the O.K. Corral" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Daring Prison Escapes">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Escape from Libby Prison</div>
+          <div class="ep-meta"><span class="ep-arc">Daring Prison Escapes</span> · S88 · E5 · Oct 1, 2025 · 40 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Daring Prison Escapes" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Daring Prison Escapes">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Nazis in the Arizona Desert</div>
+          <div class="ep-meta"><span class="ep-arc">Daring Prison Escapes</span> · S88 · E4 · Sep 24, 2025 · 37 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Daring Prison Escapes" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Daring Prison Escapes">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Escape from Leavenworth</div>
+          <div class="ep-meta"><span class="ep-arc">Daring Prison Escapes</span> · S88 · E3 · Sep 17, 2025 · 34 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Daring Prison Escapes" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Daring Prison Escapes">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Fleeing the Rock</div>
+          <div class="ep-meta"><span class="ep-arc">Daring Prison Escapes</span> · S88 · E2 · Sep 10, 2025 · 35 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Daring Prison Escapes" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Daring Prison Escapes">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Bastille of the Confederacy</div>
+          <div class="ep-meta"><span class="ep-arc">Daring Prison Escapes</span> · S88 · E1 · Sep 3, 2025 · 40 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Daring Prison Escapes" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Great American Authors">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The Enduring Message of James Baldwin</div>
+          <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E7 · Jan 3, 2024 · 38 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Great American Authors">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Harper Lee: Mockingbird</div>
+          <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E6 · Dec 27, 2023 · 40 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Great American Authors">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">James Baldwin: The Exile</div>
+          <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E5 · Dec 20, 2023 · 41 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Great American Authors">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">John Steinbeck: The Observer</div>
+          <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E4 · Dec 13, 2023 · 40 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Great American Authors">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Mark Twain: Voice of a Nation</div>
+          <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E3 · Dec 6, 2023 · 41 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Great American Authors">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Louisa May Alcott: The Breadwinner</div>
+          <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E2 · Nov 29, 2023 · 39 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Great American Authors">
+        <div class="ep-art" style="background-image:url(../art/american-history-tellers.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Edgar Allan Poe: Master of Macabre</div>
+          <div class="ep-meta"><span class="ep-arc">Great American Authors</span> · S63 · E1 · Nov 22, 2023 · 41 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Great American Authors" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -8757,7 +9150,8 @@ const SCREENS = {
   });
   // "Add all" on an arc card -> confirm, and mark that arc's rows as queued
   document.querySelectorAll('.arc-add').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();               // don't also trigger the card's filter
       const added = btn.classList.toggle('added');
       btn.querySelector('.lbl').textContent = added ? 'Added' : ('Add all ' + btn.dataset.count);
       const arc = btn.dataset.arc;
@@ -8766,6 +9160,49 @@ const SCREENS = {
       });
     });
   });
+  // tap an arc card body -> filter the episode list to that arc; tap again to clear
+  const epRows = document.querySelectorAll('.ep');
+  const cards = document.querySelectorAll('.arc-card');
+  const epFilter = document.querySelector('.ep-filter');
+  const efName = document.querySelector('.ef-name');
+  const epCount = document.querySelector('.sec-right .count');
+  function applyFilter(arc){
+    cards.forEach(c => c.classList.toggle('active', arc != null && c.dataset.arc === arc));
+    let first = true;
+    epRows.forEach(row => {
+      if (arc == null){
+        row.style.display = '';                 // fall back to CSS (ep-extra stays hidden)
+        row.classList.remove('first-shown');
+        return;
+      }
+      const show = row.dataset.arc === arc;
+      row.style.display = show ? 'flex' : 'none';  // 'flex' overrides .ep-extra's display:none
+      row.classList.toggle('first-shown', show && first);
+      if (show) first = false;
+    });
+    if (arc == null){
+      epFilter.hidden = true;
+      if (epCount) epCount.hidden = false;
+    } else {
+      efName.textContent = arc;
+      epFilter.hidden = false;
+      if (epCount) epCount.hidden = true;
+    }
+  }
+  cards.forEach(card => {
+    const toggle = () => {
+      const arc = card.dataset.arc;
+      applyFilter(card.classList.contains('active') ? null : arc);
+    };
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.arc-add')) return;   // let "Add all" do its own thing
+      toggle();
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+  if (epFilter) epFilter.addEventListener('click', () => applyFilter(null));
   // per-row compact controls
   document.querySelectorAll('.ep-dl').forEach(b => b.addEventListener('click', () => b.classList.toggle('done')));
   document.querySelectorAll('.ep-add').forEach(b => b.addEventListener('click', () => b.classList.toggle('added')));
@@ -9447,7 +9884,9 @@ const SCREENS = {
   .arc-rail::-webkit-scrollbar { height: 0; }
   .arc-card { flex: none; width: 176px; scroll-snap-align: start; background: var(--surface);
     border-radius: var(--r-lg); box-shadow: var(--elev-list); padding: var(--sp-3);
-    display: flex; flex-direction: column; gap: 8px; }
+    display: flex; flex-direction: column; gap: 8px; cursor: pointer;
+    transition: box-shadow .25s var(--ease-soft); }
+  .arc-card.active { box-shadow: var(--elev-list), inset 0 0 0 2px var(--accent); }
   .arc-cover { width: 100%; aspect-ratio: 16 / 10; border-radius: var(--r-sm); background-size: cover;
     background-position: center; position: relative; overflow: hidden;
     box-shadow: inset 0 0 0 .5px rgba(255,255,255,.14); }
@@ -9467,6 +9906,8 @@ const SCREENS = {
   /* episode rows */
   .ep { display: flex; gap: var(--sp-3); padding: var(--sp-4) 0; border-top: .5px solid var(--separator); }
   .ep:first-of-type { border-top: none; }
+  .ep.ep-extra { display: none; }        /* deeper-feed rows: shown only when their arc is filtered */
+  .ep.first-shown { border-top: none; }  /* first visible row in a filtered view */
   .ep-art { flex: none; width: 56px; height: 56px; border-radius: var(--r-sm); background-size: cover;
     background-position: center; box-shadow: inset 0 0 0 .5px rgba(255,255,255,.14); }
   .ep-body { flex: 1; min-width: 0; }
@@ -9490,6 +9931,15 @@ const SCREENS = {
   .ep-add.added .ico-check { display: inline-flex; }
   .ep-played { margin-left: auto; align-self: center; font-size: .72rem; font-weight: 800; color: var(--accent-2);
     display: inline-flex; align-items: center; gap: 4px; }
+  /* episodes-header filter chip */
+  .sec-right { display: flex; align-items: center; gap: var(--sp-2); }
+  .ep-filter { border: none; cursor: pointer; font-family: var(--font);
+    font-size: .74rem; font-weight: 800; color: var(--accent-2);
+    background: color-mix(in srgb, var(--accent-2) 15%, transparent);
+    padding: 4px 10px; border-radius: var(--r-pill);
+    display: inline-flex; align-items: center; gap: 6px; }
+  .ep-filter[hidden] { display: none; }
+  .ep-filter .ef-x { font-weight: 600; opacity: .8; }
 </style>
 
 
@@ -9548,7 +9998,7 @@ const SCREENS = {
            badge shows only when the feed carries <itunes:season>. "Add all" queues the
            whole arc in order. When a feed has neither arcs nor seasons, this shelf is omitted. -->
       <div class="arc-rail">
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Heinrich Barth" role="button" tabindex="0" aria-label="Filter episodes by Heinrich Barth">
           <div class="arc-cover" style="background-image:url(../art/explorers-podcast.jpg)"></div>
           <div class="arc-name">Heinrich Barth</div>
           <div class="arc-parts">6 episodes</div>
@@ -9557,7 +10007,7 @@ const SCREENS = {
             <span class="lbl">Add all 6</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Juan Ponce de León" role="button" tabindex="0" aria-label="Filter episodes by Juan Ponce de León">
           <div class="arc-cover" style="background-image:url(../art/explorers-podcast.jpg)"></div>
           <div class="arc-name">Juan Ponce de León</div>
           <div class="arc-parts">2 episodes</div>
@@ -9566,7 +10016,7 @@ const SCREENS = {
             <span class="lbl">Add all 2</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Robert Falcon Scott" role="button" tabindex="0" aria-label="Filter episodes by Robert Falcon Scott">
           <div class="arc-cover" style="background-image:url(../art/explorers-podcast.jpg)"></div>
           <div class="arc-name">Robert Falcon Scott</div>
           <div class="arc-parts">7 episodes</div>
@@ -9575,7 +10025,7 @@ const SCREENS = {
             <span class="lbl">Add all 7</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Jim Bridger" role="button" tabindex="0" aria-label="Filter episodes by Jim Bridger">
           <div class="arc-cover" style="background-image:url(../art/explorers-podcast.jpg)"></div>
           <div class="arc-name">Jim Bridger</div>
           <div class="arc-parts">6 episodes</div>
@@ -9584,7 +10034,7 @@ const SCREENS = {
             <span class="lbl">Add all 6</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Francisco Pizarro and the Conquest of the Inca Empire" role="button" tabindex="0" aria-label="Filter episodes by Francisco Pizarro and the Conquest of the Inca Empire">
           <div class="arc-cover" style="background-image:url(../art/explorers-podcast.jpg)"></div>
           <div class="arc-name">Francisco Pizarro and the Conquest of the Inca Empire</div>
           <div class="arc-parts">8 episodes</div>
@@ -9593,7 +10043,7 @@ const SCREENS = {
             <span class="lbl">Add all 8</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Samurai William Adams" role="button" tabindex="0" aria-label="Filter episodes by Samurai William Adams">
           <div class="arc-cover" style="background-image:url(../art/explorers-podcast.jpg)"></div>
           <div class="arc-name">Samurai William Adams</div>
           <div class="arc-parts">4 episodes</div>
@@ -9602,7 +10052,7 @@ const SCREENS = {
             <span class="lbl">Add all 4</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Roald Amundsen" role="button" tabindex="0" aria-label="Filter episodes by Roald Amundsen">
           <div class="arc-cover" style="background-image:url(../art/explorers-podcast.jpg)"></div>
           <div class="arc-name">Roald Amundsen</div>
           <div class="arc-parts">10 episodes</div>
@@ -9611,7 +10061,7 @@ const SCREENS = {
             <span class="lbl">Add all 10</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Hiram Bingham and Machu Picchu" role="button" tabindex="0" aria-label="Filter episodes by Hiram Bingham and Machu Picchu">
           <div class="arc-cover" style="background-image:url(../art/explorers-podcast.jpg)"></div>
           <div class="arc-name">Hiram Bingham and Machu Picchu</div>
           <div class="arc-parts">5 episodes</div>
@@ -9620,7 +10070,7 @@ const SCREENS = {
             <span class="lbl">Add all 5</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="Henry Hudson" role="button" tabindex="0" aria-label="Filter episodes by Henry Hudson">
           <div class="arc-cover" style="background-image:url(../art/explorers-podcast.jpg)"></div>
           <div class="arc-name">Henry Hudson</div>
           <div class="arc-parts">3 episodes</div>
@@ -9629,7 +10079,7 @@ const SCREENS = {
             <span class="lbl">Add all 3</span>
           </button>
         </div>
-        <div class="arc-card">
+        <div class="arc-card" data-arc="René Caillié and the Quest for Timbuktu" role="button" tabindex="0" aria-label="Filter episodes by René Caillié and the Quest for Timbuktu">
           <div class="arc-cover" style="background-image:url(../art/explorers-podcast.jpg)"></div>
           <div class="arc-name">René Caillié and the Quest for Timbuktu</div>
           <div class="arc-parts">3 episodes</div>
@@ -9642,10 +10092,13 @@ const SCREENS = {
 
       <div class="sec-head" style="margin-top: var(--sp-5)">
         <h2>Episodes</h2>
-        <span class="count">262</span>
+        <div class="sec-right">
+          <span class="count">262</span>
+          <button class="ep-filter" hidden>Showing: <span class="ef-name"></span> <span class="ef-x">✕</span></button>
+        </div>
       </div>
       <div class="eplist">
-      <div class="ep">
+      <div class="ep" data-arc="Heinrich Barth">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Sheikh Ahmad al-Bakkay al-Kunti and Timbuktu</div>
@@ -9658,7 +10111,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Heinrich Barth">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The long road to Timbuktu</div>
@@ -9671,7 +10124,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Heinrich Barth">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Kingdoms of Africa</div>
@@ -9684,7 +10137,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Heinrich Barth">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Into the heart of Central Africa</div>
@@ -9697,7 +10150,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Heinrich Barth">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Across the Sahara</div>
@@ -9710,7 +10163,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Heinrich Barth">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Africa Calls</div>
@@ -9723,7 +10176,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Neptune's Fortune - An interview with author Julian Sancton</div>
@@ -9736,7 +10189,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Juan Ponce de León">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Explorer</div>
@@ -9749,7 +10202,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Juan Ponce de León">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Conquistador</div>
@@ -9762,7 +10215,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Semyon Dezhnev and the exploration of Siberia</div>
@@ -9775,7 +10228,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Monet Izabeth - the first American woman to ski solo, and unsupported, to the South Pole</div>
@@ -9788,7 +10241,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Robert Falcon Scott">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Terra Nova Expedition - The Journey Home</div>
@@ -9801,7 +10254,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Robert Falcon Scott">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Terra Nova Expedition - Race to the Pole</div>
@@ -9814,7 +10267,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Robert Falcon Scott">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Terra Nova Expedition</div>
@@ -9827,7 +10280,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Robert Falcon Scott">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Discovery Expedition and Fame</div>
@@ -9840,7 +10293,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Robert Falcon Scott">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Discovery Expedition - Farthest South</div>
@@ -9853,7 +10306,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Robert Falcon Scott">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Discovery Expedition</div>
@@ -9866,7 +10319,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="Robert Falcon Scott">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Robert Falcon Scott - Part 1</div>
@@ -9879,7 +10332,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Polynesians</div>
@@ -9892,7 +10345,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">Nero's Nile Expedition</div>
@@ -9905,7 +10358,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">The Vivaldi Brothers and the first attempt to sail from Europe to India via the Cape Route</div>
@@ -9918,7 +10371,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">HMS Investigator and the Northwest Passage – Part 5 – A conversation with Hubert Sagnières</div>
@@ -9931,7 +10384,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">HMS Investigator and the Northwest Passage – Part 4 – The Passage Conquered</div>
@@ -9944,7 +10397,7 @@ const SCREENS = {
           </div>
         </div>
       </div>
-      <div class="ep">
+      <div class="ep" data-arc="">
         <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
         <div class="ep-body">
           <div class="ep-title">HMS Investigator and the Northwest Passage – Part 3 – Across the Passage</div>
@@ -9953,6 +10406,513 @@ const SCREENS = {
             <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
             <button class="ep-btn ep-add" data-arc="" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Jim Bridger">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Powder River Expedition, Red Cloud's War, and final years</div>
+          <div class="ep-meta"><span class="ep-arc">Jim Bridger</span> · Part 6 · Sep 4, 2025 · 29 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Jim Bridger" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Jim Bridger">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The Utah War, Raynolds Expedition, Bridger Trail and the Telegraph</div>
+          <div class="ep-meta"><span class="ep-arc">Jim Bridger</span> · Part 5 · Aug 26, 2025 · 32 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Jim Bridger" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Jim Bridger">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Brigham Young, the Mormons, and various expeditions</div>
+          <div class="ep-meta"><span class="ep-arc">Jim Bridger</span> · Part 4 · Aug 21, 2025 · 33 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Jim Bridger" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Jim Bridger">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Go West!</div>
+          <div class="ep-meta"><span class="ep-arc">Jim Bridger</span> · Part 3 · Aug 12, 2025 · 35 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Jim Bridger" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Jim Bridger">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">King of the Mountain Men</div>
+          <div class="ep-meta"><span class="ep-arc">Jim Bridger</span> · Part 2 · Aug 5, 2025 · 31 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Jim Bridger" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Jim Bridger">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Early Years and the Great Salt Lake</div>
+          <div class="ep-meta"><span class="ep-arc">Jim Bridger</span> · Part 1 · Jul 22, 2025 · 34 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Jim Bridger" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Francisco Pizarro and the Conquest of the Inca Empire">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Francisco Pizarro and the Conquest of the Inca Empire - Part 8</div>
+          <div class="ep-meta"><span class="ep-arc">Francisco Pizarro and the Conquest of the Inca Empire</span> · Part 8 · Jul 8, 2025 · 44 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Francisco Pizarro and the Conquest of the Inca Empire" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Francisco Pizarro and the Conquest of the Inca Empire">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Francisco Pizarro and the Conquest of the Inca Empire - Part 7</div>
+          <div class="ep-meta"><span class="ep-arc">Francisco Pizarro and the Conquest of the Inca Empire</span> · Part 7 · Jun 24, 2025 · 32 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Francisco Pizarro and the Conquest of the Inca Empire" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Francisco Pizarro and the Conquest of the Inca Empire">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Francisco Pizarro and the Conquest of the Inca Empire - Part 6</div>
+          <div class="ep-meta"><span class="ep-arc">Francisco Pizarro and the Conquest of the Inca Empire</span> · Part 6 · Jun 19, 2025 · 36 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Francisco Pizarro and the Conquest of the Inca Empire" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Francisco Pizarro and the Conquest of the Inca Empire">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Francisco Pizarro and the Conquest of the Inca Empire - Part 5</div>
+          <div class="ep-meta"><span class="ep-arc">Francisco Pizarro and the Conquest of the Inca Empire</span> · Part 5 · Jun 10, 2025 · 32 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Francisco Pizarro and the Conquest of the Inca Empire" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Francisco Pizarro and the Conquest of the Inca Empire">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Francisco Pizarro and the Conquest of the Inca Empire - Part 4</div>
+          <div class="ep-meta"><span class="ep-arc">Francisco Pizarro and the Conquest of the Inca Empire</span> · Part 4 · May 27, 2025 · 34 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Francisco Pizarro and the Conquest of the Inca Empire" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Francisco Pizarro and the Conquest of the Inca Empire">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Francisco Pizarro and the Conquest of the Inca Empire - Part 3</div>
+          <div class="ep-meta"><span class="ep-arc">Francisco Pizarro and the Conquest of the Inca Empire</span> · Part 3 · May 20, 2025 · 36 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Francisco Pizarro and the Conquest of the Inca Empire" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Francisco Pizarro and the Conquest of the Inca Empire">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Francisco Pizarro and the Conquest of the Inca Empire - Part 2</div>
+          <div class="ep-meta"><span class="ep-arc">Francisco Pizarro and the Conquest of the Inca Empire</span> · Part 2 · May 6, 2025 · 37 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Francisco Pizarro and the Conquest of the Inca Empire" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Francisco Pizarro and the Conquest of the Inca Empire">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Francisco Pizarro and the Conquest of the Inca Empire - Part 1</div>
+          <div class="ep-meta"><span class="ep-arc">Francisco Pizarro and the Conquest of the Inca Empire</span> · Part 1 · Apr 29, 2025 · 35 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Francisco Pizarro and the Conquest of the Inca Empire" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Samurai William Adams">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Samurai William Adams - Part 4</div>
+          <div class="ep-meta"><span class="ep-arc">Samurai William Adams</span> · Part 4 · Apr 1, 2025 · 42 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Samurai William Adams" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Samurai William Adams">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Samurai William Adams - Part 3</div>
+          <div class="ep-meta"><span class="ep-arc">Samurai William Adams</span> · Part 3 · Mar 25, 2025 · 30 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Samurai William Adams" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Samurai William Adams">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Samurai William Adams - Part 2</div>
+          <div class="ep-meta"><span class="ep-arc">Samurai William Adams</span> · Part 2 · Mar 11, 2025 · 33 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Samurai William Adams" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Samurai William Adams">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Samurai William Adams - Part 1</div>
+          <div class="ep-meta"><span class="ep-arc">Samurai William Adams</span> · Part 1 · Mar 4, 2025 · 34 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Samurai William Adams" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Roald Amundsen">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Life, Death and Legacy</div>
+          <div class="ep-meta"><span class="ep-arc">Roald Amundsen</span> · Part 10 · Feb 10, 2025 · 32 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Roald Amundsen" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Roald Amundsen">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The Norge</div>
+          <div class="ep-meta"><span class="ep-arc">Roald Amundsen</span> · Part 9 · Feb 4, 2025 · 34 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Roald Amundsen" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Roald Amundsen">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Flights of Fancy</div>
+          <div class="ep-meta"><span class="ep-arc">Roald Amundsen</span> · Part 8 · Jan 22, 2025 · 35 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Roald Amundsen" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Roald Amundsen">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The Maud Expedition</div>
+          <div class="ep-meta"><span class="ep-arc">Roald Amundsen</span> · Part 7 · Jan 14, 2025 · 38 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Roald Amundsen" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Roald Amundsen">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Return from the South Pole</div>
+          <div class="ep-meta"><span class="ep-arc">Roald Amundsen</span> · Part 6 · Jan 6, 2025 · 32 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Roald Amundsen" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Roald Amundsen">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">the South Pole (cont.)</div>
+          <div class="ep-meta"><span class="ep-arc">Roald Amundsen</span> · Part 5 · Dec 24, 2024 · 34 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Roald Amundsen" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Roald Amundsen">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">the South Pole</div>
+          <div class="ep-meta"><span class="ep-arc">Roald Amundsen</span> · Part 4 · Dec 11, 2024 · 43 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Roald Amundsen" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Roald Amundsen">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The Gjøa Expedition (cont.)</div>
+          <div class="ep-meta"><span class="ep-arc">Roald Amundsen</span> · Part 3 · Dec 3, 2024 · 34 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Roald Amundsen" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Roald Amundsen">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The Gjøa Expedition</div>
+          <div class="ep-meta"><span class="ep-arc">Roald Amundsen</span> · Part 2 · Nov 25, 2024 · 36 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Roald Amundsen" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Roald Amundsen">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Early life and the Belgica Expedition</div>
+          <div class="ep-meta"><span class="ep-arc">Roald Amundsen</span> · Part 1 · Nov 19, 2024 · 40 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Roald Amundsen" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Hiram Bingham and Machu Picchu">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Hiram Bingham and Machu Picchu - Part 5</div>
+          <div class="ep-meta"><span class="ep-arc">Hiram Bingham and Machu Picchu</span> · Part 5 · Nov 5, 2024 · 34 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Hiram Bingham and Machu Picchu" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Hiram Bingham and Machu Picchu">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Hiram Bingham and Machu Picchu - Part 4</div>
+          <div class="ep-meta"><span class="ep-arc">Hiram Bingham and Machu Picchu</span> · Part 4 · Oct 30, 2024 · 33 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Hiram Bingham and Machu Picchu" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Hiram Bingham and Machu Picchu">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Hiram Bingham and Machu Picchu - Part 3</div>
+          <div class="ep-meta"><span class="ep-arc">Hiram Bingham and Machu Picchu</span> · Part 3 · Oct 14, 2024 · 33 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Hiram Bingham and Machu Picchu" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Hiram Bingham and Machu Picchu">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Hiram Bingham and Machu Picchu - Part 2</div>
+          <div class="ep-meta"><span class="ep-arc">Hiram Bingham and Machu Picchu</span> · Part 2 · Oct 7, 2024 · 32 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Hiram Bingham and Machu Picchu" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Hiram Bingham and Machu Picchu">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">Hiram Bingham and Machu Picchu - Part 1</div>
+          <div class="ep-meta"><span class="ep-arc">Hiram Bingham and Machu Picchu</span> · Part 1 · Sep 23, 2024 · 40 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Hiram Bingham and Machu Picchu" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Henry Hudson">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">the Northwest Passage</div>
+          <div class="ep-meta"><span class="ep-arc">Henry Hudson</span> · Part 3 · Sep 18, 2024 · 41 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Henry Hudson" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Henry Hudson">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">The Voyage of the Half Moon</div>
+          <div class="ep-meta"><span class="ep-arc">Henry Hudson</span> · Part 2 · Sep 3, 2024 · 45 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Henry Hudson" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="Henry Hudson">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">the Northeast Passage</div>
+          <div class="ep-meta"><span class="ep-arc">Henry Hudson</span> · Part 1 · Aug 26, 2024 · 29 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="Henry Hudson" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="René Caillié and the Quest for Timbuktu">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">René Caillié and the Quest for Timbuktu - Part 3</div>
+          <div class="ep-meta"><span class="ep-arc">René Caillié and the Quest for Timbuktu</span> · Part 3 · Aug 19, 2024 · 37 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="René Caillié and the Quest for Timbuktu" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="René Caillié and the Quest for Timbuktu">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">René Caillié and the Quest for Timbuktu - Part 2</div>
+          <div class="ep-meta"><span class="ep-arc">René Caillié and the Quest for Timbuktu</span> · Part 2 · Aug 5, 2024 · 32 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="René Caillié and the Quest for Timbuktu" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ep ep-extra" data-arc="René Caillié and the Quest for Timbuktu">
+        <div class="ep-art" style="background-image:url(../art/explorers-podcast.jpg)"></div>
+        <div class="ep-body">
+          <div class="ep-title">René Caillié and the Quest for Timbuktu - Part 1</div>
+          <div class="ep-meta"><span class="ep-arc">René Caillié and the Quest for Timbuktu</span> · Part 1 · Jul 30, 2024 · 29 min</div>
+          <div class="ep-ctls">
+            <button class="ep-btn ep-dl" aria-label="Download"><span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+            
+            <button class="ep-btn ep-add" data-arc="René Caillié and the Quest for Timbuktu" aria-label="Add to Up Next"><span class="ico-plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="ico-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
             
           </div>
         </div>
@@ -10008,7 +10968,8 @@ const SCREENS = {
   });
   // "Add all" on an arc card -> confirm, and mark that arc's rows as queued
   document.querySelectorAll('.arc-add').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();               // don't also trigger the card's filter
       const added = btn.classList.toggle('added');
       btn.querySelector('.lbl').textContent = added ? 'Added' : ('Add all ' + btn.dataset.count);
       const arc = btn.dataset.arc;
@@ -10017,6 +10978,49 @@ const SCREENS = {
       });
     });
   });
+  // tap an arc card body -> filter the episode list to that arc; tap again to clear
+  const epRows = document.querySelectorAll('.ep');
+  const cards = document.querySelectorAll('.arc-card');
+  const epFilter = document.querySelector('.ep-filter');
+  const efName = document.querySelector('.ef-name');
+  const epCount = document.querySelector('.sec-right .count');
+  function applyFilter(arc){
+    cards.forEach(c => c.classList.toggle('active', arc != null && c.dataset.arc === arc));
+    let first = true;
+    epRows.forEach(row => {
+      if (arc == null){
+        row.style.display = '';                 // fall back to CSS (ep-extra stays hidden)
+        row.classList.remove('first-shown');
+        return;
+      }
+      const show = row.dataset.arc === arc;
+      row.style.display = show ? 'flex' : 'none';  // 'flex' overrides .ep-extra's display:none
+      row.classList.toggle('first-shown', show && first);
+      if (show) first = false;
+    });
+    if (arc == null){
+      epFilter.hidden = true;
+      if (epCount) epCount.hidden = false;
+    } else {
+      efName.textContent = arc;
+      epFilter.hidden = false;
+      if (epCount) epCount.hidden = true;
+    }
+  }
+  cards.forEach(card => {
+    const toggle = () => {
+      const arc = card.dataset.arc;
+      applyFilter(card.classList.contains('active') ? null : arc);
+    };
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.arc-add')) return;   // let "Add all" do its own thing
+      toggle();
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+  if (epFilter) epFilter.addEventListener('click', () => applyFilter(null));
   // per-row compact controls
   document.querySelectorAll('.ep-dl').forEach(b => b.addEventListener('click', () => b.classList.toggle('done')));
   document.querySelectorAll('.ep-add').forEach(b => b.addEventListener('click', () => b.classList.toggle('added')));
