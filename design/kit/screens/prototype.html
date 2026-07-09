@@ -581,7 +581,7 @@ const SCREENS = {
 
   @media (prefers-reduced-motion: reduce) {
     * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
-    .row, .eyebrow, h1.big, .search, .sec-head, .sec-sub, .foot { opacity: 1 !important; transform: none !important; }
+    .row, .eyebrow, h1.big, .search, .sec-head, .sec-sub, .foot, .pn, .ep-card { opacity: 1 !important; transform: none !important; }
     .navbar { transition: none; }
   }
 
@@ -694,6 +694,61 @@ const SCREENS = {
     background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
     box-shadow: 0 4px 12px -4px rgba(0,0,0,.5), inset 0 0 0 .5px rgba(255,255,255,.28);
     display: inline-flex; align-items: center; justify-content: center; }
+
+  /* standalone chip, same look as the results-row .tag, usable anywhere */
+  .tag {
+    font-size: .64rem; font-weight: 800; letter-spacing: .02em; text-transform: uppercase;
+    color: var(--text-dim); background: var(--chip);
+    padding: 3px 8px; border-radius: var(--r-pill); display: inline-block;
+  }
+  .tag.hot { color: var(--on-accent); background: var(--accent); }
+
+  /* circular accent-gradient play button — same treatment as .sub, play glyph instead of plus/check */
+  .play-btn {
+    position: absolute; z-index: 3; border: none; cursor: pointer; border-radius: 50%;
+    color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,.5), inset 0 0 0 .5px rgba(255,255,255,.28);
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: transform var(--dur-mid) var(--ease-spring);
+  }
+  .play-btn svg { display: block; margin-left: 1.5px; } /* optical center for the triangle */
+
+  /* ---------- Up Next: horizontal square-tile slider ---------- */
+  .pn { flex: none; width: 112px; scroll-snap-align: start; display: flex; flex-direction: column; gap: 8px;
+    opacity: 0; transform: translateY(12px); animation: rowIn .55s var(--ease-spring) forwards; }
+  .pn-art { position: relative; width: 112px; height: 112px; border-radius: var(--r-md); overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 8px 20px -12px rgba(0,0,0,.55);
+    background-size: cover; background-position: center; }
+  .pn-art::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.36), transparent 42%),
+                radial-gradient(circle at 78% 82%, rgba(0,0,0,.3), transparent 55%); }
+  .pn-play { left: 50%; top: 50%; transform: translate(-50%,-50%); width: 40px; height: 40px; }
+  .pn-play:active { transform: translate(-50%,-50%) scale(.86); }
+  .pn-meta { padding: 0 2px; }
+  .pn-title { font-size: .86rem; font-weight: 700; letter-spacing: -.01em; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pn-time { margin-top: 2px; font-size: .76rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ---------- New episodes: tall engaging carousel ---------- */
+  .ep-card { flex: none; width: 200px; scroll-snap-align: start;
+    opacity: 0; transform: translateY(12px); animation: rowIn .55s var(--ease-spring) forwards; }
+  .ep-art { position: relative; width: 200px; height: 200px; border-radius: var(--r-md); overflow: hidden;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 10px 26px -14px rgba(0,0,0,.55);
+    background-size: cover; background-position: center; }
+  .ep-art::after { content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 22%, rgba(255,255,255,.34), transparent 44%),
+                radial-gradient(circle at 80% 86%, rgba(0,0,0,.34), transparent 55%); }
+  .ep-art .tag { position: absolute; top: 9px; left: 9px; z-index: 2; }
+  .ep-play { right: 9px; bottom: 9px; width: 38px; height: 38px; }
+  .ep-play:active { transform: scale(.86); }
+  .ep-meta { padding: var(--sp-2) 2px 0; }
+  .ep-title { margin-top: 4px; font-size: .98rem; font-weight: 700; letter-spacing: -.01em; color: var(--text); line-height: 1.24;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .ep-podcast { margin-top: 4px; font-size: .8rem; font-weight: 500; color: var(--text-dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ep-date { margin-top: 2px; font-size: .74rem; font-weight: 600; color: var(--text-faint); }
   /* dim the underlying content while the typeahead drawer is open */
   .content.drawer-open .under { filter: saturate(.9) brightness(.72); transition: filter .2s var(--ease-soft); }
   .under { transition: filter .2s var(--ease-soft); margin-top: var(--sp-5); }
@@ -734,7 +789,7 @@ const SCREENS = {
 
   /* @font-display-titles */
   h1.big, .sec-head h2, .nav-title, .stage-cap, .ob-title, .gh-title,
-  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2 {
+  .shelf-head .sh-title, .state-title, .doc-h1, .grp > h2, .ep-title {
     font-family: var(--font-display); font-weight: 700; }
 
 </style>
@@ -787,66 +842,117 @@ const SCREENS = {
         <h1 class="big">Home<span class="pulse-dot"></span></h1>
       </div>
 
-      <!-- Up Next peek -->
+      <!-- Up Next: horizontal square-tile slider, playable -->
       <div class="sec-head">
         <h2>Up Next</h2>
         <a class="see-all" href="#">See all</a>
       </div>
-      <div class="list">
-        <div class="row">
-          <span class="art" style="background-image:url(../art/20k-hertz.jpg);background-size:cover;background-position:center"></span>
-          <div class="meta">
-            <div class="rtitle">The Sample-Rate Wars</div>
-            <div class="rauthor">Twenty Thousand Hertz · 18 min left</div>
+      <div class="rail" aria-label="Up next episodes">
+        <article class="pn" style="animation-delay:.34s">
+          <div class="pn-art" style="background-image:url(../art/20k-hertz.jpg)">
+            <button class="play-btn pn-play" aria-label="Play The Sample-Rate Wars">
+              <svg width="15" height="15" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg>
+            </button>
           </div>
-        </div>
-        <div class="row">
-          <span class="art" style="background-image:url(../art/song-exploder.jpg);background-size:cover;background-position:center"></span>
-          <div class="meta">
-            <div class="rtitle">Cold Open, Warm Ending</div>
-            <div class="rauthor">Song Exploder · 42 min</div>
+          <div class="pn-meta">
+            <div class="pn-title">The Sample-Rate Wars</div>
+            <div class="pn-time">· 18 min left</div>
           </div>
-        </div>
+        </article>
+        <article class="pn" style="animation-delay:.39s">
+          <div class="pn-art" style="background-image:url(../art/song-exploder.jpg)">
+            <button class="play-btn pn-play" aria-label="Play Cold Open, Warm Ending">
+              <svg width="15" height="15" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg>
+            </button>
+          </div>
+          <div class="pn-meta">
+            <div class="pn-title">Cold Open, Warm Ending</div>
+            <div class="pn-time">· 42 min left</div>
+          </div>
+        </article>
+        <article class="pn" style="animation-delay:.44s">
+          <div class="pn-art" style="background-image:url(../art/rest-is-history.jpg)">
+            <button class="play-btn pn-play" aria-label="Play Rome's Last Good Emperor">
+              <svg width="15" height="15" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg>
+            </button>
+          </div>
+          <div class="pn-meta">
+            <div class="pn-title">Rome's Last Good Emperor</div>
+            <div class="pn-time">· 51 min left</div>
+          </div>
+        </article>
+        <article class="pn" style="animation-delay:.49s">
+          <div class="pn-art" style="background-image:url(../art/the-daily.jpg)">
+            <button class="play-btn pn-play" aria-label="Play The Tuesday Briefing">
+              <svg width="15" height="15" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg>
+            </button>
+          </div>
+          <div class="pn-meta">
+            <div class="pn-title">The Tuesday Briefing</div>
+            <div class="pn-time">· 9 min left</div>
+          </div>
+        </article>
       </div>
 
-      <!-- New episodes -->
+      <!-- New episodes: tall engaging carousel -->
       <div class="sec-head">
         <h2>New episodes</h2>
         <a class="see-all" href="#">See all</a>
       </div>
-      <div class="list">
-        <div class="row">
-          <span class="art" style="background-image:url(../art/acquired.jpg);background-size:cover;background-position:center"></span>
-          <div class="meta">
-            <div class="rtitle">Building Acquired, Episode 300</div>
-            <div class="rauthor">Acquired · Today</div>
+      <div class="rail" aria-label="New episodes">
+        <article class="ep-card" style="animation-delay:.55s">
+          <div class="ep-art" style="background-image:url(../art/acquired.jpg)">
+            <span class="tag hot">New</span>
+            <button class="play-btn ep-play" aria-label="Play Building Acquired, Episode 300">
+              <svg width="16" height="16" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg>
+            </button>
           </div>
-        </div>
-        <div class="row">
-          <span class="art" style="background-image:url(../art/99pi.jpg);background-size:cover;background-position:center"></span>
-          <div class="meta">
-            <div class="rtitle">The Beauty of Bike Lanes</div>
-            <div class="rauthor">99% Invisible · Yesterday</div>
+          <div class="ep-meta">
+            <div class="ep-title">Building Acquired, Episode 300</div>
+            <div class="ep-podcast">Acquired</div>
+            <div class="ep-date">Today</div>
           </div>
-        </div>
-        <div class="row">
-          <span class="art" style="background-image:url(../art/rest-is-history.jpg);background-size:cover;background-position:center"></span>
-          <div class="meta">
-            <div class="rtitle">Rome's Last Good Emperor</div>
-            <div class="rauthor">The Rest Is History · 2d ago</div>
+        </article>
+        <article class="ep-card" style="animation-delay:.6s">
+          <div class="ep-art" style="background-image:url(../art/99pi.jpg)">
+            <span class="tag">S9 · E12</span>
+            <button class="play-btn ep-play" aria-label="Play The Beauty of Bike Lanes">
+              <svg width="16" height="16" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg>
+            </button>
           </div>
-        </div>
+          <div class="ep-meta">
+            <div class="ep-title">The Beauty of Bike Lanes</div>
+            <div class="ep-podcast">99% Invisible</div>
+            <div class="ep-date">Yesterday</div>
+          </div>
+        </article>
+        <article class="ep-card" style="animation-delay:.65s">
+          <div class="ep-art" style="background-image:url(../art/rest-is-history.jpg)">
+            <span class="tag">Rise of Rome · Part 2</span>
+            <button class="play-btn ep-play" aria-label="Play Rome's Last Good Emperor">
+              <svg width="16" height="16" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg>
+            </button>
+          </div>
+          <div class="ep-meta">
+            <div class="ep-title">Rome's Last Good Emperor</div>
+            <div class="ep-podcast">The Rest Is History</div>
+            <div class="ep-date">2d ago</div>
+          </div>
+        </article>
+        <article class="ep-card" style="animation-delay:.7s">
+          <div class="ep-art" style="background-image:url(../art/bone-valley.jpg)">
+            <span class="tag">S1 · E7</span>
+            <button class="play-btn ep-play" aria-label="Play The Land Deal">
+              <svg width="16" height="16" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg>
+            </button>
+          </div>
+          <div class="ep-meta">
+            <div class="ep-title">The Land Deal</div>
+            <div class="ep-podcast">Bone Valley</div>
+            <div class="ep-date">3d ago</div>
+          </div>
+        </article>
       </div>
-
-      <!-- Shows for you (recommendations placeholder) -->
-      <section class="shelf" style="margin-top:var(--sp-6)">
-        <div class="shelf-head"><span class="sh-title">Shows for you</span><span class="sh-count">picked</span></div>
-        <div class="rail">
-          <article class="pod"><div class="pod-art" style="background-image:url(../art/acquired.jpg);background-size:cover;background-position:center"><button class="sub" aria-label="Subscribe to Acquired"><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 6 11l5.5-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ring"></span></button></div><div class="pod-meta"><div class="pod-title">Acquired</div><div class="pod-studio">Ben Gilbert &amp; David Rosenthal</div></div></article>
-          <article class="pod"><div class="pod-art" style="background-image:url(../art/search-engine.jpg);background-size:cover;background-position:center"><button class="sub" aria-label="Subscribe to Search Engine"><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 6 11l5.5-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ring"></span></button></div><div class="pod-meta"><div class="pod-title">Search Engine</div><div class="pod-studio">PJ Vogt</div></div></article>
-          <article class="pod"><div class="pod-art" style="background-image:url(../art/radiolab.jpg);background-size:cover;background-position:center"><button class="sub" aria-label="Subscribe to Radiolab"><span class="ico ico-plus"><svg width="15" height="15" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg></span><span class="ico ico-check"><svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5 6 11l5.5-7" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ring"></span></button></div><div class="pod-meta"><div class="pod-title">Radiolab</div><div class="pod-studio">WNYC Studios</div></div></article>
-        </div>
-      </section>
 
       <!-- Our favorites (editorial placeholder) -->
       <section class="shelf">
