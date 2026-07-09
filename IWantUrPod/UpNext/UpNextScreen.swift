@@ -34,6 +34,7 @@ import SwiftData
 import DesignSystem
 import PodcastModels
 import DownloadKit
+import PlaybackKit
 
 /// The Up Next tab: every queued episode, ordered by `QueueStore.items`
 /// (ascending `order` — index 0 plays next). Reads the shared, app-scoped
@@ -259,8 +260,41 @@ private struct QueueRow: View {
     @Environment(\.palette) private var palette
     @Environment(\.modelContext) private var modelContext
     @Environment(DownloadManager.self) private var downloadManager
+    @Environment(PlaybackIntentCoordinator.self) private var playbackIntent
+
+    /// Horizontal swipe-to-remove state. `swipeOffset` is the row face's live
+    /// x-translation (0 closed, `-removeActionWidth` open); `swipeStart`
+    /// snapshots the offset at gesture begin so a drag can resume from an
+    /// already-open row.
+    @State private var swipeOffset: CGFloat = 0
+    @State private var swipeStart: CGFloat?
+
+    /// Width of the revealed trailing Remove action (kit `.row-remove` = 96px).
+    private let removeActionWidth: CGFloat = 96
 
     var body: some View {
+        ZStack(alignment: .trailing) {
+            removeAction
+            rowFace
+        }
+        .clipped()                       // clip the revealed action + swiped face to the row
+        .offset(y: dragOffset)           // vertical reorder lift (grip drag)
+        .scaleEffect(isDragging ? 1.02 : 1)
+        .shadow(color: .black.opacity(isDragging ? 0.25 : 0), radius: 12, y: 6)
+        .animation(.interactiveSpring(), value: isDragging)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(episode.title). \(subtitle)")
+        .accessibilityAction(named: "Play") { playbackIntent.play(episode, context: modelContext) }
+        .accessibilityAction(named: "Remove from Queue") { onRemove() }
+    }
+
+    // MARK: - Row face (.face) — grip · art · meta · [play][download]
+
+    /// The visible row content. Opaque (`palette.surface`) so it occludes the
+    /// destructive action behind it until swiped, and offset horizontally by
+    /// the live swipe translation. Trailing controls mirror the kit's
+    /// `.controls` group: a `PlayButton` beside the download control.
+    private var rowFace: some View {
         HStack(alignment: .center, spacing: Spacing.sp3) {
             grip
 
@@ -282,23 +316,80 @@ private struct QueueRow: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            downloadControl(for: episode)
+            HStack(spacing: Spacing.sp2) {   // .controls
+                PlayButton(
+                    diameter: 40,
+                    accessibilityLabel: "Play \(episode.title)",
+                    action: { playbackIntent.play(episode, context: modelContext) }
+                )
+                downloadControl(for: episode)
+            }
         }
         .padding(.horizontal, Spacing.sp4)
         .padding(.vertical, Spacing.sp3)
-        .offset(y: dragOffset)
-        .scaleEffect(isDragging ? 1.02 : 1)
-        .shadow(color: .black.opacity(isDragging ? 0.25 : 0), radius: 12, y: 6)
-        .animation(.interactiveSpring(), value: isDragging)
-        .contextMenu {
+        .background(palette.surface)
+        .contentShape(Rectangle())
+        .offset(x: swipeOffset)
+        .gesture(swipeGesture)
+        .contextMenu {                       // secondary remove path (long-press)
             Button(role: .destructive) {
                 onRemove()
             } label: {
                 Label("Remove from Queue", systemImage: "trash")
             }
         }
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(episode.title). \(subtitle)")
+    }
+
+    // MARK: - Swipe-to-remove trailing action (.row-remove)
+
+    /// The destructive action revealed by swiping the row left. Pinned to the
+    /// trailing edge behind `rowFace`; tapping it (or completing a full swipe)
+    /// removes the episode from the queue. Exposed to VoiceOver via the row's
+    /// `.accessibilityAction(named: "Remove from Queue")`, so hidden here.
+    private var removeAction: some View {
+        Button(action: onRemove) {
+            VStack(spacing: 3) {
+                Image(systemName: "trash")
+                    .font(.system(size: 16, weight: .semibold))
+                Text("Remove")
+                    .typeStyle(Typography.subheadStyle)
+                    .fontWeight(.bold)
+            }
+            .foregroundStyle(.white)
+            .frame(width: removeActionWidth)
+            .frame(maxHeight: .infinity)
+            .background(palette.danger)
+        }
+        .buttonStyle(.plain)
+        .accessibilityHidden(true)
+    }
+
+    /// A horizontal-only drag that reveals/hides the trailing Remove action.
+    /// Scoped to `rowFace` and gated on horizontal dominance so it does not
+    /// fight the grip's long-press vertical reorder gesture or the enclosing
+    /// vertical `ScrollView`. Snaps open past half-width; a full swipe removes.
+    private var swipeGesture: some Gesture {
+        DragGesture(minimumDistance: 14)
+            .onChanged { value in
+                guard abs(value.translation.width) > abs(value.translation.height) else { return }
+                if swipeStart == nil { swipeStart = swipeOffset }
+                let start = swipeStart ?? swipeOffset
+                swipeOffset = min(0, max(start + value.translation.width, -(removeActionWidth + 44)))
+            }
+            .onEnded { value in
+                let start = swipeStart ?? 0
+                swipeStart = nil
+                let projected = start + value.translation.width
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.82)) {
+                    if projected < -(removeActionWidth + 24) {
+                        onRemove()                        // full swipe → remove
+                    } else if projected < -removeActionWidth / 2 {
+                        swipeOffset = -removeActionWidth   // snap open
+                    } else {
+                        swipeOffset = 0                    // snap closed
+                    }
+                }
+            }
     }
 
     // MARK: - Grip (.grip) — 2×3 dot drag handle
@@ -468,34 +559,50 @@ private func previewQueueStore(populated: Bool) -> QueueStore {
 }
 
 #Preview("Up Next — populated (dark)") {
+    let queueStore = previewQueueStore(populated: true)
+    let playbackEngine = PlaybackEngine(localURLResolver: { _ in nil })
+    let downloadManager = DownloadManager()
     UpNextScreen()
         .themedPalette()
         .environment(\.colorScheme, .dark)
-        .environment(previewQueueStore(populated: true))
-        .environment(DownloadManager())
+        .environment(queueStore)
+        .environment(downloadManager)
+        .environment(PlaybackIntentCoordinator(playbackEngine: playbackEngine, downloadManager: downloadManager, queueStore: queueStore))
 }
 
 #Preview("Up Next — populated (light)") {
+    let queueStore = previewQueueStore(populated: true)
+    let playbackEngine = PlaybackEngine(localURLResolver: { _ in nil })
+    let downloadManager = DownloadManager()
     UpNextScreen()
         .themedPalette()
         .environment(\.colorScheme, .light)
-        .environment(previewQueueStore(populated: true))
-        .environment(DownloadManager())
+        .environment(queueStore)
+        .environment(downloadManager)
+        .environment(PlaybackIntentCoordinator(playbackEngine: playbackEngine, downloadManager: downloadManager, queueStore: queueStore))
 }
 
 #Preview("Up Next — empty (dark)") {
+    let queueStore = previewQueueStore(populated: false)
+    let playbackEngine = PlaybackEngine(localURLResolver: { _ in nil })
+    let downloadManager = DownloadManager()
     UpNextScreen()
         .themedPalette()
         .environment(\.colorScheme, .dark)
-        .environment(previewQueueStore(populated: false))
-        .environment(DownloadManager())
+        .environment(queueStore)
+        .environment(downloadManager)
+        .environment(PlaybackIntentCoordinator(playbackEngine: playbackEngine, downloadManager: downloadManager, queueStore: queueStore))
 }
 
 #Preview("Up Next — empty (light)") {
+    let queueStore = previewQueueStore(populated: false)
+    let playbackEngine = PlaybackEngine(localURLResolver: { _ in nil })
+    let downloadManager = DownloadManager()
     UpNextScreen()
         .themedPalette()
         .environment(\.colorScheme, .light)
-        .environment(previewQueueStore(populated: false))
-        .environment(DownloadManager())
+        .environment(queueStore)
+        .environment(downloadManager)
+        .environment(PlaybackIntentCoordinator(playbackEngine: playbackEngine, downloadManager: downloadManager, queueStore: queueStore))
 }
 #endif
