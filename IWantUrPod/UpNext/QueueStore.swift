@@ -20,7 +20,9 @@ import PodcastModels
 /// pruning, keeping `queue-semantics.md`'s invariants after every mutation:
 ///
 /// 1. **Contiguous, ascending `order`** (`0, 1, 2, …`, no gaps/dupes).
-/// 2. **No duplicate episodes** — ``add(_:)`` is a no-op if already queued.
+/// 2. **No duplicate episodes** — ``add(_:)`` is a no-op if already queued,
+///    and `reload()` collapses any duplicate-episode entries that reached the
+///    store by another path (legacy data, external writes) on load.
 /// 3. **No orphans** — a `QueueItem` whose `episode` was nullified (E5's
 ///    inverse-relationship fix, `PodcastModels/Episode.swift`) is pruned.
 /// 4. **Persistence** — every mutation calls `context.save()`.
@@ -52,14 +54,16 @@ public final class QueueStore {
         items.contains { $0.episode?.id == episode.id }
     }
 
-    /// Re-fetches from `context`, pruning orphans first (invariant 3) so
-    /// `items` never surfaces a dangling entry. Call after any external
-    /// mutation of the store (e.g. app launch) to pick up on-disk state.
+    /// Re-fetches from `context`, healing invariant violations first
+    /// (orphans → invariant 3, duplicate-episode entries → invariant 2) so
+    /// `items` never surfaces a dangling or duplicated entry. Call after any
+    /// external mutation of the store (e.g. app launch) to pick up on-disk
+    /// state.
     public func reload() {
-        // A single fetch: `pruneOrphans` already reads every `QueueItem`,
-        // drops the orphans, normalizes, and republishes `items` — reloading
-        // is exactly that, so there's no reason to fetch a second time here.
-        pruneOrphans()
+        // A single fetch: `heal` reads every `QueueItem`, drops orphans +
+        // duplicate-episode entries, normalizes, and republishes `items` —
+        // reloading is exactly that, so there's no reason to fetch again here.
+        heal()
     }
 
     // MARK: - Add (E5-S1)
@@ -123,23 +127,63 @@ public final class QueueStore {
     /// nullify the reference; pruning the now-dangling row is this store's
     /// job per `Episode.queueItems`'s doc comment). Renormalizes the survivors.
     ///
+    /// Delegates to `heal`, which in the same pass also collapses
+    /// duplicate-episode entries (invariant 2). Kept as a public entry point
+    /// (and returning just the orphan count) for callers/tests that speak in
+    /// orphan terms.
+    ///
     /// - Returns: the number of orphans pruned.
     @discardableResult
     public func pruneOrphans() -> Int {
+        heal().orphans
+    }
+
+    // MARK: - Load-time healing (invariants 2 + 3)
+
+    /// Single-fetch healing pass run on every `reload()`. Reads every
+    /// `QueueItem` once and removes two classes of invalid row:
+    ///
+    /// - **Orphans** (invariant 3) — `episode == nil` after a delete.
+    /// - **Duplicate-episode entries** (invariant 2) — more than one row for
+    ///   the same `Episode`. `add(_:)` guards against ever creating these, but
+    ///   any other path (legacy seed data, a future bug, an external write)
+    ///   could, and without healing they'd stay on screen forever. The
+    ///   **lowest-`order`** entry per episode is kept (its earliest queue
+    ///   position); the rest are deleted.
+    ///
+    /// Survivors are renormalized to contiguous `0, 1, 2, …` and republished to
+    /// `items`. The store is only written when something actually changed.
+    ///
+    /// - Returns: how many of each class were removed.
+    @discardableResult
+    private func heal() -> (orphans: Int, duplicates: Int) {
         let all = (try? context.fetch(FetchDescriptor<QueueItem>())) ?? []
         let orphans = all.filter { $0.episode == nil }
-        let remaining = all.filter { $0.episode != nil }.sorted { $0.order < $1.order }
+        let live = all.filter { $0.episode != nil }.sorted { $0.order < $1.order }
 
-        // Always republish `items` from this one fetch (that's what makes
-        // `reload()` a single-fetch call). Only touch the store when there's
-        // actually an orphan to delete + renormalize.
-        if !orphans.isEmpty {
-            for orphan in orphans { context.delete(orphan) }
-            normalize(remaining)
+        // Keep the first (lowest-order) entry per episode; the rest are dupes.
+        var seenEpisodeIDs: Set<UUID> = []
+        var kept: [QueueItem] = []
+        var duplicates: [QueueItem] = []
+        for item in live {
+            guard let episodeID = item.episode?.id else { continue }
+            if seenEpisodeIDs.insert(episodeID).inserted {
+                kept.append(item)
+            } else {
+                duplicates.append(item)
+            }
+        }
+
+        // Always republish `items` from this one fetch. Only touch the store
+        // when there's actually a row to delete + a renormalize to persist.
+        let removable = orphans + duplicates
+        if !removable.isEmpty {
+            for item in removable { context.delete(item) }
+            normalize(kept)
             save()
         }
-        items = remaining
-        return orphans.count
+        items = kept
+        return (orphans.count, duplicates.count)
     }
 
     // MARK: - Private

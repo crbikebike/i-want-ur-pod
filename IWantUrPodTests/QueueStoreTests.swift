@@ -243,4 +243,37 @@ final class QueueStoreTests: XCTestCase {
         XCTAssertTrue(reloadedStore.items.isEmpty)
         XCTAssertEqual(try context.fetchCount(FetchDescriptor<QueueItem>()), 0)
     }
+
+    // MARK: - Duplicate-episode healing (invariant 2, on load)
+
+    // A store that already holds multiple QueueItems for the SAME episode —
+    // legacy data from a path that bypassed `add()`'s guard — must collapse to
+    // one entry per episode on load (keeping the lowest-order/earliest), the
+    // same way orphans are healed. Enforcing invariant 2 only at add()-time
+    // leaves such duplicates on screen forever.
+    func test_reload_collapsesDuplicateEpisodeEntries_keepingLowestOrder() throws {
+        let container = try makeContainer()
+        let context = ModelContext(container)
+        let podcast = makePodcast(context)
+        let dup = makeEpisode(context, guid: "dup", podcast: podcast)
+        let other = makeEpisode(context, guid: "other", podcast: podcast)
+        try context.save()
+
+        // Insert QueueItems directly (bypassing add()'s isQueued guard) to
+        // reproduce the persisted duplicate state: three entries for `dup`
+        // interleaved with one for `other`.
+        context.insert(QueueItem(order: 0, episode: dup))
+        context.insert(QueueItem(order: 1, episode: other))
+        context.insert(QueueItem(order: 2, episode: dup))
+        context.insert(QueueItem(order: 3, episode: dup))
+        try context.save()
+
+        // Fresh store simulates app launch → reload() heals the duplicates.
+        let store = QueueStore(context: ModelContext(container))
+
+        XCTAssertEqual(store.items.count, 2, "duplicate-episode entries collapse to one per episode")
+        XCTAssertEqual(try context.fetchCount(FetchDescriptor<QueueItem>()), 2, "the extra rows are deleted from the store, not just hidden")
+        XCTAssertEqual(store.items.map { $0.episode?.guid }, ["dup", "other"], "lowest-order entry per episode is kept, in order")
+        XCTAssertEqual(store.items.map(\.order), [0, 1], "order renormalizes to contiguous 0,1")
+    }
 }
