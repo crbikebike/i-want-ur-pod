@@ -129,16 +129,15 @@ struct NowPlayingSheet: View {
 
     private var transport: some View {
         HStack(spacing: Spacing.sp7) {
-            Button {
-                playbackEngine.skip(by: -15)
-            } label: {
-                Image(systemName: "gobackward.15")
-                    .font(.system(size: 28, weight: .semibold))
+            SeekButton(
+                direction: .backward,
+                seconds: Int(SkipInterval.back),
+                diameter: 44,
+                accessibilityLabel: "Skip back \(Int(SkipInterval.back)) seconds"
+            ) {
+                playbackEngine.skip(by: -SkipInterval.back)
             }
-            .buttonStyle(.plain)
-            .foregroundStyle(palette.text)
             .disabled(episode == nil)
-            .accessibilityLabel("Skip back 15 seconds")
 
             Button(action: togglePlayPause) {
                 Image(systemName: PlaybackTransport.playPauseSymbolName(for: playbackEngine.state))
@@ -150,16 +149,15 @@ struct NowPlayingSheet: View {
             .disabled(episode == nil)
             .accessibilityLabel(playbackEngine.state == .playing ? "Pause" : "Play")
 
-            Button {
-                playbackEngine.skip(by: 30)
-            } label: {
-                Image(systemName: "goforward.30")
-                    .font(.system(size: 28, weight: .semibold))
+            SeekButton(
+                direction: .forward,
+                seconds: Int(SkipInterval.forward),
+                diameter: 44,
+                accessibilityLabel: "Skip forward \(Int(SkipInterval.forward)) seconds"
+            ) {
+                playbackEngine.skip(by: SkipInterval.forward)
             }
-            .buttonStyle(.plain)
-            .foregroundStyle(palette.text)
             .disabled(episode == nil)
-            .accessibilityLabel("Skip forward 30 seconds")
         }
     }
 

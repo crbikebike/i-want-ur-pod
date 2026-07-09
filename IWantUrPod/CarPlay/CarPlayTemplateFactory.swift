@@ -212,8 +212,13 @@ public final class CarPlayTemplateFactory {
     private func configureNowPlaying(for episode: Episode?) -> CPNowPlayingTemplate {
         let template = CPNowPlayingTemplate.shared
 
-        let skipBack = CPNowPlayingImageButton(image: skipImage(named: "gobackward.30")) { [weak self] _ in
-            self?.playback?.skip(by: -30)
+        // Distances mirror PlaybackKit.SkipInterval (back 15 / forward 30), kept
+        // as literals here because this factory is intentionally decoupled from
+        // PlaybackKit (it drives the CarPlayPlaybackHandling seam, not the engine).
+        // Previously CarPlay rewound 30s while every other surface rewound 15s;
+        // corrected to 15 for consistency.
+        let skipBack = CPNowPlayingImageButton(image: skipImage(named: "gobackward.15")) { [weak self] _ in
+            self?.playback?.skip(by: -15)
         }
         let skipForward = CPNowPlayingImageButton(image: skipImage(named: "goforward.30")) { [weak self] _ in
             self?.playback?.skip(by: 30)

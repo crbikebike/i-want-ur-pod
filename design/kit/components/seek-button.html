@@ -1,0 +1,347 @@
+<!-- @dsCard group="Components" -->
+<title>Component · Seek button</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  :root {
+    /* --- brand ramp (theme-agnostic) --- */
+    --coral: #FF6A4D;
+    --coral-deep: #CA340F;
+    --mint: #34E0C4;
+    --mint-deep: #046B58;
+    --grape: #7C6BFF;
+
+    /* --- spacing scale (gutter = --sp-5 = 20px, used everywhere) --- */
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 20px;
+    --sp-6: 26px;
+    --sp-7: 32px;
+    --gutter: var(--sp-5);
+
+    /* --- radii --- */
+    --r-lg: 20px;
+    --r-md: 16px;
+    --r-sm: 12px;
+    --r-field: 11px;
+    --r-art: 14px;
+    --r-seg: 9px;
+    --r-pill: 999px;
+
+    /* --- motion --- */
+    --dur-fast: .2s;
+    --dur-mid: .3s;
+    --dur-row: .55s;
+    --dur-rise: .6s;
+    --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+    --ease-soft: cubic-bezier(.22, .61, .36, 1);
+
+    /* --- elevation --- */
+    --elev-list: 0 1px 0 var(--hairline), 0 8px 24px -18px rgba(0,0,0,.5);
+    --elev-card: 0 1px 0 var(--hairline), 0 12px 30px -20px rgba(0,0,0,.55);
+    --elev-sub: 0 6px 14px -8px var(--accent);
+    --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
+
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  /* ---------- DARK (hero) ---------- */
+  :root, :root[data-theme="dark"] {
+    --bg: #0E0B12;
+    --grouped-bg: #0E0B12;
+    --bg-glow-1: rgba(255,106,77,.10);
+    --bg-glow-2: rgba(52,224,196,.07);
+    --surface: #1C1722;
+    --surface-2: #262030;
+    --hairline: rgba(255,255,255,.09);
+    --separator: rgba(255,255,255,.12);
+    --text: #F8F3EF;
+    --text-dim: #ABA1B4;
+    --text-faint: #988DA1;
+    --accent: var(--coral);
+    --accent-2: var(--mint);
+    --on-accent: #2A0E04;
+    --chip: rgba(255,255,255,.08);
+    --chip-text: #F8F3EF;
+    --seg-track: rgba(120,120,128,.24);
+    --seg-thumb: #38313F;
+    --field: rgba(120,120,128,.24);
+    --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94);
+    --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5);
+    --tabbar-icon: #8B8291;
+  }
+
+  /* ---------- LIGHT ---------- */
+  :root[data-theme="light"] {
+    --bg: #F2F1F6;
+    --grouped-bg: #F2F1F6;
+    --bg-glow-1: rgba(245,80,47,.09);
+    --bg-glow-2: rgba(6,169,139,.08);
+    --surface: #FFFFFF;
+    --surface-2: #F6F1EC;
+    --hairline: rgba(40,26,36,.10);
+    --separator: rgba(60,60,67,.18);
+    --text: #1A1420;
+    --text-dim: #6B6472;
+    --text-faint: #736A78;
+    --accent: var(--coral-deep);
+    --accent-2: var(--mint-deep);
+    --on-accent: #FFFFFF;
+    --chip: rgba(118,118,128,.12);
+    --chip-text: #1A1420;
+    --seg-track: rgba(118,118,128,.16);
+    --seg-thumb: #FFFFFF;
+    --field: rgba(118,118,128,.10);
+    --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96);
+    --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12);
+    --tabbar-icon: #6C6C70;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: var(--font);
+    background:
+      radial-gradient(120% 60% at 85% -5%, #211a2b, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #17131e, transparent 55%),
+      #0a070e;
+    color: var(--text);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 28px 12px;
+    transition: background .5s var(--ease-soft);
+  }
+  :root[data-theme="light"] body {
+    background:
+      radial-gradient(120% 60% at 85% -5%, #f0e6f4, transparent 60%),
+      radial-gradient(90% 50% at 0% 8%, #eef0f6, transparent 55%),
+      #e6e4ee;
+  }
+
+  /* ---------- theme toggle (fixed) ---------- */
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    height: 44px; padding: 0 16px 0 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: var(--r-pill);
+    background: rgba(30,24,38,.7);
+    backdrop-filter: blur(14px);
+    color: #F8F3EF; font-family: var(--font);
+    font-size: .82rem; font-weight: 700; letter-spacing: .01em;
+    cursor: pointer;
+    transition: transform .3s var(--ease-spring), background .3s;
+  }
+  :root[data-theme="light"] .theme-toggle {
+    background: rgba(255,255,255,.82);
+    border-color: rgba(40,26,36,.12);
+    color: #1A1420;
+  }
+  .theme-toggle:active { transform: scale(.92); }
+  .theme-toggle .tg-emoji { font-size: 1rem; transition: transform .5s var(--ease-spring); }
+  .theme-toggle:hover .tg-emoji { transform: rotate(-20deg) scale(1.15); }
+
+  /* ---------- kit stage (component gallery cards) ---------- */
+  .stage { width: 360px; max-width: 100%; background: var(--grouped-bg);
+    border: .5px solid var(--separator); border-radius: 30px;
+    padding: var(--sp-6) var(--gutter) var(--sp-7);
+    box-shadow: var(--elev-pop); position: relative; z-index: 2;
+    transition: background .5s var(--ease-soft); }
+  .stage-cap { display: inline-flex; align-items: center; gap: 7px; margin-bottom: var(--sp-4);
+    font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  .stage-cap .eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 12px; }
+  .stage-cap .eq i { width: 3px; border-radius: 3px; background: var(--accent); animation: pulseBar 1s ease-in-out infinite; }
+  .stage-cap .eq i:nth-child(1){ height: 5px; } .stage-cap .eq i:nth-child(2){ height: 11px; animation-delay:.18s; } .stage-cap .eq i:nth-child(3){ height: 7px; animation-delay:.36s; }
+  .vlabel { font-size: .7rem; font-weight: 700; letter-spacing: .02em; color: var(--text-faint);
+    text-transform: uppercase; margin: var(--sp-5) 0 var(--sp-2); }
+  .vlabel:first-of-type { margin-top: 0; }
+  .stackgap { display: flex; flex-direction: column; gap: var(--sp-3); }
+  .rowgap { display: flex; align-items: center; gap: var(--sp-3); flex-wrap: wrap; }
+  @keyframes pulseBar { 0%,100%{ transform: scaleY(.4); } 50%{ transform: scaleY(1); } }
+
+  /* @font-display-titles */
+  .stage-cap { font-family: var(--font-display); font-weight: 700; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+  }
+
+  /* ============ SEEK BUTTON ============ */
+
+  /* Icon-only curved-arrow transport control — rewind (counter-clockwise arc,
+     arrowhead top-left) or skip-ahead (clockwise arc, arrowhead top-right),
+     with the seconds numeral centered inside the arc as real text (not baked
+     into the arrow art) so one glyph serves both 15 and 30. Sized entirely by
+     the `.size-*` modifier; the visual glyph and numeral scale together. */
+  .seek-btn {
+    position: relative;
+    border: none; background: transparent; cursor: pointer; padding: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--text);
+    transition: transform var(--dur-mid) var(--ease-spring), color var(--dur-mid), opacity var(--dur-mid);
+  }
+  .seek-btn .arc { display: block; }
+  .seek-btn .secs {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; color: currentColor;
+    pointer-events: none;
+  }
+  /* skip-ahead mirrors the same arc art horizontally rather than drawing a
+     second path — the numeral is a separate element so it is never mirrored */
+  .seek-btn.dir-fwd .arc { transform: scaleX(-1); }
+  .seek-btn:active { transform: scale(.86); }
+
+  /* mini (~30px) — used in the mini-player trailing cluster */
+  .seek-btn.size-mini { width: 30px; height: 30px; }
+  .seek-btn.size-mini .arc { width: 26px; height: 26px; }
+  .seek-btn.size-mini .secs { font-size: .52rem; }
+  /* 44px hit target around the 30px control (kit .sub::before precedent) */
+  .seek-btn.size-mini::before {
+    content: ""; position: absolute; inset: -7px; border-radius: 50%;
+  }
+
+  /* sheet (~44px) — used in the Now Playing sheet transport row */
+  .seek-btn.size-sheet { width: 44px; height: 44px; }
+  .seek-btn.size-sheet .arc { width: 38px; height: 38px; }
+  .seek-btn.size-sheet .secs { font-size: .76rem; }
+
+  /* disabled — dimmed text-dim, no press */
+  .seek-btn[disabled], .seek-btn.is-disabled {
+    color: var(--text-dim); opacity: .45; pointer-events: none;
+  }
+
+  /* ---------- in-context: mini-player trailing transport cluster ---------- */
+  .ctx-strip {
+    display: flex; align-items: center; gap: var(--sp-4);
+    background: var(--surface); border-radius: var(--r-lg);
+    padding: var(--sp-2) var(--sp-4);
+    box-shadow: var(--elev-list);
+  }
+  .pp-mock {
+    flex: none; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--text); color: var(--bg);
+    display: grid; place-items: center;
+    transition: transform var(--dur-mid) var(--ease-spring);
+  }
+  .pp-mock:active { transform: scale(.86); }
+</style>
+<button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
+  <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
+</button>
+<main class="stage">
+  <div class="stage-cap"><span class="eq"><i></i><i></i><i></i></span>Seek button</div>
+
+  <p class="vlabel">Directions &amp; sizes</p>
+  <div class="rowgap" style="gap:var(--sp-6)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+      <button class="seek-btn size-mini" aria-label="Skip back 15 seconds">
+        <svg class="arc" viewBox="0 0 26 26" fill="none">
+          <path d="M17.5 5.6 A9 9 0 1 0 22 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M17.5 5.6 L13.3 4.6 L15.4 8.4 Z" fill="currentColor"/>
+        </svg>
+        <span class="secs">15</span>
+      </button>
+      <span style="color:var(--text-dim);font-size:.72rem;font-weight:700">Rewind · mini</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+      <button class="seek-btn size-mini dir-fwd" aria-label="Skip forward 30 seconds">
+        <svg class="arc" viewBox="0 0 26 26" fill="none">
+          <path d="M17.5 5.6 A9 9 0 1 0 22 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M17.5 5.6 L13.3 4.6 L15.4 8.4 Z" fill="currentColor"/>
+        </svg>
+        <span class="secs">30</span>
+      </button>
+      <span style="color:var(--text-dim);font-size:.72rem;font-weight:700">Skip &middot; mini</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+      <button class="seek-btn size-sheet" aria-label="Skip back 15 seconds">
+        <svg class="arc" viewBox="0 0 26 26" fill="none">
+          <path d="M17.5 5.6 A9 9 0 1 0 22 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M17.5 5.6 L13.3 4.6 L15.4 8.4 Z" fill="currentColor"/>
+        </svg>
+        <span class="secs">15</span>
+      </button>
+      <span style="color:var(--text-dim);font-size:.72rem;font-weight:700">Rewind · sheet</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+      <button class="seek-btn size-sheet dir-fwd" aria-label="Skip forward 30 seconds">
+        <svg class="arc" viewBox="0 0 26 26" fill="none">
+          <path d="M17.5 5.6 A9 9 0 1 0 22 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M17.5 5.6 L13.3 4.6 L15.4 8.4 Z" fill="currentColor"/>
+        </svg>
+        <span class="secs">30</span>
+      </button>
+      <span style="color:var(--text-dim);font-size:.72rem;font-weight:700">Skip &middot; sheet</span>
+    </div>
+  </div>
+
+  <p class="vlabel">Disabled</p>
+  <div class="rowgap" style="gap:var(--sp-6)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+      <button class="seek-btn size-sheet is-disabled" disabled aria-label="Skip back 15 seconds">
+        <svg class="arc" viewBox="0 0 26 26" fill="none">
+          <path d="M17.5 5.6 A9 9 0 1 0 22 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M17.5 5.6 L13.3 4.6 L15.4 8.4 Z" fill="currentColor"/>
+        </svg>
+        <span class="secs">15</span>
+      </button>
+      <span style="color:var(--text-dim);font-size:.72rem;font-weight:700">Rewind · disabled</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+      <button class="seek-btn size-sheet dir-fwd is-disabled" disabled aria-label="Skip forward 30 seconds">
+        <svg class="arc" viewBox="0 0 26 26" fill="none">
+          <path d="M17.5 5.6 A9 9 0 1 0 22 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M17.5 5.6 L13.3 4.6 L15.4 8.4 Z" fill="currentColor"/>
+        </svg>
+        <span class="secs">30</span>
+      </button>
+      <span style="color:var(--text-dim);font-size:.72rem;font-weight:700">Skip &middot; disabled</span>
+    </div>
+  </div>
+
+  <p class="vlabel">In context — mini-player trailing cluster</p>
+  <div class="ctx-strip">
+    <button class="seek-btn size-mini" aria-label="Skip back 15 seconds">
+      <svg class="arc" viewBox="0 0 26 26" fill="none">
+        <path d="M17.5 5.6 A9 9 0 1 0 22 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M17.5 5.6 L13.3 4.6 L15.4 8.4 Z" fill="currentColor"/>
+      </svg>
+      <span class="secs">15</span>
+    </button>
+    <button class="pp-mock" aria-label="Play">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 1.5 L12 7 L3 12.5 Z" fill="currentColor"/></svg>
+    </button>
+    <button class="seek-btn size-mini dir-fwd" aria-label="Skip forward 30 seconds">
+      <svg class="arc" viewBox="0 0 26 26" fill="none">
+        <path d="M17.5 5.6 A9 9 0 1 0 22 13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M17.5 5.6 L13.3 4.6 L15.4 8.4 Z" fill="currentColor"/>
+      </svg>
+      <span class="secs">30</span>
+    </button>
+  </div>
+</main>
+<script>
+  const root = document.documentElement;
+  const tt = document.getElementById('tt');
+  const tgEmoji = document.getElementById('tgEmoji');
+  const tgLabel = document.getElementById('tgLabel');
+  root.setAttribute('data-theme', 'dark');
+  tt.addEventListener('click', () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    tgEmoji.textContent = dark ? '☀️' : '🌙';
+    tgLabel.textContent = dark ? 'Light' : 'Dark';
+  });
+  document.querySelectorAll('.seek-btn:not([disabled])').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      btn.classList.remove('pressed'); void btn.offsetWidth; btn.classList.add('pressed');
+    });
+  });
+</script>

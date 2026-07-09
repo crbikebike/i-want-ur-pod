@@ -97,8 +97,8 @@ public final class PlaybackEngine {
         nowPlayingCenter.configureRemoteCommands(
             onPlay: { [weak self] in self?.resume() },
             onPause: { [weak self] in self?.pause() },
-            onSkipForward: { [weak self] in self?.skip(by: 30) },
-            onSkipBackward: { [weak self] in self?.skip(by: -15) },
+            onSkipForward: { [weak self] in self?.skip(by: SkipInterval.forward) },
+            onSkipBackward: { [weak self] in self?.skip(by: -SkipInterval.back) },
             onScrub: { [weak self] absoluteSeconds in
                 guard let self, let episode = self.currentEpisode, episode.duration > 0 else { return }
                 self.seek(toFraction: absoluteSeconds / episode.duration)

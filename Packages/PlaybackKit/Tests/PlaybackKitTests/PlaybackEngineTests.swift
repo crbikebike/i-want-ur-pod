@@ -389,4 +389,46 @@ final class PlaybackEngineTests: XCTestCase {
         XCTAssertEqual(engine.state, .idle)
         XCTAssertNil(engine.currentEpisode)
     }
+
+    // MARK: - Skip intervals
+
+    func test_skipInterval_constantsAreFifteenAndThirty() {
+        XCTAssertEqual(SkipInterval.back, 15)
+        XCTAssertEqual(SkipInterval.forward, 30)
+    }
+
+    /// The mini-player, sheet, and lock screen all skip by `SkipInterval`.
+    /// Proves those distances route through `skip(by:)` and land at the right
+    /// absolute position (forward 30 then back 15 from 50s → 65s of 100s).
+    func test_skipBySharedInterval_seeksToClampedAbsolutePosition() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(duration: 100)
+        context.insert(episode)
+
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub)
+        engine.load(episode: episode, context: context)   // currentTime 0
+        stub.advanceTime(by: 50)                            // now at 50s
+
+        engine.skip(by: SkipInterval.forward)               // 50 + 30 = 80s → 0.80
+        XCTAssertEqual(try XCTUnwrap(stub.seekedFractions.last), 0.80, accuracy: 0.0001)
+
+        engine.skip(by: -SkipInterval.back)                 // 80 - 15 = 65s → 0.65
+        XCTAssertEqual(try XCTUnwrap(stub.seekedFractions.last), 0.65, accuracy: 0.0001)
+    }
+
+    /// Skipping back past the start clamps to 0, never negative.
+    func test_skipBack_clampsAtZero() throws {
+        let context = ModelContext(try makeContainer())
+        let episode = makeEpisode(duration: 100)
+        context.insert(episode)
+
+        let stub = StubAudioPlayer()
+        let engine = makeEngine(player: stub)
+        engine.load(episode: episode, context: context)     // currentTime 0
+        stub.advanceTime(by: 10)                             // now at 10s
+
+        engine.skip(by: -SkipInterval.back)                  // 10 - 15 → clamp to 0
+        XCTAssertEqual(try XCTUnwrap(stub.seekedFractions.last), 0.0, accuracy: 0.0001)
+    }
 }
