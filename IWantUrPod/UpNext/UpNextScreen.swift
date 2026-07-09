@@ -410,7 +410,7 @@ private struct QueueRow: View {
 
     // MARK: - Row derivations
 
-    /// "Show · duration/time-left" — mirrors `HomeScreen.upNextSubtitle(for:)`.
+    /// "Show · duration/time-left".
     private var subtitle: String {
         let show = episode.podcast?.title ?? ""
         guard let duration = HomeFeedProvider.durationLabel(for: episode) else { return show }

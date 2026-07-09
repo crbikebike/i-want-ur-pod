@@ -83,6 +83,29 @@ public final class QueueStore {
         return true
     }
 
+    /// Inserts `episode` at the HEAD of the queue (index 0 — "play now/next"),
+    /// used when the universal play intent starts a not-yet-downloaded episode.
+    /// No-op if already queued (invariant 2). Inserts below the current
+    /// minimum order so it sorts first, then `reload()`s (picking up the new
+    /// row, already in the right position) and explicitly renormalizes —
+    /// `heal()` only renormalizes when it actually removes an orphan/dupe, and
+    /// a plain insert triggers neither, so this call is what collapses the
+    /// negative placeholder order back to contiguous `0, 1, 2, …`.
+    ///
+    /// - Returns: `true` if a new entry was added, `false` for the no-op case
+    ///   (mirrors `add(_:)`'s return contract).
+    @discardableResult
+    public func insertAtFront(_ episode: Episode) -> Bool {
+        guard !isQueued(episode) else { return false }
+        let frontOrder = (items.map(\.order).min() ?? 0) - 1
+        context.insert(QueueItem(order: frontOrder, episode: episode))
+        save()
+        reload()
+        normalize(items)
+        save()
+        return true
+    }
+
     // MARK: - Reorder — drag (E5-S2)
 
     /// Applies SwiftUI `onMove`'s index-shift semantics to the queue, then

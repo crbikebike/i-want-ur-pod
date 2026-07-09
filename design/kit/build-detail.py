@@ -93,7 +93,7 @@ DETAIL_CSS = """
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .ep-meta { margin-top: 3px; font-size: .78rem; font-weight: 600; color: var(--text-dim); }
   .ep-arc { color: var(--accent-2); font-weight: 800; }
-  .ep-ctls { display: flex; align-items: center; gap: var(--sp-2); margin-top: 10px; }
+  .ep-ctls { display: flex; align-items: center; justify-content: flex-end; gap: var(--sp-2); margin-top: 10px; }
   .ep-btn { flex: none; width: 38px; height: 38px; border-radius: 50%; border: none; cursor: pointer;
     display: grid; place-items: center; background: var(--chip); color: var(--text-dim);
     transition: transform .25s var(--ease-spring), background .3s, color .3s; }
@@ -270,7 +270,7 @@ def episode_row(ep, art_slug, state, extra=False):
 
     dl_cls = "ep-btn ep-dl done" if state.get("downloaded") else "ep-btn ep-dl"
     add_cls = "ep-btn ep-add added" if state.get("queued") else "ep-btn ep-add"
-    play = (f'<button class="ep-btn play" aria-label="Play">{ICO_PLAY}</button>' if state.get("downloaded") else "")
+    play = f'<button class="ep-btn play" aria-label="Play">{ICO_PLAY}</button>'
     played = ('<span class="ep-played">✓ Played</span>' if state.get("played") else "")
     ep_cls = "ep ep-extra" if extra else "ep"
     return f'''      <div class="{ep_cls}" data-arc="{esc(ep["arc"] or "")}">
@@ -279,9 +279,9 @@ def episode_row(ep, art_slug, state, extra=False):
           <div class="ep-title">{title}</div>
           <div class="ep-meta">{meta}</div>
           <div class="ep-ctls">
-            <button class="{dl_cls}" aria-label="Download"><span class="ico-dl">{ICO_DL}</span><span class="ico-done">{ICO_CHECK}</span></button>
             {play}
             <button class="{add_cls}" data-arc="{esc(ep["arc"] or "")}" aria-label="Add to Up Next"><span class="ico-plus">{ICO_PLUS}</span><span class="ico-check">{ICO_CHECK_SM}</span></button>
+            <button class="{dl_cls}" aria-label="Download"><span class="ico-dl">{ICO_DL}</span><span class="ico-done">{ICO_CHECK}</span></button>
             {played}
           </div>
         </div>

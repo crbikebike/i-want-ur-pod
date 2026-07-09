@@ -485,20 +485,11 @@ struct EpisodeRow: View {
     let displayTitle: String
     let part: Int?
 
-    /// Whether the Play affordance renders for `episode` — the exact
-    /// predicate `playControl` below switches on. Exposed as a static, pure
-    /// function (rather than left inline) so `IWantUrPodTests` can assert
-    /// "Play offered iff downloaded" against the real rendering condition
-    /// without a view-inspection dependency. Not `private`/`fileprivate` (and
-    /// the type itself no longer `private`) for the same reason.
-    static func isPlayOffered(for episode: Episode) -> Bool {
-        episode.downloadState.isDownloaded
-    }
-
     @Environment(\.palette) private var palette
     @Environment(\.modelContext) private var modelContext
     @Environment(DownloadManager.self) private var downloadManager
     @Environment(PlaybackEngine.self) private var playbackEngine
+    @Environment(PlaybackIntentCoordinator.self) private var playbackIntent
     @Environment(QueueStore.self) private var queueStore
 
     var body: some View {
@@ -523,9 +514,10 @@ struct EpisodeRow: View {
                 playedMarker
 
                 HStack(spacing: Spacing.sp3) {
-                    downloadControl
+                    Spacer(minLength: 0)
                     playControl
                     queueControl
+                    downloadControl
                 }
                 .padding(.top, Spacing.sp1)
             }
@@ -619,39 +611,39 @@ struct EpisodeRow: View {
         .padding(.top, 2)
     }
 
-    // MARK: - Play control (E4-S2)
+    // MARK: - Play control (E4-S2, E6 universal intent)
     //
     // Translated from the kit's `.ep-btn.play` — a filled accent circle with
-    // a play/pause glyph. Play is offered **iff** the episode is downloaded
-    // (playback-state-machine.md's download-first guard, `isPlayOffered`
-    // above); otherwise this control doesn't render at all (only Download
-    // shows). Toggles to a pause glyph while this episode is the one
-    // current+playing; a resume tap uses the same play glyph.
+    // a play/pause glyph. Play is now **always** offered, regardless of
+    // download state (the download-first gate is gone — E6's
+    // `PlaybackIntentCoordinator` absorbs the not-downloaded case: it queues,
+    // auto-downloads, and auto-plays on completion, so there's no state left
+    // where Play shouldn't render). Toggles to a pause glyph while this
+    // episode is the one current+playing; a resume tap uses the same play
+    // glyph; any other tap delegates to the universal intent.
     @ViewBuilder
     private var playControl: some View {
-        if Self.isPlayOffered(for: episode) {
-            if isCurrentAndPlaying {
-                EpisodeIconButton(
-                    systemImage: "pause.fill",
-                    style: .filledAccent,
-                    accessibilityLabel: "Pause",
-                    action: { playbackEngine.pause() }
-                )
-            } else if isCurrentAndPaused {
-                EpisodeIconButton(
-                    systemImage: "play.fill",
-                    style: .filledAccent,
-                    accessibilityLabel: "Resume",
-                    action: { playbackEngine.resume() }
-                )
-            } else {
-                EpisodeIconButton(
-                    systemImage: "play.fill",
-                    style: .filledAccent,
-                    accessibilityLabel: "Play",
-                    action: { playbackEngine.load(episode: episode, context: modelContext) }
-                )
-            }
+        if isCurrentAndPlaying {
+            EpisodeIconButton(
+                systemImage: "pause.fill",
+                style: .filledAccent,
+                accessibilityLabel: "Pause",
+                action: { playbackEngine.pause() }
+            )
+        } else if isCurrentAndPaused {
+            EpisodeIconButton(
+                systemImage: "play.fill",
+                style: .filledAccent,
+                accessibilityLabel: "Resume",
+                action: { playbackEngine.resume() }
+            )
+        } else {
+            EpisodeIconButton(
+                systemImage: "play.fill",
+                style: .filledAccent,
+                accessibilityLabel: "Play",
+                action: { playbackIntent.play(episode, context: modelContext) }
+            )
         }
     }
 
@@ -924,72 +916,96 @@ private func makePreviewModelContext() -> ModelContext {
     ModelContext(ModelSchema.previewContainer())
 }
 
+/// Constructs the trio of shared services a Detail preview needs, all wired
+/// off the same `context` — mirrors `PlaybackIntentCoordinator.init`'s
+/// requirement that its `playbackEngine`/`downloadManager`/`queueStore` be
+/// the same instances the rest of the view resolves from the environment.
+@MainActor
+private func previewPlaybackServices(context: ModelContext) -> (DownloadManager, PlaybackEngine, QueueStore, PlaybackIntentCoordinator) {
+    let downloadManager = DownloadManager()
+    let playbackEngine = PlaybackEngine(localURLResolver: { _ in nil })
+    let queueStore = QueueStore(context: context)
+    let playbackIntent = PlaybackIntentCoordinator(playbackEngine: playbackEngine, downloadManager: downloadManager, queueStore: queueStore)
+    return (downloadManager, playbackEngine, queueStore, playbackIntent)
+}
+
 #Preview("Podcast detail — unsubscribed (dark)") {
     let context = makePreviewModelContext()
     let podcast = previewPodcast(isSubscribed: false, in: context)
+    let (downloadManager, playbackEngine, queueStore, playbackIntent) = previewPlaybackServices(context: context)
     NavigationStack {
         PodcastDetailView(viewModel: PodcastDetailViewModel(previewPodcast: podcast, modelContext: context))
     }
     .themedPalette()
-    .environment(DownloadManager())
-    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
-    .environment(QueueStore(context: context))
+    .environment(downloadManager)
+    .environment(playbackEngine)
+    .environment(playbackIntent)
+    .environment(queueStore)
     .environment(\.colorScheme, .dark)
 }
 
 #Preview("Podcast detail — subscribed (dark)") {
     let context = makePreviewModelContext()
     let podcast = previewPodcast(isSubscribed: true, in: context)
+    let (downloadManager, playbackEngine, queueStore, playbackIntent) = previewPlaybackServices(context: context)
     NavigationStack {
         PodcastDetailView(viewModel: PodcastDetailViewModel(previewPodcast: podcast, modelContext: context))
     }
     .themedPalette()
-    .environment(DownloadManager())
-    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
-    .environment(QueueStore(context: context))
+    .environment(downloadManager)
+    .environment(playbackEngine)
+    .environment(playbackIntent)
+    .environment(queueStore)
     .environment(\.colorScheme, .dark)
 }
 
 #Preview("Podcast detail — unsubscribed (light)") {
     let context = makePreviewModelContext()
     let podcast = previewPodcast(isSubscribed: false, in: context)
+    let (downloadManager, playbackEngine, queueStore, playbackIntent) = previewPlaybackServices(context: context)
     NavigationStack {
         PodcastDetailView(viewModel: PodcastDetailViewModel(previewPodcast: podcast, modelContext: context))
     }
     .themedPalette()
-    .environment(DownloadManager())
-    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
-    .environment(QueueStore(context: context))
+    .environment(downloadManager)
+    .environment(playbackEngine)
+    .environment(playbackIntent)
+    .environment(queueStore)
     .environment(\.colorScheme, .light)
 }
 
 #Preview("Podcast detail — subscribed (light)") {
     let context = makePreviewModelContext()
     let podcast = previewPodcast(isSubscribed: true, in: context)
+    let (downloadManager, playbackEngine, queueStore, playbackIntent) = previewPlaybackServices(context: context)
     NavigationStack {
         PodcastDetailView(viewModel: PodcastDetailViewModel(previewPodcast: podcast, modelContext: context))
     }
     .themedPalette()
-    .environment(DownloadManager())
-    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
-    .environment(QueueStore(context: context))
+    .environment(downloadManager)
+    .environment(playbackEngine)
+    .environment(playbackIntent)
+    .environment(queueStore)
     .environment(\.colorScheme, .light)
 }
 
 #Preview("Podcast detail — loading (dark)") {
     let context = makePreviewModelContext()
+    let (downloadManager, playbackEngine, queueStore, playbackIntent) = previewPlaybackServices(context: context)
     NavigationStack {
         PodcastDetailView(viewModel: PodcastDetailViewModel(previewState: .loading, modelContext: context))
     }
     .themedPalette()
-    .environment(DownloadManager())
-    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
-    .environment(QueueStore(context: context))
+    .environment(downloadManager)
+    .environment(playbackEngine)
+    .environment(playbackIntent)
+    .environment(queueStore)
     .environment(\.colorScheme, .dark)
 }
 
 #Preview("Podcast detail — error (dark)") {
     let context = makePreviewModelContext()
+    let (downloadManager, playbackEngine, queueStore, playbackIntent) = previewPlaybackServices(context: context)
     NavigationStack {
         PodcastDetailView(viewModel: PodcastDetailViewModel(
             previewState: .error("Check your connection and try again."),
@@ -997,9 +1013,10 @@ private func makePreviewModelContext() -> ModelContext {
         ))
     }
     .themedPalette()
-    .environment(DownloadManager())
-    .environment(PlaybackEngine(localURLResolver: { _ in nil }))
-    .environment(QueueStore(context: context))
+    .environment(downloadManager)
+    .environment(playbackEngine)
+    .environment(playbackIntent)
+    .environment(queueStore)
     .environment(\.colorScheme, .dark)
 }
 #endif

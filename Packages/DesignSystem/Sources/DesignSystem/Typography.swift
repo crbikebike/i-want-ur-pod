@@ -127,6 +127,24 @@ public enum Typography {
     /// Poster card studio/author (`.pod-studio`) — 0.78rem / 500, 1-line ellipsis.
     public static var showCardStudio: Font { ui(12.48, .medium) }
 
+    // MARK: Roles — Home rails reconciliation (Up Next / New episodes)
+    // Exact kit values verified against design/kit/screens/home.html's
+    // `.pn-title` / `.pn-time` / `.ep-title` / `.ep-podcast` / `.ep-date` /
+    // `.tag` (lines ~547-630).
+
+    /// Up Next tile title (`.pn-title`) — 0.86rem / 700 / -0.01em.
+    public static var upNextTileTitle: Font { ui(13.76, .bold) }
+    /// Up Next tile remaining time (`.pn-time`) — 0.76rem / 500.
+    public static var upNextTileTime: Font { ui(12.16, .medium) }
+    /// New-episode card title (`.ep-title`) — 0.98rem / 700 / -0.01em.
+    public static var newEpisodeTitle: Font { ui(15.68, .bold) }
+    /// New-episode card podcast name (`.ep-podcast`) — 0.8rem / 500.
+    public static var newEpisodePodcast: Font { ui(12.8, .medium) }
+    /// New-episode card date (`.ep-date`) — 0.74rem / 600.
+    public static var newEpisodeDate: Font { ui(11.84, .semibold) }
+    /// Standalone chip (`.tag` / `.tag.hot`) — 0.64rem / 800 / +0.02em, uppercase.
+    public static var tagChip: Font { ui(10.24, .heavy) }
+
     // MARK: Roles (full TypeStyle tokens — carry tracking + case)
 
     public static var displayLargeTitleStyle: TypeStyle { .init(font: displayLargeTitle, tracking: -0.742) }
@@ -167,6 +185,16 @@ public enum Typography {
     /// `.pod-title` — same -0.01em-at-0.92rem math as `arcCardTitleStyle`.
     public static var showCardTitleStyle: TypeStyle { .init(font: showCardTitle, tracking: -0.147) }
     public static var showCardStudioStyle: TypeStyle { .init(font: showCardStudio) }
+
+    // Home rails reconciliation styles (tracking = em × px).
+    public static var upNextTileTitleStyle: TypeStyle { .init(font: upNextTileTitle, tracking: -0.1376) }  // -0.01em
+    public static var upNextTileTimeStyle: TypeStyle { .init(font: upNextTileTime) }
+    public static var newEpisodeTitleStyle: TypeStyle { .init(font: newEpisodeTitle, tracking: -0.1568) }  // -0.01em
+    public static var newEpisodePodcastStyle: TypeStyle { .init(font: newEpisodePodcast) }
+    public static var newEpisodeDateStyle: TypeStyle { .init(font: newEpisodeDate) }
+    /// `.tag` / `.tag.hot` — tracking only; uppercasing is applied by `TagChip`
+    /// itself (not baked into the token) so non-chip callers can opt out.
+    public static var tagChipStyle: TypeStyle { .init(font: tagChip, tracking: 0.2048) }  // +0.02em
 }
 
 public extension View {
