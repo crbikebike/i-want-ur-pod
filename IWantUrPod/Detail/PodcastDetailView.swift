@@ -29,6 +29,12 @@ import PlaybackKit
 public struct PodcastDetailView: View {
     @State private var viewModel: PodcastDetailViewModel
 
+    /// The Story-arc filter applied to the Episodes list below (kit's
+    /// `applyFilter()` / `.arc-card.active`). `nil` = unfiltered (all
+    /// episodes). Ephemeral view state only — never persisted on the
+    /// view model.
+    @State private var selectedArcID: Arc.ID?
+
     @Environment(\.palette) private var palette
     @Environment(QueueStore.self) private var queueStore
 
@@ -178,7 +184,14 @@ public struct PodcastDetailView: View {
                             ArcCard(
                                 arc: arc,
                                 artworkURL: viewModel.artworkURL(for: arc.episodes[0]),
-                                isAdded: arc.episodes.allSatisfy { queueStore.isQueued($0) }
+                                isAdded: arc.episodes.allSatisfy { queueStore.isQueued($0) },
+                                isSelected: selectedArcID == arc.id,
+                                onSelect: {
+                                    // Tap the card body to filter Episodes to this
+                                    // arc; tap the active card again to clear
+                                    // (kit's applyFilter() toggle).
+                                    selectedArcID = (selectedArcID == arc.id) ? nil : arc.id
+                                }
                             ) {
                                 // Queue oldest-first so playback proceeds Part 1 → N,
                                 // even though `arc.episodes` itself is newest-first
@@ -198,9 +211,72 @@ public struct PodcastDetailView: View {
 
     // MARK: - Episodes (E2-S1 list, E2-S3 played markers)
 
+    /// The Story-arc filter's selected arc (`nil` when unfiltered) — used both
+    /// to compute `shownEpisodes` and to render the `Showing: <arc> ✕` chip.
+    private var selectedArc: Arc? {
+        selectedArcID.flatMap { id in viewModel.arcs.first { $0.id == id } }
+    }
+
+    /// Episodes shown below: the selected arc's own episodes (already
+    /// newest-first, matching `viewModel.episodes`' ordering — see the
+    /// "Add all" comment above) when a filter is active, otherwise the full
+    /// library. The app has no row limit, so this is the whole filtered set —
+    /// docs/design/arc-filter.md's note on ignoring the kit's `.ep-extra`
+    /// hidden-row mock.
+    private var shownEpisodes: [Episode] {
+        selectedArc?.episodes ?? viewModel.episodes
+    }
+
+    /// The Episodes header: title + count pill when unfiltered (unchanged,
+    /// via the frozen `SectionHeader(title:count:)`); title + `Showing: <arc>
+    /// ✕` chip (kit `.ep-filter`) when a Story-arc filter is active.
+    /// `SectionHeader` has no trailing-accessory slot, so the filtered state
+    /// renders the title-only variant with the chip placed beside it.
+    @ViewBuilder
+    private var episodesHeader: some View {
+        if let selectedArc {
+            HStack(alignment: .center, spacing: Spacing.sp2) {
+                SectionHeader(title: "Episodes")
+                Spacer(minLength: 0)
+                filterChip(for: selectedArc)
+                    .padding(.top, Spacing.sp1)   // roughly aligns with SectionHeader's own bottom inset
+            }
+        } else {
+            SectionHeader(title: "Episodes", count: viewModel.episodes.count)
+        }
+    }
+
+    /// `.ep-filter` — an accent-2 tinted pill mirroring `SectionHeader`'s
+    /// private `CountPill` recipe (accent-2 text on a 15% accent-2 tint,
+    /// `Typography.countBadge`, `4×10` padding, pill radius), plus a trailing
+    /// "✕" glyph. Tapping it clears the filter, same as tapping the active
+    /// card again.
+    private func filterChip(for arc: Arc) -> some View {
+        Button {
+            selectedArcID = nil
+        } label: {
+            HStack(spacing: 6) {
+                Text("Showing: \(arc.name)")
+                    .lineLimit(1)
+                Image(systemName: "xmark")
+                    .font(.system(size: 10, weight: .heavy))
+            }
+            .font(Typography.countBadge)
+            .foregroundStyle(palette.accent2)
+            .padding(.vertical, 4)
+            .padding(.horizontal, 10)
+            .background(
+                Capsule(style: .continuous)
+                    .fill(palette.accent2.opacity(0.15))
+            )
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Clear filter")
+    }
+
     private var episodesSection: some View {
         VStack(alignment: .leading, spacing: Spacing.sp1) {
-            SectionHeader(title: "Episodes", count: viewModel.episodes.count)
+            episodesHeader
 
             if viewModel.episodes.isEmpty {
                 Text("No episodes yet.")
@@ -208,7 +284,7 @@ public struct PodcastDetailView: View {
                     .foregroundStyle(palette.textFaint)
             } else {
                 VStack(spacing: Spacing.sp4) {
-                    ForEach(viewModel.episodes, id: \.id) { episode in
+                    ForEach(shownEpisodes, id: \.id) { episode in
                         let arcInfo = viewModel.arcInfo(for: episode)
                         VStack(spacing: Spacing.sp4) {
                             EpisodeRow(
@@ -243,26 +319,38 @@ private struct ArcCard: View {
     let arc: Arc
     let artworkURL: URL?
     let isAdded: Bool
+    let isSelected: Bool
+    let onSelect: () -> Void
     let onAddAll: () -> Void
 
     @Environment(\.palette) private var palette
 
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.sp2) {   // .arc-card { gap: 8px }
-            cover
+            // Tap target: cover + name + count only — the "Add all" button
+            // below stays outside so it keeps consuming its own tap (kit
+            // stops the click from bubbling; a SwiftUI Button already does).
+            VStack(alignment: .leading, spacing: Spacing.sp2) {
+                cover
 
-            Text(arc.name)                                    // .arc-name
-                .typeStyle(Typography.arcCardTitleStyle)
-                .foregroundStyle(palette.text)
-                // .arc-name { min-height: 2.3em; -webkit-line-clamp: 2 } — always
-                // reserve two lines so a one-line arc name occupies the same
-                // height as a two-line one, keeping the count + "Add all" button
-                // aligned across cards in the rail.
-                .lineLimit(2, reservesSpace: true)
+                Text(arc.name)                                    // .arc-name
+                    .typeStyle(Typography.arcCardTitleStyle)
+                    .foregroundStyle(palette.text)
+                    // .arc-name { min-height: 2.3em; -webkit-line-clamp: 2 } — always
+                    // reserve two lines so a one-line arc name occupies the same
+                    // height as a two-line one, keeping the count + "Add all" button
+                    // aligned across cards in the rail.
+                    .lineLimit(2, reservesSpace: true)
 
-            Text("\(arc.episodes.count) episodes")            // .arc-parts
-                .typeStyle(Typography.arcCardMetaStyle)
-                .foregroundStyle(palette.textDim)
+                Text("\(arc.episodes.count) episodes")            // .arc-parts
+                    .typeStyle(Typography.arcCardMetaStyle)
+                    .foregroundStyle(palette.textDim)
+            }
+            .contentShape(Rectangle())
+            .onTapGesture(perform: onSelect)
+            .accessibilityElement(children: .ignore)
+            .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : [.isButton])
+            .accessibilityLabel("Filter episodes to \(arc.name)")
 
             addAllButton
         }
@@ -271,7 +359,14 @@ private struct ArcCard: View {
         .background(palette.surface, in: RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous))
         .clipShape(RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous))
         .elevList(hairline: palette.hairline)                 // --elev-list: surface float
-        .accessibilityElement(children: .combine)
+        .overlay {
+            // .arc-card.active { box-shadow: inset 0 0 0 2px var(--accent) } —
+            // an inset ring, so `strokeBorder` (draws inward) rather than `stroke`.
+            if isSelected {
+                RoundedRectangle(cornerRadius: Radius.rLg20, style: .continuous)
+                    .strokeBorder(palette.accent, lineWidth: 2)
+            }
+        }
     }
 
     /// `.arc-cover` — a 16:10 cover-cropped image (falling back to the seeded
