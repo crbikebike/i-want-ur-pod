@@ -78,6 +78,11 @@ public struct ThemePalette: Sendable {
     /// role rather than a `Brand` constant.
     public let errorText: Color
 
+    /// Destructive-action fill (`--danger`, design/kit/screens/up-next.html) —
+    /// the swipe-to-remove action background on Up Next queue rows. A themed
+    /// pair mirroring iOS system red (`#FF453A` dark / `#FF3B30` light).
+    public let danger: Color
+
     // Lines & fills
     public let hairline: Color
     public let separator: Color
@@ -112,6 +117,7 @@ public struct ThemePalette: Sendable {
         accent2: Color(hex: 0x34E0C4),     // mint
         onAccent: Color(hex: 0x2A0E04),
         errorText: Color(hex: 0xFF7A6A),
+        danger: Color(hex: 0xFF453A),
         hairline: Color(hex: 0xFFFFFF, alpha: 0.09),
         separator: Color(hex: 0xFFFFFF, alpha: 0.12),
         chip: Color(hex: 0xFFFFFF, alpha: 0.08),
@@ -137,6 +143,7 @@ public struct ThemePalette: Sendable {
         accent2: Color(hex: 0x046B58),     // mint-deep
         onAccent: Color(hex: 0xFFFFFF),
         errorText: Color(hex: 0xD8322B),
+        danger: Color(hex: 0xFF3B30),
         hairline: Color(hex: 0x281A24, alpha: 0.10),
         separator: Color(hex: 0x3C3C43, alpha: 0.18),
         chip: Color(hex: 0xF1E7DF),

@@ -63,6 +63,7 @@
     --accent: var(--coral);
     --accent-2: var(--mint);
     --on-accent: #2A0E04;
+    --danger: #FF453A;
     --chip: rgba(255,255,255,.08);
     --chip-text: #F8F3EF;
     --seg-track: rgba(120,120,128,.24);
@@ -91,6 +92,7 @@
     --accent: var(--coral-deep);
     --accent-2: var(--mint-deep);
     --on-accent: #FFFFFF;
+    --danger: #FF3B30;
     --chip: rgba(118,118,128,.12);
     --chip-text: #1A1420;
     --seg-track: rgba(118,118,128,.16);
@@ -643,6 +645,47 @@
   /* faint reorder grip — hints the queue is draggable */
   .grip { flex: none; color: var(--text-faint); opacity: .6; display: grid; place-items: center;
     cursor: grab; margin-left: calc(var(--sp-1) * -1); }
+
+  /* ---------- Up Next: trailing PLAY control on each queue row ----------
+     Same accent→accent2 gradient treatment as the kit's .play-btn / .sub
+     (home.html's .pn-play), sized to 40px to sit flush beside the .dl
+     download control: rows now read  …meta…  [▶ play][↓ download]. */
+  .play {
+    flex: none; width: 40px; height: 40px; border-radius: 50%;
+    display: grid; place-items: center; border: none; cursor: pointer;
+    color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,.5), inset 0 0 0 .5px rgba(255,255,255,.28);
+    transition: transform .3s var(--ease-spring);
+  }
+  .play:active { transform: scale(.86); }
+  .play svg { display: block; margin-left: 1.5px; } /* optical-center the triangle */
+
+  /* the two trailing controls travel together */
+  .row .controls { flex: none; display: flex; align-items: center; gap: var(--sp-2); }
+
+  /* ---------- Up Next: swipe-a-row-left to REMOVE from queue ----------
+     The primary remove affordance (a hidden long-press menu was the old
+     fallback). Dragging a row left uncovers a full-height destructive
+     Remove action pinned to the trailing edge; releasing past threshold
+     drops the episode from the queue. Shown here on one row in its
+     revealed state so the gesture reads at a glance. */
+  .row.swipe { padding: 0; overflow: hidden; }        /* padding moves onto .face */
+  .row.swipe .face {
+    display: flex; align-items: center; gap: var(--sp-3);
+    padding: var(--sp-3) var(--sp-4); width: 100%;
+    background: var(--surface); position: relative; z-index: 1;
+    transition: transform .3s var(--ease-spring);
+  }
+  .row.swipe.open .face { transform: translateX(-96px); }   /* revealed state */
+  .row-remove {
+    position: absolute; top: 0; right: 0; bottom: 0; width: 96px;
+    border: none; cursor: pointer;
+    background: var(--danger); color: #fff;
+    font-family: var(--font); font-size: .82rem; font-weight: 800; letter-spacing: .01em;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  }
+  .row-remove svg { display: block; }
 </style>
 
 <button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
@@ -680,7 +723,7 @@
         <h2>Queue</h2>
         <span class="count">4</span>
       </div>
-      <p class="sec-sub">Drag to reorder. Each row shows whether it's downloaded for offline.</p>
+      <p class="sec-sub">Drag to reorder, swipe left to remove. Each row shows whether it's downloaded for offline.</p>
 
       <div class="list" style="margin-top:var(--sp-3)">
         <!-- downloaded -->
@@ -691,23 +734,35 @@
             <div class="rtitle">The Sample-Rate Wars</div>
             <div class="rauthor">Twenty Thousand Hertz · 18 min left</div>
           </div>
-          <button class="dl done" aria-label="Downloaded">
-            <span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-            <span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
-        </div>
-        <!-- not downloaded -->
-        <div class="row">
-          <span class="grip" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="6" cy="4" r="1.3"/><circle cx="10" cy="4" r="1.3"/><circle cx="6" cy="8" r="1.3"/><circle cx="10" cy="8" r="1.3"/><circle cx="6" cy="12" r="1.3"/><circle cx="10" cy="12" r="1.3"/></svg></span>
-          <span class="art" style="background-image:url(../art/song-exploder.jpg);background-size:cover;background-position:center"></span>
-          <div class="meta">
-            <div class="rtitle">Cold Open, Warm Ending</div>
-            <div class="rauthor">Song Exploder · 42 min</div>
+          <div class="controls">
+            <button class="play" aria-label="Play The Sample-Rate Wars"><svg width="15" height="15" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg></button>
+            <button class="dl done" aria-label="Downloaded">
+              <span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </button>
           </div>
-          <button class="dl" aria-label="Download episode">
-            <span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-            <span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+        <!-- not downloaded · shown mid-swipe to reveal the Remove action -->
+        <div class="row swipe open">
+          <button class="row-remove" aria-label="Remove Cold Open, Warm Ending from queue">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 7h14M10 7V5.5c0-.6.4-1 1-1h2c.6 0 1 .4 1 1V7M7.5 7l.7 11c0 .6.5 1 1 1h5.6c.5 0 1-.4 1-1l.7-11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Remove</span>
           </button>
+          <div class="face">
+            <span class="grip" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="6" cy="4" r="1.3"/><circle cx="10" cy="4" r="1.3"/><circle cx="6" cy="8" r="1.3"/><circle cx="10" cy="8" r="1.3"/><circle cx="6" cy="12" r="1.3"/><circle cx="10" cy="12" r="1.3"/></svg></span>
+            <span class="art" style="background-image:url(../art/song-exploder.jpg);background-size:cover;background-position:center"></span>
+            <div class="meta">
+              <div class="rtitle">Cold Open, Warm Ending</div>
+              <div class="rauthor">Song Exploder · 42 min</div>
+            </div>
+            <div class="controls">
+              <button class="play" aria-label="Play Cold Open, Warm Ending"><svg width="15" height="15" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg></button>
+              <button class="dl" aria-label="Download episode">
+                <span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+                <span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </button>
+            </div>
+          </div>
         </div>
         <!-- downloaded -->
         <div class="row">
@@ -717,10 +772,13 @@
             <div class="rtitle">Building Acquired, Episode 300</div>
             <div class="rauthor">Acquired · 3h 05m</div>
           </div>
-          <button class="dl done" aria-label="Downloaded">
-            <span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-            <span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
+          <div class="controls">
+            <button class="play" aria-label="Play Building Acquired, Episode 300"><svg width="15" height="15" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg></button>
+            <button class="dl done" aria-label="Downloaded">
+              <span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </button>
+          </div>
         </div>
         <!-- not downloaded -->
         <div class="row">
@@ -730,10 +788,13 @@
             <div class="rtitle">Rome's Last Good Emperor</div>
             <div class="rauthor">The Rest Is History · 55 min</div>
           </div>
-          <button class="dl" aria-label="Download episode">
-            <span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-            <span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </button>
+          <div class="controls">
+            <button class="play" aria-label="Play Rome's Last Good Emperor"><svg width="15" height="15" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg></button>
+            <button class="dl" aria-label="Download episode">
+              <span class="ico-dl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3.5v10.5M12 14l-3.6-3.6M12 14l3.6-3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 17.5v1.4c0 .9.7 1.6 1.6 1.6h11.8c.9 0 1.6-.7 1.6-1.6v-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <span class="ico-done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 9.5 18 20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </button>
+          </div>
         </div>
       </div>
 
