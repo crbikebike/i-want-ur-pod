@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Auto-rebuild the design-kit clickable prototype so the committed
+# design/kit/screens/prototype.html is never stale vs the screens it inlines.
+#
+# Enable once per clone:  git config core.hooksPath .githooks
+set -euo pipefail
+
+root="$(git rev-parse --show-toplevel)"
+
+# Any prototype INPUT staged this commit? (anything under design/kit/ except the
+# generated prototype.html itself — screens, components, art, data, build script)
+inputs="$(git diff --cached --name-only --diff-filter=ACMR \
+  | grep -E '^design/kit/' \
+  | grep -vx 'design/kit/screens/prototype.html' || true)"
+[ -z "$inputs" ] && exit 0
+
+command -v python3 >/dev/null 2>&1 || {
+  echo "pre-commit: python3 not found — cannot rebuild the prototype." >&2
+  exit 1
+}
+
+echo "pre-commit: design/kit changed — rebuilding prototype.html…"
+python3 "$root/design/kit/build-prototype.py" >/dev/null
+git add "$root/design/kit/screens/prototype.html"
