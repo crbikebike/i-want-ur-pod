@@ -152,6 +152,41 @@ public final class PlaybackEngine {
         publishNowPlaying()
     }
 
+    /// Marks `episode` as the current item while its audio is still
+    /// downloading, landing the engine at `.preparing` (mini-player shown,
+    /// nothing playable yet) — the spec's
+    /// "idle --play(not-downloaded episode)--> preparing" transition.
+    ///
+    /// **Stays decoupled from DownloadKit**, same as the `localURLResolver`
+    /// and `onFinished` seams documented above: `PlaybackKit` has no notion
+    /// of a download in progress, so it does not start or track one here.
+    /// The app-level coordinator that offers Play for a not-yet-downloaded
+    /// episode calls this to reflect the "current but not yet playable" UI
+    /// state immediately, kicks off the real download itself
+    /// (`DownloadManager`), and then calls `load(episode:context:)` once the
+    /// download finishes (or `failPreparation(_:)` if it fails).
+    ///
+    /// Deliberately does not touch `player` or activate the audio session —
+    /// there's no file to hand the player yet.
+    public func beginPreparing(episode: Episode, context: ModelContext) {
+        modelContext = context
+        currentEpisode = episode
+        displayProgress = 0
+        state = .preparing
+        publishNowPlaying()
+    }
+
+    /// Reports that the download started by `beginPreparing(episode:context:)`
+    /// failed, moving `.preparing --download failed--> failed` per the spec.
+    /// A no-op outside `.preparing` (e.g. the user already backed out to
+    /// `.idle`, or a stale callback arrives after a newer item replaced this
+    /// one) so a late failure can't clobber unrelated state.
+    public func failPreparation(_ message: String) {
+        guard state == .preparing else { return }
+        state = .failed(message)
+        publishNowPlaying()
+    }
+
     // MARK: - Transport
 
     public func pause() {

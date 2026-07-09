@@ -46,6 +46,14 @@ struct IWantUrPodApp: App {
     /// Next" control read the one instance.
     @State private var queueStore: QueueStore
 
+    /// The single, shared universal play-intent coordinator (E6). Couples
+    /// `playbackEngine`, `downloadManager`, and `queueStore` behind one
+    /// `play(_:context:)` call so every "Play" control (Podcast Detail, Up
+    /// Next, Home) shares the same not-downloaded → queue-at-front →
+    /// preparing → auto-download → auto-play behavior. Injected via
+    /// `.environment` (see `AppPlaybackIntent.swift`).
+    @State private var playbackIntent: PlaybackIntentCoordinator
+
     /// Tracks scene-phase transitions so backgrounding forces a progress
     /// write per the spec's "on backgrounding" persistence-cadence rule
     /// (docs/spec/playback-state-machine.md).
@@ -90,6 +98,13 @@ struct IWantUrPodApp: App {
         let queueStore = QueueStore(context: container.mainContext)
         _queueStore = State(initialValue: queueStore)
 
+        let playbackIntent = PlaybackIntentCoordinator(
+            playbackEngine: playbackEngine,
+            downloadManager: downloadManager,
+            queueStore: queueStore
+        )
+        _playbackIntent = State(initialValue: playbackIntent)
+
         // Auto-advance (E5-S3): couple PlaybackEngine's finished callback to
         // the queue store via QueueAutoAdvanceCoordinator, keeping PlaybackKit
         // itself decoupled from QueueItem/QueueStore-specific logic (see
@@ -119,6 +134,8 @@ struct IWantUrPodApp: App {
                 .playbackEngine(playbackEngine)
                 // Share one QueueStore across every screen (E5).
                 .queueStore(queueStore)
+                // Share one PlaybackIntentCoordinator across every screen (E6).
+                .playbackIntent(playbackIntent)
         }
         .modelContainer(modelContainer)
         .onChange(of: scenePhase) { _, newPhase in
