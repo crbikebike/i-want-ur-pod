@@ -47,21 +47,28 @@ public struct EmptyStateView<Actions: View>: View {
     private let kind: EmptyKind
     private let title: String
     private let message: String
+    private let systemImageOverride: String?
     private let actions: Actions
 
     @Environment(\.palette) private var palette
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var appeared = false
 
+    /// - Parameter systemImage: Optional SF Symbol to override `kind`'s default
+    ///   badge glyph, for screens whose kit badge uses a different icon than the
+    ///   three defaults (e.g. Listening History's clock over the grape→coral
+    ///   `.noResults` gradient). The badge gradient still follows `kind`.
     public init(
         kind: EmptyKind,
         title: String,
         message: String,
+        systemImage: String? = nil,
         @ViewBuilder actions: () -> Actions
     ) {
         self.kind = kind
         self.title = title
         self.message = message
+        self.systemImageOverride = systemImage
         self.actions = actions()
     }
 
@@ -134,7 +141,7 @@ public struct EmptyStateView<Actions: View>: View {
                 )
             }
             .overlay {
-                Image(systemName: glyphName)              // white decorative glyph (§9)
+                Image(systemName: systemImageOverride ?? glyphName)  // white decorative glyph (§9)
                     .font(.system(size: 40, weight: .bold))
                     .foregroundStyle(.white)
             }

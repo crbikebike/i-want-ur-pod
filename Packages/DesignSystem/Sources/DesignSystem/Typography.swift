@@ -177,6 +177,44 @@ public enum Typography {
     /// Search's "Have a podcast URL?" CTA row label (`.urlcta`) — 0.92rem / 700, no tracking. UI face.
     public static var urlCTALabel: Font { ui(14.72, .bold) }
 
+    // MARK: - Roles — Listening History reconciliation
+    // Exact kit value verified against
+    // design/kit/screens/listening-history.html's `.lh-playcount` (line 372):
+    // 0.64rem / 800 / 0.03em, no uppercase transform. Same size/weight as
+    // `tagChip` (10.24pt/800) but distinct tracking (0.03em vs `tagChip`'s
+    // 0.02em) and never uppercased (`.lh-playcount` carries no
+    // `text-transform`, unlike `.tag`) — a near-miss of `tagChipStyle` would
+    // be wrong on both axes, so this is its own token.
+    public static var playCountLabel: Font { ui(10.24, .heavy) }
+
+    /// `.lh-playcount` "Played N×" chip — 0.03em tracking, not uppercased.
+    public static var playCountLabelStyle: TypeStyle { .init(font: playCountLabel, tracking: 0.3072) }
+
+    /// Shared `.foot-note` block copy — 0.78rem / 500, no tracking.
+    /// (`listening-history.html:241`; the identical `.foot-note` rule is also
+    /// declared in `settings.html:386`, where `SettingsScreen.footnote()`
+    /// predates this token and reuses `subheadStyle` (0.82rem) instead — a
+    /// pre-existing deviation out of scope here, not repeated in this file.)
+    public static var footNoteLabel: Font { ui(12.48, .medium) }
+    public static var footNoteLabelStyle: TypeStyle { .init(font: footNoteLabel) }
+
+    /// `.lh-row`'s trailing "when" label (`.lh-when`, line 382-385) —
+    /// 0.78rem / 700, no tracking. Same size as `footNoteLabel` (both
+    /// 0.78rem) but bold rather than medium, and a different kit rule
+    /// entirely — kept as its own token rather than composed via `.weight()`
+    /// on `footNoteLabel`, matching how every other role here is its own
+    /// named font rather than a derived modification.
+    public static var lhWhenLabel: Font { ui(12.48, .bold) }
+    public static var lhWhenLabelStyle: TypeStyle { .init(font: lhWhenLabel) }
+
+    /// `.lh-row`'s trailing listened-duration label (`.lh-dur`, line
+    /// 386-389) — 0.74rem / 500, no tracking. Distinct from both
+    /// `footNoteLabel` (0.78rem) and `countBadge`/`footnote` (0.74rem but
+    /// 800/500-at-a-different-size respectively) — none land on this exact
+    /// 11.84pt/500 pair.
+    public static var lhDurationLabel: Font { ui(11.84, .medium) }
+    public static var lhDurationLabelStyle: TypeStyle { .init(font: lhDurationLabel) }
+
     // MARK: Roles (full TypeStyle tokens — carry tracking + case)
 
     public static var displayLargeTitleStyle: TypeStyle { .init(font: displayLargeTitle, tracking: -0.742) }

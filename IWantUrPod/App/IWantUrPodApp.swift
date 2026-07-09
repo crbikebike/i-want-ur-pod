@@ -98,6 +98,10 @@ struct IWantUrPodApp: App {
         let queueStore = QueueStore(context: container.mainContext)
         _queueStore = State(initialValue: queueStore)
 
+        // Listening-history logging (Wave 1, backend only): each play
+        // session PlaybackEngine finalizes gets recorded as a PlayEvent.
+        let listeningHistoryRecorder = ListeningHistoryRecorder(context: container.mainContext)
+
         let playbackIntent = PlaybackIntentCoordinator(
             playbackEngine: playbackEngine,
             downloadManager: downloadManager,
@@ -117,6 +121,13 @@ struct IWantUrPodApp: App {
                 playbackEngine: playbackEngine,
                 context: container.mainContext
             )
+        }
+
+        // Listening-history logging (Wave 1): every finalized play session
+        // (user-initiated plays and queue auto-advance alike, since both
+        // route through PlaybackEngine.load(episode:context:)) is logged.
+        playbackEngine.onDidFinishListening = { episode, startedAt, listenedSeconds in
+            listeningHistoryRecorder.record(episode: episode, startedAt: startedAt, listenedSeconds: listenedSeconds)
         }
     }
 

@@ -52,6 +52,18 @@ public final class PlaybackEngine {
     /// `localURLResolver` seam's decoupling pattern above.
     public var onFinished: ((Episode) -> Void)?
 
+    /// Fired once a play session ends (episode replaced, finished, returned
+    /// to idle, or backgrounded) with at least the 2s minimum listened —
+    /// listening-history logging seam (episode listening history, Wave 1).
+    ///
+    /// Like `onFinished`, `PlaybackKit` deliberately has no notion of a
+    /// `PlayEvent` or `ModelContext`-backed log — this closure is how
+    /// `IWantUrPodApp` couples the two without either package depending on
+    /// the other. Emits `(episode, sessionStartedAt, listenedSeconds)`. Both
+    /// user-initiated plays and queue auto-advance drive this (both call
+    /// `load(episode:context:)`), which is intended.
+    public var onDidFinishListening: ((Episode, Date, TimeInterval) -> Void)?
+
     /// How often progress is written while playing, per the spec's "at least
     /// every 5s while playing" cadence. `var` (not `let`) only so tests can
     /// shrink it; production always uses the 5s default.
@@ -61,8 +73,30 @@ public final class PlaybackEngine {
     private let localURLResolver: (Episode) -> URL?
     private let nowPlayingCenter: NowPlayingCenter
 
+    /// Wall-clock provider for listening-session accounting. Defaults to
+    /// `Date()` in production; tests inject a controllable clock so
+    /// accumulation is deterministic without real sleeps.
+    private let now: () -> Date
+
     private var modelContext: ModelContext?
     private var lastPersistedTime: TimeInterval = 0
+
+    /// The in-progress listening session, if any. `nil` when idle or paused
+    /// (no session ever started, or the prior one was already finalized).
+    private var sessionEpisode: Episode?
+    private var sessionStartedAt: Date?
+    private var sessionListenedSeconds: TimeInterval = 0
+    /// Wall-clock instant of the last `.playing` tick, used to compute the
+    /// delta to accumulate into `sessionListenedSeconds`. `nil` while paused
+    /// so paused wall-clock time is never counted.
+    private var lastPlayingTick: Date?
+
+    /// Session emits only once at least this many seconds were actually
+    /// listened — drops accidental taps.
+    private static let minimumListenedSecondsToEmit: TimeInterval = 2
+    /// Caps any single accumulated delta so a stall/gap in ticks can't
+    /// over-count wall-clock time as listened time.
+    private static let maximumTickDelta: TimeInterval = 1.5
 
     /// - Parameters:
     ///   - player: The playback seam. Defaults to the live
@@ -72,14 +106,18 @@ public final class PlaybackEngine {
     ///     tests supply a canned lookup.
     ///   - persistenceInterval: Seconds between progress writes while
     ///     playing. Defaults to the spec's 5s; tests may shrink it.
+    ///   - now: Wall-clock provider for listening-session accounting.
+    ///     Defaults to `Date()`; tests inject a controllable clock.
     public init(
         player: AudioPlaying = AVPlayerAudioPlaying(),
         localURLResolver: @escaping (Episode) -> URL?,
-        persistenceInterval: TimeInterval = 5
+        persistenceInterval: TimeInterval = 5,
+        now: @escaping () -> Date = Date.init
     ) {
         self.player = player
         self.localURLResolver = localURLResolver
         self.persistenceInterval = persistenceInterval
+        self.now = now
         self.nowPlayingCenter = NowPlayingCenter()
 
         self.player.onTimeUpdate = { [weak self] time in
@@ -119,6 +157,9 @@ public final class PlaybackEngine {
     /// **Resume:** if `0 < episode.playbackProgress < 0.98`, seeks to that
     /// fraction before playing.
     public func load(episode: Episode, context: ModelContext) {
+        finalizeSession()
+        beginSession(for: episode)
+
         modelContext = context
 
         guard episode.downloadState.isDownloaded, let url = localURLResolver(episode) else {
@@ -149,6 +190,7 @@ public final class PlaybackEngine {
 
         player.play()
         state = .playing
+        startPlayingTick()
         publishNowPlaying()
     }
 
@@ -193,6 +235,8 @@ public final class PlaybackEngine {
         guard state == .playing, let episode = currentEpisode else { return }
         player.pause()
         state = .paused
+        accumulateListeningTick()
+        lastPlayingTick = nil
         persist(episode: episode, time: player.currentTime)
         updateDisplayProgress(seconds: player.currentTime)
         publishNowPlaying()
@@ -202,6 +246,7 @@ public final class PlaybackEngine {
         guard state == .paused, currentEpisode != nil else { return }
         player.play()
         state = .playing
+        startPlayingTick()
         publishNowPlaying()
     }
 
@@ -233,6 +278,7 @@ public final class PlaybackEngine {
     /// spec's "finished --queue empty--> idle" transition, which stops
     /// cleanly rather than lingering at `.finished` or erroring.
     public func returnToIdle() {
+        finalizeSession()
         currentEpisode = nil
         displayProgress = 0
         state = .idle
@@ -241,8 +287,10 @@ public final class PlaybackEngine {
 
     /// Call from the app's scene-phase observer on backgrounding. Forces a
     /// persistence write per the spec's "on backgrounding" cadence rule,
-    /// independent of the 5s ticking cadence.
+    /// independent of the 5s ticking cadence, and finalizes the in-progress
+    /// listening session (listening-history logging, Wave 1).
     public func handleAppBackgrounding() {
+        finalizeSession()
         guard let episode = currentEpisode, state == .playing || state == .paused else { return }
         persist(episode: episode, time: player.currentTime)
     }
@@ -251,6 +299,7 @@ public final class PlaybackEngine {
 
     private func handleTimeUpdate(_ time: TimeInterval) {
         guard state == .playing, let episode = currentEpisode else { return }
+        accumulateListeningTick()
         if time - lastPersistedTime >= persistenceInterval {
             persist(episode: episode, time: time)
         }
@@ -269,6 +318,7 @@ public final class PlaybackEngine {
         state = .finished
         publishNowPlaying()
         onFinished?(episode)
+        finalizeSession()
     }
 
     /// Recomputes the smooth `displayProgress` fraction from an absolute
@@ -324,5 +374,55 @@ public final class PlaybackEngine {
 
     private static func message(for error: Error) -> String {
         (error as? LocalizedError)?.errorDescription ?? "Couldn't play this episode."
+    }
+
+    // MARK: - Listening-history session tracking (Wave 1)
+
+    /// Starts a fresh listening session for `episode`. Called at the top of
+    /// `load(episode:context:)`, after any prior session has been finalized.
+    private func beginSession(for episode: Episode) {
+        sessionEpisode = episode
+        sessionStartedAt = now()
+        sessionListenedSeconds = 0
+        lastPlayingTick = nil
+    }
+
+    /// Marks the instant playback actually starts/resumes, so the next
+    /// `accumulateListeningTick()` computes a delta from here rather than
+    /// from session start (which may predate the player actually playing).
+    private func startPlayingTick() {
+        lastPlayingTick = now()
+    }
+
+    /// Adds the wall-clock delta since the last playing tick to the
+    /// in-progress session, capped at `maximumTickDelta` so a stall/gap in
+    /// ticks can't over-count. A `nil` `lastPlayingTick` (first tick since
+    /// `startPlayingTick()`) contributes no delta, just anchors the clock.
+    private func accumulateListeningTick() {
+        let currentInstant = now()
+        if let last = lastPlayingTick {
+            let delta = max(currentInstant.timeIntervalSince(last), 0)
+            sessionListenedSeconds += min(delta, Self.maximumTickDelta)
+        }
+        lastPlayingTick = currentInstant
+    }
+
+    /// Ends the in-progress session (if any), emitting
+    /// `onDidFinishListening` only when at least `minimumListenedSecondsToEmit`
+    /// was actually listened. Safe to call with no active session (no-op).
+    private func finalizeSession() {
+        guard let episode = sessionEpisode, let startedAt = sessionStartedAt else { return }
+        if lastPlayingTick != nil {
+            accumulateListeningTick()
+        }
+        let listenedSeconds = sessionListenedSeconds
+
+        sessionEpisode = nil
+        sessionStartedAt = nil
+        sessionListenedSeconds = 0
+        lastPlayingTick = nil
+
+        guard listenedSeconds >= Self.minimumListenedSecondsToEmit else { return }
+        onDidFinishListening?(episode, startedAt, listenedSeconds)
     }
 }

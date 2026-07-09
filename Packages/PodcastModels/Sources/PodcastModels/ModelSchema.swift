@@ -15,7 +15,8 @@ public enum ModelSchema {
             Podcast.self,
             Episode.self,
             Chapter.self,
-            QueueItem.self
+            QueueItem.self,
+            PlayEvent.self
         ]
     }
 

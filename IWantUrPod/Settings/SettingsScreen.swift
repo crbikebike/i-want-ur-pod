@@ -13,6 +13,11 @@
 // would regress that behavior, so a minimal footer row ("Show first-run intro
 // again") is kept below the downloads list rather than deleted — a second,
 // much smaller section is judged less bad than losing a tested capability.
+//
+// **2026-07-09:** gained a "History" section (settings.html:560-576's
+// `.srow-history` row, `.ic-history` grape→mint icon tile) that pushes
+// `ListeningHistoryScreen` — placed after Feeds, before "Downloaded
+// episodes", matching the kit's section order exactly.
 import SwiftUI
 import SwiftData
 import DesignSystem
@@ -35,6 +40,11 @@ public struct SettingsScreen: View {
     /// inside whichever tab's stack that is.
     @State private var pushedFeedURL: URL?
 
+    /// Drives the "Listening history" row's push — a plain boolean (no item
+    /// payload needed, unlike `pushedFeedURL`) via
+    /// `.navigationDestination(isPresented:)` below.
+    @State private var isShowingHistory = false
+
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
     @Environment(DownloadManager.self) private var downloadManager
@@ -51,6 +61,9 @@ public struct SettingsScreen: View {
                 titleBar
 
                 feedsSection
+                    .padding(.top, Spacing.sp6)
+
+                historySection
                     .padding(.top, Spacing.sp6)
 
                 groupLabel("Downloaded episodes")
@@ -89,6 +102,9 @@ public struct SettingsScreen: View {
         }
         .navigationDestination(item: $pushedFeedURL) { feedURL in
             PodcastDetailScreen(feedURL: feedURL)
+        }
+        .navigationDestination(isPresented: $isShowingHistory) {
+            ListeningHistoryScreen()
         }
     }
 
@@ -149,6 +165,54 @@ public struct SettingsScreen: View {
 
             footnote("Paste a show\u{2019}s RSS link to follow it directly. Private links are stored only on this device and never shared.")
                 .padding(.top, Spacing.sp3)
+        }
+    }
+
+    // MARK: - History (.srow-history / .ic-history, settings.html:560-576)
+
+    private var historySection: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            groupLabel("History")
+
+            card {
+                Button {
+                    isShowingHistory = true
+                } label: {
+                    HStack(spacing: Spacing.sp3) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: Radius.rIcon13, style: .continuous)
+                                .fill(
+                                    // `.ic-history { background: linear-gradient(140deg, var(--grape), var(--mint)); }`
+                                    LinearGradient(colors: [palette.grape, palette.mint],
+                                                   startPoint: .topLeading, endPoint: .bottomTrailing)
+                                )
+                            Image(systemName: "clock")
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundStyle(.white)
+                        }
+                        .frame(width: 46, height: 46)
+
+                        VStack(alignment: .leading, spacing: Spacing.sp1) {
+                            Text("Listening history")
+                                .typeStyle(Typography.rowTitleStyle)
+                                .foregroundStyle(palette.text)
+                            Text("Episodes you\u{2019}ve played, and for how long")
+                                .typeStyle(Typography.subheadStyle)
+                                .foregroundStyle(palette.textDim)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundStyle(palette.textFaint)
+                    }
+                    .padding(.vertical, Spacing.sp3)
+                    .padding(.horizontal, Spacing.sp4)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Listening history")
+                .accessibilityHint("Episodes you\u{2019}ve played, and for how long")
+            }
         }
     }
 

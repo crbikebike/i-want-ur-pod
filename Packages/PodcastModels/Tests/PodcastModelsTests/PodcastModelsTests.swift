@@ -32,7 +32,83 @@ final class PodcastModelsTests: XCTestCase {
         XCTAssertTrue(entityNames.contains("Episode"))
         XCTAssertTrue(entityNames.contains("Chapter"))
         XCTAssertTrue(entityNames.contains("QueueItem"))
-        XCTAssertEqual(ModelSchema.models.count, 4)
+        XCTAssertTrue(entityNames.contains("PlayEvent"))
+        XCTAssertEqual(ModelSchema.models.count, 5)
+    }
+
+    // MARK: - PlayEvent (listening history log, Wave 1)
+
+    func testPlayEventConstructsWithDefaults() throws {
+        let event = PlayEvent(
+            playedAt: .now,
+            listenedSeconds: 42,
+            episodeTitle: "Ep Title",
+            podcastTitle: "Show Title"
+        )
+        XCTAssertEqual(event.listenedSeconds, 42, accuracy: 0.0001)
+        XCTAssertEqual(event.episodeTitle, "Ep Title")
+        XCTAssertEqual(event.podcastTitle, "Show Title")
+        XCTAssertNil(event.artworkURL)
+        XCTAssertNil(event.feedURL)
+        XCTAssertNil(event.episodeGUID)
+    }
+
+    func testPlayEventPersistsAndSurvivesFreshContext() throws {
+        let (container, context) = try makeContext()
+
+        let playedAt = Date(timeIntervalSince1970: 1_700_000_000)
+        let event = PlayEvent(
+            playedAt: playedAt,
+            listenedSeconds: 123.5,
+            episodeTitle: "Persisted Episode",
+            podcastTitle: "Persisted Show",
+            artworkURL: URL(string: "https://cdn.example.com/art.jpg"),
+            feedURL: makeFeedURL("history"),
+            episodeGUID: "guid-history-1"
+        )
+        context.insert(event)
+        try context.save()
+
+        let freshContext = ModelContext(container)
+        let fetched = try freshContext.fetch(FetchDescriptor<PlayEvent>())
+        XCTAssertEqual(fetched.count, 1)
+
+        let reloaded = try XCTUnwrap(fetched.first)
+        XCTAssertEqual(reloaded.playedAt, playedAt)
+        XCTAssertEqual(reloaded.listenedSeconds, 123.5, accuracy: 0.0001)
+        XCTAssertEqual(reloaded.episodeTitle, "Persisted Episode")
+        XCTAssertEqual(reloaded.podcastTitle, "Persisted Show")
+        XCTAssertEqual(reloaded.artworkURL, URL(string: "https://cdn.example.com/art.jpg"))
+        XCTAssertEqual(reloaded.feedURL, makeFeedURL("history"))
+        XCTAssertEqual(reloaded.episodeGUID, "guid-history-1")
+    }
+
+    func testPlayEventSurvivesEpisodeAndPodcastDeletion() throws {
+        let (_, context) = try makeContext()
+
+        // PlayEvent intentionally holds no relationship to Episode/Podcast —
+        // the log must survive deletion of either.
+        let podcast = Podcast(title: "Deletable Show", feedURL: makeFeedURL("deletable"))
+        let episode = Episode(guid: "deletable-ep", title: "Deletable Episode", audioURL: makeAudioURL("deletable"), podcast: podcast)
+        context.insert(podcast)
+        context.insert(episode)
+
+        let event = PlayEvent(
+            playedAt: .now,
+            listenedSeconds: 10,
+            episodeTitle: episode.title,
+            podcastTitle: podcast.title,
+            feedURL: podcast.feedURL,
+            episodeGUID: episode.guid
+        )
+        context.insert(event)
+        try context.save()
+
+        context.delete(episode)
+        context.delete(podcast)
+        try context.save()
+
+        XCTAssertEqual(try context.fetchCount(FetchDescriptor<PlayEvent>()), 1, "PlayEvent log rows must survive episode/podcast deletion.")
     }
 
     // MARK: - Relationships

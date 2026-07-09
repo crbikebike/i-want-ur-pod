@@ -33,6 +33,7 @@ SCREEN_FILES = [
     ("search-error",     "search-error.html",      "Error"),
     ("add-feed-url",     "add-feed-url.html",      "Add feed"),
     ("settings",         "settings.html",          "Settings"),
+    ("listening-history","listening-history.html", "Listening history"),
     ("detail-aht",       "podcast-detail-american-history-tellers.html", "Detail · AHT"),
     ("detail-explorers", "podcast-detail-explorers-podcast.html",        "Detail · Explorers"),
     ("first-run",        "first-run.html",         "Onboarding"),
@@ -41,7 +42,7 @@ SCREEN_FILES = [
 # Which buttons appear in the out-of-frame "jump" strip (name -> label).
 JUMP = ["home", "shows", "up-next", "search-start", "search-typing",
         "search-loading", "search-results", "search-noresults", "search-error",
-        "add-feed-url", "settings", "detail-aht", "detail-explorers", "first-run"]
+        "add-feed-url", "settings", "listening-history", "detail-aht", "detail-explorers", "first-run"]
 
 
 def esc_for_template_literal(s: str) -> str:
@@ -197,7 +198,8 @@ const NAMES = {
   'search-typing':'Search · typing','search-loading':'Search · loading',
   'search-noresults':'Search · no results','search-error':'Search · error',
   'add-feed-url':'Add feed by URL',
-  'settings':'Settings','detail-aht':'Detail · American History Tellers',
+  'settings':'Settings','listening-history':'Settings · listening history',
+  'detail-aht':'Detail · American History Tellers',
   'detail-explorers':'Detail · The Explorers Podcast','first-run':'Onboarding'
 };
 
@@ -246,9 +248,11 @@ function wire(doc, name, opts){
   const gear = doc.querySelector('.util-gear');
   if(gear) gear.addEventListener('click', e => go(e, 'settings'));
 
-  // --- Settings "Done" -> back to the tab you came from ---
+  // --- Settings "Done" -> back to the tab you came from; Listening History
+  //     "Done" is pushed one level deeper (from Settings), so it returns to
+  //     Settings specifically, not the primary tab. ---
   const done = doc.querySelector('.done-btn');
-  if(done) done.addEventListener('click', e => go(e, prevPrimary));
+  if(done) done.addEventListener('click', e => go(e, name === 'listening-history' ? 'settings' : prevPrimary));
 
   // --- Podcast Detail back button -> the screen we came from ---
   const back = doc.querySelector('.back-btn');
@@ -314,14 +318,27 @@ function wire(doc, name, opts){
   }
 
   // --- Add-feed-by-URL entry points -> the shared sheet ---
-  //     Search "Have a podcast URL?" (.urlcta) + Settings "Add premium…" (.srow-tap)
-  doc.querySelectorAll('.urlcta, .srow-tap').forEach(el =>
+  //     Search "Have a podcast URL?" (.urlcta) + Settings "Add premium…" (.srow-tap,
+  //     excluding the Listening History row, which is a different destination)
+  doc.querySelectorAll('.urlcta, .srow-tap:not(.srow-history)').forEach(el =>
     el.addEventListener('click', e => go(e, 'add-feed-url')));
   //     Search no-results "Add a direct link" primary action (matched by label)
   doc.querySelectorAll('.state-actions .btn').forEach(el => {
     if((el.textContent || '').toLowerCase().includes('direct link'))
       el.addEventListener('click', e => go(e, 'add-feed-url'));
   });
+
+  // --- Settings "Listening history" row -> the history screen ---
+  doc.querySelectorAll('.srow-history').forEach(el =>
+    el.addEventListener('click', e => go(e, 'listening-history')));
+
+  // --- Listening History empty-state "Browse your shows" -> Shows tab ---
+  if(name === 'listening-history'){
+    doc.querySelectorAll('.state-actions .btn').forEach(el => {
+      if((el.textContent || '').toLowerCase().includes('browse your shows'))
+        el.addEventListener('click', e => go(e, 'shows'));
+    });
+  }
 
   // --- inside the Add-feed sheet: Cancel backs out; Add runs the happy path ---
   if(name === 'add-feed-url'){
