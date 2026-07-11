@@ -163,8 +163,12 @@ private struct PodcastPosterCard: View {
                 Text(podcast.title)
                     .typeStyle(Typography.showCardTitleStyle)   // .pod-title
                     .foregroundStyle(palette.text)
-                    .lineLimit(2)
+                    // Reserve two lines even for 1-line titles so every card is
+                    // the same height and the grid rows stay aligned (a 1-line
+                    // title next to a 2-line one otherwise makes the grid ragged).
+                    .lineLimit(2, reservesSpace: true)
                     .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
                 if !podcast.author.isEmpty {
                     Text(podcast.author)
