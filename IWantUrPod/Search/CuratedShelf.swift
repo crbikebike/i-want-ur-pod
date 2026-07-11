@@ -55,7 +55,8 @@ struct CuratedShelf: View {
                         onSelect: onSelect,
                         itemTitle: { $0.title },
                         itemAuthor: { $0.author },
-                        itemArtwork: { artwork(for: $0) }
+                        itemArtwork: { artwork(for: $0) },
+                        itemArtworkURL: { $0.artworkURL }
                     ) { entry in
                         SubscribeButton(state: states[entry.id] ?? .idle) {
                             subscribe(entry)

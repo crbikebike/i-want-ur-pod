@@ -303,7 +303,8 @@ public struct HomeScreen: View {
             onSelect: { entry in path.append(entry.feedURL) },
             itemTitle: { $0.title },
             itemAuthor: { $0.author },
-            itemArtwork: { ArtworkStyle(seed: seed(for: $0)) }
+            itemArtwork: { ArtworkStyle(seed: seed(for: $0)) },
+            itemArtworkURL: { $0.artworkURL }
         ) { entry in
             SubscribeButton(state: subscribeState(for: entry)) {
                 subscribe(entry)
