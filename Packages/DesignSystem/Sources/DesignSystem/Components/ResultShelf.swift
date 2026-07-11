@@ -21,19 +21,27 @@ public struct PodCard<Trailing: View>: View {
     private let title: String
     private let author: String
     private let artwork: ArtworkStyle
+    private let artworkURL: URL?
     private let trailing: () -> Trailing
 
     @Environment(\.palette) private var palette
 
+    /// - Parameters:
+    ///   - artwork: The gradient placeholder style, used when `artworkURL` is
+    ///     `nil` or the remote image fails to load.
+    ///   - artworkURL: Remote poster artwork; when present it loads via
+    ///     `RemoteArtwork`, falling back to the `artwork` gradient.
     public init(
         title: String,
         author: String,
         artwork: ArtworkStyle,
+        artworkURL: URL? = nil,
         @ViewBuilder trailing: @escaping () -> Trailing
     ) {
         self.title = title
         self.author = author
         self.artwork = artwork
+        self.artworkURL = artworkURL
         self.trailing = trailing
     }
 
@@ -42,9 +50,20 @@ public struct PodCard<Trailing: View>: View {
         return String(first).uppercased()
     }
 
+    /// Seed that reproduces `artwork` through `ArtworkStyle(seed:)`, so the
+    /// `RemoteArtwork` gradient fallback matches this card's placeholder style.
+    private var fallbackSeed: Int {
+        ArtworkStyle.allCases.firstIndex(of: artwork) ?? 0
+    }
+
     public var body: some View {
         VStack(alignment: .leading, spacing: 9) {   // .pod { gap: 9px }
-            GradientArtwork(style: artwork, initial: initial, cornerRadius: Radius.rMd16)
+            RemoteArtwork(
+                url: artworkURL,
+                seed: fallbackSeed,
+                initial: initial,
+                cornerRadius: Radius.rMd16
+            )
                 .overlay(alignment: .bottomTrailing) {
                     // .sub — corner circular subscribe, floats on the artwork.
                     trailing()
@@ -86,6 +105,7 @@ public struct ResultShelf<Item: Identifiable, Trailing: View>: View {
     private let itemTitle: (Item) -> String
     private let itemAuthor: (Item) -> String
     private let itemArtwork: (Item) -> ArtworkStyle
+    private let itemArtworkURL: (Item) -> URL?
     private let trailing: (Item) -> Trailing
 
     @Environment(\.palette) private var palette
@@ -97,6 +117,9 @@ public struct ResultShelf<Item: Identifiable, Trailing: View>: View {
     ///     to `items.count` when the shelf isn't a truncated preview.
     ///   - onViewAll: Shown as a trailing "View all" link when non-nil.
     ///   - onSelect: Fired when a card (not its trailing control) is tapped.
+    ///   - itemArtworkURL: Remote poster artwork per item; defaults to `nil`
+    ///     (gradient placeholder), and falls back to the gradient when the load
+    ///     fails.
     public init(
         title: String,
         items: [Item],
@@ -106,6 +129,7 @@ public struct ResultShelf<Item: Identifiable, Trailing: View>: View {
         itemTitle: @escaping (Item) -> String,
         itemAuthor: @escaping (Item) -> String,
         itemArtwork: @escaping (Item) -> ArtworkStyle,
+        itemArtworkURL: @escaping (Item) -> URL? = { _ in nil },
         @ViewBuilder trailing: @escaping (Item) -> Trailing
     ) {
         self.title = title
@@ -116,6 +140,7 @@ public struct ResultShelf<Item: Identifiable, Trailing: View>: View {
         self.itemTitle = itemTitle
         self.itemAuthor = itemAuthor
         self.itemArtwork = itemArtwork
+        self.itemArtworkURL = itemArtworkURL
         self.trailing = trailing
     }
 
@@ -132,7 +157,8 @@ public struct ResultShelf<Item: Identifiable, Trailing: View>: View {
                             PodCard(
                                 title: itemTitle(item),
                                 author: itemAuthor(item),
-                                artwork: itemArtwork(item)
+                                artwork: itemArtwork(item),
+                                artworkURL: itemArtworkURL(item)
                             ) {
                                 trailing(item)
                             }
@@ -187,6 +213,7 @@ public struct PodGrid<Item: Identifiable, Trailing: View>: View {
     private let itemTitle: (Item) -> String
     private let itemAuthor: (Item) -> String
     private let itemArtwork: (Item) -> ArtworkStyle
+    private let itemArtworkURL: (Item) -> URL?
     private let trailing: (Item) -> Trailing
 
     private let columns = [
@@ -200,6 +227,7 @@ public struct PodGrid<Item: Identifiable, Trailing: View>: View {
         itemTitle: @escaping (Item) -> String,
         itemAuthor: @escaping (Item) -> String,
         itemArtwork: @escaping (Item) -> ArtworkStyle,
+        itemArtworkURL: @escaping (Item) -> URL? = { _ in nil },
         @ViewBuilder trailing: @escaping (Item) -> Trailing
     ) {
         self.items = items
@@ -207,6 +235,7 @@ public struct PodGrid<Item: Identifiable, Trailing: View>: View {
         self.itemTitle = itemTitle
         self.itemAuthor = itemAuthor
         self.itemArtwork = itemArtwork
+        self.itemArtworkURL = itemArtworkURL
         self.trailing = trailing
     }
 
@@ -219,7 +248,8 @@ public struct PodGrid<Item: Identifiable, Trailing: View>: View {
                     PodCard(
                         title: itemTitle(item),
                         author: itemAuthor(item),
-                        artwork: itemArtwork(item)
+                        artwork: itemArtwork(item),
+                        artworkURL: itemArtworkURL(item)
                     ) {
                         trailing(item)
                     }
