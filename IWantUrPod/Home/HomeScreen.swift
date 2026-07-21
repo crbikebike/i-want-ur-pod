@@ -1,15 +1,15 @@
 // Translated from design/kit/screens/home.html (its bespoke content: the
 // large "Home" title with pulse-dot, the top-right `.util-gear` Settings
 // button, the "Up Next" and "New episodes" `.sec-head`/`.rail`/`.pn`/`.ep-card`
-// playable rails, and the "Shows for you"/"Our favorites" `.shelf`/`.rail`/
-// `.pod` shelves — see design/kit/MANIFEST.md's "Home / Shows / Up Next
+// playable rails, and the "Our favorites" `.shelf`/`.rail`/
+// `.pod` shelf — see design/kit/MANIFEST.md's "Home / Shows / Up Next
 // screens" entry; the `.tabbar`/`.statusbar`/`.notch`/theme-toggle chrome is
 // the shared kit frame AppShell + LiquidGlassTabBar already own, not
 // re-translated here).
 //
 // ROADMAP.md E8-S2: Home replaces Discover as the first tab destination.
-// Renders four sections in kit order — an Up Next rail, a New episodes rail,
-// a Shows-for-you shelf, and an Our-favorites shelf — each rendering nothing
+// Renders three sections in kit order — an Up Next rail, a New episodes rail,
+// and an Our-favorites shelf — each rendering nothing
 // (no header, no empty chrome) when it has no content. Data sources:
 //   - Up Next rail:     the shared `QueueStore` (E5), the full queue —
 //                        `UpNextTile`s (`.pn`) scroll horizontally rather
@@ -17,10 +17,6 @@
 //   - New episodes:     `HomeFeedProvider.recentEpisodes` over every
 //                        subscribed show's episodes (SwiftData `@Query`) —
 //                        `NewEpisodeCard`s (`.ep-card`) in a horizontal rail.
-//   - Shows for you:     the bundled curated list, minus already-subscribed
-//                        shows — an honest degrade; see
-//                        `HomeFeedProvider.recommendedEntries`'s doc comment
-//                        for why (no personalization signal exists yet).
 //   - Our favorites:     the bundled curated list, unfiltered (E1-S2's
 //                        `curated-start-here.json`, loaded via the same
 //                        `CuratedListLoader` DiscoverViewModel uses — not
@@ -98,10 +94,6 @@ public struct HomeScreen: View {
         HomeFeedProvider.recentEpisodes(from: allEpisodes)
     }
 
-    private var recommendedEntries: [CuratedEntry] {
-        HomeFeedProvider.recommendedEntries(from: curatedEntries, subscribedFeedURLs: subscribedFeedURLs)
-    }
-
     public var body: some View {
         NavigationStack(path: $path) {
             ZStack(alignment: .topTrailing) {
@@ -111,7 +103,6 @@ public struct HomeScreen: View {
 
                         upNextSection
                         newEpisodesSection
-                        showsForYouSection
                         ourFavoritesSection
                     }
                     .padding(.horizontal, Spacing.gutter)
@@ -268,16 +259,6 @@ public struct HomeScreen: View {
     private func openEpisodeShow(_ episode: Episode) {
         guard let feedURL = episode.podcast?.feedURL else { return }
         path.append(feedURL)
-    }
-
-    // MARK: - Shows for you (.shelf "Shows for you")
-
-    @ViewBuilder
-    private var showsForYouSection: some View {
-        if !recommendedEntries.isEmpty {
-            curatedShelf(title: "Shows for you", entries: recommendedEntries)
-                .padding(.top, Spacing.sp6)
-        }
     }
 
     // MARK: - Our favorites (.shelf "Our favorites")

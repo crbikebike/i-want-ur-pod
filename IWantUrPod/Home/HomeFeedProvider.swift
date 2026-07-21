@@ -27,30 +27,6 @@ public enum HomeFeedProvider {
             .map { $0 }
     }
 
-    // MARK: - Shows for you (degrade decision)
-
-    /// "Shows for you" per `home.html` is an unbuilt personalization
-    /// surface — the kit itself labels it a "(recommendations placeholder)".
-    /// The app has no personalization/ML signal to drive it, so this degrades
-    /// to the most honest stand-in available: the bundled editorial curated
-    /// list (`curated-start-here.json`, E1-S2), **excluding shows already
-    /// subscribed** — i.e. "curated picks you haven't added yet." This keeps
-    /// it meaningfully distinct from "Our favorites" below (which shows the
-    /// same list *unfiltered*, as a static editorial showcase) rather than
-    /// rendering the identical rail twice, and it naturally empties out (and
-    /// therefore hides, per the "no empty shelf chrome" rule) once every
-    /// curated pick has been subscribed to.
-    public static func recommendedEntries(
-        from curated: [CuratedEntry],
-        subscribedFeedURLs: Set<URL>,
-        limit: Int = 10
-    ) -> [CuratedEntry] {
-        curated
-            .filter { !subscribedFeedURLs.contains($0.feedURL) }
-            .prefix(limit)
-            .map { $0 }
-    }
-
     // MARK: - Curated bundle load (mirrors DiscoverViewModel's glue)
 
     /// Loads the bundled curated list via DirectoryKit's pure
