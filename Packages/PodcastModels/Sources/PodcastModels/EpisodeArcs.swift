@@ -16,7 +16,8 @@
 //   3. cluster by normalized stem → prefix-merge → split across itunes:season,
 //   4. anthology guard (drop "Volume N≥3"), re-release dedup (drop
 //      Encore/Redux/Archive when a non-re-release sibling covers that part),
-//      scoped chaptered-season handler ("Chapter N | Title" → group by season),
+//      scoped chaptered-season handler ("Chapter N | Title" / "S7 E1: Title" →
+//      group by itunes:season, named from the season trailer when present),
 //   5. keep clusters with ≥2 members.
 //
 // Pure/Foundation-only so it's unit-testable without SwiftData.
@@ -107,7 +108,7 @@ public enum ArcDerivation {
 
     /// The counter kind a marker matched, so guards can act on how the number was
     /// expressed (a `Volume 22` is an anthology; a `Part 3` is an arc).
-    private enum Kind { case pipe, part, pt, hash, ep, chapter, chapterLead, volume }
+    private enum Kind { case pipe, part, parenStem, pt, hash, ep, chapter, chapterLead, volume }
 
     /// Priority-ordered markers. Group 1 is the arc stem; group 2 is the counter
     /// token — except `chapterLead` (`Chapter N: Title`), which carries no arc
@@ -115,6 +116,12 @@ public enum ArcDerivation {
     private static let markers: [(NSRegularExpression, Kind)] = [
         (rx(#"^(.+?)\s*\|\s*.+?\s*\|\s*(\d+)\s*$"#), .pipe),
         (rx("^(.+?)\\s*[\(dashes)]\\s*Part\\s+(\(numWord))\\b", [.caseInsensitive]), .part),
+        // Arc name inside a trailing parenthetical: "Turning the Lens (Seeing
+        // White, Part 1)" (Scene on Radio). Must precede the comma/`, Part N`
+        // marker below, which would otherwise take the unique main title as the
+        // stem. End-anchored + requires ≥1 char before `Part`, so it never eats a
+        // bare `(Part 1)` (handled by the `(Part N)` marker) or a plain `X, Part N`.
+        (rx("^.+?\\(\\s*(.+?)\\s*,?\\s*Part\\s+(\(numWord))\\s*\\)\\s*$", [.caseInsensitive]), .parenStem),
         (rx("^(.+?),\\s*Part\\s+(\(numWord))\\b", [.caseInsensitive]), .part),
         (rx("^(.+?)\\s*[(\\[]\\s*Part\\s+(\(numWord))\\s*[)\\]]", [.caseInsensitive]), .part),
         (rx("^(.+?)\\s*,?\\s*\\(?\\s*Pt\\.?\\s+(\(numWord))\\b", [.caseInsensitive]), .pt),
@@ -132,6 +139,19 @@ public enum ArcDerivation {
     /// Leading start-anchored `Chapter N | Title` (Bone Valley) — used only to
     /// route an episode to the chaptered-season pass.
     private static let chapterLeadAnchored = rx(#"^Chapter\s*\d+\s*[|:]"#, [.caseInsensitive])
+
+    /// Leading start-anchored season+episode marker `S7 E1: Title` (Scene on
+    /// Radio). Like the chaptered lead, the arc name isn't in the title — the
+    /// season is the arc — so it routes to the chaptered-season pass too.
+    private static let seasonEpisodeLead = rx(#"^S\s*\d+\s*E\s*\d+\b"#, [.caseInsensitive])
+
+    /// Season-theme extractors, tried in order against a season's trailer/intro
+    /// title (Scene on Radio names each season only there). Group 1 is the theme.
+    private static let seasonThemePatterns: [NSRegularExpression] = [
+        rx(#"Season\s+\d+\s+Trailer\s*:\s*(.+)$"#, [.caseInsensitive]),      // "Season 7 Trailer: Capitalism"
+        rx(#"Season\s+\d+\s*:\s*(.+?)\s+Trailer\s*$"#, [.caseInsensitive]),  // "…Season 3: MEN Trailer"
+        rx(#"Introducing\b.*?:\s*(.+)$"#, [.caseInsensitive]),               // "Introducing Scene on Radio: The News"
+    ]
 
     private static let wordNumbers: [String: Int] = [
         "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7,
@@ -323,24 +343,52 @@ public enum ArcDerivation {
         return kind == .volume && low >= volumeAnthologyMin
     }
 
-    /// Scoped chaptered-season pass: `Chapter N | Title` episodes carry no arc name
-    /// in the title (Bone Valley), so title-clustering misses them. Group those
-    /// specific, not-yet-claimed episodes by `itunes:season`. Tightly scoped to the
-    /// `Chapter N|:` shape, so it adds none of a blanket season-fallback's junk.
+    /// Scoped chaptered-season pass: `Chapter N | Title` (Bone Valley) and `S7 E1:
+    /// Title` (Scene on Radio) episodes carry no arc name in the title, so
+    /// title-clustering misses them. Group those specific, not-yet-claimed episodes
+    /// by `itunes:season`, naming each from the season's trailer/intro title when
+    /// present (else "Season N"). Tightly scoped to those two leading shapes, so it
+    /// adds none of a blanket season-fallback's junk.
     private static func chapteredSeasonCards(_ episodes: [Episode], taken: Set<String>) -> [Arc] {
         var order: [Int] = []
         var bySeason: [Int: [Episode]] = [:]
+        var titlesBySeason: [Int: [String]] = [:]
         for e in episodes {
-            guard !taken.contains(e.guid), let season = e.season else { continue }
-            guard firstMatch(chapterLeadAnchored, in: clean(e.title)) != nil else { continue }
+            guard let season = e.season else { continue }
+            // Theme lives on the trailer, which is un-numbered — scan every
+            // season member's raw title, not just the numbered episodes.
+            titlesBySeason[season, default: []].append(e.title)
+            guard !taken.contains(e.guid) else { continue }
+            let cleaned = clean(e.title)
+            guard firstMatch(chapterLeadAnchored, in: cleaned) != nil
+                    || firstMatch(seasonEpisodeLead, in: cleaned) != nil else { continue }
             if bySeason[season] == nil { bySeason[season] = []; order.append(season) }
             bySeason[season, default: []].append(e)
         }
         return order.compactMap { season in
             guard let members = bySeason[season], members.count >= 2 else { return nil }
-            return Arc(seasonCardName: "Season \(season)", season: season, episodes: members)
+            let name = seasonTheme(in: titlesBySeason[season] ?? []) ?? "Season \(season)"
+            return Arc(seasonCardName: name, season: season, episodes: members)
         }
     }
+
+    /// The season's theme, pulled from its trailer/intro title (Scene on Radio
+    /// names each season only there, never in the numbered episode titles). Uses
+    /// the raw title — noise-prefix cleaning would strip "Introducing". `nil` when
+    /// no trailer grammar matches, so callers fall back to a "Season N" label.
+    private static func seasonTheme(in titles: [String]) -> String? {
+        for title in titles {
+            let t = title.trimmed
+            for pattern in seasonThemePatterns {
+                guard let match = firstMatch(pattern, in: t) else { continue }
+                let theme = string(t, match, 1).trimmingCharacters(in: seasonThemeTrim)
+                if !theme.isEmpty { return theme }
+            }
+        }
+        return nil
+    }
+
+    private static let seasonThemeTrim = CharacterSet(charactersIn: " \"'“”").union(.whitespaces)
 
     // MARK: - Ordering
 
@@ -361,12 +409,20 @@ public enum ArcDerivation {
         "^[\(dashes)\\s:,.|(\\[]*\\s*(?:Part|Pt\\.?|Parte|Ep(?:isode|\\.)?|Chapter|Vol(?:ume)?\\.?|#)?\\s*(?:\(numWord))\\s*[)\\]]?\\s*[\(dashes):|]*\\s*",
         [.caseInsensitive])
 
+    /// The trailing `(Stem, Part N)` parenthetical of a `.parenStem` title — removed
+    /// for display so the within-arc row shows the main title ("Turning the Lens").
+    private static let trailingParenStem = rx("\\s*\\([^)]*\\bPart\\s+(?:\(numWord))\\s*\\)\\s*$", [.caseInsensitive])
+
     /// The episode's title within its arc: the pipe middle, else the subtitle left
     /// after removing the stem prefix and a leading counter, else a bare "Part N".
     private static func displayTitle(cleaned: String, stem: String, part: Int, kind: Kind) -> String {
         if kind == .pipe, let m = firstMatch(pipeMiddle, in: cleaned) {
             let middle = string(cleaned, m, 2).trimmed
             if !middle.isEmpty { return middle }
+        }
+        if kind == .parenStem {
+            let main = removeMatch(trailingParenStem, in: cleaned).trimmed
+            return main.isEmpty ? "Part \(part)" : main
         }
         var rest = cleaned
         if let r = rest.range(of: stem), r.lowerBound == rest.startIndex {
