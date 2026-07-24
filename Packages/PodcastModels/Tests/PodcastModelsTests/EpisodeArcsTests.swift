@@ -72,6 +72,21 @@ final class EpisodeArcsTests: XCTestCase {
         XCTAssertEqual(r.part, 1)
     }
 
+    func test_derive_parentheticalStem_extractsInnerStemAndMainTitle() {
+        // Scene on Radio: arc name lives inside a trailing "(Stem, Part N)".
+        let r = ArcDerivation.derive(fromTitle: "Turning the Lens (Seeing White, Part 1)")
+        XCTAssertEqual(r.arcName, "Seeing White")
+        XCTAssertEqual(r.displayTitle, "Turning the Lens")
+        XCTAssertEqual(r.part, 1)
+    }
+
+    func test_derive_parentheticalStem_noCommaVariant() {
+        let r = ArcDerivation.derive(fromTitle: "A Racial Cleansing in America (Seeing White Part 9)")
+        XCTAssertEqual(r.arcName, "Seeing White")
+        XCTAssertEqual(r.displayTitle, "A Racial Cleansing in America")
+        XCTAssertEqual(r.part, 9)
+    }
+
     func test_derive_tooShortStem_isNotAnArc() {
         // A 1–2 char stem is rejected (avoids junk arcs from initials/numbers).
         let r = ArcDerivation.derive(fromTitle: "X | Y | 2")
@@ -221,6 +236,79 @@ final class EpisodeArcsTests: XCTestCase {
         XCTAssertEqual(arcs.count, 2)
         XCTAssertEqual(Set(arcs.map(\.name)), ["Season 1", "Season 2"])
         XCTAssertEqual(Set(arcs.compactMap(\.season)), [1, 2])
+    }
+
+    func test_groupIntoArcs_seasonEpisodeLead_SceneOnRadio_themeNamed() {
+        // "S7 E1: Title" carries no arc name in the title (Scene on Radio) — the
+        // season theme lives only in the trailer. Group by itunes:season; name
+        // from the trailer. The trailer itself (no S#E# lead) is not a member.
+        let episodes = [
+            makeEpisode(title: "S7 E3: Ships, Swords, and Fences", publishDate: date(5000), season: 7),
+            makeEpisode(title: "S7 E2: BC: Before Capitalism", publishDate: date(4000), season: 7),
+            makeEpisode(title: "S7 E1: Market Failure", publishDate: date(3000), season: 7),
+            makeEpisode(title: "Season 7 Trailer: Capitalism", publishDate: date(2000), season: 7),
+            makeEpisode(title: "Bonus: An Unrelated One-Off", publishDate: date(1000)),
+        ]
+        let arcs = ArcDerivation.groupIntoArcs(episodes)
+        XCTAssertEqual(arcs.count, 1)
+        XCTAssertEqual(arcs.first?.name, "Capitalism")
+        XCTAssertEqual(arcs.first?.season, 7)
+        XCTAssertEqual(arcs.first?.episodes.count, 3, "Trailer has no S#E# lead → names the arc but isn't a member.")
+    }
+
+    func test_groupIntoArcs_seasonThemeGrammars_allResolve() {
+        // The three trailer/intro grammars Scene on Radio uses across seasons.
+        func themedArc(trailer: String, season: Int) -> Arc? {
+            ArcDerivation.groupIntoArcs([
+                makeEpisode(title: "S\(season) E2: Second", publishDate: date(3000), season: season),
+                makeEpisode(title: "S\(season) E1: First", publishDate: date(2000), season: season),
+                makeEpisode(title: trailer, publishDate: date(1000), season: season),
+            ]).first
+        }
+        XCTAssertEqual(themedArc(trailer: "Season 4 Trailer: The Land That Never Has Been Yet", season: 4)?.name,
+                       "The Land That Never Has Been Yet")
+        XCTAssertEqual(themedArc(trailer: "Scene on Radio Season 3: MEN Trailer", season: 3)?.name, "MEN")
+        XCTAssertEqual(themedArc(trailer: "Introducing Scene on Radio: The News", season: 8)?.name, "The News")
+    }
+
+    func test_groupIntoArcs_seasonEpisodeLead_noTrailer_fallsBackToSeasonLabel() {
+        let episodes = [
+            makeEpisode(title: "S5 E2: Second", publishDate: date(2000), season: 5),
+            makeEpisode(title: "S5 E1: First", publishDate: date(1000), season: 5),
+        ]
+        XCTAssertEqual(ArcDerivation.groupIntoArcs(episodes).first?.name, "Season 5")
+    }
+
+    func test_groupIntoArcs_parentheticalStem_SeeingWhite_clusters() {
+        // The arc name is inside "(Seeing White, Part N)" on each unique title;
+        // they cluster into one season-2 arc. Includes the no-comma variant.
+        let episodes = [
+            makeEpisode(title: "A Racial Cleansing in America (Seeing White Part 3)", publishDate: date(3000), season: 2),
+            makeEpisode(title: "How Race Was Made (Seeing White, Part 2)", publishDate: date(2000), season: 2),
+            makeEpisode(title: "Turning the Lens (Seeing White, Part 1)", publishDate: date(1000), season: 2),
+        ]
+        let arcs = ArcDerivation.groupIntoArcs(episodes)
+        XCTAssertEqual(arcs.count, 1)
+        XCTAssertEqual(arcs.first?.name, "Seeing White")
+        XCTAssertEqual(arcs.first?.season, 2)
+        XCTAssertEqual(arcs.first?.episodes.count, 3)
+    }
+
+    func test_groupIntoArcs_parentheticalStem_doesNotHijackBareOrCommaParts() {
+        // Guard the marker ordering: a bare "(Part N)" still clusters by its own
+        // stem, and a plain "X, Part N" still clusters by its own stem — neither
+        // is swallowed by the new inner-parenthetical marker.
+        let bareParen = [
+            makeEpisode(title: "The Earliest Englishman (Part 2)", publishDate: date(2000)),
+            makeEpisode(title: "The Earliest Englishman (Part 1)", publishDate: date(1000)),
+        ]
+        XCTAssertEqual(ArcDerivation.groupIntoArcs(bareParen).first?.name, "The Earliest Englishman")
+
+        let commaPart = [
+            makeEpisode(title: "The Valley of Death, Part 2", publishDate: date(2000)),
+            makeEpisode(title: "The Valley of Death, Part 1", publishDate: date(1000)),
+        ]
+        XCTAssertEqual(ArcDerivation.groupIntoArcs(commaPart).first?.name, "The Valley of Death")
     }
 
     func test_groupIntoArcs_unstructuredFeed_hasNoArcs() {

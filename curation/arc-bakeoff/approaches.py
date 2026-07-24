@@ -406,6 +406,11 @@ GENERIC_STEM = re.compile(r'^(season|episode|ep|part|chapter|vol(ume)?|series|bo
 R1_MARKERS = [
     re.compile(r'^(.+?)\s*\|\s*.+?\s*\|\s*(\d+)\s*$'),                                  # pipe (AHT)
     re.compile(r'^(.+?)\s*[' + DASHES + r']\s*Part\s+(' + NUMWORD + r')\b', re.I),      # - Part N/One
+    # arc name inside a trailing paren: "Turning the Lens (Seeing White, Part 1)"
+    # (Scene on Radio). Before the ", Part N" marker, which would take the unique
+    # main title as the stem. End-anchored + ≥1 char before Part → never eats a
+    # bare "(Part 1)" or a plain "X, Part N". POST-BAKEOFF (needs a gold re-score).
+    re.compile(r'^.+?\(\s*(.+?)\s*,?\s*Part\s+(' + NUMWORD + r')\s*\)\s*$', re.I),       # (Stem, Part N)
     re.compile(r'^(.+?),\s*Part\s+(' + NUMWORD + r')\b', re.I),                          # , Part N/One
     re.compile(r'^(.+?)\s*[(\[]\s*Part\s+(' + NUMWORD + r')\s*[)\]]', re.I),             # (Part N)
     re.compile(r'^(.+?)\s*,?\s*\(?\s*Pt\.?\s+(' + NUMWORD + r')\b', re.I),               # Pt N / (Pt N)
@@ -648,7 +653,7 @@ def r3_stem_part_kind(title):
     """Like r3_stem_and_part but also returns the counter KIND (pipe|part|paren|pt|hash|ep|
     chapter|volume) so guards can act on how the number was expressed."""
     t = r2_clean(title)
-    kinds = ["pipe", "part", "part", "part", "pt", "hash", "ep", "chapter", "chapter-lead"]
+    kinds = ["pipe", "part", "paren", "part", "part", "pt", "hash", "ep", "chapter", "chapter-lead"]
     for i, rx in enumerate(R1_MARKERS):
         m = rx.match(t)
         if not m:
@@ -775,24 +780,54 @@ def a2r3_2_prefix_plus(episodes):
     return _cluster_guarded(episodes, guard=True, dedup=True)
 
 
+# POST-BAKEOFF season-serial extensions (mirror EpisodeArcs.swift; need a gold re-score).
+# Leading "S7 E1: Title" (Scene on Radio): arc name absent from the title, season is the arc.
+SEASON_EPISODE_LEAD = re.compile(r'^S\s*\d+\s*E\s*\d+\b', re.I)
+# Season theme lives on the trailer/intro title; scan RAW titles (strip_noise eats "Introducing").
+SEASON_THEME_PATTERNS = [
+    re.compile(r'Season\s+\d+\s+Trailer\s*:\s*(.+)$', re.I),      # "Season 7 Trailer: Capitalism"
+    re.compile(r'Season\s+\d+\s*:\s*(.+?)\s+Trailer\s*$', re.I),  # "…Season 3: MEN Trailer"
+    re.compile(r'Introducing\b.*?:\s*(.+)$', re.I),               # "Introducing Scene on Radio: The News"
+]
+
+
+def _season_theme(titles):
+    for title in titles:
+        t = title.strip()
+        for pat in SEASON_THEME_PATTERNS:
+            m = pat.search(t)
+            if m:
+                theme = m.group(1).strip().strip('"“”‘’ ')
+                if theme:
+                    return theme
+    return None
+
+
 def a2r3_3_final(episodes):
     """Final: A2r3.2 + a SCOPED chaptered-season handler. Shows whose arcs live only in
-    `itunes:season` with `Chapter N | Title` episodes (Bone Valley) carry no arc name in the
-    title, so title-clustering misses them. Group those specific episodes (and only those) by
-    season. Tightly scoped to the `Chapter N|:` shape, so it adds none of the blanket
-    season-fallback's junk on other feeds."""
+    `itunes:season` with `Chapter N | Title` (Bone Valley) or `S7 E1: Title` (Scene on Radio)
+    episodes carry no arc name in the title, so title-clustering misses them. Group those
+    specific episodes (and only those) by season, named from the season trailer when present.
+    Tightly scoped to those two leading shapes, so it adds none of the blanket season-fallback's
+    junk on other feeds."""
     episodes = sort_newest_first(episodes)
     arcs = _cluster_guarded(episodes, guard=True, dedup=True)
     taken = {g for a in arcs for g in a["members"]}
     by_season = OrderedDict()
+    titles_by_season = OrderedDict()
     for e in episodes:
-        if e["guid"] in taken or e.get("season") is None:
+        if e.get("season") is None:
             continue
-        if CHAPTER_LEAD.match(strip_noise(e["title"])):
+        titles_by_season.setdefault(e["season"], []).append(e["title"])
+        if e["guid"] in taken:
+            continue
+        t = strip_noise(e["title"])
+        if CHAPTER_LEAD.match(t) or SEASON_EPISODE_LEAD.match(t):
             by_season.setdefault(e["season"], []).append(e)
     for s, members in by_season.items():
         if len(members) >= 2:
-            arcs.append({"name": f"Season {s}", "season": s,
+            name = _season_theme(titles_by_season.get(s, [])) or f"Season {s}"
+            arcs.append({"name": name, "season": s,
                          "members": [e["guid"] for e in members]})
     return arcs
 

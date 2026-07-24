@@ -105,6 +105,21 @@ All patterns are ICU-compatible (`NSRegularExpression`). Reference implementatio
    (two "Part 1"s) without ever dropping a distinct episode. Recall-safe.
 6. **Keep** clusters with **≥ 2** members. Preserve newest-first order.
 
+## Post-bake-off extensions (not yet re-scored)
+
+The shipped detector (`EpisodeArcs.swift`, mirrored in `a2r3_3_final`) has since gained two
+scoped additions driven by Scene on Radio, both **precision-conservative** but **not yet re-run
+against the gold set** — the scoreboard/metrics above predate them:
+
+1. **`S7 E1: Title` season lead** — routed to the scoped season pass (like `Chapter N |`), grouped
+   by `itunes:season`, named from the season trailer (`Season N Trailer: X` / `Introducing …: X`).
+2. **`(Stem, Part N)` parenthetical marker** — extracts the arc name from a trailing parenthetical
+   (`Turning the Lens (Seeing White, Part 1)`), keeping the counter-token requirement.
+
+Both are covered by `EpisodeArcsTests.swift` and showed **zero regression** on the two local kit
+feeds (AHT, Explorers). Re-run `score.py` on the frozen corpus before treating the metrics as
+current.
+
 ## Known limitations (honest)
 
 - **Untitled season arcs** (e.g. *Suave* where every episode has a unique title and only
