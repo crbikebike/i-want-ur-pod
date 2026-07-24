@@ -47,6 +47,10 @@ struct ThemeFeedScreen: View {
             overlayChrome
         }
         .background(Color.black.ignoresSafeArea())
+        // Immersive takeover: hide AppShell's floating tab bar + mini-player so
+        // this full-bleed feed (and its bottom-anchored "Dive in" button) isn't
+        // covered by the dock. Restored automatically on dismiss.
+        .hidesShellChrome()
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
         .onAppear(perform: loadIfNeeded)

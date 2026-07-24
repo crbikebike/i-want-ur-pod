@@ -75,6 +75,9 @@ struct ThemeShowDeckScreen: View {
             }
         }
         .background(palette.groupedBg.ignoresSafeArea())
+        // Immersive takeover: keep AppShell's tab bar + mini-player hidden
+        // through Tier 2 as well (the whole explore flow reads as one screen).
+        .hidesShellChrome()
         .navigationBarBackButtonHidden(true)
         .toolbar(.hidden, for: .navigationBar)
         .onAppear(perform: loadIfNeeded)

@@ -55,6 +55,12 @@ public struct AppShell: View {
     @State private var selection: AppTab = .home
     @State private var isShowingNowPlaying = false
 
+    /// Set by an immersive screen (currently the Explore-by-theme flow, via
+    /// `View.hidesShellChrome()`) to hide the floating tab bar + mini-player
+    /// while it's on top. Driven by `HidesShellChromePreferenceKey` flowing up
+    /// from the active tab's content, so it restores automatically on dismiss.
+    @State private var hidesShellChrome = false
+
     /// The tab active immediately before Search's takeover began — restored
     /// when the takeover's ✕ is tapped (E8-S1's "restores the previously
     /// active tab" criterion). Updated only on the transition *into*
@@ -88,27 +94,35 @@ public struct AppShell: View {
             // 104pt internal reserve — see `miniPlayerReservedPadding` above.
             content
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                .padding(.bottom, extraBottomReserveForMiniPlayer)
+                // No bottom reserve while the chrome is hidden — an immersive
+                // full-bleed screen should reach the physical edge.
+                .padding(.bottom, hidesShellChrome ? 0 : extraBottomReserveForMiniPlayer)
 
-            VStack(spacing: Self.miniPlayerToTabBarSpacing) {
-                if isMiniPlayerVisible {
-                    MiniPlayer { isShowingNowPlaying = true }
-                        .padding(.horizontal, 12)
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
+            if !hidesShellChrome {
+                VStack(spacing: Self.miniPlayerToTabBarSpacing) {
+                    if isMiniPlayerVisible {
+                        MiniPlayer { isShowingNowPlaying = true }
+                            .padding(.horizontal, 12)
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                    }
+
+                    LiquidGlassTabBar(
+                        selection: tabSelectionBinding,
+                        searchQuery: searchQueryBinding,
+                        onCancelSearch: { selection = previousTab },
+                        onSubmitSearch: { searchViewModel?.submit() }
+                    )
                 }
-
-                LiquidGlassTabBar(
-                    selection: tabSelectionBinding,
-                    searchQuery: searchQueryBinding,
-                    onCancelSearch: { selection = previousTab },
-                    onSubmitSearch: { searchViewModel?.submit() }
-                )
+                .padding(.bottom, Self.tabBarBottomInset)
+                .animation(.default, value: isMiniPlayerVisible)
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                // Deliberately NOT `.ignoresSafeArea(.keyboard)` — the takeover
+                // field must rise with the keyboard (E8-S1's "the takeover field
+                // rises to sit just above the keyboard when focused").
             }
-            .padding(.bottom, Self.tabBarBottomInset)
-            .animation(.default, value: isMiniPlayerVisible)
-            // Deliberately NOT `.ignoresSafeArea(.keyboard)` — the takeover
-            // field must rise with the keyboard (E8-S1's "the takeover field
-            // rises to sit just above the keyboard when focused").
+        }
+        .onPreferenceChange(HidesShellChromePreferenceKey.self) { newValue in
+            withAnimation(.easeInOut(duration: 0.25)) { hidesShellChrome = newValue }
         }
         .sheet(isPresented: $isShowingNowPlaying) {
             NowPlayingSheet()
@@ -183,6 +197,29 @@ public struct AppShell: View {
                 Color.clear
             }
         }
+    }
+}
+
+// MARK: - Shell chrome hiding
+
+/// Flows up from an immersive screen to `AppShell`, asking it to hide the
+/// floating tab bar + mini-player. `reduce` ORs contributions so the chrome
+/// stays hidden as long as *any* on-screen view requests it (e.g. the whole
+/// two-tier Explore-by-theme flow), and reappears once none do.
+struct HidesShellChromePreferenceKey: PreferenceKey {
+    static let defaultValue = false
+    static func reduce(value: inout Bool, nextValue: () -> Bool) {
+        value = value || nextValue()
+    }
+}
+
+extension View {
+    /// Request that `AppShell` hide its floating tab bar + mini-player while
+    /// this view is on screen — for full-bleed, immersive takeovers whose own
+    /// content would otherwise sit under the dock. Restored automatically when
+    /// the view leaves the hierarchy.
+    func hidesShellChrome() -> some View {
+        preference(key: HidesShellChromePreferenceKey.self, value: true)
     }
 }
 
