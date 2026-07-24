@@ -27,3 +27,17 @@ project.personal.yml
 
 # xcodebuild derived data (local verification)
 /build/
+
+# --- arc-bakeoff / catalog: raw fetched corpus (regenerable via scripts/fetch-atlas-feeds.py)
+curation/feeds/
+curation/catalog-build.log
+curation/arc-bakeoff/fetch.log
+**/__pycache__/
+curation/catalog/_itunes_cache.json
+curation/arc-bakeoff/gold_feeds/
+curation/arc-bakeoff/scoreboard.json
+curation/arc-bakeoff/diagnosis-*.json
+curation/arc-bakeoff/memprec-*.json
+curation/arc-bakeoff/verdicts-*.json
+curation/arc-bakeoff/_adj_*.json
+curation/arc-bakeoff/gold_manifest.json

@@ -1,0 +1,489 @@
+<title>Story-Arc Regex Bake-Off — Recap</title>
+<style>
+  :root{
+    --ink:#111219; --panel:#191b25; --panel-2:#20222f; --line:rgba(236,231,218,.10);
+    --text:#ece7da; --muted:#8e90a0; --dim:#61637a;
+    --teal:#54d6c4; --coral:#e5675c; --amber:#e8b04b;
+    --gold:#e8b04b; --gold-soft:rgba(232,176,75,.14);
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,"JetBrains Mono","Cascadia Code",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --maxw:920px;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --ink:#f3f1ea; --panel:#fbfaf5; --panel-2:#f5f3ea; --line:rgba(20,20,30,.12);
+      --text:#1c1d26; --muted:#5b5d70; --dim:#8b8da0;
+      --teal:#178c7e; --coral:#c0453a; --amber:#a9781c; --gold:#a9781c; --gold-soft:rgba(169,120,28,.12);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#111219; --panel:#191b25; --panel-2:#20222f; --line:rgba(236,231,218,.10);
+    --text:#ece7da; --muted:#8e90a0; --dim:#61637a;
+    --teal:#54d6c4; --coral:#e5675c; --amber:#e8b04b; --gold:#e8b04b; --gold-soft:rgba(232,176,75,.14);
+  }
+  :root[data-theme="light"]{
+    --ink:#f3f1ea; --panel:#fbfaf5; --panel-2:#f5f3ea; --line:rgba(20,20,30,.12);
+    --text:#1c1d26; --muted:#5b5d70; --dim:#8b8da0;
+    --teal:#178c7e; --coral:#c0453a; --amber:#a9781c; --gold:#a9781c; --gold-soft:rgba(169,120,28,.12);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:52px 0;border-top:1px solid var(--line)}
+  h1,h2,h3{text-wrap:balance;margin:0}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gold);margin:0 0 14px}
+  .lede{color:var(--muted);max-width:62ch}
+  .mono{font-family:var(--mono)}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;border-top:none;padding-top:60px}
+  .hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.5;z-index:0}
+  .hero .wrap{position:relative;z-index:1}
+  .hero h1{font-size:clamp(34px,6.4vw,64px);font-weight:800;letter-spacing:-.02em;line-height:1.02}
+  .hero h1 em{font-style:normal;color:var(--gold)}
+  .hero .sub{margin-top:18px;font-size:18px;color:var(--muted);max-width:58ch}
+  .verdict{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;
+    padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:14px}
+  .verdict .stamp{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink);background:var(--gold);padding:6px 12px;border-radius:6px;font-weight:700}
+  .verdict .who{font-family:var(--mono);font-size:20px;font-weight:700}
+  .verdict .vs{color:var(--dim);font-size:14px}
+
+  .meters{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+  .meter{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px}
+  .meter .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .meter .v{font-size:40px;font-weight:800;letter-spacing:-.02em;margin-top:4px;line-height:1}
+  .meter .base{font-family:var(--mono);font-size:12px;color:var(--dim);margin-top:8px}
+  .meter .track{height:6px;border-radius:3px;background:var(--panel-2);margin-top:12px;overflow:hidden}
+  .meter .fill{height:100%;width:0;border-radius:3px;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+  .t-teal{color:var(--teal)} .b-teal{background:var(--teal)}
+  .t-coral{color:var(--coral)} .b-coral{background:var(--coral)}
+  .t-amber{color:var(--amber)} .b-amber{background:var(--amber)}
+
+  /* Tale of the tape */
+  .tape{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .tape .cell{background:var(--panel);padding:20px 18px}
+  .tape .n{font-size:30px;font-weight:800;letter-spacing:-.02em}
+  .tape .l{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);margin-top:6px}
+  .tape .cell small{display:block;color:var(--dim);font-size:12px;margin-top:6px;font-family:var(--sans)}
+
+  h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.01em}
+  h2 .num{font-family:var(--mono);color:var(--gold);font-size:.7em;margin-right:12px;font-weight:700}
+  .sec-lede{color:var(--muted);margin:12px 0 28px;max-width:62ch}
+
+  /* Contender grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .card h3{font-family:var(--mono);font-size:15px;font-weight:700}
+  .card p{color:var(--muted);font-size:13.5px;margin:8px 0 0}
+  .card .tag{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+
+  /* Scoreboard */
+  .board{width:100%;border-collapse:collapse;font-size:14px}
+  .board th,.board td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+  .board th{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .board td.name{font-family:var(--mono);font-weight:600;white-space:nowrap}
+  .board tr.win td{background:var(--gold-soft)}
+  .board tr.win td.name{color:var(--gold)}
+  .board tr.base td{color:var(--muted)}
+  .bar{display:flex;align-items:center;gap:9px;min-width:150px}
+  .bar .rail{flex:1;height:7px;border-radius:4px;background:var(--panel-2);overflow:hidden}
+  .bar .seg{height:100%;border-radius:4px}
+  .bar .fig{font-family:var(--mono);font-size:12.5px;width:44px;text-align:right}
+  .board-scroll{overflow-x:auto}
+  .rank{font-family:var(--mono);color:var(--dim);width:24px}
+  .medal{color:var(--gold)}
+
+  /* Rounds tape */
+  .rounds{display:flex;flex-direction:column;gap:0}
+  .round{display:grid;grid-template-columns:88px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .round:last-child{border-bottom:none}
+  .round .rid{font-family:var(--mono);font-weight:800;font-size:15px;color:var(--gold);padding-top:2px}
+  .round .rid small{display:block;color:var(--dim);font-weight:500;font-size:11px;letter-spacing:.08em;margin-top:4px}
+  .round h3{font-size:17px;font-weight:700;margin-bottom:4px}
+  .round .fix{color:var(--muted);font-size:14px;max-width:64ch}
+  .round .bug{margin-top:10px;font-family:var(--mono);font-size:12.5px;background:var(--panel);
+    border:1px solid var(--line);border-left:3px solid var(--coral);border-radius:8px;padding:10px 12px;color:var(--text)}
+  .round .bug b{color:var(--coral)}
+  .deltas{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
+  .delta{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  .delta b{color:var(--text);font-weight:700}
+  .delta .up{color:var(--teal)} .delta .down{color:var(--teal)}
+
+  pre{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;
+    overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--text)}
+  pre .c{color:var(--dim)} pre .k{color:var(--gold)}
+  ul.lim{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:12px}
+  ul.lim li{padding-left:22px;position:relative;color:var(--muted);max-width:64ch}
+  ul.lim li::before{content:"›";position:absolute;left:4px;color:var(--gold);font-family:var(--mono)}
+  ul.lim li b{color:var(--text);font-weight:600}
+  /* Junk-reduction loop */
+  .trend{display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-items:stretch;
+    background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:24px}
+  .trend .step{background:var(--panel);padding:22px 18px;position:relative}
+  .trend .step .big{font-size:34px;font-weight:800;letter-spacing:-.02em;font-family:var(--mono)}
+  .trend .step.a .big{color:var(--coral)} .trend .step.b .big{color:var(--amber)} .trend .step.c .big{color:var(--teal)}
+  .trend .step .lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);margin-top:6px}
+  .trend .step small{display:block;color:var(--dim);font-size:12px;margin-top:8px;line-height:1.45}
+  .trend .step:not(:first-child)::before{content:"→";position:absolute;left:-11px;top:26px;color:var(--gold);
+    font-family:var(--mono);background:var(--ink);width:22px;text-align:center;z-index:2}
+  .split{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .split .b{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .split .b .num{font-size:30px;font-weight:800;font-family:var(--mono)}
+  .split .b.real{border-top:3px solid var(--teal)} .split .b.guard{border-top:3px solid var(--amber)}
+  .split .b.floor{border-top:3px solid var(--coral)}
+  .split .b h3{font-size:14px;margin:8px 0 4px;font-weight:700}
+  .split .b p{color:var(--muted);font-size:13px;margin:0}
+  .floorcard{margin-top:20px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--coral);
+    border-radius:10px;padding:16px 18px}
+  .floorcard h3{font-size:15px;font-weight:700;margin-bottom:6px}
+  .floorcard p{color:var(--muted);font-size:13.5px;margin:0;max-width:66ch}
+  .floorcard code{font-family:var(--mono);color:var(--text);font-size:12.5px}
+  @media (max-width:560px){.trend,.split{grid-template-columns:1fr}
+    .trend .step:not(:first-child)::before{content:"↓";left:20px;top:-11px}}
+  footer{padding:40px 0 60px;color:var(--dim);font-family:var(--mono);font-size:12px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  @media (max-width:560px){
+    .meters{grid-template-columns:1fr}
+    .round{grid-template-columns:1fr;gap:8px}
+  }
+  @media (prefers-reduced-motion:reduce){.meter .fill{transition:none}}
+</style>
+
+<header class="hero">
+  <canvas id="wave" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">i want ur pod · engineering recap</p>
+    <h1>The Story-Arc<br>Regex <em>Bake-Off</em></h1>
+    <p class="sub">Can pure regex — no LLM, cheap on an iPhone — find the multi-part story arcs
+      hiding inside a podcast feed? Six approaches entered. One got refined over three rounds.
+      Scored on <b>real feeds</b>, judged <b>precision-first</b>.</p>
+
+    <div class="verdict">
+      <span class="stamp">Winner</span>
+      <span class="who t-amber">A2r3.2 · prefix + counter grammar + guard + re-release dedup</span>
+      <span class="vs">99.8% precision · junk 0.28% · driven there over three loops</span>
+    </div>
+
+    <div class="meters" id="meters">
+      <div class="meter">
+        <div class="k">Membership precision</div>
+        <div class="v t-teal" data-count="99.8">99.8%</div>
+        <div class="base">baseline 40.6% · was 96.3% · higher is better</div>
+        <div class="track"><div class="fill b-teal" data-w="99.8"></div></div>
+      </div>
+      <div class="meter">
+        <div class="k">Junk-arc rate</div>
+        <div class="v t-coral" data-count="0.28">0.28%</div>
+        <div class="base">baseline 23.4% · was 2.5% · lower is better</div>
+        <div class="track"><div class="fill b-coral" data-w="0.28"></div></div>
+      </div>
+      <div class="meter">
+        <div class="k">Arc recall</div>
+        <div class="v t-amber" data-count="61.2">61.2%</div>
+        <div class="base">baseline 46.1% · higher is better</div>
+        <div class="track"><div class="fill b-amber" data-w="61.2"></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Tale of the tape</p>
+    <h2>What the contest was fought on</h2>
+    <p class="sec-lede">Feed URLs aren't stored in the atlas, so we resolved them once through the
+      iTunes Search API, pulled the RSS, and cached it. Ground truth came from Sonnet — two
+      independent labelers plus a reconciler per feed — never shown any regex output.</p>
+    <div class="tape">
+      <div class="cell"><div class="n">315</div><div class="l">Feeds fetched</div><small>of 375; 60 paywalled/exclusive</small></div>
+      <div class="cell"><div class="n">50</div><div class="l">Gold feeds</div><small>stratified over 8 naming styles</small></div>
+      <div class="cell"><div class="n">583</div><div class="l">Arcs labeled</div><small>across 45 feeds with arcs</small></div>
+      <div class="cell"><div class="n">2,002</div><div class="l">Episodes judged</div><small>assigned to a true arc</small></div>
+      <div class="cell"><div class="n">150</div><div class="l">Sonnet agents</div><small>labelers + reconcilers</small></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The field</p>
+    <h2><span class="num">6</span>Who entered</h2>
+    <p class="sec-lede">One title per naming theory. The scorer doesn't care how clever a pattern
+      looks — only whether the arcs it emits are real.</p>
+    <div class="grid" id="field"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Final scoreboard · gold set</p>
+    <h2>Ranked, precision-first</h2>
+    <p class="sec-lede">Sorted by membership precision, then junk rate. The shipping baseline lands
+      near the bottom — its season-fallback invents a "Season N" card for roughly one in four arcs.</p>
+    <div class="board-scroll">
+      <table class="board" id="board">
+        <thead><tr>
+          <th class="rank"></th><th>Approach</th>
+          <th>Precision <span class="t-teal">▲</span></th>
+          <th>Junk <span class="t-coral">▼</span></th>
+          <th>Recall <span class="t-amber">▲</span></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The refinement rounds</p>
+    <h2>How the winner got sharp</h2>
+    <p class="sec-lede">Prefix-clustering won the bake-off at 85% precision. Then three rounds — each
+      one a real bug hunted down on real titles. Precision stayed above 96% the whole way while
+      recall climbed from 44% to 61%.</p>
+    <div class="rounds" id="rounds"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The junk-reduction loop · 2 rounds</p>
+    <h2>Chasing junk below 0.5%</h2>
+    <p class="sec-lede">A bounded adjudication loop (max 5 rounds, exited at 2). Each round: find the
+      winner's junk arcs, have <b>two blind Sonnet judges + a reconciler</b> rule each one REAL
+      (a real arc the labelers missed → fix the gold set) or JUNK (→ a structural detector guard).
+      Precision and recall were protected the whole way — a guard was kept only if it didn't cost recall.</p>
+
+    <div class="trend">
+      <div class="step a"><div class="big">2.50%</div><div class="lbl">Start · A2r3</div>
+        <small>9 junk arcs vs the original gold set.</small></div>
+      <div class="step b"><div class="big">0.50%</div><div class="lbl">Gold corrected</div>
+        <small>7 of 9 were <b>real arcs the labelers missed</b>, restored to gold after blind dual-Sonnet review.</small></div>
+      <div class="step c"><div class="big">0.28%</div><div class="lbl">+ anthology guard</div>
+        <small>One true anthology removed by a recall-safe rule. One arc is irreducible.</small></div>
+    </div>
+
+    <div class="split">
+      <div class="b real"><div class="num t-teal">7</div><h3>Real arcs, restored to gold</h3>
+        <p>AHT <em>First Ladies</em>, <em>Daring Prison Escapes</em>, <em>Presidential Assassinations</em>,
+          <em>Great American Authors</em>; <em>Drug Cartels</em>; <em>Kouri Richins</em>; <em>Essential Mitch</em>.
+          Counted as junk only because the labelers had missed them — a measurement fix, every edit logged.</p></div>
+      <div class="b guard"><div class="num t-amber">1</div><h3>True anthology, guarded</h3>
+        <p><em>Mini-Stories: Volume 19–22</em> — an open-ended anthology. Dropped by a structural rule
+          (a <span class="mono">Volume N</span> counter with high N is never a bounded arc). No recall cost.</p></div>
+      <div class="b floor"><div class="num t-coral">1</div><h3>Irreducible floor</h3>
+        <p><em>Diss and Tell</em> — a recurring segment. Structurally identical to a real 2-part arc,
+          so regex can't remove it without killing real ones. This is the floor.</p></div>
+    </div>
+
+    <div class="floorcard">
+      <h3>The same one arc is the floor for both junk and precision</h3>
+      <p>A guard that dropped “big pipe number” clusters would have killed <b>18 real arcs</b> in
+        <em>Even the Rich</em>, which numbers every arc by episode number
+        (<code>Taylor Swift: Fearless | … | 212</code>). A two-part story and a two-entry recurring
+        segment are the <b>same title shape</b> — separating them needs meaning, not pattern. That
+        single unremovable arc (<em>Diss and Tell</em>, 2 episodes) caps junk at 0.28% <em>and</em>
+        caps membership precision at <b>99.84%</b> on this gold set. Going lower on either would
+        require reading episode descriptions with an LLM, which the on-device, no-LLM constraint
+        rules out — so both loops stopped, honestly, at one irreducible arc.</p>
+    </div>
+
+    <p class="eyebrow" style="margin-top:40px">Membership precision · 98.9 → 99.8%</p>
+    <h2>The last 0.9% was duplicate episodes</h2>
+    <p class="sec-lede">Of 1,227 episodes placed into arcs, only 13 were misplaced — and 11 were the
+      <b>same arc re-aired</b>. Feeds that re-run a series (<code>… Redux</code>, <code>ENCORE: …</code>,
+      <code>(Archive Episode)</code>) made the detector emit one bloated arc with two of every part.</p>
+    <div class="split">
+      <div class="b real"><div class="num t-teal">11</div><h3>Re-release duplicates, collapsed</h3>
+        <p><em>Lions, Coyotes &amp; Bears</em> Parts 1–4 <em>Redux</em>; <em>Christina Pipkin</em>
+          archive re-airing; two <em>ENCORE</em> Gwyneth Paltrow parts. A structural dedup drops a
+          re-release only when a non-re-release sibling covers that part — never a distinct episode.</p></div>
+      <div class="b guard"><div class="num t-teal">0</div><h3>Recall / gold cost</h3>
+        <p>Pure detector fix. No gold edits, no recall loss — it even de-duplicates the shelf so a
+          listener never sees “Part 1” twice.</p></div>
+      <div class="b floor"><div class="num t-coral">2</div><h3>Irreducible</h3>
+        <p>The two <em>Diss and Tell</em> episodes — the same recurring segment that is the junk floor.
+          They cap precision at 99.84%.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Port target · EpisodeArcs.swift</p>
+    <h2>The winning recipe</h2>
+    <p class="sec-lede">All ICU-compatible, so it drops into <span class="mono">NSRegularExpression</span>.
+      Reference implementation lives in <span class="mono">curation/arc-bakeoff/approaches.py</span>.</p>
+<pre><span class="c"># 1 · clean the title</span>
+strip noise prefix  <span class="k">Encore|Fan Favorite|Announcing|Update|Bonus|Replay|Revisited|…</span>
+strip episode id    <span class="k">\s*\|\s*#\d+\s*$</span>
+strip trailing []   <span class="c">only when it holds no counter — keep "(Part 1)", drop "[Repetición]"</span>
+
+<span class="c"># 2 · extract (stem, part) — first match wins; part = digits | roman | one..twenty</span>
+pipe        <span class="k">^(.+?)\s*\|\s*.+?\s*\|\s*(\d+)$</span>          <span class="c"># American History Tellers</span>
+part/paren  <span class="k">- Part N   , Part N   (Part N)   (Pt N)</span>       <span class="c"># Explorers, The Constant</span>
+hash / ep   <span class="k">#N     - Ep N     Chapter N</span>                 <span class="c"># 99% Invisible, Serial</span>
+general     <span class="k">^(.+?)[<dashes>\s:,.|]+Part[e]?\s+(<num>)\b</span>   <span class="c"># dashes FIRST = literal!</span>
+general     <span class="k">Vol(ume) N</span>
+reject stem <span class="k">^(season|episode|ep|part|chapter|vol|series|book|no)\b</span>  or  &lt; 3 chars
+
+<span class="c"># 3 · cluster</span>
+group by normalized stem → prefix-merge (fold long stem into shorter prefix)
+             → split a cluster across distinct itunes:season → keep groups of ≥ 2
+
+<span class="c"># 4 · anthology guard (recall-safe)</span>
+drop cluster if counter kind is <span class="k">Volume</span> and its smallest N ≥ 3   <span class="c"># open anthology, not a bounded arc</span>
+<span class="c"># do NOT drop on big pipe/episode numbers — Even the Rich numbers real arcs that way</span>
+
+<span class="c"># 5 · re-release dedup (recall-safe)</span>
+drop a <span class="k">Encore|Redux|Archive|Rebroadcast|Replay|…</span> episode <span class="c"># only if a non-re-release sibling</span>
+             <span class="c"># already covers that part number — never drops a distinct episode</span></pre>
+    <p class="eyebrow" style="margin-top:34px">Known limits — kept honest</p>
+    <ul class="lim">
+      <li><b>Untitled season arcs</b> (e.g. <span class="mono">Suave</span>, where only
+        <span class="mono">itunes:season</span> ties a season into one story) aren't caught —
+        the season-grouping that would find them measurably hurts precision, so it's out on purpose.</li>
+      <li><b>Anthology series</b> that look numbered but aren't narratives
+        (<span class="mono">Mini-Stories: Volume N</span>) are the main residual junk.</li>
+      <li><b>Recall is a floor, not a ceiling.</b> 60.7% at a precision-first setting; loosening the
+        counter requirement trades precision below the baseline-beating bar.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Story-arc regex bake-off · 315 feeds · 50 gold · precision-first</span>
+    <span>curation/arc-bakeoff/ · A2r3 → EpisodeArcs.swift</span>
+  </div>
+</footer>
+
+<script>
+const REDUCE = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---- data ---- */
+const field = [
+  {t:"baseline",n:"Ships today",d:"Exact-string arc names + an itunes:season dominance fallback. The bar everything has to clear."},
+  {t:"A1",n:"Extended library",d:"The baseline plus more anchored shapes — Season N, Series N, Book N, em-dash variants."},
+  {t:"A2",n:"Prefix clustering",d:"Discover arc names dynamically from shared title stems that carry a counter token. Bake-off winner."},
+  {t:"A3",n:"Structured-first",d:"Group by itunes:season and episodeType, recover the name from title dominance."},
+  {t:"A4",n:"Delimiter parser",d:"One tokenizer for the [name][delimiter][counter] shape across | - : ( — . Broad, but greedy."},
+  {t:"A5",n:"Hybrid cascade",d:"Anchors → season signal → prefix fallback, stopping at the first confident hit."},
+];
+const board = [
+  {name:"A2r3.2 · + re-release dedup",p:99.8,j:0.28,r:61.2,win:true},
+  {name:"A2r3.1 · + anthology guard",p:98.9,j:0.28,r:61.2},
+  {name:"A2r3 · prefix + grammar",p:98.6,j:0.55,r:61.2},
+  {name:"A2r2 · round 2",p:99.2,j:0.35,r:48.6},
+  {name:"A2r1 · round 1",p:99.8,j:0.38,r:44.6},
+  {name:"A2 · prefix clustering",p:87.6,j:4.1,r:47.5},
+  {name:"A4 · delimiter parser",p:75.6,j:26.7,r:11.2},
+  {name:"A3 · structured-first",p:45.1,j:19.7,r:46.4},
+  {name:"A5 · hybrid cascade",p:41.9,j:22.6,r:51.7},
+  {name:"baseline · ships today",p:40.6,j:23.4,r:46.1,base:true},
+  {name:"A1 · extended library",p:40.6,j:23.6,r:46.1},
+];
+// note: scores are vs the corrected gold set (590 arcs). The junk-reduction loop
+// restored 7 real arcs the labelers had missed, which lifted every approach's precision.
+const rounds = [
+  {id:"R0",tag:"bake-off",h:"Prefix clustering takes the field",
+   fix:"Cluster episodes that share a real title stem and carry a counter token — nothing else even comes close on junk rate.",
+   bug:null, m:[85.2,6.2,47.0]},
+  {id:"R1",tag:"round 1",h:"Word-numbers, #N, and Pt N",
+   fix:"Taught the counter grammar to read “Part One”, “#6”, “Pt 1”; strip “| #457” episode ids; reject generic “Season N” stems; split arcs across seasons.",
+   bug:"The episode-id stripper also ate American History Tellers' <b>| 5</b> pipe counter — every pipe feed dropped to zero arcs. Fix: require the <b>#</b>.",
+   m:[96.7,3.0,43.9]},
+  {id:"R2",tag:"round 2",h:"Rescue the parenthetical counters",
+   fix:"Added a general separator-agnostic Part/Parte marker for colon- and space-separated titles.",
+   bug:"The trailing-bracket cleaner was deleting <b>(Part 1)</b> / <b>(Pt 1)</b> before any marker ran — a whole show (The Constant) went uncaught. Fix: only strip a bracket with no counter inside.",
+   m:[96.4,2.8,48.0]},
+  {id:"R3",tag:"round 3",h:"The character-class trap",
+   fix:"Added the | separator and Volume N. Recall jumped 13 points in one commit.",
+   bug:"Dash chars sat <b>mid</b>-class, so the ASCII hyphen became a <b>range operator</b> that swallowed letters — “Ted Bundy: Part 1” collapsed to stem “T” and failed the length guard. Every space/colon “Part N” silently died. Fix: dash first = literal.",
+   m:[96.3,2.5,60.7]},
+];
+
+/* ---- render field ---- */
+document.getElementById("field").innerHTML = field.map(c=>`
+  <div class="card"><span class="tag">${c.t}</span>
+    <h3>${c.n}</h3><p>${c.d}</p></div>`).join("");
+
+/* ---- render board ---- */
+const seg=(v,cls,max=100)=>`<div class="bar"><div class="rail">
+  <div class="seg ${cls}" style="width:${Math.max(2,v/max*100)}%"></div></div>
+  <span class="fig">${v.toFixed(1)}</span></div>`;
+document.querySelector("#board tbody").innerHTML = board.map((row,i)=>{
+  const cls = row.win?"win":row.base?"base":"";
+  const rank = row.win?'<span class="medal">1</span>':(row.base?"·":i+1);
+  return `<tr class="${cls}">
+    <td class="rank">${rank}</td>
+    <td class="name">${row.name}</td>
+    <td>${seg(row.p,"b-teal")}</td>
+    <td>${seg(row.j,"b-coral",30)}</td>
+    <td>${seg(row.r,"b-amber")}</td></tr>`;
+}).join("");
+
+/* ---- render rounds ---- */
+document.getElementById("rounds").innerHTML = rounds.map(rd=>`
+  <div class="round">
+    <div class="rid">${rd.id}<small>${rd.tag}</small></div>
+    <div>
+      <h3>${rd.h}</h3>
+      <p class="fix">${rd.fix}</p>
+      ${rd.bug?`<div class="bug"><b>bug&nbsp;squashed →</b> ${rd.bug}</div>`:""}
+      <div class="deltas">
+        <span class="delta">precision <b class="t-teal">${rd.m[0].toFixed(1)}%</b></span>
+        <span class="delta">junk <b class="t-coral">${rd.m[1].toFixed(1)}%</b></span>
+        <span class="delta">recall <b class="t-amber">${rd.m[2].toFixed(1)}%</b></span>
+      </div>
+    </div>
+  </div>`).join("");
+
+/* ---- meter fills + count-up on load ---- */
+function animateMeters(){
+  document.querySelectorAll("#meters .fill").forEach(f=>{
+    const w=+f.dataset.w; f.style.width=(w>30?w:w/30*100)+"%";
+  });
+  if(REDUCE) return;
+  document.querySelectorAll("#meters .v").forEach(el=>{
+    const end=+el.dataset.count, suf="%"; let t0=null;
+    const step=ts=>{ if(!t0)t0=ts; const p=Math.min((ts-t0)/900,1);
+      const val=(end*(1-Math.pow(1-p,3))).toFixed(1);
+      el.textContent=val+suf; if(p<1)requestAnimationFrame(step); };
+    el.textContent="0.0"+suf; requestAnimationFrame(step);
+  });
+}
+requestAnimationFrame(()=>setTimeout(animateMeters,120));
+
+/* ---- ambient waveform ---- */
+(function(){
+  const cv=document.getElementById("wave"); if(!cv) return;
+  const ctx=cv.getContext("2d"); let W,H,dpr;
+  function size(){ dpr=Math.min(devicePixelRatio||1,2);
+    W=cv.clientWidth; H=cv.clientHeight; cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);}
+  size(); addEventListener("resize",size);
+  const gold=getComputedStyle(document.documentElement).getPropertyValue("--gold").trim()||"#e8b04b";
+  const bars=90; let t=0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const bw=W/bars, mid=H*0.62;
+    for(let i=0;i<bars;i++){
+      const x=i*bw+bw*0.5;
+      const seed=Math.sin(i*0.7+t)*0.5+Math.sin(i*0.23-t*0.7)*0.5;
+      const amp=(0.12+Math.abs(seed)*0.5)*H*0.42;
+      const a=0.10+Math.abs(seed)*0.16;
+      ctx.fillStyle=gold; ctx.globalAlpha=a;
+      ctx.fillRect(x-bw*0.16, mid-amp, bw*0.32, amp*2);
+    }
+    ctx.globalAlpha=1;
+  }
+  if(REDUCE){ draw(); return; }
+  (function loop(){ t+=0.018; draw(); requestAnimationFrame(loop); })();
+})();
+</script>

@@ -1,6 +1,7 @@
-// Tests for EpisodeArcs — story-arc derivation from episode-title structure.
-// Mirrors scripts/fetch-podcast-episodes.py's `derive_arc`; see
-// docs/design/direction.md §11.
+// Tests for EpisodeArcs — the "A2r3.3" story-arc detector (prefix-clustering +
+// counter-token grammar + re-release dedup + scoped chaptered-season handler).
+// Cases are drawn from the real corpus the bake-off validated against; the
+// Python twin is curation/arc-bakeoff/approaches.py `a2r3_3_final`.
 import XCTest
 @testable import PodcastModels
 
@@ -9,426 +10,225 @@ final class EpisodeArcsTests: XCTestCase {
     // MARK: - derive(fromTitle:)
 
     func test_derive_pipeStyle_AHT() {
-        let result = ArcDerivation.derive(fromTitle: "American Revolution | A Devil of a Whipping | 5")
-        XCTAssertEqual(result.arcName, "American Revolution")
-        XCTAssertEqual(result.displayTitle, "A Devil of a Whipping")
-        XCTAssertEqual(result.part, 5)
+        let r = ArcDerivation.derive(fromTitle: "American Revolution | A Devil of a Whipping | 5")
+        XCTAssertEqual(r.arcName, "American Revolution")
+        XCTAssertEqual(r.displayTitle, "A Devil of a Whipping")
+        XCTAssertEqual(r.part, 5)
     }
 
-    func test_derive_partStyle_Explorers() {
-        let result = ArcDerivation.derive(fromTitle: "Magellan - Part 4 - The Strait")
-        XCTAssertEqual(result.arcName, "Magellan")
-        XCTAssertEqual(result.displayTitle, "The Strait")
-        XCTAssertEqual(result.part, 4)
+    func test_derive_partStyle_withSubtitle_Explorers() {
+        let r = ArcDerivation.derive(fromTitle: "Magellan - Part 4 - The Strait")
+        XCTAssertEqual(r.arcName, "Magellan")
+        XCTAssertEqual(r.displayTitle, "The Strait")
+        XCTAssertEqual(r.part, 4)
     }
 
     func test_derive_partStyle_withoutSubtitle_fallsBackToPartLabel() {
-        let result = ArcDerivation.derive(fromTitle: "Magellan - Part 4")
-        XCTAssertEqual(result.arcName, "Magellan")
-        XCTAssertEqual(result.displayTitle, "Part 4")
-        XCTAssertEqual(result.part, 4)
+        let r = ArcDerivation.derive(fromTitle: "Magellan - Part 4")
+        XCTAssertEqual(r.arcName, "Magellan")
+        XCTAssertEqual(r.displayTitle, "Part 4")
+        XCTAssertEqual(r.part, 4)
     }
 
-    func test_derive_partStyle_romanNumeral_normalizesToArabic() {
-        // Bone Valley's "Kevin is Next" bonus mixes numeral styles across its
-        // two parts ("Part I" and "Part 2"). A Roman-numeral part must parse
-        // like its Arabic sibling so the pair renders consistently and forms
-        // one arc — displayTitle normalizes to the Arabic "Part 1".
-        let result = ArcDerivation.derive(fromTitle: "Kevin is Next - Part I")
-        XCTAssertEqual(result.arcName, "Kevin is Next")
-        XCTAssertEqual(result.displayTitle, "Part 1")
-        XCTAssertEqual(result.part, 1)
+    func test_derive_romanNumeral_parsesLikeArabic() {
+        let r = ArcDerivation.derive(fromTitle: "Kevin is Next - Part I")
+        XCTAssertEqual(r.arcName, "Kevin is Next")
+        XCTAssertEqual(r.part, 1)
     }
 
-    func test_derive_partStyle_nonCanonicalRomanToken_isNotAnArc() {
-        // "MILD" is all Roman-numeral letters but not a canonical numeral —
-        // the strict validator rejects it, so "Part MILD" must NOT be read as
-        // a part number and the title stays a plain single.
-        let result = ArcDerivation.derive(fromTitle: "Sound Lab - Part MILD")
-        XCTAssertNil(result.arcName)
-        XCTAssertEqual(result.displayTitle, "Sound Lab - Part MILD")
-        XCTAssertNil(result.part)
+    func test_derive_nonCanonicalRomanToken_isNotAnArc() {
+        // "MILD" is Roman-letters but not a canonical numeral — rejected.
+        let r = ArcDerivation.derive(fromTitle: "Sound Lab - Part MILD")
+        XCTAssertNil(r.arcName)
+        XCTAssertEqual(r.displayTitle, "Sound Lab - Part MILD")
+        XCTAssertNil(r.part)
     }
 
-    func test_derive_stripsNoisePrefix_thenParsesPipeStyle() {
-        let result = ArcDerivation.derive(fromTitle: "Encore: X | Y | 2")
-        XCTAssertEqual(result.arcName, "X")
-        XCTAssertEqual(result.displayTitle, "Y")
-        XCTAssertEqual(result.part, 2)
+    func test_derive_wordNumberPart() {
+        // The Constant: "…, Part One".
+        let r = ArcDerivation.derive(fromTitle: "The Valley of Death, Part One")
+        XCTAssertEqual(r.arcName, "The Valley of Death")
+        XCTAssertEqual(r.part, 1)
     }
 
-    func test_derive_noisePrefix_isCaseInsensitiveAndColonOptional() {
-        // Only the leading prefix is stripped (single, anchored match) —
-        // "New Season" here is left as part of the remaining "Arc - Part N"
-        // structure, not stripped again.
-        let result = ArcDerivation.derive(fromTitle: "fan favorite New Season - Part 1 - Kickoff")
-        XCTAssertEqual(result.arcName, "New Season")
-        XCTAssertEqual(result.displayTitle, "Kickoff")
-        XCTAssertEqual(result.part, 1)
+    func test_derive_hashCounter_99pi() {
+        let r = ArcDerivation.derive(fromTitle: "100 Objects #1: The Century Safe")
+        XCTAssertEqual(r.arcName, "100 Objects")
+        XCTAssertEqual(r.displayTitle, "The Century Safe")
+        XCTAssertEqual(r.part, 1)
+    }
+
+    func test_derive_colonSeparatedPart_stripsTrailingEpisodeId() {
+        // redhanded: "<arc> Part Two: <subtitle> | #407" — the "| #407" id is stripped.
+        let r = ArcDerivation.derive(fromTitle: "JFK Part Two: Deniably Plausible | #407")
+        XCTAssertEqual(r.arcName, "JFK")
+        XCTAssertEqual(r.displayTitle, "Deniably Plausible")
+        XCTAssertEqual(r.part, 2)
+    }
+
+    func test_derive_parentheticalPartKept_notEatenAsBracket() {
+        let r = ArcDerivation.derive(fromTitle: "The Earliest Englishman (Part 1)")
+        XCTAssertEqual(r.arcName, "The Earliest Englishman")
+        XCTAssertEqual(r.part, 1)
+    }
+
+    func test_derive_tooShortStem_isNotAnArc() {
+        // A 1–2 char stem is rejected (avoids junk arcs from initials/numbers).
+        let r = ArcDerivation.derive(fromTitle: "X | Y | 2")
+        XCTAssertNil(r.arcName)
     }
 
     func test_derive_plainTitle_hasNoArc() {
-        let result = ArcDerivation.derive(fromTitle: "Foul Play")
-        XCTAssertNil(result.arcName)
-        XCTAssertEqual(result.displayTitle, "Foul Play")
-        XCTAssertNil(result.part)
+        let r = ArcDerivation.derive(fromTitle: "Just a Normal Episode")
+        XCTAssertNil(r.arcName)
+        XCTAssertEqual(r.displayTitle, "Just a Normal Episode")
+        XCTAssertNil(r.part)
     }
 
-    func test_derive_chapterStyle_BoneValley_hasNoArcName() {
-        // Bone Valley has no arc name in the title — grouping comes from
-        // itunes:season instead (the groupBySeason fallback).
-        let result = ArcDerivation.derive(fromTitle: "Chapter 4 | Dog with a Bone")
-        XCTAssertNil(result.arcName)
-        XCTAssertEqual(result.displayTitle, "Dog with a Bone")
-        XCTAssertEqual(result.part, 4)
-    }
-
-    func test_derive_chapterStyle_withColon() {
-        let result = ArcDerivation.derive(fromTitle: "Chapter 2: The Investigation")
-        XCTAssertNil(result.arcName)
-        XCTAssertEqual(result.displayTitle, "The Investigation")
-        XCTAssertEqual(result.part, 2)
-    }
-
-    func test_derive_trailingParenPart_FallOfCivilizations() {
-        let result = ArcDerivation.derive(fromTitle: "19. The Mongols - Terror of the Steppe (Part 2)")
-        XCTAssertEqual(result.arcName, "19. The Mongols - Terror of the Steppe")
-        XCTAssertEqual(result.displayTitle, "Part 2")
-        XCTAssertEqual(result.part, 2)
-    }
-
-    func test_derive_trailingBracketPart() {
-        let result = ArcDerivation.derive(fromTitle: "The Siege of Vienna [Part 3]")
-        XCTAssertEqual(result.arcName, "The Siege of Vienna")
-        XCTAssertEqual(result.displayTitle, "Part 3")
-        XCTAssertEqual(result.part, 3)
-    }
-
-    func test_derive_trailingCommaPart() {
-        let result = ArcDerivation.derive(fromTitle: "The Reckoning, Part 2")
-        XCTAssertEqual(result.arcName, "The Reckoning")
-        XCTAssertEqual(result.displayTitle, "Part 2")
-        XCTAssertEqual(result.part, 2)
-    }
-
-    func test_derive_trailingEp_Serial() {
-        let result = ArcDerivation.derive(fromTitle: "The Last 12 Weeks - Ep. 5")
-        XCTAssertEqual(result.arcName, "The Last 12 Weeks")
-        XCTAssertEqual(result.displayTitle, "Ep. 5")
-        XCTAssertEqual(result.part, 5)
-    }
-
-    func test_derive_trailingEp_withoutPeriod() {
-        let result = ArcDerivation.derive(fromTitle: "The Last 12 Weeks - Ep 6")
-        XCTAssertEqual(result.arcName, "The Last 12 Weeks")
-        XCTAssertEqual(result.displayTitle, "Ep. 6")
-        XCTAssertEqual(result.part, 6)
-    }
-
-    func test_derive_trailingEpisode_spelledOut() {
-        let result = ArcDerivation.derive(fromTitle: "The Last 12 Weeks - Episode 7")
-        XCTAssertEqual(result.arcName, "The Last 12 Weeks")
-        XCTAssertEqual(result.displayTitle, "Ep. 7")
-        XCTAssertEqual(result.part, 7)
-    }
-
-    func test_derive_existingPartArcPattern_stillWinsOverNewPatterns() {
-        // "X - Part 2" must keep hitting the pre-existing partArcPattern
-        // (arc="X", no subtitle) rather than any of the new trailing patterns.
-        let result = ArcDerivation.derive(fromTitle: "X - Part 2")
-        XCTAssertEqual(result.arcName, "X")
-        XCTAssertEqual(result.displayTitle, "Part 2")
-        XCTAssertEqual(result.part, 2)
-    }
-
-    func test_derive_hardcoreHistory_romanNumerals_hasNoArc() {
-        // Roman-numeral parts are explicitly excluded from this tier.
-        let result = ArcDerivation.derive(fromTitle: "Show 73 - Mania for Subjugation III")
-        XCTAssertNil(result.arcName)
-        XCTAssertEqual(result.displayTitle, "Show 73 - Mania for Subjugation III")
-        XCTAssertNil(result.part)
-    }
-
-    func test_derive_unstructuredTitle_hasNoArc() {
-        let result = ArcDerivation.derive(fromTitle: "History of Spices (Radio Edit)")
-        XCTAssertNil(result.arcName)
-        XCTAssertEqual(result.displayTitle, "History of Spices (Radio Edit)")
-        XCTAssertNil(result.part)
-    }
-
-    func test_derive_trailingChapter_Serial() {
-        let result = ArcDerivation.derive(fromTitle: "The Idiot - Chapter 1")
-        XCTAssertEqual(result.arcName, "The Idiot")
-        XCTAssertEqual(result.displayTitle, "Chapter 1")
-        XCTAssertEqual(result.part, 1)
-    }
-
-    func test_derive_trailingChapter_doesNotShadowStartAnchoredChapterPattern() {
-        // Bone Valley's "Chapter N | Title" must keep hitting the
-        // start-anchored chapterArcPattern (no arc name — season grouping
-        // instead), not the new trailing "- Chapter N" pattern.
-        let result = ArcDerivation.derive(fromTitle: "Chapter 4 | Dog with a Bone")
-        XCTAssertNil(result.arcName)
-        XCTAssertEqual(result.displayTitle, "Dog with a Bone")
-        XCTAssertEqual(result.part, 4)
-    }
-
-    func test_derive_midTitleParenPart_doesNotFire() {
-        // The trailing "(Part N)" pattern is anchored at $ — a parenthetical
-        // that merely mentions "Part N" mid-title must not match.
-        let result = ArcDerivation.derive(fromTitle: "Revisiting (Part 2) of the Saga: A Retrospective")
-        XCTAssertNil(result.arcName)
-        XCTAssertEqual(result.displayTitle, "Revisiting (Part 2) of the Saga: A Retrospective")
-        XCTAssertNil(result.part)
-    }
-
-    // MARK: - groupIntoArcs
+    // MARK: - groupIntoArcs — grouping + ordering
 
     private func makeEpisode(title: String, publishDate: Date, season: Int? = nil) -> Episode {
         Episode(
             guid: title,
             title: title,
             publishDate: publishDate,
-            audioURL: URL(string: "https://cdn.example.com/\(title.hashValue).mp3")!,
+            audioURL: URL(string: "https://cdn.example.com/\(abs(title.hashValue)).mp3")!,
             season: season
         )
     }
 
-    func test_groupIntoArcs_groupsMembershipAndOrdersByRecency() {
-        // Newest-first input, interspersed with singles — mirrors real feed
-        // data where non-arc episodes sit between arc entries.
+    private func date(_ t: TimeInterval) -> Date { Date(timeIntervalSince1970: t) }
+
+    func test_groupIntoArcs_pipeArcs_membershipOrderingAndSeason() {
         let episodes = [
-            makeEpisode(title: "American Revolution | A Devil of a Whipping | 5", publishDate: Date(timeIntervalSince1970: 5000), season: 97),
-            makeEpisode(title: "American Revolution | Saratoga | 4", publishDate: Date(timeIntervalSince1970: 4000), season: 97),
-            makeEpisode(title: "Foul Play", publishDate: Date(timeIntervalSince1970: 3500)),
-            makeEpisode(title: "Edison vs. Tesla | Prometheus' Fire | 1", publishDate: Date(timeIntervalSince1970: 3000), season: 96),
-            makeEpisode(title: "Edison vs. Tesla | Work of the World | 2", publishDate: Date(timeIntervalSince1970: 2000), season: 96),
+            makeEpisode(title: "American Revolution | A Devil of a Whipping | 5", publishDate: date(5000), season: 97),
+            makeEpisode(title: "American Revolution | Saratoga | 4", publishDate: date(4000), season: 97),
+            makeEpisode(title: "Foul Play", publishDate: date(3500)),
+            makeEpisode(title: "Edison vs. Tesla | Prometheus' Fire | 1", publishDate: date(3000), season: 96),
+            makeEpisode(title: "Edison vs. Tesla | Work of the World | 2", publishDate: date(2000), season: 96),
         ]
-
         let arcs = ArcDerivation.groupIntoArcs(episodes)
-
-        XCTAssertEqual(arcs.map(\.name), ["American Revolution", "Edison vs. Tesla"], "Arcs ordered by recency of their newest episode.")
+        XCTAssertEqual(arcs.map(\.name), ["American Revolution", "Edison vs. Tesla"])
         XCTAssertEqual(arcs[0].episodes.count, 2)
         XCTAssertEqual(arcs[0].season, 97)
-        XCTAssertEqual(arcs[1].episodes.count, 2)
         XCTAssertEqual(arcs[1].season, 96)
     }
 
-    func test_groupIntoArcs_excludesSinglePartArcs() {
-        // A "1-part arc" isn't a series — only arcs with >= 2 episodes surface.
+    func test_groupIntoArcs_excludesSinglePartArcsAndPlainSingles() {
         let episodes = [
-            makeEpisode(title: "Solo Saga | Only Part | 1", publishDate: .now),
+            makeEpisode(title: "Great Saga - Part 1 - Only", publishDate: .now),
             makeEpisode(title: "Plain Single", publishDate: .now),
         ]
-
-        let arcs = ArcDerivation.groupIntoArcs(episodes)
-
-        XCTAssertTrue(arcs.isEmpty, "A single-episode arc and a plain single should both be excluded from the shelf.")
+        XCTAssertTrue(ArcDerivation.groupIntoArcs(episodes).isEmpty)
     }
 
-    func test_groupIntoArcs_seasonIsNilWhenFeedDoesNotSetIt() {
+    func test_groupIntoArcs_wordNumberParts_formOneArc() {
         let episodes = [
-            makeEpisode(title: "Heinrich Barth - Part 2 - Kingdoms of Africa", publishDate: Date(timeIntervalSince1970: 2000)),
-            makeEpisode(title: "Heinrich Barth - Part 1 - Africa Calls", publishDate: Date(timeIntervalSince1970: 1000)),
+            makeEpisode(title: "The Valley of Death, Part Two", publishDate: date(2000)),
+            makeEpisode(title: "The Valley of Death, Part One", publishDate: date(1000)),
         ]
-
         let arcs = ArcDerivation.groupIntoArcs(episodes)
-
         XCTAssertEqual(arcs.count, 1)
-        XCTAssertNil(arcs[0].season, "Explorers-style feeds have no itunes:season — the arc's season should be nil, not 0.")
-    }
-
-    func test_groupIntoArcs_seasonFallback_whenTitlesAreUnstructured() {
-        // Revolutions-style: numeric-prefix titles with no safe pattern, but
-        // itunes:season is set — the title pass yields zero arcs, so the
-        // season fallback should kick in.
-        let episodes = [
-            makeEpisode(title: "11.29-Liberty, Equality, Humanity", publishDate: Date(timeIntervalSince1970: 6000), season: 11),
-            makeEpisode(title: "11.28-The Convention", publishDate: Date(timeIntervalSince1970: 5000), season: 11),
-            makeEpisode(title: "10.55-The End of the Terror", publishDate: Date(timeIntervalSince1970: 4000), season: 10),
-            makeEpisode(title: "10.54-Thermidor", publishDate: Date(timeIntervalSince1970: 3000), season: 10),
-            makeEpisode(title: "9.1-Prologue", publishDate: Date(timeIntervalSince1970: 2000), season: 9),
-        ]
-
-        let arcs = ArcDerivation.groupIntoArcs(episodes)
-
-        XCTAssertEqual(arcs.map(\.name), ["Season 11", "Season 10"], "Newest season first; the singleton Season 9 is excluded.")
-        XCTAssertEqual(arcs[0].episodes.count, 2)
-        XCTAssertEqual(arcs[0].season, 11)
-        XCTAssertEqual(arcs[1].episodes.count, 2)
-        XCTAssertEqual(arcs[1].season, 10)
-    }
-
-    func test_groupIntoArcs_seasonFallback_doesNotFireWhenTitleArcsExist() {
-        // AHT-style: both signals present (itunes:season set uniformly per
-        // arc AND pipe-style titles). Title arcs must win outright — no
-        // "Season N" cards alongside the named arcs.
-        let episodes = [
-            makeEpisode(title: "American Revolution | A Devil of a Whipping | 5", publishDate: Date(timeIntervalSince1970: 5000), season: 97),
-            makeEpisode(title: "American Revolution | Saratoga | 4", publishDate: Date(timeIntervalSince1970: 4000), season: 97),
-            makeEpisode(title: "Edison vs. Tesla | Prometheus' Fire | 1", publishDate: Date(timeIntervalSince1970: 3000), season: 96),
-            makeEpisode(title: "Edison vs. Tesla | Work of the World | 2", publishDate: Date(timeIntervalSince1970: 2000), season: 96),
-        ]
-
-        let arcs = ArcDerivation.groupIntoArcs(episodes)
-
-        XCTAssertEqual(arcs.map(\.name), ["American Revolution", "Edison vs. Tesla"])
-        XCTAssertTrue(arcs.allSatisfy { !$0.name.hasPrefix("Season ") })
-    }
-
-    func test_groupIntoArcs_seasonFallback_excludesEpisodesWithoutSeason() {
-        let episodes = [
-            makeEpisode(title: "11.29-Liberty, Equality, Humanity", publishDate: Date(timeIntervalSince1970: 3000), season: 11),
-            makeEpisode(title: "11.28-The Convention", publishDate: Date(timeIntervalSince1970: 2000), season: 11),
-            makeEpisode(title: "Special Announcement", publishDate: Date(timeIntervalSince1970: 1000), season: nil),
-        ]
-
-        let arcs = ArcDerivation.groupIntoArcs(episodes)
-
-        XCTAssertEqual(arcs.map(\.name), ["Season 11"])
+        XCTAssertEqual(arcs[0].name, "The Valley of Death")
         XCTAssertEqual(arcs[0].episodes.count, 2)
     }
 
-    func test_groupIntoArcs_unstructuredShow_hasNoArcs() {
-        // Dead To Me-style: no title patterns, no season data — no shelf.
+    func test_groupIntoArcs_largePipeEpisodeNumbers_areNotGuardedAsAnthology() {
+        // Even the Rich numbers every real arc by episode number (…| 212).
         let episodes = [
-            makeEpisode(title: "History of Spices (Radio Edit)", publishDate: Date(timeIntervalSince1970: 2000)),
-            makeEpisode(title: "A Chat About Nothing", publishDate: Date(timeIntervalSince1970: 1000)),
+            makeEpisode(title: "Taylor Swift: Fearless | In Our Swiftie Era | 212", publishDate: date(2000)),
+            makeEpisode(title: "Taylor Swift: Fearless | Mastermind | 211", publishDate: date(1000)),
         ]
-
         let arcs = ArcDerivation.groupIntoArcs(episodes)
-
-        XCTAssertTrue(arcs.isEmpty)
-    }
-
-    func test_groupIntoArcs_perSeasonFallback_doesNotFireForSeasonsWithCrossPromoLeftovers() {
-        // AHT-style: a title arc's season also carries 2 "History Daily: X"
-        // cross-promo drops that aren't part of the arc. The season still
-        // has a title-arc member, so it must not also get a "Season 97" card
-        // sitting next to "American Revolution" — that's the junk the
-        // all-or-nothing rule was originally protecting against, and the new
-        // per-season rule must keep protecting it.
-        let episodes = [
-            makeEpisode(title: "American Revolution | A Devil of a Whipping | 5", publishDate: Date(timeIntervalSince1970: 6000), season: 97),
-            makeEpisode(title: "History Daily: The Assassination of Sergei Kirov", publishDate: Date(timeIntervalSince1970: 5500), season: 97),
-            makeEpisode(title: "American Revolution | Saratoga | 4", publishDate: Date(timeIntervalSince1970: 5000), season: 97),
-            makeEpisode(title: "History Daily: The Boston Massacre", publishDate: Date(timeIntervalSince1970: 4500), season: 97),
-        ]
-
-        let arcs = ArcDerivation.groupIntoArcs(episodes)
-
-        XCTAssertEqual(arcs.map(\.name), ["American Revolution"])
-        XCTAssertEqual(arcs[0].episodes.count, 2, "The two History Daily cross-promos stay singles, not arc members.")
-    }
-
-    func test_groupIntoArcs_serialStyle_perSeasonFallbackRecoversNamedCardsAroundOneTitleArc() {
-        // Serial-style teaser feed: most seasons carry one full episode + a
-        // trailer (never reaching groupByTitle's 2-episode threshold), while
-        // one season ("The Last 12 Weeks") has enough same-titled episodes
-        // to form a title arc outright. Before the per-season fix, that one
-        // title arc suppressed the season fallback for the whole show,
-        // collapsing everything else to singles.
-        let episodes = [
-            makeEpisode(title: "The Last 12 Weeks - Ep. 5", publishDate: Date(timeIntervalSince1970: 17_000), season: 17),
-            makeEpisode(title: "The Last 12 Weeks - Ep. 4", publishDate: Date(timeIntervalSince1970: 16_900), season: 17),
-            makeEpisode(title: "The Last 12 Weeks - Ep. 3", publishDate: Date(timeIntervalSince1970: 16_800), season: 17),
-            makeEpisode(title: "The Last 12 Weeks - Ep. 2", publishDate: Date(timeIntervalSince1970: 16_700), season: 17),
-            makeEpisode(title: "The Last 12 Weeks - Ep. 1", publishDate: Date(timeIntervalSince1970: 16_600), season: 17),
-            makeEpisode(title: "The Last 12 Weeks - Trailer", publishDate: Date(timeIntervalSince1970: 16_500), season: 17),
-            makeEpisode(title: "The Idiot - Chapter 1", publishDate: Date(timeIntervalSince1970: 16_000), season: 16),
-            makeEpisode(title: "The Idiot - Trailer", publishDate: Date(timeIntervalSince1970: 15_900), season: 16),
-            makeEpisode(title: "The Preventionist - Ep. 1", publishDate: Date(timeIntervalSince1970: 15_000), season: 15),
-            makeEpisode(title: "The Preventionist - Trailer", publishDate: Date(timeIntervalSince1970: 14_900), season: 15),
-            makeEpisode(title: "The Coldest Case In Laramie - Episode 1", publishDate: Date(timeIntervalSince1970: 10_000), season: 10),
-            makeEpisode(title: "The Coldest Case In Laramie - Trailer", publishDate: Date(timeIntervalSince1970: 9_900), season: 10),
-            makeEpisode(title: "The Trojan Horse Affair - Part 1", publishDate: Date(timeIntervalSince1970: 8_000), season: 8),
-            makeEpisode(title: "The Trojan Horse Affair - Trailer", publishDate: Date(timeIntervalSince1970: 7_900), season: 8),
-            makeEpisode(title: "Serial S04 - Ep. 1: Poor Baby Raul", publishDate: Date(timeIntervalSince1970: 4_000), season: 4),
-            makeEpisode(title: "Serial S04 - Trailer", publishDate: Date(timeIntervalSince1970: 3_900), season: 4),
-            makeEpisode(title: "Serial S01 - Ep. 1: The Alibi", publishDate: Date(timeIntervalSince1970: 1_000), season: 1),
-        ]
-
-        let arcs = ArcDerivation.groupIntoArcs(episodes)
-
-        XCTAssertEqual(arcs.map(\.name), [
-            "The Last 12 Weeks",
-            "The Idiot",
-            "The Preventionist",
-            "The Coldest Case In Laramie",
-            "The Trojan Horse Affair",
-            "Season 4",
-        ], "One title arc plus a named season card per otherwise-arcless season; no card for the lone Season 1 episode; no 'Season 17' card since that season already has a title-arc member.")
-
-        XCTAssertEqual(arcs[0].episodes.count, 5, "The trailer stays a single since season 17 already has title-arc members.")
-        for arc in arcs.dropFirst().dropLast() {
-            XCTAssertEqual(arc.episodes.count, 2, "\(arc.name) should pair the full episode with its trailer.")
-        }
-        XCTAssertEqual(arcs.last?.episodes.count, 2)
-        XCTAssertTrue(arcs.allSatisfy { $0.name != "Season 17" })
-    }
-
-    func test_groupIntoArcs_boneValleyStyle_titleArcSuppressesItsOwnSeasonButNotOthers() {
-        // Bone Valley-style: season-tagged "Chapter N | Title" episodes with
-        // no arc name (grouped by season), plus a "Kevin is Next - Part 1/2"
-        // title arc tagged with the same season as some of the chapters.
-        // Season 1 has no title-arc member, so it gets a "Season 1" card;
-        // season 2 does have a title-arc member (Kevin), so per rule 2 it
-        // gets no extra season card — its leftover chapter episodes stay
-        // singles.
-        let episodes = [
-            makeEpisode(title: "Kevin is Next - Part 2", publishDate: Date(timeIntervalSince1970: 5000), season: 2),
-            makeEpisode(title: "Chapter 4 | Delta", publishDate: Date(timeIntervalSince1970: 4000), season: 2),
-            makeEpisode(title: "Kevin is Next - Part 1", publishDate: Date(timeIntervalSince1970: 3000), season: 2),
-            makeEpisode(title: "Chapter 3 | Gamma", publishDate: Date(timeIntervalSince1970: 2500), season: 2),
-            makeEpisode(title: "Chapter 2 | Beta", publishDate: Date(timeIntervalSince1970: 2000), season: 1),
-            makeEpisode(title: "Chapter 1 | Alpha", publishDate: Date(timeIntervalSince1970: 1000), season: 1),
-        ]
-
-        let arcs = ArcDerivation.groupIntoArcs(episodes)
-
-        XCTAssertEqual(arcs.map(\.name), ["Kevin is Next", "Season 1"])
+        XCTAssertEqual(arcs.count, 1)
+        XCTAssertEqual(arcs[0].name, "Taylor Swift: Fearless")
         XCTAssertEqual(arcs[0].episodes.count, 2)
-        XCTAssertEqual(arcs[1].episodes.count, 2)
-        XCTAssertTrue(arcs.allSatisfy { $0.name != "Season 2" }, "Season 2 already has a title-arc member (Kevin), so its leftover chapters stay singles rather than forming a redundant card.")
     }
 
-    func test_groupIntoArcs_boneValleyReal_minorityBonusArcCoexistsWithSeasonCard() {
-        // Real Bone Valley Season 2: a season dominated by "Chapter N | Title"
-        // episodes (grouped by season, no arc name) plus a small "Kevin is
-        // Next" bonus (Part I / Part 2, mixed numerals). The bonus is a
-        // minority (2 of 6 = 33%), so it must NOT suppress the season card:
-        // Season 2 keeps a card for its 4 chapter leftovers AND "Kevin is Next"
-        // stands as its own 2-part arc. The season card is named "Season 2",
-        // not hijacked by the lone bonus arc name.
+    // MARK: - groupIntoArcs — anthology guard
+
+    func test_groupIntoArcs_volumeAnthology_isDropped() {
+        // "Mini-Stories: Volume 19..22" — an open-ended anthology, not an arc.
         let episodes = [
-            makeEpisode(title: "Kevin is Next - Part 2", publishDate: Date(timeIntervalSince1970: 6000), season: 2),
-            makeEpisode(title: "Kevin is Next - Part I", publishDate: Date(timeIntervalSince1970: 5500), season: 2),
-            makeEpisode(title: "Chapter 4 | Delta", publishDate: Date(timeIntervalSince1970: 5000), season: 2),
-            makeEpisode(title: "Chapter 3 | Gamma", publishDate: Date(timeIntervalSince1970: 4000), season: 2),
-            makeEpisode(title: "Chapter 2 | Beta", publishDate: Date(timeIntervalSince1970: 3000), season: 2),
-            makeEpisode(title: "Chapter 1 | Alpha", publishDate: Date(timeIntervalSince1970: 2000), season: 2),
+            makeEpisode(title: "Mini-Stories: Volume 22", publishDate: date(4000)),
+            makeEpisode(title: "Mini-Stories: Volume 21", publishDate: date(3000)),
+            makeEpisode(title: "Mini-Stories: Volume 20", publishDate: date(2000)),
         ]
-
-        let arcs = ArcDerivation.groupIntoArcs(episodes)
-
-        XCTAssertEqual(Set(arcs.map(\.name)), ["Kevin is Next", "Season 2"], "The minority bonus arc coexists with the season card; the season card is NOT named after the bonus.")
-        XCTAssertEqual(arcs.first(where: { $0.name == "Kevin is Next" })?.episodes.count, 2)
-        XCTAssertEqual(arcs.first(where: { $0.name == "Season 2" })?.episodes.count, 4, "The season card holds only the 4 non-arc chapter leftovers — the two Kevin episodes live in their own arc, not double-listed.")
+        XCTAssertTrue(ArcDerivation.groupIntoArcs(episodes).isEmpty)
     }
 
-    func test_groupIntoArcs_arcIDsAreUniqueAcrossTitleArcsAndSeasonCards() {
+    func test_groupIntoArcs_lowVolumeCounter_isKept() {
+        // "(Volume 1)/(Volume 2)" starts at 1 — a bounded arc, kept.
         let episodes = [
-            makeEpisode(title: "American Revolution | A Devil of a Whipping | 5", publishDate: Date(timeIntervalSince1970: 5000), season: 97),
-            makeEpisode(title: "American Revolution | Saratoga | 4", publishDate: Date(timeIntervalSince1970: 4000), season: 97),
-            makeEpisode(title: "11.29-Liberty, Equality, Humanity", publishDate: Date(timeIntervalSince1970: 3000), season: 11),
-            makeEpisode(title: "11.28-The Convention", publishDate: Date(timeIntervalSince1970: 2000), season: 11),
+            makeEpisode(title: "This Means War (Volume 2)", publishDate: date(2000)),
+            makeEpisode(title: "This Means War (Volume 1)", publishDate: date(1000)),
         ]
-
         let arcs = ArcDerivation.groupIntoArcs(episodes)
+        XCTAssertEqual(arcs.count, 1)
+        XCTAssertEqual(arcs[0].name, "This Means War")
+    }
 
-        let ids = arcs.map(\.id)
-        XCTAssertEqual(Set(ids).count, ids.count, "Every arc's id must be unique.")
-        XCTAssertEqual(arcs.first(where: { $0.name == "American Revolution" })?.id, "American Revolution")
-        XCTAssertEqual(arcs.first(where: { $0.name == "Season 11" })?.id, "Season 11#11")
+    // MARK: - groupIntoArcs — re-release dedup
+
+    func test_groupIntoArcs_dropsReReleaseDuplicate_keepsOriginalRun() {
+        let episodes = [
+            makeEpisode(title: "Cold Harbor - Part 2", publishDate: date(4000)),
+            makeEpisode(title: "Cold Harbor - Part 1", publishDate: date(3000)),
+            makeEpisode(title: "Encore: Cold Harbor - Part 2", publishDate: date(2000)),
+            makeEpisode(title: "Encore: Cold Harbor - Part 1", publishDate: date(1000)),
+        ]
+        let arcs = ArcDerivation.groupIntoArcs(episodes)
+        XCTAssertEqual(arcs.count, 1)
+        XCTAssertEqual(arcs[0].name, "Cold Harbor")
+        XCTAssertEqual(arcs[0].episodes.count, 2, "The two Encore re-airings collapse into the original run.")
+        XCTAssertFalse(arcs[0].episodes.contains { $0.title.localizedCaseInsensitiveContains("encore") })
+    }
+
+    func test_groupIntoArcs_distinctEpisodeSharingPart_isNotDeduped() {
+        // A non-re-release episode is never dropped even if it collides on part.
+        let episodes = [
+            makeEpisode(title: "Redux Studios - Part 1", publishDate: date(2000)),
+            makeEpisode(title: "Redux Studios - Part 2", publishDate: date(1000)),
+        ]
+        let arcs = ArcDerivation.groupIntoArcs(episodes)
+        XCTAssertEqual(arcs.count, 1)
+        XCTAssertEqual(arcs[0].episodes.count, 2, "'Redux' in a show name must not trigger a false dedup drop.")
+    }
+
+    // MARK: - groupIntoArcs — season split + chaptered-season handler
+
+    func test_groupIntoArcs_sameNameDifferentSeasons_split() {
+        let episodes = [
+            makeEpisode(title: "First Ladies | Michelle Obama | 2", publishDate: date(4000), season: 8),
+            makeEpisode(title: "First Ladies | Martha Washington | 1", publishDate: date(3000), season: 8),
+            makeEpisode(title: "First Ladies | Betty Ford | 2", publishDate: date(2000), season: 3),
+            makeEpisode(title: "First Ladies | Eleanor Roosevelt | 1", publishDate: date(1000), season: 3),
+        ]
+        let arcs = ArcDerivation.groupIntoArcs(episodes)
+        XCTAssertEqual(arcs.count, 2, "Same-named runs in different itunes:seasons split into two arcs.")
+        XCTAssertEqual(Set(arcs.compactMap(\.season)), [3, 8])
+    }
+
+    func test_groupIntoArcs_chapteredSeason_BoneValley() {
+        // "Chapter N | Title" has no arc name in the title → grouped by season.
+        let episodes = [
+            makeEpisode(title: "Chapter 4 | Dog with a Bone", publishDate: date(4000), season: 2),
+            makeEpisode(title: "Chapter 3 | The Confession", publishDate: date(3000), season: 2),
+            makeEpisode(title: "Chapter 2 | New Evidence", publishDate: date(2000), season: 1),
+            makeEpisode(title: "Chapter 1 | The Call", publishDate: date(1000), season: 1),
+        ]
+        let arcs = ArcDerivation.groupIntoArcs(episodes)
+        XCTAssertEqual(arcs.count, 2)
+        XCTAssertEqual(Set(arcs.map(\.name)), ["Season 1", "Season 2"])
+        XCTAssertEqual(Set(arcs.compactMap(\.season)), [1, 2])
+    }
+
+    func test_groupIntoArcs_unstructuredFeed_hasNoArcs() {
+        let episodes = [
+            makeEpisode(title: "A Conversation with a Chef", publishDate: date(3000)),
+            makeEpisode(title: "The State of the Economy", publishDate: date(2000)),
+            makeEpisode(title: "Interview: A Novelist", publishDate: date(1000)),
+        ]
+        XCTAssertTrue(ArcDerivation.groupIntoArcs(episodes).isEmpty)
     }
 }

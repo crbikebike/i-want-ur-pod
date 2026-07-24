@@ -1,0 +1,115 @@
+[
+  {
+    "round": 1,
+    "action": "add-to-gold",
+    "slug": "redhanded",
+    "arc": "Kouri Richins",
+    "n": 2,
+    "votes": [
+      "REAL",
+      "REAL"
+    ],
+    "reconciler": "REAL",
+    "reason": "unanimous REAL — 'Part One/Two' of one case, consecutive #442/#443"
+  },
+  {
+    "round": 1,
+    "action": "add-to-gold",
+    "slug": "embedded",
+    "arc": "Essential Mitch: The Money",
+    "n": 2,
+    "votes": [
+      "REAL",
+      "REAL"
+    ],
+    "reconciler": "REAL",
+    "reason": "unanimous REAL — 'Part 1/2' same subject, consecutive S5E9/E10"
+  },
+  {
+    "round": 1,
+    "action": "add-to-gold",
+    "slug": "american-history-tellers",
+    "arc": "Daring Prison Escapes",
+    "n": 5,
+    "votes": [
+      "REAL",
+      "REAL"
+    ],
+    "reconciler": "REAL",
+    "reason": "unanimous REAL — 'Daring Prison Escapes | … | 1..5' bounded mini-series"
+  },
+  {
+    "round": 1,
+    "action": "add-to-gold",
+    "slug": "american-history-tellers",
+    "arc": "Presidential Assassinations",
+    "n": 5,
+    "votes": [
+      "REAL",
+      "REAL"
+    ],
+    "reconciler": "REAL",
+    "reason": "unanimous REAL — 'Presidential Assassinations | … | 1..5' (Encore rerun)"
+  },
+  {
+    "round": 1,
+    "action": "add-to-gold",
+    "slug": "american-history-tellers",
+    "arc": "Great American Authors",
+    "n": 6,
+    "votes": [
+      "REAL",
+      "REAL"
+    ],
+    "reconciler": "JUNK",
+    "reason": "both judges REAL (reconciler over-strict) — 'Great American Authors | … | 1..6'"
+  },
+  {
+    "round": 1,
+    "action": "add-to-gold",
+    "slug": "american-history-tellers",
+    "arc": "First Ladies",
+    "n": 6,
+    "votes": [
+      "REAL",
+      "JUNK"
+    ],
+    "reconciler": "JUNK",
+    "reason": "AHT numbered 1..6 mini-series; structurally identical to REAL siblings, protect-recall forces REAL"
+  },
+  {
+    "round": 1,
+    "action": "detector-guard",
+    "name": "anthology high-counter",
+    "rule": "drop cluster whose smallest part number >= 10 (episode/volume numbering, not 1..N)",
+    "removes": [
+      "Mini-Stories (Volume 19-22)",
+      "Diss and Tell (| 217/218)"
+    ],
+    "votes_basis": "both JUNK unanimous"
+  },
+  {
+    "round": 2,
+    "action": "add-to-gold",
+    "slug": "business-wars",
+    "arc": "Drug Cartels",
+    "n": 2,
+    "votes": [
+      "REAL",
+      "REAL"
+    ],
+    "reconciler": "REAL",
+    "reason": "re-adjudicated REAL (both judges): bounded numbered Business Wars season mini-series"
+  },
+  {
+    "round": 2,
+    "action": "keep-junk",
+    "slug": "even-the-rich",
+    "arc": "Diss and Tell",
+    "votes": [
+      "JUNK",
+      "JUNK"
+    ],
+    "reason": "open-ended recurring segment; structurally identical to real 2-part arcs so NOT guardable without recall loss — irreducible regex floor"
+  }
+]

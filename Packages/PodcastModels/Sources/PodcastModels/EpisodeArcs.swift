@@ -1,29 +1,42 @@
-// EpisodeArcs — story-arc derivation from episode-title structure. Ported
-// from scripts/fetch-podcast-episodes.py's `derive_arc` (the design kit's
-// "get it from somewhere" heuristic for the Story Arcs shelf — see
-// docs/design/direction.md §11's "Podcast Detail screen — real data + story
-// arcs" entry). Pure/Foundation-only so it's unit-testable without SwiftData.
+// EpisodeArcs — story-arc derivation from episode-title structure.
+//
+// This is the "A2r3.3" detector: a prefix-clustering + counter-token grammar
+// chosen by an offline bake-off of 6 strategies over 315 real podcast feeds,
+// scored against LLM-labeled ground truth. On the 50-feed gold set it reaches
+// ~99.85% membership precision / 0.27% junk-arc rate / 62.7% arc recall, vs the
+// previous exact-string detector's ~40% / 23% / 46%. Full method + evidence:
+// curation/arc-bakeoff/ (RECOMMENDATION.md, recap.html); Python reference:
+// curation/arc-bakeoff/approaches.py `a2r3_3_final`.
+//
+// Pipeline (all title-only + itunes:season, no LLM, cheap on-device):
+//   1. clean the title (noise prefixes; strip trailing "| #id"; strip a trailing
+//      bracket only when it holds no counter),
+//   2. extract (stem, part, kind) via priority markers + general Part/Vol
+//      (part = digits | canonical Roman | words one..twenty),
+//   3. cluster by normalized stem → prefix-merge → split across itunes:season,
+//   4. anthology guard (drop "Volume N≥3"), re-release dedup (drop
+//      Encore/Redux/Archive when a non-re-release sibling covers that part),
+//      scoped chaptered-season handler ("Chapter N | Title" → group by season),
+//   5. keep clusters with ≥2 members.
+//
+// Pure/Foundation-only so it's unit-testable without SwiftData.
 import Foundation
 
-/// One derived narrative arc grouping episodes that share a title structure
-/// (`Arc | Title | N` or `Arc - Part N - Subtitle`).
+/// One derived narrative arc grouping episodes that belong to the same
+/// serialized story within a single feed.
 public struct Arc: Sendable, Hashable, Identifiable {
-    /// Unique per arc even when a title arc and a season-fallback card land on
-    /// the same `name` (theoretically possible — e.g. a title arc called
-    /// "Season 4" colliding with a literal `Season 4` fallback card). Title
-    /// arcs use a bare `name`; season-fallback cards suffix `#<season>` so
-    /// they can never collide with a title arc's id.
+    /// Unique per arc. Title/prefix arcs use the bare `name`; chaptered-season
+    /// cards suffix `#<season>` so they can never collide with a title arc's id.
     public var id: String
 
-    /// The arc's display name (e.g. "American Revolution", "Heinrich Barth").
+    /// The arc's display name (e.g. "Juan Ponce de León", "First Ladies").
     public var name: String
 
     /// The season the arc's episodes share, when the feed sets `itunes:season`
     /// uniformly across them. `nil` when absent or inconsistent.
     public var season: Int?
 
-    /// The arc's member episodes, in the same order they were passed in
-    /// (callers pass newest-first, so this stays newest-first too).
+    /// The arc's member episodes, newest-first (callers pass newest-first).
     public var episodes: [Episode]
 
     public init(id: String, name: String, season: Int?, episodes: [Episode]) {
@@ -33,354 +46,381 @@ public struct Arc: Sendable, Hashable, Identifiable {
         self.episodes = episodes
     }
 
-    /// Convenience for title arcs, whose `id` is just the (unique-by-construction) name.
     fileprivate init(titleArcName name: String, season: Int?, episodes: [Episode]) {
         self.init(id: name, name: name, season: season, episodes: episodes)
     }
 
-    /// Convenience for season-fallback cards, whose `id` is suffixed with the
-    /// season to guarantee no collision with a title arc's id.
     fileprivate init(seasonCardName name: String, season: Int, episodes: [Episode]) {
         self.init(id: "\(name)#\(season)", name: name, season: season, episodes: episodes)
     }
 }
 
-/// Derives story arcs from episode-title structure (`docs/design/direction.md`
-/// §11; python reference: `scripts/fetch-podcast-episodes.py`'s `derive_arc`).
+/// Derives story arcs from episode-title structure. See file header for the
+/// method; `curation/arc-bakeoff/approaches.py` is the validated Python twin.
 public enum ArcDerivation {
 
-    /// Re-release / housekeeping prefixes that pollute an arc name. Mirrors
-    /// the python `NOISE_PREFIX` regex exactly (case-insensitive, optional
-    /// trailing colon).
-    private static let noisePrefix: NSRegularExpression = {
-        // swiftlint:disable:next force_try — pattern is a fixed literal, verified at authoring time.
-        try! NSRegularExpression(
-            pattern: #"^(Encore|Fan Favorite|Listen Now|New Season|Introducing|Presenting)\s*:?\s*"#,
-            options: [.caseInsensitive]
-        )
-    }()
+    // MARK: - Regex building blocks
 
-    /// `Arc | Episode Title | N` (art19 / American History Tellers).
-    private static let pipeArcPattern: NSRegularExpression = {
-        try! NSRegularExpression(pattern: #"^(.+?)\s*\|\s*(.+?)\s*\|\s*(\d+)\s*$"#)
-    }()
+    /// Hyphen + unicode dashes. **Always place FIRST in a character class** so the
+    /// ASCII hyphen stays literal instead of forming a range (a real bug the
+    /// bake-off caught: a mid-class hyphen turned `[.-‐]` into a range that ate
+    /// letters, collapsing stems to one character).
+    private static let dashes = "-‐‑‒–—"
 
-    /// `Arc - Part N - Subtitle` (The Explorers Podcast). Subtitle is optional.
-    /// The part number is Arabic **or** Roman (`Part I`, `Part IV`) — Bone
-    /// Valley's "Kevin is Next" bonus mixes the two styles across its parts, so
-    /// both must parse to the same `Int` (via `parsePart`) for the pair to form
-    /// one arc and render consistently. A Roman-looking token that isn't a
-    /// canonical numeral is rejected by `parsePart` and the match falls
-    /// through (see `derive`).
-    private static let partArcPattern: NSRegularExpression = {
-        try! NSRegularExpression(pattern: #"^(.+?)\s*-\s*Part\s*(\d+|[IVXLCDM]+)\s*(?:-\s*(.*))?$"#, options: [.caseInsensitive])
-    }()
+    /// A part counter: Arabic, canonical Roman, or an English word `one`..`twenty`.
+    private static let numWord =
+        #"(?:\d+|[IVXLCDM]+|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)"#
 
-    /// `Chapter N | Title` / `Chapter N: Title` (Bone Valley). No arc name
-    /// lives in the title here — these shows group by `itunes:season`
-    /// instead (see `groupBySeason`), so this pattern only extracts the
-    /// display title and part number.
-    private static let chapterArcPattern: NSRegularExpression = {
-        try! NSRegularExpression(pattern: #"^Chapter\s*(\d+)\s*[|:]\s*(.+)$"#, options: [.caseInsensitive])
-    }()
+    private static func rx(_ pattern: String,
+                           _ options: NSRegularExpression.Options = []) -> NSRegularExpression {
+        // swiftlint:disable:next force_try — patterns are fixed literals, verified at authoring time.
+        try! NSRegularExpression(pattern: pattern, options: options)
+    }
 
-    /// Trailing `(Part N)` / `[Part N]` (Fall of Civilizations). Anchored at
-    /// `$` so a mid-title `(Part N)` (e.g. inside a longer parenthetical)
-    /// can't fire.
-    private static let trailingParenPartArcPattern: NSRegularExpression = {
-        try! NSRegularExpression(pattern: #"^(.+?)\s*[(\[]\s*Part\s*(\d+)\s*[)\]]\s*$"#, options: [.caseInsensitive])
-    }()
+    /// Re-release / housekeeping prefixes stripped before matching (applied up to
+    /// twice, to peel a stacked prefix like "Encore: Fan Favorite: …").
+    private static let noisePrefix = rx(
+        #"^(Encore|Fan Favorite|Fan-Favorite|Listen Now|New Season|Introducing|Presenting|Announcing|Update|Bonus|Replay|Revisited)\s*:?\s*"#,
+        [.caseInsensitive])
 
-    /// Trailing `, Part N`.
-    private static let trailingCommaPartArcPattern: NSRegularExpression = {
-        try! NSRegularExpression(pattern: #"^(.+?),\s*Part\s*(\d+)\s*$"#, options: [.caseInsensitive])
-    }()
+    /// Trailing episode id `… | #457` (an id, not a part counter). Requires the
+    /// `#` so it never eats a pipe part counter like AHT's `… | 5`.
+    private static let trailingId = rx(#"\s*\|\s*#\d+\s*$"#)
 
-    /// Trailing `- Ep. N` / `- Ep N` / `- Episode N` (Serial).
-    private static let trailingEpArcPattern: NSRegularExpression = {
-        try! NSRegularExpression(pattern: #"^(.+?)\s*-\s*Ep(?:isode|\.)?\s*(\d+)\s*$"#, options: [.caseInsensitive])
-    }()
+    /// A trailing bracket `(…)` / `[…]`, end-anchored.
+    private static let trailingBracket = rx(#"\s*[\[(][^\])]*[\])]\s*$"#)
 
-    /// Trailing `- Chapter N` (Serial's serialized-book seasons, e.g. "The
-    /// Idiot - Chapter 1"). End-anchored so it can't fire on the pre-existing
-    /// start-anchored `chapterArcPattern` (`^Chapter N | Title` — Bone
-    /// Valley), which is checked first and extracts no arc name; this one
-    /// does extract an arc name, since here it's the part before "Chapter"
-    /// that names the arc.
-    private static let trailingChapterArcPattern: NSRegularExpression = {
-        try! NSRegularExpression(pattern: #"^(.+?)\s*-\s*Chapter\s*(\d+)\s*$"#, options: [.caseInsensitive])
-    }()
+    /// Does a bracket hold a counter? If so it's kept (`(Part 1)`), not stripped.
+    private static let counterInBracket = rx(#"(part|pt|vol|volume|chapter|parte)\b|\d|[IVXLCDM]"#, [.caseInsensitive])
 
-    /// Derives `(arcName, displayTitle, part)` from a raw episode title.
-    ///
-    /// - Returns: `arcName` is `nil` for a "single" (no arc structure
-    ///   detected); `displayTitle` is always populated (the arc-stripped
-    ///   title, suitable for a row that shows the arc name separately);
-    ///   `part` is the parsed part/episode-within-arc number, when present.
+    /// Generic stems that never name a real arc.
+    private static let genericStem = rx(#"^(season|episode|ep|part|chapter|vol(ume)?|series|book|no)\b"#, [.caseInsensitive])
+
+    /// A re-release marker anywhere in a title (drives dedup).
+    private static let rerelease = rx(
+        #"\b(encore|archive|rebroadcast|redux|replay|revisited|throwback|fan[\s-]?favorite|from the vault|classic episode)\b"#,
+        [.caseInsensitive])
+
+    /// Strict canonical Roman numeral shape (1–3999); rejects "MILD", "IIII", "VX".
+    private static let canonicalRoman = rx(
+        #"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"#, [.caseInsensitive])
+
+    /// The counter kind a marker matched, so guards can act on how the number was
+    /// expressed (a `Volume 22` is an anthology; a `Part 3` is an arc).
+    private enum Kind { case pipe, part, pt, hash, ep, chapter, chapterLead, volume }
+
+    /// Priority-ordered markers. Group 1 is the arc stem; group 2 is the counter
+    /// token — except `chapterLead` (`Chapter N: Title`), which carries no arc
+    /// name in the title and is handled by the chaptered-season pass instead.
+    private static let markers: [(NSRegularExpression, Kind)] = [
+        (rx(#"^(.+?)\s*\|\s*.+?\s*\|\s*(\d+)\s*$"#), .pipe),
+        (rx("^(.+?)\\s*[\(dashes)]\\s*Part\\s+(\(numWord))\\b", [.caseInsensitive]), .part),
+        (rx("^(.+?),\\s*Part\\s+(\(numWord))\\b", [.caseInsensitive]), .part),
+        (rx("^(.+?)\\s*[(\\[]\\s*Part\\s+(\(numWord))\\s*[)\\]]", [.caseInsensitive]), .part),
+        (rx("^(.+?)\\s*,?\\s*\\(?\\s*Pt\\.?\\s+(\(numWord))\\b", [.caseInsensitive]), .pt),
+        (rx(#"^(.+?)\s+#\s*(\d+)\b"#), .hash),
+        (rx("^(.+?)\\s*[\(dashes)]\\s*Ep(?:isode|\\.)?\\s*(\\d+)\\b", [.caseInsensitive]), .ep),
+        (rx("^(.+?)\\s*[\(dashes):]\\s*Chapter\\s+(\(numWord))\\b", [.caseInsensitive]), .chapter),
+        (rx("^Chapter\\s+(?:\(numWord))\\s*[|:]\\s*(.+)$", [.caseInsensitive]), .chapterLead),
+    ]
+
+    /// General separator-agnostic `…Part/Parte N` (dashes lead the class).
+    private static let generalPart = rx("^(.+?)[\(dashes)\\s:,.|]+Part[e]?\\s+(\(numWord))\\b", [.caseInsensitive])
+    /// General `…Vol(ume) N`.
+    private static let generalVol = rx("^(.+?)[\(dashes)\\s:,.|]*[(\\[]?\\s*Vol(?:ume)?\\.?\\s+(\(numWord))\\b", [.caseInsensitive])
+
+    /// Leading start-anchored `Chapter N | Title` (Bone Valley) — used only to
+    /// route an episode to the chaptered-season pass.
+    private static let chapterLeadAnchored = rx(#"^Chapter\s*\d+\s*[|:]"#, [.caseInsensitive])
+
+    private static let wordNumbers: [String: Int] = [
+        "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7,
+        "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13,
+        "fourteen": 14, "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18,
+        "nineteen": 19, "twenty": 20,
+    ]
+
+    /// A "Volume N" counter this high is an open-ended anthology, not a bounded arc.
+    private static let volumeAnthologyMin = 3
+
+    // MARK: - Title cleaning + extraction
+
+    /// Strips noise prefixes, a trailing `| #id`, and a trailing counter-free bracket.
+    private static func clean(_ title: String) -> String {
+        var t = title.trimmed
+        for _ in 0..<2 { t = stripLeading(noisePrefix, from: t) }
+        t = removeMatch(trailingId, in: t)
+        if let m = firstMatch(trailingBracket, in: t) {
+            let matched = string(t, m, 0)
+            if firstMatch(counterInBracket, in: matched) == nil,
+               let r = Range(m.range, in: t) {
+                t = String(t[..<r.lowerBound]).trimmed
+            }
+        }
+        return t.trimmed
+    }
+
+    /// Parses a counter token: Arabic, English word `one`..`twenty`, or canonical Roman.
+    private static func parsePart(_ token: String) -> Int? {
+        let t = token.trimmed
+        if let arabic = Int(t) { return arabic }
+        if let word = wordNumbers[t.lowercased()] { return word }
+        return romanToInt(t)
+    }
+
+    /// The arc stem, part number, and counter kind for a title — or `nil` for a
+    /// non-arc single. Tries priority markers, then the general Part/Vol markers;
+    /// rejects generic or too-short stems.
+    private static func stemPartKind(_ title: String) -> (stem: String, part: Int, kind: Kind)? {
+        let t = clean(title)
+        for (regex, kind) in markers {
+            guard let match = firstMatch(regex, in: t) else { continue }
+            if kind == .chapterLead { return nil }
+            let stem = string(t, match, 1).trimmingCharacters(in: stemTrim)
+            guard let part = parsePart(string(t, match, 2)) else { continue }
+            if isValidStem(stem) { return (stem, part, kind) }
+        }
+        for (regex, kind) in [(generalPart, Kind.part), (generalVol, Kind.volume)] {
+            guard let match = firstMatch(regex, in: t) else { continue }
+            let stem = string(t, match, 1).trimmingCharacters(in: stemTrim)
+            guard let part = parsePart(string(t, match, 2)) else { continue }
+            if isValidStem(stem) { return (stem, part, kind) }
+        }
+        return nil
+    }
+
+    private static let stemTrim = CharacterSet(charactersIn: " -‐‑‒–—|:,([#")
+
+    private static func isValidStem(_ stem: String) -> Bool {
+        !stem.isEmpty && normalize(stem).count >= 3 && firstMatch(genericStem, in: stem) == nil
+    }
+
+    // MARK: - Public API
+
+    /// Derives `(arcName, displayTitle, part)` for one title — used for per-row
+    /// arc labels. `arcName` is `nil` for a non-arc single; `displayTitle` is the
+    /// episode's title within the arc (the pipe middle, a subtitle, or a bare
+    /// "Part N"); `part` is the within-arc number.
     public static func derive(fromTitle title: String) -> (arcName: String?, displayTitle: String, part: Int?) {
-        let cleaned = stripNoisePrefix(title)
-
-        if let match = firstMatch(pipeArcPattern, in: cleaned) {
-            let arc = string(cleaned, match, 1).trimmed
-            let episodeTitle = string(cleaned, match, 2).trimmed
-            let part = Int(string(cleaned, match, 3).trimmed)
-            return (arc.isEmpty ? nil : arc, episodeTitle.isEmpty ? cleaned : episodeTitle, part)
+        let cleaned = clean(title)
+        guard let (stem, part, kind) = stemPartKind(title) else {
+            return (nil, cleaned.isEmpty ? title.trimmed : cleaned, nil)
         }
-
-        // Only treat this as a "Part N" arc when the captured token is a real
-        // number (Arabic or canonical Roman). A Roman-letter token that isn't
-        // a valid numeral (e.g. "MILD") fails `parsePart`, so the whole `if`
-        // is false and we fall through to the patterns below.
-        if let match = firstMatch(partArcPattern, in: cleaned),
-           let part = parsePart(string(cleaned, match, 2).trimmed) {
-            let arc = string(cleaned, match, 1).trimmed
-            let subtitle = match.range(at: 3).location != NSNotFound ? string(cleaned, match, 3).trimmed : ""
-            // No subtitle to show — fall back to a bare "Part N" (Arabic,
-            // so a Roman "Part I" normalizes to "Part 1" and matches an
-            // Arabic sibling) rather than repeating the arc name (already
-            // shown separately in the row's meta line / arc chip).
-            let displayTitle = subtitle.isEmpty ? "Part \(part)" : subtitle
-            return (arc.isEmpty ? nil : arc, displayTitle, part)
-        }
-
-        if let match = firstMatch(chapterArcPattern, in: cleaned) {
-            let part = Int(string(cleaned, match, 1).trimmed)
-            let episodeTitle = string(cleaned, match, 2).trimmed
-            return (nil, episodeTitle.isEmpty ? cleaned : episodeTitle, part)
-        }
-
-        if let match = firstMatch(trailingParenPartArcPattern, in: cleaned) {
-            let arc = string(cleaned, match, 1).trimmed
-            let part = Int(string(cleaned, match, 2).trimmed)
-            let displayTitle = part.map { "Part \($0)" } ?? cleaned
-            return (arc.isEmpty ? nil : arc, displayTitle, part)
-        }
-
-        if let match = firstMatch(trailingCommaPartArcPattern, in: cleaned) {
-            let arc = string(cleaned, match, 1).trimmed
-            let part = Int(string(cleaned, match, 2).trimmed)
-            let displayTitle = part.map { "Part \($0)" } ?? cleaned
-            return (arc.isEmpty ? nil : arc, displayTitle, part)
-        }
-
-        if let match = firstMatch(trailingEpArcPattern, in: cleaned) {
-            let arc = string(cleaned, match, 1).trimmed
-            let part = Int(string(cleaned, match, 2).trimmed)
-            let displayTitle = part.map { "Ep. \($0)" } ?? cleaned
-            return (arc.isEmpty ? nil : arc, displayTitle, part)
-        }
-
-        if let match = firstMatch(trailingChapterArcPattern, in: cleaned) {
-            let arc = string(cleaned, match, 1).trimmed
-            let part = Int(string(cleaned, match, 2).trimmed)
-            let displayTitle = part.map { "Chapter \($0)" } ?? cleaned
-            return (arc.isEmpty ? nil : arc, displayTitle, part)
-        }
-
-        return (nil, cleaned, nil)
+        return (stem, displayTitle(cleaned: cleaned, stem: stem, part: part, kind: kind), part)
     }
 
-    /// Groups `episodes` (expected newest-first) into arcs, ordered by the
-    /// recency of each arc's newest episode. Episodes without a derivable arc
-    /// are excluded — they render as singles in the episode list, not as a
-    /// shelf card.
-    ///
-    /// Only arcs with **2 or more** episodes are surfaced: a lone "Part 1"
-    /// isn't a series yet (matches `design/kit/data/american-history-tellers.json`'s
-    /// `arcs` array, whose entries are already multi-part story groupings —
-    /// there is no such thing as a 1-episode "arc" in that data).
-    ///
-    /// **Precedence (ROADMAP E8-S6: "season data, or title patterns"),
-    /// per-season since 2026-07-07:** title-derived arcs (`groupByTitle`) win
-    /// unconditionally — their membership, names, and order are untouched by
-    /// what follows. The `itunes:season` fallback then runs **per season**,
-    /// not all-or-nothing for the whole show: a season is only eligible for
-    /// a fallback card when **none** of its episodes already belong to a
-    /// title arc. This fixes teaser feeds like Serial, where most seasons
-    /// carry one full episode + a trailer (never reaching the title pass's
-    /// 2-episode threshold) alongside a few seasons that *do* form title
-    /// arcs — under the old all-or-nothing rule, the one title arc that
-    /// existed suppressed the season fallback for every other season,
-    /// collapsing the whole show to a single arc. It still protects shows
-    /// like American History Tellers (which sets `itunes:season` per arc
-    /// *and* has pipe-style titles, plus ~2-3 cross-promo episodes per
-    /// season that aren't part of the arc): because AHT's arc-bearing
-    /// seasons always have a title-arc member, they're ineligible for a
-    /// fallback card, so the cross-promo leftovers stay singles rather than
-    /// forming junk "Season N" cards. See `groupBySeason` for the per-season
-    /// eligibility and naming rules, and `mergeByRecency` for how the two
-    /// arc lists are combined into one shelf ordering.
+    /// Groups `episodes` (newest-first) into arcs, ordered by the recency of each
+    /// arc's newest episode. Episodes without a derivable arc are excluded.
     public static func groupIntoArcs(_ episodes: [Episode]) -> [Arc] {
-        let titleArcs = groupByTitle(episodes)
-        let titleArcMemberGUIDs = Set(titleArcs.flatMap(\.episodes).map(\.guid))
-        let seasonCards = groupBySeason(episodes, arcMemberGUIDs: titleArcMemberGUIDs)
-        return mergeByRecency(titleArcs, seasonCards)
+        let ordered = newestFirst(episodes)
+        let titleArcs = clusterGuarded(ordered)
+        let taken = Set(titleArcs.flatMap(\.episodes).map(\.guid))
+        let chapterCards = chapteredSeasonCards(ordered, taken: taken)
+        return mergeByRecency(titleArcs, chapterCards)
     }
 
-    /// Merges two newest-first-ordered arc lists into one, ordered by the
-    /// recency of each arc's newest episode. Both `groupByTitle` and
-    /// `groupBySeason` build their members by iterating a newest-first
-    /// input, so `episodes.first` is always an arc's newest episode.
-    private static func mergeByRecency(_ lhs: [Arc], _ rhs: [Arc]) -> [Arc] {
-        (lhs + rhs).sorted { arcA, arcB in
-            let dateA = arcA.episodes.first?.publishDate ?? .distantPast
-            let dateB = arcB.episodes.first?.publishDate ?? .distantPast
-            return dateA > dateB
-        }
-    }
+    // MARK: - Clustering
 
-    /// Groups episodes into arcs by title structure alone (see `derive(fromTitle:)`).
-    private static func groupByTitle(_ episodes: [Episode]) -> [Arc] {
+    /// Prefix-clustering with re-release dedup and the anthology guard.
+    private static func clusterGuarded(_ episodes: [Episode]) -> [Arc] {
         var order: [String] = []
-        var membersByName: [String: [Episode]] = [:]
+        var buckets: [String: [Episode]] = [:]
+        var display: [String: String] = [:]
+        var partOf: [String: Int] = [:]
+        var kindOf: [String: Kind] = [:]
+        var rerelOf: [String: Bool] = [:]
 
         for episode in episodes {
-            let (arcName, _, _) = derive(fromTitle: episode.title)
-            guard let arcName else { continue }
-            if membersByName[arcName] == nil {
-                membersByName[arcName] = []
-                order.append(arcName)
+            guard let (stem, part, kind) = stemPartKind(episode.title) else { continue }
+            let key = normalize(stem)
+            if buckets[key] == nil {
+                buckets[key] = []
+                order.append(key)
+                display[key] = stem
             }
-            membersByName[arcName, default: []].append(episode)
+            buckets[key, default: []].append(episode)
+            partOf[episode.guid] = part
+            kindOf[episode.guid] = kind
+            rerelOf[episode.guid] = firstMatch(rerelease, in: episode.title) != nil
         }
 
-        return order.compactMap { name -> Arc? in
-            guard let members = membersByName[name], members.count >= 2 else { return nil }
-            let seasons = Set(members.compactMap(\.season))
-            let season = seasons.count == 1 ? seasons.first : nil
-            return Arc(titleArcName: name, season: season, episodes: members)
+        // Prefix-merge: fold a longer stem into a shorter stem it begins with.
+        var canonical: [String: String] = [:]
+        for key in order {
+            var target = key
+            for other in order where other != key && key.hasPrefix(other + " ") && other.count < target.count {
+                target = other
+            }
+            canonical[key] = target
         }
-        // `order` was built in encounter order over a newest-first input, so
-        // the first episode seen for an arc is its newest — `order` is
-        // already sorted by arc recency. No further sort needed.
+        var mergedOrder: [String] = []
+        var merged: [String: [Episode]] = [:]
+        for key in order {
+            let target = canonical[key] ?? key
+            if merged[target] == nil { merged[target] = []; mergedOrder.append(target) }
+            merged[target, default: []].append(contentsOf: buckets[key] ?? [])
+        }
+
+        var arcs: [Arc] = []
+        for key in mergedOrder {
+            let members = merged[key] ?? []
+            for group in splitBySeason(members) {
+                let deduped = dedupeReReleases(group, partOf: partOf, rerelOf: rerelOf)
+                guard deduped.count >= 2 else { continue }
+                let parts = deduped.compactMap { partOf[$0.guid] }
+                let kinds = Set(deduped.compactMap { kindOf[$0.guid] })
+                if isAnthology(kind: kinds.count == 1 ? kinds.first : nil, parts: parts) { continue }
+                let seasons = Set(deduped.compactMap(\.season))
+                let season = seasons.count == 1 ? seasons.first : nil
+                arcs.append(Arc(titleArcName: display[key] ?? key, season: season, episodes: deduped))
+            }
+        }
+        return arcs
     }
 
-    /// Fallback grouping by `itunes:season`, per-season since 2026-07-07 and
-    /// **dominance-based since 2026-07-08** (see the precedence note on
-    /// `groupIntoArcs`). For each season, its episodes that already belong to a
-    /// title arc are counted (`arcMemberGUIDs`):
-    ///
-    /// - When those title-arc members cover **at least half** the season, the
-    ///   season is considered fully represented by its arc(s) and gets **no**
-    ///   fallback card. This protects AHT/Serial arc-seasons (the arc dominates)
-    ///   from sprouting a redundant "Season N" card next to the real arc, and
-    ///   keeps their cross-promo/trailer leftovers as singles.
-    /// - Otherwise the title arc is only a **minority bonus** within a season
-    ///   that has its own larger run (e.g. Bone Valley S2: a 2-part "Kevin is
-    ///   Next" bonus alongside six chapters). The season still earns a card,
-    ///   built from its **non-arc leftovers only** — the arc episodes live in
-    ///   their own arc and are not double-listed here.
-    ///
-    /// Episodes without a season are always excluded. A card needs **2 or more**
-    /// leftover members (same "not a series yet" rule as the title pass).
-    ///
-    /// Naming: a season card is named after the **most frequent non-nil
-    /// `arcName`** that `derive(fromTitle:)` extracts from its members, but only
-    /// when that name covers **at least half** of them (see `seasonCardName`) —
-    /// this recovers a real series name (e.g. Serial's "The Preventionist", one
-    /// full episode + a trailer) without letting a lone minority episode hijack
-    /// the label. Otherwise it falls back to the generic `"Season N"`.
-    private static func groupBySeason(_ episodes: [Episode], arcMemberGUIDs: Set<String>) -> [Arc] {
+    /// Splits a cluster across distinct non-nil `itunes:season` values (un-merges
+    /// same-named arcs from different seasons); nil-season members ride with the
+    /// largest group. One group when a cluster shares (at most) one season.
+    private static func splitBySeason(_ members: [Episode]) -> [[Episode]] {
+        var bySeason: [Int?: [Episode]] = [:]
+        var seenOrder: [Int?] = []
+        for e in members {
+            if bySeason[e.season] == nil { seenOrder.append(e.season) }
+            bySeason[e.season, default: []].append(e)
+        }
+        let nonNil = seenOrder.compactMap { $0 }
+        guard nonNil.count >= 2 else { return [members] }
+        var groups: [[Episode]] = nonNil.map { bySeason[$0] ?? [] }
+        if let nilMembers = bySeason[Int?.none], !nilMembers.isEmpty,
+           let biggest = groups.indices.max(by: { groups[$0].count < groups[$1].count }) {
+            groups[biggest].append(contentsOf: nilMembers)
+        }
+        return groups
+    }
+
+    /// Drops a re-release-marked episode when a non-re-release sibling already
+    /// covers that part number. Never drops a distinct (unmarked) episode.
+    private static func dedupeReReleases(_ members: [Episode],
+                                         partOf: [String: Int],
+                                         rerelOf: [String: Bool]) -> [Episode] {
+        let covered = Set(members.filter { !(rerelOf[$0.guid] ?? false) }.compactMap { partOf[$0.guid] })
+        var seenRerelease: Set<Int> = []
+        var drop: Set<String> = []
+        for e in members where rerelOf[e.guid] ?? false {
+            guard let part = partOf[e.guid] else { continue }
+            if covered.contains(part) || seenRerelease.contains(part) { drop.insert(e.guid) }
+            else { seenRerelease.insert(part) }
+        }
+        return drop.isEmpty ? members : members.filter { !drop.contains($0.guid) }
+    }
+
+    /// A cluster is an anthology (drop it) when its counter is a `Volume N` with
+    /// N ≥ 3 — an open-ended anthology, not a bounded arc. Recall-safe: never
+    /// fires on ordinary `Part N`, and never on large pipe/episode numbers (shows
+    /// like Even the Rich number every real arc by episode number).
+    private static func isAnthology(kind: Kind?, parts: [Int]) -> Bool {
+        guard let low = parts.min() else { return false }
+        return kind == .volume && low >= volumeAnthologyMin
+    }
+
+    /// Scoped chaptered-season pass: `Chapter N | Title` episodes carry no arc name
+    /// in the title (Bone Valley), so title-clustering misses them. Group those
+    /// specific, not-yet-claimed episodes by `itunes:season`. Tightly scoped to the
+    /// `Chapter N|:` shape, so it adds none of a blanket season-fallback's junk.
+    private static func chapteredSeasonCards(_ episodes: [Episode], taken: Set<String>) -> [Arc] {
         var order: [Int] = []
-        var membersBySeason: [Int: [Episode]] = [:]
-
-        for episode in episodes {
-            guard let season = episode.season else { continue }
-            if membersBySeason[season] == nil {
-                membersBySeason[season] = []
-                order.append(season)
-            }
-            membersBySeason[season, default: []].append(episode)
+        var bySeason: [Int: [Episode]] = [:]
+        for e in episodes {
+            guard !taken.contains(e.guid), let season = e.season else { continue }
+            guard firstMatch(chapterLeadAnchored, in: clean(e.title)) != nil else { continue }
+            if bySeason[season] == nil { bySeason[season] = []; order.append(season) }
+            bySeason[season, default: []].append(e)
         }
-
-        return order
-            .compactMap { season -> Arc? in
-                guard let members = membersBySeason[season] else { return nil }
-                let arcMemberCount = members.lazy.filter { arcMemberGUIDs.contains($0.guid) }.count
-                // Arc(s) cover at least half the season → fully represented, no card.
-                guard arcMemberCount * 2 < members.count else { return nil }
-                // Minority bonus arc(s): card from the non-arc leftovers only.
-                let leftovers = members.filter { !arcMemberGUIDs.contains($0.guid) }
-                guard leftovers.count >= 2 else { return nil }
-                return Arc(seasonCardName: seasonCardName(for: leftovers, season: season), season: season, episodes: leftovers)
-            }
-            .sorted { ($0.season ?? Int.min) > ($1.season ?? Int.min) }
+        return order.compactMap { season in
+            guard let members = bySeason[season], members.count >= 2 else { return nil }
+            return Arc(seasonCardName: "Season \(season)", season: season, episodes: members)
+        }
     }
 
-    /// The most frequent non-nil `arcName` `derive(fromTitle:)` extracts
-    /// across `members` — but only when it represents the card, i.e. it covers
-    /// **at least half** of them. `"Season N"` on a tie, when no member derives
-    /// a name, or when the top name is only a minority (so a single bonus
-    /// episode can't hijack a whole season card's label).
-    private static func seasonCardName(for members: [Episode], season: Int) -> String {
-        var counts: [String: Int] = [:]
-        for member in members {
-            let (arcName, _, _) = derive(fromTitle: member.title)
-            guard let arcName else { continue }
-            counts[arcName, default: 0] += 1
+    // MARK: - Ordering
+
+    private static func newestFirst(_ episodes: [Episode]) -> [Episode] {
+        episodes.sorted { $0.publishDate > $1.publishDate }
+    }
+
+    private static func mergeByRecency(_ lhs: [Arc], _ rhs: [Arc]) -> [Arc] {
+        (lhs + rhs).sorted { a, b in
+            (a.episodes.first?.publishDate ?? .distantPast) > (b.episodes.first?.publishDate ?? .distantPast)
         }
-        let maxCount = counts.values.max() ?? 0
-        let topNames = counts.filter { $0.value == maxCount }.keys
-        guard maxCount > 0, topNames.count == 1, maxCount * 2 >= members.count, let winner = topNames.first else {
-            return "Season \(season)"
+    }
+
+    // MARK: - Display title
+
+    private static let pipeMiddle = rx(#"^(.+?)\s*\|\s*(.+?)\s*\|\s*\d+\s*$"#)
+    private static let leadingCounter = rx(
+        "^[\(dashes)\\s:,.|(\\[]*\\s*(?:Part|Pt\\.?|Parte|Ep(?:isode|\\.)?|Chapter|Vol(?:ume)?\\.?|#)?\\s*(?:\(numWord))\\s*[)\\]]?\\s*[\(dashes):|]*\\s*",
+        [.caseInsensitive])
+
+    /// The episode's title within its arc: the pipe middle, else the subtitle left
+    /// after removing the stem prefix and a leading counter, else a bare "Part N".
+    private static func displayTitle(cleaned: String, stem: String, part: Int, kind: Kind) -> String {
+        if kind == .pipe, let m = firstMatch(pipeMiddle, in: cleaned) {
+            let middle = string(cleaned, m, 2).trimmed
+            if !middle.isEmpty { return middle }
         }
-        return winner
+        var rest = cleaned
+        if let r = rest.range(of: stem), r.lowerBound == rest.startIndex {
+            rest = String(rest[r.upperBound...])
+        }
+        rest = stripLeading(leadingCounter, from: rest).trimmed
+        return rest.isEmpty ? "Part \(part)" : rest
     }
 
     // MARK: - Part-number parsing
 
-    /// Strict, canonical Roman-numeral shape (1–3999). Anchored so partial /
-    /// malformed sequences (e.g. "MILD", "IIII", "VX") are rejected — only
-    /// well-formed numerals count as a part number.
-    private static let canonicalRoman: NSRegularExpression = {
-        // swiftlint:disable:next force_try — fixed literal, verified at authoring time.
-        try! NSRegularExpression(
-            pattern: #"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"#,
-            options: [.caseInsensitive]
-        )
-    }()
-
-    /// Parses a part token captured by `partArcPattern` as Arabic (`4`) or a
-    /// canonical Roman numeral (`IV` → 4). Returns `nil` for anything else so
-    /// the caller can fall through rather than invent a spurious arc.
-    private static func parsePart(_ token: String) -> Int? {
-        if let arabic = Int(token) { return arabic }
-        return romanToInt(token)
-    }
-
-    /// Converts a canonical Roman numeral to its value; `nil` if `raw` isn't a
-    /// well-formed numeral. The `canonicalRoman` gate runs first, so the
-    /// value-accumulation loop only ever sees the seven Roman letters.
     private static func romanToInt(_ raw: String) -> Int? {
         let s = raw.uppercased()
         guard !s.isEmpty else { return nil }
         let range = NSRange(s.startIndex..., in: s)
         guard canonicalRoman.firstMatch(in: s, range: range) != nil else { return nil }
         let values: [Character: Int] = ["I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000]
-        var total = 0
-        var highestSeen = 0
+        var total = 0, highest = 0
         for character in s.reversed() {
             guard let value = values[character] else { return nil }
-            total += value < highestSeen ? -value : value
-            highestSeen = max(highestSeen, value)
+            total += value < highest ? -value : value
+            highest = max(highest, value)
         }
         return total
     }
 
-    // MARK: - Helpers
+    // MARK: - Normalization + regex helpers
 
-    private static func stripNoisePrefix(_ title: String) -> String {
-        let range = NSRange(title.startIndex..., in: title)
-        guard let match = noisePrefix.firstMatch(in: title, range: range) else {
-            return title.trimmed
-        }
-        guard let swiftRange = Range(match.range, in: title) else { return title.trimmed }
-        return String(title[swiftRange.upperBound...]).trimmed
+    /// Lowercase, strip a leading article, collapse non-alphanumerics to single
+    /// spaces — the clustering key (so "The X: A Tale" and "X A Tale" agree).
+    private static func normalize(_ s: String) -> String {
+        let folded = s.folding(options: .diacriticInsensitive, locale: nil).lowercased()
+        let noArticle = firstMatch(leadingArticle, in: folded).flatMap { Range($0.range, in: folded) }
+            .map { String(folded[$0.upperBound...]) } ?? folded
+        let collapsed = noArticle.unicodeScalars.map { articleAlnum.contains($0) ? Character($0) : " " }
+        return String(collapsed).split(separator: " ").joined(separator: " ")
+    }
+
+    private static let leadingArticle = rx(#"^(the|a|an)\s+"#, [.caseInsensitive])
+    private static let articleAlnum = CharacterSet.alphanumerics
+
+    private static func stripLeading(_ regex: NSRegularExpression, from text: String) -> String {
+        guard let match = firstMatch(regex, in: text), match.range.location == 0,
+              let r = Range(match.range, in: text) else { return text }
+        return String(text[r.upperBound...])
+    }
+
+    private static func removeMatch(_ regex: NSRegularExpression, in text: String) -> String {
+        guard let match = firstMatch(regex, in: text), let r = Range(match.range, in: text) else { return text }
+        return (String(text[..<r.lowerBound]) + String(text[r.upperBound...])).trimmed
     }
 
     private static func firstMatch(_ regex: NSRegularExpression, in text: String) -> NSTextCheckingResult? {
-        let range = NSRange(text.startIndex..., in: text)
-        return regex.firstMatch(in: text, range: range)
+        regex.firstMatch(in: text, range: NSRange(text.startIndex..., in: text))
     }
 
     private static func string(_ text: String, _ match: NSTextCheckingResult, _ groupIndex: Int) -> String {
