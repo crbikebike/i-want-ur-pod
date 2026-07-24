@@ -7,6 +7,13 @@
 // the shared kit frame AppShell + LiquidGlassTabBar already own, not
 // re-translated here).
 //
+// Phase C (2026-07-23) added `exploreThemeSection` — the "Explore by theme"
+// hero card between New episodes and Our favorites, translated from
+// design/kit/components/explore-hero-card.html and pushing `ExploreRoute`
+// onto this screen's own `path` (see `ExploreThemeHeroCard.swift`,
+// `ThemeFeedScreen.swift`, `ThemeShowDeckScreen.swift`, and
+// design/kit/MANIFEST.md's "Explore by theme — swipe deck" entry).
+//
 // ROADMAP.md E8-S2: Home replaces Discover as the first tab destination.
 // Renders three sections in kit order — an Up Next rail, a New episodes rail,
 // and an Our-favorites shelf — each rendering nothing
@@ -64,6 +71,15 @@ public struct HomeScreen: View {
 
     @State private var path = NavigationPath()
     @State private var curatedEntries: [CuratedEntry] = []
+    /// Explore-by-theme hero card counts (`ExploreThemeHeroCard`'s `315
+    /// shows`/`30 themes` pills) — loaded once via `CatalogProvider` and kept
+    /// as plain `Int`s rather than the full decoded arrays, since the card
+    /// only ever needs the counts. Falls back to the kit's own literal copy
+    /// (`315`/`30`) if the bundle lookup ever comes back empty (e.g. a
+    /// preview with no bundled catalog).
+    @State private var exploreShowCount = 315
+    @State private var exploreThemeCount = 30
+    @State private var exploreCountsLoaded = false
     /// Transient subscribe-button animation state, keyed by `CuratedEntry.id`
     /// (its feedURL string) — shared across both curated shelves so
     /// subscribing from either one updates the other's card identically.
@@ -103,6 +119,7 @@ public struct HomeScreen: View {
 
                         upNextSection
                         newEpisodesSection
+                        exploreThemeSection
                         ourFavoritesSection
                     }
                     .padding(.horizontal, Spacing.gutter)
@@ -125,11 +142,26 @@ public struct HomeScreen: View {
             .navigationDestination(for: SettingsRoute.self) { _ in
                 SettingsScreen()
             }
+            .navigationDestination(for: ExploreRoute.self) { route in
+                switch route {
+                case .themeFeed:
+                    ThemeFeedScreen(onDiveIn: { slug in path.append(ExploreRoute.themeShows(slug: slug)) })
+                case .themeShows(let slug):
+                    ThemeShowDeckScreen(themeSlug: slug)
+                }
+            }
         }
         .onAppear {
             queueStore.reload()
             if curatedEntries.isEmpty {
                 curatedEntries = HomeFeedProvider.loadCuratedEntries()
+            }
+            if !exploreCountsLoaded {
+                let catalogCount = CatalogProvider.loadEntries().count
+                let themeCount = CatalogProvider.loadThemes().count
+                if catalogCount > 0 { exploreShowCount = catalogCount }
+                if themeCount > 0 { exploreThemeCount = themeCount }
+                exploreCountsLoaded = true
             }
             // Gate check happens on every appearance (not just launch) so a
             // Settings reset re-shows the explainer the next time Home is
@@ -259,6 +291,20 @@ public struct HomeScreen: View {
     private func openEpisodeShow(_ episode: Episode) {
         guard let feedURL = episode.podcast?.feedURL else { return }
         path.append(feedURL)
+    }
+
+    // MARK: - Explore by theme (.hero — see design/kit/components/explore-hero-card.html)
+
+    /// The guided-discovery hero card, placed between "New episodes" and
+    /// "Our favorites" (matching the kit's Home-scroll context slice).
+    /// Tapping it pushes `ExploreRoute.themeFeed` (Tier 1 — `ThemeFeedScreen`).
+    private var exploreThemeSection: some View {
+        ExploreThemeHeroCard(
+            showCount: exploreShowCount,
+            themeCount: exploreThemeCount,
+            action: { path.append(ExploreRoute.themeFeed) }
+        )
+        .padding(.top, Spacing.sp6)
     }
 
     // MARK: - Our favorites (.shelf "Our favorites")
