@@ -1,0 +1,31 @@
+{
+  "winner": "A2r3.1-guard",
+  "junk": 0.0028,
+  "precision": 0.9894,
+  "detected": 362,
+  "junk_arcs": 1,
+  "noguard_junk": 0.0055,
+  "noguard_junk_arcs": 2,
+  "gold_before": 583,
+  "gold_after": 590,
+  "gold_adds": 7,
+  "guarded": 1,
+  "irreducible": 1,
+  "steps": [
+    {
+      "label": "Start (A2r3)",
+      "junk": 2.5,
+      "note": "9 junk arcs vs original gold"
+    },
+    {
+      "label": "Gold corrected",
+      "junk": 0.5,
+      "note": "7 real arcs the labelers missed, restored via blind dual-Sonnet adjudication"
+    },
+    {
+      "label": "Volume-anthology guard",
+      "junk": 0.28,
+      "note": "drop 'Volume N' open anthologies (recall-safe)"
+    }
+  ]
+}
