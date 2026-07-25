@@ -37,12 +37,15 @@ SCREEN_FILES = [
     ("detail-aht",       "podcast-detail-american-history-tellers.html", "Detail · AHT"),
     ("detail-explorers", "podcast-detail-explorers-podcast.html",        "Detail · Explorers"),
     ("first-run",        "first-run.html",         "Onboarding"),
+    ("explore-themes",   "explore-themes.html",    "Explore · Themes"),
+    ("explore-theme-shows","explore-theme-shows.html","Explore · Shows"),
 ]
 
 # Which buttons appear in the out-of-frame "jump" strip (name -> label).
 JUMP = ["home", "shows", "up-next", "search-start", "search-typing",
         "search-loading", "search-results", "search-noresults", "search-error",
-        "add-feed-url", "settings", "listening-history", "detail-aht", "detail-explorers", "first-run"]
+        "add-feed-url", "settings", "listening-history", "detail-aht", "detail-explorers", "first-run",
+        "explore-themes", "explore-theme-shows"]
 
 
 def esc_for_template_literal(s: str) -> str:

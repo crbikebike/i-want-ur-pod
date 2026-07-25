@@ -62,3 +62,13 @@
 //   EmptyStateView(kind: EmptyKind, title: String, message: String,
 //                  actions: () -> some View)
 //   // enum EmptyKind { case firstRun, noResults, error }
+//
+// ── Swipe deck (design/kit/screens/explore-theme-shows.html, Phase C) ──────
+//   SwipeDeck<Item, CardContent>(items: [Item], visibleDepth: Int,
+//             rightStampTitle: String, leftStampTitle: String,
+//             programmaticAction: Binding<SwipeDeckAction?>,
+//             onSwipeRight: (Item) -> Void, onSwipeLeft: (Item) -> Void,
+//             onTap: (Item) -> Void, card: (Item) -> some View)
+//   // enum SwipeDeckAction { case right, left } — set `programmaticAction`
+//   // to fly the top card off without a real drag (e.g. a detail sheet's
+//   // Subscribe action advancing the deck behind it).

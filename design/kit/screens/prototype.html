@@ -90,6 +90,8 @@
       <button class="jbtn" data-go="detail-aht">Detail · AHT</button>
       <button class="jbtn" data-go="detail-explorers">Detail · Explorers</button>
       <button class="jbtn" data-go="first-run">Onboarding</button>
+      <button class="jbtn" data-go="explore-themes">Explore · Themes</button>
+      <button class="jbtn" data-go="explore-theme-shows">Explore · Shows</button>
   </div>
 
   <div class="wrap">
@@ -118,6 +120,8 @@
       <button class="jbtn" data-go="detail-aht">Detail · AHT</button>
       <button class="jbtn" data-go="detail-explorers">Detail · Explorers</button>
       <button class="jbtn" data-go="first-run">Onboarding</button>
+      <button class="jbtn" data-go="explore-themes">Explore · Themes</button>
+      <button class="jbtn" data-go="explore-theme-shows">Explore · Shows</button>
       </div>
       <div class="railnote">
         <b>Search flow:</b> tap Search → type → Enter runs loading → results.
@@ -13378,6 +13382,1134 @@ const SCREENS = {
       tab.classList.add('active'); tab.setAttribute('aria-current','page');
     });
   });
+<\/script>
+`,
+  'explore-themes': `<!-- @dsCard group="Explore" -->
+<title>Explore by theme — theme feed</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  :root {
+    --coral: #FF6A4D; --coral-deep: #CA340F; --mint: #34E0C4; --mint-deep: #046B58; --grape: #7C6BFF;
+    --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px; --sp-6: 26px; --sp-7: 32px; --gutter: var(--sp-5);
+    --r-lg: 20px; --r-md: 16px; --r-sm: 12px; --r-field: 11px; --r-art: 14px; --r-seg: 9px; --r-pill: 999px;
+    --dur-fast: .2s; --dur-mid: .3s; --dur-row: .55s; --dur-rise: .6s;
+    --ease-spring: cubic-bezier(.34, 1.56, .64, 1); --ease-soft: cubic-bezier(.22, .61, .36, 1);
+    --elev-list: 0 1px 0 var(--hairline), 0 8px 24px -18px rgba(0,0,0,.5);
+    --elev-card: 0 1px 0 var(--hairline), 0 12px 30px -20px rgba(0,0,0,.55);
+    --elev-sub: 0 6px 14px -8px var(--accent);
+    --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  :root, :root[data-theme="dark"] {
+    --bg: #0E0B12; --grouped-bg: #0E0B12; --bg-glow-1: rgba(255,106,77,.10); --bg-glow-2: rgba(52,224,196,.07);
+    --surface: #1C1722; --surface-2: #262030; --hairline: rgba(255,255,255,.09); --separator: rgba(255,255,255,.12);
+    --text: #F8F3EF; --text-dim: #ABA1B4; --text-faint: #988DA1;
+    --accent: var(--coral); --accent-2: var(--mint); --on-accent: #2A0E04;
+    --chip: rgba(255,255,255,.08); --chip-text: #F8F3EF; --field: rgba(120,120,128,.24); --danger: #FF453A;
+    --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94); --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5); --tabbar-icon: #8B8291;
+  }
+  :root[data-theme="light"] {
+    --bg: #F2F1F6; --grouped-bg: #F2F1F6; --bg-glow-1: rgba(245,80,47,.09); --bg-glow-2: rgba(6,169,139,.08);
+    --surface: #FFFFFF; --surface-2: #F6F1EC; --hairline: rgba(40,26,36,.10); --separator: rgba(60,60,67,.18);
+    --text: #1A1420; --text-dim: #6B6472; --text-faint: #736A78;
+    --accent: var(--coral-deep); --accent-2: var(--mint-deep); --on-accent: #FFFFFF;
+    --chip: rgba(118,118,128,.12); --chip-text: #1A1420; --field: rgba(118,118,128,.10); --danger: #FF3B30;
+    --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96); --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12); --tabbar-icon: #6C6C70;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: var(--font);
+    background: radial-gradient(120% 60% at 85% -5%, #211a2b, transparent 60%), radial-gradient(90% 50% at 0% 8%, #17131e, transparent 55%), #0a070e;
+    color: var(--text); min-height: 100vh; display: grid; place-items: center; padding: 28px 12px;
+    transition: background .5s var(--ease-soft);
+  }
+  :root[data-theme="light"] body {
+    background: radial-gradient(120% 60% at 85% -5%, #f0e6f4, transparent 60%), radial-gradient(90% 50% at 0% 8%, #eef0f6, transparent 55%), #e6e4ee;
+  }
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100; height: 44px; padding: 0 16px 0 14px;
+    display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.16);
+    border-radius: var(--r-pill); background: rgba(30,24,38,.7); backdrop-filter: blur(14px);
+    color: #F8F3EF; font-family: var(--font); font-size: .82rem; font-weight: 700; cursor: pointer;
+    transition: transform .3s var(--ease-spring), background .3s;
+  }
+  :root[data-theme="light"] .theme-toggle { background: rgba(255,255,255,.82); border-color: rgba(40,26,36,.12); color: #1A1420; }
+  .theme-toggle:active { transform: scale(.92); }
+  .theme-toggle .tg-emoji { font-size: 1rem; transition: transform .5s var(--ease-spring); }
+
+  .phone {
+    position: relative; width: 390px; height: 844px; border-radius: 54px; background: var(--grouped-bg);
+    box-shadow: 0 0 0 12px #050308, 0 0 0 14px #322838, 0 50px 90px -30px rgba(0,0,0,.85);
+    overflow: hidden; transition: background .5s var(--ease-soft);
+  }
+  .screen { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; overflow: hidden; background: transparent; }
+
+  /* ---------- overlay chrome (floats above the feed) ---------- */
+  .statusbar {
+    height: 54px; flex: none; display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 0 28px 8px; font-size: .82rem; font-weight: 700; position: absolute; top: 0; left: 0; right: 0; z-index: 30; color: #fff;
+    text-shadow: 0 1px 6px rgba(0,0,0,.4);
+  }
+  .statusbar .sb-right { display: flex; align-items: center; gap: 6px; }
+  .sb-right svg { display: block; }
+  .notch { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 118px; height: 30px; border-radius: 18px; background: #050308; z-index: 40; }
+
+  .topbar {
+    position: absolute; top: 46px; left: 0; right: 0; z-index: 30;
+    display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-1) var(--gutter);
+  }
+  .iconbtn {
+    flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+    border: none; cursor: pointer; background: rgba(0,0,0,.32); color: #fff; backdrop-filter: blur(8px);
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.22); transition: transform .3s var(--ease-spring);
+  }
+  .iconbtn:active { transform: scale(.9); }
+  .topbar .tb-title { flex: 1; min-width: 0; text-align: center; }
+  .topbar .tb-eyebrow { font-size: .64rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #fff; opacity: .92; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+  .progresspill {
+    flex: none; min-width: 52px; height: 40px; padding: 0 14px; border-radius: var(--r-pill);
+    display: inline-flex; align-items: center; justify-content: center; gap: 3px;
+    background: rgba(0,0,0,.32); color: rgba(255,255,255,.8); backdrop-filter: blur(8px);
+    font-size: .82rem; font-weight: 800; font-variant-numeric: tabular-nums; box-shadow: inset 0 0 0 .5px rgba(255,255,255,.18);
+  }
+  .progresspill b { color: #fff; }
+
+  /* ---------- vertical theme feed (up/down = browse) ---------- */
+  .feed {
+    position: absolute; inset: 0; z-index: 2; overflow-y: auto; overflow-x: hidden;
+    scroll-snap-type: y mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .feed::-webkit-scrollbar { width: 0; }
+
+  .slide {
+    position: relative; height: 100%; width: 100%; scroll-snap-align: start; scroll-snap-stop: always;
+    display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; color: #fff;
+  }
+  /* per-theme gradient washes (theme cards have no artwork — the palette IS the art) */
+  .g0 { background: linear-gradient(155deg, #FF6A4D, #CA340F 78%); }
+  .g1 { background: linear-gradient(155deg, #7C6BFF, #3B2C8F 80%); }
+  .g2 { background: linear-gradient(155deg, #2E8BFF, #12324F 82%); }
+  .g3 { background: linear-gradient(155deg, #FF5E9A, #7C1D4B 80%); }
+  .g4 { background: linear-gradient(155deg, #22C1A6, #046B58 82%); }
+  .g5 { background: linear-gradient(155deg, #FFB03A, #B23A0F 82%); }
+  .g6 { background: linear-gradient(155deg, #34E0C4, #1E5F8F 82%); }
+  .g7 { background: linear-gradient(155deg, #A97BFF, #6A2C8F 82%); }
+
+  .slide .wm {
+    position: absolute; right: -22px; top: 60px; font-size: 15rem; line-height: 1;
+    opacity: .15; transform: rotate(-8deg); pointer-events: none;
+  }
+  .slide::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+    background: radial-gradient(90% 50% at 16% 4%, rgba(255,255,255,.22), transparent 52%),
+                linear-gradient(180deg, rgba(0,0,0,.18) 0%, transparent 22%, transparent 52%, rgba(6,4,10,.55) 100%);
+  }
+  .slide .inner { position: relative; z-index: 2; padding: 0 22px 30px; }
+
+  .kicker {
+    display: inline-flex; align-items: center; gap: 7px; font-size: .66rem; font-weight: 800;
+    letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.9);
+  }
+  .kicker .em { font-size: 1rem; }
+  .name {
+    font-family: var(--font-display); font-weight: 700; font-size: 2.5rem; line-height: 1.0;
+    letter-spacing: -.025em; margin-top: 12px; text-shadow: 0 2px 22px rgba(0,0,0,.3); max-width: 12ch;
+  }
+  .desc { margin-top: 14px; font-size: 1rem; font-weight: 500; line-height: 1.44; color: rgba(255,255,255,.94); max-width: 30ch; }
+
+  /* peek of the shows inside the theme */
+  .inside { margin-top: 22px; }
+  .inside-label { font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.72); }
+  .thumbs { display: flex; align-items: center; gap: 9px; margin-top: 10px; }
+  .thumb {
+    flex: none; width: 46px; height: 46px; border-radius: 12px; position: relative; overflow: hidden;
+    background-size: cover; background-position: center;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.28), 0 6px 14px -8px rgba(0,0,0,.6);
+    display: grid; place-items: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: rgba(255,255,255,.94);
+  }
+  .thumb.t1 { background-image: linear-gradient(140deg,#FF7A4D,#FF4D8D); }
+  .thumb.t2 { background-image: linear-gradient(140deg,#34E0C4,#2E8BFF); }
+  .thumb.t3 { background-image: linear-gradient(140deg,#FFC24D,#FF6A4D); }
+  .thumb.t4 { background-image: linear-gradient(140deg,#7C6BFF,#34E0C4); }
+  .thumb.t5 { background-image: linear-gradient(140deg,#FF5E9A,#7C6BFF); }
+  .thumb.more {
+    background: rgba(0,0,0,.34); box-shadow: inset 0 0 0 1px rgba(255,255,255,.24);
+    font-size: .78rem; font-weight: 800; letter-spacing: -.01em; color: #fff;
+  }
+
+  /* dive-in CTA */
+  .dive {
+    margin-top: 24px; width: 100%; min-height: 54px; border: none; cursor: pointer; border-radius: var(--r-pill);
+    font-family: var(--font); font-size: 1.02rem; font-weight: 800; letter-spacing: .01em; color: var(--on-accent);
+    background: #fff; color: #201018;
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    box-shadow: 0 14px 30px -12px rgba(0,0,0,.6); transition: transform .25s var(--ease-spring);
+  }
+  .dive:active { transform: scale(.97); }
+  .dive svg { display: block; }
+
+  /* up/down affordance */
+  .swipehint {
+    position: absolute; z-index: 20; left: 50%; top: 33%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+    font-size: .66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.82);
+    pointer-events: none; animation: floaty 1.8s var(--ease-soft) infinite; transition: opacity .3s;
+    text-shadow: 0 1px 8px rgba(0,0,0,.35);
+  }
+  .swipehint svg { display: block; opacity: .85; }
+  @keyframes floaty { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -5px); } }
+
+  /* right-edge scroll dots */
+  .dots { position: absolute; z-index: 20; right: 10px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 6px; pointer-events: none; }
+  .dots i { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.35); transition: all .25s; }
+  .dots i.on { background: #fff; height: 16px; border-radius: 3px; }
+
+  .home-ind { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 134px; height: 5px; border-radius: 3px; background: #fff; opacity: .5; z-index: 25; }
+
+  /* ---------- "jump to a theme" overview (tap the n/30 pill) ---------- */
+  .progresspill { cursor: pointer; }
+  .progresspill .caret { margin-left: 4px; opacity: .8; }
+  .ov-backdrop {
+    position: absolute; inset: 0; z-index: 40; background: rgba(6,4,10,.6);
+    backdrop-filter: blur(2px); opacity: 0; pointer-events: none; transition: opacity .3s var(--ease-soft);
+  }
+  .ov-backdrop.show { opacity: 1; pointer-events: auto; }
+  .ov-sheet {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 41; height: 76%;
+    background: var(--surface); border-radius: 26px 26px 0 0; overflow: hidden; display: flex; flex-direction: column;
+    box-shadow: 0 -18px 50px -24px rgba(0,0,0,.7), inset 0 0 0 .5px var(--hairline);
+    transform: translateY(102%); transition: transform .38s var(--ease-spring);
+  }
+  .ov-sheet.show { transform: translateY(0); }
+  .ov-grab { flex: none; padding: 10px 0 2px; display: grid; place-items: center; }
+  .ov-grab i { width: 40px; height: 5px; border-radius: 3px; background: var(--separator); }
+  .ov-head { flex: none; display: flex; align-items: center; justify-content: space-between; padding: 6px var(--gutter) 10px; }
+  .ov-head h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.16rem; letter-spacing: -.01em; color: var(--text); }
+  .ov-head .ov-x { width: 34px; height: 34px; border-radius: 50%; border: none; cursor: pointer; background: var(--chip); color: var(--text); display: grid; place-items: center; }
+  .ov-list { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 0 var(--gutter) 20px; scrollbar-width: none; }
+  .ov-list::-webkit-scrollbar { width: 0; }
+  .ov-row {
+    display: flex; align-items: center; gap: var(--sp-3); padding: 9px 6px; cursor: pointer;
+    border-radius: 12px; position: relative; transition: background .15s;
+  }
+  .ov-row:not(:last-child)::after { content: ""; position: absolute; left: 56px; right: 6px; bottom: 0; height: .5px; background: var(--separator); }
+  .ov-row:active { background: color-mix(in srgb, var(--text) 7%, transparent); }
+  .ov-row.here { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+  .ov-ico { flex: none; width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; font-size: 1.15rem;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.18); }
+  .ov-meta { flex: 1; min-width: 0; }
+  .ov-name { font-size: .98rem; font-weight: 700; letter-spacing: -.01em; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ov-count { margin-top: 1px; font-size: .78rem; font-weight: 600; color: var(--text-dim); }
+  .ov-row .chev { flex: none; color: var(--text-faint); }
+
+  @media (prefers-reduced-motion: reduce) { .swipehint { animation: none; } .feed { scroll-behavior: auto; } .ov-sheet { transition: none; } }
+</style>
+
+<button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
+  <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
+</button>
+
+<div class="phone">
+  <div class="notch"></div>
+  <div class="screen">
+
+    <!-- vertical theme feed -->
+    <div class="feed" id="feed"><!-- slides injected --></div>
+
+    <!-- overlay chrome -->
+    <div class="statusbar">
+      <span>9:41</span>
+      <span class="sb-right">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="4.5" width="3" height="7.5" rx="1"/><rect x="9" y="2" width="3" height="10" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
+        <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.4c2 0 3.9.8 5.3 2.1l1.2-1.3A9.4 9.4 0 0 0 8.5.6 9.4 9.4 0 0 0 2 3.2l1.2 1.3A7.4 7.4 0 0 1 8.5 2.4Z"/><path d="M8.5 6c1 0 2 .4 2.7 1.1l1.2-1.3A6 6 0 0 0 8.5 4a6 6 0 0 0-3.9 1.8l1.2 1.3A4 4 0 0 1 8.5 6Z"/><circle cx="8.5" cy="9.6" r="1.7"/></svg>
+        <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="1" y="1" width="21" height="10" rx="3" stroke="currentColor" stroke-width="1.2" opacity=".5"/><rect x="2.6" y="2.6" width="16" height="6.8" rx="1.6" fill="currentColor"/><rect x="23.4" y="4" width="1.8" height="4" rx="1" fill="currentColor" opacity=".6"/></svg>
+      </span>
+    </div>
+
+    <div class="topbar">
+      <button class="iconbtn" aria-label="Back to Home" onclick="history.length>1?history.back():null">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="tb-title"><div class="tb-eyebrow">Explore by theme</div></div>
+      <button class="progresspill" id="pill" aria-label="Jump to a theme" onclick="openList()"><b id="pgNow">1</b>/<span id="pgTotal">30</span><svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+
+    <div class="dots" id="dots" aria-hidden="true"></div>
+
+    <!-- jump-to-a-theme overview -->
+    <div class="ov-backdrop" id="ovBackdrop" onclick="closeList()"></div>
+    <div class="ov-sheet" id="ovSheet" role="dialog" aria-label="All themes">
+      <div class="ov-grab"><i></i></div>
+      <div class="ov-head">
+        <h2>Jump to a theme</h2>
+        <button class="ov-x" aria-label="Close" onclick="closeList()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="ov-list" id="ovList"></div>
+    </div>
+
+    <div class="swipehint" id="swipehint">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Swipe up
+    </div>
+
+    <div class="home-ind"></div>
+  </div>
+</div>
+
+<script>
+  // ---- theme data (real slugs/names/counts/descriptions from curation/catalog/themes.json) ----
+  // thumbs: up to 5 shows to peek — \`art\` = local jpg, else initial on a gradient tile.
+  const THEMES = [
+    { slug:'institutional-coverup', name:'The Institutional Cover-Up', count:72, emoji:'🕵️', g:'g0',
+      desc:'A powerful institution hid its wrongdoing — and protected itself instead of the people it harmed.',
+      thumbs:[{art:'serial.jpg'},{art:'bone-valley.jpg'},{i:'R'},{i:'F'},{i:'D'}] },
+    { slug:'historical-reconstruction', name:'History, Retold', count:56, emoji:'📜', g:'g1',
+      desc:'A narrative rebuilds a past event or figure from the record — revising what we thought we knew.',
+      thumbs:[{art:'rest-is-history.jpg'},{art:'fall-of-civilizations.jpg'},{art:'american-history-tellers.jpg'},{art:'revolutions.jpg'},{i:'C'}] },
+    { slug:'unsolved-cold-case', name:'Unsolved & Cold Cases', count:54, emoji:'🔎', g:'g2',
+      desc:'A killing that was never solved gets reopened years later, chasing overlooked evidence.',
+      thumbs:[{art:'serial.jpg'},{i:'L'},{i:'G'},{i:'S'},{i:'O'}] },
+    { slug:'abuse-of-power', name:'Abuse of Power', count:40, emoji:'⚖️', g:'g7',
+      desc:'Someone with authority exploits that trust, and the reporting follows the trail of victims.',
+      thumbs:[{i:'D'},{i:'D'},{i:'S'},{art:'radiolab.jpg'},{i:'7'}] },
+    { slug:'personal-mystery', name:'Personal Mysteries', count:40, emoji:'🧩', g:'g6',
+      desc:'A host chases a private, human-scale puzzle — as much about the searcher as the answer.',
+      thumbs:[{art:'song-exploder.jpg'},{i:'S'},{i:'A'},{i:'T'},{i:'L'}] },
+    { slug:'financial-fraud', name:'Fraud, Scams & Ponzis', count:36, emoji:'💸', g:'g4',
+      desc:'Money is the crime scene — fake companies and cooked books that unravel when the cash runs out.',
+      thumbs:[{art:'acquired.jpg'},{i:'W'},{i:'S'},{i:'A'},{i:'C'}] },
+    { slug:'charismatic-con-artist', name:'The Charismatic Con Artist', count:30, emoji:'🎭', g:'g3',
+      desc:'A magnetic liar wins trust, builds a fantasy, and leaves ruin behind.',
+      thumbs:[{i:'D'},{i:'W'},{i:'S'},{i:'S'},{i:'D'}] },
+    { slug:'cult-high-control-group', name:'Cults & High-Control Groups', count:11, emoji:'🕯️', g:'g5',
+      desc:'Inside groups that isolate and control their members — the leaders, and the survivors who escape.',
+      thumbs:[{art:'behind-the-bastards.jpg'},{i:'T'},{i:'I'},{i:'C'},{i:'Q'}] },
+  ];
+  const TOTAL = 30; // full catalog has 30 themes; the feed demos the first 8
+
+  const feed = document.getElementById('feed');
+  const pgNow = document.getElementById('pgNow');
+  const dots = document.getElementById('dots');
+  const swipehint = document.getElementById('swipehint');
+  document.getElementById('pgTotal').textContent = TOTAL;
+
+  const arrowSVG = \`<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>\`;
+
+  THEMES.forEach((t, idx) => {
+    const thumbs = t.thumbs.map((th, i) => th.art
+      ? \`<div class="thumb" style="background-image:url(../art/\${th.art})"></div>\`
+      : \`<div class="thumb t\${(i%5)+1}">\${th.i}</div>\`).join('');
+    const more = t.count - t.thumbs.length;
+    const slide = document.createElement('section');
+    slide.className = \`slide \${t.g}\`;
+    slide.dataset.index = idx;
+    slide.innerHTML = \`
+      <div class="wm">\${t.emoji}</div>
+      <div class="inner">
+        <span class="kicker"><span class="em">\${t.emoji}</span>Theme \${idx + 1} of \${TOTAL}</span>
+        <div class="name">\${t.name}</div>
+        <div class="desc">\${t.desc}</div>
+        <div class="inside">
+          <div class="inside-label">Inside this theme</div>
+          <div class="thumbs">
+            \${thumbs}
+            <div class="thumb more">+\${more}</div>
+          </div>
+        </div>
+        <button class="dive" onclick="location.href='explore-theme-shows.html?theme=\${t.slug}'">
+          Dive in — swipe the shows \${arrowSVG}
+        </button>
+      </div>\`;
+    feed.appendChild(slide);
+    const d = document.createElement('i'); if (idx === 0) d.className = 'on'; dots.appendChild(d);
+  });
+
+  // update progress + dots on scroll (which theme is centered)
+  let current = 0;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && e.intersectionRatio > 0.6) {
+        const i = +e.target.dataset.index; current = i;
+        pgNow.textContent = i + 1;
+        [...dots.children].forEach((d, di) => d.classList.toggle('on', di === i));
+        if (i > 0) swipehint.style.opacity = '0';
+      }
+    });
+  }, { root: feed, threshold: [0.6] });
+  [...feed.children].forEach(s => io.observe(s));
+
+  // ---- "jump to a theme" overview: the full 30-theme index (names/counts from themes.json) ----
+  const THEME_INDEX = [
+    ['institutional-coverup','The Institutional Cover-Up',72,'🕵️'], ['historical-reconstruction','History, Retold',56,'📜'],
+    ['unsolved-cold-case','Unsolved Murders & Cold Cases',54,'🔎'], ['abuse-of-power','Abuse of Power',40,'⚖️'],
+    ['personal-mystery','Personal Mysteries & Obsessions',40,'🧩'], ['financial-fraud','Fraud, Scams & Ponzis',36,'💸'],
+    ['survivor-testimony','Survivor Testimony',35,'🗣️'], ['true-crime','True Crime, Deep-Dive',35,'🔦'],
+    ['charismatic-con-artist','The Charismatic Con Artist',30,'🎭'], ['media-internet-culture','Media & Internet Culture',29,'📱'],
+    ['speculative-fiction-as-journalism',"Fiction Wearing Journalism's Clothes",29,'🎙️'], ['racial-injustice-civil-rights','Racial Injustice & Civil Rights',27,'✊'],
+    ['disappearance-missing-persons','Disappearances & Missing Persons',26,'🚶'], ['political-scandal','Political Scandal',25,'🏛️'],
+    ['business-empire','Building (and Breaking) an Empire',24,'🏦'], ['music-history','Music History',19,'🎵'],
+    ['police-misconduct','Police Misconduct',18,'🚔'], ['wrongful-conviction','Wrongful Conviction',17,'⛓️'],
+    ['family-secret','Family Secrets',17,'🧬'], ['tech-gone-wrong','Tech Gone Wrong',17,'💻'],
+    ['espionage-intelligence','Spies & Secret Intelligence',17,'🕶️'], ['serial-killer','Serial Killers',16,'🩸'],
+    ['war-conflict','War & Conflict',14,'💥'], ['science-wonder','Science & Wonder',12,'🔬'],
+    ['cult-high-control-group','Cults & High-Control Groups',11,'🕯️'], ['religion-faith','Religion & Faith',10,'✝️'],
+    ['sports-narrative','Sports, Beyond the Game',10,'🏟️'], ['medical-harm','Medical Harm',9,'🩺'],
+    ['environmental-climate','Environment & Climate',5,'🌍'], ['immigration','Immigration & Borders',2,'🛂'],
+  ];
+  const feedIndexBySlug = {}; THEMES.forEach((t, i) => feedIndexBySlug[t.slug] = i);
+  const igrad = ['g0','g1','g2','g3','g4','g5','g6','g7'];
+  const ovBackdrop = document.getElementById('ovBackdrop'), ovSheet = document.getElementById('ovSheet'), ovList = document.getElementById('ovList');
+
+  THEME_INDEX.forEach(([slug, name, count, emoji], i) => {
+    const fi = feedIndexBySlug[slug];
+    const row = document.createElement('div');
+    row.className = 'ov-row'; row.dataset.slug = slug; if (fi !== undefined) row.dataset.fi = fi;
+    row.innerHTML = \`
+      <div class="ov-ico \${igrad[i % 8]}" style="background:linear-gradient(140deg, hsl(\${(i*37)%360} 70% 58%), hsl(\${(i*37+40)%360} 65% 40%))">\${emoji}</div>
+      <div class="ov-meta"><div class="ov-name">\${name}</div><div class="ov-count">\${count} shows</div></div>
+      <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>\`;
+    row.addEventListener('click', () => jumpTo(fi, slug));
+    ovList.appendChild(row);
+  });
+
+  function openList() {
+    [...ovList.children].forEach(r => r.classList.toggle('here', +r.dataset.fi === current));
+    ovBackdrop.classList.add('show'); ovSheet.classList.add('show');
+    // scroll ONLY the list (not the page) so the current theme's row is centered
+    const here = ovList.querySelector('.ov-row.here');
+    if (here) {
+      const delta = here.getBoundingClientRect().top - ovList.getBoundingClientRect().top;
+      ovList.scrollTop = Math.max(0, ovList.scrollTop + delta - ovList.clientHeight / 2 + here.offsetHeight / 2);
+    } else { ovList.scrollTop = 0; }
+  }
+  function closeList() { ovBackdrop.classList.remove('show'); ovSheet.classList.remove('show'); }
+  function jumpTo(fi, slug) {
+    if (fi === undefined) { closeList(); return; } // theme not in the demo feed (full app has all 30 loaded)
+    feed.children[fi].scrollIntoView({ behavior: 'instant' });
+    closeList();
+  }
+
+  // theme toggle
+  const root = document.documentElement, tt = document.getElementById('tt'),
+        tgEmoji = document.getElementById('tgEmoji'), tgLabel = document.getElementById('tgLabel');
+  root.setAttribute('data-theme', 'dark');
+  tt.addEventListener('click', () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    tgEmoji.textContent = dark ? '☀️' : '🌙'; tgLabel.textContent = dark ? 'Light' : 'Dark';
+  });
+<\/script>
+`,
+  'explore-theme-shows': `<!-- @dsCard group="Explore" -->
+<title>Explore by theme — show deck</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  :root {
+    --coral: #FF6A4D; --coral-deep: #CA340F; --mint: #34E0C4; --mint-deep: #046B58; --grape: #7C6BFF;
+    --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px; --sp-6: 26px; --sp-7: 32px; --gutter: var(--sp-5);
+    --r-lg: 20px; --r-md: 16px; --r-sm: 12px; --r-field: 11px; --r-art: 14px; --r-seg: 9px; --r-pill: 999px;
+    --dur-fast: .2s; --dur-mid: .3s; --dur-row: .55s; --dur-rise: .6s;
+    --ease-spring: cubic-bezier(.34, 1.56, .64, 1); --ease-soft: cubic-bezier(.22, .61, .36, 1);
+    --elev-list: 0 1px 0 var(--hairline), 0 8px 24px -18px rgba(0,0,0,.5);
+    --elev-card: 0 1px 0 var(--hairline), 0 12px 30px -20px rgba(0,0,0,.55);
+    --elev-sub: 0 6px 14px -8px var(--accent);
+    --elev-pop: 0 20px 50px -24px rgba(0,0,0,.6);
+    --font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  :root, :root[data-theme="dark"] {
+    --bg: #0E0B12; --grouped-bg: #0E0B12; --bg-glow-1: rgba(255,106,77,.10); --bg-glow-2: rgba(52,224,196,.07);
+    --surface: #1C1722; --surface-2: #262030; --hairline: rgba(255,255,255,.09); --separator: rgba(255,255,255,.12);
+    --text: #F8F3EF; --text-dim: #ABA1B4; --text-faint: #988DA1;
+    --accent: var(--coral); --accent-2: var(--mint); --on-accent: #2A0E04;
+    --chip: rgba(255,255,255,.08); --chip-text: #F8F3EF; --field: rgba(120,120,128,.24); --danger: #FF453A;
+    --bar-material: rgba(20,16,26,.72);
+    --tabbar-glass: rgba(14,11,18,.94); --tabbar-hairline: rgba(255,255,255,.14);
+    --tabbar-shadow: 0 10px 34px -8px rgba(0,0,0,.6), 0 2px 10px -4px rgba(0,0,0,.5); --tabbar-icon: #8B8291;
+  }
+  :root[data-theme="light"] {
+    --bg: #F2F1F6; --grouped-bg: #F2F1F6; --bg-glow-1: rgba(245,80,47,.09); --bg-glow-2: rgba(6,169,139,.08);
+    --surface: #FFFFFF; --surface-2: #F6F1EC; --hairline: rgba(40,26,36,.10); --separator: rgba(60,60,67,.18);
+    --text: #1A1420; --text-dim: #6B6472; --text-faint: #736A78;
+    --accent: var(--coral-deep); --accent-2: var(--mint-deep); --on-accent: #FFFFFF;
+    --chip: rgba(118,118,128,.12); --chip-text: #1A1420; --field: rgba(118,118,128,.10); --danger: #FF3B30;
+    --bar-material: rgba(248,246,250,.78);
+    --tabbar-glass: rgba(250,248,252,.96); --tabbar-hairline: rgba(60,60,67,.18);
+    --tabbar-shadow: 0 10px 34px -10px rgba(20,16,26,.22), 0 2px 10px -4px rgba(20,16,26,.12); --tabbar-icon: #6C6C70;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: var(--font);
+    background: radial-gradient(120% 60% at 85% -5%, #211a2b, transparent 60%), radial-gradient(90% 50% at 0% 8%, #17131e, transparent 55%), #0a070e;
+    color: var(--text); min-height: 100vh; display: grid; place-items: center; padding: 28px 12px;
+    transition: background .5s var(--ease-soft);
+  }
+  :root[data-theme="light"] body {
+    background: radial-gradient(120% 60% at 85% -5%, #f0e6f4, transparent 60%), radial-gradient(90% 50% at 0% 8%, #eef0f6, transparent 55%), #e6e4ee;
+  }
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100; height: 44px; padding: 0 16px 0 14px;
+    display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.16);
+    border-radius: var(--r-pill); background: rgba(30,24,38,.7); backdrop-filter: blur(14px);
+    color: #F8F3EF; font-family: var(--font); font-size: .82rem; font-weight: 700; cursor: pointer;
+    transition: transform .3s var(--ease-spring), background .3s;
+  }
+  :root[data-theme="light"] .theme-toggle { background: rgba(255,255,255,.82); border-color: rgba(40,26,36,.12); color: #1A1420; }
+  .theme-toggle:active { transform: scale(.92); }
+  .theme-toggle .tg-emoji { font-size: 1rem; transition: transform .5s var(--ease-spring); }
+
+  .phone {
+    position: relative; width: 390px; height: 844px; border-radius: 54px; background: var(--grouped-bg);
+    box-shadow: 0 0 0 12px #050308, 0 0 0 14px #322838, 0 50px 90px -30px rgba(0,0,0,.85);
+    overflow: hidden; transition: background .5s var(--ease-soft);
+  }
+  .phone::before {
+    content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(58% 20% at 92% 0%, var(--bg-glow-1), transparent 70%), radial-gradient(46% 16% at 2% 6%, var(--bg-glow-2), transparent 72%);
+  }
+  .screen { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; overflow: hidden; background: transparent; }
+  .statusbar {
+    height: 54px; flex: none; display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 0 28px 8px; font-size: .82rem; font-weight: 700; position: relative; z-index: 30;
+  }
+  .statusbar .sb-right { display: flex; align-items: center; gap: 6px; }
+  .sb-right svg { display: block; }
+  .notch { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 118px; height: 30px; border-radius: 18px; background: #050308; z-index: 40; }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    flex: none; display: flex; align-items: center; gap: var(--sp-3);
+    padding: var(--sp-1) var(--gutter) var(--sp-2); position: relative; z-index: 20;
+  }
+  .iconbtn {
+    flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+    border: none; cursor: pointer; background: var(--chip); color: var(--text);
+    box-shadow: inset 0 0 0 .5px var(--hairline); transition: transform .3s var(--ease-spring), background .3s;
+  }
+  .iconbtn:active { transform: scale(.9); }
+  .topbar .tb-title { flex: 1; min-width: 0; text-align: center; }
+  .topbar .tb-eyebrow { font-size: .64rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .topbar .tb-name { font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; letter-spacing: -.01em; color: var(--text); margin-top: 1px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .progresspill {
+    flex: none; min-width: 52px; height: 40px; padding: 0 14px; border-radius: var(--r-pill);
+    display: inline-flex; align-items: center; justify-content: center; gap: 3px;
+    background: var(--chip); color: var(--text-dim); font-size: .82rem; font-weight: 800; font-variant-numeric: tabular-nums;
+  }
+  .progresspill b { color: var(--text); }
+  .track { flex: none; height: 3px; margin: 2px var(--gutter) 0; border-radius: 3px; background: var(--chip); overflow: hidden; }
+  .track > i { display: block; height: 100%; border-radius: 3px; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width .4s var(--ease-soft); }
+
+  /* ---------- deck stage ---------- */
+  .stage { flex: 1; position: relative; display: grid; place-items: center; padding: var(--sp-4) var(--gutter) 0; z-index: 2; overflow: hidden; }
+  .deck { position: relative; width: 310px; height: 452px; }
+
+  .card {
+    position: absolute; inset: 0; border-radius: 28px; overflow: hidden; cursor: grab;
+    box-shadow: var(--elev-card), 0 30px 60px -30px rgba(0,0,0,.7);
+    transform-origin: center bottom; will-change: transform;
+    user-select: none; -webkit-user-select: none; touch-action: none;
+    display: flex; flex-direction: column; color: #fff; background: #241d2c;
+  }
+  .card.dragging { cursor: grabbing; transition: none; }
+  .card.settling { transition: transform .4s var(--ease-spring); }
+  .card.flyout { transition: transform .45s var(--ease-soft), opacity .45s var(--ease-soft); }
+
+  /* artwork fills the card */
+  .card .art {
+    position: absolute; inset: 0; background-size: cover; background-position: center; z-index: 0;
+  }
+  /* gradient fallbacks (mirror RemoteArtwork's .a1–.a6) for shows without a local jpg */
+  .a1 { background: linear-gradient(140deg, #FF7A4D, #FF4D8D); }
+  .a2 { background: linear-gradient(140deg, #34E0C4, #2E8BFF); }
+  .a3 { background: linear-gradient(140deg, #FFC24D, #FF6A4D); }
+  .a4 { background: linear-gradient(140deg, #7C6BFF, #34E0C4); }
+  .a5 { background: linear-gradient(140deg, #FF5E9A, #7C6BFF); }
+  .a6 { background: linear-gradient(140deg, #22C1A6, #7ED957); }
+  .card .scrim {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.0) 34%, rgba(8,5,12,.62) 66%, rgba(8,5,12,.92) 100%);
+  }
+  /* initial glyph shown on gradient fallbacks */
+  .card .glyph {
+    position: absolute; inset: 0; z-index: 0; display: grid; place-items: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 4.6rem; color: rgba(255,255,255,.9);
+    text-shadow: 0 3px 18px rgba(0,0,0,.35);
+  }
+  .card.hasart .glyph { display: none; }
+
+  .card .badge {
+    position: absolute; top: 16px; left: 16px; z-index: 3;
+    display: inline-flex; align-items: center; gap: 6px; font-size: .66rem; font-weight: 800;
+    letter-spacing: .1em; text-transform: uppercase; color: #fff;
+    background: rgba(0,0,0,.42); border: 1px solid rgba(255,255,255,.26);
+    padding: 6px 11px; border-radius: var(--r-pill); backdrop-filter: blur(8px);
+  }
+  .card .badge .em { font-size: .82rem; }
+
+  .card .body { position: relative; z-index: 2; margin-top: auto; padding: var(--sp-6) 22px 24px; }
+  .card .title {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.62rem; line-height: 1.08;
+    letter-spacing: -.02em; text-shadow: 0 2px 16px rgba(0,0,0,.5);
+  }
+  .card .author { margin-top: 7px; font-size: .84rem; font-weight: 700; color: rgba(255,255,255,.82); }
+  .card .why {
+    margin-top: 12px; font-size: .9rem; font-weight: 500; line-height: 1.4; color: rgba(255,255,255,.92);
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    padding-left: 11px; border-left: 2px solid rgba(255,255,255,.35);
+  }
+
+  /* swipe verdict stamps */
+  .stamp {
+    position: absolute; top: 26px; z-index: 4; padding: 8px 16px; border-radius: 12px;
+    font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: .04em;
+    text-transform: uppercase; opacity: 0; border: 3px solid currentColor; background: rgba(0,0,0,.18); backdrop-filter: blur(2px);
+  }
+  .stamp.in  { right: 18px; color: #EBFFF9; border-color: #7BFFE6; transform: rotate(14deg) scale(.8); text-shadow: 0 0 14px rgba(52,224,196,.6); }
+  .stamp.skip{ left: 18px;  color: #FFE7E4; border-color: #FF9C93; transform: rotate(-14deg) scale(.8); text-shadow: 0 0 14px rgba(255,69,58,.5); }
+
+  .hint { flex: none; text-align: center; font-size: .8rem; font-weight: 600; color: var(--text-faint); padding: var(--sp-4) var(--gutter) 4px; z-index: 2; }
+
+  /* ---------- action dock ---------- */
+  .actions { flex: none; display: flex; align-items: center; justify-content: center; gap: 26px; padding: var(--sp-2) var(--gutter) 26px; z-index: 20; }
+  .act { border: none; cursor: pointer; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    transition: transform .3s var(--ease-spring), box-shadow .3s, background .3s; }
+  .act:active { transform: scale(.88); }
+  .act.skip { width: 62px; height: 62px; background: var(--surface); color: var(--danger);
+    box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--danger) 55%, transparent), 0 10px 24px -14px rgba(0,0,0,.6); }
+  .act.sub { width: 74px; height: 74px; color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: 0 12px 26px -8px var(--accent); }
+  .act svg { display: block; }
+
+  /* ---------- end-of-deck state ---------- */
+  .endcard { position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 40px; gap: 14px; }
+  .endcard.show { display: flex; animation: rise .5s var(--ease-soft) both; }
+  .endcard .glyph2 { width: 82px; height: 82px; border-radius: 26px; display: grid; place-items: center; font-size: 2.4rem;
+    background: linear-gradient(140deg, var(--accent), var(--accent-2)); box-shadow: 0 18px 40px -18px var(--accent); }
+  .endcard h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; letter-spacing: -.01em; }
+  .endcard p { font-size: .92rem; color: var(--text-dim); font-weight: 500; max-width: 26ch; }
+  .endcard .saved { font-size: .82rem; font-weight: 800; color: var(--accent-2); }
+  .btn-primary { min-height: 48px; padding: 0 24px; border: none; cursor: pointer; border-radius: var(--r-pill);
+    font-family: var(--font); font-size: .96rem; font-weight: 800; color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: var(--elev-sub); display: inline-flex; align-items: center; gap: 8px; transition: transform .3s var(--ease-spring); margin-top: 6px; }
+  .btn-primary:active { transform: scale(.95); }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  .home-ind { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 134px; height: 5px; border-radius: 3px; background: var(--text); opacity: .3; z-index: 25; }
+
+  /* ---------- detail "toast" sheet (tap a card to peek) ---------- */
+  .backdrop {
+    position: absolute; inset: 0; z-index: 40; background: rgba(6,4,10,.55);
+    backdrop-filter: blur(2px); opacity: 0; pointer-events: none; transition: opacity .3s var(--ease-soft);
+  }
+  .backdrop.show { opacity: 1; pointer-events: auto; }
+  .sheet {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 41; height: 86%;
+    background: var(--surface); border-radius: 26px 26px 0 0; overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: 0 -18px 50px -24px rgba(0,0,0,.7), inset 0 0 0 .5px var(--hairline);
+    transform: translateY(102%); transition: transform .38s var(--ease-spring);
+  }
+  .sheet.show { transform: translateY(0); }
+  .sheet.dragging { transition: none; }
+  .sheet-grab { flex: none; padding: 10px 0 4px; display: grid; place-items: center; cursor: grab; }
+  .sheet-grab i { width: 40px; height: 5px; border-radius: 3px; background: var(--separator); }
+  .sheet-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 6px var(--gutter) 0; scrollbar-width: none; }
+  .sheet-scroll::-webkit-scrollbar { width: 0; }
+
+  .sheet-hero { display: flex; gap: var(--sp-4); align-items: flex-start; }
+  .sheet-art {
+    flex: none; width: 96px; height: 96px; border-radius: var(--r-md); position: relative; overflow: hidden;
+    background-size: cover; background-position: center; display: grid; place-items: center;
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16), 0 8px 20px -12px rgba(0,0,0,.55);
+    font-family: var(--font-display); font-weight: 700; font-size: 2rem; color: rgba(255,255,255,.94);
+  }
+  .sheet-hmeta { flex: 1; min-width: 0; padding-top: 2px; }
+  .sheet-title { font-family: var(--font-display); font-weight: 700; font-size: 1.28rem; letter-spacing: -.02em; line-height: 1.1; color: var(--text); }
+  .sheet-author { margin-top: 5px; font-size: .86rem; font-weight: 700; color: var(--text-dim); }
+  .sheet-chips { margin-top: 9px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .sheet-chip { font-size: .64rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--text-dim);
+    background: var(--chip); padding: 4px 9px; border-radius: var(--r-pill); }
+
+  .sheet-sub {
+    margin-top: var(--sp-4); width: 100%; min-height: 48px; border: none; cursor: pointer; border-radius: var(--r-pill);
+    font-family: var(--font); font-size: .96rem; font-weight: 800; color: var(--on-accent);
+    background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: var(--elev-sub); display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    transition: transform .25s var(--ease-spring), background .3s, color .3s;
+  }
+  .sheet-sub:active { transform: scale(.97); }
+  .sheet-sub.done { background: var(--chip); color: var(--text); box-shadow: none; }
+  .sheet-sub svg { display: block; }
+  .sheet-next {
+    margin-top: var(--sp-2); width: 100%; min-height: 44px; border: none; cursor: pointer; border-radius: var(--r-pill);
+    font-family: var(--font); font-size: .9rem; font-weight: 800; color: var(--accent); background: transparent;
+    display: none; align-items: center; justify-content: center; gap: 7px;
+  }
+  .sheet-next.show { display: inline-flex; }
+
+  .sheet-quote {
+    margin-top: var(--sp-5); padding-left: 13px; border-left: 3px solid var(--accent);
+    font-size: .96rem; font-weight: 600; line-height: 1.42; color: var(--text);
+  }
+  .sheet-h { margin-top: var(--sp-5); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--text-faint); }
+  .sheet-about { margin-top: 8px; font-size: .95rem; font-weight: 500; line-height: 1.5; color: var(--text-dim); }
+  .sheet-foot {
+    margin: var(--sp-5) 0 var(--sp-6); display: inline-flex; align-items: center; gap: 7px;
+    font-size: .88rem; font-weight: 800; color: var(--accent); cursor: pointer;
+  }
+  .sheet-foot svg { display: block; }
+
+  /* story arcs rail (mirrors podcast-detail's .arc-card) */
+  .sh-arc-rail { display: flex; gap: var(--sp-3); overflow-x: auto; scrollbar-width: none; padding: 4px 0 2px; margin-top: 10px; }
+  .sh-arc-rail::-webkit-scrollbar { height: 0; }
+  .sh-arc {
+    flex: none; width: 172px; border-radius: var(--r-md); padding: 12px 13px; position: relative;
+    background: color-mix(in srgb, var(--accent) 12%, var(--surface-2));
+    box-shadow: inset 0 0 0 .5px var(--hairline); display: flex; flex-direction: column; gap: 6px;
+  }
+  .sh-arc-season {
+    align-self: flex-start; font-size: .6rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, transparent); padding: 3px 8px; border-radius: var(--r-pill);
+  }
+  .sh-arc-name { font-size: .96rem; font-weight: 800; letter-spacing: -.01em; color: var(--text); line-height: 1.2;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.3em; }
+  .sh-arc-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 2px; }
+  .sh-arc-parts { font-size: .76rem; font-weight: 600; color: var(--text-dim); }
+  .sh-arc-add {
+    display: inline-flex; align-items: center; gap: 4px; border: none; cursor: pointer; border-radius: var(--r-pill);
+    font-family: var(--font); font-size: .7rem; font-weight: 800; color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent); padding: 5px 9px;
+  }
+  .sh-arc-add svg { display: block; }
+
+  /* recent episodes (mirrors podcast-detail's .ep row, condensed) */
+  .sh-eps { margin-top: 10px; }
+  .sh-ep { display: flex; align-items: center; gap: var(--sp-3); padding: 9px 0; position: relative; }
+  .sh-ep:not(:last-child)::after { content: ""; position: absolute; left: 52px; right: 0; bottom: 0; height: .5px; background: var(--separator); }
+  .sh-ep-art { flex: none; width: 40px; height: 40px; border-radius: 10px; background-size: cover; background-position: center;
+    display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: .95rem; color: rgba(255,255,255,.92);
+    box-shadow: inset 0 0 0 .5px rgba(255,255,255,.16); }
+  .sh-ep-body { flex: 1; min-width: 0; }
+  .sh-ep-title { font-size: .92rem; font-weight: 700; letter-spacing: -.01em; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sh-ep-meta { margin-top: 2px; font-size: .74rem; font-weight: 600; color: var(--text-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sh-ep-ctls { flex: none; display: flex; align-items: center; gap: 7px; }
+  .sh-ep-ic {
+    width: 32px; height: 32px; border-radius: 50%; border: none; cursor: pointer; display: grid; place-items: center;
+    background: var(--chip); color: var(--text-dim); box-shadow: inset 0 0 0 .5px var(--hairline);
+  }
+  .sh-ep-ic.play {
+    color: var(--on-accent); background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2)));
+    box-shadow: 0 4px 10px -5px var(--accent);
+  }
+  .sh-ep-ic svg { display: block; }
+
+  /* arc filter chips (mirrors podcast-detail's .ep-filter) */
+  .sh-filter { display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; padding: 2px 0 4px; margin-top: 8px; }
+  .sh-filter::-webkit-scrollbar { height: 0; }
+  .sh-chip {
+    flex: none; border: none; cursor: pointer; border-radius: var(--r-pill); padding: 7px 13px;
+    font-family: var(--font); font-size: .76rem; font-weight: 800; letter-spacing: .01em;
+    color: var(--text-dim); background: var(--chip); white-space: nowrap;
+  }
+  .sh-chip.on { color: var(--on-accent); background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--accent-2))); }
+
+  @media (prefers-reduced-motion: reduce) { .card.settling, .card.flyout, .track > i, .sheet { transition: none !important; } }
+</style>
+
+<button class="theme-toggle" id="tt" aria-label="Toggle light and dark theme">
+  <span class="tg-emoji" id="tgEmoji">🌙</span><span id="tgLabel">Dark</span>
+</button>
+
+<div class="phone">
+  <div class="notch"></div>
+  <div class="screen">
+
+    <div class="statusbar">
+      <span>9:41</span>
+      <span class="sb-right">
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="4.5" y="4.5" width="3" height="7.5" rx="1"/><rect x="9" y="2" width="3" height="10" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
+        <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.4c2 0 3.9.8 5.3 2.1l1.2-1.3A9.4 9.4 0 0 0 8.5.6 9.4 9.4 0 0 0 2 3.2l1.2 1.3A7.4 7.4 0 0 1 8.5 2.4Z"/><path d="M8.5 6c1 0 2 .4 2.7 1.1l1.2-1.3A6 6 0 0 0 8.5 4a6 6 0 0 0-3.9 1.8l1.2 1.3A4 4 0 0 1 8.5 6Z"/><circle cx="8.5" cy="9.6" r="1.7"/></svg>
+        <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="1" y="1" width="21" height="10" rx="3" stroke="currentColor" stroke-width="1.2" opacity=".5"/><rect x="2.6" y="2.6" width="16" height="6.8" rx="1.6" fill="currentColor"/><rect x="23.4" y="4" width="1.8" height="4" rx="1" fill="currentColor" opacity=".6"/></svg>
+      </span>
+    </div>
+
+    <div class="topbar">
+      <button class="iconbtn" aria-label="Back to themes" onclick="window.location.href='explore-themes.html'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="tb-title">
+        <div class="tb-eyebrow" id="tbEyebrow">Diving into</div>
+        <div class="tb-name" id="tbName">The Institutional Cover-Up</div>
+      </div>
+      <div class="progresspill"><b id="pgNow">1</b>/<span id="pgTotal">72</span></div>
+    </div>
+    <div class="track"><i id="bar"></i></div>
+
+    <div class="stage">
+      <div class="deck" id="deck"></div>
+      <div class="endcard" id="end">
+        <div class="glyph2">✅</div>
+        <h3 id="endTitle">That's the deck</h3>
+        <p id="endSub">You've seen every show we picked for this theme.</p>
+        <div class="saved" id="endSaved"></div>
+        <button class="btn-primary" onclick="window.location.href='explore-themes.html'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back to themes
+        </button>
+      </div>
+    </div>
+
+    <div class="hint" id="hint">Swipe right to subscribe · left to skip</div>
+
+    <div class="actions" id="actions">
+      <button class="act skip" aria-label="Skip this show" onclick="button('skip')">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+      <button class="act sub" aria-label="Subscribe to this show" onclick="button('in')">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <!-- detail "toast" sheet -->
+    <div class="backdrop" id="backdrop" onclick="closeSheet()"></div>
+    <div class="sheet" id="sheet" role="dialog" aria-label="Show details">
+      <div class="sheet-grab" id="grab"><i></i></div>
+      <div class="sheet-scroll" id="sheetScroll">
+        <div class="sheet-hero">
+          <div class="sheet-art" id="shArt"></div>
+          <div class="sheet-hmeta">
+            <div class="sheet-title" id="shTitle">—</div>
+            <div class="sheet-author" id="shAuthor">—</div>
+            <div class="sheet-chips" id="shChips"></div>
+          </div>
+        </div>
+        <button class="sheet-sub" id="shSub" onclick="subscribeFromSheet()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+          <span id="shSubLbl">Subscribe</span>
+        </button>
+        <button class="sheet-next" id="shNext" onclick="closeSheet()">
+          Back to swiping
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="sheet-about" id="shAbout">—</div>
+        <div class="sheet-h" id="shArcsH">Story arcs &amp; seasons</div>
+        <div class="sh-arc-rail" id="shArcs"></div>
+        <div class="sheet-h" id="shEpsH">Episodes</div>
+        <div class="sh-filter" id="shFilter"></div>
+        <div class="sh-eps" id="shEps"></div>
+      </div>
+    </div>
+
+    <div class="home-ind"></div>
+  </div>
+</div>
+
+<script>
+  // theme meta (name + emoji + total showCount from themes.json)
+  const THEME_META = {
+    'institutional-coverup': { name:'The Institutional Cover-Up', em:'🕵️', total:72 },
+    'historical-reconstruction': { name:'History, Retold', em:'📜', total:56 },
+    'unsolved-cold-case': { name:'Unsolved & Cold Cases', em:'🔎', total:54 },
+    'abuse-of-power': { name:'Abuse of Power', em:'⚖️', total:40 },
+    'personal-mystery': { name:'Personal Mysteries', em:'🧩', total:40 },
+    'financial-fraud': { name:'Fraud, Scams & Ponzis', em:'💸', total:36 },
+    'charismatic-con-artist': { name:'The Charismatic Con Artist', em:'🎭', total:30 },
+    'cult-high-control-group': { name:'Cults & High-Control Groups', em:'🕯️', total:11 },
+  };
+  // real shows per theme (title / author / why from curation/catalog/catalog.json). \`art\` = local jpg or null → gradient fallback.
+  const SHOWS = {
+    'institutional-coverup': [
+      { t:'Revisionist History', a:'Pushkin Industries', cat:'History', years:'2016–', art:null,
+        w:"Pushkin's flagship — Malcolm Gladwell reopens the overlooked and the misunderstood.",
+        d:"Malcolm Gladwell revisits overlooked, misunderstood, or forgotten events and people from the past, reargued each episode with contrarian analysis and archival reporting.",
+        arcs:[{n:'The Staten Island Problem',s:'2023',p:5},{n:'Season 9',s:'2025',p:10},{n:'Season 8',s:'2023',p:10}],
+        eps:[{t:'The Grand Tour',se:'Season 9 · E4',d:'3d ago',dur:'42 min'},{t:'Burden of Proof',se:'Season 9 · E3',d:'1w ago',dur:'39 min'},{t:'A Good Walk Spoiled',se:'Season 9 · E2',d:'2w ago',dur:'44 min'},{t:'The Standardized Test',se:'Season 9 · E1',d:'3w ago',dur:'40 min'}] },
+      { t:'Fiasco', a:'Pushkin Industries', cat:'History', years:'2018–', art:null,
+        w:"Named one of TIME's 100 Best Podcasts of All Time.",
+        d:"Leon Neyfakh's narrative-history series reconstructs American political scandals episode by episode using deep archival tape, showing how chaos and cover-ups really unfolded.",
+        arcs:[{n:'Bush v. Gore',s:'S1',p:8},{n:'Iran-Contra',s:'S4',p:8},{n:'The AIDS Crisis',s:'S3',p:8}],
+        eps:[{t:'Chads',se:'Bush v. Gore · E6',d:'—',dur:'46 min'},{t:'The Recount',se:'Bush v. Gore · E5',d:'—',dur:'44 min'},{t:'Sunshine State',se:'Bush v. Gore · E4',d:'—',dur:'41 min'},{t:'Election Night',se:'Bush v. Gore · E1',d:'—',dur:'39 min'}] },
+      { t:'Serial', a:'Serial Productions & The NYT', cat:'True Crime', years:'2014–', art:'serial.jpg',
+        w:"First podcast ever to win a Peabody; widely credited with the medium's breakout.",
+        d:"Long-form investigative journalism that returns each season to a real case — beginning with Sarah Koenig's re-investigation of the 1999 murder of Hae Min Lee.",
+        arcs:[{n:'Season 1: Adnan Syed',s:'S1',p:12},{n:'Season 2: Bowe Bergdahl',s:'S2',p:11},{n:'Season 3: Cleveland Courthouse',s:'S3',p:9}],
+        eps:[{t:'The Alibi',se:'Season 1 · E1',d:'Classic',dur:'54 min'},{t:'The Breakup',se:'Season 1 · E2',d:'Classic',dur:'40 min'},{t:'Leakin Park',se:'Season 1 · E3',d:'Classic',dur:'34 min'},{t:'Route Talk',se:'Season 1 · E5',d:'Classic',dur:'41 min'}] },
+      { t:'Deep Cover', a:'Pushkin Industries', cat:'True Crime', years:'2018–', art:null,
+        w:"Praised anthology format with celebrity narration.",
+        d:"Reported true-crime anthology from Pulitzer Prize-winning journalist Jake Halpern, going inside undercover investigations, con games, and disappearances.",
+        arcs:[{n:'The Drug Wars',s:'S1',p:8},{n:'Mob Land',s:'S2',p:8},{n:'Never Seen Again',s:'S4',p:8}],
+        eps:[{t:'The Informant',se:'The Drug Wars · E2',d:'—',dur:'37 min'},{t:'Crossing Over',se:'The Drug Wars · E1',d:'—',dur:'35 min'},{t:'The Deal',se:'Mob Land · E3',d:'—',dur:'39 min'},{t:'Made',se:'Mob Land · E1',d:'—',dur:'41 min'}] },
+      { t:'Bone Valley', a:'Lava for Good', cat:'True Crime', years:'2022–', art:'bone-valley.jpg',
+        w:"Reexamines a Florida murder conviction that may have put the wrong man on death row.",
+        d:"A reinvestigation of the murder conviction of Leo Schofield in Florida, built around new evidence pointing to a different suspect.",
+        arcs:[{n:'Season 1: Leo Schofield',s:'S1',p:9},{n:'Season 2: Talking to a Killer',s:'S2',p:6}],
+        eps:[{t:'The Confession',se:'Season 2 · E3',d:'2w ago',dur:'48 min'},{t:'New Evidence',se:'Season 1 · E7',d:'—',dur:'44 min'},{t:'The Fingerprint',se:'Season 1 · E5',d:'—',dur:'42 min'},{t:'A Knock at the Door',se:'Season 1 · E1',d:'—',dur:'45 min'}] },
+      { t:'Against the Rules', a:'Pushkin Industries', cat:'Society & Culture', years:'2019–', art:null,
+        w:"Michael Lewis on the people we count on to be fair — and the systems that fail them.",
+        d:"Narrative-journalism series from Michael Lewis examining fairness, expertise, and institutional trust — deeply reported seasons on referees, coaches, and more.",
+        arcs:[{n:'Referees',s:'S1',p:7},{n:'Experts',s:'S3',p:8},{n:'Coaches',s:'S2',p:7}],
+        eps:[{t:'The Neutral',se:'Referees · E1',d:'—',dur:'40 min'},{t:'Respect the Ref',se:'Referees · E2',d:'—',dur:'38 min'},{t:'The Replacements',se:'Referees · E3',d:'—',dur:'37 min'},{t:'Blowing the Whistle',se:'Referees · E5',d:'—',dur:'39 min'}] },
+    ],
+    'historical-reconstruction': [
+      { t:'The Rest Is History', a:'Goalhanger', w:"Two historians make the past addictive — a global chart-topper.", art:'rest-is-history.jpg' },
+      { t:'Cautionary Tales', a:'Pushkin Industries', w:"Tim Harford turns history's disasters into lessons, dramatized with a full cast.", art:null },
+      { t:'The Last Archive', a:'Pushkin Industries', w:"Acclaimed for archival sound design and Jill Lepore's historian-led narrative.", art:null },
+      { t:'Fall of Civilizations', a:'Paul Cooper', w:"Epic, immersive accounts of how the great empires collapsed.", art:'fall-of-civilizations.jpg' },
+      { t:'American History Tellers', a:'Wondery', w:"Wondery's narrative-history flagship — the events that shaped the nation.", art:'american-history-tellers.jpg' },
+      { t:'Revolutions', a:'Mike Duncan', w:"The great political revolutions, told week by week by Mike Duncan.", art:'revolutions.jpg' },
+    ],
+    'unsolved-cold-case': [
+      { t:'Lost Hills', a:'Western Sound / Pushkin', w:"Well-reviewed reported journalism digging into a Malibu killing.", art:null },
+      { t:'Ghost Story', a:'Audible', w:"Won Best Documentary Podcast at the 2024 Ambies.", art:null },
+      { t:'Suspect', a:'Campside / Audible', w:"A deep dive into touch-DNA forensics and a wrongful arrest.", art:null },
+      { t:'Serial', a:'Serial Productions & The NYT', w:"The case that started it all — a 1999 killing reopened.", art:'serial.jpg' },
+      { t:'Over My Dead Body', a:'Wondery', w:"Season 1 was optioned for TV; a marriage that turned lethal.", art:null },
+      { t:'Deep Cover: Never Seen Again', a:'Pushkin Industries', w:"A standalone-charting season within the Deep Cover anthology.", art:null },
+    ],
+    'abuse-of-power': [
+      { t:'Dr. Death', a:'Wondery', w:"A surgeon leaves a trail of maimed patients — adapted into a Peacock series.", art:null },
+      { t:'Dirty John', a:'LA Times Studios', w:"The breakout hit that helped launch Wondery.", art:null },
+      { t:'The Shrink Next Door', a:'Wondery / Bloomberg', w:"A therapist who took over his patients' lives — now an Apple TV+ series.", art:null },
+      { t:'Embedded', a:'NPR', w:"Named one of Time's 100 Best Podcasts; topCard-tier documentary journalism.", art:null },
+      { t:'70 Million', a:'LWC Studios', w:"Acclaimed criminal-justice-reform reporting distributed through PRX.", art:null },
+      { t:'Against the Rules', a:'Pushkin Industries', w:"Michael Lewis on fairness, referees, and the people we trust to be neutral.", art:null },
+    ],
+    'personal-mystery': [
+      { t:'S-Town', a:'Serial Productions', w:"Over 40 million downloads in week one — often called one of the best ever made.", art:null },
+      { t:'The Apology Line', a:'Wondery', w:"An anonymous NYC answering machine that became an obsession.", art:null },
+      { t:'This American Life', a:'This American Life', w:"Nine-plus Peabodys and the first Pulitzer given to a radio program.", art:null },
+      { t:'S‑Town sibling: Love + Radio', a:'Love + Radio', w:"Named one of the best podcasts ever made for its radical intimacy.", art:null },
+      { t:'This Is Actually Happening', a:'Wondery', w:"First-person stories of extraordinary, life-altering moments.", art:null },
+      { t:'Ghost Story', a:'Wondery', w:"A reporter's own family mystery, unraveled on tape.", art:null },
+    ],
+    'financial-fraud': [
+      { t:'WeCrashed', a:'Wondery', w:"The rise and fall of WeWork — now an Apple TV+ series.", art:null },
+      { t:'Scamanda', a:'Lionsgate Sound', w:"One of Wondery's topCard-charting shows of 2023 — a faked-cancer con.", art:null },
+      { t:'American Scandal', a:'Wondery', w:"Wondery's flagship narrative-history franchise on the biggest scandals.", art:null },
+      { t:'The Shrink Next Door', a:'Wondery / Bloomberg', w:"Money, manipulation, and a therapist who bled a patient dry.", art:null },
+      { t:'Cautionary Tales', a:'Pushkin Industries', w:"Tim Harford on the frauds and fiascos we should have seen coming.", art:null },
+      { t:'Against the Rules', a:'Pushkin Industries', w:"Michael Lewis on the referees of finance — and who games them.", art:null },
+    ],
+    'charismatic-con-artist': [
+      { t:'Dirty John', a:'LA Times Studios', w:"A charming predator, and the family who let him in.", art:null },
+      { t:'WeCrashed', a:'Wondery', w:"Adam Neumann's reality-distortion field, in full.", art:null },
+      { t:'Scamanda', a:'Lionsgate Sound', w:"A beloved blogger's cancer story — and the lie underneath it.", art:null },
+      { t:'The Shrink Next Door', a:'Wondery / Bloomberg', w:"Adapted into an Apple TV+ series starring Will Ferrell.", art:null },
+      { t:'Deep Cover', a:'Pushkin Industries', w:"Undercover stories where the con is the whole game.", art:null },
+      { t:'Do You Know Mordechai?', a:'USG Audio', w:"A charming figure who defrauded a whole community.", art:null },
+    ],
+    'cult-high-control-group': [
+      { t:'The Turning', a:'iHeart / Rococo Punch', w:"Won the Livingston Award — the first podcast ever to do so.", art:null },
+      { t:'Behind the Bastards', a:'Cool Zone Media', w:"Multiple Webby nods; the worst people in history, dissected.", art:'behind-the-bastards.jpg' },
+      { t:'Infamous', a:'Campside / Sony Music', w:"Spawned the spinoff Allison After NXIVM.", art:null },
+      { t:'The Coming Storm', a:'BBC Radio 4', w:"Acclaimed for tracing the roots of American conspiracy theory.", art:null },
+      { t:'Queen Havoc and Her Murder Cult', a:'iHeartPodcasts', w:"A ten-part series following a self-styled cult leader.", art:null },
+      { t:'This Is Actually Happening', a:'Wondery', w:"First-person accounts, including escapes from high-control groups.", art:null },
+    ],
+  };
+
+  const params = new URLSearchParams(location.search);
+  const slug = SHOWS[params.get('theme')] ? params.get('theme') : 'institutional-coverup';
+  const meta = THEME_META[slug];
+  const list = SHOWS[slug];
+
+  document.getElementById('tbName').textContent = meta.name;
+  document.getElementById('pgTotal').textContent = meta.total;
+
+  const deck = document.getElementById('deck');
+  const end = document.getElementById('end');
+  const bar = document.getElementById('bar');
+  const pgNow = document.getElementById('pgNow');
+  const hint = document.getElementById('hint');
+  const actions = document.getElementById('actions');
+  let idx = 0, subs = 0, topCard = null, drag = null;
+  const gclasses = ['a1','a2','a3','a4','a5','a6'];
+
+  function render() {
+    deck.innerHTML = '';
+    if (idx >= list.length) return showEnd();
+    const upcoming = list.slice(idx, idx + 3);
+    upcoming.forEach((s, i) => {
+      const depth = i, gi = (idx + i) % 6;
+      const el = document.createElement('article');
+      el.className = 'card' + (s.art ? ' hasart' : '');
+      el.style.zIndex = 10 - depth;
+      el.style.transform = restTransform(depth);
+      el.style.opacity = depth > 1 ? '0' : '1';
+      const artStyle = s.art ? \`background-image:url(../art/\${s.art})\` : '';
+      el.innerHTML = \`
+        <div class="art \${s.art ? '' : gclasses[gi]}" style="\${artStyle}"></div>
+        <div class="glyph">\${s.t.replace(/^(The |A )/,'').charAt(0)}</div>
+        <div class="scrim"></div>
+        <div class="badge"><span class="em">\${meta.em}</span>\${meta.name}</div>
+        <div class="stamp in">Subscribed ✓</div>
+        <div class="stamp skip">Skip</div>
+        <div class="body">
+          <div class="title">\${s.t}</div>
+          <div class="author">\${s.a}</div>
+          <div class="why">\${s.w}</div>
+        </div>\`;
+      deck.appendChild(el);
+      if (depth === 0) { topCard = el; el.addEventListener('pointerdown', down); }
+    });
+    setBar();
+  }
+  function restTransform(depth) { const y = depth * 14, sc = 1 - depth * 0.05; return \`translateY(\${y}px) scale(\${sc})\`; }
+  function setBar() { pgNow.textContent = Math.min(idx + 1, meta.total); bar.style.width = (Math.min(idx, list.length) / list.length * 100) + '%'; }
+
+  function down(e) {
+    drag = { sx: e.clientX, sy: e.clientY, dx: 0, dy: 0 };
+    topCard.classList.add('dragging'); topCard.setPointerCapture(e.pointerId);
+    topCard.addEventListener('pointermove', move); topCard.addEventListener('pointerup', up); topCard.addEventListener('pointercancel', up);
+  }
+  function move(e) {
+    if (!drag) return;
+    drag.dx = e.clientX - drag.sx; drag.dy = e.clientY - drag.sy;
+    topCard.style.transform = \`translate(\${drag.dx}px, \${drag.dy*.4}px) rotate(\${drag.dx/18}deg)\`;
+    const p = Math.max(-1, Math.min(1, drag.dx / 120));
+    const si = topCard.querySelector('.stamp.in'), sk = topCard.querySelector('.stamp.skip');
+    si.style.opacity = p > 0 ? p : 0; si.style.transform = \`rotate(14deg) scale(\${.8+Math.abs(p)*.3})\`;
+    sk.style.opacity = p < 0 ? -p : 0; sk.style.transform = \`rotate(-14deg) scale(\${.8+Math.abs(p)*.3})\`;
+  }
+  function up() {
+    if (!drag) return;
+    topCard.classList.remove('dragging');
+    topCard.removeEventListener('pointermove', move); topCard.removeEventListener('pointerup', up);
+    const dx = drag.dx, dy = drag.dy;
+    drag = null;
+    if (Math.hypot(dx, dy) < 8) { settle(); openSheet(); return; }  // a tap, not a swipe → peek detail
+    if (dx > 110) fly('in'); else if (dx < -110) fly('skip'); else settle();
+  }
+  function settle() {
+    topCard.classList.add('settling'); topCard.style.transform = restTransform(0);
+    topCard.querySelector('.stamp.in').style.opacity = 0; topCard.querySelector('.stamp.skip').style.opacity = 0;
+    setTimeout(() => topCard && topCard.classList.remove('settling'), 400);
+  }
+  function fly(dir) {
+    const el = topCard; el.classList.add('flyout');
+    const off = dir === 'in' ? 1 : -1;
+    el.style.transform = \`translate(\${off*520}px, 60px) rotate(\${off*22}deg)\`; el.style.opacity = '0';
+    if (dir === 'in') subs++;
+    setTimeout(() => { idx++; render(); }, 220);
+  }
+  function button(dir) { if (idx >= list.length || !topCard) return; fly(dir); }
+
+  // ---- detail "toast" sheet ----
+  const backdrop = document.getElementById('backdrop');
+  const sheet = document.getElementById('sheet');
+  const gclassesSheet = ['a1','a2','a3','a4','a5','a6'];
+  let sheetShow = null, sheetSubscribed = false;
+
+  function openSheet() {
+    if (idx >= list.length) return;
+    const s = list[idx]; sheetShow = s; sheetSubscribed = false;
+    const art = document.getElementById('shArt');
+    if (s.art) { art.style.backgroundImage = \`url(../art/\${s.art})\`; art.textContent = ''; art.className = 'sheet-art'; }
+    else { art.style.backgroundImage = ''; art.textContent = s.t.replace(/^(The |A )/,'').charAt(0); art.className = 'sheet-art ' + gclassesSheet[idx % 6]; }
+    document.getElementById('shTitle').textContent = s.t;
+    document.getElementById('shAuthor').textContent = s.a;
+    const chips = [\`\${meta.em} \${meta.name}\`]; if (s.cat) chips.push(s.cat); if (s.years) chips.push(s.years);
+    document.getElementById('shChips').innerHTML = chips.map(c => \`<span class="sheet-chip">\${c}</span>\`).join('');
+    document.getElementById('shAbout').textContent = s.d || s.w;
+
+    // full detail body — this sheet renders the Podcast Detail screen: all story arcs +
+    // the episode list (arc filter + icon controls). In the app it's the live feed (all arcs).
+    const artBg = s.art ? \`background-image:url(../art/\${s.art})\` : '';
+    const initial = s.t.replace(/^(The |A )/,'').charAt(0);
+    const arcsH = document.getElementById('shArcsH'), arcs = document.getElementById('shArcs');
+    const epsH = document.getElementById('shEpsH'), filter = document.getElementById('shFilter'), eps = document.getElementById('shEps');
+    if (s.arcs && s.arcs.length) {
+      arcsH.style.display = ''; arcs.style.display = '';
+      arcs.innerHTML = s.arcs.map(ar => \`
+        <div class="sh-arc">
+          <span class="sh-arc-season">\${ar.s}</span>
+          <div class="sh-arc-name">\${ar.n}</div>
+          <div class="sh-arc-foot">
+            <span class="sh-arc-parts">\${ar.p} parts</span>
+            <button class="sh-arc-add"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>Add all</button>
+          </div>
+        </div>\`).join('');
+    } else { arcsH.style.display = 'none'; arcs.style.display = 'none'; }
+    if (s.eps && s.eps.length) {
+      epsH.style.display = ''; filter.style.display = ''; eps.style.display = '';
+      const arcNames = (s.arcs || []).map(a => a.n);
+      filter.innerHTML = ['All'].concat(arcNames).map((c, i) =>
+        \`<button class="sh-chip\${i === 0 ? ' on' : ''}">\${c.length > 22 ? c.slice(0, 21) + '…' : c}</button>\`).join('');
+      const dl = \`<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 4v10m0 0 4-4m-4 4-4-4M5 19h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>\`;
+      const play = \`<svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><path d="M4 2.2v9.6l8.2-4.8L4 2.2z"/></svg>\`;
+      const add = \`<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>\`;
+      eps.innerHTML = s.eps.map(ep => \`
+        <div class="sh-ep">
+          <div class="sh-ep-art" style="\${artBg}">\${s.art ? '' : initial}</div>
+          <div class="sh-ep-body">
+            <div class="sh-ep-title">\${ep.t}</div>
+            <div class="sh-ep-meta">\${ep.se} · \${ep.d} · \${ep.dur}</div>
+          </div>
+          <div class="sh-ep-ctls">
+            <button class="sh-ep-ic" aria-label="Download">\${dl}</button>
+            <button class="sh-ep-ic" aria-label="Add to Up Next">\${add}</button>
+            <button class="sh-ep-ic play" aria-label="Play">\${play}</button>
+          </div>
+        </div>\`).join('');
+    } else { epsH.style.display = 'none'; filter.style.display = 'none'; eps.style.display = 'none'; }
+
+    const sub = document.getElementById('shSub');
+    sub.classList.remove('done'); document.getElementById('shSubLbl').textContent = 'Subscribe';
+    document.getElementById('shNext').classList.remove('show');
+    document.getElementById('sheetScroll').scrollTop = 0;
+    backdrop.classList.add('show'); sheet.classList.add('show');
+  }
+  function closeSheet() { backdrop.classList.remove('show'); sheet.classList.remove('show'); }
+  function subscribeFromSheet() {
+    if (sheetSubscribed) return;
+    sheetSubscribed = true; subs++;
+    const sub = document.getElementById('shSub');
+    sub.classList.add('done'); document.getElementById('shSubLbl').textContent = 'Subscribed ✓';
+    document.getElementById('shNext').classList.add('show');
+    // dismiss the card behind the sheet so the NEXT card is waiting when the sheet closes
+    if (topCard) { topCard.classList.add('flyout'); topCard.style.transform = 'translate(520px, 60px) rotate(22deg)'; topCard.style.opacity = '0'; }
+    setTimeout(() => { idx++; render(); }, 220);
+  }
+
+  // drag the sheet down to dismiss
+  (function () {
+    const grab = document.getElementById('grab'); let sy = 0, dy = 0, on = false;
+    grab.addEventListener('pointerdown', e => { on = true; sy = e.clientY; dy = 0; sheet.classList.add('dragging'); grab.setPointerCapture(e.pointerId); });
+    grab.addEventListener('pointermove', e => { if (!on) return; dy = Math.max(0, e.clientY - sy); sheet.style.transform = \`translateY(\${dy}px)\`; });
+    const end = () => { if (!on) return; on = false; sheet.classList.remove('dragging'); sheet.style.transform = ''; if (dy > 90) closeSheet(); };
+    grab.addEventListener('pointerup', end); grab.addEventListener('pointercancel', end);
+  })();
+
+  function showEnd() {
+    end.classList.add('show'); hint.style.visibility='hidden'; actions.style.visibility='hidden';
+    document.getElementById('endTitle').textContent = \`You've seen our \${list.length} picks\`;
+    document.getElementById('endSub').textContent = \`\${meta.name} has \${meta.total} shows in the catalog — come back for more.\`;
+    document.getElementById('endSaved').textContent = subs ? \`＋ \${subs} added to your Shows\` : '';
+    bar.style.width = '100%';
+  }
+
+  const root = document.documentElement, tt = document.getElementById('tt'),
+        tgEmoji = document.getElementById('tgEmoji'), tgLabel = document.getElementById('tgLabel');
+  root.setAttribute('data-theme', 'dark');
+  tt.addEventListener('click', () => {
+    const dark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    tgEmoji.textContent = dark ? '☀️' : '🌙'; tgLabel.textContent = dark ? 'Light' : 'Dark';
+  });
+
+  render();
 <\/script>
 `,
 };
