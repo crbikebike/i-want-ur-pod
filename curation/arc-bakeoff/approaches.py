@@ -688,21 +688,28 @@ def _is_anthology(kind, parts):
 
 # A re-release/rebroadcast marker in a title. When the same arc airs twice (original + encore/
 # redux/archive), both collapse to the same (stem, part); dedup keeps ONE, preferring the original.
+# NOTE: "rerun" is a correctness dependency of A6's LEAD_BRACKET strip, not optional polish.
+# Once "[RERUN] " is stripped, a rerun collapses to the same (stem, part) as its original and
+# the two merge into one oversized arc unless dedup can see the marker. Measured on gold:
+# omitting it costs 0.0074 membership precision (0.9985 -> 0.9911) on history-on-fire alone.
 RERELEASE = re.compile(
-    r'\b(encore|archive|rebroadcast|redux|replay|revisited|throwback|fan[\s-]?favorite|'
+    r'\b(encore|archive|rebroadcast|rerun|redux|replay|revisited|throwback|fan[\s-]?favorite|'
     r'from the vault|classic episode)\b', re.I)
 
 
-def _cluster_guarded(episodes, guard=True, dedup=False):
+def _cluster_guarded(episodes, guard=True, dedup=False, stem_fn=None):
     """A2r3 clustering that tracks each member's part number + counter kind and drops
     anthology/episode-numbered clusters via _is_anthology. With dedup=True, collapses
-    duplicate part numbers within an arc (re-release airings), preferring the original."""
+    duplicate part numbers within an arc (re-release airings), preferring the original.
+    stem_fn defaults to r3_stem_part_kind; pass a (title)->(stem, part, kind) fn to swap
+    in a richer parser while keeping every guard identical (A6 tiers do this)."""
+    stem_fn = stem_fn or r3_stem_part_kind
     episodes = sort_newest_first(episodes)
     by_guid = {e["guid"]: e for e in episodes}
     part_of, kind_of, rerel_of = {}, {}, {}
     order, buckets, display = [], {}, {}
     for e in episodes:
-        stem, part, kind = r3_stem_part_kind(e["title"])
+        stem, part, kind = stem_fn(e["title"])
         if not stem or part is None:
             continue
         key = norm_name(stem)
@@ -803,15 +810,18 @@ def _season_theme(titles):
     return None
 
 
-def a2r3_3_final(episodes):
-    """Final: A2r3.2 + a SCOPED chaptered-season handler. Shows whose arcs live only in
+def _tier1(episodes, stem_fn=None):
+    """A2r3.2 clustering + a SCOPED chaptered-season handler. Shows whose arcs live only in
     `itunes:season` with `Chapter N | Title` (Bone Valley) or `S7 E1: Title` (Scene on Radio)
     episodes carry no arc name in the title, so title-clustering misses them. Group those
     specific episodes (and only those) by season, named from the season trailer when present.
     Tightly scoped to those two leading shapes, so it adds none of the blanket season-fallback's
-    junk on other feeds."""
+    junk on other feeds.
+
+    stem_fn is threaded through to _cluster_guarded so the A6 tiers can swap in a richer
+    parser while every guard, the dedup and this season pass stay byte-identical."""
     episodes = sort_newest_first(episodes)
-    arcs = _cluster_guarded(episodes, guard=True, dedup=True)
+    arcs = _cluster_guarded(episodes, guard=True, dedup=True, stem_fn=stem_fn)
     taken = {g for a in arcs for g in a["members"]}
     by_season = OrderedDict()
     titles_by_season = OrderedDict()
@@ -832,6 +842,431 @@ def a2r3_3_final(episodes):
     return arcs
 
 
+def a2r3_3_final(episodes):
+    """The shipped detector: _tier1 with the stock r3 parser."""
+    return _tier1(episodes)
+
+
+# ===========================================================================
+# A6 — cascading multi-pass detector
+# ===========================================================================
+# The incumbent A2r3.3-final holds memPrec 0.999 / junk 0.003 but only 0.627 arc
+# recall: 218 of its 220 missed gold arcs are "zero members detected" — the parser
+# never clusters those episodes at all. Escalating to the wide detectors (A5-hybrid
+# et al) recovers only 20% of that while memPrec collapses to 0.42, because they miss
+# the same grammars for the same reason. This is a PARSER gap, not a risk-appetite
+# gap, so A6 keeps tier 1 untouched and adds parser tiers on top.
+#
+#   tier 1  a2r3_3_final, unchanged
+#   tier 2a CLEANER — strip leading noise so the EXISTING markers can fire
+#   tier 2b MARKERS — grammars the existing marker table cannot express
+#   tier 3a affix clustering (gated + shape-guarded)
+#   tier 3b counter-run / adjacency (experimental)
+#
+# Tier 2a is the cheapest lever in the whole design. "EPISODE 47: Give Me Back My
+# Legions! (Part 1)" ALREADY parses its (Part N) marker correctly — GENERIC_STEM then
+# rejects the stem because it starts with "episode". Likewise "691 // Kierra Coles -
+# Part 2" yields the right part but a stem polluted by the episode number, so Part 1
+# and Part 2 land in different buckets. Both are fixed by cleaning the title and
+# re-running the UNMODIFIED r3 parser — no new marker regexes at all.
+# ---------------------------------------------------------------------------
+# "[RERUN] ", "[Repetición] " — a bracketed tag before the real title. Length-capped
+# so it can never eat a genuine bracketed arc name.
+LEAD_BRACKET = re.compile(r'^\s*[\[(][^\])]{0,20}[\])]\s*')
+# "EPISODE 47: ", "Episode 391 - " — the word form, always followed by a separator.
+LEAD_EPISODE_WORD = re.compile(r'^\s*Ep(?:isode|\.)?\s+\d{1,4}\s*[' + DASHES + r':|]\s*', re.I)
+# "691 // ", "450 - ", "1. ", "36: " — a bare leading counter plus a separator. The
+# separator and the trailing space are both REQUIRED: without them this would eat the
+# leading number of a real title ("1917 - The Somme" is guarded by the residue check
+# and, if that proves insufficient, by the feed-level shape check in _lead_epnum_ok).
+LEAD_EPNUM = re.compile(r'^\s*(\d{1,4})\s*(?://|[' + DASHES + r'.:)\]#|])\s+')
+
+
+def r4_clean(title):
+    """r2_clean + leading-noise strips, each guarded by a residue check.
+
+    The residue check is load-bearing: without it "EPISODE 47" collapses to "" and the
+    episode is lost entirely rather than merely unparsed."""
+    t = r2_clean(title)
+    for rx in (LEAD_BRACKET, LEAD_EPISODE_WORD, LEAD_EPNUM):
+        t2 = rx.sub("", t).strip()
+        if len(norm_name(t2)) >= 3:
+            t = t2
+    return t
+
+
+def r4_clean_stem_part_kind(title):
+    """Tier 2a only: clean, then run the STOCK r3 parser. No new markers."""
+    return r3_stem_part_kind(r4_clean(title))
+
+
+def a6_1_clean(episodes):
+    """A6.1 — tier 1 pipeline, cleaner swapped in. Isolates the cleaner's recall gain."""
+    return _tier1(episodes, stem_fn=r4_clean_stem_part_kind)
+
+
+# ---------------------------------------------------------------------------
+# Tier 2b — counter grammars the existing marker table cannot express
+# ---------------------------------------------------------------------------
+# "Part One: Richard Marcinko: The Founder of SEAL Team 6" (Behind the Bastards) — the
+# counter LEADS and the arc name follows it. Every R1/R3 marker requires stem-before-
+# counter, so these parse to (None, None). Where the remainder is not shared between
+# parts (7am: "Part 1: Victoria's treaty" / "Part 2: The politics and pushback") the
+# resulting singletons are simply dropped by the >= 2 floor — no junk, no gain.
+LEAD_PART = re.compile(
+    r'^Part\s+(' + NUMWORD + r')\s*[' + DASHES + r':]\s*(.+)$', re.I)
+# "Becoming Justice Gorsuch | 3. A Lunch Room for Life" (Slow Burn) — pipe, then a
+# DOTTED counter, then the per-episode subtitle. The stock pipe marker wants two pipes
+# and no dot. The trailing ". Subtitle" is required, which is what keeps this off the
+# feed-wide "Rockwood | 18" counters that grammar 7 was cut for.
+PIPE_DOT = re.compile(r'^(.+?)\s*\|\s*(\d{1,3})\s*[.)]\s+(.+)$')
+# "Case 339: Waco (Part 3/3)" (Casefile) — an i/j fraction inside the paren. The stock
+# (Part N) marker anchors the closing bracket straight after the number, so "3/3)" fails.
+# The stem ("Case 339: Waco") is already shared across parts, so no lead strip is needed.
+FRACTION_PAREN = re.compile(
+    r'^(.+?)\s*[(\[]\s*(?:Part|Pt\.?)\s*(' + NUMWORD + r')\s*/\s*\d+\s*[)\]]', re.I)
+# "Released To Die: Episode 3" (Suave) — trailing "Episode N" after a colon/pipe.
+COLON_EP = re.compile(r'^(.+?)\s*[:|]\s*Ep(?:isode|\.)?\s*(\d+)\s*$', re.I)
+
+R4_MARKERS = [  # (regex, stem_group, num_group, kind)
+    (LEAD_PART,      2, 1, "lead-part"),
+    (PIPE_DOT,       1, 2, "pipe-dot"),
+    (FRACTION_PAREN, 1, 2, "part"),
+    (COLON_EP,       1, 2, "ep"),
+]
+
+
+def _accept(stem, p):
+    """The stem/part acceptance predicate shared by every marker layer (r3 inlines this
+    same test at four sites; A6 factors it so the tiers cannot drift apart)."""
+    return bool(stem) and p is not None and len(norm_name(stem)) >= 3 \
+        and not GENERIC_STEM.match(stem)
+
+
+def r4_stem_part_kind(title, markers=None):
+    """Tier 2a + 2b: clean, try the new markers, then fall through to the STOCK r3 parser
+    ON THE CLEANED TITLE. That fall-through is what makes the cleaner's levers work through
+    the existing marker table without duplicating a single regex."""
+    t = r4_clean(title)
+    for rx, gs, gp, kind in (R4_MARKERS if markers is None else markers):
+        m = rx.match(t)
+        if not m:
+            continue
+        stem = m.group(gs).strip(" " + DASHES + "|:,([#")
+        p = r1_part(m.group(gp))
+        if _accept(stem, p):
+            return stem, p, kind
+    return r3_stem_part_kind(t)
+
+
+def a6_2_markers(episodes):
+    """A6.2 — tier 1 pipeline with the full tier-2 parser (cleaner + new markers).
+
+    Note this REPLACES the parser rather than cascading: the new markers are tried ahead of
+    the stock r3 table for every episode, so a title r3 used to claim can be re-read by a
+    tier-2 marker. A6.3 is the cascade alternative that leaves tier 1 untouched."""
+    return _tier1(episodes, stem_fn=r4_stem_part_kind)
+
+
+def a6_3_tier2(episodes):
+    """A6.3 — the actual cascade: stock tier 1 runs FIRST and unmodified, then the tier-2
+    parser gets a second pass over only the episodes tier 1 did not claim. Follows the
+    taken-guid-set discipline of a5_hybrid (:370) and a2r3_3_final (:806). Naive concat —
+    A6.4 swaps in _reconcile."""
+    episodes = sort_newest_first(episodes)
+    t1 = _tier1(episodes)
+    taken = {g for a in t1 for g in a["members"]}
+    rest = [e for e in episodes if e["guid"] not in taken]
+    t2 = _cluster_guarded(rest, guard=True, dedup=True, stem_fn=r4_stem_part_kind)
+    return t1 + t2
+
+
+def _reconcile(stages, episodes):
+    """Resolve arcs emitted by different tiers into one consistent list.
+
+    stages: [(tier_int, arcs), ...] in priority order. Nothing in the file did this before —
+    the existing cascades just concatenate, which is safe only while later stages are fed a
+    pre-filtered episode list. Tier 3 breaks that assumption, so reconciliation is explicit:
+
+      * TRIM, don't drop — a later arc keeps whatever members are still free, mirroring
+        a3_structured (:339-342), and is re-checked against the >= 2 floor.
+      * CANNIBALIZATION guard — a later-tier arc that lost more than half of itself to an
+        earlier tier IS that earlier arc's family; emitting the remainder under a different
+        name is pure junk. No precedent in the file; it is the main thing stopping tier 3
+        from re-emitting the tail of a tier-2 arc.
+      * NO cross-tier merge on name. Merging arcs that share (norm_name, season) was tried and
+        MEASURED HARMFUL: memPrec 0.9963 -> 0.9902 and matched 482 -> 479 on gold. Two arcs can
+        legitimately normalize to the same name in one feed (a recurring title shape with
+        separate part runs), and fusing them builds an oversized arc that then falls under the
+        0.5 Jaccard match threshold — losing arcs that both tiers had already got right.
+        The taken-set already guarantees the tiers are disjoint, so leaving them separate is
+        both simpler and strictly better.
+      * SEASON is recomputed from the surviving members, so a trimmed arc never keeps a season
+        claim that no longer describes it.
+    """
+    by_guid = {e["guid"]: e for e in episodes}
+    taken, out = set(), []
+    for tier, arcs in stages:
+        for a in arcs:
+            orig = len(a["members"])
+            members = [g for g in a["members"] if g not in taken]
+            if len(members) < 2:
+                continue
+            if tier > 1 and len(members) * 2 < orig:
+                continue
+            out.append({**a, "members": list(members)})
+            taken.update(members)
+    final = []
+    for a in out:
+        if len(a["members"]) < 2:
+            continue
+        seasons = {by_guid[g].get("season") for g in a["members"] if g in by_guid}
+        seasons.discard(None)
+        a["season"] = seasons.pop() if len(seasons) == 1 else None
+        final.append(a)
+    return final
+
+
+# ---------------------------------------------------------------------------
+# Tier 3a — affix clustering (the risky tier)
+# ---------------------------------------------------------------------------
+# 76 of the missed gold arcs carry NO usable counter: a constant prefix or suffix segment
+# plus a per-episode subtitle ("We Keep Us Safe: Who Killed Antonio Mays Jr." / "We Keep Us
+# Safe: The Standoff"; "The Sentence - Ep. 1" / "The Hustle - Ep. 2" where the arc name is
+# nowhere in the title). Clustering on a shared segment instead of a shared stem+counter is
+# the only way to reach them — and it is genuinely dangerous, because a feed-wide episode
+# counter ("Rockwood | 18", 545 such titles across 26 feeds) has the identical shape.
+#
+# Measured: ungated this scores memPrec 0.65 / junk 0.16. The FEED GATE alone only reaches
+# 0.79 — it is a cheap pre-filter, NOT the load-bearing guard. The cluster-SHAPE guards
+# (contiguity above all) are what make this survivable.
+AFFIX_SPLIT = re.compile(r'\s*(?:\|\s|:\s|\s[' + DASHES + r']\s)\s*')
+
+
+def _affix_segments(title):
+    return [s for s in (x.strip() for x in AFFIX_SPLIT.split(r4_clean(title))) if s]
+
+
+def _repeated_segment_ratio(episodes, mode):
+    """RLS (mode='prefix') / RTS (mode='suffix'): fraction of episodes whose leading (or
+    trailing) segment is shared with at least one other episode. Coverage ratio ALONE is
+    degenerate as a trigger — 227 of 315 corpus feeds sit at exactly zero — so this is the
+    feature that actually separates a missed serial from a genuinely arcless weekly show."""
+    if not episodes:
+        return 0.0
+    i = 0 if mode == "prefix" else -1
+    keys = []
+    for e in episodes:
+        segs = _affix_segments(e["title"])
+        keys.append(norm_name(segs[i]) if len(segs) >= 2 else None)
+    counts = Counter(k for k in keys if k)
+    return sum(1 for k in keys if k and counts[k] >= 2) / len(episodes)
+
+
+def _tier3_gate(episodes, arcs, mode, min_eps=8, max_cov=0.30, min_ratio=0.15):
+    if len(episodes) < min_eps:
+        return False
+    covered = len({g for a in arcs for g in a["members"]})
+    if covered / len(episodes) >= max_cov:
+        return False
+    return _repeated_segment_ratio(episodes, mode) >= min_ratio
+
+
+def _affix_arcs(episodes, taken, mode, max_size=None, min_len=0,
+                contiguity=None, counter_reject=False):
+    """Cluster untaken episodes on a shared leading/trailing segment.
+
+    contiguity: reject a cluster whose members are scattered across the feed. A real arc airs
+      as a block; a recurring segment recurs across the whole run. Reject unless
+      (max_pos - min_pos) <= len(members) * contiguity.
+    counter_reject: drop a cluster whose episodeNumbers form a strictly-increasing run with no
+      repeats and a wide span — the feed-wide-counter signature (business-wars, even-the-rich).
+    """
+    episodes = sort_newest_first(episodes)
+    pos = {e["guid"]: i for i, e in enumerate(episodes)}
+    by_guid = {e["guid"]: e for e in episodes}
+    i = 0 if mode == "prefix" else -1
+    order, buckets, display = [], {}, {}
+    for e in episodes:
+        if e["guid"] in taken:
+            continue
+        segs = _affix_segments(e["title"])
+        if len(segs) < 2:
+            continue  # a single-segment title has no affix to share
+        seg = segs[i]
+        key = norm_name(seg)
+        if len(key) < min_len or GENERIC_STEM.match(seg):
+            continue
+        if key not in buckets:
+            buckets[key] = []
+            order.append(key)
+            display[key] = seg
+        buckets[key].append(e["guid"])
+    out = []
+    for k in order:
+        members = buckets[k]
+        if len(members) < 2:
+            continue
+        if max_size is not None and len(members) > max_size:
+            continue
+        if contiguity is not None:
+            ps = [pos[g] for g in members]
+            if max(ps) - min(ps) > len(members) * contiguity:
+                continue
+        if counter_reject:
+            nums = [by_guid[g].get("episodeNumber") for g in members]
+            nums = [n for n in nums if n is not None]
+            if len(nums) == len(members) and len(set(nums)) == len(nums) \
+                    and max(nums) - min(nums) > len(nums) * 2:
+                continue
+        seasons = {by_guid[g].get("season") for g in members}
+        seasons.discard(None)
+        out.append({"name": display[k], "season": seasons.pop() if len(seasons) == 1 else None,
+                    "members": members})
+    return out
+
+
+# ---------------------------------------------------------------------------
+# Tier 3b — counter-run / adjacency (experimental)
+# ---------------------------------------------------------------------------
+# 7am publishes "Part 1: Victoria's historic treaty" then "Part 2: The politics and
+# pushback". The counter parses fine, but the two parts share ZERO title text, so no
+# amount of stem or affix clustering can ever join them — the only evidence they belong
+# together is that they are ADJACENT in publication order and numbered 1 then 2.
+#
+# Deliberately strict: a run must START at part 1 and step by exactly 1 with no gaps in
+# publication order. That makes it near-unfireable on a weekly show that happens to use
+# "Part N" occasionally, at the cost of missing arcs whose part 1 fell outside the fetch
+# window. Experimental — ship only if it independently clears the floor.
+LEAD_COUNTER_ONLY = re.compile(
+    r'^(?:Part|Chapter|Ep(?:isode|\.)?)\s+(' + NUMWORD + r')\s*[' + DASHES + r':]\s*(.+)$', re.I)
+
+
+def _counter_run_arcs(episodes, taken, min_run=2):
+    eps = sort_newest_first(episodes)
+    by_guid = {e["guid"]: e for e in eps}
+    oldest_first = list(reversed(eps))
+    seq = []
+    for e in oldest_first:
+        m = LEAD_COUNTER_ONLY.match(r4_clean(e["title"]))
+        if m:
+            seq.append((e, r1_part(m.group(1)), m.group(2).strip()))
+        else:
+            seq.append((e, None, None))
+    # Match a contiguous block whose parts form the COMPLETE set {1..k}, in any order.
+    # Order-insensitivity is required, not a nicety: 7am publishes both halves the same day,
+    # so the iso tie-break can invert them ("Part 2" lands before "Part 1" in publication
+    # order). Requiring the full 1..k set keeps this strict — a stray "Part 2" with no
+    # part 1 beside it never forms an arc.
+    out, n = [], len(seq)
+    i = 0
+    while i < n:
+        if seq[i][1] is None or seq[i][0]["guid"] in taken:
+            i += 1
+            continue
+        j = i
+        while j < n and seq[j][1] is not None and seq[j][0]["guid"] not in taken:
+            j += 1
+        block, b = seq[i:j], 0                      # maximal counter-bearing block
+        while b < len(block):
+            k = b
+            while k < len(block):
+                parts = [x[1] for x in block[b:k + 1]]
+                if sorted(parts) == list(range(1, len(parts) + 1)) and len(parts) >= min_run:
+                    run = block[b:k + 1]
+                    members = [x[0]["guid"] for x in reversed(run)]  # back to newest-first
+                    seasons = {by_guid[g].get("season") for g in members}
+                    seasons.discard(None)
+                    first = min(run, key=lambda x: x[1])            # the part-1 episode
+                    out.append({"name": first[2] or f"Part 1-{len(run)}",
+                                "season": seasons.pop() if len(seasons) == 1 else None,
+                                "members": members})
+                    break
+                k += 1
+            b = k + 1 if k < len(block) else b + 1
+        i = j
+    return out
+
+
+def _a6_cascade(episodes, tier3=False, gate=True, max_size=None, min_len=0,
+                contiguity=None, counter_reject=False, tier3b=False):
+    """The full A6 cascade. tier3/gate/guard params exist so each increment is measurable."""
+    episodes = sort_newest_first(episodes)
+    t1 = _tier1(episodes)
+    taken = {g for a in t1 for g in a["members"]}
+    rest = [e for e in episodes if e["guid"] not in taken]
+    t2 = _cluster_guarded(rest, guard=True, dedup=True, stem_fn=r4_stem_part_kind)
+    stages = [(1, t1), (2, t2)]
+    if tier3:
+        so_far = t1 + t2
+        taken2 = {g for a in so_far for g in a["members"]}
+        for mode in ("prefix", "suffix"):
+            if gate and not _tier3_gate(episodes, so_far, mode):
+                continue
+            stages.append((3, _affix_arcs(episodes, taken2, mode, max_size=max_size,
+                                          min_len=min_len, contiguity=contiguity,
+                                          counter_reject=counter_reject)))
+    if tier3b:
+        taken3 = {g for _, arcs in stages for a in arcs for g in a["members"]}
+        stages.append((3, _counter_run_arcs(episodes, taken3)))
+    return _reconcile(stages, episodes)
+
+
+def a6_5_affix_raw(episodes):
+    """A6.5 — tier 3 with no gate and no guards. Ceiling measurement only; never ship."""
+    return _a6_cascade(episodes, tier3=True, gate=False)
+
+
+def a6_6_affix_gated(episodes):
+    """A6.6 — tier 3 with the feed gate only. Confirms the gate is not the load-bearing guard."""
+    return _a6_cascade(episodes, tier3=True, gate=True)
+
+
+def a6_7_affix_guarded(episodes):
+    """A6.7 — tier 3 gated AND cluster-shape guarded, params tuned on gold.
+
+    Swept max_size x min_len x contiguity x counter_reject, then the gate thresholds. Two
+    configs topped the sweep; this is the SAFER one. The aggressive alternative
+    (max_cov=0.5, contiguity=4) scores 0.8763 recall but leaves only 0.0021 of junk margin
+    under the 0.05 ceiling — on a 45-feed gold sample that margin is noise, and tipping over
+    it forfeits the entire win. This config gives up ~3 arcs for 5x the margin.
+
+    counter_reject changes nothing on gold (business-wars / even-the-rich are not gold feeds)
+    but is kept as corpus-side insurance against feed-wide episode counters.
+
+    max_size=12 rather than 8: Suspect's arc is a 10-episode season and an 8 cap rejected it
+    outright (the show is a named target in HFAB_PROMPT.md). 10/12/16/24 score identically on
+    gold, so the exact value is not sensitive in that band — but removing the cap entirely
+    collapses memPrec to 0.836, so the bound itself is load-bearing."""
+    return _a6_cascade(episodes, tier3=True, gate=True, max_size=12, min_len=6,
+                       contiguity=3, counter_reject=True)
+
+
+def a6_cascade(episodes):
+    """A6 — THE RECOMMENDED WINNER. Full cascade: tier 1 (untouched) -> tier 2 parser
+    (cleaner + new markers) -> tier 3a affix clustering (gated + shape-guarded) -> tier 3b
+    counter-run adjacency, reconciled.
+
+    Gold (45 feeds / 590 arcs): memPrec 0.9736, junk 0.0391, arcRecall 0.8746, 537 arcs.
+    Incumbent A2r3.3-final: memPrec 0.9985, junk 0.0027, arcRecall 0.6271, 371 arcs.
+    Spends 0.025 of the 0.049 memPrec headroom and 0.039 of the 0.047 junk headroom to buy
+    +0.247 arc recall."""
+    return _a6_cascade(episodes, tier3=True, gate=True, max_size=12, min_len=6,
+                       contiguity=3, counter_reject=True, tier3b=True)
+
+
+def a6_4_reconciled(episodes):
+    """A6.4 — A6.3 with _reconcile instead of naive concat. Must score IDENTICALLY to A6.3:
+    tier 2 only ever sees episodes tier 1 declined, so there is nothing to reconcile yet.
+    Any difference here is a reconcile bug, not an improvement."""
+    episodes = sort_newest_first(episodes)
+    t1 = _tier1(episodes)
+    taken = {g for a in t1 for g in a["members"]}
+    rest = [e for e in episodes if e["guid"] not in taken]
+    t2 = _cluster_guarded(rest, guard=True, dedup=True, stem_fn=r4_stem_part_kind)
+    return _reconcile([(1, t1), (2, t2)], episodes)
+
+
 CONTENDERS = OrderedDict([
     ("baseline", baseline),
     ("A1-extended", a1_extended),
@@ -845,6 +1280,17 @@ CONTENDERS = OrderedDict([
     ("A2r3.1-guard", a2r3_1_prefix_plus),
     ("A2r3.2-dedup", a2r3_2_prefix_plus),
     ("A2r3.3-final", a2r3_3_final),
+    # A6 ladder — each entry isolates one increment so per-lever gain stays measurable.
+    # The ceiling-only variants (tier 3 ungated / gate-only) are deliberately NOT registered:
+    # both fail the floor by design and exist in RECOMMENDATION-recall.md as evidence that the
+    # feed gate is not the load-bearing guard. Reproduce them via _a6_cascade(gate=False) and
+    # _a6_cascade(tier3=True, gate=True) with no shape guards.
+    ("A6.1-clean", a6_1_clean),
+    ("A6.2-markers", a6_2_markers),
+    ("A6.3-tier2", a6_3_tier2),
+    ("A6.4-reconciled", a6_4_reconciled),
+    ("A6.7-affix-guarded", a6_7_affix_guarded),
+    ("A6-cascade", a6_cascade),
 ])
 
 
