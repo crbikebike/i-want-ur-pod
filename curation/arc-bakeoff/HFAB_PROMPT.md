@@ -1,0 +1,117 @@
+# hfab task — re-weight the story-arc bakeoff toward coverage
+
+Autonomous task brief. Runs headless on hfab (agent + network) so it proceeds while the
+author's Mac is offline. Everything needed is committed **except the feed corpus**, which you
+regenerate over the network. Pure `python3` (standard library only — **no `pip`, no venv**).
+
+## Background — why this task exists
+
+`curation/arc-bakeoff/score.py` historically ranked arc detectors **precision-first**
+(membership precision, then junk-arc rate, with recall only a tiebreaker). That rewards emitting
+fewer, safer arcs and starves **coverage**: real narrative shows produce **no** story arcs even
+though the detector scores as "accurate." Examples the app fails on today:
+
+- *Suspect* — "Part One / Part Two / Part Three: …" (spelled-out counter) → no arc
+- *Dr. Death* — "Episode 1 / Episode 2 / Episode 3: …" (generic single-season run) → no arc
+
+The shipped detector is `A2r3.3-final` (~99.85% membership precision / 0.27% junk / ~63% arc
+recall). Goal: **maximize arc recall subject to a precision floor**, then author detector variants
+that recover the missing arcs while staying above the floor.
+
+**The objective re-weight is already applied** on this branch — see Step 3. Your job is mostly
+Step 4 (author higher-recall variants and iterate).
+
+## Setup
+
+- Repo: `https://github.com/crbikebike/i-want-ur-pod.git`
+- Branch: **`feat/arc-detector-recall-bakeoff`** — already contains this brief and the
+  re-weighted `score.py`. Check it out and continue on it (don't start fresh).
+- No dependencies to install. Confirm `python3 --version` (3.7+).
+
+## Step 1 — build the corpus (network, ~10 min)
+
+```
+python3 scripts/fetch-atlas-feeds.py
+```
+
+Resumable/idempotent (skips feeds already on disk). ~374 shows, ~315 resolve; ~60 are
+paywalled/exclusive and fail — **non-fatal**, logged to `curation/feeds/_index.json`. The
+corpus lands in `curation/feeds/<slug>.json` and is **gitignored** (do not commit it).
+
+## Step 2 — baseline
+
+```
+python3 curation/arc-bakeoff/score.py
+```
+
+Confirm the gold results are **non-zero** (if every row is 0.000, the corpus didn't build — fix
+Step 1 first). Record the current **`A2r3.3-final`** numbers — `membership_precision`,
+`junk_arc_rate`, `arc_recall`, `arc_precision`, `detected_arcs` — as the baseline to beat.
+`score.py` writes `curation/arc-bakeoff/scoreboard.json` (also gitignored) and prints the ranking.
+
+Note: `gold_feeds/` (the frozen labeler slice) is absent, so scoring uses the **live re-fetched**
+corpus. Acceptable — just mention it in the report.
+
+## Step 3 — the objective (already applied; verify, don't redo)
+
+`score.py` now ranks **recall-max under a precision floor** instead of precision-first:
+
+- Constants near `JACCARD_MATCH`: `MEMPREC_FLOOR = 0.95`, `JUNK_CEIL = 0.05`.
+- Each result carries `"meets_floor" = (membership_precision >= MEMPREC_FLOOR and junk_arc_rate <= JUNK_CEIL)`.
+- Ranking key: `(not meets_floor, -arc_recall, -membership_precision, junk_arc_rate)` — floor-passers
+  first, then maximize recall.
+
+If you decide a different floor is warranted, change the two constants (and say so in the report),
+but the **default objective is fixed: hold memPrec ≥ 0.95 and junk ≤ 0.05, then maximize recall.**
+
+## Step 4 — author higher-recall detector variants (the main work)
+
+In `curation/arc-bakeoff/approaches.py`, add new approach functions, register each in the
+`CONTENDERS` `OrderedDict` (near the bottom), and re-run `score.py` after each. Keep the
+"explicit counter token" philosophy — every candidate must **clear the floor or be discarded**.
+Candidate recall levers (drawn from real corpus gaps):
+
+- **Spelled-out ordinal counters** — "Part One/Two/Three…", "Chapter One/Two…" (extend the
+  existing word-number handling rather than only digits/roman/pipe).
+- **Bounded single-season "Episode N" / "Ep N" runs**, treated as an arc **only when guarded**:
+  e.g. a contiguous `Episode 1..k` with `k ≥ 3` inside one `itunes:season`, not an open-ended
+  perpetual weekly. This is the **riskiest lever for precision** — verify it holds the floor
+  before keeping it.
+- **Other numbered leads present in the corpus** — "Case N", "Day N", "Book N", roman numerals.
+
+Iterate: keep any variant that **clears the floor AND beats the current best `arc_recall`**;
+discard the rest. Stop at diminishing returns (a round adds no floor-clearing recall).
+
+## Guardrails
+
+- **Never** accept a detector below the floor.
+- **Do not edit `gold.json`.** If a gold label looks wrong, note it in the report — don't change it.
+- **Do not touch the Swift detector** (`Packages/PodcastModels/Sources/PodcastModels/EpisodeArcs.swift`).
+  Python bakeoff only; the Swift port is a later, supervised step.
+- Keep `python3 curation/arc-bakeoff/approaches.py` (the `__main__` smoke test) working.
+- `rounds.json` / `junkloop.json` are **hand-authored** summaries — they are not regenerated by a
+  run; don't rely on them, and don't try to machine-write them.
+
+## Deliverable
+
+Commit your `approaches.py` / `score.py` changes (not the gitignored corpus/scoreboard) and write
+**`curation/arc-bakeoff/RECOMMENDATION-recall.md`** containing:
+
+1. The objective change and floor values.
+2. A **before/after table**: `A2r3.3-final` vs your recommended winner — `membership_precision`,
+   `junk_arc_rate`, `arc_recall`, `arc_precision`, `detected_arcs` on the 50-feed gold, **plus**
+   corpus-wide `total_arcs` / `feeds_with_arcs`.
+3. Exactly which title grammars each new variant adds, and its **per-lever recall gain**.
+4. A clear **"recommended winner"** with a concise rule summary — written to be portable enough to
+   later translate into Swift.
+
+Push the branch and open a PR against `main` if you have GitHub access; otherwise put the full
+diff + report in your final message.
+
+## Success criteria
+
+- `python3 curation/arc-bakeoff/score.py` runs green with **non-zero** gold results.
+- The recommended winner **clears the floor** (memPrec ≥ 0.95, junk ≤ 0.05) **and** has
+  `arc_recall` **strictly greater** than `A2r3.3-final`.
+- `python3 curation/arc-bakeoff/approaches.py` smoke test still runs.
+- `RECOMMENDATION-recall.md` has the before/after numbers and the winner's rule summary.

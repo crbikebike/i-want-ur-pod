@@ -30,6 +30,16 @@ import approaches as AP  # noqa: E402
 
 JACCARD_MATCH = 0.5
 
+# Recall-max objective (2026-07 re-weight). The bakeoff historically ranked
+# precision-first (membership_precision, then junk, then recall as a tiebreaker),
+# which rewards emitting fewer, safer arcs and starves coverage — real narrative
+# shows produce no arcs even though the detector is "accurate" (see
+# RECOMMENDATION-recall.md / HFAB_PROMPT.md). Instead, hold a precision FLOOR and
+# MAXIMIZE arc recall among the detectors that clear it. Tighten/loosen the floor
+# here; restore the old key in `evaluate()` for the historical precision-first order.
+MEMPREC_FLOOR = 0.95   # min membership_precision to "clear the floor"
+JUNK_CEIL = 0.05       # max junk_arc_rate to "clear the floor"
+
 
 def load_feed(slug):
     # Gold scoring uses the exact frozen slice the labelers saw.
@@ -113,21 +123,29 @@ def evaluate(names=None):
             for k in ("detected_arcs", "true_arcs", "matched", "det_assigned", "correct", "true_total"):
                 agg[k] += s[k]
         da, ta = agg["detected_arcs"], agg["true_arcs"]
+        mem_prec = round(agg["correct"] / agg["det_assigned"], 4) if agg["det_assigned"] else 0.0
+        junk = round((da - agg["matched"]) / da, 4) if da else 0.0
         results[name] = {
-            "membership_precision": round(agg["correct"] / agg["det_assigned"], 4) if agg["det_assigned"] else 0.0,
+            "membership_precision": mem_prec,
             "membership_recall": round(agg["correct"] / agg["true_total"], 4) if agg["true_total"] else 0.0,
-            "junk_arc_rate": round((da - agg["matched"]) / da, 4) if da else 0.0,
+            "junk_arc_rate": junk,
             "arc_precision": round(agg["matched"] / da, 4) if da else 0.0,
             "arc_recall": round(agg["matched"] / ta, 4) if ta else 0.0,
+            # Clears the recall-max floor: high per-episode precision AND low junk
+            # (see MEMPREC_FLOOR / JUNK_CEIL). Ranking maximizes arc_recall among these.
+            "meets_floor": (mem_prec >= MEMPREC_FLOOR and junk <= JUNK_CEIL),
             "detected_arcs": da, "true_arcs": ta, "matched": agg["matched"],
             "feeds_scored": agg["feeds"], "errors": agg["errors"],
             "per_feed": per_feed,
         }
-    # precision-first ranking
+    # Recall-max-under-precision-floor ranking (was precision-first): float every
+    # detector that clears the floor to the top, then maximize arc_recall, with
+    # precision/junk as tiebreakers.
     ranking = sorted(results.keys(), key=lambda n: (
-        -results[n]["membership_precision"],
-        results[n]["junk_arc_rate"],
-        -results[n]["arc_recall"],
+        not results[n]["meets_floor"],        # floor-passers first
+        -results[n]["arc_recall"],            # then maximize recall
+        -results[n]["membership_precision"],  # tiebreak: precision
+        results[n]["junk_arc_rate"],          # then junk
     ))
     return {"results": results, "ranking": ranking}
 
@@ -160,12 +178,13 @@ def main():
     out = {"scored": evaluate(), "corpus": corpus_stats()}
     (HERE / "scoreboard.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
     if out["scored"]:
-        print("RANK (precision-first):")
+        print(f"RANK (recall-max under floor memPrec>={MEMPREC_FLOOR}, junk<={JUNK_CEIL}):")
         for i, n in enumerate(out["scored"]["ranking"], 1):
             r = out["scored"]["results"][n]
-            print(f"  {i}. {n:16s} memPrec={r['membership_precision']:.3f} "
+            flag = "OK" if r["meets_floor"] else "--"
+            print(f"  {i}. [{flag}] {n:16s} memPrec={r['membership_precision']:.3f} "
                   f"junk={r['junk_arc_rate']:.3f} arcRecall={r['arc_recall']:.3f} "
-                  f"({r['feeds_scored']} feeds)")
+                  f"detArcs={r['detected_arcs']:<4d} ({r['feeds_scored']} feeds)")
     else:
         print("No gold.json yet — corpus stats only.")
     print("\nCorpus coverage:")
