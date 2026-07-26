@@ -43,23 +43,51 @@ not for working through all 1,600.
 Regenerate the index after changing `approaches.py` — arc indices are positional, and the
 exporter will flag any verdict that no longer lines up rather than mis-attach it.
 
-## Episode themes (anthologies)
+## Episode themes
 
-Anthology shows have no arcs — every episode is a different story — but their episodes still
-cluster by subject. Swindled's Ford Pinto, OceanGate, ValuJet and Peanut Corporation episodes are
-one theme: a company knew and shipped it anyway.
+Themes are a **second index over the whole catalog**, sitting beside arcs rather than behind
+them. An arc is a multi-episode story; a theme is what one episode is *about*. An episode
+inside an arc still has a subject, so it still carries themes. Radiolab is the shape that
+proves it: 5 arcs, 654 standalone episodes, one vocabulary over all of them.
+
+Scope is every full episode — 303 shows, 27,444 episodes — with no size floor and no arc
+filter. See `curation/arc-bakeoff/THEMING_PROMPT.md` for the full brief.
 
 ```sh
-python3 curation/arc-bakeoff/build-episode-themes.py extract --slug swindled
-# run curation/arc-bakeoff/episode-theme-workflow.mjs  (args: {slug, count, showThemes})
-python3 curation/arc-bakeoff/build-episode-themes.py merge --slug swindled --result <workflow.json>
+python3 scripts/fetch-feed-descriptions.py              # step 0, once: per-episode synopses
+python3 curation/arc-bakeoff/build-episode-themes.py prepare
+# run the assign workflow over the batch plan
+python3 curation/arc-bakeoff/build-episode-themes.py finalize --vocab <path to vocabulary>
 ```
 
-Three passes: Sonnet open-codes every episode with no fixed vocabulary, Sonnet consolidates the
-raw labels into 10–16 defined themes, Haiku assigns primary + up to two secondary from that frozen
-list. The assignment runs **twice with different batching**; where the two runs disagree the theme
-boundary is fuzzy, and that percentage is reported in the UI. That is the real measure — the audit
-only proves the shape is sane, not that the categories are real.
+**One shared vocabulary, not one per show.** Per-show vocabularies do not compose: two shows
+coin two slugs for the same idea and cross-show discovery silently fails. The 145 episode
+themes are their own taxonomy — they are *not* children of the 30 show-level themes in
+`curation/catalog/themes.json`, because the two levels cut the catalog differently and the
+episode level is far more granular. Each carries `relatedShowThemes`, a soft link that may be
+empty.
 
-Adding another anthology means adding an entry to `SHOWS` in `build-episode-themes.py` describing
-how to pull the subject out of its titles. Nothing else changes.
+**Confidence rides on each theme application, not on the episode.** An episode has a primary
+and up to two secondaries; a single score let a strong primary mask a weak third pick, which
+is exactly the row worth pruning later. The score is recorded and acted on nowhere.
+
+**Segment names are never themes.** Bear Grease repeats `This Country Life` across 161 of 418
+episodes; as a theme it would mean nothing outside that show. `prepare` detects repeating
+prefixes by frequency and splits them into their own field so the model themes the content
+instead. Show names, host names and format labels are excluded the same way.
+
+**A theme used by one show is flagged, not deleted** (`showSpecific`). Some subjects genuinely
+appear once. Those flags are the review queue for a later merge pass.
+
+### In the workbench
+
+- **Theme filter on show detail** — built from that show's `themesUsed`. Most shows have no
+  arcs, so there it is the only structure for digging through hundreds of episodes.
+- **Theme pages** (`#/theme/<slug>`) — one theme, every show that uses it. This is the
+  cross-show question the whole exercise exists to answer; click any theme badge to get there.
+- **Facets** — model confidence (now per application), show-specific themes, junk-drawer
+  suspects, audit-flagged shows.
+- **System view** — run-level totals, kept to numbers.
+
+Audits flag and never halt: a failing show or theme is marked and the run continues. Nothing
+is dropped from the corpus or from any show's output.
