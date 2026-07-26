@@ -36,15 +36,17 @@ WORK = OUT_DIR / "_work"             # raw agent output, merged by finalize
 # runs only min(16, cores-2) = 2 agents at a time and 80 would need ~17h of wall clock.
 # Bigger batches trade some per-row attention for finishing in one night. Assign emits
 # ~3 theme applications per row, so its batches stay smaller to avoid truncation.
-BATCH = 400
-ASSIGN_BATCH = 300
+BATCH = 130
+ASSIGN_BATCH = 130
+BRIEF_CHARS = 120        # description length for open coding; the gist is enough there
+DESC_CHARS = 150         # description length for assigning from a fixed vocabulary
 
 # Open coding exists to DERIVE the vocabulary, not to label the catalog -- assign does
 # that, and assign still covers every episode. A 663-episode show does not contribute
 # 663 episodes' worth of new theme ideas, so cap what open coding reads per show and
 # sample evenly across the run. Every show stays represented, which is what
 # consolidation needs; shows at or under the cap are still read in full.
-OPEN_CAP = 120
+OPEN_CAP = 50
 
 sys.path.insert(0, str(HERE))
 from approaches import a8_cascade  # noqa: E402  -- read-only; this job never edits it
@@ -223,6 +225,9 @@ def prepare():
     # consolidation cannot spot that two labels are one theme otherwise. Splitting one
     # show across calls breaks that; packing several whole small shows into one call does
     # not, and one batch per show would cost 558 calls against a 1000-agent cap.
+    def _size(p):
+        return p.get("count", len(p.get("indices", ())))
+
     def build_plan(size, cap=0):
         plan, pack = [], []
         for show in sorted(shows, key=lambda s: len(s["episodes"])):
@@ -230,15 +235,12 @@ def prepare():
             if cap and n > cap:
                 # Sample evenly across the whole run rather than taking a prefix -- feeds
                 # are newest-first, so a prefix would only ever see recent episodes.
-                idxs = [round(k * (n - 1) / (cap - 1)) for k in range(cap)]
-                part = {"slug": show["slug"], "indices": sorted(set(idxs))}
-                if len(part["indices"]) > size:
-                    for s in range(0, len(part["indices"]), size):
-                        plan.append({"parts": [{"slug": show["slug"],
-                                                "indices": part["indices"][s:s + size]}],
-                                     "split": True})
-                    continue
-                plan.append({"parts": [part], "split": True})
+                # The sample is small, so it packs alongside other shows like any small one.
+                idxs = sorted(set(round(k * (n - 1) / (cap - 1)) for k in range(cap)))
+                if sum(_size(p) for p in pack) + len(idxs) > size and pack:
+                    plan.append({"parts": pack, "split": False})
+                    pack = []
+                pack.append({"slug": show["slug"], "indices": idxs})
                 continue
             if n > size:                   # too big to pack: split it
                 for start in range(0, n, size):
@@ -246,7 +248,7 @@ def prepare():
                                             "count": min(size, n - start)}],
                                  "split": True})
                 continue
-            if sum(p.get("count", len(p.get("indices", []))) for p in pack) + n > size and pack:
+            if sum(_size(p) for p in pack) + n > size and pack:
                 plan.append({"parts": pack, "split": False})
                 pack = []
             pack.append({"slug": show["slug"], "start": 0, "count": n})
@@ -279,8 +281,13 @@ def prepare():
 
 
 # --- agent-facing helpers ---------------------------------------------------------
-def batch(batch_id, with_desc=True, plan_name="_batch-plan.json"):
-    """Print one batch of rows as JSON. Agents call this instead of reading the corpus.
+def batch(batch_id, with_desc=True, plan_name="_batch-plan.json", brief=False):
+    """Print one batch as compact TSV. Agents call this instead of reading the corpus.
+
+    TSV, not JSON: a 500-row batch as JSON is ~190KB, which blows past the agent's tool
+    output cap and forces it to spill to a scratch file and page through it -- which was
+    costing more wall clock than the labelling itself. One line per episode is ~5x smaller
+    and needs no parsing on the agent's side.
 
     A batch holds either one slice of a big show or several whole small shows, so every
     row carries its own slug.
@@ -289,8 +296,12 @@ def batch(batch_id, with_desc=True, plan_name="_batch-plan.json"):
     if not 0 <= batch_id < len(plan):
         sys.exit(f"batch id {batch_id} out of range 0..{len(plan) - 1}")
     entry = plan[batch_id]
+    cap = BRIEF_CHARS if brief else DESC_CHARS
 
-    shows = []
+    def clean(x):
+        return (x or "").replace("\t", " ").replace("\n", " ").strip()
+
+    lines, n = [], 0
     for part in entry["parts"]:
         show = json.loads((IN_DIR / f"{part['slug']}.json").read_text())
         if "indices" in part:
@@ -298,43 +309,59 @@ def batch(batch_id, with_desc=True, plan_name="_batch-plan.json"):
             rows = [by_i[i] for i in part["indices"] if i in by_i]
         else:
             rows = show["episodes"][part["start"]:part["start"] + part["count"]]
-        shows.append({
-            "slug": part["slug"], "title": show["title"],
-            "episodes": [{"i": r["i"], "title": r["display"], "segment": r["segment"],
-                          "subject": r["subject"],
-                          **({"desc": r["desc"]} if with_desc else {})}
-                         for r in rows],
-        })
-    print(json.dumps({"batchId": batch_id, "split": entry["split"], "shows": shows},
-                     ensure_ascii=False))
+        for r in rows:
+            n += 1
+            lines.append("\t".join([
+                part["slug"], str(r["i"]),
+                clean(r["segment"]) or "-",
+                clean(r["subject"])[:90],
+                clean(r["desc"])[:cap] if with_desc else "",
+            ]))
+
+    print(f"# batch {batch_id}: {n} episodes")
+    print("# slug\ti\tsegment\tsubject\tdescription")
+    print("\n".join(lines))
 
 
 def labels(slice_index=0, slices=1):
     """Aggregate open-coding output into distinct labels for consolidation.
 
-    Collapses ~28k raw labels to a few thousand distinct phrases in plain Python before
-    any model sees them, and carries the show set per label -- that is what decides
-    showSpecific later, computed here rather than asked of the model.
+    Collapses raw labels to distinct phrases in plain Python before any model sees them,
+    and carries the show set per label -- that is what decides showSpecific later,
+    computed here rather than asked of the model.
     """
-    src = WORK / "open"
     counts = collections.Counter()
     shows = collections.defaultdict(set)
-    for path in sorted(src.glob("*.json")):
-        try:
-            data = json.loads(path.read_text())
-        except Exception:  # noqa: BLE001
-            continue
-        for row in data.get("labels", []):
-            lab = (row.get("label") or "").strip().lower()
-            slug = row.get("slug") or data.get("slug") or ""
+    for path in sorted((WORK / "open").glob("*.tsv")):
+        for line in path.read_text().splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split("\t")
+            if len(parts) < 3:
+                continue
+            slug, _, lab = parts[0], parts[1], parts[2].strip().lower()
             if lab:
                 counts[lab] += 1
                 shows[lab].add(slug)
     items = [{"label": lab, "count": n, "shows": len(shows[lab])}
              for lab, n in counts.most_common()]
     chunk = items[slice_index::slices] if slices > 1 else items
-    print(json.dumps({"distinct": len(items), "slice": slice_index,
-                      "labels": chunk}, ensure_ascii=False))
+    print(f"# {len(items)} distinct labels, slice {slice_index} of {slices}")
+    print("# label\tepisodes\tshows")
+    for it in chunk:
+        print(f"{it['label']}\t{it['count']}\t{it['shows']}")
+
+
+def print_vocab():
+    """Compact vocabulary for assign agents: slug, name, definition, one line each."""
+    path = OUT_DIR / "_vocabulary-draft.json"
+    if not path.exists():
+        sys.exit(f"no vocabulary at {path}")
+    themes = json.loads(path.read_text())["themes"]
+    print(f"# {len(themes)} themes. Use these slugs VERBATIM. Never invent one.")
+    for t in themes:
+        print(f"{t['slug']}\t{t['definition']}")
 
 
 # --- finalize ---------------------------------------------------------------------
@@ -396,23 +423,51 @@ def audit_show(show):
     return flags
 
 
-def _primaries(subdir):
-    """{(slug, i): primary_theme_slug} from a directory of per-batch assign files."""
-    out = {}
-    for path in sorted((WORK / subdir).glob("*.json")):
-        try:
-            data = json.loads(path.read_text())
-        except Exception:  # noqa: BLE001
-            continue
-        for a in data.get("assignments", []):
-            slug = a.get("slug") or data.get("slug")
-            if slug is None or a.get("i") is None:
+def parse_assign_dir(subdir):
+    """{(slug, i): [ {slug, role, confidence}, ... ]} from compact agent output.
+
+    Each line: slug \t i \t primary \t conf [ \t secondary,conf ]*
+    Malformed lines are skipped and counted -- one bad row must not cost a whole batch.
+    """
+    out, bad = {}, 0
+    for path in sorted((WORK / subdir).glob("*.tsv")):
+        for line in path.read_text().splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
                 continue
-            for t in a.get("themes") or []:
-                if t.get("role") == "primary":
-                    out[(slug, int(a["i"]))] = t.get("slug")
-                    break
+            f = line.split("\t")
+            if len(f) < 4:
+                bad += 1
+                continue
+            slug, i_raw, prim, conf = f[0], f[1], f[2].strip(), f[3].strip().lower()
+            try:
+                i = int(i_raw)
+            except ValueError:
+                bad += 1
+                continue
+            if not prim:
+                bad += 1
+                continue
+            apps = [{"slug": prim, "role": "primary",
+                     "confidence": conf if conf in ("high", "medium", "low") else "medium"}]
+            for extra in f[4:]:
+                if not extra.strip():
+                    continue
+                bits = extra.split(",")
+                sl = bits[0].strip()
+                c = (bits[1].strip().lower() if len(bits) > 1 else "medium")
+                if sl and sl != prim:
+                    apps.append({"slug": sl, "role": "secondary",
+                                 "confidence": c if c in ("high", "medium", "low") else "medium"})
+            out[(slug, i)] = apps[:3]
+    if bad:
+        print(f"  {subdir}: skipped {bad} malformed row(s)", flush=True)
     return out
+
+
+def _primaries(subdir):
+    """{(slug, i): primary theme slug} for the agreement comparison."""
+    return {k: v[0]["slug"] for k, v in parse_assign_dir(subdir).items() if v}
 
 
 def compute_agreement():
@@ -455,19 +510,10 @@ def finalize(vocab_path):
     agreement = compute_agreement()
     known = {t["slug"] for t in json.loads(THEMES.read_text())}
 
-    # assignments land as one file per batch: {slug, assignments: [{i, themes:[...]}]}
+    flat = parse_assign_dir("assign")
     assigns = collections.defaultdict(dict)
-    for path in sorted((WORK / "assign").glob("*.json")):
-        try:
-            data = json.loads(path.read_text())
-        except Exception as e:  # noqa: BLE001 - a bad batch file is not fatal
-            print(f"  bad assign file {path.name}: {type(e).__name__}: {e}", flush=True)
-            continue
-        for a in data.get("assignments", []):
-            # Packed batches hold several whole shows, so the slug rides on the row.
-            slug = a.get("slug") or data.get("slug")
-            if slug and a.get("i") is not None:
-                assigns[slug][int(a["i"])] = a
+    for (slug, i), apps in flat.items():
+        assigns[slug][i] = {"themes": apps}
 
     per_show, missing = [], []
     for path in sorted(IN_DIR.glob("*.json")):
@@ -582,6 +628,8 @@ def main():
     b.add_argument("--id", type=int, required=True, dest="batch_id")
     b.add_argument("--no-desc", action="store_true")
     b.add_argument("--assign", action="store_true", help="use the assign batch plan")
+    b.add_argument("--brief", action="store_true", help="short descriptions (open coding)")
+    sub.add_parser("vocab")
     ll = sub.add_parser("labels")
     ll.add_argument("--slice", type=int, default=0)
     ll.add_argument("--slices", type=int, default=1)
@@ -592,7 +640,10 @@ def main():
         prepare()
     elif args.cmd == "batch":
         batch(args.batch_id, not args.no_desc,
-              "_assign-plan.json" if args.assign else "_batch-plan.json")
+              "_assign-plan.json" if args.assign else "_batch-plan.json",
+              args.brief)
+    elif args.cmd == "vocab":
+        print_vocab()
     elif args.cmd == "labels":
         labels(args.slice, args.slices)
     else:

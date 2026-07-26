@@ -19,9 +19,30 @@ const el = (t, c, x) => { const n = document.createElement(t); if (c) n.classNam
 const state = {
   data: null, verdicts: {},
   mode: 'browse', slug: null,
-  f: { rule: null, feed: null, review: null, cat: '', conf: null },
-  q: '', cursor: 0, qi: 0, arc: null, theme: null,
+  f: { rule: null, feed: null, review: null, cat: '', conf: null, tflag: null },
+  q: '', cursor: 0, qi: 0, arc: null, theme: null, gtheme: null,
 };
+
+/* ---------- shared episode vocabulary ----------
+   Episode themes are one catalog-wide taxonomy, not a per-show one, so shows carry
+   indices into this list rather than their own vocabularies. That is what makes
+   "what else is like this episode?" reach across shows at all. */
+const epVocab = () => (state.data && state.data.epVocab) || [];
+const themeAt = i => epVocab()[i] || null;
+
+/* The show's own slice of the shared vocabulary, resolved and sorted by weight. */
+const showThemes = s => (s.themesUsed || [])
+  .map(([gi, count]) => { const t = themeAt(gi); return t ? { ...t, gi, count } : null; })
+  .filter(Boolean);
+
+/* Every show that uses a theme, for the cross-show theme page. */
+function showsUsing(gi) {
+  return state.data.shows
+    .map(s => ({ s, n: (s.themesUsed || []).find(([i]) => i === gi) }))
+    .filter(x => x.n)
+    .map(x => ({ s: x.s, count: x.n[1] }))
+    .sort((a, b) => b.count - a.count);
+}
 
 const art = u => (u || '').replace(/\/\d+x\d+bb\./, '/300x300bb.');
 const initials = t => t.replace(/^(the|a|an)\s+/i, '').split(/\s+/).slice(0, 2).map(w => w[0] || '').join('').toUpperCase();
@@ -56,7 +77,7 @@ const themeVerdict = (slug, s) => (rec(slug).themes || {})[s]?.v || null;
 function showState(s) {
   const r = rec(s.slug);
   if (r.show) return 'done';
-  const total = s.arcs.length + s.themes_vocab.length;
+  const total = s.arcs.length + (s.themesUsed || []).length;
   if (!total) return 'none';
   const judged = Object.keys(r.arcs || {}).length + Object.keys(r.themes || {}).length;
   if (!judged) return 'todo';
@@ -66,7 +87,7 @@ function showState(s) {
 function totals() {
   let items = 0, judged = 0;
   for (const s of state.data.shows) {
-    items += s.arcs.length + s.themes_vocab.length;
+    items += s.arcs.length + (s.themesUsed || []).length;
     const r = rec(s.slug);
     judged += Object.keys(r.arcs || {}).length + Object.keys(r.themes || {}).length;
   }
@@ -78,20 +99,23 @@ function matches(s, q) {
   if (!q) return true;
   if (s.title.toLowerCase().includes(q) || (s.author || '').toLowerCase().includes(q)) return true;
   if (s.arcs.some(a => a.n.toLowerCase().includes(q))) return true;
-  if (s.themes_vocab.some(t => t.n.toLowerCase().includes(q))) return true;
+  if (showThemes(s).some(t => t.n.toLowerCase().includes(q))) return true;
   return s.eps.some(e => e[0].toLowerCase().includes(q));   // episode titles matter — "OceanGate"
 }
 
 function visible() {
   const q = state.q.trim().toLowerCase();
-  const { rule, feed, review, cat, conf } = state.f;
+  const { rule, feed, review, cat, conf, tflag } = state.f;
   return state.data.shows.filter(s => {
     if (conf && !(s.conf && s.conf[conf])) return false;
+    if (tflag === 'spec' && !showThemes(s).some(t => t.spec)) return false;
+    if (tflag === 'junk' && !showThemes(s).some(t => t.junk)) return false;
+    if (tflag === 'audit' && !(s.auditFlags || []).length) return false;
     if (cat && s.category !== cat) return false;
     if (feed && (s.small ? s.small.key : 'normal') !== feed) return false;
     if (review && showState(s) !== review) return false;
     if (rule) {
-      if (rule === 'themed') { if (!s.themes_vocab.length) return false; }
+      if (rule === 'themed') { if (!(s.themesUsed || []).length) return false; }
       else if (rule.startsWith('group:')) { if (s.group !== rule.slice(6)) return false; }
       else if (!s.patterns.includes(rule)) return false;
     }
@@ -108,10 +132,10 @@ function queue() {
       rule: a.p, count: a.c, verdict: arcVerdict(s.slug, i),
       eps: s.eps.filter(e => e[4] === i),
     }));
-    s.themes_vocab.forEach((t, i) => out.push({
-      kind: 'theme', s, i, key: `${s.slug}#t${t.s}`, name: t.n, def: t.d, slugId: t.s,
-      count: t.c, verdict: themeVerdict(s.slug, t.s),
-      eps: s.eps.filter(e => e[5] === i),
+    showThemes(s).forEach(t => out.push({
+      kind: 'theme', s, i: t.gi, key: `${s.slug}#t${t.s}`, name: t.n, def: t.d, slugId: t.s,
+      count: t.count, verdict: themeVerdict(s.slug, t.s),
+      eps: s.eps.filter(e => e[5] === t.gi),
     }));
   }
   return out;
@@ -122,9 +146,11 @@ function go(hash) { location.hash = hash; }
 function fromHash() {
   const h = location.hash;
   const m = /^#\/show\/(.+)$/.exec(h);
-  if (m) { state.slug = decodeURIComponent(m[1]); state.arc = state.theme = null; }
+  const t = /^#\/theme\/(.+)$/.exec(h);
+  if (m) { state.slug = decodeURIComponent(m[1]); state.gtheme = null; state.arc = state.theme = null; }
+  else if (t) { state.gtheme = decodeURIComponent(t[1]); state.slug = null; }
   else {
-    state.slug = null;
+    state.slug = null; state.gtheme = null;
     state.mode = h === '#/review' ? 'review' : h === '#/system' ? 'system' : 'browse';
   }
   if (state.data) render();
@@ -139,12 +165,13 @@ const MODES = [
 ];
 
 function render() {
-  const mode = state.slug ? 'browse' : state.mode;
+  const mode = (state.slug || state.gtheme) ? 'browse' : state.mode;
   document.body.dataset.mode = mode;
   renderModes(mode);
   renderFacets(mode);
   renderProgress();
 
+  if (state.gtheme) return renderTheme();
   if (state.slug) return renderDetail();
   if (state.mode === 'review') return renderReview();
   if (state.mode === 'system') return renderSystem();
@@ -201,6 +228,21 @@ function renderFacets(mode) {
     ], state.f.conf, v => set('conf', v)));
   }
 
+  // Theme-quality facets. These are the review queue for a later merge pass: themes that
+  // only ever fired on one show, and definitions that read as catch-alls.
+  const flagged = {
+    spec: shows.filter(x => showThemes(x).some(t => t.spec)).length,
+    junk: shows.filter(x => showThemes(x).some(t => t.junk)).length,
+    audit: shows.filter(x => (x.auditFlags || []).length).length,
+  };
+  if (flagged.spec + flagged.junk + flagged.audit) {
+    box.appendChild(facetGroup('Theme quality', [
+      ['spec', 'Show-specific theme', flagged.spec],
+      ['junk', 'Junk-drawer suspect', flagged.junk],
+      ['audit', 'Audit flagged', flagged.audit],
+    ], state.f.tflag, v => set('tflag', v)));
+  }
+
   box.appendChild(facetGroup('Review state', [
     ['todo', 'Not started', count(s => showState(s) === 'todo')],
     ['mixed', 'Part-judged', count(s => showState(s) === 'mixed')],
@@ -209,8 +251,8 @@ function renderFacets(mode) {
 
   const pats = Object.entries(state.data.patterns);
   box.appendChild(facetGroup('Detected by', [
-    ...(shows.some(s => s.themes_vocab.length)
-      ? [['themed', 'Model themes', count(s => s.themes_vocab.length)]] : []),
+    ...(shows.some(s => (s.themesUsed || []).length)
+      ? [['themed', 'Model themes', count(s => (s.themesUsed || []).length)]] : []),
     ...pats.sort((a, b) => b[1].shows - a[1].shows).map(([k, v]) => [k, v.label, v.shows]),
   ], state.f.rule, v => set('rule', v)));
 
@@ -235,9 +277,9 @@ function renderFacets(mode) {
   g.appendChild(sel);
   box.appendChild(g);
 
-  if (state.f.rule || state.f.feed || state.f.review || state.f.cat || state.f.conf) {
+  if (state.f.rule || state.f.feed || state.f.review || state.f.cat || state.f.conf || state.f.tflag) {
     const clear = el('button', 'facet-clear', 'Clear filters');
-    clear.onclick = () => { state.f = { rule: null, feed: null, review: null, cat: '', conf: null };
+    clear.onclick = () => { state.f = { rule: null, feed: null, review: null, cat: '', conf: null, tflag: null };
       state.cursor = 0; state.qi = 0; render(); };
     box.appendChild(clear);
   }
@@ -287,7 +329,7 @@ function renderBrowse() {
 
 function showCard(s, i) {
   const st = showState(s);
-  const c = el('button', 'card p-' + (st === 'none' && s.themes_vocab.length ? 'model' : st));
+  const c = el('button', 'card p-' + (st === 'none' && (s.themesUsed || []).length ? 'model' : st));
   c.onclick = () => go('#/show/' + encodeURIComponent(s.slug));
   if (i === state.cursor) c.dataset.cursor = '1';
 
@@ -299,10 +341,10 @@ function showCard(s, i) {
   c.appendChild(el('div', 'card-sub', s.network || s.author || ''));
 
   const foot = el('div', 'card-foot');
-  if (s.themes_vocab.length) foot.appendChild(el('span', 'tag model', `${s.themes_vocab.length} themes`));
+  if ((s.themesUsed || []).length) foot.appendChild(el('span', 'tag model', `${s.themesUsed.length} themes`));
   if (s.arcs.length) foot.appendChild(el('span', 'tag on', `${s.arcs.length} arc${s.arcs.length > 1 ? 's' : ''}`));
   if (s.small) foot.appendChild(el('span', 'tag warn', s.small.label));
-  else if (!s.arcs.length && !s.themes_vocab.length) {
+  else if (!s.arcs.length && !(s.themesUsed || []).length) {
     const g = state.data.noArcGroups[s.group];
     foot.appendChild(el('span', 'tag none', g ? g.label : 'no arcs'));
   }
@@ -393,6 +435,97 @@ async function judge(it, verdict) {
   render();                       // the item leaves the queue, so the next one slides in
 }
 
+
+/* ---------- theme detail: the point of the whole exercise ----------
+   One theme, every show that uses it. If this page is empty or single-show for most
+   themes, the vocabulary did not cut across the catalog and the run failed. */
+function renderTheme() {
+  const gi = epVocab().findIndex(t => t.s === state.gtheme);
+  const t = gi >= 0 ? epVocab()[gi] : null;
+  const view = $('#view');
+  view.replaceChildren();
+  $('#crumb').textContent = '';
+
+  const back = el('button', 'back', '\u2190 Catalog');
+  back.onclick = () => go('#/browse');
+  view.appendChild(back);
+
+  if (!t) { view.appendChild(el('p', 'empty', 'No such theme.')); return; }
+
+  const head = el('div', 'dmeta');
+  head.appendChild(el('div', 'dcat', 'Episode theme'));
+  head.appendChild(el('h1', 'dtitle', t.n));
+  head.appendChild(el('p', 'ddesc', t.d));
+
+  const stats = el('div', 'dstats');
+  [[t.ec, t.ec === 1 ? 'episode' : 'episodes'],
+   [t.sc, t.sc === 1 ? 'show' : 'shows']]
+    .forEach(([n, l]) => { const x = el('span'); x.appendChild(el('b', null, String(n))); x.append(' ' + l); stats.appendChild(x); });
+  head.appendChild(stats);
+
+  const chips = el('div', 'dchips');
+  if (t.spec) chips.appendChild(el('span', 'tag warn', 'only one show uses this'));
+  if (t.junk) chips.appendChild(el('span', 'tag warn', 'junk-drawer suspect'));
+  (t.rel || []).forEach(r => {
+    const th = state.data.themes[r];
+    if (th) { const x = el('span', 'tag'); x.textContent = th.name; x.title = 'Related show-level theme'; chips.appendChild(x); }
+  });
+  if (chips.childElementCount) head.appendChild(chips);
+  view.appendChild(head);
+
+  const users = showsUsing(gi);
+  const sec = el('div', 'sec');
+  sec.appendChild(el('h2', null, 'Across the catalog'));
+  sec.appendChild(el('span', 'count', String(users.length)));
+  view.appendChild(sec);
+
+  if (!users.length) { view.appendChild(el('p', 'empty', 'No show uses this theme yet.')); return; }
+
+  const grid = el('div', 'grid');
+  users.forEach(({ s: sh, count }) => {
+    const c = el('button', 'card');
+    c.onclick = () => go('#/show/' + encodeURIComponent(sh.slug));
+    const a = el('div', 'card-art');
+    if (sh.art) a.style.backgroundImage = `url("${art(sh.art)}")`;
+    else a.appendChild(el('span', null, initials(sh.title)));
+    c.appendChild(a);
+    c.appendChild(el('div', 'card-title', sh.title));
+    c.appendChild(el('div', 'card-sub', sh.network || sh.author || ''));
+    const foot = el('div', 'card-foot');
+    foot.appendChild(el('span', 'tag model', `${count} episode${count > 1 ? 's' : ''}`));
+    c.appendChild(foot);
+    grid.appendChild(c);
+  });
+  view.appendChild(grid);
+
+  const sec2 = el('div', 'sec');
+  sec2.appendChild(el('h2', null, 'Episodes'));
+  view.appendChild(sec2);
+  const list = el('div', 'eps');
+  let n = 0;
+  for (const { s: sh } of users) {
+    for (const e of sh.eps) {
+      if (e[5] !== gi && !(e[7] || []).some(([x]) => x === gi)) continue;
+      if (n++ >= 200) break;
+      const row = el('div', 'ep');
+      row.appendChild(el('span', 'ep-date', fmtDate(e[1])));
+      const body = el('span', 'ep-t');
+      const b = el('span', 'ep-arc ep-theme', sh.title);
+      b.onclick = ev => { ev.stopPropagation(); go('#/show/' + encodeURIComponent(sh.slug)); };
+      body.appendChild(b);
+      body.append(e[0]);
+      row.appendChild(body);
+      const tag = el('span', 'ep-tags');
+      if (e[5] !== gi) tag.appendChild(el('span', 'tag sec', 'secondary'));
+      row.appendChild(tag);
+      list.appendChild(row);
+    }
+    if (n >= 200) break;
+  }
+  view.appendChild(list);
+  if (n >= 200) view.appendChild(el('p', 'trim', 'Showing the first 200 episodes.'));
+}
+
 /* ---------- show detail ---------- */
 function renderDetail() {
   const s = state.data.shows.find(x => x.slug === state.slug);
@@ -453,10 +586,11 @@ function renderDetail() {
     view.appendChild(wrap);
   }
 
-  if (s.themes_vocab.length) {
+  const mine = showThemes(s);
+  if (mine.length) {
     const sec = el('div', 'sec');
     sec.appendChild(el('h2', null, 'Themes'));
-    sec.appendChild(el('span', 'count', String(s.themes_vocab.length)));
+    sec.appendChild(el('span', 'count', String(mine.length)));
     const ag = s.themes_meta && s.themes_meta.agreement;
     if (ag && ag.primaryAgreement != null) {
       sec.appendChild(el('div', 'spacer'));
@@ -465,12 +599,35 @@ function renderDetail() {
       sec.appendChild(x);
     }
     view.appendChild(sec);
+    if (s.auditFlags && s.auditFlags.length) {
+      const w = el('div', 'feednote');
+      w.appendChild(el('strong', null, 'Audit flagged this show'));
+      s.auditFlags.forEach(f => w.appendChild(el('p', null, f)));
+      view.appendChild(w);
+    }
+
+    /* The theme filter. Most shows have no arcs at all, so on those screens this is the
+       only structure there is for digging through hundreds of episodes. */
+    const bar = el('div', 'tfilter');
+    const chip = (label, n, on, fn) => {
+      const b = el('button', 'tchip' + (on ? ' on' : ''));
+      b.appendChild(el('span', null, label));
+      if (n != null) b.appendChild(el('span', 'tchip-n', String(n)));
+      b.onclick = fn;
+      return b;
+    };
+    bar.appendChild(chip('All episodes', s.eps.length, state.theme == null,
+      () => { state.theme = null; state.arc = null; renderDetail(); }));
+    mine.forEach(t => bar.appendChild(chip(t.n, t.count, state.theme === t.gi,
+      () => { state.theme = state.theme === t.gi ? null : t.gi; state.arc = null; renderDetail(); })));
+    view.appendChild(bar);
+
     const tw = el('div', 'arcs');
-    s.themes_vocab.forEach((t, i) => tw.appendChild(themeCard(s, t, i, r)));
+    mine.forEach(t => tw.appendChild(themeCard(s, t, t.gi, r)));
     view.appendChild(tw);
   }
 
-  if (!s.arcs.length && !s.themes_vocab.length) {
+  if (!s.arcs.length && !(s.themesUsed || []).length) {
     const g = s.small ? null : state.data.noArcGroups[s.group];
     const sec = el('div', 'sec');
     sec.appendChild(el('h2', null, 'No arcs detected'));
@@ -481,7 +638,7 @@ function renderDetail() {
   }
 
   const sv = el('div', 'showverdict');
-  sv.appendChild(el('p', null, (s.arcs.length || s.themes_vocab.length)
+  sv.appendChild(el('p', null, (s.arcs.length || (s.themesUsed || []).length)
     ? 'Or judge the whole show at once:'
     : 'Is that right — does this show genuinely have no multi-part stories?'));
   const noneBtn = el('button', r.show ? 'on' : '', r.show ? '✓ Confirmed: no arcs here' : 'No arcs here');
@@ -500,7 +657,7 @@ function renderDetail() {
   esec.appendChild(el('div', 'spacer'));
   if (state.arc != null || state.theme != null || state.f.conf) {
     const label = state.arc != null ? s.arcs[state.arc].n
-                : state.theme != null ? s.themes_vocab[state.theme].n
+                : state.theme != null ? (themeAt(state.theme) || {}).n
                 : ({ l: 'Low', m: 'Medium', h: 'High' })[state.f.conf] + ' confidence';
     const f = el('button', 'ep-filter', `Showing: ${label}  ✕`);
     f.onclick = () => {
@@ -513,19 +670,39 @@ function renderDetail() {
   view.appendChild(esec);
 
   const list = el('div', 'eps');
+  const CONF = { l: 'low', m: 'med', h: 'high' };
   shown.forEach(e => {
     const row = el('div', 'ep' + (e[4] === -1 && e[5] === -1 ? ' off' : ''));
     row.appendChild(el('span', 'ep-date', fmtDate(e[1])));
     const body = el('span', 'ep-t');
+    // An arc badge and a theme badge can both appear: the two indexes are orthogonal,
+    // and an episode inside an arc still has a subject.
     if (e[4] !== -1 && state.arc == null) body.appendChild(el('span', 'ep-arc', s.arcs[e[4]].n));
-    else if (e[5] != null && e[5] !== -1 && state.theme == null)
-      body.appendChild(el('span', 'ep-arc ep-theme', s.themes_vocab[e[5]].n));
+    if (e[5] != null && e[5] !== -1 && state.theme == null) {
+      const t = themeAt(e[5]);
+      if (t) {
+        const b = el('span', 'ep-arc ep-theme', t.n);
+        b.onclick = ev => { ev.stopPropagation(); go('#/theme/' + encodeURIComponent(t.s)); };
+        b.title = 'See this theme across every show';
+        body.appendChild(b);
+      }
+    }
     body.append(e[0]);
     row.appendChild(body);
+
     const tag = el('span', 'ep-tags');
-    if (e[6] === 'l' || e[6] === 'm')
-      tag.appendChild(el('span', 'tag ' + (e[6] === 'l' ? 'conf-l' : 'conf-m'),
-        e[6] === 'l' ? 'low' : 'med'));
+    // Confidence rides on each application, so a shaky secondary shows its own badge
+    // instead of hiding behind a strong primary.
+    if (e[6] && e[6] !== 'h')
+      tag.appendChild(el('span', 'tag conf-' + e[6], CONF[e[6]]));
+    (e[7] || []).forEach(([gi, c]) => {
+      const t = themeAt(gi);
+      if (!t) return;
+      const b = el('span', 'tag sec' + (c && c !== 'h' ? ' conf-' + c : ''), t.n);
+      b.title = `secondary · ${CONF[c] || c} confidence`;
+      b.onclick = ev => { ev.stopPropagation(); go('#/theme/' + encodeURIComponent(t.s)); };
+      tag.appendChild(b);
+    });
     if (e[3]) tag.appendChild(el('span', 'tag', e[3]));
     else if (e[2] != null) tag.appendChild(el('span', 'tag', 'S' + e[2]));
     row.appendChild(tag);
@@ -570,8 +747,14 @@ function arcCard(s, arc, i, r) {
 function themeCard(s, t, i, r) {
   const card = el('div', 'arc theme' + (state.theme === i ? ' active' : ''));
   const top = el('div', 'arc-top');
-  top.appendChild(el('span', 'tag model', `${t.c} episodes`));
-  if (t.m) { const m = el('span', 'arc-season', 'catalog'); m.title = 'Maps to show-level theme: ' + t.m; top.appendChild(m); }
+  top.appendChild(el('span', 'tag model', `${t.count} here`));
+  if (t.sc > 1) {
+    const x = el('span', 'tag', `${t.sc} shows`);
+    x.title = 'How many shows use this theme — this is what cross-show discovery runs on';
+    top.appendChild(x);
+  }
+  if (t.spec) { const x = el('span', 'tag warn', 'only this show'); x.title = 'Used by one show. Kept, flagged for a later merge pass.'; top.appendChild(x); }
+  if (t.junk) { const x = el('span', 'tag warn', 'junk drawer?'); x.title = 'Definition reads as a catch-all'; top.appendChild(x); }
   card.appendChild(top);
   const name = el('div', 'arc-name', t.n);
   name.onclick = () => { state.theme = state.theme === i ? null : i; state.arc = null; renderDetail(); };
@@ -833,6 +1016,29 @@ function renderSystem() {
     'A catalog of story arcs and themes, built show by show on this machine and exported to a file '
     + 'the app reads. Regex proposes, a model proposes where regex cannot, and you decide. '
     + `${items.toLocaleString()} groupings exist so far; ${judged === 1 ? '1 has' : judged + ' have'} a verdict.`));
+
+  // Run-level numbers only. The per-object badges and facets are the point; this is a
+  // footnote that says whether the last theming run finished and how clean it came out.
+  const r = state.data.epRun;
+  if (r) {
+    const box = el('div', 'runsum');
+    box.appendChild(el('h2', null, 'Last episode-theming run'));
+    const g = el('div', 'dstats');
+    const stat = (n, l) => { const x = el('span'); x.appendChild(el('b', null, String(n))); x.append(' ' + l); g.appendChild(x); };
+    stat((r.episodes || 0).toLocaleString(), 'episodes labelled');
+    stat(r.shows || 0, 'shows');
+    stat(r.vocab || 0, 'themes in the shared vocabulary');
+    if (r.agreement && r.agreement.primaryAgreement != null)
+      stat(Math.round(r.agreement.primaryAgreement * 100) + '%', 'two-run agreement');
+    box.appendChild(g);
+    const flags = el('div', 'dchips');
+    if (r.unassigned) flags.appendChild(el('span', 'tag warn', `${r.unassigned.toLocaleString()} episodes unassigned`));
+    if (r.showSpecific) flags.appendChild(el('span', 'tag', `${r.showSpecific} themes used by one show`));
+    if (r.junk) flags.appendChild(el('span', 'tag warn', `${r.junk} junk-drawer suspects`));
+    if (r.auditFlags) flags.appendChild(el('span', 'tag warn', `${r.auditFlags} catalog audit flags`));
+    if (flags.childElementCount) box.appendChild(flags);
+    view.appendChild(box);
+  }
 
   const legend = el('div', 'legend2');
   [['built', 'built and running'], ['partial', 'partly built'], ['planned', 'not built yet']]
