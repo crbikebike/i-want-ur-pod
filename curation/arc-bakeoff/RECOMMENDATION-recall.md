@@ -219,3 +219,137 @@ registered in `CONTENDERS` (both fail the floor by construction). Reproduce with
 
 The Swift detector (`Packages/PodcastModels/Sources/PodcastModels/EpisodeArcs.swift`) was **not**
 touched; the port is a later supervised step.
+
+---
+
+# Addendum — `A7-cascade`: closing the measured coverage gap
+
+`A6-cascade` left **181 of 315 corpus feeds with zero arcs**. Before adding anything, that gap was
+partitioned to answer whether those feeds are genuinely arcless or a detector limitation.
+
+## A7.0 The gap, measured
+
+| Bucket | Feeds | |
+|---|---|---|
+| Genuinely arcless | ~55–60 | weekly interview / news / anthology. Nothing to find. |
+| **Detector limitation** | **~90–100** | real serial structure, no parser reaches it |
+| Truncated feed slices (<6 eps) | 32 | fetch window cut the arc's siblings off — a data problem |
+| Ambiguous | ~5 | undecidable from titles |
+
+Of the judgeable 149 (excluding truncated slices) roughly **60% were our miss, 40% genuinely
+standalone**. The direction is solid; the exact split rests on a 55-feed qualitative sample, so
+treat it as ±13 points. Two title shapes accounted for most of the recoverable half, and both are
+reachable with regex alone. They are A7.1 and A7.2.
+
+## A7.1 — bare `Episode N:` season pass (tier 4)
+
+Tier 1's scoped season pass recognised `Chapter N |` and `S7 E1:` but not a bare
+`Episode 1: The Explosion`. Identical situation: the arc name is absent from the title and
+`itunes:season` is the only grouping evidence.
+
+The corpus made this look easy. Of the 36 zero-arc feeds using the lead, the 29 with season
+metadata are all serials, and the 7 without are exactly the feed-wide-counter traps
+(*homecoming* 116 episodes, *anatomy-of-doubt* 196, *message* 39, *16-shots* 31). Season metadata
+looked like a sufficient guard.
+
+**Gold disagreed, twice, and both corrections are load-bearing:**
+
+1. **A size cap is required.** *bear-grease* numbers 60 episodes *inside* one `itunes:season` and
+   *history-on-fire* 101 — a per-season episode counter, not an arc. Grouping on the lead alone
+   cost **0.104 membership precision** (0.9684 → 0.8648). With no cap the detector fails the floor
+   outright (0.8793); `max_size` anywhere in 6–24 scores identically, so 12 is not on a cliff.
+2. **It must run late.** Placed inside tier 1 it also cost **recall** (0.8763 → 0.8610), because it
+   swallowed episodes tier 2's richer parser was already grouping correctly —
+   `Episode 47: Give Me Back My Legions! (Part 1)` is a Part-1, not a season member. Running it as
+   tier 4 means it only ever sees what every earlier tier declined.
+
+**Gold gain: zero.** No gold feed has an arc of this shape, so gold cannot confirm the lever adds
+anything true — it confirms only that the lever adds nothing *false*, and that its cap is
+necessary. The gain is corpus-side: **+26 feeds** (158 vs 132), spot-checked by hand — *caught*
+(9-part), *american-fiasco* (10), *bad-seeds* (8), *habitat* (7), *black-box* (8), *bundyville*,
+*blindspot*, *death-of-an-artist*. That asymmetry is the honest reason to treat A7.1 as the weaker
+of the two levers despite it recovering more feeds.
+
+## A7.2 — bare / trailing counter runs (tier 4), +0.005 recall
+
+Tier 3b's `LEAD_COUNTER_ONLY` needs a keyword (`Part 2`, `Chapter 4`). These grammars carry the
+counter with no keyword at all, which is why 50 zero-arc feeds slipped past it:
+
+```
+  "1. When the Wind Changed"       fairy-meadow
+  "01: Hypothesis (remastered)"    ars-paradoxica
+  "04_KEEP IT 200"                 bellwether
+  "They Keep People Safe | 1"      empire-city
+```
+
+A bare number is far weaker evidence than `Part 2`, so this pass is stricter than 3b in three ways:
+
+- `min_run` is **3**, not 2. (2 and 3 score identically on gold; 4 loses an arc.)
+- The run must be a **complete `{1..k}` set**, order-insensitive.
+- A run longer than `max_run` (12) is read as a **feed-wide episode counter and rejected
+  outright**, not trimmed. This is why the scan takes the *longest* complete run from each start
+  rather than the first — stopping early would carve a 3-episode arc out of a 66-long feed counter
+  and never notice the run kept going.
+- One grammar per feed, whichever the most titles use, so a run in one grammar cannot bridge a gap
+  in the other.
+
+**`max_run` is invisible to gold** — 8 through 999 score identically, because no gold feed has a
+long bare-counter run. Its justification is corpus-side and was verified there directly: removing
+the cap gives *do-go-on* a **99-member arc** and *se-regalan-dudas* a 21-member one. Keep it.
+
+## A7 — before / after
+
+| | memPrec | junk | arcRecall | detArcs | corpus feeds | corpus arcs |
+|---|---|---|---|---|---|---|
+| `A2r3.3-final` (incumbent) | 0.9985 | 0.0027 | 0.6271 | 371 | 88/315 | 507 |
+| `A6-cascade` | 0.9684 | 0.0408 | 0.8763 | 539 | 132/315 | 810 |
+| `A7.1-season-lead` | 0.9684 | 0.0408 | 0.8763 | 539 | 158/315 | 868 |
+| `A7.2-bare-counter` | 0.9685 | 0.0406 | 0.8814 | 542 | 160/315 | 856 |
+| **`A7-cascade`** | **0.9685** | **0.0406** | **0.8814** | **542** | **186/315** | **914** |
+
+Floor: memPrec ≥ 0.95, junk ≤ 0.05 — held on both terms, unchanged. Note A7 is *cheaper* on junk
+than A6 (0.0406 vs 0.0408) while covering 54 more feeds: both levers append arcs made of episodes
+no earlier tier claimed, so they cannot cannibalise existing arcs.
+
+## A7 — portable rule summary (Swift)
+
+Both levers are ICU-safe: no lookbehind, no atomic/possessive groups, no `\K`, and `DASHES` leads
+every character class.
+
+```
+EPISODE_NUM_LEAD    ^Ep(?:isode|\.)?\s*\d{1,3}\b                (case-insensitive)
+BARE_LEAD_COUNTER   ^(\d{1,2})\s*[<DASHES>._:)\]]\s*(\S.*)$
+TRAIL_PIPE_COUNTER  ^(\S.*?)\s*\|\s*(\d{1,2})\s*$
+```
+
+Tier 4a — season lead: over episodes no earlier tier claimed, group by `itunes:season` those whose
+noise-stripped title matches `EPISODE_NUM_LEAD`; emit only when the group is **2–12** members; name
+from the season trailer when present, else `Season N`.
+
+Tier 4b — counter run: pick the single grammar most titles match; walk oldest→newest; inside each
+maximal counter-bearing block take the **longest** prefix forming a complete `{1..k}` set; emit when
+`3 ≤ k ≤ 12`, otherwise consume and discard.
+
+## A7 — known-uncovered, and where regex stops
+
+Roughly 40 missed feeds carry **no title signal at all** — the season is the arc and every title is
+a standalone noun phrase: *floodlines* (`Antediluvian`, `The Bridge`, `Exodus`),
+*dolly-partons-america*, *broken-harts*. Deciding those needs a judgment that a season's titles read
+as one story. **This is where regex stops and a semantic layer starts.**
+
+Separately, and **pre-existing in A6 rather than introduced here**: tier 3a's affix clustering emits
+some very large arcs on the corpus — *fake-diana* 144 members, *zeit-verbrechen* 72, *lore* 50.
+Gold does not penalise them (those feeds are not gold, or the affix genuinely repeats), but they are
+almost certainly junk. A size cap on tier 3a is the obvious next audit; it is out of scope for A7.
+
+## A7 — verification
+
+- `python3 curation/arc-bakeoff/score.py` — green, 45 feeds, 0 errors. `A7-cascade` meets the floor
+  with `arc_recall` 0.8814 > A6's 0.8763. It ranks #2 only because `A7.2-bare-counter` posts
+  byte-identical gold numbers and wins the tie-break; A7 is preferred for its +26 corpus feeds.
+- `python3 curation/arc-bakeoff/approaches.py` — smoke test clean.
+- `_a7_cascade()` with both levers off was verified to score **byte-identically to `A6-cascade`**
+  (0.9684 / 0.0408 / 0.8763 / 539) before either lever was switched on.
+- Corpus `total_arcs` 810 → 914 (1.13×), far under the 3× over-fire tripwire, for +54 feeds.
+
+`EpisodeArcs.swift` remains untouched.

@@ -1267,6 +1267,188 @@ def a6_4_reconciled(episodes):
     return _reconcile([(1, t1), (2, t2)], episodes)
 
 
+# ===========================================================================
+# A7 — closing the measured coverage gap (regex only)
+# ===========================================================================
+# A6 leaves 181 of 315 corpus feeds with zero arcs. Partitioning those feeds showed
+# roughly 40% are genuinely arcless (weekly interview / news / anthology) but ~60% are
+# our miss. Two shapes account for most of the recoverable half, and both are reachable
+# without any semantic layer:
+#
+#   A7.1  bare "Episode N: Title" chaptering  (bundyville, blindspot, death-of-an-artist)
+#   A7.2  bare/trailing counter runs          (fairy-meadow "1. …", empire-city "… | 8")
+#
+# The remaining misses (floodlines, dolly-partons-america) carry NO title signal at all —
+# the season is the arc and every title is a standalone noun phrase. Regex cannot reach
+# those; they are the case for a later semantic pass.
+
+# --- A7.1 -----------------------------------------------------------------
+# Tier 1's scoped season pass recognised "Chapter N |" and "S7 E1:" but not a bare
+# "Episode 1: The Explosion". Same situation exactly: the arc name is absent from the
+# title and itunes:season is the only grouping evidence.
+#
+# Season metadata looked like a sufficient guard on the corpus: of the 36 zero-arc feeds
+# using this lead, the 29 with season metadata are serials and the 7 without are exactly
+# the feed-wide-counter traps (homecoming 116 episodes, anatomy-of-doubt 196, message 39).
+# Gold said otherwise. bear-grease numbers 60 episodes INSIDE one itunes:season and
+# history-on-fire 101 — a per-season episode counter, not an arc. Grouping on the lead
+# alone cost 0.104 membership precision (0.9684 -> 0.8648).
+#
+# So this pass needs two things the tier-1 season pass does not:
+#   1. a SIZE CAP. A 60-episode season is a publishing convention; an arc is not.
+#   2. a LATE position. Run inside tier 1 it also cost RECALL (0.8763 -> 0.8610), because
+#      it swallowed episodes tier 2's richer parser was already grouping correctly
+#      ("Episode 47: Give Me Back My Legions! (Part 1)" is a Part-1, not a season member).
+# Both are why this is tier 4 and not an extra lead regex on tier 1.
+EPISODE_NUM_LEAD = re.compile(r'^Ep(?:isode|\.)?\s*\d{1,3}\b', re.I)
+SEASON_LEAD_MAX = 12
+
+
+def _season_lead_arcs(episodes, taken, leads=(EPISODE_NUM_LEAD,), max_size=SEASON_LEAD_MAX):
+    """Group leftover episodes whose titles carry a bare counter lead by itunes:season."""
+    by_season, titles_by_season = OrderedDict(), OrderedDict()
+    for e in episodes:
+        if e.get("season") is None:
+            continue
+        titles_by_season.setdefault(e["season"], []).append(e["title"])
+        if e["guid"] in taken:
+            continue
+        t = strip_noise(e["title"])
+        if any(rx.match(t) for rx in leads):
+            by_season.setdefault(e["season"], []).append(e)
+    out = []
+    for s, members in by_season.items():
+        if not 2 <= len(members) <= max_size:
+            continue
+        name = _season_theme(titles_by_season.get(s, [])) or f"Season {s}"
+        out.append({"name": name, "season": s,
+                    "members": [e["guid"] for e in members]})
+    return out
+
+# --- A7.2 -----------------------------------------------------------------
+# Tier 3b's LEAD_COUNTER_ONLY needs a keyword ("Part 2", "Chapter 4"). These grammars
+# carry the counter with no keyword at all, which is why 50 zero-arc feeds slip past it:
+#
+#     "1. When the Wind Changed"          fairy-meadow
+#     "04_KEEP IT 200"                    trailing-underscore variant
+#     "They Keep People Safe | 1"         empire-city
+#
+# A bare number is far weaker evidence than "Part 2", so this pass is stricter than 3b
+# in three ways: min_run is 3 (not 2), the run must be a COMPLETE {1..k} set, and a run
+# longer than max_run is read as a feed-wide episode counter and rejected outright
+# rather than trimmed. On the corpus that cap separates cleanly with zero overlap —
+# arc-shaped runs top out at 12, feed counters start at 31.
+BARE_LEAD_COUNTER = re.compile(r'^(\d{1,2})\s*[' + DASHES + r'._:)\]]\s*(\S.*)$')
+TRAIL_PIPE_COUNTER = re.compile(r'^(\S.*?)\s*\|\s*(\d{1,2})\s*$')
+BARE_COUNTER_GRAMMARS = [(BARE_LEAD_COUNTER, 2, 1), (TRAIL_PIPE_COUNTER, 1, 2)]
+
+
+def _bare_counter_seq(episodes, grammar):
+    """Parse every title with ONE grammar, returning [(episode, part|None, text|None)]."""
+    rx, gs, gp = grammar
+    out = []
+    for e in episodes:
+        m = rx.match(strip_noise(e["title"]))
+        if m:
+            stem = m.group(gs).strip(" " + DASHES + "|:,([#")
+            part = r1_part(m.group(gp))
+            if stem and part is not None and len(norm_name(stem)) >= 3:
+                out.append((e, part, stem))
+                continue
+        out.append((e, None, None))
+    return out
+
+
+def _bare_counter_run_arcs(episodes, taken, min_run=3, max_run=12):
+    eps = sort_newest_first(episodes)
+    by_guid = {e["guid"]: e for e in eps}
+    oldest_first = list(reversed(eps))
+    # One grammar per feed — whichever the most titles use. A feed that mixes "1. Title"
+    # and "Title | 1" is not expressing an arc, and letting both fire would let a run in
+    # one grammar bridge a gap in the other.
+    seqs = [_bare_counter_seq(oldest_first, g) for g in BARE_COUNTER_GRAMMARS]
+    seq = max(seqs, key=lambda s: sum(1 for x in s if x[1] is not None))
+    if sum(1 for x in seq if x[1] is not None) < min_run:
+        return []
+
+    out, n = [], len(seq)
+    i = 0
+    while i < n:
+        if seq[i][1] is None or seq[i][0]["guid"] in taken:
+            i += 1
+            continue
+        j = i
+        while j < n and seq[j][1] is not None and seq[j][0]["guid"] not in taken:
+            j += 1
+        block, b = seq[i:j], 0                      # maximal counter-bearing block
+        while b < len(block):
+            # LONGEST complete {1..k} from b, not the shortest. Tier 3b can stop at the
+            # first complete set because "Part 1"/"Part 2" really is a 2-parter; here,
+            # stopping early would carve a 3-episode arc out of a 66-long feed counter
+            # and never see that the run kept going.
+            best = 0
+            for k in range(b, len(block)):
+                parts = [x[1] for x in block[b:k + 1]]
+                if sorted(parts) == list(range(1, len(parts) + 1)):
+                    best = k + 1 - b
+            if best == 0:
+                b += 1
+                continue
+            if min_run <= best <= max_run:
+                run = block[b:b + best]
+                members = [x[0]["guid"] for x in reversed(run)]   # back to newest-first
+                seasons = {by_guid[g].get("season") for g in members}
+                seasons.discard(None)
+                first = min(run, key=lambda x: x[1])
+                out.append({"name": first[2] or f"Part 1-{best}",
+                            "season": seasons.pop() if len(seasons) == 1 else None,
+                            "members": members})
+            b += best                               # consume the run either way
+        i = j
+    return out
+
+
+def _a7_cascade(episodes, season_lead=False, bare_counter=False):
+    """A6-cascade plus the two A7 levers, each switchable so its gain is measurable alone."""
+    episodes = sort_newest_first(episodes)
+    t1 = _tier1(episodes)
+    taken = {g for a in t1 for g in a["members"]}
+    rest = [e for e in episodes if e["guid"] not in taken]
+    t2 = _cluster_guarded(rest, guard=True, dedup=True, stem_fn=r4_stem_part_kind)
+    stages = [(1, t1), (2, t2)]
+    so_far = t1 + t2
+    taken2 = {g for a in so_far for g in a["members"]}
+    for mode in ("prefix", "suffix"):
+        if not _tier3_gate(episodes, so_far, mode):
+            continue
+        stages.append((3, _affix_arcs(episodes, taken2, mode, max_size=12, min_len=6,
+                                      contiguity=3, counter_reject=True)))
+    taken3 = {g for _, arcs in stages for a in arcs for g in a["members"]}
+    stages.append((3, _counter_run_arcs(episodes, taken3)))
+    if bare_counter:
+        taken4 = {g for _, arcs in stages for a in arcs for g in a["members"]}
+        stages.append((4, _bare_counter_run_arcs(episodes, taken4)))
+    if season_lead:
+        taken5 = {g for _, arcs in stages for a in arcs for g in a["members"]}
+        stages.append((4, _season_lead_arcs(episodes, taken5)))
+    return _reconcile(stages, episodes)
+
+
+def a7_1_season_lead(episodes):
+    """A7.1 — A6-cascade + a late, size-capped season pass over bare "Episode N:" leads."""
+    return _a7_cascade(episodes, season_lead=True)
+
+
+def a7_2_bare_counter(episodes):
+    """A7.2 — A6-cascade + bare/trailing counter runs as tier 4."""
+    return _a7_cascade(episodes, bare_counter=True)
+
+
+def a7_cascade(episodes):
+    """A7 — both levers on top of A6-cascade."""
+    return _a7_cascade(episodes, season_lead=True, bare_counter=True)
+
+
 CONTENDERS = OrderedDict([
     ("baseline", baseline),
     ("A1-extended", a1_extended),
@@ -1291,6 +1473,10 @@ CONTENDERS = OrderedDict([
     ("A6.4-reconciled", a6_4_reconciled),
     ("A6.7-affix-guarded", a6_7_affix_guarded),
     ("A6-cascade", a6_cascade),
+    # A7 ladder — same discipline: one lever per entry.
+    ("A7.1-season-lead", a7_1_season_lead),
+    ("A7.2-bare-counter", a7_2_bare_counter),
+    ("A7-cascade", a7_cascade),
 ])
 
 
