@@ -30,6 +30,9 @@ project.personal.yml
 
 # --- arc-bakeoff / catalog: raw fetched corpus (regenerable via scripts/fetch-atlas-feeds.py)
 curation/feeds/
+# Episode descriptions are third-party copyrighted blurbs, fetched per show and
+# regenerable via scripts/fetch-feed-descriptions.py.
+curation/arc-bakeoff/descriptions/
 curation/catalog-build.log
 curation/arc-bakeoff/fetch.log
 **/__pycache__/
