@@ -32,9 +32,10 @@ that rather than around browsing.
   apply here too, so "review only limited-series arcs" is one click.
 - **System** — what the pipeline is, with every box marked built / partly built / not built.
 
-Colour carries provenance, matching the merge rule in
-`docs/design/taxonomy-architecture.md`: mint means you decided it, grape means the model
-proposed it, plain means regex detected it, coral means it still wants your attention.
+Colour marks where a grouping came from: grape for a model-proposed theme, plain for a
+regex-detected arc, mint for anything you have looked at. Nothing waits on your approval —
+see `docs/design/the-catalog.md`. Review is for spot-checking the low-confidence handful,
+not for working through all 1,600.
 
 **Keys:** `/` search · `j`/`k` move · `enter` open · `1` real · `2` not real · `3` unsure ·
 `esc` back.

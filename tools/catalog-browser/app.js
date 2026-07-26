@@ -979,7 +979,7 @@ function renderSystem() {
   t.appendChild(tb); tw.appendChild(t); s4.appendChild(tw);
   view.appendChild(s4);
 
-  view.appendChild(el('p', 'hint', 'Full detail: docs/design/taxonomy-architecture.md'));
+  view.appendChild(el('p', 'hint', 'Full detail: docs/design/the-catalog.md'));
 }
 
 /* ---------- input ---------- */
