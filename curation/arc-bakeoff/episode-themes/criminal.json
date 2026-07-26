@@ -8,47 +8,471 @@
  },
  "themesUsed": [
   {
-   "slug": "forensic-evidence",
-   "count": 3
-  },
-  {
-   "slug": "courtroom-trial",
-   "count": 2
-  },
-  {
-   "slug": "police-misconduct",
-   "count": 2
-  },
-  {
    "slug": "investigative-process",
-   "count": 2
+   "count": 32
   },
   {
-   "slug": "slavery-and-its-legacy",
-   "count": 1
-  },
-  {
-   "slug": "murder-close-to-home",
-   "count": 1
+   "slug": "organised-crime",
+   "count": 22
   },
   {
    "slug": "wrongful-conviction",
-   "count": 1
+   "count": 21
   },
   {
-   "slug": "books-and-writing",
-   "count": 1
+   "slug": "police-misconduct",
+   "count": 20
   },
   {
-   "slug": "scientific-discovery",
-   "count": 1
+   "slug": "unsolved-murder",
+   "count": 19
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 17
+  },
+  {
+   "slug": "animal-behaviour",
+   "count": 17
+  },
+  {
+   "slug": "family-secret",
+   "count": 16
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 15
+  },
+  {
+   "slug": "survival-story",
+   "count": 13
   },
   {
    "slug": "missing-person",
-   "count": 1
+   "count": 12
+  },
+  {
+   "slug": "history-retold",
+   "count": 12
+  },
+  {
+   "slug": "media-criticism",
+   "count": 12
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 12
+  },
+  {
+   "slug": "prison-life",
+   "count": 12
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 11
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 10
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 10
+  },
+  {
+   "slug": "kidnapping-and-captivity",
+   "count": 10
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 9
+  },
+  {
+   "slug": "political-scandal",
+   "count": 9
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 9
+  },
+  {
+   "slug": "everyday-mystery",
+   "count": 9
+  },
+  {
+   "slug": "reentry-after-prison",
+   "count": 9
+  },
+  {
+   "slug": "romance-and-heartbreak",
+   "count": 8
+  },
+  {
+   "slug": "death-penalty",
+   "count": 8
+  },
+  {
+   "slug": "community-in-conflict",
+   "count": 8
+  },
+  {
+   "slug": "disaster-reconstruction",
+   "count": 8
+  },
+  {
+   "slug": "internet-culture",
+   "count": 7
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 7
+  },
+  {
+   "slug": "paranormal-investigation",
+   "count": 7
+  },
+  {
+   "slug": "serial-offender",
+   "count": 7
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 7
+  },
+  {
+   "slug": "racial-violence",
+   "count": 7
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 7
+  },
+  {
+   "slug": "engineering-failure",
+   "count": 6
+  },
+  {
+   "slug": "protest-movement",
+   "count": 6
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 6
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 6
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 6
+  },
+  {
+   "slug": "slavery-and-its-legacy",
+   "count": 5
+  },
+  {
+   "slug": "corporate-negligence",
+   "count": 5
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 5
+  },
+  {
+   "slug": "grief-and-loss",
+   "count": 5
+  },
+  {
+   "slug": "labour-history",
+   "count": 5
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 5
+  },
+  {
+   "slug": "books-and-writing",
+   "count": 4
+  },
+  {
+   "slug": "scientific-discovery",
+   "count": 4
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 4
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 4
+  },
+  {
+   "slug": "gender-identity",
+   "count": 4
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 4
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 4
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 4
+  },
+  {
+   "slug": "environmental-contamination",
+   "count": 4
+  },
+  {
+   "slug": "true-crime-as-genre",
+   "count": 4
+  },
+  {
+   "slug": "child-victim",
+   "count": 4
+  },
+  {
+   "slug": "medical-research",
+   "count": 3
+  },
+  {
+   "slug": "medical-deception",
+   "count": 3
+  },
+  {
+   "slug": "mental-health",
+   "count": 3
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 3
+  },
+  {
+   "slug": "religious-abuse",
+   "count": 3
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 3
+  },
+  {
+   "slug": "war-crimes-accountability",
+   "count": 3
+  },
+  {
+   "slug": "informant-and-undercover",
+   "count": 3
+  },
+  {
+   "slug": "prosecutorial-power",
+   "count": 3
+  },
+  {
+   "slug": "terrorism-and-aftermath",
+   "count": 3
+  },
+  {
+   "slug": "musician-downfall",
+   "count": 3
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 3
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 3
+  },
+  {
+   "slug": "supernatural-encounter",
+   "count": 3
+  },
+  {
+   "slug": "archives-and-objects",
+   "count": 3
+  },
+  {
+   "slug": "adoption-and-origins",
+   "count": 3
   },
   {
    "slug": "folklore-and-legend",
+   "count": 2
+  },
+  {
+   "slug": "natural-disaster",
+   "count": 2
+  },
+  {
+   "slug": "death-in-custody",
+   "count": 2
+  },
+  {
+   "slug": "religious-community",
+   "count": 2
+  },
+  {
+   "slug": "surveillance-and-privacy",
+   "count": 2
+  },
+  {
+   "slug": "sex-work-and-exploitation",
+   "count": 2
+  },
+  {
+   "slug": "murder-for-hire",
+   "count": 2
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 2
+  },
+  {
+   "slug": "addiction-and-recovery",
+   "count": 2
+  },
+  {
+   "slug": "food-and-drink",
+   "count": 2
+  },
+  {
+   "slug": "athlete-profile",
+   "count": 2
+  },
+  {
+   "slug": "business-rivalry",
+   "count": 2
+  },
+  {
+   "slug": "hacking-and-cybercrime",
+   "count": 2
+  },
+  {
+   "slug": "body-never-found",
+   "count": 2
+  },
+  {
+   "slug": "management-and-leadership",
+   "count": 2
+  },
+  {
+   "slug": "music-industry-business",
+   "count": 1
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 1
+  },
+  {
+   "slug": "reality-television",
+   "count": 1
+  },
+  {
+   "slug": "online-radicalisation",
+   "count": 1
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 1
+  },
+  {
+   "slug": "parenting",
+   "count": 1
+  },
+  {
+   "slug": "bribery-and-kickbacks",
+   "count": 1
+  },
+  {
+   "slug": "friendship",
+   "count": 1
+  },
+  {
+   "slug": "sports-scandal",
+   "count": 1
+  },
+  {
+   "slug": "economic-policy",
+   "count": 1
+  },
+  {
+   "slug": "disability-and-access",
+   "count": 1
+  },
+  {
+   "slug": "investment-fraud",
+   "count": 1
+  },
+  {
+   "slug": "sports-history",
+   "count": 1
+  },
+  {
+   "slug": "whistleblower",
+   "count": 1
+  },
+  {
+   "slug": "education-system-failure",
+   "count": 1
+  },
+  {
+   "slug": "psychology-of-belief",
+   "count": 1
+  },
+  {
+   "slug": "music-scene-history",
+   "count": 1
+  },
+  {
+   "slug": "audio-drama-mystery",
+   "count": 1
+  },
+  {
+   "slug": "chronic-illness",
+   "count": 1
+  },
+  {
+   "slug": "immigrant-experience",
+   "count": 1
+  },
+  {
+   "slug": "faith-and-doubt",
+   "count": 1
+  },
+  {
+   "slug": "indigenous-history",
+   "count": 1
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 1
+  },
+  {
+   "slug": "games-and-play",
+   "count": 1
+  },
+  {
+   "slug": "startup-collapse",
+   "count": 1
+  },
+  {
+   "slug": "theft-related",
+   "count": 1
+  },
+  {
+   "slug": "romance-and-catfishing",
+   "count": 1
+  },
+  {
+   "slug": "tech-industry-power",
+   "count": 1
+  },
+  {
+   "slug": "self-defense",
    "count": 1
   }
  ],
@@ -208,6 +632,6626 @@
     },
     {
      "slug": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ba89deea-553b-11f1-a5e6-bb7200450bb0",
+   "display": "Breaking Up is Hard to Do (Criminal+)",
+   "segment": "",
+   "subject": "Criminal+",
+   "iso": "2026-05-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "internet-culture",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "dafe4854-b366-11f0-acbf-7769bae6eb5c",
+   "display": "Mantrap",
+   "segment": "",
+   "subject": "Mantrap",
+   "iso": "2026-05-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "engineering-failure",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "daebd5b6-b366-11f0-acbf-db129d834d69",
+   "display": "The Mountain",
+   "segment": "",
+   "subject": "The Mountain",
+   "iso": "2026-05-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "natural-disaster",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "dad6c8d8-b366-11f0-acbf-fbdf512ea623",
+   "display": "The Poison Squad",
+   "segment": "",
+   "subject": "The Poison Squad",
+   "iso": "2026-05-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-research",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "dac1300e-b366-11f0-acbf-6f5892afb9fd",
+   "display": "Poisoned",
+   "segment": "",
+   "subject": "Poisoned",
+   "iso": "2026-05-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-deception",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "daac3d5c-b366-11f0-acbf-6bcb8c138ffd",
+   "display": "The Numbers",
+   "segment": "",
+   "subject": "The Numbers",
+   "iso": "2026-04-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "da971ad0-b366-11f0-acbf-5b40b8308dcb",
+   "display": "Unwarranted",
+   "segment": "",
+   "subject": "Unwarranted",
+   "iso": "2026-04-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "da81b6d6-b366-11f0-acbf-a3aaded525d1",
+   "display": "Rhinelander v. Rhinelander",
+   "segment": "",
+   "subject": "Rhinelander v. Rhinelander",
+   "iso": "2026-04-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "legal-precedent",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "da6fc750-b366-11f0-acbf-2f79cb048cf0",
+   "display": "The Longline",
+   "segment": "",
+   "subject": "The Longline",
+   "iso": "2026-04-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "52e982d8-b34f-11f0-b3d6-7f1f10d689e6",
+   "display": "The Formula",
+   "segment": "",
+   "subject": "The Formula",
+   "iso": "2026-03-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "mental-health",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "52d49814-b34f-11f0-b3d6-9f36cdcc0744",
+   "display": "The Quintuplets",
+   "segment": "",
+   "subject": "The Quintuplets",
+   "iso": "2026-03-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "celebrity-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "52c0ce60-b34f-11f0-b3d6-4fabd0824d65",
+   "display": "Cecilia",
+   "segment": "",
+   "subject": "Cecilia",
+   "iso": "2026-03-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gender-identity",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "52ad5380-b34f-11f0-b3d6-d3fa05c8e387",
+   "display": "Excited Delirium",
+   "segment": "",
+   "subject": "Excited Delirium",
+   "iso": "2026-03-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "death-in-custody",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "529b4e38-b34f-11f0-b3d6-132f4d15dd5e",
+   "display": "The Mug Book",
+   "segment": "",
+   "subject": "The Mug Book",
+   "iso": "2026-02-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5286e290-b34f-11f0-b3d6-97489f992272",
+   "display": "The Plot",
+   "segment": "",
+   "subject": "The Plot",
+   "iso": "2026-02-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5271ce50-b34f-11f0-b3d6-f7e81f7006f5",
+   "display": "The Big Lie",
+   "segment": "",
+   "subject": "The Big Lie",
+   "iso": "2026-02-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "music-industry-business",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "24312042-05e6-11f1-86cc-8b17db96dc5a",
+   "display": "Captain's Orders (Criminal+)",
+   "segment": "",
+   "subject": "Criminal+",
+   "iso": "2026-02-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "internet-culture",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "525d4476-b34f-11f0-b3d6-0b42eb086a76",
+   "display": "The Test",
+   "segment": "",
+   "subject": "The Test",
+   "iso": "2026-02-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5248d5fe-b34f-11f0-b3d6-f3e225652770",
+   "display": "An American Original",
+   "segment": "",
+   "subject": "An American Original",
+   "iso": "2026-01-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "protest-movement",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "523395e0-b34f-11f0-b3d6-739af25af369",
+   "display": "Amok",
+   "segment": "",
+   "subject": "Amok",
+   "iso": "2026-01-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "521e9eba-b34f-11f0-b3d6-d3b9118287da",
+   "display": "Gone",
+   "segment": "",
+   "subject": "Gone",
+   "iso": "2026-01-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "52098bd8-b34f-11f0-b3d6-b3c272d25d08",
+   "display": "Like a Bad Dream",
+   "segment": "",
+   "subject": "Like a Bad Dream",
+   "iso": "2026-01-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "470072fe-d2c4-11ef-be81-73814c096c8f",
+   "display": "Sister Helen",
+   "segment": "",
+   "subject": "Sister Helen",
+   "iso": "2025-12-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "religious-community",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "46dec3c0-d2c4-11ef-be81-ff503b07128e",
+   "display": "The Speeding Duck, the Hungry Javelina, and “Leonardo da Pinchy”",
+   "segment": "",
+   "subject": "The Speeding Duck, the Hungry Javelina, and “Leonardo da Pinchy”",
+   "iso": "2025-12-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "46bc623a-d2c4-11ef-be81-cba4d9f85d2d",
+   "display": "The Knock",
+   "segment": "",
+   "subject": "The Knock",
+   "iso": "2025-12-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "469a3ea8-d2c4-11ef-be81-ffabc3b07a3f",
+   "display": "Fall River",
+   "segment": "",
+   "subject": "Fall River",
+   "iso": "2025-12-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "books-and-writing",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "46779268-d2c4-11ef-be81-df5fe7ba73dd",
+   "display": "The Manual",
+   "segment": "",
+   "subject": "The Manual",
+   "iso": "2025-11-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4654d9da-d2c4-11ef-be81-d758079f356f",
+   "display": "The Post Office",
+   "segment": "",
+   "subject": "The Post Office",
+   "iso": "2025-11-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "46321d32-d2c4-11ef-be81-83cadd40e279",
+   "display": "The Boy Scout",
+   "segment": "",
+   "subject": "The Boy Scout",
+   "iso": "2025-11-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "engineering-failure",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "460ec5ee-d2c4-11ef-be81-2756c989053a",
+   "display": "Rogers Park",
+   "segment": "",
+   "subject": "Rogers Park",
+   "iso": "2025-11-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "45ec9cb2-d2c4-11ef-be81-c31d5838925a",
+   "display": "Ghostwatch",
+   "segment": "",
+   "subject": "Ghostwatch",
+   "iso": "2025-10-31",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "reality-television",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "45caf0c6-d2c4-11ef-be81-b3ffdbf49e61",
+   "display": "The Custom of the Sea",
+   "segment": "",
+   "subject": "The Custom of the Sea",
+   "iso": "2025-10-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "disaster-reconstruction",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "45a92c16-d2c4-11ef-be81-73bc6a4fa819",
+   "display": "The Tusker",
+   "segment": "",
+   "subject": "The Tusker",
+   "iso": "2025-10-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "family-secret",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4586cf22-d2c4-11ef-be81-3b70420e40c4",
+   "display": "Zak and Michelle",
+   "segment": "",
+   "subject": "Zak and Michelle",
+   "iso": "2025-10-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "extremist-movement",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "456572c8-d2c4-11ef-be81-3b8612f4889e",
+   "display": "Patience",
+   "segment": "",
+   "subject": "Patience",
+   "iso": "2025-09-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "online-radicalisation",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "45434478-d2c4-11ef-be81-33db7c060d29",
+   "display": "The Phone Call",
+   "segment": "",
+   "subject": "The Phone Call",
+   "iso": "2025-09-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "45206b56-d2c4-11ef-be81-1bae8300ca33",
+   "display": "The Compound",
+   "segment": "",
+   "subject": "The Compound",
+   "iso": "2025-09-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "44fd98d8-d2c4-11ef-be81-279be2c93693",
+   "display": "This is Phoebe Judge from the IRS",
+   "segment": "",
+   "subject": "This is Phoebe Judge from the IRS",
+   "iso": "2025-09-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "44dc69d8-d2c4-11ef-be81-ab9b29c45466",
+   "display": "E. Jean",
+   "segment": "",
+   "subject": "E. Jean",
+   "iso": "2025-08-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "44bc434c-d2c4-11ef-be81-433b1719b8d4",
+   "display": "The Bus Ride",
+   "segment": "",
+   "subject": "The Bus Ride",
+   "iso": "2025-08-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "disaster-reconstruction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "449b0dee-d2c4-11ef-be81-47e8ce8a0a23",
+   "display": "Kids on the Case",
+   "segment": "",
+   "subject": "Kids on the Case",
+   "iso": "2025-08-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "447a3d26-d2c4-11ef-be81-1f69abc46b68",
+   "display": "The Clock Starts Ticking",
+   "segment": "",
+   "subject": "The Clock Starts Ticking",
+   "iso": "2025-08-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4458e4d2-d2c4-11ef-be81-dfda84d34a5a",
+   "display": "Death in Eden",
+   "segment": "",
+   "subject": "Death in Eden",
+   "iso": "2025-07-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "survival-story",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "44383912-d2c4-11ef-be81-dfc8741112fd",
+   "display": "The Double",
+   "segment": "",
+   "subject": "The Double",
+   "iso": "2025-07-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "44179568-d2c4-11ef-be81-cf1aba535f2e",
+   "display": "The Man Nobody Killed",
+   "segment": "",
+   "subject": "The Man Nobody Killed",
+   "iso": "2025-07-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "death-in-custody",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "43b9ce2e-d2c4-11ef-be81-87658047bf75",
+   "display": "The Clearwater Monster",
+   "segment": "",
+   "subject": "The Clearwater Monster",
+   "iso": "2025-07-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "451d6d3a-801b-11ef-8b2a-ff208a20edd6",
+   "display": "Uncle Harold",
+   "segment": "",
+   "subject": "Uncle Harold",
+   "iso": "2025-06-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "prison-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "450ac73e-801b-11ef-8b2a-fb4c06abf83d",
+   "display": "By Any Means Necessary",
+   "segment": "",
+   "subject": "By Any Means Necessary",
+   "iso": "2025-06-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "44f73034-801b-11ef-8b2a-63dc57a31dda",
+   "display": "The Guru",
+   "segment": "",
+   "subject": "The Guru",
+   "iso": "2025-06-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "religious-abuse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "44e3eb00-801b-11ef-8b2a-078ec00df1fd",
+   "display": "Professor Quaalude",
+   "segment": "",
+   "subject": "Professor Quaalude",
+   "iso": "2025-06-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "06886f9c-30cf-11f0-b67d-d7b475719bd6",
+   "display": "Thin Ice and Unusual Punishments",
+   "segment": "",
+   "subject": "Thin Ice and Unusual Punishments",
+   "iso": "2025-05-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "internet-culture",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "44cf8cf0-801b-11ef-8b2a-2f4d3ae330f4",
+   "display": "Action Park",
+   "segment": "",
+   "subject": "Action Park",
+   "iso": "2025-05-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "engineering-failure",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "44bc9ef6-801b-11ef-8b2a-db8bf81af2f6",
+   "display": "No Hint or Help",
+   "segment": "",
+   "subject": "No Hint or Help",
+   "iso": "2025-05-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "media-criticism",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "44a7ab86-801b-11ef-8b2a-5ba7f550da1a",
+   "display": "False Positive",
+   "segment": "",
+   "subject": "False Positive",
+   "iso": "2025-05-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "449411ac-801b-11ef-8b2a-6b4d8009e6cd",
+   "display": "Tabatha",
+   "segment": "",
+   "subject": "Tabatha",
+   "iso": "2025-05-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "reproductive-health",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "parenting",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "4480d600-801b-11ef-8b2a-7b27139e9824",
+   "display": "The Job",
+   "segment": "",
+   "subject": "The Job",
+   "iso": "2025-04-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "prison-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "446d1eee-801b-11ef-8b2a-4b2bf51c8301",
+   "display": "The Roofman, Part 2",
+   "segment": "",
+   "subject": "The Roofman, Part 2",
+   "iso": "2025-04-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "prison-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4458d696-801b-11ef-8b2a-13939dd4671d",
+   "display": "The Roofman, Part 1",
+   "segment": "",
+   "subject": "The Roofman, Part 1",
+   "iso": "2025-04-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "444472dc-801b-11ef-8b2a-573953bf7192",
+   "display": "The Pride of Pine Hill",
+   "segment": "",
+   "subject": "The Pride of Pine Hill",
+   "iso": "2025-04-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "44304b5e-801b-11ef-8b2a-bf48bffadeb2",
+   "display": "The Bottom of the Cliff",
+   "segment": "",
+   "subject": "The Bottom of the Cliff",
+   "iso": "2025-03-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "disaster-reconstruction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "441cd0ba-801b-11ef-8b2a-47544f6c9076",
+   "display": "The Man Without a Will",
+   "segment": "",
+   "subject": "The Man Without a Will",
+   "iso": "2025-03-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "440960ca-801b-11ef-8b2a-9fa3803102c4",
+   "display": "High Tide",
+   "segment": "",
+   "subject": "High Tide",
+   "iso": "2025-03-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "43f62c94-801b-11ef-8b2a-5b8650d347e8",
+   "display": "Five Stars",
+   "segment": "",
+   "subject": "Five Stars",
+   "iso": "2025-03-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "43e20656-801b-11ef-8b2a-67cef03d51c0",
+   "display": "The Stay",
+   "segment": "",
+   "subject": "The Stay",
+   "iso": "2025-02-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "43cd24a2-801b-11ef-8b2a-83e19454f1fa",
+   "display": "The Butterfly Smuggler",
+   "segment": "",
+   "subject": "The Butterfly Smuggler",
+   "iso": "2025-02-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "43b88c86-801b-11ef-8b2a-7bcb235701e3",
+   "display": "Ava and the Pickpocket",
+   "segment": "",
+   "subject": "Ava and the Pickpocket",
+   "iso": "2025-02-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "43a50bb6-801b-11ef-8b2a-871d211a5335",
+   "display": "Robert Smalls",
+   "segment": "",
+   "subject": "Robert Smalls",
+   "iso": "2025-02-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4390ed48-801b-11ef-8b2a-87894bd11cd1",
+   "display": "The Raid",
+   "segment": "",
+   "subject": "The Raid",
+   "iso": "2025-01-31",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "437d7b14-801b-11ef-8b2a-7717cf972b4a",
+   "display": "Guns, Grenades, and $100,000",
+   "segment": "",
+   "subject": "Guns, Grenades, and $100,000",
+   "iso": "2025-01-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "everyday-mystery",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4369c218-801b-11ef-8b2a-17bc744678b4",
+   "display": "Dexter Wade",
+   "segment": "",
+   "subject": "Dexter Wade",
+   "iso": "2025-01-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "435426b0-801b-11ef-8b2a-3fb415d73d8e",
+   "display": "Moon Rocks Wanted",
+   "segment": "",
+   "subject": "Moon Rocks Wanted",
+   "iso": "2025-01-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "227693aa-952b-11ee-926b-1be988db730a",
+   "display": "The Christmas Fire",
+   "segment": "",
+   "subject": "The Christmas Fire",
+   "iso": "2024-12-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "2242519e-952b-11ee-926b-9bfa45a5a19f",
+   "display": "Turtle vs. Toilet, a Monster in the Closet, and a Surprise Possum",
+   "segment": "",
+   "subject": "Turtle vs. Toilet, a Monster in the Closet, and a Surprise Possum",
+   "iso": "2024-12-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "220c98ec-952b-11ee-926b-d7d06db6ec55",
+   "display": "Operation Flagship",
+   "segment": "",
+   "subject": "Operation Flagship",
+   "iso": "2024-12-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "21d74688-952b-11ee-926b-d335bd93bfdc",
+   "display": "The Sale",
+   "segment": "",
+   "subject": "The Sale",
+   "iso": "2024-12-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "21a1d430-952b-11ee-926b-9bf430e2cf87",
+   "display": "For the Sake of American Youth",
+   "segment": "",
+   "subject": "For the Sake of American Youth",
+   "iso": "2024-11-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "216c75a6-952b-11ee-926b-d3815f980467",
+   "display": "Extraordinary and Compelling Reasons",
+   "segment": "",
+   "subject": "Extraordinary and Compelling Reasons",
+   "iso": "2024-11-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "prison-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "213571f0-952b-11ee-926b-e314de68aa36",
+   "display": "The Reverend",
+   "segment": "",
+   "subject": "The Reverend",
+   "iso": "2024-11-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "21007676-952b-11ee-926b-1fd4b33ac8d8",
+   "display": "The Family Land, Part 2",
+   "segment": "",
+   "subject": "The Family Land, Part 2",
+   "iso": "2024-11-01",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "family-secret",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "20cb3c86-952b-11ee-926b-b344b7933f4d",
+   "display": "The Family Land, Part 1",
+   "segment": "",
+   "subject": "The Family Land, Part 1",
+   "iso": "2024-10-25",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "family-secret",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "20965020-952b-11ee-926b-f7d2cd7db5d8",
+   "display": "Valentine",
+   "segment": "",
+   "subject": "Valentine",
+   "iso": "2024-10-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "grief-and-loss",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "206097c8-952b-11ee-926b-2bbf61653fb4",
+   "display": "Under the Wall",
+   "segment": "",
+   "subject": "Under the Wall",
+   "iso": "2024-10-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "202c15de-952b-11ee-926b-e7d0e785eb2f",
+   "display": "A Land Without Law",
+   "segment": "",
+   "subject": "A Land Without Law",
+   "iso": "2024-10-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1ff72b4e-952b-11ee-926b-ab368edb6614",
+   "display": "The Mirage",
+   "segment": "",
+   "subject": "The Mirage",
+   "iso": "2024-09-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1fbfde32-952b-11ee-926b-5fbc5698a215",
+   "display": "A Murder in the Forest",
+   "segment": "",
+   "subject": "A Murder in the Forest",
+   "iso": "2024-09-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "survival-story",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "1f8a5f28-952b-11ee-926b-5f045d3e3153",
+   "display": "Into the Vault",
+   "segment": "",
+   "subject": "Into the Vault",
+   "iso": "2024-09-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "friendship",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1f54f93c-952b-11ee-926b-6f216cef1b7e",
+   "display": "The Petition",
+   "segment": "",
+   "subject": "The Petition",
+   "iso": "2024-09-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1f1fe6ac-952b-11ee-926b-1f16c61e7186",
+   "display": "Hot Lotto",
+   "segment": "",
+   "subject": "Hot Lotto",
+   "iso": "2024-08-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1d9ecd82-5667-11ee-ac10-f7aa50a83c4c",
+   "display": "Big Fish",
+   "segment": "",
+   "subject": "Big Fish",
+   "iso": "2024-08-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sports-scandal",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1d77c6ec-5667-11ee-ac10-1b1382c5093f",
+   "display": "Ana",
+   "segment": "",
+   "subject": "Ana",
+   "iso": "2024-08-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1d5098a6-5667-11ee-ac10-97c862cc6125",
+   "display": "Trouble in Flamingo",
+   "segment": "",
+   "subject": "Trouble in Flamingo",
+   "iso": "2024-08-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "labour-history",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1d2a3788-5667-11ee-ac10-174afcb2bc35",
+   "display": "Millions of Pills",
+   "segment": "",
+   "subject": "Millions of Pills",
+   "iso": "2024-07-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1d03152c-5667-11ee-ac10-e779addbf614",
+   "display": "Los Hipopótamos",
+   "segment": "",
+   "subject": "Los Hipopótamos",
+   "iso": "2024-07-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1cdc6cba-5667-11ee-ac10-ebc40381855f",
+   "display": "The Disappearance of Leslie Arnold",
+   "segment": "",
+   "subject": "The Disappearance of Leslie Arnold",
+   "iso": "2024-07-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "prison-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1cb5cb64-5667-11ee-ac10-7743a5a10920",
+   "display": "Ten Thousand Feet in the Air",
+   "segment": "",
+   "subject": "Ten Thousand Feet in the Air",
+   "iso": "2024-07-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1c8f1cbc-5667-11ee-ac10-23d7e4aa7e6f",
+   "display": "State of North Carolina v. Joan Little",
+   "segment": "",
+   "subject": "State of North Carolina v. Joan Little",
+   "iso": "2024-06-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1c678756-5667-11ee-ac10-b3fb69a17a0f",
+   "display": "The Demon Spread",
+   "segment": "",
+   "subject": "The Demon Spread",
+   "iso": "2024-06-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "food-and-drink",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "economic-policy",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "1c408a3e-5667-11ee-ac10-774238ecce91",
+   "display": "One Troy",
+   "segment": "",
+   "subject": "One Troy",
+   "iso": "2024-06-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sense-of-place",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "1c19fe82-5667-11ee-ac10-0760a4f1fc76",
+   "display": "11 to 1",
+   "segment": "",
+   "subject": "11 to 1",
+   "iso": "2024-06-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1bf375e6-5667-11ee-ac10-ef21a245ad08",
+   "display": "The Six",
+   "segment": "",
+   "subject": "The Six",
+   "iso": "2024-05-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1bcb6d44-5667-11ee-ac10-175a843eb1a8",
+   "display": "Type B",
+   "segment": "",
+   "subject": "Type B",
+   "iso": "2024-05-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1ba4bece-5667-11ee-ac10-f76112ab3158",
+   "display": "The Confession, Part 3",
+   "segment": "",
+   "subject": "The Confession, Part 3",
+   "iso": "2024-05-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "death-penalty",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1b7e6c1a-5667-11ee-ac10-af4971cfce79",
+   "display": "Right of Way",
+   "segment": "",
+   "subject": "Right of Way",
+   "iso": "2024-05-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1b572fce-5667-11ee-ac10-abae85aa1b40",
+   "display": "Mr. Apology",
+   "segment": "",
+   "subject": "Mr. Apology",
+   "iso": "2024-04-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "everyday-mystery",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "internet-culture",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "1b303a36-5667-11ee-ac10-5fd2a692a38e",
+   "display": "Under Oath",
+   "segment": "",
+   "subject": "Under Oath",
+   "iso": "2024-04-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1b09856c-5667-11ee-ac10-0b3a3e6f677d",
+   "display": "The Strike",
+   "segment": "",
+   "subject": "The Strike",
+   "iso": "2024-04-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "labour-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1ae316ac-5667-11ee-ac10-5368a36a215d",
+   "display": "An Officer's Arrest",
+   "segment": "",
+   "subject": "An Officer's Arrest",
+   "iso": "2024-04-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1a9622f2-5667-11ee-ac10-3fb9892b3cfb",
+   "display": "Indelible Ink",
+   "segment": "",
+   "subject": "Indelible Ink",
+   "iso": "2024-03-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1a6f951a-5667-11ee-ac10-234e0f309e20",
+   "display": "The Hiss",
+   "segment": "",
+   "subject": "The Hiss",
+   "iso": "2024-03-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1a4811c0-5667-11ee-ac10-17ddd38fc73c",
+   "display": "The Dial Painters",
+   "segment": "",
+   "subject": "The Dial Painters",
+   "iso": "2024-03-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "labour-history",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "0bbc1606-bba2-11ee-b1c6-cf7eda81e98f",
+   "display": "If I’m Long Unheard From",
+   "segment": "",
+   "subject": "If I’m Long Unheard From",
+   "iso": "2024-03-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "musician-downfall",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1a211e26-5667-11ee-ac10-37491e28882e",
+   "display": "Off Leash",
+   "segment": "",
+   "subject": "Off Leash",
+   "iso": "2024-02-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "prison-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "19f9d5aa-5667-11ee-ac10-2311ae52afcb",
+   "display": "Call Russ Ewing",
+   "segment": "",
+   "subject": "Call Russ Ewing",
+   "iso": "2024-02-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "19d2750a-5667-11ee-ac10-ffc989f341ed",
+   "display": "Cowboy Bob",
+   "segment": "",
+   "subject": "Cowboy Bob",
+   "iso": "2024-02-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "af3d54ac-c10b-11ee-b580-273e1a29e270",
+   "display": "Bonus: The Liberal Arts Club",
+   "segment": "",
+   "subject": "The Liberal Arts Club",
+   "iso": "2024-02-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "internet-culture",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "19a99f86-5667-11ee-ac10-e7b32b61abf8",
+   "display": "911",
+   "segment": "",
+   "subject": "911",
+   "iso": "2024-02-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "198156f2-5667-11ee-ac10-9f1da7268383",
+   "display": "The Ninth Floor",
+   "segment": "",
+   "subject": "The Ninth Floor",
+   "iso": "2024-01-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "labour-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "disaster-reconstruction",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "18f146cc-9463-11ee-8495-6fdc740194d7",
+   "display": "48 Hours, Part 2",
+   "segment": "",
+   "subject": "48 Hours, Part 2",
+   "iso": "2024-01-19",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "195a5b74-5667-11ee-ac10-6b5fd767ab6d",
+   "display": "48 Hours, Part 1",
+   "segment": "",
+   "subject": "48 Hours, Part 1",
+   "iso": "2024-01-19",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1932f976-5667-11ee-ac10-5fa0d4cc1e8d",
+   "display": "The Hunt",
+   "segment": "",
+   "subject": "The Hunt",
+   "iso": "2024-01-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "190b2e8c-5667-11ee-ac10-4b9b9d30360d",
+   "display": "Tokyo Joe",
+   "segment": "",
+   "subject": "Tokyo Joe",
+   "iso": "2024-01-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f7cb1c68-49ac-11ed-8902-4bc2291fecef",
+   "display": "The Gargoyle Cat, the Taylor Swift Goat, and the Runaway Cow",
+   "segment": "",
+   "subject": "The Gargoyle Cat, the Taylor Swift Goat, and the Runaway Cow",
+   "iso": "2023-12-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a3272350-49ac-11ed-b100-ab1eb0c3bc36",
+   "display": "The Questions I’m Asking",
+   "segment": "",
+   "subject": "The Questions I’m Asking",
+   "iso": "2023-12-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f7bc8e46-49ac-11ed-8902-8f3ba4ce3c26",
+   "display": "Send Her to the Island",
+   "segment": "",
+   "subject": "Send Her to the Island",
+   "iso": "2023-12-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "a315e504-49ac-11ed-b100-3b6136de20fa",
+   "display": "The Kit",
+   "segment": "",
+   "subject": "The Kit",
+   "iso": "2023-12-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f7ad72a8-49ac-11ed-8902-879c4385f664",
+   "display": "Masterpiece",
+   "segment": "",
+   "subject": "Masterpiece",
+   "iso": "2023-11-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "a304eaec-49ac-11ed-b100-5f1ceb03f37f",
+   "display": "Fine Art and Meat Cleavers",
+   "segment": "",
+   "subject": "Fine Art and Meat Cleavers",
+   "iso": "2023-11-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "protest-movement",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "art-and-artists",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f79e7794-49ac-11ed-8902-f75421221dc7",
+   "display": "The Liverpool Exchange",
+   "segment": "",
+   "subject": "The Liverpool Exchange",
+   "iso": "2023-11-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a2f47068-49ac-11ed-b100-ab531e217e3a",
+   "display": "Interrogation Room",
+   "segment": "",
+   "subject": "Interrogation Room",
+   "iso": "2023-11-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f78d6d78-49ac-11ed-8902-3751d65d297a",
+   "display": "How to Sell a Haunted House",
+   "segment": "",
+   "subject": "How to Sell a Haunted House",
+   "iso": "2023-10-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "legal-precedent",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a2e38140-49ac-11ed-b100-0b03f4ad15b3",
+   "display": "The Spy",
+   "segment": "",
+   "subject": "The Spy",
+   "iso": "2023-10-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f77eeb7c-49ac-11ed-8902-97c602cd2f29",
+   "display": "Chesa, Kathy, and David",
+   "segment": "",
+   "subject": "Chesa, Kathy, and David",
+   "iso": "2023-10-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "extremist-movement",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1a31e254-67a8-11ee-87a8-3716b32ec232",
+   "display": "Jiminy Crickets",
+   "segment": "",
+   "subject": "Jiminy Crickets",
+   "iso": "2023-10-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "a2d29718-49ac-11ed-b100-67b7e0fc52af",
+   "display": "The Confession, Part 2",
+   "segment": "",
+   "subject": "The Confession, Part 2",
+   "iso": "2023-10-06",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "33e5dd76-edab-11ed-86b6-03a4d9c8681d",
+   "display": "The Confession, Part 1",
+   "segment": "",
+   "subject": "The Confession, Part 1",
+   "iso": "2023-09-29",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "musician-downfall",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4042b7dc-5d6e-11ee-991a-4770648c768d",
+   "display": "Phoebe vs. Oyster",
+   "segment": "",
+   "subject": "Phoebe vs. Oyster",
+   "iso": "2023-09-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "40c4795a-49ad-11ed-a41b-fb66c26f8ac1",
+   "display": "Under the Crabapple Tree",
+   "segment": "",
+   "subject": "Under the Crabapple Tree",
+   "iso": "2023-09-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f760622e-49ac-11ed-8902-fb00697c0d53",
+   "display": "The Newsroom",
+   "segment": "",
+   "subject": "The Newsroom",
+   "iso": "2023-09-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "40afd55e-49ad-11ed-a41b-37b597557a1c",
+   "display": "The Séances",
+   "segment": "",
+   "subject": "The Séances",
+   "iso": "2023-09-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "409b2cc6-49ad-11ed-a41b-f7310a6f8433",
+   "display": "Iceland Noir",
+   "segment": "",
+   "subject": "Iceland Noir",
+   "iso": "2023-08-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e7e14322-3c72-11ee-aa4b-7bf61df7e9e4",
+   "display": "The Other Phoebe Judge",
+   "segment": "",
+   "subject": "The Other Phoebe Judge",
+   "iso": "2023-08-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "f741a212-49ac-11ed-8902-2f76b0982ef7",
+   "display": "Wolf 10",
+   "segment": "",
+   "subject": "Wolf 10",
+   "iso": "2023-08-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "survival-story",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4086239e-49ad-11ed-a41b-3394bb1c6e7e",
+   "display": "The Nurse",
+   "segment": "",
+   "subject": "The Nurse",
+   "iso": "2023-08-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "disability-and-access",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f7323188-49ac-11ed-8902-477cb63da2d6",
+   "display": "The Perfectionists",
+   "segment": "",
+   "subject": "The Perfectionists",
+   "iso": "2023-08-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "religious-abuse",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a26cf89a-49ac-11ed-b100-c36d2361b065",
+   "display": "A Glamour and a Mystery",
+   "segment": "",
+   "subject": "A Glamour and a Mystery",
+   "iso": "2023-07-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "supernatural-encounter",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "paranormal-investigation",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f7237792-49ac-11ed-8902-2bd8a764e00e",
+   "display": "Roll of the Dice",
+   "segment": "",
+   "subject": "Roll of the Dice",
+   "iso": "2023-07-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a25db146-49ac-11ed-b100-57c26d8734fd",
+   "display": "The Bodies in the Bog",
+   "segment": "",
+   "subject": "The Bodies in the Bog",
+   "iso": "2023-07-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f7150b44-49ac-11ed-8902-137629dbf072",
+   "display": "The Prison Newspaper",
+   "segment": "",
+   "subject": "The Prison Newspaper",
+   "iso": "2023-07-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "prison-life",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "efe8db54-0651-11ee-9fa2-8f3f1e579da5",
+   "display": "The Impersonator",
+   "segment": "",
+   "subject": "The Impersonator",
+   "iso": "2023-06-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f706820e-49ac-11ed-8902-078413c385f8",
+   "display": "Al Capone, Eliot Ness, and Cleveland’s Torso Murderer",
+   "segment": "",
+   "subject": "Al Capone, Eliot Ness, and Cleveland’s Torso Murderer",
+   "iso": "2023-06-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a23f68c6-49ac-11ed-b100-7fd99850fa3f",
+   "display": "The Unknown Woman",
+   "segment": "",
+   "subject": "The Unknown Woman",
+   "iso": "2023-06-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "archives-and-objects",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "medical-research",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f6f7bfda-49ac-11ed-8902-dfd6fc5c1204",
+   "display": "The Paramedics",
+   "segment": "",
+   "subject": "The Paramedics",
+   "iso": "2023-06-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a231090c-49ac-11ed-b100-1b0d4ec0a9c9",
+   "display": "Lavender Scare",
+   "segment": "",
+   "subject": "Lavender Scare",
+   "iso": "2023-06-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f6e6d1c0-49ac-11ed-8902-3b7574b5dc3c",
+   "display": "Shipwrecked",
+   "segment": "",
+   "subject": "Shipwrecked",
+   "iso": "2023-05-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a2224a16-49ac-11ed-b100-2711caee4504",
+   "display": "A Mysterious Bank",
+   "segment": "",
+   "subject": "A Mysterious Bank",
+   "iso": "2023-05-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investment-fraud",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f6d77c70-49ac-11ed-8902-374166a78e84",
+   "display": "\"Did we get it right?\"",
+   "segment": "",
+   "subject": "\"Did we get it right?\"",
+   "iso": "2023-05-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a213803a-49ac-11ed-b100-ff206f02f96e",
+   "display": "The Juror",
+   "segment": "",
+   "subject": "The Juror",
+   "iso": "2023-05-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "death-penalty",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1951f062-352d-11ed-85ef-e37444ef6dc8",
+   "display": "The Magdalene Laundries",
+   "segment": "",
+   "subject": "The Magdalene Laundries",
+   "iso": "2023-04-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "religious-abuse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a204b79e-49ac-11ed-b100-3be1688f90d2",
+   "display": "The Somerton Man",
+   "segment": "",
+   "subject": "The Somerton Man",
+   "iso": "2023-04-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "193e0fd4-352d-11ed-85ef-e3ba33874b80",
+   "display": "Palace of Justice – A Conversation with Benjamin Ferencz",
+   "segment": "",
+   "subject": "A Conversation with Benjamin Ferencz",
+   "iso": "2023-04-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a1f596a6-49ac-11ed-b100-f3a6d3bb2373",
+   "display": "The Most Wonderful Terrible Person",
+   "segment": "",
+   "subject": "The Most Wonderful Terrible Person",
+   "iso": "2023-04-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "a1e5eeae-49ac-11ed-b100-f737293f6697",
+   "display": "The Fasting Cure",
+   "segment": "",
+   "subject": "The Fasting Cure",
+   "iso": "2023-03-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-deception",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1916bf7e-352d-11ed-85ef-73505a4eddd5",
+   "display": "Crazy Eddie",
+   "segment": "",
+   "subject": "Crazy Eddie",
+   "iso": "2023-03-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a1d6b59c-49ac-11ed-b100-03e30f83ee5c",
+   "display": "Out of the Box",
+   "segment": "",
+   "subject": "Out of the Box",
+   "iso": "2023-03-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "athlete-profile",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "sports-history",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "190278c0-352d-11ed-85ef-57779f0fc252",
+   "display": "An Impossible Crime, Part 2",
+   "segment": "",
+   "subject": "An Impossible Crime, Part 2",
+   "iso": "2023-03-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a1c7974c-49ac-11ed-b100-0f10d554fb1f",
+   "display": "An Impossible Crime",
+   "segment": "",
+   "subject": "An Impossible Crime",
+   "iso": "2023-02-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "18eeb2a4-352d-11ed-85ef-2bc782912611",
+   "display": "Novak v. City of Parma",
+   "segment": "",
+   "subject": "Novak v. City of Parma",
+   "iso": "2023-02-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "18da9206-352d-11ed-85ef-53c2944e9fe3",
+   "display": "The Feather Lady",
+   "segment": "",
+   "subject": "The Feather Lady",
+   "iso": "2023-02-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "disaster-reconstruction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "engineering-failure",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "18c6b592-352d-11ed-85ef-7b16f8a9cc68",
+   "display": "Sunset Mesa",
+   "segment": "",
+   "subject": "Sunset Mesa",
+   "iso": "2023-01-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "grief-and-loss",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "18b33742-352d-11ed-85ef-b7b1981752b2",
+   "display": "They Came for the Judges",
+   "segment": "",
+   "subject": "They Came for the Judges",
+   "iso": "2023-01-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "7677ba96-126f-11ed-901f-8372924bbb00",
+   "display": "Dog in the Bed, Cat in the Bag, Camel on the Golf Course",
+   "segment": "",
+   "subject": "Dog in the Bed, Cat in the Bag, Camel on the Golf Course",
+   "iso": "2022-12-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "76662a7e-126f-11ed-901f-23bc89d9d4b5",
+   "display": "Across the Atlantic",
+   "segment": "",
+   "subject": "Across the Atlantic",
+   "iso": "2022-12-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "da95fd30-5ab8-11ed-aa3d-af29ea7394e1",
+   "display": "The Tylenol Murders",
+   "segment": "",
+   "subject": "The Tylenol Murders",
+   "iso": "2022-11-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "da828804-5ab8-11ed-aa3d-8f77bfe08781",
+   "display": "We Interrupt This Program",
+   "segment": "",
+   "subject": "We Interrupt This Program",
+   "iso": "2022-11-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "media-criticism",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7624863c-126f-11ed-901f-c307951faa49",
+   "display": "The Hammersmith Ghost",
+   "segment": "",
+   "subject": "The Hammersmith Ghost",
+   "iso": "2022-10-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "paranormal-investigation",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "7603f98a-126f-11ed-901f-7f5dacf8f317",
+   "display": "Hungryland",
+   "segment": "",
+   "subject": "Hungryland",
+   "iso": "2022-09-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "75f4269a-126f-11ed-901f-bfbf11d7b85e",
+   "display": "The Procedure",
+   "segment": "",
+   "subject": "The Procedure",
+   "iso": "2022-08-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "reproductive-health",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "75e4ac74-126f-11ed-901f-97aa545bab82",
+   "display": "The Divorce Colony",
+   "segment": "",
+   "subject": "The Divorce Colony",
+   "iso": "2022-08-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "legal-precedent",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8a1263da-5e97-11ec-adac-7bfa241afec7",
+   "display": "A Ring and a Bottle",
+   "segment": "",
+   "subject": "A Ring and a Bottle",
+   "iso": "2022-07-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "89f0e336-5e97-11ec-adac-7b334b66d2e8",
+   "display": "The Devil’s Hole Pupfish",
+   "segment": "",
+   "subject": "The Devil’s Hole Pupfish",
+   "iso": "2022-07-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "89cf6738-5e97-11ec-adac-73e71bba2669",
+   "display": "The Sailor's Teeth",
+   "segment": "",
+   "subject": "The Sailor's Teeth",
+   "iso": "2022-06-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "89ae5f98-5e97-11ec-adac-7bb89ce32cf3",
+   "display": "Day In, Day Out",
+   "segment": "",
+   "subject": "Day In, Day Out",
+   "iso": "2022-06-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "898d22e2-5e97-11ec-adac-afa3cd959bed",
+   "display": "The Doctors",
+   "segment": "",
+   "subject": "The Doctors",
+   "iso": "2022-05-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-research",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "896c1ef8-5e97-11ec-adac-77dba472e1c1",
+   "display": "John & Trooper",
+   "segment": "",
+   "subject": "John & Trooper",
+   "iso": "2022-05-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "894b518c-5e97-11ec-adac-cfcfd05cc0db",
+   "display": "427 Emails",
+   "segment": "",
+   "subject": "427 Emails",
+   "iso": "2022-04-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "prison-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "892a3fba-5e97-11ec-adac-fbacfb30b5a2",
+   "display": "The Magpie",
+   "segment": "",
+   "subject": "The Magpie",
+   "iso": "2022-04-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "890929b0-5e97-11ec-adac-1bb9f4d36b1e",
+   "display": "The Princess",
+   "segment": "",
+   "subject": "The Princess",
+   "iso": "2022-03-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "88e85992-5e97-11ec-adac-d731f2208626",
+   "display": "Ransom",
+   "segment": "",
+   "subject": "Ransom",
+   "iso": "2022-03-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "88c798d8-5e97-11ec-adac-5bbbb19cd0cb",
+   "display": "Breaking into the F.B.I.",
+   "segment": "",
+   "subject": "Breaking into the F.B.I.",
+   "iso": "2022-02-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "whistleblower",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "88a6cc48-5e97-11ec-adac-678284e2a825",
+   "display": "The Midnight Slider",
+   "segment": "",
+   "subject": "The Midnight Slider",
+   "iso": "2022-02-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "888607ba-5e97-11ec-adac-c7be93cc6b82",
+   "display": "Pappy, Another Round",
+   "segment": "",
+   "subject": "Pappy, Another Round",
+   "iso": "2022-01-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "business-rivalry",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "886491f2-5e97-11ec-adac-774e1277f443",
+   "display": "The Boycott",
+   "segment": "",
+   "subject": "The Boycott",
+   "iso": "2022-01-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "education-system-failure",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_93af5a60-98de-4c25-a2ef-7a6b772e1019",
+   "display": "A Splendid Newfoundland, Cursing Birds, and the Fashion Fox",
+   "segment": "",
+   "subject": "A Splendid Newfoundland, Cursing Birds, and the Fashion Fox",
+   "iso": "2021-12-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_3f5b4cbe-c1c1-4f37-8b3a-d87b38ac1fe3",
+   "display": "\"The experiment requires that you continue.\"",
+   "segment": "",
+   "subject": "\"The experiment requires that you continue.\"",
+   "iso": "2021-12-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_11d2d768-68e7-471d-8d8f-8237d198b8ad",
+   "display": "Palace of Justice",
+   "segment": "",
+   "subject": "Palace of Justice",
+   "iso": "2021-11-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_f6a74664-03de-47e6-85fa-33a08d6b004f",
+   "display": "The Red Flag",
+   "segment": "",
+   "subject": "The Red Flag",
+   "iso": "2021-11-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_33fda699-d311-40d1-bb90-337e587afd88",
+   "display": "Ghost Racket Crusade",
+   "segment": "",
+   "subject": "Ghost Racket Crusade",
+   "iso": "2021-10-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_62701bb6-9e3a-46bd-8023-97c48eca6c5b",
+   "display": "The Loves",
+   "segment": "",
+   "subject": "The Loves",
+   "iso": "2021-10-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "family-secret",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_29445bd8-dd51-4bb9-9ebd-528bcce97afd",
+   "display": "Family Money",
+   "segment": "",
+   "subject": "Family Money",
+   "iso": "2021-09-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "family-secret",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_e664ecc6-401b-47dc-96ec-f3a4fe0f9a51",
+   "display": "Roselle and Michael",
+   "segment": "",
+   "subject": "Roselle and Michael",
+   "iso": "2021-09-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "survival-story",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_ae95601c-1506-4fb2-b40f-d3bf37215a8d",
+   "display": "Sealand",
+   "segment": "",
+   "subject": "Sealand",
+   "iso": "2021-08-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "music-scene-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_c3d7d9de-bd3a-47f7-814e-a281f8bfb29b",
+   "display": "Ian Manuel",
+   "segment": "",
+   "subject": "Ian Manuel",
+   "iso": "2021-07-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_e76db2d7-b4bc-4cab-9aab-0fd022463d7a",
+   "display": "Masquerade",
+   "segment": "",
+   "subject": "Masquerade",
+   "iso": "2021-07-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "archives-and-objects",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1000525956953",
+   "display": "48 Hours",
+   "segment": "",
+   "subject": "48 Hours",
+   "iso": "2021-06-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_e3ff98c9-10ea-4e40-81fe-277a04b5f6a3",
+   "display": "On Fire",
+   "segment": "",
+   "subject": "On Fire",
+   "iso": "2021-06-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "disaster-reconstruction",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_5179403b-87b1-4bb2-b585-dbda46a7eccd",
+   "display": "Unfit",
+   "segment": "",
+   "subject": "Unfit",
+   "iso": "2021-05-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-deception",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_86ec60eb-f6bd-4d29-a3ae-d4db4359706e",
+   "display": "Sanctuary",
+   "segment": "",
+   "subject": "Sanctuary",
+   "iso": "2021-05-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "religious-community",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_552ff9e8-9d4a-4fdc-9318-6bbb38d67c0c",
+   "display": "The Ghoul of Grays Harbor",
+   "segment": "",
+   "subject": "The Ghoul of Grays Harbor",
+   "iso": "2021-04-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_6dd6ae7a-94f0-481e-8814-e7c8b4a33ffe",
+   "display": "I Fought the Law",
+   "segment": "",
+   "subject": "I Fought the Law",
+   "iso": "2021-04-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "musician-downfall",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_b6bf2b56-1083-4d59-817f-c80c2e56d502",
+   "display": "Only in Hollywood",
+   "segment": "",
+   "subject": "Only in Hollywood",
+   "iso": "2021-03-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_155bcf29-5f28-46d4-8600-d171cec9b6be",
+   "display": "Spiritual Developments",
+   "segment": "",
+   "subject": "Spiritual Developments",
+   "iso": "2021-02-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_8fbadf14-c172-4ad2-a812-b295f3dac7e3",
+   "display": "\"If it ever happens, run.\"",
+   "segment": "",
+   "subject": "\"If it ever happens, run.\"",
+   "iso": "2021-02-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_67c7477c-c499-40b7-8184-6a9759511f81",
+   "display": "The Short Life of Qandeel Baloch",
+   "segment": "",
+   "subject": "The Short Life of Qandeel Baloch",
+   "iso": "2021-01-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "celebrity-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "gender-identity",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_98ed416d-9daf-4d12-aebb-2fc41a7a45ca",
+   "display": "Bears on Ice",
+   "segment": "",
+   "subject": "Bears on Ice",
+   "iso": "2020-12-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sense-of-place",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_88ef0645-30f5-484e-ac57-4a4ceb3e17ea",
+   "display": "Cannonball",
+   "segment": "",
+   "subject": "Cannonball",
+   "iso": "2020-12-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_22b8cb81-57d2-4b01-89d2-a28ad22b6799",
+   "display": "The Night of the Party",
+   "segment": "",
+   "subject": "The Night of the Party",
+   "iso": "2020-12-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_f7ce62ae-feaf-4f8e-b506-fa797d24cae2",
+   "display": "The Max Headroom Incident",
+   "segment": "",
+   "subject": "The Max Headroom Incident",
+   "iso": "2020-11-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_0a4c0744-2cea-41a1-bc5f-a94369db3fe3",
+   "display": "The Many Lives of Michael Malloy",
+   "segment": "",
+   "subject": "The Many Lives of Michael Malloy",
+   "iso": "2020-11-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_14e64f4f-57b6-4b2c-bc01-dd4503857655",
+   "display": "76th and Yates",
+   "segment": "",
+   "subject": "76th and Yates",
+   "iso": "2020-10-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_415515ab-1b35-4eea-ad4f-5f352e686d41",
+   "display": "Dr. Parkman is Missing",
+   "segment": "",
+   "subject": "Dr. Parkman is Missing",
+   "iso": "2020-10-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_61cce2ea-4267-45fb-a08e-2eaf3bbbcf40",
+   "display": "Errol Morris",
+   "segment": "",
+   "subject": "Errol Morris",
+   "iso": "2020-09-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_baf8ee29-de02-4cea-b6a7-dc3272cf87a2",
+   "display": "Ten Doors",
+   "segment": "",
+   "subject": "Ten Doors",
+   "iso": "2020-08-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_6646d1b0-dcb8-41c9-b6df-567077c563cb",
+   "display": "Looking Out",
+   "segment": "",
+   "subject": "Looking Out",
+   "iso": "2020-07-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "prison-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_61a3b4bc-14e7-4b63-b87a-8fba4a22f142",
+   "display": "Knock and Announce",
+   "segment": "",
+   "subject": "Knock and Announce",
+   "iso": "2020-07-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_0b463cf5-12af-440a-b738-7b0e451c1644",
+   "display": "It Looked Like Fire",
+   "segment": "",
+   "subject": "It Looked Like Fire",
+   "iso": "2020-06-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "racial-violence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_8eb9cb3d-5bfb-499c-9d8b-07fa4acebf0c",
+   "display": "Learning How to Forgive",
+   "segment": "",
+   "subject": "Learning How to Forgive",
+   "iso": "2020-05-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "legal-precedent",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_eaa76722-082d-4f05-bad1-ab25e5016045",
+   "display": "Starlight Tours",
+   "segment": "",
+   "subject": "Starlight Tours",
+   "iso": "2020-04-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "racial-violence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_e101df49-54c0-4666-a6e3-d779dee1973b",
+   "display": "Looking for Wolves",
+   "segment": "",
+   "subject": "Looking for Wolves",
+   "iso": "2020-03-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_0e4137c8-f25e-4b8d-9d3e-70432554c039",
+   "display": "Phoebe Reads a Mystery",
+   "segment": "",
+   "subject": "Phoebe Reads a Mystery",
+   "iso": "2020-03-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "audio-drama-mystery",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_7379f5dd-e4e8-41bc-8d01-cfc7a339542c",
+   "display": "La Brea Dave",
+   "segment": "",
+   "subject": "La Brea Dave",
+   "iso": "2020-03-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_b6c1727d-03b6-4f5f-a50a-e7a2701c0872",
+   "display": "527 Lime Street",
+   "segment": "",
+   "subject": "527 Lime Street",
+   "iso": "2020-03-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "disaster-reconstruction",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_5cd6e93c-4f96-4800-98f9-923a7b274fee",
+   "display": "Red Hair, Gold Car",
+   "segment": "",
+   "subject": "Red Hair, Gold Car",
+   "iso": "2020-02-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_05fe605c-49e0-4b4c-9acf-9d093462fee2",
+   "display": "Herrin Massacre",
+   "segment": "",
+   "subject": "Herrin Massacre",
+   "iso": "2020-01-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "labour-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_84c27e20-a4b6-48e3-87df-1a4e24dbaeea",
+   "display": "Who's There",
+   "segment": "",
+   "subject": "Who's There",
+   "iso": "2019-12-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "community-in-conflict",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_13f826b1-8611-456b-9302-f78a23cc2e70",
+   "display": "Phoebe, Judge Me",
+   "segment": "",
+   "subject": "Phoebe, Judge Me",
+   "iso": "2019-12-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_6d19853c-043d-46ba-9dd3-18faf6515101",
+   "display": "Panic Defense",
+   "segment": "",
+   "subject": "Panic Defense",
+   "iso": "2019-12-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_6061f4ab-26a5-4876-84bb-b00037be41d4",
+   "display": "Deep Breath",
+   "segment": "",
+   "subject": "Deep Breath",
+   "iso": "2019-11-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "athlete-profile",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_bf890a76-0c7b-489e-b388-665a2883223f",
+   "display": "A New Kind of Life",
+   "segment": "",
+   "subject": "A New Kind of Life",
+   "iso": "2019-10-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "chronic-illness",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_f98c5610-1947-41b1-9153-327c703d3b63",
+   "display": "The Less People Know About Us",
+   "segment": "",
+   "subject": "The Less People Know About Us",
+   "iso": "2019-10-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_2195abbc-a62f-467b-836f-2dc2d240b749",
+   "display": "A Bucket, a Mop, and a Sledgehammer",
+   "segment": "",
+   "subject": "A Bucket, a Mop, and a Sledgehammer",
+   "iso": "2019-10-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_0dbc1b5e-30c3-43ee-8db1-b2d668c267e9",
+   "display": "Mrs. Sherlock Holmes",
+   "segment": "",
+   "subject": "Mrs. Sherlock Holmes",
+   "iso": "2019-09-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_f9a49f7c-bbd8-4675-aece-376fb4a4e7ae",
+   "display": "The Tunnel",
+   "segment": "",
+   "subject": "The Tunnel",
+   "iso": "2019-08-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "engineering-failure",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "disaster-reconstruction",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_09b32921-097d-4b4c-8174-e72a95229adb",
+   "display": "He's Still Neutral",
+   "segment": "",
+   "subject": "He's Still Neutral",
+   "iso": "2019-07-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sense-of-place",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_b005b19b-c9b9-453b-a40c-60c594da0e09",
+   "display": "Stowaway",
+   "segment": "",
+   "subject": "Stowaway",
+   "iso": "2019-07-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "protest-movement",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_f82b50bc-14e8-41d6-81e4-a26bcea6f820",
+   "display": "The Lake",
+   "segment": "",
+   "subject": "The Lake",
+   "iso": "2019-06-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_85cd4e4d-fa8b-4df2-8a8c-78ad0e800574",
+   "display": "Jessica and the Bunny Ranch",
+   "segment": "",
+   "subject": "Jessica and the Bunny Ranch",
+   "iso": "2019-06-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_1ec41808-1f14-40d2-b038-c4ccedbc358a",
+   "display": "Philip and Becky",
+   "segment": "",
+   "subject": "Philip and Becky",
+   "iso": "2019-05-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "family-secret",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_16136519-9b34-42aa-ae2c-3dfdd08da884",
+   "display": "Hostage",
+   "segment": "",
+   "subject": "Hostage",
+   "iso": "2019-04-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_e5adab4d-d4c6-4035-8894-c4e0bbed8296",
+   "display": "The Mail",
+   "segment": "",
+   "subject": "The Mail",
+   "iso": "2019-04-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_c12e8b3b-7144-4b3d-b257-9ba0f91b7127",
+   "display": "Silvon Simmons",
+   "segment": "",
+   "subject": "Silvon Simmons",
+   "iso": "2019-03-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "racial-violence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_1185dce2-e26f-4422-8af5-553d1a3a859d",
+   "display": "Baby Snatcher",
+   "segment": "",
+   "subject": "Baby Snatcher",
+   "iso": "2019-03-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "adoption-and-origins",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_fc1ca7c7-e1a6-44c4-88ea-f449d0794bb6",
+   "display": "Homewrecker",
+   "segment": "",
+   "subject": "Homewrecker",
+   "iso": "2019-03-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "internet-culture",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_1dc3294f-5701-473b-86f2-d62aa0fa9e75",
+   "display": "The Widow and the Winchester",
+   "segment": "",
+   "subject": "The Widow and the Winchester",
+   "iso": "2019-02-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "celebrity-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_ee3c5306-19b8-400e-a05e-e891ed2c8d61",
+   "display": "Linda",
+   "segment": "",
+   "subject": "Linda",
+   "iso": "2019-01-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_d36a28f0-65a4-40fb-a26e-8814935e4509",
+   "display": "Protection",
+   "segment": "",
+   "subject": "Protection",
+   "iso": "2018-12-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_e171fda3-5f17-455d-b50b-df19dacddbd7",
+   "display": "Witness",
+   "segment": "",
+   "subject": "Witness",
+   "iso": "2018-12-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_6e29d2fd-b387-44d9-ab45-031c15e997d4",
+   "display": "Bonus Episode: The Bark",
+   "segment": "",
+   "subject": "The Bark",
+   "iso": "2018-11-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_5bf15d72-d587-4b15-ba0b-627719e622f7",
+   "display": "Get Out of My House",
+   "segment": "",
+   "subject": "Get Out of My House",
+   "iso": "2018-11-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_6cb74b26-fd82-453e-be38-f6e4682ba86c",
+   "display": "This is Love: How to Live Forever",
+   "segment": "",
+   "subject": "How to Live Forever",
+   "iso": "2018-11-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_44f63478-3987-41f9-9bee-1d10fbe0b700",
+   "display": "Ride-Along",
+   "segment": "",
+   "subject": "Ride-Along",
+   "iso": "2018-11-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_b8f8f634-073f-4e35-b3eb-16d0bda8133c",
+   "display": "The Fox",
+   "segment": "",
+   "subject": "The Fox",
+   "iso": "2018-10-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_02d8a430-b623-41e2-bc41-37c879f2dbb1",
+   "display": "I'm Phoebe Judge",
+   "segment": "",
+   "subject": "I'm Phoebe Judge",
+   "iso": "2018-10-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_0a31123b-1184-4b7d-8685-b1d7b975b2b6",
+   "display": "Racehorse Haynes",
+   "segment": "",
+   "subject": "Racehorse Haynes",
+   "iso": "2018-09-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_9604b03d-ec60-4a0c-999f-95ac13593d7d",
+   "display": "On the Run",
+   "segment": "",
+   "subject": "On the Run",
+   "iso": "2018-08-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_5d6b8444-1b7c-4291-9853-29e55acd452f",
+   "display": "The Chase",
+   "segment": "",
+   "subject": "The Chase",
+   "iso": "2018-07-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_f303685a-0ee8-49bb-b9ee-a6bc06cfa52b",
+   "display": "Dementia Americana",
+   "segment": "",
+   "subject": "Dementia Americana",
+   "iso": "2018-06-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_1dbb746a-b65b-44fe-8a86-0c5c9f99255f",
+   "display": "The \"It\" Girl",
+   "segment": "",
+   "subject": "The \"It\" Girl",
+   "iso": "2018-05-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "celebrity-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_7efb0ac8-915c-4a39-a057-ca49a120a681",
+   "display": "Sharks",
+   "segment": "",
+   "subject": "Sharks",
+   "iso": "2018-05-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_59031599-ea6b-4448-8550-9e62168b0430",
+   "display": "Shadowing Sheila",
+   "segment": "",
+   "subject": "Shadowing Sheila",
+   "iso": "2018-04-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_9bcffbdc-207e-4012-9959-b393d55429c5",
+   "display": "Cold Case",
+   "segment": "",
+   "subject": "Cold Case",
+   "iso": "2018-04-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_6d00df37-5fac-4a44-9eff-e099cfdb7d37",
+   "display": "Casper, Wyoming",
+   "segment": "",
+   "subject": "Casper, Wyoming",
+   "iso": "2018-03-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_4a98486f-d6ad-4df8-acc5-c0c23a40c3f8",
+   "display": "Willie Bosket",
+   "segment": "",
+   "subject": "Willie Bosket",
+   "iso": "2018-03-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "mental-health",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_60276d00-806a-447f-b6c7-2cec208f6491",
+   "display": "A New Show from the Makers of Criminal: Episode 1",
+   "segment": "",
+   "subject": "Episode 1",
+   "iso": "2018-02-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_05d86b82-bda5-47c2-99e7-ce525af2186d",
+   "display": "This Is Love",
+   "segment": "",
+   "subject": "This Is Love",
+   "iso": "2018-01-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_54faf00d-1212-4566-bf24-b10e3cafcec9",
+   "display": "The Mothers",
+   "segment": "",
+   "subject": "The Mothers",
+   "iso": "2018-01-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "grief-and-loss",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_025b585d-f211-421f-a1c6-fa4e93fc5225",
+   "display": "Bonus Episode: Like a Page from a Book",
+   "segment": "",
+   "subject": "Like a Page from a Book",
+   "iso": "2018-01-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_18_e53d5a3d-df6b-4a8c-94be-99afbd50dbd4",
+   "display": "The Choir",
+   "segment": "",
+   "subject": "The Choir",
+   "iso": "2018-01-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "personal-transformation",
+     "role": "primary",
+     "confidence": "low"
+    },
+    {
+     "slug": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "1b7bfefbb9b0a7a6f58d54ace1ea2d06",
+   "display": "Unexpected Guests",
+   "segment": "",
+   "subject": "Unexpected Guests",
+   "iso": "2017-12-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "everyday-mystery",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5b3c7efc0e8218ff021ca1d417b10b3b",
+   "display": "Photo, Hair, Fingerprint",
+   "segment": "",
+   "subject": "Photo, Hair, Fingerprint",
+   "iso": "2017-12-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "778f99a581ee7d7ca6d86fcc80ef0793",
+   "display": "Secrets and Séances",
+   "segment": "",
+   "subject": "Secrets and Séances",
+   "iso": "2017-11-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "supernatural-encounter",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "7be5dccfdb0dc5aa238ac28b91851127",
+   "display": "The Botanist",
+   "segment": "",
+   "subject": "The Botanist",
+   "iso": "2017-11-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c4ef0b3759275b20f30d44b34da71f6c",
+   "display": "The Escape",
+   "segment": "",
+   "subject": "The Escape",
+   "iso": "2017-10-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "prison-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "survival-story",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6812b29eadbd178a386a139a5c469a43",
+   "display": "The Big Lick",
+   "segment": "",
+   "subject": "The Big Lick",
+   "iso": "2017-10-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3727d866c706fd1950350687ffa10320",
+   "display": "The Gatekeeper",
+   "segment": "",
+   "subject": "The Gatekeeper",
+   "iso": "2017-09-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "278f710685f30f0f440738667b5a2e38",
+   "display": "Catastrophe",
+   "segment": "",
+   "subject": "Catastrophe",
+   "iso": "2017-09-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "natural-disaster",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "engineering-failure",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e1c93341c811f7cd15a9dda36a2286f3",
+   "display": "Carry A. Nation",
+   "segment": "",
+   "subject": "Carry A. Nation",
+   "iso": "2017-08-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "protest-movement",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "911edc12e420eab100dea2dae2c0e7ad",
+   "display": "Bears, Birds, and Bones",
+   "segment": "",
+   "subject": "Bears, Birds, and Bones",
+   "iso": "2017-08-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "indigenous-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "da042cbc4182f12846b6223487f8349f",
+   "display": "A Bump in the Night",
+   "segment": "",
+   "subject": "A Bump in the Night",
+   "iso": "2017-07-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "supernatural-encounter",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "422884989a17c4e2d08c8f665939c4e1",
+   "display": "Becoming Chief Brown",
+   "segment": "",
+   "subject": "Becoming Chief Brown",
+   "iso": "2017-06-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e479e658c40542e4018b38fa2a3465b3",
+   "display": "Milk Carton Kids",
+   "segment": "",
+   "subject": "Milk Carton Kids",
+   "iso": "2017-05-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "child-victim",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0bf25594d608cf2055777740fb891c08",
+   "display": "Bully",
+   "segment": "",
+   "subject": "Bully",
+   "iso": "2017-05-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "af245319b2c848fca3bd730afd0d6183",
+   "display": "The Kingfish",
+   "segment": "",
+   "subject": "The Kingfish",
+   "iso": "2017-04-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2965216a46d175f486159c50528f6107",
+   "display": "420",
+   "segment": "",
+   "subject": "420",
+   "iso": "2017-04-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5e063bbce605190a5d439e6788390114",
+   "display": "Rochester, 1991",
+   "segment": "",
+   "subject": "Rochester, 1991",
+   "iso": "2017-03-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "947737062fadad90bfc2b9d93fcda453",
+   "display": "Wildin",
+   "segment": "",
+   "subject": "Wildin",
+   "iso": "2017-03-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c44112f684a589c042ee0d9e645c4b7f",
+   "display": "Vanish",
+   "segment": "",
+   "subject": "Vanish",
+   "iso": "2017-02-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "fcc78edeadbccb3d7162ce2e9d078935",
+   "display": "Finding Sarah and Philip",
+   "segment": "",
+   "subject": "Finding Sarah and Philip",
+   "iso": "2017-02-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "53db1b0019548579ef1451325ef59328",
+   "display": "In Plain Sight",
+   "segment": "",
+   "subject": "In Plain Sight",
+   "iso": "2017-01-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d80de07ffed377866e06ed40276ac8ef",
+   "display": "Walnut Grove",
+   "segment": "",
+   "subject": "Walnut Grove",
+   "iso": "2017-01-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "prison-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d403e4fdde146a0daeaf2ee3cd2f7e6b",
+   "display": "Everyday Genius",
+   "segment": "",
+   "subject": "Everyday Genius",
+   "iso": "2016-12-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "personal-transformation",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "32d126da60f9b4a4fcc1ab52d948d7e2",
+   "display": "Don't Let Me See You In The Whirl",
+   "segment": "",
+   "subject": "Don't Let Me See You In The Whirl",
+   "iso": "2016-12-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "media-criticism",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "31022c1465c2857e0eeaf3e73ead1467",
+   "display": "The Shell Game",
+   "segment": "",
+   "subject": "The Shell Game",
+   "iso": "2016-11-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "art-and-artists",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "games-and-play",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "3240e3a03a6691617b21aeff2557ec58",
+   "display": "Melinda and Clarence",
+   "segment": "",
+   "subject": "Melinda and Clarence",
+   "iso": "2016-11-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "family-secret",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "adoption-and-origins",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b5c44e6c7df16820345a71739c21b3c4",
+   "display": "Melinda and Judy",
+   "segment": "",
+   "subject": "Melinda and Judy",
+   "iso": "2016-10-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "adoption-and-origins",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4e36c33142236935e60a180801601538",
+   "display": "The Checklist",
+   "segment": "",
+   "subject": "The Checklist",
+   "iso": "2016-10-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f0ad03795f9a0a2b102c59990b7718e6",
+   "display": "Money Tree",
+   "segment": "",
+   "subject": "Money Tree",
+   "iso": "2016-09-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "child-victim",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ed7ca5a3b09f549b351a63ae58a36570",
+   "display": "This is Criminal",
+   "segment": "",
+   "subject": "This is Criminal",
+   "iso": "2016-09-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "dc0ef4114e90a398b71f18669aecb34e",
+   "display": "The Editor",
+   "segment": "",
+   "subject": "The Editor",
+   "iso": "2016-08-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "prison-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "23efbc0cd0d2630897020bb7d080034d",
+   "display": "Eight Years",
+   "segment": "",
+   "subject": "Eight Years",
+   "iso": "2016-08-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "books-and-writing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d425fe593b01e51e9b0c91621b3e5106",
+   "display": "Brownie Lady",
+   "segment": "",
+   "subject": "Brownie Lady",
+   "iso": "2016-07-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "startup-collapse",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "4a53239c0fb111334f5bc6e24941699e",
+   "display": "Tiger",
+   "segment": "",
+   "subject": "Tiger",
+   "iso": "2016-07-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "57077b08bf93e4254d0cf613fe1e51c0",
+   "display": "Just Mercy",
+   "segment": "",
+   "subject": "Just Mercy",
+   "iso": "2016-06-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6abcb60251f6abc378e82da25f6bc94d",
+   "display": "One Eyed Joe",
+   "segment": "",
+   "subject": "One Eyed Joe",
+   "iso": "2016-06-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "survival-story",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "cb93807f9b8e2af32d9503189f77dbec",
+   "display": "39 Shots",
+   "segment": "",
+   "subject": "39 Shots",
+   "iso": "2016-05-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "racial-violence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "protest-movement",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a8a01cf03cc353f14d827471901d46d",
+   "display": "The Finger",
+   "segment": "",
+   "subject": "The Finger",
+   "iso": "2016-05-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "09a0a130ab11b6c73d0bf87a35427d26",
+   "display": "Open Case",
+   "segment": "",
+   "subject": "Open Case",
+   "iso": "2016-04-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1c2238053858d2c2e1cf75959052808d",
+   "display": "Pappy",
+   "segment": "",
+   "subject": "Pappy",
+   "iso": "2016-04-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "food-and-drink",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "business-rivalry",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "71aea8513e8c35d8a52a4529bb04fa33",
+   "display": "Either/Or",
+   "segment": "",
+   "subject": "Either/Or",
+   "iso": "2016-03-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "adfad5d692ff34a7221ab77d6929fa57",
+   "display": "Jolly Jane",
+   "segment": "",
+   "subject": "Jolly Jane",
+   "iso": "2016-03-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d0bddce0a5aa0abc70e458004ad522a1",
+   "display": "Hastings",
+   "segment": "",
+   "subject": "Hastings",
+   "iso": "2016-02-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "child-victim",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "3c24635a2464795510b6fd03ca5665ad",
+   "display": "Perfect Specimen",
+   "segment": "",
+   "subject": "Perfect Specimen",
+   "iso": "2016-02-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "26b56be71a832db4e2ae7450e32fbe5f",
+   "display": "Pen & Paper",
+   "segment": "",
+   "subject": "Pen & Paper",
+   "iso": "2016-01-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "art-and-artists",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "abe339fa9af943725fbd974826e45e5a",
+   "display": "Willing to Accept",
+   "segment": "",
+   "subject": "Willing to Accept",
+   "iso": "2016-01-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "919ff4ead753cf4fac30668b07e03f12",
+   "display": "Deep Dive",
+   "segment": "",
+   "subject": "Deep Dive",
+   "iso": "2015-12-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ba20b518277dbef8b5849bf246d09d1f",
+   "display": "American Dream",
+   "segment": "",
+   "subject": "American Dream",
+   "iso": "2015-11-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "bd5d76fc8022727e06c3ff3f1685d501",
+   "display": "The Agreement",
+   "segment": "",
+   "subject": "The Agreement",
+   "iso": "2015-11-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6240d9d401eec961a29c16eaf25dcee5",
+   "display": "Officer Talon",
+   "segment": "",
+   "subject": "Officer Talon",
+   "iso": "2015-10-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ba6e96acd80025fd07cdda3dcd7393e7",
+   "display": "P.D.I.D.",
+   "segment": "",
+   "subject": "P.D.I.D.",
+   "iso": "2015-10-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gender-identity",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "daa89b024da49b42776038df4f260f9c",
+   "display": "No Place Like Home",
+   "segment": "",
+   "subject": "No Place Like Home",
+   "iso": "2015-09-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1d00e73c5c01408f3877c012923f6697",
+   "display": "Angie",
+   "segment": "",
+   "subject": "Angie",
+   "iso": "2015-09-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a72e47906afbe97e8dd6667506002574",
+   "display": "The Portrait",
+   "segment": "",
+   "subject": "The Portrait",
+   "iso": "2015-08-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b779f54fd3f7f9db73e26a5e5a4db777",
+   "display": "Pearl Bryan",
+   "segment": "",
+   "subject": "Pearl Bryan",
+   "iso": "2015-08-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "body-never-found",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d636b1a71b7e5df40b06de23aabab92e",
+   "display": "Triassic Park",
+   "segment": "",
+   "subject": "Triassic Park",
+   "iso": "2015-07-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "theft-related",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "28f166d9815b7ea15401dc71742028f2",
+   "display": "Ex Libris",
+   "segment": "",
+   "subject": "Ex Libris",
+   "iso": "2015-06-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c94e987d95784d85ece6bff1d913a49d",
+   "display": "Bloodlines",
+   "segment": "",
+   "subject": "Bloodlines",
+   "iso": "2015-06-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2b08cdb297db9f2741b9b91cdf7d8c6d",
+   "display": "Gil From London",
+   "segment": "",
+   "subject": "Gil From London",
+   "iso": "2015-05-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f849e5b6756f69c45a4ef7c900c0e443",
+   "display": "Mother's Little Helper",
+   "segment": "",
+   "subject": "Mother's Little Helper",
+   "iso": "2015-04-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "55884d52bddb070540dc0fb8dc2b9f72",
+   "display": "695BGK",
+   "segment": "",
+   "subject": "695BGK",
+   "iso": "2015-04-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "90176d1068eac0d93d5f70f3aab42a3c",
+   "display": "Final Exit",
+   "segment": "",
+   "subject": "Final Exit",
+   "iso": "2015-03-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "low"
+    },
+    {
+     "slug": "mental-health",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "10223ef93e4a93ec6fbaabab29c3c1c1",
+   "display": "Poster Boy",
+   "segment": "",
+   "subject": "Poster Boy",
+   "iso": "2015-02-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f2ad5bcec1eb16d0be7ebc12ba0fa7db",
+   "display": "He's Neutral",
+   "segment": "",
+   "subject": "He's Neutral",
+   "iso": "2015-01-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "community-in-conflict",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "55c7468a59825648cb5bf97b8bdc789f",
+   "display": "The Fifth Suspect",
+   "segment": "",
+   "subject": "The Fifth Suspect",
+   "iso": "2015-01-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "child-victim",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4e401b15c3d442c0314749f8e537c8cb",
+   "display": "The Big Sleep",
+   "segment": "",
+   "subject": "The Big Sleep",
+   "iso": "2014-12-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "books-and-writing",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "534f296679509a4ad805b66d7aca73e3",
+   "display": "Break The Internet",
+   "segment": "",
+   "subject": "Break The Internet",
+   "iso": "2014-11-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "1d9f18ed2029c3f79af037bef7052744",
+   "display": "I'm About To Save Your Life",
+   "segment": "",
+   "subject": "I'm About To Save Your Life",
+   "iso": "2014-10-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "self-defense",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e462d869156776f6ea77c6ab118b4a39",
+   "display": "Dear Sheila",
+   "segment": "",
+   "subject": "Dear Sheila",
+   "iso": "2014-09-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "3186f219c74455ec26de566c445d0dc3",
+   "display": "That Crime Of The Month",
+   "segment": "",
+   "subject": "That Crime Of The Month",
+   "iso": "2014-08-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "gender-identity",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "ef4ad3c20bf8efbb7b2a92876763c4a8",
+   "display": "Can't Rock This Boat",
+   "segment": "",
+   "subject": "Can't Rock This Boat",
+   "iso": "2014-07-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "racial-violence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "03f0892143f9d6b99415c2a9aeed3151",
+   "display": "J.R.R. Ziemba",
+   "segment": "",
+   "subject": "J.R.R. Ziemba",
+   "iso": "2014-06-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "fcbdf36e2ccf87f54529dcb0af36646f",
+   "display": "We Lost Them",
+   "segment": "",
+   "subject": "We Lost Them",
+   "iso": "2014-05-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "extremist-movement",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1db796785343406698ae6bec14f65280",
+   "display": "Dropping Like Flies",
+   "segment": "",
+   "subject": "Dropping Like Flies",
+   "iso": "2014-04-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5bbaccbb551ddc85c222741ef39afafe",
+   "display": "Call Your Mom",
+   "segment": "",
+   "subject": "Call Your Mom",
+   "iso": "2014-03-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "family-secret",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "143258c14f0594514cbf7722e63610b1",
+   "display": "The Buck Stops Here",
+   "segment": "",
+   "subject": "The Buck Stops Here",
+   "iso": "2014-02-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "538b0f6bf4fda2eaf44c4b251e0092fa",
+   "display": "Pants On Fire",
+   "segment": "",
+   "subject": "Pants On Fire",
+   "iso": "2014-02-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "582d7f2d8a14f7db7ec0d8c579e3c939",
+   "display": "Animal Instincts",
+   "segment": "",
+   "subject": "Animal Instincts",
+   "iso": "2014-01-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "wrongful-conviction",
      "role": "secondary",
      "confidence": "medium"
     }
