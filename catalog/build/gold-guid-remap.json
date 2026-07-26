@@ -1,0 +1,513 @@
+{
+  "authored": "2026-07-26",
+  "why": "Publishers rewrite episode guids when they change hosts. 99% Invisible moved to PRX and every guid gained a prx_96_ prefix. Gold arc members recorded under the old guids stop resolving. Each entry below was matched by an exact, unique episode-title match against the gold_feeds snapshot, which is gitignored -- so the resolution is committed here to keep the build reproducible from tracked data alone.",
+  "remap": {
+    "gid://art19-episode-locator/V0/s3kSxbhUpICQXBhyBSy8_E3G9EfqGefyLJKIsC0W1uI": {
+      "to": "gid://art19-episode-locator/V0/RKOsixgyeoja-6FtKarWjThmM6_pfkTOZPX48lS0ERg",
+      "show": "against-the-odds",
+      "title": "encore: rock climbers abducted | breaking free | 4"
+    },
+    "gid://art19-episode-locator/V0/4aJ0-xeVUNyvpgbzFfrMUyC3HoAGFKrLALmlfWsbbng": {
+      "to": "gid://art19-episode-locator/V0/ihhdABBwIKf2MJj6N1iLaZcCXHSGdtGE0TuLJwbM4R0",
+      "show": "against-the-odds",
+      "title": "encore: rock climbers abducted | fight or flight | 3"
+    },
+    "gid://art19-episode-locator/V0/YapzW2KojsjXxPOjMrv0iS9bufR0MjIwwv8UKk7SNJg": {
+      "to": "gid://art19-episode-locator/V0/YArHAlYxrpTZ_7mTFfzfopSPizgsGqFGoMsWH6C-CGs",
+      "show": "against-the-odds",
+      "title": "encore: rock climbers abducted | hostage situation | 2"
+    },
+    "gid://art19-episode-locator/V0/_yCL_9PFS0VcPDx8nHxkQ0bbSs8JM35A81bUCDPIKvQ": {
+      "to": "gid://art19-episode-locator/V0/0rPX47CuE0M0OaRHCOgOWv5Snp4d-qBzGfRn_zclNzA",
+      "show": "against-the-odds",
+      "title": "encore: rock climbers abducted | welcome to paradise | 1"
+    },
+    "gid://art19-episode-locator/V0/7SkBTl9VrCzdI0raIrR4zanRQYwAr5dgYCC8-5UqrPQ": {
+      "to": "gid://art19-episode-locator/V0/sW_ADTYv1UMNJejO0dPIWaGca3L3LjhY_XGHnexO4FM",
+      "show": "against-the-odds",
+      "title": "encore: meltdown at fukushima | the devil's chain reaction | 4"
+    },
+    "gid://art19-episode-locator/V0/qf6x9zJzKauX04ZeNCmEVSxZ2Z_X1Z-pMTNl7KsbX68": {
+      "to": "gid://art19-episode-locator/V0/BZaLpmLsxNfHgymEFnzlHjgq3-qkzaLxt7R53B5Km0Y",
+      "show": "against-the-odds",
+      "title": "encore: meltdown at fukushima | collapse | 3"
+    },
+    "gid://art19-episode-locator/V0/NTfqhY-NtjIcSKIq1UGJKVxcIXAW3So0x1VcMej26sA": {
+      "to": "gid://art19-episode-locator/V0/0Ua6y4yK35GR6ho6TKrm1oomqGmHrXnPkP8Cq5fDgCE",
+      "show": "against-the-odds",
+      "title": "encore: meltdown at fukushima | pressure | 2"
+    },
+    "gid://art19-episode-locator/V0/HzWwxPwLeXjsLPtKPe1i-6RT4rYelRo4pFv7_Ape0w8": {
+      "to": "gid://art19-episode-locator/V0/QrOvJCxOpdvEMYJXZXjOb5KnkH_nZCy2rfyxokToPps",
+      "show": "against-the-odds",
+      "title": "encore: meltdown at fukushima | triple disaster | 1"
+    },
+    "gid://art19-episode-locator/V0/8RBZfnuhD0P8aDQByZWQVJtM0psdjMgwLN9Nh1wMNH4": {
+      "to": "gid://art19-episode-locator/V0/Oi9XTISA5LMLGPHCtaWh3_qHlYgbdQsHnIYbMqU9FqE",
+      "show": "american-history-tellers",
+      "title": "encore: the fight for women's suffrage | the 19th amendment | 5"
+    },
+    "gid://art19-episode-locator/V0/gmC-T_44OA_Xb4EB3_Hskb9-fR5vcAwYeo95qvIVJvE": {
+      "to": "gid://art19-episode-locator/V0/ehH9krdmOANXGhfUtMwH1nM9hgRJrkXwhynFsQUT8-U",
+      "show": "american-history-tellers",
+      "title": "encore: the fight for women's suffrage | silent sentinels | 4"
+    },
+    "gid://art19-episode-locator/V0/c5L4a8NrR5b598r6eVWz6PcXjgunP0NZJoCErXcPCyg": {
+      "to": "gid://art19-episode-locator/V0/_T6wCvsrdtAZZGFCy24cabttfpWM-7zFlVPzy2R813I",
+      "show": "american-history-tellers",
+      "title": "encore: the fight for women's suffrage | passing the torch | 3"
+    },
+    "gid://art19-episode-locator/V0/3FeFk4uec4D_-w-AHno8MkZ6m5-NlzEkPq-O4UL1ryc": {
+      "to": "gid://art19-episode-locator/V0/kNy8-QciiO890VXdvsOoKVC89X-A1vOD3g8PdEwrpHE",
+      "show": "american-history-tellers",
+      "title": "encore: the fight for women's suffrage | the trial of susan b. anthony | 2"
+    },
+    "gid://art19-episode-locator/V0/clh4RZR2IcV7c1lcEwHc8sVPFFWbKoOygJcVaCdWylM": {
+      "to": "gid://art19-episode-locator/V0/VlFZVdHVmrY35WtHmJ4SAr7loyn45i8u_bAfzfmv9Ck",
+      "show": "american-history-tellers",
+      "title": "encore: the fight for women's suffrage | created equal | 1"
+    },
+    "gid://art19-episode-locator/V0/U1QCOlHZ3EWLTqF2dCTyfy8gPcd29nCerFyJycBEYO4": {
+      "to": "gid://art19-episode-locator/V0/C8O0feJyn3BHLcIslLVPrpPJxwXboLd-bZvyu-StUVU",
+      "show": "american-scandal",
+      "title": "encore: challenger disaster | launch day | 3"
+    },
+    "gid://art19-episode-locator/V0/WVlovL-H7dSW-GfBuwdHDnVMhnobhlxIl9xWQJWWk_g": {
+      "to": "gid://art19-episode-locator/V0/Vuq-z4MpsEeZLt9f-paM2okWZdB665D39tlPZ5KRk0c",
+      "show": "american-scandal",
+      "title": "encore: challenger disaster | acceptable risk | 2"
+    },
+    "gid://art19-episode-locator/V0/E-DrmtEUFdAnLlPnIaKJ4brPLhsB26f6IVy_dfgm_h0": {
+      "to": "gid://art19-episode-locator/V0/u1De-XkoMETtFNCply3fEfHEasm3_vElPgT-GSKuw68",
+      "show": "american-scandal",
+      "title": "encore: challenger disaster | bigger, faster, cheaper | 1"
+    },
+    "gid://art19-episode-locator/V0/aAYbnGfoPcUK2NppkVV_BIeY9XwG1makMMvspQIBCeY": {
+      "to": "gid://art19-episode-locator/V0/eCq9d55bY0Zkc7Unn_Tcs4BR953qP5pDUYCpWojMSx4",
+      "show": "american-scandal",
+      "title": "encore: edward snowden | meet the press | 1"
+    },
+    "4d8ffa5c-9cbb-40ba-bf35-b359018033de": {
+      "to": "efc2cb71-d54b-48f3-8386-b425012969d6",
+      "show": "bone-valley",
+      "title": "chapter 1 | something stinks"
+    },
+    "68dbdb11-093a-4a88-bc67-b35901804274": {
+      "to": "c2a68857-3d47-410a-9597-b42501299390",
+      "show": "bone-valley",
+      "title": "chapter 2 | jessica"
+    },
+    "cb8c1573-c0b5-4d9f-9c8e-b359018094c4": {
+      "to": "7611e707-3214-4bbd-bbfb-b4250129b4c1",
+      "show": "bone-valley",
+      "title": "chapter 3 | persons of interest"
+    },
+    "6049ecb1-f033-4691-9863-b3590180a902": {
+      "to": "77b1050d-6148-486d-95a0-b425012a16d0",
+      "show": "bone-valley",
+      "title": "chapter 4 | my girl susan"
+    },
+    "70fbcdd6-ca4a-4fc8-821d-b3590180bb60": {
+      "to": "70894197-aa7e-498b-a514-b425012a3cb7",
+      "show": "bone-valley",
+      "title": "chapter 5 | the receipts"
+    },
+    "13aabbef-a629-414b-b094-b3590180cdf7": {
+      "to": "5bd0916e-845a-4fe3-87be-b425012a61f1",
+      "show": "bone-valley",
+      "title": "chapter 6 | something rotten"
+    },
+    "gid://art19-episode-locator/V0/h9xDPzMcTOHCSV_onopL_JouJ-1-7-0-IKCIqyrQN_M": {
+      "to": "gid://art19-episode-locator/V0/oT-FCwzyJQTDB2tV7eJ6pHqXN0UitcyxZUL0v0SnMSY",
+      "show": "british-scandal",
+      "title": "encore: michelle mone | the smoking gun | 3"
+    },
+    "gid://art19-episode-locator/V0/AslYfCmVWwFk8uXGoqCQ-arFLFlEn7dMLXaJ4Ou03Kk": {
+      "to": "gid://art19-episode-locator/V0/mwfnHXm_y9UHRPR8YP5NOJB5vACMFVv_RVHoyq5zGBQ",
+      "show": "british-scandal",
+      "title": "encore: michelle mone | from baroness bra to baroness bitcoin | 2"
+    },
+    "gid://art19-episode-locator/V0/1edYhNQYKyaYYp-kGbbGXdBfBbxHUBceTyGlzQ4XpUE": {
+      "to": "gid://art19-episode-locator/V0/gq_iHwiaqf1sjrRoGw8NDtAL5Gdn34mC1haGVWKwNXE",
+      "show": "british-scandal",
+      "title": "encore: michelle mone | bra wars | 1"
+    },
+    "gid://art19-episode-locator/V0/783S80UHTTHWIf2gpcLzAKHOVlZlRemEOKTsjFVNYPI": {
+      "to": "gid://art19-episode-locator/V0/onEUq1hNebh7wzSnKugKVVe9d5DTJ3x88uCxU9NQkB4",
+      "show": "british-scandal",
+      "title": "encore: gazza | game over | 3"
+    },
+    "gid://art19-episode-locator/V0/8oDpwtcDv69OjOqQReFdaCjFm7xGb1b1oBtoUb-vE9A": {
+      "to": "gid://art19-episode-locator/V0/qBrZ2iuMLJWfQlweGxiZFYAFTEiSzJgkP8OHOckAu20",
+      "show": "british-scandal",
+      "title": "encore: gazza | tabloid dream | 2"
+    },
+    "gid://art19-episode-locator/V0/0ZrFzYHWygg1Cuf2F1J31rNFMIZT7ycmgMFq9ERQHqM": {
+      "to": "gid://art19-episode-locator/V0/baFN7td-C5KaGYxECavMppj9DDjl21CLp9Z4RyTvjX0",
+      "show": "british-scandal",
+      "title": "encore: gazza | gazzamania | 1"
+    },
+    "gid://art19-episode-locator/V0/hvD_nonPOI97f5dZC34jnMx_WgnSXhVYBO9aPj4tF4o": {
+      "to": "gid://art19-episode-locator/V0/oz8YUcby1NZQ4-l0lb3LxX4QaqYZ7PA7xx-DOHllDNc",
+      "show": "british-scandal",
+      "title": "encore: breaking barings | on the run | 3"
+    },
+    "gid://art19-episode-locator/V0/Ok93NZk6RqofCCVkV7fuyxGqrjakPuSqy_0byyN0_PM": {
+      "to": "gid://art19-episode-locator/V0/LmihD78TIGQyXGjNRf6AfEW0fdq7_dMNg2QpbRic_Ow",
+      "show": "british-scandal",
+      "title": "encore: breaking barings | in the pit | 2"
+    },
+    "gid://art19-episode-locator/V0/STR4tXyMNFKraXHWSjO9-WIkGs57fQT5ULwMRvNlQA8": {
+      "to": "gid://art19-episode-locator/V0/TfnRc8WkMoxsG58f0EZHIduxTob0eAxfhErS3SLeJ3M",
+      "show": "british-scandal",
+      "title": "encore: breaking barings | under the water | 1"
+    },
+    "gid://art19-episode-locator/V0/L7Xzkqqsp-RN1KFU2nhg6Mh3AobeStYbqekjP3S3oZc": {
+      "to": "gid://art19-episode-locator/V0/y53_nDNXF_ZJYRxpYuXhGAfDyLIiuootFwmaCPnkJOc",
+      "show": "british-scandal",
+      "title": "noel and liam | radio legend steve lamacq on the most chaotic interview of his career | 4"
+    },
+    "gid://art19-episode-locator/V0/vRxT10hV5UXEESH9D9ljdlOqoFSI3XK40RJgpq2L-5A": {
+      "to": "gid://art19-episode-locator/V0/239YzBiO89GxJfyd2TNc5aZUAHsQlUZIiZOfZ5DXUTQ",
+      "show": "british-scandal",
+      "title": "noel and liam | look back in anger | 3"
+    },
+    "gid://art19-episode-locator/V0/mwRjRuvCrvZB7E2Z1UExGFpcDLy-TOKYZgbOco2Mubc": {
+      "to": "gid://art19-episode-locator/V0/tnxSTWk13ESOpZpLzi39rLQuTv1DEOOQuzte4woG-NU",
+      "show": "british-scandal",
+      "title": "noel and liam | the battle of britpop | 2"
+    },
+    "gid://art19-episode-locator/V0/3zjo_s_H_07VujyaYAJnNs_VaCwvV736_DoqGDvtXzI": {
+      "to": "gid://art19-episode-locator/V0/JAC2asqfbhEvBZG3dWa9-xzAe99LBU01qSVlxBI0JO4",
+      "show": "british-scandal",
+      "title": "noel and liam |  rock 'n' roll star | 1"
+    },
+    "gid://art19-episode-locator/V0/u703rP5aTHPaDF0ezUsPfppoMM4Logdvsn-2WniTH0k": {
+      "to": "gid://art19-episode-locator/V0/ea2yAm2Fr62w6qh0W0W13S4GNf8hgdP_xkrGpE-voVk",
+      "show": "business-wars",
+      "title": "encore: cruise ship wars | mayday | 4"
+    },
+    "gid://art19-episode-locator/V0/YQkm2PreymwjUAt1uR5JvKBc7Itp97D5rakxzgDoNK8": {
+      "to": "gid://art19-episode-locator/V0/VIeIiSBGHL_FcdTrBJ4l8p_Rdxb3dcVFiVotBVbr9AA",
+      "show": "business-wars",
+      "title": "encore: cruise ship wars | a shot across the bow | 3"
+    },
+    "gid://art19-episode-locator/V0/PR1AzAj8KBb6I4vH8q3MaHXsIbTFWlCoVRCMCY4D3pg": {
+      "to": "gid://art19-episode-locator/V0/2ABsvs3J7sMSX_Fuv3NhDfmPXLm6_LXSd78vRPjPnXM",
+      "show": "business-wars",
+      "title": "encore: cruise ship wars | making waves | 2"
+    },
+    "gid://art19-episode-locator/V0/_JbJU3e56bJSljvf965DiqeNNownObj0G9wwHmY6XR4": {
+      "to": "gid://art19-episode-locator/V0/TGeNxI3nDlyf6Lb1rKY1yxw0JKWWHM7VjEMhVcH6D-I",
+      "show": "business-wars",
+      "title": "encore: cruise ship wars | anchors aweigh! | 1"
+    },
+    "gid://art19-episode-locator/V0/DA9FIXt2tteDP0veMhcRvXoSrDZrF9azyE8QJVigx3w": {
+      "to": "gid://art19-episode-locator/V0/Mso8sXZo3dVP7IoESsxTcj1H_F-C9i8V2T3lI_zR4pQ",
+      "show": "business-wars",
+      "title": "encore: beyond meat vs impossible burger | break from the herd | 4"
+    },
+    "gid://art19-episode-locator/V0/v0MKhRcc0d8fRwGwZ0dDNxx4_jAqk-V1ogm7Qlp7G0Y": {
+      "to": "gid://art19-episode-locator/V0/-d9NdElImpJ0a71v0yw4PW7C5hnz2EegUfp-59KJdlA",
+      "show": "business-wars",
+      "title": "encore: beyond meat vs impossible burger | beefing up, chowing down | 3"
+    },
+    "gid://art19-episode-locator/V0/w07_8U_TsRmspw7jqrrNK5EDv-7O7xESHVcjtbVnU2A": {
+      "to": "gid://art19-episode-locator/V0/kzRsY5D888oUAUgZCK1NwulKbTAT6_S0p6wJY-5phBo",
+      "show": "business-wars",
+      "title": "encore: beyond meat vs impossible burger | flame broiled | 2"
+    },
+    "gid://art19-episode-locator/V0/8-rvpD11-Xn9MYXKa8vhjJCawKxd0WgzEOcfCiuGsek": {
+      "to": "gid://art19-episode-locator/V0/bJ0p1-4ly-58j2ZlM7SZB6XAH-PvPxWbCUIQQfNKgCk",
+      "show": "business-wars",
+      "title": "encore: beyond meat vs impossible burger | pressure cooker | 1"
+    },
+    "gid://art19-episode-locator/V0/DM5_rGgCTOcH-tLF9VSteGj3tPsNxyIboKesU02rHUA": {
+      "to": "gid://art19-episode-locator/V0/rpUG6F_k2MjhRugtXoFA4nqc2GsDCla8hP4jtH7dFw8",
+      "show": "killer-psyche",
+      "title": "encore: matriarch of murder: sante and kenneth kimes' trail of death, part i"
+    },
+    "gid://art19-episode-locator/V0/HOnY6cwKA851B6nDzni1b7nLn6JOugpjbGRGbE5B5E0": {
+      "to": "gid://art19-episode-locator/V0/eBeqDL3UrJE9wXigtVd3n-NxInZeNyiwNGUUhUhQyQI",
+      "show": "killer-psyche",
+      "title": "encore: harold shipman, part i: the original doctor death"
+    },
+    "gid://art19-episode-locator/V0/ljxQnArcPN6wfaVtIhounDErdtR0W15YImerbqyDYx0": {
+      "to": "gid://art19-episode-locator/V0/PhWpldoJNPjyeSpC0tjrUKfsI7PQf8iuhyhqJKE0f9s",
+      "show": "killer-psyche",
+      "title": "encore: brian dugan, part i"
+    },
+    "gid://art19-episode-locator/V0/gOrNYdTsH2Zug5HBpVzVYyVjzrR4ByA6CZF7trhpZUQ": {
+      "to": "gid://art19-episode-locator/V0/me3m_LjTr4s6HGaye3pcCRkIG1cyHJm2_1KUtdEoQLo",
+      "show": "killer-psyche",
+      "title": "encore: cindy white, part i"
+    }
+  },
+  "unresolved": [
+    {
+      "guid": "f6da116f-b89a-4761-89ab-5de13196ff31",
+      "show": "99-invisible",
+      "title": "100 objects #1: the century safe"
+    },
+    {
+      "guid": "9865f082-fddc-4090-8f95-38d445c6eae7",
+      "show": "99-invisible",
+      "title": "100 objects #2: 60-degree screw"
+    },
+    {
+      "guid": "e1771191-8467-43fc-ba86-3f33cb7a72a5",
+      "show": "99-invisible",
+      "title": "100 objects #3: the pension files"
+    },
+    {
+      "guid": "b6845f27-add0-4f61-ba36-19bc454bcce8",
+      "show": "99-invisible",
+      "title": "100 objects #4: lowe's gas bag"
+    },
+    {
+      "guid": "0478d505-7347-4a40-8c91-f2a93608b7df",
+      "show": "99-invisible",
+      "title": "100 objects #5: blue back speller"
+    },
+    {
+      "guid": "c0bcde74-fbb7-402a-8f87-f0636fe8b934",
+      "show": "99-invisible",
+      "title": "100 objects #6: \"sharpened screwdriver\""
+    },
+    {
+      "guid": "113ee1b3-dc46-406c-b462-64317962193c",
+      "show": "99-invisible",
+      "title": "100 objects #7: the otis pamphlet"
+    },
+    {
+      "guid": "1f30b8c1-5797-4088-b4d7-500efd13cc89",
+      "show": "99-invisible",
+      "title": "100 objects #8: billy possum"
+    },
+    {
+      "guid": "0e1458b3-f7d4-4de5-bbbc-db29524e5bc0",
+      "show": "99-invisible",
+      "title": "100 objects #9: missing children milk carton"
+    },
+    {
+      "guid": "424fe039-f251-420e-99d9-820e1c594475",
+      "show": "99-invisible",
+      "title": "constitution breakdown #1: nikole hannah-jones"
+    },
+    {
+      "guid": "ae9b2b17-dd25-453a-b03c-a4eb98256952",
+      "show": "99-invisible",
+      "title": "constitution breakdown #2: rep. sharice davids"
+    },
+    {
+      "guid": "4343f9da-fd37-48c6-bb6e-02e381e019a5",
+      "show": "99-invisible",
+      "title": "constitution breakdown #3: sen. elizabeth warren"
+    },
+    {
+      "guid": "d89cabd2-476a-4cb4-89ce-4c0fb3e1b157",
+      "show": "99-invisible",
+      "title": "constitution breakdown #4: janet napolitano"
+    },
+    {
+      "guid": "39929e88-beb0-498a-94bb-8f02def6fb60",
+      "show": "99-invisible",
+      "title": "constitution breakdown #5: dr. tom frieden"
+    },
+    {
+      "guid": "97ee1bf2-a1a5-4ab2-b76f-dd74375c206e",
+      "show": "99-invisible",
+      "title": "constitution breakdown #6: adam liptak"
+    },
+    {
+      "guid": "8c79e519-88ac-49ef-91e7-4b9087fad167",
+      "show": "99-invisible",
+      "title": "constitution breakdown #7: california ag rob bonta"
+    },
+    {
+      "guid": "eb14c23b-a278-4a62-b2c8-f0690821ed0f",
+      "show": "99-invisible",
+      "title": "constitution breakdown #8: jill lepore"
+    },
+    {
+      "guid": "baa3bda1-0c42-4b1d-adc8-6046246d6274",
+      "show": "99-invisible",
+      "title": "constitution breakdown #9: alondra nelson"
+    },
+    {
+      "guid": "b04af3fe-ece7-4ec9-9091-25a7ac52e6f6",
+      "show": "99-invisible",
+      "title": "service request #1: what happens when i call 311?"
+    },
+    {
+      "guid": "849e07da-6d58-4890-a73c-e8de0d6d0968",
+      "show": "99-invisible",
+      "title": "service request #2: why is this red light so damn long?"
+    },
+    {
+      "guid": "e416d508-51ac-4fe9-a2f2-f4e398302f71",
+      "show": "99-invisible",
+      "title": "service request #3: why is there so much litter in san francisco?"
+    },
+    {
+      "guid": "a416e5e8-1aff-44d0-9490-34479936218c",
+      "show": "99-invisible",
+      "title": "service request #4: how does the grid in phoenix work?"
+    },
+    {
+      "guid": "1c7867fc-3b88-4e9f-a978-c6de6376f988",
+      "show": "99-invisible",
+      "title": "service request #5: dude, where's my car?"
+    },
+    {
+      "guid": "20d19b89-a1bb-4e40-8fbe-48173237b3ba",
+      "show": "99-invisible",
+      "title": "hidden levels #1: mr. boomshakalaka"
+    },
+    {
+      "guid": "622b1d83-458d-4518-9453-ea36475c751f",
+      "show": "99-invisible",
+      "title": "hidden levels #2: stick it to 'em"
+    },
+    {
+      "guid": "1248b832-09e2-491e-a99b-d4a2ca75d1b4",
+      "show": "99-invisible",
+      "title": "hidden levels #3: this game wants you"
+    },
+    {
+      "guid": "a594b4ed-d79f-4c67-9b82-a99701543351",
+      "show": "99-invisible",
+      "title": "hidden levels #4: machinima"
+    },
+    {
+      "guid": "52fe9fb7-7e5d-459e-979f-60ed028d8b7d",
+      "show": "99-invisible",
+      "title": "hidden levels #5: press b to touch grass"
+    },
+    {
+      "guid": "e8a80d39-494e-49b5-9fb0-5842955c86f1",
+      "show": "99-invisible",
+      "title": "hidden levels #6: segagaga"
+    },
+    {
+      "guid": "5546b4d4-7562-4edf-9feb-aa4519ff71b5",
+      "show": "99-invisible",
+      "title": "not built for this #1: the bottom of the bowl"
+    },
+    {
+      "guid": "2f6367b4-2660-46d4-81fe-fb269f550d28",
+      "show": "99-invisible",
+      "title": "not built for this #2: the ripple effect"
+    },
+    {
+      "guid": "a8b2fe42-e427-4c03-9d10-0dc7c2129821",
+      "show": "99-invisible",
+      "title": "not built for this #3: the price is wrong"
+    },
+    {
+      "guid": "dfc47520-d7db-4787-9e70-b08ecb4958ce",
+      "show": "99-invisible",
+      "title": "not built for this #4: unbuilding the terrace"
+    },
+    {
+      "guid": "abe94bc7-5064-4155-bc12-512a575fb009",
+      "show": "99-invisible",
+      "title": "not built for this #5: the little levee that could"
+    },
+    {
+      "guid": "f9b16c80-8ece-4e31-9ab0-04768adb61f6",
+      "show": "99-invisible",
+      "title": "not built for this #6: maximum temperature"
+    },
+    {
+      "guid": "cd289608-9bec-4c33-8ee2-22b7860e836a",
+      "show": "99-invisible",
+      "title": "the power broker #6: mike schur"
+    },
+    {
+      "guid": "8dbe226d-141e-43e3-b7a5-9119c512cff7",
+      "show": "99-invisible",
+      "title": "the power broker #7: sec. pete buttigieg"
+    },
+    {
+      "guid": "bc768e29-6062-4a6e-b210-ef7750f76c68",
+      "show": "99-invisible",
+      "title": "the power broker #8: shiloh frederick"
+    },
+    {
+      "guid": "90b3c987-e5dd-44ed-9333-642bbd336ea9",
+      "show": "99-invisible",
+      "title": "the power broker #9: majora carter"
+    },
+    {
+      "guid": "533a50c4-c67a-4263-9776-70752e79d956",
+      "show": "99-invisible",
+      "title": "the power broker #10: clara jeffery"
+    },
+    {
+      "guid": "6bb6c018-999c-422b-aa4b-a37c99fb4863",
+      "show": "99-invisible",
+      "title": "the power broker #11: brennan lee mulligan"
+    },
+    {
+      "guid": "6f77ca3b-6397-437a-ba68-e549740f4ded",
+      "show": "99-invisible",
+      "title": "the power broker #12: robert caro"
+    },
+    {
+      "guid": "27995203-24a7-4b5b-a3ec-0f3a0d8e4c5e",
+      "show": "99-invisible",
+      "title": "the power broker breakdown breakdown"
+    },
+    {
+      "guid": "8829ba02-e2eb-49ce-953e-5fb4762cf6f2",
+      "show": "99-invisible",
+      "title": "the power broker breakdown wrap-up"
+    },
+    {
+      "guid": "e1d1ce1d-2d2b-454d-b913-e954b467d0b3",
+      "show": "99-invisible",
+      "title": "the power broker #13: drop dead city"
+    },
+    {
+      "guid": "e46f2112-40be-4b26-8cb9-b34d0033c83a",
+      "show": "bone-valley",
+      "title": "kevin is next - part i"
+    },
+    {
+      "guid": "5987984f-08e8-404d-8ee9-b34d0036b916",
+      "show": "bone-valley",
+      "title": "kevin is next - part 2"
+    },
+    {
+      "guid": "gid://art19-episode-locator/V0/g_yQkt2uVL-zLD5l8JyTnchEtJLPbmeROpKjoxneVxU",
+      "show": "british-scandal",
+      "title": "julian assange | the weird world of wikileaks | 4"
+    },
+    {
+      "guid": "f899e735-0d75-4b0d-8983-79b725b9cae2",
+      "show": "embedded",
+      "title": "the network: pivoting as mifepristone access shifts"
+    },
+    {
+      "guid": "23714789-4100-44bd-b1e1-eca365555401",
+      "show": "embedded",
+      "title": "taking cover: accountability"
+    },
+    {
+      "guid": "455e3d13-f059-4211-9870-ad3d014a4572",
+      "show": "norco-80",
+      "title": "bonus episode: norco 80: the aftermath - survivalism"
+    },
+    {
+      "guid": "52c04d28-ebe3-4a1a-a801-ad43011c316a",
+      "show": "norco-80",
+      "title": "bonus episode: norco 80: the aftermath - guns and police"
+    },
+    {
+      "guid": "tag:audioboom.com,2026-03-27:/posts/8878651",
+      "show": "redhanded",
+      "title": null
+    }
+  ]
+}

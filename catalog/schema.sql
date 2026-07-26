@@ -166,17 +166,29 @@ CREATE INDEX edges_in  ON edges (dst_type, dst_id, kind, weight DESC);
 
 -- Append-only. Both the undo log and the few-shot example store that re-runs read so a
 -- correction only has to be made once.
+--
+-- Rows key on entity_key, a STABLE string, never on the internal integer id. Every
+-- build regenerates those integers from scratch, so an edit recorded against id 42
+-- would silently land on a different row next time. entity_key formats:
+--
+--   show     <show-slug>
+--   theme    <tier>:<theme-slug>          -- tier matters; 5 slugs exist at both
+--   arc      <show-slug>/<arc-slug>
+--   episode  <show-slug>/<guid>
+--   catalog  ''                           -- build-wide notes, not replayable
 CREATE TABLE edits (
   id          INTEGER PRIMARY KEY,
   at          TEXT NOT NULL,
   actor       TEXT NOT NULL,
-  entity_type TEXT NOT NULL,
-  entity_id   INTEGER NOT NULL,
+  entity_type TEXT NOT NULL CHECK (entity_type IN ('show','theme','arc','episode','catalog')),
+  entity_key  TEXT NOT NULL,
   field       TEXT NOT NULL,
   before      TEXT,
   after       TEXT,
   note        TEXT
 );
+
+CREATE INDEX edits_by_entity ON edits (entity_type, entity_key, id);
 
 CREATE TABLE releases (
   version       TEXT PRIMARY KEY,
@@ -189,10 +201,18 @@ CREATE TABLE releases (
   notes         TEXT
 );
 
+-- Contentless (content=''): the index is stored, the text is not. A hit gives back a
+-- rowid, which IS the episode id, so callers join to `episodes` for anything they want
+-- to display. Storing the text here too would duplicate 11 MB the catalog already has.
+--
+-- show_title is denormalized into the index so that searching "revisionist gladwell"
+-- finds episodes of a show whose own title appears in neither the episode title nor its
+-- description.
 CREATE VIRTUAL TABLE search USING fts5(
   title,
   subject,
   description,
   show_title,
+  content = '',
   tokenize = 'unicode61 remove_diacritics 2'
 );

@@ -74,7 +74,7 @@ CREATE TABLE shows (
   title           TEXT NOT NULL,
   author          TEXT,
   network_id      INTEGER REFERENCES networks(id),
-  feed_url        TEXT NOT NULL UNIQUE,
+  feed_url        TEXT NOT NULL,   -- see the partial unique index below
   home_url        TEXT,
   artwork_url     TEXT,
   lang            TEXT NOT NULL DEFAULT 'en',
@@ -171,7 +171,7 @@ CREATE TABLE edits (
   at          TEXT NOT NULL,
   actor       TEXT NOT NULL,        -- 'human' | 'agent:<name>'
   entity_type TEXT NOT NULL,
-  entity_id   INTEGER NOT NULL,
+  entity_key  TEXT NOT NULL,       -- a STABLE key, never an internal id: see below
   field       TEXT NOT NULL,
   before      TEXT,
   after       TEXT,
@@ -193,12 +193,22 @@ CREATE VIRTUAL TABLE search USING fts5(
 );
 ```
 
-Two constraints doing real work:
+Four constraints doing real work:
 
 - **`themes` is unique on `(tier, slug)`, not `slug`.** Five slugs legitimately exist at
   both levels. A slug-only key would silently collapse them.
 - **The `themes` CHECK** makes an unparented tier-2 theme impossible to insert. The
   two-tier promise is enforced by the database, not by a convention someone remembers.
+- **`feed_url` is covered by a partial unique index, not a plain UNIQUE:**
+  `CREATE UNIQUE INDEX ... ON shows (feed_url) WHERE include_verdict <> 'suspect'`.
+  Eight groups of catalogued shows share a feed and cannot be merged until Phase 2, so a
+  plain constraint would block the build outright. The partial index keeps the invariant
+  that matters — at most one *reviewed* show per feed — which makes an **undeclared**
+  duplicate impossible to insert while letting a flagged one through.
+- **`edits.entity_key` is a stable string, never an internal id.** Every build regenerates
+  the integer ids, so an edit recorded against `id = 42` would silently land on a different
+  row next time. Keys are `<show-slug>`, `<tier>:<theme-slug>`, `<show-slug>/<arc-slug>`,
+  `<show-slug>/<guid>`.
 
 ---
 
@@ -299,7 +309,10 @@ always safe to delete and rebuild.
 | kind | src → dst | weight | `why` |
 |---|---|---|---|
 | `show_theme` | show → theme (tier 1) | 1.0 | "tagged <theme>" |
-| `episode_theme` | episode → theme (tier 2) | primary 1.0, secondary 0.5 | "<role> theme" |
+Episode → theme edges were specified here and then deliberately dropped: there are 43,818
+of them, they would be 76% of the graph and ~8 MB of the shipped file, and nothing
+traverses them — they are always read through `episode_themes`, which is indexed for it.
+
 | `shares_theme` | show → show | Jaccard over tier-1 themes | "both cover <theme>" |
 | `shares_fine_theme` | show → show | cosine over tier-2 episode-theme volume | "both dig into <theme>" |
 | `same_network` | show → show | 0.3 | "both from <network>" |

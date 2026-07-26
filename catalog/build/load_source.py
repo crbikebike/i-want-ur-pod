@@ -39,6 +39,10 @@ RUN_ID = "2026-07-theming"
 EXPLICIT_SUSPECTS = {
     "Fake Diana: Case of the Missing Blue Diamond": "feed returns an unrelated ongoing show",
     "Serial (Season 1)": "feed is an RSS-parser test fixture, not a podcast",
+    # Catalogued as Goalhanger's history series, but feeds.megaphone.fm/empire serves the
+    # crypto show of the same name -- 657 episodes of finance news, theme-labelled as
+    # narrative history. A title collision, not a duplicate feed.
+    "Empire": "feed serves a different show with the same name (crypto, not history)",
 }
 
 # Language is detected from EPISODE TITLES, not from the show description: descriptions
@@ -395,13 +399,13 @@ def load(conn: sqlite3.Connection, source: Path) -> LoadReport:
     ]:
         # Recorded in the edits log so the Phase 2 queue can explain itself later.
         conn.execute(
-            "INSERT INTO edits (at, actor, entity_type, entity_id, field, before, after, note) "
+            "INSERT INTO edits (at, actor, entity_type, entity_key, field, before, after, note) "
             "VALUES (?,?,?,?,?,?,?,?)",
             (
                 "2026-07-26",
                 "agent:migrate",
                 "catalog",
-                0,
+                "",
                 "duplicate_feeds",
                 None,
                 json.dumps(note_dupes),
