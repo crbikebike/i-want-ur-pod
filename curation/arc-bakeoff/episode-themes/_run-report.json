@@ -1,38 +1,25 @@
 {
  "shows": 303,
- "episodesLabelled": 3769,
+ "episodesLabelled": 14484,
  "vocabularySize": 148,
- "showSpecificThemes": 2,
+ "showSpecificThemes": 0,
  "junkDrawerSuspects": 0,
- "unassigned": 23675,
+ "unassigned": 12960,
  "catalogAudit": [
+  "killer-psyche ep None: 'poisoning' is not in the vocabulary",
   "love-radio ep None: 'cryptocurrency or cryptocurrency policy' is not in the vocabulary",
+  "malicious-life ep None: 'economics-policy' is not in the vocabulary",
+  "reply-all ep None: 'pandemic-and-public-health' is not in the vocabulary",
+  "reveal ep None: 'musician-profile' is not in the vocabulary",
+  "reveal ep None: 'criminal-justice-failure' is not in the vocabulary",
   "shadow-kingdom-god-s-banker ep None: 'fugitive-themed' is not in the vocabulary",
-  "theme 'body-never-found' has 5 applications (min 15)",
-  "theme 'death-in-custody' has 7 applications (min 15)",
-  "theme 'public-money-misused' has 0 applications (min 15)",
-  "theme 'corporate-negligence' has 13 applications (min 15)",
-  "theme 'colonial-legacy' has 11 applications (min 15)",
-  "theme 'labour-history' has 11 applications (min 15)",
-  "theme 'nuclear-age' has 11 applications (min 15)",
-  "theme 'forgotten-episode' has 4 applications (min 15)",
-  "theme 'engineering-failure' has 7 applications (min 15)",
-  "theme 'animal-behaviour' has 14 applications (min 15)",
-  "theme 'startup-collapse' has 6 applications (min 15)",
-  "theme 'monopoly-and-market-power' has 10 applications (min 15)",
-  "theme 'private-equity-and-debt' has 4 applications (min 15)",
-  "theme 'musician-downfall' has 12 applications (min 15)",
-  "theme 'musician-death' has 14 applications (min 15)",
-  "theme 'cost-of-fame' has 2 applications (min 15)",
-  "theme 'fashion-and-clothing' has 9 applications (min 15)",
-  "theme 'food-and-drink' has 13 applications (min 15)",
-  "theme 'transport-and-infrastructure' has 6 applications (min 15)",
-  "theme 'language-and-words' has 2 applications (min 15)",
-  "theme 'adoption-and-origins' has 7 applications (min 15)",
-  "theme 'disability-and-access' has 14 applications (min 15)",
-  "theme 'ageing-and-mortality' has 14 applications (min 15)",
-  "theme 'mythology' has 2 applications (min 15)",
-  "theme 'archives-and-objects' has 13 applications (min 15)"
+  "slow-burn ep None: 'biographical-history' is not in the vocabulary",
+  "slow-burn ep None: 'agricultural-economics' is not in the vocabulary",
+  "swindled ep None: 'fraud' is not in the vocabulary",
+  "zeit-verbrechen ep None: 'assault' is not in the vocabulary",
+  "zeit-verbrechen ep None: 'workplace-death' is not in the vocabulary",
+  "zeit-verbrechen ep None: 'theft' is not in the vocabulary",
+  "theme 'private-equity-and-debt' has 9 applications (min 15)"
  ],
  "agreement": {},
  "showReports": [
@@ -137,27 +124,28 @@
   {
    "slug": "against-the-odds",
    "title": "Against the Odds",
-   "episodes": 9,
-   "themesUsed": 3,
+   "episodes": 263,
+   "themesUsed": 27,
    "confidence": {
-    "high": 18
+    "high": 270,
+    "medium": 80,
+    "low": 14
    },
    "auditFlags": [
-    "collapsed: 'survival-story' is 6/9 (67%)"
+    "collapsed: 'survival-story' is 161/263 (61%)"
    ]
   },
   {
    "slug": "against-the-rules",
    "title": "Against the Rules",
-   "episodes": 9,
-   "themesUsed": 7,
+   "episodes": 79,
+   "themesUsed": 29,
    "confidence": {
-    "high": 14,
-    "medium": 4
+    "high": 66,
+    "medium": 40,
+    "low": 1
    },
-   "auditFlags": [
-    "collapsed: 'economic-policy' is 7/9 (78%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "alabama-astronaut",
@@ -176,15 +164,15 @@
   {
    "slug": "alice-isn-t-dead",
    "title": "Alice Isn't Dead",
-   "episodes": 9,
-   "themesUsed": 2,
+   "episodes": 60,
+   "themesUsed": 11,
    "confidence": {
-    "high": 9,
-    "medium": 1
+    "high": 52,
+    "medium": 13,
+    "low": 16
    },
    "auditFlags": [
-    "collapsed: 'audio-drama-horror' is 9/9 (100%)",
-    "only 1 theme(s) across 9 episodes"
+    "collapsed: 'audio-drama-mystery' is 44/60 (73%)"
    ]
   },
   {
@@ -214,15 +202,16 @@
   {
    "slug": "amelia-project",
    "title": "The Amelia Project",
-   "episodes": 9,
-   "themesUsed": 3,
+   "episodes": 97,
+   "themesUsed": 36,
    "confidence": {
-    "high": 9,
-    "medium": 3
+    "high": 114,
+    "medium": 10,
+    "low": 33
    },
    "auditFlags": [
-    "collapsed: 'audio-drama-mystery' is 9/9 (100%)",
-    "only 1 theme(s) across 9 episodes"
+    "collapsed: 'audio-drama-mystery' is 97/97 (100%)",
+    "only 1 theme(s) across 97 episodes"
    ]
   },
   {
@@ -255,31 +244,36 @@
   {
    "slug": "american-innovations",
    "title": "American Innovations",
-   "episodes": 9,
-   "themesUsed": 12,
+   "episodes": 46,
+   "themesUsed": 35,
    "confidence": {
-    "high": 17,
-    "medium": 1
+    "high": 58,
+    "medium": 20,
+    "low": 4
    },
    "auditFlags": []
   },
   {
    "slug": "american-scandal",
    "title": "American Scandal",
-   "episodes": 9,
-   "themesUsed": 8,
+   "episodes": 151,
+   "themesUsed": 75,
    "confidence": {
-    "high": 18
+    "high": 204,
+    "medium": 66,
+    "low": 12
    },
    "auditFlags": []
   },
   {
    "slug": "anatomy-of-doubt",
    "title": "Anatomy of Doubt",
-   "episodes": 9,
-   "themesUsed": 12,
+   "episodes": 196,
+   "themesUsed": 63,
    "confidence": {
-    "high": 18
+    "high": 289,
+    "medium": 81,
+    "low": 6
    },
    "auditFlags": []
   },
@@ -298,43 +292,42 @@
   {
    "slug": "archive-81",
    "title": "Archive 81",
-   "episodes": 9,
-   "themesUsed": 2,
+   "episodes": 37,
+   "themesUsed": 5,
    "confidence": {
-    "medium": 1,
-    "low": 2,
-    "high": 7
+    "medium": 14,
+    "low": 4,
+    "high": 23
    },
-   "auditFlags": [
-    "collapsed: 'audio-drama-horror' is 9/9 (100%)",
-    "only 1 theme(s) across 9 episodes"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "ars-paradoxica",
    "title": "Ars Paradoxica",
-   "episodes": 9,
-   "themesUsed": 1,
+   "episodes": 39,
+   "themesUsed": 6,
    "confidence": {
-    "high": 9
+    "high": 36,
+    "medium": 6,
+    "low": 5
    },
    "auditFlags": [
-    "collapsed: 'audio-drama-scifi' is 9/9 (100%)",
-    "only 1 theme(s) across 9 episodes"
+    "collapsed: 'audio-drama-scifi' is 39/39 (100%)",
+    "only 1 theme(s) across 39 episodes"
    ]
   },
   {
    "slug": "articles-of-interest",
    "title": "Articles of Interest",
-   "episodes": 8,
-   "themesUsed": 8,
+   "episodes": 62,
+   "themesUsed": 24,
    "confidence": {
-    "high": 10,
-    "medium": 5
+    "high": 69,
+    "medium": 34,
+    "low": 7
    },
    "auditFlags": [
-    "collapsed: 'fashion-and-clothing' is 8/8 (100%)",
-    "only 1 theme(s) across 8 episodes"
+    "collapsed: 'fashion-and-clothing' is 59/62 (95%)"
    ]
   },
   {
@@ -366,11 +359,12 @@
   {
    "slug": "background-briefing",
    "title": "Background Briefing",
-   "episodes": 8,
-   "themesUsed": 12,
+   "episodes": 236,
+   "themesUsed": 95,
    "confidence": {
-    "high": 15,
-    "medium": 1
+    "high": 249,
+    "medium": 105,
+    "low": 20
    },
    "auditFlags": []
   },
@@ -534,16 +528,15 @@
   {
    "slug": "black-tapes",
    "title": "The Black Tapes",
-   "episodes": 8,
-   "themesUsed": 5,
+   "episodes": 48,
+   "themesUsed": 10,
    "confidence": {
-    "high": 11,
-    "medium": 2,
-    "low": 1
+    "high": 35,
+    "medium": 11,
+    "low": 23
    },
    "auditFlags": [
-    "collapsed: 'audio-drama-horror' is 8/8 (100%)",
-    "only 1 theme(s) across 8 episodes"
+    "collapsed: 'audio-drama-mystery' is 40/48 (83%)"
    ]
   },
   {
@@ -585,27 +578,26 @@
   {
    "slug": "bloomberg-originals-elon-inc",
    "title": "Bloomberg Originals: Elon Inc.",
-   "episodes": 8,
-   "themesUsed": 6,
+   "episodes": 143,
+   "themesUsed": 30,
    "confidence": {
-    "medium": 6,
-    "high": 10
+    "medium": 51,
+    "high": 199,
+    "low": 23
    },
-   "auditFlags": [
-    "collapsed: 'tech-industry-power' is 5/8 (62%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "blowback",
    "title": "Blowback",
-   "episodes": 8,
-   "themesUsed": 3,
+   "episodes": 73,
+   "themesUsed": 16,
    "confidence": {
-    "high": 16
+    "high": 77,
+    "medium": 57,
+    "low": 4
    },
-   "auditFlags": [
-    "collapsed: 'war-and-its-conduct' is 7/8 (88%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "bodies",
@@ -634,10 +626,12 @@
   {
    "slug": "bone-valley",
    "title": "Bone Valley",
-   "episodes": 8,
-   "themesUsed": 7,
+   "episodes": 41,
+   "themesUsed": 17,
    "confidence": {
-    "high": 16
+    "high": 50,
+    "medium": 6,
+    "low": 2
    },
    "auditFlags": []
   },
@@ -658,11 +652,12 @@
   {
    "slug": "british-scandal",
    "title": "British Scandal",
-   "episodes": 8,
-   "themesUsed": 7,
+   "episodes": 254,
+   "themesUsed": 54,
    "confidence": {
-    "high": 15,
-    "medium": 1
+    "high": 278,
+    "medium": 128,
+    "low": 9
    },
    "auditFlags": []
   },
@@ -683,13 +678,16 @@
   {
    "slug": "bronwyn",
    "title": "Bronwyn",
-   "episodes": 8,
-   "themesUsed": 9,
+   "episodes": 42,
+   "themesUsed": 18,
    "confidence": {
-    "high": 15,
-    "medium": 1
+    "high": 48,
+    "medium": 8,
+    "low": 11
    },
-   "auditFlags": []
+   "auditFlags": [
+    "collapsed: 'missing-person' is 35/42 (83%)"
+   ]
   },
   {
    "slug": "bundyville",
@@ -706,10 +704,12 @@
   {
    "slug": "buried-truths",
    "title": "Buried Truths",
-   "episodes": 8,
-   "themesUsed": 10,
+   "episodes": 41,
+   "themesUsed": 21,
    "confidence": {
-    "high": 16
+    "high": 52,
+    "medium": 10,
+    "low": 1
    },
    "auditFlags": []
   },
@@ -809,11 +809,12 @@
   {
    "slug": "chameleon",
    "title": "Chameleon",
-   "episodes": 8,
-   "themesUsed": 13,
+   "episodes": 37,
+   "themesUsed": 22,
    "confidence": {
-    "high": 15,
-    "medium": 1
+    "high": 44,
+    "medium": 9,
+    "low": 1
    },
    "auditFlags": []
   },
@@ -856,15 +857,14 @@
   {
    "slug": "clearing",
    "title": "The Clearing",
-   "episodes": 8,
-   "themesUsed": 2,
+   "episodes": 208,
+   "themesUsed": 14,
    "confidence": {
-    "high": 9,
-    "medium": 1
+    "high": 179,
+    "medium": 27,
+    "low": 21
    },
-   "auditFlags": [
-    "collapsed: 'religious-community' is 7/8 (88%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "cocaine-rhinestones",
@@ -930,15 +930,14 @@
   {
    "slug": "constant-a-history-of-getting-things-wrong",
    "title": "The Constant: A History of Getting Things Wrong",
-   "episodes": 8,
-   "themesUsed": 6,
+   "episodes": 229,
+   "themesUsed": 63,
    "confidence": {
-    "high": 6,
-    "medium": 8
+    "high": 158,
+    "medium": 71,
+    "low": 46
    },
-   "auditFlags": [
-    "collapsed: 'history-retold' is 5/8 (62%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "cover-up",
@@ -957,21 +956,24 @@
   {
    "slug": "crime-story",
    "title": "Crime Story",
-   "episodes": 8,
-   "themesUsed": 14,
+   "episodes": 121,
+   "themesUsed": 47,
    "confidence": {
-    "high": 14,
-    "medium": 2
+    "high": 126,
+    "medium": 11,
+    "low": 4
    },
    "auditFlags": []
   },
   {
    "slug": "crimetown",
    "title": "Crimetown",
-   "episodes": 8,
-   "themesUsed": 10,
+   "episodes": 41,
+   "themesUsed": 22,
    "confidence": {
-    "high": 16
+    "high": 53,
+    "low": 2,
+    "medium": 8
    },
    "auditFlags": []
   },
@@ -989,14 +991,15 @@
   {
    "slug": "darknet-diaries",
    "title": "Darknet Diaries",
-   "episodes": 8,
-   "themesUsed": 8,
+   "episodes": 177,
+   "themesUsed": 31,
    "confidence": {
-    "high": 14,
-    "medium": 2
+    "high": 160,
+    "medium": 78,
+    "low": 20
    },
    "auditFlags": [
-    "collapsed: 'hacking-and-cybercrime' is 5/8 (62%)"
+    "collapsed: 'hacking-and-cybercrime' is 139/177 (79%)"
    ]
   },
   {
@@ -1016,11 +1019,12 @@
   {
    "slug": "days-like-these",
    "title": "Days Like These",
-   "episodes": 8,
-   "themesUsed": 11,
+   "episodes": 126,
+   "themesUsed": 59,
    "confidence": {
-    "high": 14,
-    "medium": 2
+    "high": 115,
+    "medium": 53,
+    "low": 13
    },
    "auditFlags": []
   },
@@ -1063,22 +1067,24 @@
   {
    "slug": "deep-cover-never-seen-again",
    "title": "Deep Cover: Never Seen Again",
-   "episodes": 7,
-   "themesUsed": 9,
+   "episodes": 63,
+   "themesUsed": 24,
    "confidence": {
-    "high": 11,
-    "medium": 3
+    "high": 75,
+    "medium": 18,
+    "low": 1
    },
    "auditFlags": []
   },
   {
    "slug": "deep-cover",
    "title": "Deep Cover",
-   "episodes": 7,
-   "themesUsed": 9,
+   "episodes": 63,
+   "themesUsed": 26,
    "confidence": {
-    "high": 11,
-    "medium": 3
+    "high": 81,
+    "medium": 16,
+    "low": 4
    },
    "auditFlags": []
   },
@@ -1136,15 +1142,14 @@
   {
    "slug": "disgraceland",
    "title": "Disgraceland",
-   "episodes": 7,
-   "themesUsed": 5,
+   "episodes": 278,
+   "themesUsed": 49,
    "confidence": {
-    "high": 13,
-    "medium": 1
+    "high": 272,
+    "medium": 154,
+    "low": 61
    },
-   "auditFlags": [
-    "collapsed: 'musician-death' is 5/7 (71%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "do-go-on",
@@ -1207,11 +1212,12 @@
   {
    "slug": "dream",
    "title": "The Dream",
-   "episodes": 7,
-   "themesUsed": 11,
+   "episodes": 97,
+   "themesUsed": 54,
    "confidence": {
-    "high": 12,
-    "medium": 2
+    "high": 80,
+    "medium": 64,
+    "low": 25
    },
    "auditFlags": []
   },
@@ -1243,15 +1249,15 @@
   {
    "slug": "ear-hustle",
    "title": "Ear Hustle",
-   "episodes": 7,
-   "themesUsed": 7,
+   "episodes": 167,
+   "themesUsed": 45,
    "confidence": {
-    "high": 12,
-    "medium": 2
+    "high": 171,
+    "medium": 78,
+    "low": 9
    },
    "auditFlags": [
-    "collapsed: 'prison-life' is 7/7 (100%)",
-    "only 1 theme(s) across 7 episodes"
+    "collapsed: 'prison-life' is 111/167 (66%)"
    ]
   },
   {
@@ -1268,14 +1274,14 @@
   {
    "slug": "embedded",
    "title": "Embedded",
-   "episodes": 7,
-   "themesUsed": 6,
+   "episodes": 154,
+   "themesUsed": 56,
    "confidence": {
-    "high": 14
+    "high": 163,
+    "medium": 77,
+    "low": 37
    },
-   "auditFlags": [
-    "collapsed: 'protest-movement' is 5/7 (71%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "empire-city-the-untold-origin-story-of-the-nypd",
@@ -1316,15 +1322,14 @@
   {
    "slug": "espions",
    "title": "Espions",
-   "episodes": 6,
-   "themesUsed": 5,
+   "episodes": 62,
+   "themesUsed": 26,
    "confidence": {
-    "high": 8,
-    "medium": 3
+    "high": 57,
+    "medium": 23,
+    "low": 4
    },
-   "auditFlags": [
-    "collapsed: 'cold-war-espionage' is 5/6 (83%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "even-the-rich",
@@ -1357,22 +1362,24 @@
   {
    "slug": "expanse",
    "title": "Expanse",
-   "episodes": 6,
-   "themesUsed": 4,
+   "episodes": 37,
+   "themesUsed": 16,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 39,
+    "medium": 18,
+    "low": 1
    },
    "auditFlags": []
   },
   {
    "slug": "experiment",
    "title": "The Experiment",
-   "episodes": 6,
-   "themesUsed": 9,
+   "episodes": 59,
+   "themesUsed": 51,
    "confidence": {
-    "medium": 4,
-    "high": 6
+    "medium": 31,
+    "high": 65,
+    "low": 8
    },
    "auditFlags": []
   },
@@ -1528,11 +1535,12 @@
   {
    "slug": "foundering",
    "title": "Foundering",
-   "episodes": 6,
-   "themesUsed": 5,
+   "episodes": 178,
+   "themesUsed": 72,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 152,
+    "medium": 115,
+    "low": 34
    },
    "auditFlags": []
   },
@@ -1618,11 +1626,12 @@
   {
    "slug": "have-you-heard-george-s-podcast",
    "title": "Have You Heard George's Podcast",
-   "episodes": 6,
-   "themesUsed": 5,
+   "episodes": 39,
+   "themesUsed": 29,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 35,
+    "medium": 23,
+    "low": 6
    },
    "auditFlags": []
   },
@@ -1644,31 +1653,36 @@
   {
    "slug": "heavyweight",
    "title": "Heavyweight",
-   "episodes": 6,
-   "themesUsed": 6,
+   "episodes": 115,
+   "themesUsed": 33,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 97,
+    "medium": 67,
+    "low": 25
    },
    "auditFlags": []
   },
   {
    "slug": "hell-and-gone",
    "title": "Hell and Gone",
-   "episodes": 6,
-   "themesUsed": 5,
+   "episodes": 180,
+   "themesUsed": 19,
    "confidence": {
-    "high": 12
+    "high": 192,
+    "medium": 115,
+    "low": 41
    },
    "auditFlags": []
   },
   {
    "slug": "history-on-fire",
    "title": "History on Fire",
-   "episodes": 6,
-   "themesUsed": 6,
+   "episodes": 140,
+   "themesUsed": 43,
    "confidence": {
-    "high": 12
+    "high": 151,
+    "medium": 70,
+    "low": 25
    },
    "auditFlags": []
   },
@@ -1701,21 +1715,24 @@
   {
    "slug": "ideas",
    "title": "Ideas",
-   "episodes": 6,
-   "themesUsed": 7,
+   "episodes": 232,
+   "themesUsed": 78,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 225,
+    "medium": 96,
+    "low": 37
    },
    "auditFlags": []
   },
   {
    "slug": "imperfect-paradise",
    "title": "Imperfect Paradise",
-   "episodes": 6,
-   "themesUsed": 9,
+   "episodes": 188,
+   "themesUsed": 71,
    "confidence": {
-    "high": 12
+    "high": 200,
+    "medium": 111,
+    "low": 27
    },
    "auditFlags": []
   },
@@ -1733,58 +1750,60 @@
   {
    "slug": "infamous",
    "title": "Infamous",
-   "episodes": 6,
-   "themesUsed": 9,
+   "episodes": 165,
+   "themesUsed": 69,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 162,
+    "medium": 128,
+    "low": 11
    },
-   "auditFlags": [
-    "collapsed: 'celebrity-life' is 4/6 (67%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "injustices",
    "title": "Injustices",
-   "episodes": 6,
-   "themesUsed": 4,
+   "episodes": 49,
+   "themesUsed": 24,
    "confidence": {
-    "high": 12
+    "high": 50,
+    "medium": 32,
+    "low": 1
    },
-   "auditFlags": [
-    "collapsed: 'parenting' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "intrigue",
    "title": "Intrigue",
-   "episodes": 6,
-   "themesUsed": 5,
+   "episodes": 95,
+   "themesUsed": 41,
    "confidence": {
-    "high": 12
+    "high": 127,
+    "low": 5,
+    "medium": 57
    },
    "auditFlags": []
   },
   {
    "slug": "invisibilia",
    "title": "Invisibilia",
-   "episodes": 6,
-   "themesUsed": 8,
+   "episodes": 66,
+   "themesUsed": 50,
    "confidence": {
-    "high": 9,
-    "medium": 3
+    "high": 68,
+    "medium": 35,
+    "low": 13
    },
    "auditFlags": []
   },
   {
    "slug": "journal",
    "title": "The Journal",
-   "episodes": 6,
-   "themesUsed": 10,
+   "episodes": 299,
+   "themesUsed": 78,
    "confidence": {
-    "high": 8,
-    "medium": 4
+    "high": 313,
+    "medium": 143,
+    "low": 39
    },
    "auditFlags": []
   },
@@ -1818,66 +1837,72 @@
   {
    "slug": "killer-psyche",
    "title": "Killer Psyche",
-   "episodes": 6,
-   "themesUsed": 6,
+   "episodes": 147,
+   "themesUsed": 36,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 152,
+    "medium": 30,
+    "low": 5
    },
    "auditFlags": []
   },
   {
    "slug": "kind-world",
    "title": "Kind World",
-   "episodes": 6,
-   "themesUsed": 12,
+   "episodes": 88,
+   "themesUsed": 49,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 80,
+    "medium": 46,
+    "low": 41
    },
    "auditFlags": []
   },
   {
    "slug": "kitchen-sisters-present",
    "title": "The Kitchen Sisters Present",
-   "episodes": 6,
-   "themesUsed": 9,
+   "episodes": 282,
+   "themesUsed": 67,
    "confidence": {
-    "high": 12
+    "high": 307,
+    "medium": 176,
+    "low": 13
    },
    "auditFlags": []
   },
   {
    "slug": "la-brega",
    "title": "La Brega",
-   "episodes": 6,
-   "themesUsed": 9,
+   "episodes": 52,
+   "themesUsed": 27,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 68,
+    "medium": 14,
+    "low": 4
    },
    "auditFlags": []
   },
   {
    "slug": "land-of-the-giants",
    "title": "Land of the Giants",
-   "episodes": 6,
-   "themesUsed": 6,
+   "episodes": 61,
+   "themesUsed": 26,
    "confidence": {
-    "high": 12
+    "high": 67,
+    "medium": 27,
+    "low": 2
    },
-   "auditFlags": [
-    "collapsed: 'tech-industry-power' is 5/6 (83%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "las-raras",
    "title": "Las Raras",
-   "episodes": 6,
-   "themesUsed": 9,
+   "episodes": 49,
+   "themesUsed": 37,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 57,
+    "medium": 19,
+    "low": 2
    },
    "auditFlags": []
   },
@@ -1898,11 +1923,12 @@
   {
    "slug": "last-archive",
    "title": "The Last Archive",
-   "episodes": 6,
-   "themesUsed": 9,
+   "episodes": 46,
+   "themesUsed": 45,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 64,
+    "medium": 22,
+    "low": 1
    },
    "auditFlags": []
   },
@@ -2040,26 +2066,27 @@
   {
    "slug": "lost-hills",
    "title": "Lost Hills",
-   "episodes": 6,
-   "themesUsed": 7,
+   "episodes": 54,
+   "themesUsed": 27,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 59,
+    "medium": 40,
+    "low": 4
    },
    "auditFlags": []
   },
   {
    "slug": "lost-notes",
    "title": "Lost Notes",
-   "episodes": 6,
-   "themesUsed": 3,
+   "episodes": 54,
+   "themesUsed": 27,
    "confidence": {
-    "high": 9,
-    "medium": 2
+    "high": 60,
+    "medium": 28,
+    "low": 15
    },
    "auditFlags": [
-    "collapsed: 'music-scene-history' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
+    "collapsed: 'music-scene-history' is 44/54 (81%)"
    ]
   },
   {
@@ -2088,37 +2115,40 @@
   {
    "slug": "lovecraft-investigations",
    "title": "The Lovecraft Investigations",
-   "episodes": 6,
-   "themesUsed": 2,
+   "episodes": 40,
+   "themesUsed": 3,
    "confidence": {
-    "high": 12
+    "high": 64,
+    "medium": 11,
+    "low": 2
    },
    "auditFlags": [
-    "collapsed: 'audio-drama-horror' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
+    "collapsed: 'audio-drama-mystery' is 33/40 (82%)"
    ]
   },
   {
    "slug": "making-obama",
    "title": "Making Obama",
-   "episodes": 6,
-   "themesUsed": 8,
+   "episodes": 44,
+   "themesUsed": 20,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 56,
+    "medium": 18
    },
    "auditFlags": []
   },
   {
    "slug": "malicious-life",
    "title": "Malicious Life",
-   "episodes": 6,
-   "themesUsed": 5,
+   "episodes": 265,
+   "themesUsed": 47,
    "confidence": {
-    "high": 12
+    "high": 265,
+    "medium": 82,
+    "low": 54
    },
    "auditFlags": [
-    "collapsed: 'hacking-and-cybercrime' is 5/6 (83%)"
+    "collapsed: 'hacking-and-cybercrime' is 177/265 (67%)"
    ]
   },
   {
@@ -2167,15 +2197,14 @@
   {
    "slug": "message",
    "title": "The Message",
-   "episodes": 6,
-   "themesUsed": 4,
+   "episodes": 39,
+   "themesUsed": 18,
    "confidence": {
-    "high": 9,
-    "medium": 3
+    "high": 38,
+    "medium": 12,
+    "low": 5
    },
-   "auditFlags": [
-    "collapsed: 'religious-community' is 5/6 (83%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "missing-america",
@@ -2253,39 +2282,39 @@
   {
    "slug": "more-perfect",
    "title": "More Perfect",
-   "episodes": 6,
-   "themesUsed": 8,
+   "episodes": 42,
+   "themesUsed": 21,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 61,
+    "medium": 11,
+    "low": 2
    },
    "auditFlags": [
-    "collapsed: 'legal-precedent' is 4/6 (67%)"
+    "collapsed: 'legal-precedent' is 40/42 (95%)"
    ]
   },
   {
    "slug": "motive",
    "title": "Motive",
-   "episodes": 6,
-   "themesUsed": 6,
+   "episodes": 40,
+   "themesUsed": 26,
    "confidence": {
-    "low": 4,
-    "high": 4
+    "low": 6,
+    "high": 48,
+    "medium": 11
    },
    "auditFlags": []
   },
   {
    "slug": "mumbai-crime",
    "title": "Mumbai Crime",
-   "episodes": 6,
-   "themesUsed": 2,
+   "episodes": 67,
+   "themesUsed": 28,
    "confidence": {
-    "high": 12
+    "high": 73,
+    "medium": 35
    },
-   "auditFlags": [
-    "collapsed: 'audio-drama-mystery' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "my-fugitive",
@@ -2352,36 +2381,39 @@
   {
    "slug": "normal-gossip",
    "title": "Normal Gossip",
-   "episodes": 6,
-   "themesUsed": 3,
+   "episodes": 107,
+   "themesUsed": 35,
    "confidence": {
-    "medium": 3,
-    "high": 5
+    "medium": 23,
+    "high": 51,
+    "low": 48
    },
-   "auditFlags": [
-    "collapsed: 'friendship' is 5/6 (83%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "old-gods-of-appalachia",
    "title": "Old Gods of Appalachia",
-   "episodes": 6,
-   "themesUsed": 2,
+   "episodes": 112,
+   "themesUsed": 25,
    "confidence": {
-    "high": 12
+    "high": 115,
+    "medium": 57,
+    "low": 19
    },
    "auditFlags": [
-    "collapsed: 'audio-drama-horror' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
+    "collapsed: 'audio-drama-horror' is 112/112 (100%)",
+    "only 1 theme(s) across 112 episodes"
    ]
   },
   {
    "slug": "on-drugs",
    "title": "On Drugs",
-   "episodes": 6,
-   "themesUsed": 7,
+   "episodes": 42,
+   "themesUsed": 25,
    "confidence": {
-    "high": 12
+    "high": 47,
+    "medium": 21,
+    "low": 5
    },
    "auditFlags": []
   },
@@ -2502,15 +2534,14 @@
   {
    "slug": "question-everything",
    "title": "Question Everything",
-   "episodes": 6,
-   "themesUsed": 7,
+   "episodes": 74,
+   "themesUsed": 28,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 78,
+    "medium": 53,
+    "low": 2
    },
-   "auditFlags": [
-    "collapsed: 'media-criticism' is 5/6 (83%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "rabbit-hole",
@@ -2563,10 +2594,12 @@
   {
    "slug": "radio-diaries",
    "title": "Radio Diaries",
-   "episodes": 6,
-   "themesUsed": 9,
+   "episodes": 204,
+   "themesUsed": 68,
    "confidence": {
-    "high": 12
+    "high": 198,
+    "medium": 93,
+    "low": 45
    },
    "auditFlags": []
   },
@@ -2631,11 +2664,12 @@
   {
    "slug": "reply-all",
    "title": "Reply All",
-   "episodes": 6,
-   "themesUsed": 4,
+   "episodes": 212,
+   "themesUsed": 75,
    "confidence": {
-    "medium": 6,
-    "high": 3
+    "medium": 139,
+    "high": 190,
+    "low": 25
    },
    "auditFlags": []
   },
@@ -2654,37 +2688,40 @@
   {
    "slug": "reveal",
    "title": "Reveal",
-   "episodes": 6,
-   "themesUsed": 11,
+   "episodes": 242,
+   "themesUsed": 95,
    "confidence": {
-    "high": 12
+    "high": 265,
+    "medium": 171,
+    "low": 25
    },
    "auditFlags": []
   },
   {
    "slug": "revisionist-history",
    "title": "Revisionist History",
-   "episodes": 6,
-   "themesUsed": 8,
+   "episodes": 163,
+   "themesUsed": 69,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 134,
+    "medium": 105,
+    "low": 30
    },
-   "auditFlags": [
-    "collapsed: 'community-in-conflict' is 4/6 (67%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "rivals",
    "title": "Rivals",
-   "episodes": 6,
-   "themesUsed": 1,
+   "episodes": 39,
+   "themesUsed": 3,
    "confidence": {
-    "high": 6
+    "high": 39,
+    "low": 1,
+    "medium": 2
    },
    "auditFlags": [
-    "collapsed: 'sports-history' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
+    "collapsed: 'sports-history' is 39/39 (100%)",
+    "only 1 theme(s) across 39 episodes"
    ]
   },
   {
@@ -2727,15 +2764,14 @@
   {
    "slug": "rough-translation",
    "title": "Rough Translation",
-   "episodes": 6,
-   "themesUsed": 3,
+   "episodes": 90,
+   "themesUsed": 58,
    "confidence": {
-    "high": 11
+    "high": 111,
+    "medium": 46,
+    "low": 17
    },
-   "auditFlags": [
-    "collapsed: 'romance-and-heartbreak' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "rumble-ali-foreman-and-the-soul-of-74",
@@ -2907,14 +2943,13 @@
   {
    "slug": "shandee-s-story",
    "title": "Shandee's Story",
-   "episodes": 6,
-   "themesUsed": 4,
+   "episodes": 39,
+   "themesUsed": 13,
    "confidence": {
-    "high": 12
+    "high": 57,
+    "medium": 20
    },
-   "auditFlags": [
-    "collapsed: 'forensic-evidence' is 5/6 (83%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "shrink-next-door",
@@ -2941,22 +2976,24 @@
   {
    "slug": "slow-burn-biggie-tupac",
    "title": "Slow Burn: Biggie & Tupac",
-   "episodes": 6,
-   "themesUsed": 8,
+   "episodes": 205,
+   "themesUsed": 71,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 194,
+    "medium": 56,
+    "low": 25
    },
    "auditFlags": []
   },
   {
    "slug": "slow-burn",
    "title": "Slow Burn",
-   "episodes": 6,
-   "themesUsed": 8,
+   "episodes": 205,
+   "themesUsed": 76,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 191,
+    "medium": 122,
+    "low": 48
    },
    "auditFlags": []
   },
@@ -3002,16 +3039,14 @@
   {
    "slug": "someone-knows-something",
    "title": "Someone Knows Something",
-   "episodes": 6,
-   "themesUsed": 3,
+   "episodes": 92,
+   "themesUsed": 27,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 123,
+    "medium": 47,
+    "low": 5
    },
-   "auditFlags": [
-    "collapsed: 'missing-person' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "song-exploder",
@@ -3042,25 +3077,26 @@
   {
    "slug": "spooked",
    "title": "Spooked",
-   "episodes": 6,
-   "themesUsed": 6,
+   "episodes": 241,
+   "themesUsed": 24,
    "confidence": {
-    "high": 8,
-    "medium": 3
+    "high": 233,
+    "medium": 62,
+    "low": 39
    },
    "auditFlags": [
-    "collapsed: 'supernatural-encounter' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
+    "collapsed: 'supernatural-encounter' is 207/241 (86%)"
    ]
   },
   {
    "slug": "sports-explains-the-world",
    "title": "Sports Explains the World",
-   "episodes": 6,
-   "themesUsed": 6,
+   "episodes": 46,
+   "themesUsed": 20,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 42,
+    "medium": 35,
+    "low": 10
    },
    "auditFlags": []
   },
@@ -3080,15 +3116,14 @@
   {
    "slug": "staten-island-problem",
    "title": "The Staten Island Problem",
-   "episodes": 6,
-   "themesUsed": 8,
+   "episodes": 163,
+   "themesUsed": 62,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 124,
+    "medium": 36,
+    "low": 22
    },
-   "auditFlags": [
-    "collapsed: 'community-in-conflict' is 4/6 (67%)"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "stay-away-from-matthew-magill",
@@ -3192,21 +3227,24 @@
   {
    "slug": "swindled",
    "title": "Swindled",
-   "episodes": 6,
-   "themesUsed": 8,
+   "episodes": 141,
+   "themesUsed": 54,
    "confidence": {
-    "high": 12
+    "high": 166,
+    "medium": 84,
+    "low": 3
    },
    "auditFlags": []
   },
   {
    "slug": "sword-and-scale",
    "title": "Sword and Scale",
-   "episodes": 6,
-   "themesUsed": 6,
+   "episodes": 109,
+   "themesUsed": 33,
    "confidence": {
-    "high": 11,
-    "medium": 1
+    "high": 121,
+    "medium": 49,
+    "low": 7
    },
    "auditFlags": []
   },
@@ -3227,29 +3265,27 @@
   {
    "slug": "tales-from-hollywoodland",
    "title": "Tales From Hollywoodland",
-   "episodes": 6,
-   "themesUsed": 5,
+   "episodes": 126,
+   "themesUsed": 15,
    "confidence": {
-    "high": 9,
-    "medium": 3
+    "high": 131,
+    "medium": 29
    },
-   "auditFlags": [
-    "collapsed: 'hollywood-history' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "tanis",
    "title": "Tanis",
-   "episodes": 6,
-   "themesUsed": 3,
+   "episodes": 60,
+   "themesUsed": 10,
    "confidence": {
-    "high": 6,
-    "medium": 3
+    "high": 63,
+    "medium": 7,
+    "low": 10
    },
    "auditFlags": [
-    "collapsed: 'audio-drama-mystery' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
+    "collapsed: 'audio-drama-mystery' is 60/60 (100%)",
+    "only 1 theme(s) across 60 episodes"
    ]
   },
   {
@@ -3317,11 +3353,12 @@
   {
    "slug": "this-is-love",
    "title": "This Is Love",
-   "episodes": 6,
-   "themesUsed": 10,
+   "episodes": 140,
+   "themesUsed": 37,
    "confidence": {
-    "high": 10,
-    "medium": 2
+    "high": 103,
+    "medium": 41,
+    "low": 10
    },
    "auditFlags": []
   },
@@ -3388,10 +3425,12 @@
   {
    "slug": "trump-inc",
    "title": "Trump, Inc.",
-   "episodes": 6,
-   "themesUsed": 6,
+   "episodes": 100,
+   "themesUsed": 35,
    "confidence": {
-    "high": 12
+    "high": 150,
+    "medium": 40,
+    "low": 3
    },
    "auditFlags": []
   },
@@ -3461,11 +3500,12 @@
   {
    "slug": "uncuffed",
    "title": "Uncuffed",
-   "episodes": 6,
-   "themesUsed": 7,
+   "episodes": 74,
+   "themesUsed": 35,
    "confidence": {
-    "high": 9,
-    "medium": 2
+    "high": 91,
+    "medium": 29,
+    "low": 11
    },
    "auditFlags": []
   },
@@ -3484,10 +3524,12 @@
   {
    "slug": "unfinished-justice",
    "title": "Unfinished Justice",
-   "episodes": 6,
-   "themesUsed": 8,
+   "episodes": 49,
+   "themesUsed": 22,
    "confidence": {
-    "high": 12
+    "high": 64,
+    "medium": 13,
+    "low": 5
    },
    "auditFlags": []
   },
@@ -3506,14 +3548,15 @@
   {
    "slug": "up-and-vanished",
    "title": "Up and Vanished",
-   "episodes": 6,
-   "themesUsed": 4,
+   "episodes": 109,
+   "themesUsed": 19,
    "confidence": {
-    "high": 12
+    "high": 151,
+    "medium": 48,
+    "low": 8
    },
    "auditFlags": [
-    "collapsed: 'missing-person' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
+    "collapsed: 'missing-person' is 98/109 (90%)"
    ]
   },
   {
@@ -3557,14 +3600,15 @@
   {
    "slug": "we-re-alive",
    "title": "We're Alive",
-   "episodes": 6,
-   "themesUsed": 2,
+   "episodes": 214,
+   "themesUsed": 17,
    "confidence": {
-    "high": 12
+    "high": 219,
+    "medium": 29,
+    "low": 12
    },
    "auditFlags": [
-    "collapsed: 'apocalyptic-fiction' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
+    "collapsed: 'survival-story' is 208/214 (97%)"
    ]
   },
   {
@@ -3617,15 +3661,15 @@
   {
    "slug": "white-vault",
    "title": "The White Vault",
-   "episodes": 6,
-   "themesUsed": 2,
+   "episodes": 86,
+   "themesUsed": 5,
    "confidence": {
-    "high": 6,
-    "medium": 1
+    "high": 85,
+    "medium": 18,
+    "low": 1
    },
    "auditFlags": [
-    "collapsed: 'audio-drama-horror' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
+    "collapsed: 'audio-drama-mystery' is 78/86 (91%)"
    ]
   },
   {
@@ -3657,14 +3701,15 @@
   {
    "slug": "within-the-wires",
    "title": "Within the Wires",
-   "episodes": 6,
-   "themesUsed": 1,
+   "episodes": 107,
+   "themesUsed": 6,
    "confidence": {
-    "high": 6
+    "high": 100,
+    "low": 9,
+    "medium": 10
    },
    "auditFlags": [
-    "collapsed: 'audio-drama-scifi' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
+    "collapsed: 'audio-drama-mystery' is 84/107 (79%)"
    ]
   },
   {
@@ -3711,24 +3756,24 @@
   {
    "slug": "you-must-remember-this",
    "title": "You Must Remember This",
-   "episodes": 6,
-   "themesUsed": 5,
+   "episodes": 261,
+   "themesUsed": 44,
    "confidence": {
-    "high": 12
+    "high": 347,
+    "medium": 80,
+    "low": 4
    },
-   "auditFlags": [
-    "collapsed: 'hollywood-history' is 6/6 (100%)",
-    "only 1 theme(s) across 6 episodes"
-   ]
+   "auditFlags": []
   },
   {
    "slug": "you-re-wrong-about",
    "title": "You're Wrong About",
-   "episodes": 6,
-   "themesUsed": 8,
+   "episodes": 266,
+   "themesUsed": 78,
    "confidence": {
-    "high": 7,
-    "medium": 5
+    "high": 279,
+    "medium": 107,
+    "low": 12
    },
    "auditFlags": []
   },
@@ -3747,11 +3792,12 @@
   {
    "slug": "zeit-verbrechen",
    "title": "Zeit Verbrechen",
-   "episodes": 6,
-   "themesUsed": 9,
+   "episodes": 283,
+   "themesUsed": 95,
    "confidence": {
-    "high": 9,
-    "medium": 3
+    "high": 221,
+    "medium": 172,
+    "low": 82
    },
    "auditFlags": []
   }

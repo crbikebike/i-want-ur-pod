@@ -9,18 +9,66 @@
  "themesUsed": [
   {
    "slug": "missing-person",
-   "count": 5
+   "count": 10
+  },
+  {
+   "slug": "survival-story",
+   "count": 9
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 6
+  },
+  {
+   "slug": "investigative-process",
+   "count": 4
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 4
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 4
+  },
+  {
+   "slug": "organised-crime",
+   "count": 4
   },
   {
    "slug": "cold-case-reopened",
    "count": 3
   },
   {
-   "slug": "investigative-process",
+   "slug": "supernatural-encounter",
    "count": 3
   },
   {
+   "slug": "disaster-reconstruction",
+   "count": 3
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 2
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 2
+  },
+  {
    "slug": "charismatic-con",
+   "count": 1
+  },
+  {
+   "slug": "indigenous-history",
+   "count": 1
+  },
+  {
+   "slug": "protest-movement",
+   "count": 1
+  },
+  {
+   "slug": "everyday-mystery",
    "count": 1
   }
  ],
@@ -141,6 +189,546 @@
     {
      "slug": "missing-person",
      "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/04-expanse-the-nannup-four-a-question-of-belief/106477560",
+   "display": "04 Expanse: The Nannup Four | A question of belief",
+   "segment": "",
+   "subject": "The Nannup Four | A question of belief",
+   "iso": "2026-03-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/03-expanse-the-nannup-four-down-the-rabbit-hole-/106452146",
+   "display": "03 Expanse: The Nannup Four | Down the rabbit hole",
+   "segment": "",
+   "subject": "The Nannup Four | Down the rabbit hole",
+   "iso": "2026-03-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cult-and-control",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/02-expanse-the-nannup-four-selling-snake-oil-/106425444",
+   "display": "02 Expanse: The Nannup Four | Selling snake oil",
+   "segment": "",
+   "subject": "The Nannup Four | Selling snake oil",
+   "iso": "2026-03-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cult-and-control",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/01-expanse-the-nannup-four-the-people-in-the-blue-house-/106396544",
+   "display": "01 Expanse: The Nannup Four | The people in the blue house",
+   "segment": "",
+   "subject": "The Nannup Four | The people in the blue house",
+   "iso": "2026-03-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/bonus-expanse-nowhere-man-gunslinger/105670938",
+   "display": "BONUS Expanse: Nowhere Man | Gunslinger",
+   "segment": "",
+   "subject": "Nowhere Man | Gunslinger",
+   "iso": "2025-08-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/06-expanse-nowhere-man-lost-and-found/105448912",
+   "display": "06 Expanse: Nowhere Man | Lost and found",
+   "segment": "",
+   "subject": "Nowhere Man | Lost and found",
+   "iso": "2025-08-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/05-expanse-nowhere-man-miracle-in-the-desert/105448910",
+   "display": "05 Expanse: Nowhere Man | Miracle in the desert",
+   "segment": "",
+   "subject": "Nowhere Man | Miracle in the desert",
+   "iso": "2025-07-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/04-expanse-nowhere-man-alaska-/105448908",
+   "display": "04 Expanse: Nowhere Man | Alaska",
+   "segment": "",
+   "subject": "Nowhere Man | Alaska",
+   "iso": "2025-07-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/03-expanse-nowhere-man-the-green-berets-/105448904",
+   "display": "03 Expanse: Nowhere Man | The green berets",
+   "segment": "",
+   "subject": "Nowhere Man | The green berets",
+   "iso": "2025-07-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/02-expanse-nowhere-man-trackers-/105448890",
+   "display": "02 Expanse: Nowhere Man | Trackers",
+   "segment": "",
+   "subject": "Nowhere Man | Trackers",
+   "iso": "2025-07-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/01-expanse-nowhere-man-ghost-in-the-desert-/105318166",
+   "display": "01 Expanse: Nowhere Man | Ghost in the desert",
+   "segment": "",
+   "subject": "Nowhere Man | Ghost in the desert",
+   "iso": "2025-07-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "survival-story",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-legacy/104645764",
+   "display": "05 Uncropped | The legacy",
+   "segment": "",
+   "subject": "The legacy",
+   "iso": "2024-11-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/uap-in-the-usa/104645762",
+   "display": "04 Uncropped | UAP in the USA",
+   "segment": "",
+   "subject": "UAP in the USA",
+   "iso": "2024-11-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-ufo-files/104645758",
+   "display": "03 Uncropped | The UFO files",
+   "segment": "",
+   "subject": "The UFO files",
+   "iso": "2024-11-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "supernatural-encounter",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/who-is-visiting/104616622",
+   "display": "02 Uncropped | Who is visiting?",
+   "segment": "",
+   "subject": "Who is visiting?",
+   "iso": "2024-11-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "supernatural-encounter",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-sighting/104616620",
+   "display": "01 Uncropped | The sighting",
+   "segment": "",
+   "subject": "The sighting",
+   "iso": "2024-11-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "supernatural-encounter",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-secrets-of-pine-gap/103843966",
+   "display": "05: Spies in the Outback | The secrets of Pine Gap",
+   "segment": "",
+   "subject": "The secrets of Pine Gap",
+   "iso": "2024-05-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-spy-who-loved-alice/103813630",
+   "display": "04 Spies in the Outback | The spy who loved Alice",
+   "segment": "",
+   "subject": "The spy who loved Alice",
+   "iso": "2024-05-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-women-get-wild/103781654",
+   "display": "03 Spies in the Outback | The women get wild",
+   "segment": "",
+   "subject": "The women get wild",
+   "iso": "2024-05-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "protest-movement",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/politics-pressure-and-protest/103760610",
+   "display": "02 Spies in the Outback | Politics, pressure and protest",
+   "segment": "",
+   "subject": "Politics, pressure and protest",
+   "iso": "2024-04-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/selling-a-space-base/103729416",
+   "display": "01 Spies in the Outback | Selling a space base",
+   "segment": "",
+   "subject": "Selling a space base",
+   "iso": "2024-04-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/05-from-the-dead-back-from-the-dead/103100320",
+   "display": "05 From the Dead | Back From The Dead",
+   "segment": "",
+   "subject": "Back From The Dead",
+   "iso": "2023-11-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/04-from-the-dead-missing-presumed-dead-expanse-podcast/103072598",
+   "display": "04 From the Dead | Missing: Presumed Dead",
+   "segment": "",
+   "subject": "Presumed Dead",
+   "iso": "2023-11-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "disaster-reconstruction",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/expanse-podcast-s2-03-from-the-dead-blythe-star/103043560",
+   "display": "03 From the Dead | The Search",
+   "segment": "",
+   "subject": "The Search",
+   "iso": "2023-11-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "disaster-reconstruction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/lost-at-sea/103013158",
+   "display": "02 From the Dead | Lost at Sea",
+   "segment": "",
+   "subject": "Lost at Sea",
+   "iso": "2023-10-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "disaster-reconstruction",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-blythe-star/102985540",
+   "display": "01 From the Dead | The Blythe Star",
+   "segment": "",
+   "subject": "The Blythe Star",
+   "iso": "2023-10-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/roddans-diamonds/101358708",
+   "display": "05 Pink Diamond Heist | Roddan's Diamonds",
+   "segment": "",
+   "subject": "Roddan's Diamonds",
+   "iso": "2022-08-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/how-to-catch-a-thief/101335284",
+   "display": "04 Pink Diamond Heist | How to Catch a Thief",
+   "segment": "",
+   "subject": "How to Catch a Thief",
+   "iso": "2022-08-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/lynette/101310948",
+   "display": "03 Pink Diamond Heist | Lynette",
+   "segment": "",
+   "subject": "Lynette",
+   "iso": "2022-08-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/a-heist-is-born/13997832",
+   "display": "02 Pink Diamond Heist | A Heist is Born",
+   "segment": "",
+   "subject": "A Heist is Born",
+   "iso": "2022-08-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/the-argyle-intrigue/13978036",
+   "display": "01 Pink Diamond Heist | The Argyle Intrigue",
+   "segment": "",
+   "subject": "The Argyle Intrigue",
+   "iso": "2022-07-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
      "confidence": "high"
     }
    ]
