@@ -267,7 +267,7 @@ looked like a sufficient guard.
 anything true — it confirms only that the lever adds nothing *false*, and that its cap is
 necessary. The gain is corpus-side: **+26 feeds** (158 vs 132), spot-checked by hand — *caught*
 (9-part), *american-fiasco* (10), *bad-seeds* (8), *habitat* (7), *black-box* (8), *bundyville*,
-*blindspot*, *death-of-an-artist*. That asymmetry is the honest reason to treat A7.1 as the weaker
+*blindspot*, *death-of-an-artist*. That asymmetry is the reason to treat A7.1 as the weaker
 of the two levers despite it recovering more feeds.
 
 ## A7.2 — bare / trailing counter runs (tier 4), +0.005 recall

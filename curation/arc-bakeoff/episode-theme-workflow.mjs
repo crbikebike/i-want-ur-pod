@@ -166,7 +166,7 @@ log(`vocabulary: ${vocabulary.length} themes — ${vocabulary.map(v => v.slug).j
 
 /* Two assignment passes at different batch sizes, so episodes sit beside different
    neighbours each time. Where the runs disagree, the vocabulary is ambiguous there —
-   that number is the honest measure of the taxonomy, not the audit. */
+   that number is the real measure of the taxonomy, not the audit. */
 phase('Assign')
 const runA = await parallel(batches(total, 40).map(([lo, hi]) => () => assign(vocabulary, lo, hi, 1)))
 phase('Agreement')
