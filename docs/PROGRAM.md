@@ -163,7 +163,7 @@ Port the A6 regex cascade to the app for user-added feeds. Local listening histo
 2. Integrity checks: row counts against source files, zero orphaned foreign keys, every tier-2 theme has a parent, every episode has a show.
 3. Run the three named queries from `catalog/build/queries/` and read the output. Not "it returned rows" — the rows have to be defensible. I'll show you the output for judgment.
 4. Time the traversal query. Under 50ms.
-5. Delete the `.db`, rebuild, confirm byte-identical output. Reproducibility is the whole point of a permanent catalog.
+5. Delete the `.db`, rebuild, confirm the **content hash matches** — a SHA-256 over a canonical dump of every table, deterministically ordered, excluding the build timestamp. Not byte-identical: a SQLite file carries page-layout bytes that vary without the data differing. Reproducibility of the *data* is the whole point of a permanent catalog.
 6. Write an edit to the `edits` table, rebuild, confirm it survives.
 
 **Every phase:** the gate checks above, run and shown, before the next spec gets written.
