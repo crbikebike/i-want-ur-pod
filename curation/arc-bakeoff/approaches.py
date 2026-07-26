@@ -1449,6 +1449,72 @@ def a7_cascade(episodes):
     return _a7_cascade(episodes, season_lead=True, bare_counter=True)
 
 
+# ===========================================================================
+# A8 — limited-series: the whole feed is one arc
+# ===========================================================================
+# Before reaching for a semantic/LLM tier, spend the free recall. A large share of the
+# feeds A7 leaves empty are bounded documentary series where there is only ONE plausible
+# grouping — the entire feed. floodlines is 9 episodes titled "Antediluvian" / "The Bridge"
+# / "Exodus"; sweet-bobby is "Motive" / "Dark triads" / "Confession". No title signal
+# exists, so no parser can ever group them — but no parser needs to. There is nothing to
+# decide except whether the show is one story, and a bounded publication window answers
+# that for most of them without reading a word.
+#
+# The discriminator is SPAN, not size. Of the 42 zero-arc candidates with 4-15 full
+# episodes, 31 published everything inside 6 months (sweet-bobby 0mo, believed 2mo,
+# root-of-evil 2mo, monster-the-zodiac-killer 2mo) and are limited series. The 11 that
+# spread wider are a different animal: this-american-life (21mo) is a slice of a weekly
+# show, not a serial, and the span test excludes it for free.
+#
+# Span is a GUARD here but only a PRIOR in general — floodlines itself spans 65 months
+# because the feed carries re-dated back-catalogue items, so this tier deliberately misses
+# it. That residue is what a semantic tier is for.
+LIMITED_MIN_EPS = 4
+LIMITED_MAX_EPS = 15
+LIMITED_MAX_SPAN_MONTHS = 6
+
+
+def _span_months(episodes):
+    ds = sorted(e.get("iso") or "" for e in episodes if e.get("iso"))
+    if len(ds) < 2:
+        return 0
+    try:
+        (ay, am), (by, bm) = (int(ds[0][:4]), int(ds[0][5:7])), (int(ds[-1][:4]), int(ds[-1][5:7]))
+    except ValueError:
+        return 0
+    return (by - ay) * 12 + (bm - am)
+
+
+def _limited_series_arcs(episodes, taken):
+    """One arc covering the whole feed — only when NOTHING else claimed any of it.
+
+    The all-or-nothing condition is the main guard: if an earlier tier found even one arc,
+    the feed demonstrably has internal structure and 'it is all one story' is the wrong
+    hypothesis. Trailers/bonus are excluded from members but still counted for the span."""
+    if taken:
+        return []
+    full = [e for e in episodes if e.get("episodeType", "full") == "full"]
+    if not LIMITED_MIN_EPS <= len(full) <= LIMITED_MAX_EPS:
+        return []
+    if _span_months(full) > LIMITED_MAX_SPAN_MONTHS:
+        return []
+    seasons = {e.get("season") for e in full}
+    seasons.discard(None)
+    season = seasons.pop() if len(seasons) == 1 else None
+    # No show title reaches a detector (the contract is episodes-only), so the name is
+    # derived. Scoring aligns on MEMBERS, not names, so this affects the app, not the score.
+    return [{"name": f"Season {season}" if season is not None else "Complete Series",
+             "season": season, "members": [e["guid"] for e in full]}]
+
+
+def a8_cascade(episodes):
+    """A8 — A7-cascade plus the limited-series tier. No model, no network."""
+    episodes = sort_newest_first(episodes)
+    arcs = a7_cascade(episodes)
+    taken = {g for a in arcs for g in a["members"]}
+    return _reconcile([(1, arcs), (5, _limited_series_arcs(episodes, taken))], episodes)
+
+
 CONTENDERS = OrderedDict([
     ("baseline", baseline),
     ("A1-extended", a1_extended),
@@ -1477,6 +1543,7 @@ CONTENDERS = OrderedDict([
     ("A7.1-season-lead", a7_1_season_lead),
     ("A7.2-bare-counter", a7_2_bare_counter),
     ("A7-cascade", a7_cascade),
+    ("A8-cascade", a8_cascade),
 ])
 
 

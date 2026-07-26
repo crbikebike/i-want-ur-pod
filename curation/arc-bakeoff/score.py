@@ -41,9 +41,9 @@ MEMPREC_FLOOR = 0.95   # min membership_precision to "clear the floor"
 JUNK_CEIL = 0.05       # max junk_arc_rate to "clear the floor"
 
 
-def load_feed(slug):
+def load_feed(slug, feeds_dir=None):
     # Gold scoring uses the exact frozen slice the labelers saw.
-    p = GOLD_FEEDS / f"{slug}.json"
+    p = (feeds_dir or GOLD_FEEDS) / f"{slug}.json"
     if not p.exists():
         p = FEEDS / f"{slug}.json"
     if not p.exists():
@@ -97,10 +97,23 @@ def score_feed(detected, truth):
     }
 
 
-def evaluate(names=None):
-    if not GOLD.exists():
+def evaluate(names=None, gold_path=None, feeds_dir=None, score_negatives=False):
+    """Score contenders against a gold file.
+
+    gold_path / feeds_dir let a SECOND gold set (e.g. the LLM tier's) be scored without
+    touching the original numbers. Defaults reproduce the historical run exactly.
+
+    score_negatives is the important one. By default a gold feed labeled with ZERO arcs is
+    skipped entirely, so a detector that invents an arc on a genuinely arcless show pays
+    nothing for it. That was harmless for regex detectors (they emit nothing there) but it
+    hides the DOMINANT failure mode of any semantic/LLM tier, whose characteristic error is
+    exactly "confidently grouped an anthology". Turn this on to count those feeds: an arc
+    detected against empty truth scores as pure junk, which is correct.
+    """
+    gold_file = gold_path or GOLD
+    if not gold_file.exists():
         return None
-    gold = json.loads(GOLD.read_text())
+    gold = json.loads(gold_file.read_text())
     contenders = AP.CONTENDERS if names is None else {n: AP.CONTENDERS[n] for n in names}
     results = {}
     for name, fn in contenders.items():
@@ -108,8 +121,8 @@ def evaluate(names=None):
                "det_assigned": 0, "correct": 0, "true_total": 0, "feeds": 0, "errors": 0}
         per_feed = {}
         for slug, truth in gold.items():
-            eps = load_feed(slug)
-            if eps is None or not truth:
+            eps = load_feed(slug, feeds_dir)
+            if eps is None or (not truth and not score_negatives):
                 continue
             try:
                 detected = fn(eps)
