@@ -144,26 +144,38 @@ removed. Nothing is deleted from the corpus or from any show's output.
   suspects (any theme whose definition reads mostly as exclusions), and the sample agreement
   numbers. This is the recap. **It is data, not a document.**
 
-**Do not write a standalone recap HTML.** There is a running workbench —
-`python3 scripts/serve-catalog.py --tailscale`, `tools/catalog-browser/` — and the report
-belongs in it, not in an unhosted file nobody opens.
+**Everything this run produces has to land in the workbench, browsable and filterable.**
+That tool exists to understand the shape of the catalog that ships with the app. Analysis
+that sits in a JSON file, or in a standalone HTML page nobody opens, is not doing its job.
 
-Wire it through:
+Run `python3 scripts/serve-catalog.py --tailscale`; the UI is `tools/catalog-browser/`.
 
-1. `build-catalog-index.py` reads `_run-report.json` and puts it in `catalog-index.json`
-   under a top-level `run` key, alongside the per-show theme data it already folds in.
-2. The workbench's **System** view renders it. That view currently holds explanatory prose
-   about the architecture — **replace that prose with the run report.** Live numbers about
-   what actually happened are what a running tool should show; the architecture is written
-   down in `docs/design/the-catalog.md` and does not need repeating in the UI.
-3. Sort it so the useful thing is first: shows that failed audit, then junk-drawer suspects,
-   then lowest agreement, then everything that passed.
+`build-catalog-index.py` already folds per-show theme data into `catalog-index.json`. Extend
+it so every signal this run produces reaches an object you can browse:
 
-Then rerun `python3 curation/arc-bakeoff/build-catalog-index.py` so the Model confidence
-facet covers more than Swindled, and restart the server.
+| Signal | Attached to | Surfaced as |
+|---|---|---|
+| Assignment confidence | episode | badge on the row; **Model confidence** facet (exists, currently covers only Swindled) |
+| Theme confidence spread | theme | counts on the theme card |
+| Junk-drawer suspect | theme | badge, and a facet to find them across shows |
+| Audit pass/fail + reason | show | badge on the show card, and a facet |
+| Two-run agreement | show | shown where the Swindled number already is |
+| Vocabulary size | show | on the show |
 
-Match the existing style — `tools/catalog-browser/app.css` tokens, no framework, no build
-step, both themes. Do not restructure the workbench's navigation.
+So the questions the workbench should answer after this run:
+
+- *Which shows failed audit?* → a facet.
+- *Which themes are junk drawers?* → a facet, across all 94 shows.
+- *Show me every low-confidence episode label* → the existing confidence facet, now
+  meaningful because it covers 94 shows instead of one.
+- *What did this show's vocabulary come out as?* → open the show.
+
+A run-level summary — shows processed, episodes labelled, failures — can go at the top of
+the **System** view. Keep it to numbers. The per-object flags above are the point; the
+summary is a footnote.
+
+Match the existing style: `tools/catalog-browser/app.css` tokens, no framework, no build
+step, both themes, works at phone width. Do not restructure the navigation.
 
 ## Verification before claiming success
 
