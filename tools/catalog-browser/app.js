@@ -5,7 +5,7 @@
 const $ = (s, r = document) => r.querySelector(s);
 const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x != null) n.textContent = x; return n; };
 
-const state = { data: null, verdicts: {}, pattern: null, q: '', cat: '', slug: null, arc: null, cursor: 0 };
+const state = { data: null, verdicts: {}, pattern: null, q: '', cat: '', slug: null, arc: null, theme: null, cursor: 0 };
 
 /* Catalog artwork is stored at 3000x3000. Ask Apple for a thumbnail instead —
    315 full-size covers would be ~100MB of images for a grid of 180px tiles. */
@@ -114,7 +114,7 @@ function visible() {
 /* ---------- routing ---------- */
 /* One hash route, so a show is linkable and the back button behaves. */
 function openShow(slug) {
-  state.slug = slug; state.arc = null; state.cursor = 0;
+  state.slug = slug; state.arc = null; state.theme = null; state.cursor = 0;
   location.hash = slug ? '#/show/' + encodeURIComponent(slug) : '';
   // Render here rather than leaning on hashchange: it fires asynchronously, and by then
   // fromHash() sees state already matching and bails, so nothing would ever draw.
@@ -126,7 +126,7 @@ function fromHash() {
   const m = /^#\/show\/(.+)$/.exec(location.hash);
   const slug = m ? decodeURIComponent(m[1]) : null;
   if (slug === state.slug) return;
-  state.slug = slug; state.arc = null; state.cursor = 0;
+  state.slug = slug; state.arc = null; state.theme = null; state.cursor = 0;
   if (state.data) render();
 }
 window.addEventListener('hashchange', fromHash);
@@ -165,6 +165,9 @@ function showCard(s, i) {
   c.appendChild(el('div', 'card-sub', s.network || s.author || ''));
 
   const foot = el('div', 'card-foot');
+  if ((s.themes_vocab || []).length) {
+    foot.appendChild(el('span', 'tag struct', `${s.themes_vocab.length} themes`));
+  }
   if (s.arcs.length) {
     foot.appendChild(el('span', 'tag on', `${s.arcs.length} arc${s.arcs.length > 1 ? 's' : ''}`));
     s.patterns.slice(0, 2).forEach(p => {
@@ -186,7 +189,7 @@ function verdictMark(slug) {
   const rec = state.verdicts[slug];
   if (!rec) return null;
   if (rec.show) return 'none';
-  const vs = Object.values(rec.arcs || {}).map(a => a.v);
+  const vs = [...Object.values(rec.arcs || {}), ...Object.values(rec.themes || {})].map(a => a.v);
   if (!vs.length) return null;
   if (vs.includes('wrong')) return 'wrong';
   if (vs.includes('unsure')) return 'unsure';
@@ -260,6 +263,25 @@ function renderDetail() {
     if (g) view.appendChild(el('p', 'ddesc', g.hint));
   }
 
+  // themes — anthologies have no arcs, but their episodes still cluster by subject
+  if ((s.themes_vocab || []).length) {
+    const tsec = el('div', 'sec');
+    tsec.appendChild(el('h2', null, 'Themes'));
+    tsec.appendChild(el('span', 'count', String(s.themes_vocab.length)));
+    const ag = s.themes_meta && s.themes_meta.agreement;
+    if (ag && ag.primaryAgreement != null) {
+      tsec.appendChild(el('div', 'spacer'));
+      const a = el('span', 'agree', `${Math.round(ag.primaryAgreement * 100)}% agreement across two passes`);
+      a.title = 'Two independent labelling runs; where they disagree the theme boundary is fuzzy.';
+      tsec.appendChild(a);
+    }
+    view.appendChild(tsec);
+
+    const tw = el('div', 'arcs');
+    s.themes_vocab.forEach((t, i) => tw.appendChild(themeCard(s, t, i, rec)));
+    view.appendChild(tw);
+  }
+
   // show-level verdict
   const sv = el('div', 'showverdict');
   sv.appendChild(el('p', null, s.arcs.length
@@ -276,12 +298,15 @@ function renderDetail() {
   // episodes
   const esec = el('div', 'sec');
   esec.appendChild(el('h2', null, 'Episodes'));
-  const shown = state.arc == null ? s.eps : s.eps.filter(e => e[4] === state.arc);
+  const shown = state.arc != null ? s.eps.filter(e => e[4] === state.arc)
+              : state.theme != null ? s.eps.filter(e => e[5] === state.theme)
+              : s.eps;
   esec.appendChild(el('span', 'count', String(shown.length)));
   esec.appendChild(el('div', 'spacer'));
-  if (state.arc != null) {
-    const f = el('button', 'ep-filter', `Showing: ${s.arcs[state.arc].n}  ✕`);
-    f.onclick = () => { state.arc = null; renderDetail(); };
+  if (state.arc != null || state.theme != null) {
+    const label = state.arc != null ? s.arcs[state.arc].n : s.themes_vocab[state.theme].n;
+    const f = el('button', 'ep-filter', `Showing: ${label}  ✕`);
+    f.onclick = () => { state.arc = null; state.theme = null; renderDetail(); };
     esec.appendChild(f);
   }
   view.appendChild(esec);
@@ -292,6 +317,8 @@ function renderDetail() {
     row.appendChild(el('span', 'ep-date', fmtDate(e[1])));
     const body = el('span', 'ep-t');
     if (e[4] !== -1 && state.arc == null) body.appendChild(el('span', 'ep-arc', s.arcs[e[4]].n));
+    else if (e[5] != null && e[5] !== -1 && state.theme == null)
+      body.appendChild(el('span', 'ep-arc ep-theme', s.themes_vocab[e[5]].n));
     body.append(e[0]);
     row.appendChild(body);
     const tag = el('span');
@@ -304,6 +331,43 @@ function renderDetail() {
   if (state.arc == null && s.eps.length < s.nEps)
     view.appendChild(el('p', 'trim', `Showing ${s.eps.length} of ${s.nEps} episodes — every arc member, plus a sample of the rest.`));
   view.appendChild(el('p', 'hint', 'j / k arcs · 1 right · 2 wrong · 3 unsure · 0 clear · n no arcs · esc back'));
+}
+
+function themeCard(s, t, i, rec) {
+  const card = el('div', 'arc theme' + (state.theme === i ? ' active' : ''));
+  const top = el('div', 'arc-top');
+  top.appendChild(el('span', 'tag struct', `${t.c} episodes`));
+  if (t.m) {
+    const m = el('span', 'arc-season', 'catalog');
+    m.title = 'Maps to the show-level theme: ' + t.m;
+    top.appendChild(m);
+  }
+  card.appendChild(top);
+
+  const name = el('div', 'arc-name', t.n);
+  name.onclick = () => { state.theme = state.theme === i ? null : i; state.arc = null; renderDetail(); };
+  card.appendChild(name);
+
+  const def = el('div', 'theme-def', t.d);
+  def.onclick = name.onclick;
+  card.appendChild(def);
+
+  const vs = el('div', 'verdicts');
+  const cur = (rec.themes || {})[t.s];
+  [['right', '✓'], ['wrong', '✗'], ['unsure', '?']].forEach(([v, glyph]) => {
+    const b = el('button', 'v' + (cur && cur.v === v ? ' on-' + v : ''), glyph);
+    b.title = v === 'right' ? 'this is a real category' : v === 'wrong' ? 'not a real category' : 'not sure';
+    b.setAttribute('aria-label', `Mark theme "${t.n}" ${v}`);
+    b.onclick = async e => {
+      e.stopPropagation();
+      await saveVerdict({ slug: s.slug, kind: 'theme', theme: t.s,
+                          verdict: cur && cur.v === v ? 'clear' : v, name: t.n });
+      renderDetail();
+    };
+    vs.appendChild(b);
+  });
+  card.appendChild(vs);
+  return card;
 }
 
 function arcCard(s, arc, i, rec) {

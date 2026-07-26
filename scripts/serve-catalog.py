@@ -141,7 +141,17 @@ class Handler(BaseHTTPRequestHandler):
         rec = data.setdefault(slug, {"show": None, "arcs": {}})
         stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
-        if payload.get("kind") == "arc":
+        if payload.get("kind") == "theme":
+            # Anthology shows are judged a theme at a time -- "is this a real category?" --
+            # rather than arc by arc. Keyed by theme slug, which is stable across rebuilds
+            # in a way positional arc indices are not.
+            key = payload.get("theme") or ""
+            themes = rec.setdefault("themes", {})
+            if verdict == "clear":
+                themes.pop(key, None)
+            else:
+                themes[key] = {"v": verdict, "name": payload.get("name") or "", "at": stamp}
+        elif payload.get("kind") == "arc":
             key = str(payload.get("index"))
             if verdict == "clear":
                 rec["arcs"].pop(key, None)
@@ -154,7 +164,7 @@ class Handler(BaseHTTPRequestHandler):
         else:
             rec["show"] = None if verdict == "clear" else {"v": verdict, "at": stamp}
 
-        if not rec["arcs"] and not rec["show"]:
+        if not rec["arcs"] and not rec["show"] and not rec.get("themes"):
             data.pop(slug, None)
         save_verdicts(data)
         self._json(200, {"ok": True, "slug": slug, "verdicts": data.get(slug)})

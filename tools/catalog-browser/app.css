@@ -205,6 +205,13 @@ select.cat { height: 38px; border: 0; border-radius: var(--r-field); background:
 .arc-season { font-size: .68rem; font-weight: 800; padding: 2px 8px; border-radius: var(--r-pill);
   background: var(--chip); color: var(--text-dim); white-space: nowrap; }
 
+/* theme cards reuse the arc card, but lead with the definition rather than a season */
+.arc.theme .arc-name { min-height: 0; -webkit-line-clamp: 3; }
+.theme-def { font-size: .78rem; line-height: 1.4; color: var(--text-dim); cursor: pointer;
+  display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+.arc.theme.active { box-shadow: var(--elev-list), inset 0 0 0 2px var(--accent-2); }
+.agree { font-size: .74rem; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+
 .verdicts { display: flex; gap: 4px; margin-top: auto; padding-top: var(--sp-1); }
 .v {
   flex: 1; height: 30px; border: 0; border-radius: var(--r-pill); cursor: pointer;
@@ -232,6 +239,8 @@ select.cat { height: 38px; border: 0; border-radius: var(--r-field); background:
 .ep-date { font-size: .74rem; color: var(--text-faint); font-variant-numeric: tabular-nums; }
 .ep-t { font-size: .9rem; font-weight: 600; line-height: 1.35; min-width: 0; overflow-wrap: anywhere; }
 .ep-arc { display: block; font-size: .72rem; font-weight: 800; color: var(--accent-2); margin-bottom: 1px; }
+/* must follow .ep-arc — a mixed show like Radiolab shows both, and they need to differ */
+.ep-arc.ep-theme { color: var(--grape); }
 .ep.off .ep-t { color: var(--text-dim); font-weight: 500; }
 .trim { font-size: .76rem; color: var(--text-faint); font-style: italic; padding: var(--sp-3) 0 0; }
 

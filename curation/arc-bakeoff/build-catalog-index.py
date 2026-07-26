@@ -23,6 +23,7 @@ ROOT = HERE.parent.parent
 FEEDS = ROOT / "curation" / "feeds"
 CATALOG = ROOT / "curation" / "catalog" / "catalog.json"
 THEMES = ROOT / "curation" / "catalog" / "themes.json"
+EP_THEMES = HERE / "episode-themes"
 OUT = HERE / "catalog-index.json"
 
 sys.path.insert(0, str(HERE))
@@ -66,6 +67,21 @@ def slugify(t):
     """Verbatim from scripts/build-catalog.py:34 -- the catalog's only real join key."""
     s = re.sub(r"^(the|a|an)\s+", "", (t or "").lower())
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-") or "show"
+
+
+def load_episode_themes(slug):
+    """Anthologies have no arcs but their episodes still cluster by subject. When a theme
+    taxonomy exists for a show, the browser shows themes where arcs would go."""
+    path = EP_THEMES / f"{slug}.json"
+    if not path.exists():
+        return None, {}
+    data = json.loads(path.read_text())
+    idx = {v["slug"]: i for i, v in enumerate(data.get("vocabulary", []))}
+    by_guid = {}
+    for ep in data.get("episodes", []):
+        by_guid[ep["guid"]] = (idx.get(ep.get("primary"), -1),
+                               [idx[s] for s in (ep.get("secondary") or []) if s in idx])
+    return data, by_guid
 
 
 def load_episodes(path):
@@ -221,14 +237,18 @@ def main():
             group = no_arc_group(full)
             group_shows[group] += 1
 
+        ep_themes, theme_of = load_episode_themes(slug)
+
         # Every arc member, plus a slice of context so you can see what was passed over.
+        # A themed show keeps every themed episode instead — the taxonomy IS the content
+        # there, so a 10-episode sample would hide most of it.
         arc_of = {}
         for i, a in enumerate(final):
             for g in a["members"]:
                 arc_of[g] = i
         keep, extra = [], 0
         for e in eps:
-            if e["guid"] in member_guids:
+            if e["guid"] in member_guids or e["guid"] in theme_of:
                 keep.append(e)
             elif extra < CONTEXT_EPISODES:
                 keep.append(e)
@@ -250,10 +270,16 @@ def main():
             "patterns": sorted(set(pats)),
             "group": group,
             "arcs": arcs_out,
-            # [title, date, season, non-full type, arc index or -1]
+            "themes_vocab": [{"s": v["slug"], "n": v["name"], "d": v["definition"],
+                              "c": v.get("count", 0), "m": v.get("mapsTo")}
+                             for v in (ep_themes or {}).get("vocabulary", [])],
+            "themes_meta": {"agreement": (ep_themes or {}).get("agreement", {}),
+                            "models": (ep_themes or {}).get("models", {})} if ep_themes else None,
+            # [title, date, season, non-full type, arc index or -1, theme index or -1]
             "eps": [[e["title"][:TITLE_CAP], e["iso"], e["season"],
                      "" if e["episodeType"] == "full" else e["episodeType"],
-                     arc_of.get(e["guid"], -1)] for e in keep],
+                     arc_of.get(e["guid"], -1),
+                     theme_of.get(e["guid"], (-1, []))[0]] for e in keep],
         })
 
     if unmatched:
