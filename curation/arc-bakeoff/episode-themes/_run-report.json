@@ -183,7 +183,28 @@
   "zeit-verbrechen ep None: 'workplace-death' is not in the vocabulary",
   "zeit-verbrechen ep None: 'theft' is not in the vocabulary"
  ],
- "agreement": {},
+ "agreement": {
+  "radiolab": {
+   "runs": 2,
+   "compared": 260,
+   "primaryAgreement": 0.7077
+  },
+  "99-invisible": {
+   "runs": 2,
+   "compared": 260,
+   "primaryAgreement": 0.4462
+  },
+  "swindled": {
+   "runs": 2,
+   "compared": 141,
+   "primaryAgreement": 0.6383
+  },
+  "_overall": {
+   "runs": 2,
+   "compared": 661,
+   "primaryAgreement": 0.59
+  }
+ },
  "showReports": [
   {
    "slug": "13-minutes-to-the-moon",
