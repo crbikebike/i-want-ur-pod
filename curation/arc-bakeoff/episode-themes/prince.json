@@ -1,0 +1,71 @@
+{
+ "slug": "prince",
+ "title": "The Prince",
+ "models": {
+  "openCoding": "sonnet",
+  "consolidate": "sonnet",
+  "assign": "haiku"
+ },
+ "themesUsed": [
+  {
+   "slug": "political-scandal",
+   "count": 1
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 1
+  },
+  {
+   "slug": "presidential-power",
+   "count": 1
+  },
+  {
+   "slug": "family-secret",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "63336b82ec027e0014b21a47",
+   "display": "Hide and bide",
+   "segment": "",
+   "subject": "Hide and bide",
+   "iso": "2022-09-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "63336987363b44001270c488",
+   "display": "Redder than red",
+   "segment": "",
+   "subject": "Redder than red",
+   "iso": "2022-09-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "presidential-power",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
+ "agreement": {},
+ "auditFlags": []
+}

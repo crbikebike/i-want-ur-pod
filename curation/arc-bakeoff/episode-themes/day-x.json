@@ -1,0 +1,69 @@
+{
+ "slug": "day-x",
+ "title": "Day X",
+ "models": {
+  "openCoding": "sonnet",
+  "consolidate": "sonnet",
+  "assign": "haiku"
+ },
+ "themesUsed": [
+  {
+   "slug": "extremist-movement",
+   "count": 2
+  },
+  {
+   "slug": "political-scandal",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "04e72420-8215-4210-92c3-d938651cfe03",
+   "display": "Day X, Part 2: In the Stomach",
+   "segment": "",
+   "subject": "In the Stomach",
+   "iso": "2021-06-03",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "4f1dfedc-a047-467d-8800-10cbfddafab3",
+   "display": "Day X, Part 1: Shadow Army?",
+   "segment": "",
+   "subject": "Shadow Army?",
+   "iso": "2021-05-27",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "extremist-movement",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
+ "agreement": {},
+ "auditFlags": [
+  "collapsed: 'extremist-movement' is 2/2 (100%)"
+ ]
+}

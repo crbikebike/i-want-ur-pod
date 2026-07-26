@@ -1,0 +1,125 @@
+{
+ "slug": "last-12-weeks",
+ "title": "The Last 12 Weeks",
+ "models": {
+  "openCoding": "sonnet",
+  "consolidate": "sonnet",
+  "assign": "haiku"
+ },
+ "themesUsed": [
+  {
+   "slug": "death-penalty",
+   "count": 5
+  },
+  {
+   "slug": "serial-offender",
+   "count": 2
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "b9fa20c5-9d8c-4223-86f1-8e2912805915",
+   "display": "Episode 5: A Quiet Morning",
+   "segment": "",
+   "subject": "A Quiet Morning",
+   "iso": "2026-06-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a7c6116a-ef1d-4be1-b74f-5683a19e0741",
+   "display": "Episode 4: David Wood",
+   "segment": "",
+   "subject": "David Wood",
+   "iso": "2026-06-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "serial-offender",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ced9af33-0f76-4d23-bfe6-cab00c32e23b",
+   "display": "Episode 3: The Mother & The Informant",
+   "segment": "",
+   "subject": "The Mother & The Informant",
+   "iso": "2026-06-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d1273a2a-eee0-44ec-9ee7-5887bc61d0c9",
+   "display": "Episode 2: The Whataburger Declaration",
+   "segment": "",
+   "subject": "The Whataburger Declaration",
+   "iso": "2026-06-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a0dbbabd-22e4-4bf1-ac10-e27e958a71ba",
+   "display": "Episode 1: What If I Follow You Around?",
+   "segment": "",
+   "subject": "What If I Follow You Around?",
+   "iso": "2026-06-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "serial-offender",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
+ "agreement": {},
+ "auditFlags": [
+  "collapsed: 'death-penalty' is 5/5 (100%)",
+  "only 1 theme(s) across 5 episodes"
+ ]
+}

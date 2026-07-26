@@ -1,0 +1,51 @@
+{
+ "slug": "retrievals",
+ "title": "The Retrievals",
+ "models": {
+  "openCoding": "sonnet",
+  "consolidate": "sonnet",
+  "assign": "haiku"
+ },
+ "themesUsed": [
+  {
+   "slug": "medical-system-harm",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "b544e48f-a632-46a0-b3e3-67443535a70e",
+   "display": "S02 Episode 1: The Case",
+   "segment": "",
+   "subject": "The Case",
+   "iso": "2025-07-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d0e3645b-8eb4-442c-98ba-21196725731d",
+   "display": "S01 Episode 1: The Patients",
+   "segment": "",
+   "subject": "The Patients",
+   "iso": "2023-06-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
+ "agreement": {},
+ "auditFlags": [
+  "collapsed: 'medical-system-harm' is 2/2 (100%)"
+ ]
+}

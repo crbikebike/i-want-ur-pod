@@ -1,0 +1,45 @@
+{
+ "slug": "witnessed-night-shift",
+ "title": "Witnessed: Night Shift",
+ "models": {
+  "openCoding": "sonnet",
+  "consolidate": "sonnet",
+  "assign": "haiku"
+ },
+ "themesUsed": [
+  {
+   "slug": "death-in-custody",
+   "count": 1
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "23888711-a5fe-467b-9b3d-cb9319023b0e",
+   "display": "Code Blue",
+   "segment": "",
+   "subject": "Code Blue",
+   "iso": "2024-10-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "death-in-custody",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
+ "agreement": {},
+ "auditFlags": [
+  "collapsed: 'death-in-custody' is 1/1 (100%)"
+ ]
+}

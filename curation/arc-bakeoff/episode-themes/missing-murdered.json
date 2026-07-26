@@ -1,0 +1,36 @@
+{
+ "slug": "missing-murdered",
+ "title": "Missing & Murdered",
+ "models": {
+  "openCoding": "sonnet",
+  "consolidate": "sonnet",
+  "assign": "haiku"
+ },
+ "themesUsed": [
+  {
+   "slug": "missing-person",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "a1949a71-e506-4e25-bc45-00d60b0b22e1",
+   "display": "Finding Cleo",
+   "segment": "",
+   "subject": "Finding Cleo",
+   "iso": "2021-01-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
+ "agreement": {},
+ "auditFlags": [
+  "collapsed: 'missing-person' is 1/1 (100%)"
+ ]
+}
