@@ -161,19 +161,39 @@ def slugify(t):
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-") or "show"
 
 
-def load_episode_themes(slug):
-    """Anthologies have no arcs but their episodes still cluster by subject. When a theme
-    taxonomy exists for a show, the browser shows themes where arcs would go."""
+_VOCAB = None
+
+
+def load_vocabulary():
+    """The one shared episode vocabulary. Themes are their own taxonomy -- they are not
+    children of the 30 show-level themes -- so they ship as their own list and link
+    softly via relatedShowThemes."""
+    global _VOCAB
+    if _VOCAB is None:
+        path = EP_THEMES / "_vocabulary.json"
+        _VOCAB = json.loads(path.read_text()).get("themes", []) if path.exists() else []
+    return _VOCAB
+
+
+def load_episode_themes(slug, vocab_idx):
+    """Themes sit beside arcs, not behind them: an episode inside an arc still has a
+    subject, so it still carries themes. Confidence rides on each application, because a
+    confident primary next to a shaky third pick is exactly the distinction worth finding."""
     path = EP_THEMES / f"{slug}.json"
     if not path.exists():
         return None, {}
     data = json.loads(path.read_text())
-    idx = {v["slug"]: i for i, v in enumerate(data.get("vocabulary", []))}
     by_guid = {}
     for ep in data.get("episodes", []):
-        by_guid[ep["guid"]] = (idx.get(ep.get("primary"), -1),
-                               [idx[s] for s in (ep.get("secondary") or []) if s in idx],
-                               (ep.get("confidence") or "")[:1])   # h | m | l
+        prim, prim_c, secs = -1, "", []
+        for a in ep.get("themes") or []:
+            i = vocab_idx.get(a.get("slug"), -1)
+            c = (a.get("confidence") or "")[:1]      # h | m | l
+            if a.get("role") == "primary":
+                prim, prim_c = i, c
+            elif i >= 0:
+                secs.append([i, c])
+        by_guid[ep["guid"]] = (prim, prim_c, secs)
     return data, by_guid
 
 
@@ -276,6 +296,8 @@ def no_arc_group(full):
 def main():
     catalog = json.loads(CATALOG.read_text())
     themes = {t["slug"]: t for t in json.loads(THEMES.read_text())}
+    ep_vocab = load_vocabulary()
+    vocab_idx = {v["slug"]: i for i, v in enumerate(ep_vocab)}
     # feedAccess is hand-curated in atlas-source and dropped by build-catalog.py.
     # It says whether a show is paywalled, which is context for a small feed --
     # though not decisive: 1619 and Caliphate are "free-public" and still sampled.
@@ -337,7 +359,7 @@ def main():
             group = no_arc_group(full)
             group_shows[group] += 1
 
-        ep_themes, theme_of = load_episode_themes(slug)
+        ep_themes, theme_of = load_episode_themes(slug, vocab_idx)
 
         # Every arc member, plus a slice of context so you can see what was passed over.
         # A themed show keeps every themed episode instead — the taxonomy IS the content
@@ -373,27 +395,57 @@ def main():
             "patterns": sorted(set(pats)),
             "group": group,
             "arcs": arcs_out,
-            "themes_vocab": [{"s": v["slug"], "n": v["name"], "d": v["definition"],
-                              "c": v.get("count", 0), "m": v.get("mapsTo")}
-                             for v in (ep_themes or {}).get("vocabulary", [])],
+            # The show's own slice of the shared vocabulary. This is what the show detail
+            # screen filters on -- most shows have no arcs, so it is the only structure
+            # there for digging through hundreds of episodes.
+            "themesUsed": [[vocab_idx[t["slug"]], t["count"]]
+                           for t in (ep_themes or {}).get("themesUsed", [])
+                           if t["slug"] in vocab_idx],
             "themes_meta": {"agreement": (ep_themes or {}).get("agreement", {}),
                             "models": (ep_themes or {}).get("models", {})} if ep_themes else None,
-            # how sure the model was, so the shaky handful can be found and scanned
-            "conf": collections.Counter(v[2] for v in theme_of.values() if v[2]) or None,
-            # [title, date, season, non-full type, arc index or -1, theme index or -1, confidence]
+            "auditFlags": (ep_themes or {}).get("auditFlags", []),
+            # Confidence counted per APPLICATION, not per episode, so a weak secondary is
+            # findable without its strong primary masking it.
+            "conf": collections.Counter(
+                [c for _, c, _ in theme_of.values() if c]
+                + [c for _, _, secs in theme_of.values() for _, c in secs if c]) or None,
+            # [title, date, season, non-full type, arc idx or -1, primary theme idx or -1,
+            #  primary confidence, [[secondary idx, confidence], ...]]
             "eps": [[e["title"][:TITLE_CAP], e["iso"], e["season"],
                      "" if e["episodeType"] == "full" else e["episodeType"],
                      arc_of.get(e["guid"], -1),
-                     theme_of.get(e["guid"], (-1, [], ""))[0],
-                     theme_of.get(e["guid"], (-1, [], ""))[2]] for e in keep],
+                     theme_of.get(e["guid"], (-1, "", []))[0],
+                     theme_of.get(e["guid"], (-1, "", []))[1],
+                     theme_of.get(e["guid"], (-1, "", []))[2]] for e in keep],
         })
 
     if unmatched:
         sys.exit(f"FATAL: {len(unmatched)} feeds with no catalog record: {unmatched[:8]}")
 
+    report_path = EP_THEMES / "_run-report.json"
+    run_report = json.loads(report_path.read_text()) if report_path.exists() else None
+
     out = {
         "shows": shows,
         "themes": themes,
+        # The shared episode vocabulary, indexed by position everywhere above.
+        # spec = used by only one show (the review queue for a later merge pass);
+        # junk = definition reads as a catch-all.
+        "epVocab": [{"s": v["slug"], "n": v["name"], "d": v["definition"],
+                     "rel": v.get("relatedShowThemes") or [],
+                     "ec": v.get("episodeCount", 0), "sc": v.get("showCount", 0),
+                     "spec": bool(v.get("showSpecific")),
+                     "junk": bool(v.get("junkDrawerSuspect"))}
+                    for v in ep_vocab],
+        "epRun": {"shows": run_report.get("shows"),
+                  "episodes": run_report.get("episodesLabelled"),
+                  "vocab": run_report.get("vocabularySize"),
+                  "showSpecific": run_report.get("showSpecificThemes"),
+                  "junk": run_report.get("junkDrawerSuspects"),
+                  "unassigned": run_report.get("unassigned"),
+                  "auditFlags": len(run_report.get("catalogAudit") or []),
+                  "agreement": (run_report.get("agreement") or {}).get("_overall", {}),
+                  } if run_report else None,
         "patterns": {k: {"label": v[0], "family": v[1], "hint": v[2],
                          "arcs": pattern_arcs.get(k, 0), "shows": len(pattern_shows.get(k, ()))}
                      for k, v in PATTERNS.items() if pattern_arcs.get(k)},

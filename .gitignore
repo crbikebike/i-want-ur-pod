@@ -33,6 +33,13 @@ curation/feeds/
 # Episode descriptions are third-party copyrighted blurbs, fetched per show and
 # regenerable via scripts/fetch-feed-descriptions.py.
 curation/arc-bakeoff/descriptions/
+# Theming intermediates: model input rebuilt by `build-episode-themes.py prepare`,
+# and raw per-batch agent output merged by `finalize`. The committed artifacts are
+# episode-themes/_vocabulary.json, <slug>.json and _run-report.json.
+curation/arc-bakeoff/episode-themes/_input/
+curation/arc-bakeoff/episode-themes/_input-all.json
+curation/arc-bakeoff/episode-themes/_batch-plan.json
+curation/arc-bakeoff/episode-themes/_work/
 curation/catalog-build.log
 curation/arc-bakeoff/fetch.log
 **/__pycache__/

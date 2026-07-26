@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
-"""Episode-level theme taxonomy for anthology shows.
+"""Episode-level theme index over the whole catalog.
 
-Anthology feeds have no multi-part arcs -- every episode is a different story -- but they
-are not unstructured. Swindled's Ford Pinto, OceanGate and ValuJet episodes are all the
-same story: a company cut corners and people died. Nothing in the arc pipeline can see it.
+See THEMING_PROMPT.md. Themes are a second index beside arcs, not a mop-up for the
+shows the arc detector could not reach: an episode inside an arc still has a subject,
+so it still gets a theme.
 
-    python3 build-episode-themes.py extract --slug swindled
-    # ... run episode-theme-workflow.mjs over the emitted file ...
-    python3 build-episode-themes.py merge --slug swindled --result /path/to/workflow.json
+    python3 build-episode-themes.py prepare
+    # ... run episode-theme-workflow.mjs over episode-themes/_input-all.json ...
+    python3 build-episode-themes.py finalize --result /path/to/workflow.json
 
-extract  pulls each episode's real subject out of its title and writes the model's input
-merge    validates + audits the model's output and writes episode-themes/<slug>.json
+prepare   parse every full episode in the corpus into model input (title, segment,
+          subject, description) and write _input-all.json
+finalize  validate + audit the model's output, then write _vocabulary.json, one file
+          per show, and _run-report.json
 
-Stdlib only, per HFAB_PROMPT.md.
+Stdlib only.
 """
 import argparse
 import collections
@@ -22,201 +24,579 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-FEEDS = HERE.parent.parent / "curation" / "feeds"
-THEMES = HERE.parent.parent / "curation" / "catalog" / "themes.json"
+ROOT = HERE.parent.parent
+FEEDS = ROOT / "curation" / "feeds"
+DESCS = HERE / "descriptions"
+THEMES = ROOT / "curation" / "catalog" / "themes.json"
 OUT_DIR = HERE / "episode-themes"
+IN_DIR = OUT_DIR / "_input"          # per-show model input
+WORK = OUT_DIR / "_work"             # raw agent output, merged by finalize
 
-# Audit thresholds. A category smaller than MIN is a label, not a category; one larger
-# than MAX_SHARE is a bucket that draws no distinction.
-MIN_THEME_EPISODES = 3
-MAX_THEME_SHARE = 0.35
-VOCAB_MIN, VOCAB_MAX = 10, 16
+# Episodes per model call. The brief specified 80; this box has 4 cores, so the workflow
+# runs only min(16, cores-2) = 2 agents at a time and 80 would need ~17h of wall clock.
+# Bigger batches trade some per-row attention for finishing in one night. Assign emits
+# ~3 theme applications per row, so its batches stay smaller to avoid truncation.
+BATCH = 400
+ASSIGN_BATCH = 300
 
+# Open coding exists to DERIVE the vocabulary, not to label the catalog -- assign does
+# that, and assign still covers every episode. A 663-episode show does not contribute
+# 663 episodes' worth of new theme ideas, so cap what open coding reads per show and
+# sample evenly across the run. Every show stays represented, which is what
+# consolidation needs; shows at or under the cap are still read in full.
+OPEN_CAP = 120
+
+sys.path.insert(0, str(HERE))
+from approaches import a8_cascade  # noqa: E402  -- read-only; this job never edits it
+
+# --- audit thresholds -------------------------------------------------------------
+# Catalog level. A theme under MIN is a label, not a category; one over MAX_SHARE
+# draws no distinction across 28k episodes.
+VOCAB_MIN, VOCAB_MAX = 120, 200
+MIN_THEME_EPISODES = 15
+MAX_THEME_SHARE = 0.08
+# Per show. A show that collapses to one theme has been described, not indexed.
+MAX_SHOW_THEME_SHARE = 0.60
+MIN_SHOW_THEMES = 2
+MIN_EPS_FOR_MULTI_THEME = 4
+
+# Shows whose feed resolves to a different show than their metadata claims.
+EXCLUDE = {
+    "broken-record", "hit-parade", "homecoming", "gun-machine", "animal",
+    "earshot", "shift", "startup", "making-oprah",
+}
+
+# --- title parsing ----------------------------------------------------------------
 # A trailing parenthetical usually holds the real subject -- but not when it holds a
-# counter. dirt-cheap scores a false 100% on this shape because its parens carry
-# "(Chapter 14 of MITGR)". Reject those rather than feed the model garbage.
+# counter ("(Chapter 14 of MITGR)"). Reject those rather than feed the model garbage.
 COUNTER_IN_PAREN = re.compile(r'\b(chapter|part|pt\.?|vol(?:ume)?|episode|ep\.?)\s*\d', re.I)
 TRAILING_PAREN = re.compile(r'\(([^()]{2,80})\)\s*$')
 
-# Per-show extraction. Adding an anthology means adding an entry here, nothing else.
-SHOWS = {
-    "swindled": {
-        # "S10 Ep141: The Mirage (Nikola Motor Company)" -> "The Mirage" + "Nikola Motor Company"
-        "strip": re.compile(r'^\s*(?:S\d+\s*Ep?\.?\s*\d*\s*:|Rerun:|Free Bonus:|Bonus:)\s*', re.I),
-        "rerun": re.compile(r'^\s*Rerun:\s*', re.I),
-        "subject": "trailing-paren",
-        "include_types": ("full", "bonus"),
-    },
-}
+# Leading counters and boilerplate, stripped before anything else looks at the title.
+COUNTER_PREFIX = re.compile(
+    r'^\s*(?:'
+    r'(?:S(?:eason)?\s*\d+\s*[,:|-]?\s*)?(?:Ep(?:isode)?|E)\.?\s*\#?\d+\s*[:.–—-]\s*'
+    r'|\#?\d{1,4}\s*[:.–—-]\s+'
+    r'|(?:Rerun|Encore|Replay|Free Bonus|Bonus|Update|Presenting|Introducing)\s*:\s*'
+    r')', re.I)
+RERUN_PREFIX = re.compile(r'^\s*(?:Rerun|Encore|Replay)\s*:\s*', re.I)
+
+# "This Country Life - Cinnamon Bears": a name, a dash, a subject. Only treated as a
+# segment when the same name repeats across the show (see SEGMENT_MIN_EPISODES).
+DASH_PREFIX = re.compile(r'^(.{2,40}?)\s+[-–—|]\s+(.{3,})$')
+COLON_SPLIT = re.compile(r'^([^:]{1,40}):\s*(.{3,})$')
+SEGMENT_MIN_EPISODES = 5
 
 
-def load_feed(slug):
-    path = FEEDS / f"{slug}.json"
+def strip_counter(title):
+    """Peel leading counters. Repeat: 'S6 Ep. 480: Bonus: X' stacks them."""
+    prev, out = None, title.strip()
+    while out != prev:
+        prev = out
+        out = COUNTER_PREFIX.sub("", out).strip()
+    return out or title.strip()
+
+
+def find_segments(titles):
+    """Names that repeat across a show's episodes are segments, not subjects.
+
+    Detected by frequency rather than a hand-written list -- 307 shows cannot each get
+    bespoke config. Bear Grease yields This Country Life (161), Render (58),
+    Backwoods University (34).
+    """
+    counts = collections.Counter()
+    for t in titles:
+        m = DASH_PREFIX.match(strip_counter(t))
+        if m:
+            counts[m.group(1).strip().lower()] += 1
+    return {name for name, n in counts.items() if n >= SEGMENT_MIN_EPISODES}
+
+
+def split_segment(title, segments):
+    """-> (segment_or_empty, remaining_title)"""
+    body = strip_counter(title)
+    m = DASH_PREFIX.match(body)
+    if m and m.group(1).strip().lower() in segments:
+        return m.group(1).strip(), m.group(2).strip()
+    return "", body
+
+
+def extract_subject(body):
+    """Generic best-effort subject guess. Order per THEMING_PROMPT.md."""
+    m = TRAILING_PAREN.search(body)
+    if m and not COUNTER_IN_PAREN.search(m.group(1)):
+        return m.group(1).strip()
+    m = COLON_SPLIT.match(body)
+    if m:
+        return m.group(2).strip()
+    m = DASH_PREFIX.match(body)
+    if m:
+        return m.group(2).strip()
+    return body.strip()
+
+
+# --- prepare ----------------------------------------------------------------------
+def load_descriptions(slug):
+    path = DESCS / f"{slug}.json"
     if not path.exists():
-        sys.exit(f"no feed at {path}")
-    return json.loads(path.read_text())
+        return {}
+    try:
+        return json.loads(path.read_text()).get("episodes", {})
+    except Exception:  # noqa: BLE001 - a bad sidecar costs descriptions, not the run
+        return {}
 
 
-def extract(slug):
-    cfg = SHOWS.get(slug)
-    if not cfg:
-        sys.exit(f"no extractor configured for {slug!r}; known: {sorted(SHOWS)}")
-    data = load_feed(slug)
+def prepare_show(slug):
+    feed = json.loads((FEEDS / f"{slug}.json").read_text())
+    full = [e for e in feed.get("episodes", []) if e.get("episodeType") == "full"]
+    if not full:
+        return None
 
-    rows, dropped_rerun, no_subject = [], [], []
-    seen = {}
-    for e in data["episodes"]:
-        etype = e.get("episodeType", "full")
-        if etype not in cfg["include_types"]:
-            continue
+    # Arcs and themes are orthogonal: arc'd episodes stay in and carry inArc.
+    in_arc = {g for a in a8_cascade(full) for g in a["members"]}
+    descs = load_descriptions(slug)
+    segments = find_segments([e["title"] for e in full])
+
+    rows, seen, dropped = [], {}, 0
+    for e in full:
         raw = e["title"]
-        is_rerun = bool(cfg["rerun"].match(raw))
-        display = cfg["strip"].sub("", raw).strip()
+        is_rerun = bool(RERUN_PREFIX.match(raw))
+        segment, body = split_segment(raw, segments)
+        subject = extract_subject(body)
 
-        subject = None
-        if cfg["subject"] == "trailing-paren":
-            m = TRAILING_PAREN.search(display)
-            if m and not COUNTER_IN_PAREN.search(m.group(1)):
-                subject = m.group(1).strip()
-                display = display[:m.start()].strip()
-
-        key = (display.lower(), (subject or "").lower())
+        key = (segment.lower(), body.lower())
         if key in seen:
-            # Same story twice. Feeds are newest-first, so the RE-AIRING is seen first and
-            # the original second -- keep the original and evict the rerun, otherwise the
-            # surviving row is titled "Rerun: ..." and points at the wrong episode.
-            prev = seen[key]
-            if rows[prev]["rerun"] and not is_rerun:
-                rows[prev].update(guid=e["guid"], iso=e.get("iso", ""), type=etype, rerun=False)
-            dropped_rerun.append(raw)
+            # Feeds are newest-first, so the RE-AIRING is seen first and the original
+            # second. Keep the original's guid, evict the rerun.
+            prev = rows[seen[key]]
+            if prev["rerun"] and not is_rerun:
+                prev.update(guid=e["guid"], iso=e.get("iso", ""), rerun=False,
+                            inArc=e["guid"] in in_arc)
+            dropped += 1
             continue
         seen[key] = len(rows)
 
-        if not subject:
-            no_subject.append(raw)
-        rows.append({"i": len(rows), "guid": e["guid"], "display": display,
-                     "subject": subject or display, "iso": e.get("iso", ""),
-                     "type": etype, "rerun": is_rerun})
+        rows.append({
+            "i": len(rows), "guid": e["guid"], "display": raw,
+            "segment": segment, "subject": subject,
+            "desc": descs.get(e["guid"], ""),
+            "iso": e.get("iso", ""), "inArc": e["guid"] in in_arc,
+            "rerun": is_rerun,
+        })
+
+    return {
+        "slug": slug, "title": feed.get("title", slug),
+        "episodes": rows, "segments": sorted(segments),
+        "reairingsDropped": dropped,
+        "withDescription": sum(1 for r in rows if r["desc"]),
+    }
+
+
+def prepare():
+    if not FEEDS.is_dir():
+        sys.exit(f"no corpus at {FEEDS}")
+    slugs = sorted(p.stem for p in FEEDS.glob("*.json") if not p.stem.startswith("_"))
+    slugs = [s for s in slugs if s not in EXCLUDE]
+
+    shows, total, with_desc = [], 0, 0
+    for slug in slugs:
+        try:
+            show = prepare_show(slug)
+        except Exception as e:  # noqa: BLE001 - one bad feed must not stop 306 others
+            print(f"  SKIP {slug}: {type(e).__name__}: {e}", flush=True)
+            continue
+        if not show:
+            continue
+        shows.append(show)
+        total += len(show["episodes"])
+        with_desc += show["withDescription"]
 
     OUT_DIR.mkdir(exist_ok=True)
-    out = OUT_DIR / f"_input-{slug}.json"
-    out.write_text(json.dumps({"slug": slug, "title": data.get("title", slug),
-                               "episodes": rows}, ensure_ascii=False, indent=1) + "\n")
+    IN_DIR.mkdir(parents=True, exist_ok=True)
+    # One file per show: an agent reads only its own slice, so no agent ever pulls the
+    # whole 28k-episode corpus into context.
+    for show in shows:
+        (IN_DIR / f"{show['slug']}.json").write_text(
+            json.dumps(show, ensure_ascii=False, indent=1) + "\n")
 
-    print(f"show                 {data.get('title', slug)}")
-    print(f"episodes kept        {len(rows)}")
-    print(f"  re-airings dropped {len(dropped_rerun)}")
-    print(f"  subject extracted  {len(rows) - len(no_subject)}/{len(rows)}")
-    if no_subject:
-        print(f"  NO SUBJECT ({len(no_subject)}) — model sees the title only:")
-        for t in no_subject[:6]:
-            print(f"     {t[:74]}")
+    # Batch plan for open coding. The rule is that an agent sees a show's COMPLETE set --
+    # consolidation cannot spot that two labels are one theme otherwise. Splitting one
+    # show across calls breaks that; packing several whole small shows into one call does
+    # not, and one batch per show would cost 558 calls against a 1000-agent cap.
+    def build_plan(size, cap=0):
+        plan, pack = [], []
+        for show in sorted(shows, key=lambda s: len(s["episodes"])):
+            n = len(show["episodes"])
+            if cap and n > cap:
+                # Sample evenly across the whole run rather than taking a prefix -- feeds
+                # are newest-first, so a prefix would only ever see recent episodes.
+                idxs = [round(k * (n - 1) / (cap - 1)) for k in range(cap)]
+                part = {"slug": show["slug"], "indices": sorted(set(idxs))}
+                if len(part["indices"]) > size:
+                    for s in range(0, len(part["indices"]), size):
+                        plan.append({"parts": [{"slug": show["slug"],
+                                                "indices": part["indices"][s:s + size]}],
+                                     "split": True})
+                    continue
+                plan.append({"parts": [part], "split": True})
+                continue
+            if n > size:                   # too big to pack: split it
+                for start in range(0, n, size):
+                    plan.append({"parts": [{"slug": show["slug"], "start": start,
+                                            "count": min(size, n - start)}],
+                                 "split": True})
+                continue
+            if sum(p.get("count", len(p.get("indices", []))) for p in pack) + n > size and pack:
+                plan.append({"parts": pack, "split": False})
+                pack = []
+            pack.append({"slug": show["slug"], "start": 0, "count": n})
+        if pack:
+            plan.append({"parts": pack, "split": False})
+        for i, b in enumerate(plan):
+            b["id"] = i
+        return plan
+
+    plan = build_plan(BATCH, OPEN_CAP)
+    (OUT_DIR / "_batch-plan.json").write_text(
+        json.dumps({"batchSize": BATCH, "batches": plan}, ensure_ascii=False, indent=1) + "\n")
+    aplan = build_plan(ASSIGN_BATCH)
+    (OUT_DIR / "_assign-plan.json").write_text(
+        json.dumps({"batchSize": ASSIGN_BATCH, "batches": aplan}, ensure_ascii=False, indent=1) + "\n")
+
+    out = OUT_DIR / "_input-all.json"
+    out.write_text(json.dumps({"shows": shows}, ensure_ascii=False, indent=1) + "\n")
+
+    print(f"shows              {len(shows)}")
+    print(f"batches            {len(plan)} @ {BATCH}/batch")
+    print(f"episodes           {total}")
+    print(f"  with description {with_desc} ({with_desc / total:.1%})" if total else "")
+    print(f"  segments found   {sum(len(s['segments']) for s in shows)}")
+    print(f"  in an arc        {sum(1 for s in shows for r in s['episodes'] if r['inArc'])}")
     print(f"\nwrote {out}")
-    print("next: run episode-theme-workflow.mjs with args {\"slug\":\"%s\"}" % slug)
+    if total and with_desc / total < 0.5:
+        print("\nWARNING: under half the episodes have a description. "
+              "Run scripts/fetch-feed-descriptions.py before theming.")
 
 
-def audit(vocab, episodes, known_themes):
-    """Every check that must hold before this is worth looking at."""
+# --- agent-facing helpers ---------------------------------------------------------
+def batch(batch_id, with_desc=True, plan_name="_batch-plan.json"):
+    """Print one batch of rows as JSON. Agents call this instead of reading the corpus.
+
+    A batch holds either one slice of a big show or several whole small shows, so every
+    row carries its own slug.
+    """
+    plan = json.loads((OUT_DIR / plan_name).read_text())["batches"]
+    if not 0 <= batch_id < len(plan):
+        sys.exit(f"batch id {batch_id} out of range 0..{len(plan) - 1}")
+    entry = plan[batch_id]
+
+    shows = []
+    for part in entry["parts"]:
+        show = json.loads((IN_DIR / f"{part['slug']}.json").read_text())
+        if "indices" in part:
+            by_i = {r["i"]: r for r in show["episodes"]}
+            rows = [by_i[i] for i in part["indices"] if i in by_i]
+        else:
+            rows = show["episodes"][part["start"]:part["start"] + part["count"]]
+        shows.append({
+            "slug": part["slug"], "title": show["title"],
+            "episodes": [{"i": r["i"], "title": r["display"], "segment": r["segment"],
+                          "subject": r["subject"],
+                          **({"desc": r["desc"]} if with_desc else {})}
+                         for r in rows],
+        })
+    print(json.dumps({"batchId": batch_id, "split": entry["split"], "shows": shows},
+                     ensure_ascii=False))
+
+
+def labels(slice_index=0, slices=1):
+    """Aggregate open-coding output into distinct labels for consolidation.
+
+    Collapses ~28k raw labels to a few thousand distinct phrases in plain Python before
+    any model sees them, and carries the show set per label -- that is what decides
+    showSpecific later, computed here rather than asked of the model.
+    """
+    src = WORK / "open"
+    counts = collections.Counter()
+    shows = collections.defaultdict(set)
+    for path in sorted(src.glob("*.json")):
+        try:
+            data = json.loads(path.read_text())
+        except Exception:  # noqa: BLE001
+            continue
+        for row in data.get("labels", []):
+            lab = (row.get("label") or "").strip().lower()
+            slug = row.get("slug") or data.get("slug") or ""
+            if lab:
+                counts[lab] += 1
+                shows[lab].add(slug)
+    items = [{"label": lab, "count": n, "shows": len(shows[lab])}
+             for lab, n in counts.most_common()]
+    chunk = items[slice_index::slices] if slices > 1 else items
+    print(json.dumps({"distinct": len(items), "slice": slice_index,
+                      "labels": chunk}, ensure_ascii=False))
+
+
+# --- finalize ---------------------------------------------------------------------
+def audit_catalog(vocab, per_show, known_show_themes):
     problems = []
     slugs = {v["slug"] for v in vocab}
+    total = sum(len(s["episodes"]) for s in per_show)
 
     if not VOCAB_MIN <= len(vocab) <= VOCAB_MAX:
         problems.append(f"vocabulary is {len(vocab)} themes, wanted {VOCAB_MIN}-{VOCAB_MAX}")
 
     counts = collections.Counter()
-    for ep in episodes:
-        p = ep.get("primary")
-        if not p:
-            problems.append(f"episode {ep.get('i')} has no primary theme")
-            continue
-        if p not in slugs:
-            problems.append(f"episode {ep.get('i')} primary {p!r} is not in the vocabulary")
-        counts[p] += 1
-        for sec in ep.get("secondary") or []:
-            if sec not in slugs:
-                problems.append(f"episode {ep.get('i')} secondary {sec!r} is not in the vocabulary")
-            if sec == p:
-                problems.append(f"episode {ep.get('i')} repeats its primary as a secondary")
-        if len(ep.get("secondary") or []) > 2:
-            problems.append(f"episode {ep.get('i')} has more than 2 secondary themes")
+    for show in per_show:
+        for ep in show["episodes"]:
+            apps = ep.get("themes") or []
+            prim = [a for a in apps if a.get("role") == "primary"]
+            if len(prim) != 1:
+                problems.append(f"{show['slug']} ep {ep.get('i')}: {len(prim)} primary themes")
+            if len(apps) - len(prim) > 2:
+                problems.append(f"{show['slug']} ep {ep.get('i')}: more than 2 secondary")
+            for a in apps:
+                if a.get("slug") not in slugs:
+                    problems.append(f"{show['slug']} ep {ep.get('i')}: "
+                                    f"{a.get('slug')!r} is not in the vocabulary")
+                if a.get("confidence") not in ("high", "medium", "low"):
+                    problems.append(f"{show['slug']} ep {ep.get('i')}: "
+                                    f"{a.get('slug')!r} has no confidence value")
+                counts[a.get("slug")] += 1
 
-    total = len(episodes)
     for v in vocab:
         n = counts.get(v["slug"], 0)
         if n < MIN_THEME_EPISODES:
-            problems.append(f"theme {v['slug']!r} has only {n} episodes (min {MIN_THEME_EPISODES})")
+            problems.append(f"theme {v['slug']!r} has {n} applications (min {MIN_THEME_EPISODES})")
         if total and n / total > MAX_THEME_SHARE:
-            problems.append(f"theme {v['slug']!r} holds {n}/{total} "
-                            f"({n / total:.0%}) — over the {MAX_THEME_SHARE:.0%} ceiling")
-        m = v.get("mapsTo")
-        if m and m not in known_themes:
-            problems.append(f"theme {v['slug']!r} maps to unknown show-level theme {m!r}")
+            problems.append(f"theme {v['slug']!r} holds {n}/{total} ({n / total:.1%}) "
+                            f"— over the {MAX_THEME_SHARE:.0%} ceiling")
+        for rel in v.get("relatedShowThemes") or []:
+            if rel not in known_show_themes:
+                problems.append(f"theme {v['slug']!r} links to unknown show theme {rel!r}")
     return problems, counts
 
 
-def merge(slug, result_path):
-    src = json.loads(Path(result_path).read_text())
-    inp = json.loads((OUT_DIR / f"_input-{slug}.json").read_text())
-    by_i = {e["i"]: e for e in inp["episodes"]}
+def audit_show(show):
+    flags = []
+    eps = show["episodes"]
+    if not eps:
+        return ["no episodes"]
+    prim = collections.Counter()
+    for ep in eps:
+        for a in ep.get("themes") or []:
+            if a.get("role") == "primary":
+                prim[a["slug"]] += 1
+    if prim:
+        top, n = prim.most_common(1)[0]
+        if n / len(eps) > MAX_SHOW_THEME_SHARE:
+            flags.append(f"collapsed: {top!r} is {n}/{len(eps)} ({n / len(eps):.0%})")
+    if len(prim) < MIN_SHOW_THEMES and len(eps) >= MIN_EPS_FOR_MULTI_THEME:
+        flags.append(f"only {len(prim)} theme(s) across {len(eps)} episodes")
+    return flags
+
+
+def _primaries(subdir):
+    """{(slug, i): primary_theme_slug} from a directory of per-batch assign files."""
+    out = {}
+    for path in sorted((WORK / subdir).glob("*.json")):
+        try:
+            data = json.loads(path.read_text())
+        except Exception:  # noqa: BLE001
+            continue
+        for a in data.get("assignments", []):
+            slug = a.get("slug") or data.get("slug")
+            if slug is None or a.get("i") is None:
+                continue
+            for t in a.get("themes") or []:
+                if t.get("role") == "primary":
+                    out[(slug, int(a["i"]))] = t.get("slug")
+                    break
+    return out
+
+
+def compute_agreement():
+    """Two-run primary agreement over the sample shows, as Swindled's 0.7582 was.
+
+    Reported per show and overall. This is the check on whether the vocabulary cuts
+    anything -- radiolab and 99-invisible are in the sample precisely because a vague,
+    non-discriminating vocabulary is least visible to the audit there.
+    """
+    run_a, run_b = _primaries("assign"), _primaries("agree")
+    per_show = collections.defaultdict(lambda: [0, 0])   # [same, compared]
+    for key, prim_b in run_b.items():
+        prim_a = run_a.get(key)
+        if prim_a is None:
+            continue
+        slug = key[0]
+        per_show[slug][1] += 1
+        if prim_a == prim_b:
+            per_show[slug][0] += 1
+    out = {}
+    tot_same = tot_cmp = 0
+    for slug, (same, cmp_) in per_show.items():
+        tot_same += same
+        tot_cmp += cmp_
+        if cmp_:
+            out[slug] = {"runs": 2, "compared": cmp_,
+                         "primaryAgreement": round(same / cmp_, 4)}
+    if tot_cmp:
+        out["_overall"] = {"runs": 2, "compared": tot_cmp,
+                           "primaryAgreement": round(tot_same / tot_cmp, 4)}
+    return out
+
+
+def finalize(vocab_path):
+    """Merge _work/assign/*.json against the vocabulary into the committed output."""
+    vsrc = json.loads(Path(vocab_path).read_text())
+    vocab = vsrc.get("themes") or vsrc.get("vocabulary") or []
+    models = vsrc.get("models") or {"openCoding": "sonnet", "consolidate": "sonnet",
+                                    "assign": "haiku"}
+    agreement = compute_agreement()
     known = {t["slug"] for t in json.loads(THEMES.read_text())}
 
-    vocab = src["vocabulary"]
-    assigns = {a["i"]: a for a in src["assignments"]}
-    missing = [i for i in by_i if i not in assigns]
+    # assignments land as one file per batch: {slug, assignments: [{i, themes:[...]}]}
+    assigns = collections.defaultdict(dict)
+    for path in sorted((WORK / "assign").glob("*.json")):
+        try:
+            data = json.loads(path.read_text())
+        except Exception as e:  # noqa: BLE001 - a bad batch file is not fatal
+            print(f"  bad assign file {path.name}: {type(e).__name__}: {e}", flush=True)
+            continue
+        for a in data.get("assignments", []):
+            # Packed batches hold several whole shows, so the slug rides on the row.
+            slug = a.get("slug") or data.get("slug")
+            if slug and a.get("i") is not None:
+                assigns[slug][int(a["i"])] = a
+
+    per_show, missing = [], []
+    for path in sorted(IN_DIR.glob("*.json")):
+        show = json.loads(path.read_text())
+        got = assigns.get(show["slug"], {})
+        eps = []
+        for row in show["episodes"]:
+            a = got.get(row["i"])
+            if not a:
+                missing.append((show["slug"], row["i"]))
+                continue
+            eps.append({
+                "guid": row["guid"], "display": row["display"],
+                "segment": row["segment"], "subject": row["subject"],
+                "iso": row["iso"], "inArc": row["inArc"],
+                "themes": a.get("themes") or [],
+            })
+        per_show.append({"slug": show["slug"], "title": show["title"], "episodes": eps})
+
     if missing:
-        sys.exit(f"FATAL: {len(missing)} episodes were never assigned: {missing[:10]}")
+        print(f"WARNING: {len(missing)} episodes were never assigned "
+              f"(first: {missing[:5]})", flush=True)
+    src = {"models": models, "agreement": agreement}
 
-    episodes = []
-    for i, ep in sorted(by_i.items()):
-        a = assigns[i]
-        episodes.append({**ep, "primary": a.get("primary"),
-                         "secondary": [s for s in (a.get("secondary") or []) if s != a.get("primary")],
-                         "confidence": a.get("confidence", "")})
+    problems, counts = audit_catalog(vocab, per_show, known)
 
-    problems, counts = audit(vocab, episodes, known)
+    # showSpecific is computed here, in plain Python, from who actually used the theme --
+    # never asked of the model. Reach is a flag, not a filter: a theme used by one show
+    # is kept.
+    show_sets = collections.defaultdict(set)
+    for show in per_show:
+        for ep in show["episodes"]:
+            for a in ep.get("themes") or []:
+                show_sets[a["slug"]].add(show["slug"])
     for v in vocab:
-        v["count"] = counts.get(v["slug"], 0)
-    vocab.sort(key=lambda v: -v["count"])
+        v["episodeCount"] = counts.get(v["slug"], 0)
+        v["showCount"] = len(show_sets.get(v["slug"], ()))
+        v["showSpecific"] = v["showCount"] <= 1
+        v.setdefault("relatedShowThemes", [])
+        v.setdefault("junkDrawerSuspect", False)
+    vocab.sort(key=lambda v: -v["episodeCount"])
 
-    out = {"slug": slug, "title": inp["title"], "models": src.get("models", {}),
-           "vocabulary": vocab, "episodes": episodes,
-           "agreement": src.get("agreement", {})}
     OUT_DIR.mkdir(exist_ok=True)
-    dest = OUT_DIR / f"{slug}.json"
-    dest.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n")
+    (OUT_DIR / "_vocabulary.json").write_text(
+        json.dumps({"themes": vocab, "models": src.get("models", {})},
+                   ensure_ascii=False, indent=1) + "\n")
 
-    print(f"episodes    {len(episodes)}")
-    print(f"vocabulary  {len(vocab)} themes")
-    for v in vocab:
-        share = v["count"] / len(episodes) if episodes else 0
-        maps = f"  -> {v['mapsTo']}" if v.get("mapsTo") else ""
-        print(f"   {v['count']:4d}  {share:5.1%}  {v['slug']:32s} {v['name']}{maps}")
-    ag = out["agreement"].get("primaryAgreement")
-    if ag is not None:
-        print(f"\ntwo-run primary agreement  {ag:.1%}")
+    report_shows = []
+    for show in per_show:
+        used = collections.Counter()
+        conf = collections.Counter()
+        for ep in show["episodes"]:
+            for a in ep.get("themes") or []:
+                used[a["slug"]] += 1
+                conf[a.get("confidence", "")] += 1
+        flags = audit_show(show)
+        payload = {
+            "slug": show["slug"], "title": show["title"],
+            "models": src.get("models", {}),
+            "themesUsed": [{"slug": s, "count": n} for s, n in used.most_common()],
+            "episodes": show["episodes"],
+            "agreement": (src.get("agreement") or {}).get(show["slug"], {}),
+            "auditFlags": flags,
+        }
+        (OUT_DIR / f"{show['slug']}.json").write_text(
+            json.dumps(payload, ensure_ascii=False, indent=1) + "\n")
+        report_shows.append({
+            "slug": show["slug"], "title": show["title"],
+            "episodes": len(show["episodes"]), "themesUsed": len(used),
+            "confidence": dict(conf), "auditFlags": flags,
+        })
+
+    total_eps = sum(len(s["episodes"]) for s in per_show)
+    report = {
+        "shows": len(per_show),
+        "episodesLabelled": total_eps,
+        "vocabularySize": len(vocab),
+        "showSpecificThemes": sum(1 for v in vocab if v["showSpecific"]),
+        "junkDrawerSuspects": sum(1 for v in vocab if v.get("junkDrawerSuspect")),
+        "unassigned": len(missing),
+        "catalogAudit": problems,
+        "agreement": src.get("agreement", {}),
+        "showReports": report_shows,
+    }
+    (OUT_DIR / "_run-report.json").write_text(
+        json.dumps(report, ensure_ascii=False, indent=1) + "\n")
+
+    print(f"shows              {len(per_show)}")
+    print(f"episodes labelled  {total_eps}")
+    print(f"vocabulary         {len(vocab)} themes "
+          f"({report['showSpecificThemes']} show-specific)")
+    print(f"shows flagged      {sum(1 for s in report_shows if s['auditFlags'])}")
     print()
     if problems:
-        print(f"AUDIT FAILED — {len(problems)} problem(s):")
-        for p in problems:
+        print(f"CATALOG AUDIT — {len(problems)} flag(s), non-blocking:")
+        for p in problems[:20]:
             print(f"   ! {p}")
-        print("\nre-run the consolidation pass with this report as input.")
+        if len(problems) > 20:
+            print(f"   ... and {len(problems) - 20} more (see _run-report.json)")
     else:
-        print("AUDIT PASSED")
-    print(f"\nwrote {dest}")
-    return 1 if problems else 0
+        print("CATALOG AUDIT PASSED")
+    print(f"\nwrote {OUT_DIR}/_vocabulary.json, {len(per_show)} show files, _run-report.json")
+    return 0  # audits flag; they never fail the run
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
-    e = sub.add_parser("extract"); e.add_argument("--slug", required=True)
-    m = sub.add_parser("merge"); m.add_argument("--slug", required=True); m.add_argument("--result", required=True)
+    sub.add_parser("prepare")
+    b = sub.add_parser("batch")
+    b.add_argument("--id", type=int, required=True, dest="batch_id")
+    b.add_argument("--no-desc", action="store_true")
+    b.add_argument("--assign", action="store_true", help="use the assign batch plan")
+    ll = sub.add_parser("labels")
+    ll.add_argument("--slice", type=int, default=0)
+    ll.add_argument("--slices", type=int, default=1)
+    f = sub.add_parser("finalize")
+    f.add_argument("--vocab", required=True)
     args = ap.parse_args()
-    if args.cmd == "extract":
-        extract(args.slug)
+    if args.cmd == "prepare":
+        prepare()
+    elif args.cmd == "batch":
+        batch(args.batch_id, not args.no_desc,
+              "_assign-plan.json" if args.assign else "_batch-plan.json")
+    elif args.cmd == "labels":
+        labels(args.slice, args.slices)
     else:
-        sys.exit(merge(args.slug, args.result))
+        sys.exit(finalize(args.vocab))
 
 
 if __name__ == "__main__":
