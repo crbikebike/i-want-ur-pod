@@ -520,3 +520,26 @@ button, input, select { font: inherit; color: inherit; }
   .tfilter { gap: 5px; }
   .tchip { padding: 4px 8px; font-size: .74rem; }
 }
+
+/* --- themes mode: the vocabulary as a browsable index --------------------- */
+.tgrid { display: grid; gap: 10px; margin-top: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(268px, 1fr)); }
+.tcard {
+  display: flex; flex-direction: column; gap: 8px; text-align: left;
+  padding: 14px; border: 1px solid var(--line); border-radius: var(--r);
+  background: var(--card); color: inherit; font: inherit; cursor: pointer;
+  animation: rise .28s both;
+}
+.tcard:hover { border-color: var(--proposed); transform: translateY(-1px); }
+.tcard-top { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.tcard-name { font-weight: 600; font-size: .92rem; }
+.tcard-def { margin: 0; font-size: .78rem; line-height: 1.45; color: var(--text-dim); }
+.tcard-reach { display: flex; align-items: center; gap: 8px; margin-top: auto; }
+.tbar { flex: 1; height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.tbar i { display: block; height: 100%; background: var(--proposed); }
+.tcard-n { font-family: var(--mono); font-size: .7rem; color: var(--text-faint); white-space: nowrap; }
+.tcard-rel { display: flex; flex-wrap: wrap; gap: 4px; }
+
+@media (max-width: 640px) {
+  .tgrid { grid-template-columns: 1fr; }
+}

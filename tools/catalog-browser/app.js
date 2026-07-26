@@ -19,7 +19,8 @@ const el = (t, c, x) => { const n = document.createElement(t); if (c) n.classNam
 const state = {
   data: null, verdicts: {},
   mode: 'browse', slug: null,
-  f: { rule: null, feed: null, review: null, cat: '', conf: null, tflag: null },
+  f: { rule: null, feed: null, review: null, cat: '', conf: null, tflag: null,
+       tq: null, trel: null, tsort: 'eps' },
   q: '', cursor: 0, qi: 0, arc: null, theme: null, gtheme: null,
 };
 
@@ -151,7 +152,8 @@ function fromHash() {
   else if (t) { state.gtheme = decodeURIComponent(t[1]); state.slug = null; }
   else {
     state.slug = null; state.gtheme = null;
-    state.mode = h === '#/review' ? 'review' : h === '#/system' ? 'system' : 'browse';
+    state.mode = h === '#/review' ? 'review' : h === '#/system' ? 'system'
+               : h === '#/themes' ? 'themes' : 'browse';
   }
   if (state.data) render();
 }
@@ -159,7 +161,8 @@ window.addEventListener('hashchange', () => { fromHash(); window.scrollTo(0, 0);
 
 /* ---------- shell ---------- */
 const MODES = [
-  { k: 'browse', key: 'B', label: 'Browse', hash: '#/browse' },
+  { k: 'browse', key: 'B', label: 'Shows', hash: '#/browse' },
+  { k: 'themes', key: 'T', label: 'Themes', hash: '#/themes' },
   { k: 'review', key: 'R', label: 'Review', hash: '#/review' },
   { k: 'system', key: 'S', label: 'System', hash: '#/system' },
 ];
@@ -175,6 +178,7 @@ function render() {
   if (state.slug) return renderDetail();
   if (state.mode === 'review') return renderReview();
   if (state.mode === 'system') return renderSystem();
+  if (state.mode === 'themes') return renderThemes();
   renderBrowse();
 }
 
@@ -188,6 +192,7 @@ function renderModes(mode) {
     b.appendChild(el('span', 'mode-k', m.key));
     b.appendChild(el('span', null, m.label));
     if (m.k === 'browse') b.appendChild(el('span', 'mode-n', String(visible().length)));
+    if (m.k === 'themes') b.appendChild(el('span', 'mode-n', String(visibleThemes().length)));
     if (m.k === 'review') b.appendChild(el('span', 'mode-n', String(q)));
     b.onclick = () => { state.qi = 0; go(m.hash); };
     nav.appendChild(b);
@@ -195,6 +200,8 @@ function renderModes(mode) {
 }
 
 function facetGroup(title, items, active, onPick) {
+  items = items.filter(it => it[2] == null || it[2] > 0);
+  if (!items.length) return document.createDocumentFragment();
   const g = el('div', 'fgroup');
   g.appendChild(el('h2', null, title));
   items.forEach(([key, label, n]) => {
@@ -212,6 +219,8 @@ function renderFacets(mode) {
   const box = $('#facets');
   box.replaceChildren();
   if (mode === 'system') return;
+  if (state.gtheme) return;            // theme detail: show-facets do nothing here
+  if (mode === 'themes') return renderThemeFacets(box);
 
   const shows = state.data.shows;
   const set = (k, v) => { state.f[k] = v; state.cursor = 0; state.qi = 0; render(); };
@@ -435,6 +444,139 @@ async function judge(it, verdict) {
   render();                       // the item leaves the queue, so the next one slides in
 }
 
+
+
+/* ---------- themes mode: browse the vocabulary itself ----------
+   Until now a theme was only reachable by clicking a badge on an episode or a
+   show. That makes the 148-theme vocabulary invisible as a thing in its own
+   right, which is backwards for an index whose whole job is cross-show reach. */
+
+const THEME_SORTS = [
+  ['eps', 'Most episodes', (a, b) => b.ec - a.ec],
+  ['shows', 'Widest reach', (a, b) => b.sc - a.sc],
+  ['narrow', 'Narrowest reach', (a, b) => a.sc - b.sc],
+  ['az', 'A–Z', (a, b) => a.n.localeCompare(b.n)],
+];
+
+function visibleThemes() {
+  const q = state.q.trim().toLowerCase();
+  const { tq, trel } = state.f;
+  return epVocab().filter(t => {
+    if (tq === 'junk' && !t.junk) return false;
+    if (tq === 'spec' && !t.spec) return false;
+    if (tq === 'unlinked' && (t.rel || []).length) return false;
+    if (trel && !(t.rel || []).includes(trel)) return false;
+    if (!q) return true;
+    return t.n.toLowerCase().includes(q) || t.d.toLowerCase().includes(q) || t.s.includes(q);
+  });
+}
+
+function renderThemeFacets(box) {
+  const V = epVocab();
+  const set = (k, v) => { state.f[k] = v; render(); };
+
+  const g = el('div', 'fgroup');
+  g.appendChild(el('h2', null, 'Sort'));
+  const sel = el('select', 'search');
+  sel.style.height = '32px'; sel.style.fontSize = '.8rem';
+  THEME_SORTS.forEach(([k, label]) => sel.appendChild(new Option(label, k)));
+  sel.value = state.f.tsort || 'eps';
+  sel.onchange = e => set('tsort', e.target.value);
+  g.appendChild(sel);
+  box.appendChild(g);
+
+  const n = fn => V.filter(fn).length;
+  box.appendChild(facetGroup('Theme quality', [
+    ['junk', 'Junk-drawer suspect', n(t => t.junk)],
+    ['spec', 'Used by one show', n(t => t.spec)],
+    ['unlinked', 'No show-theme link', n(t => !(t.rel || []).length)],
+  ], state.f.tq, v => set('tq', v)));
+
+  // Which of the 30 show-level themes an episode theme links up to. Episode
+  // themes are their own taxonomy, so plenty link to nothing -- that is expected.
+  const rel = {};
+  V.forEach(t => (t.rel || []).forEach(r => { rel[r] = (rel[r] || 0) + 1; }));
+  const items = Object.entries(rel)
+    .sort((a, b) => b[1] - a[1])
+    .map(([k, c]) => [k, (state.data.themes[k] || {}).name || k, c]);
+  if (items.length) box.appendChild(facetGroup('Links to show theme', items, state.f.trel, v => set('trel', v)));
+
+  if (state.f.tq || state.f.trel) {
+    const clear = el('button', 'facet-clear', 'Clear filters');
+    clear.onclick = () => { state.f.tq = null; state.f.trel = null; render(); };
+    box.appendChild(clear);
+  }
+}
+
+function renderThemes() {
+  const V = epVocab();
+  const list = visibleThemes();
+  const cmp = (THEME_SORTS.find(x => x[0] === (state.f.tsort || 'eps')) || THEME_SORTS[0])[2];
+  const sorted = [...list].sort(cmp);
+
+  $('#crumb').textContent = `${list.length} of ${V.length} themes`;
+  const view = $('#view');
+  view.replaceChildren();
+
+  if (!V.length) {
+    view.appendChild(el('p', 'empty', 'No episode vocabulary built yet. Run build-episode-themes.py finalize.'));
+    return;
+  }
+
+  const totalEps = V.reduce((n, t) => n + t.ec, 0);
+  const wide = V.filter(t => t.sc >= 3).length;
+  const head = el('div', 'dmeta');
+  head.appendChild(el('h1', 'dtitle', 'Episode themes'));
+  head.appendChild(el('p', 'ddesc',
+    'One shared vocabulary over the whole catalog. These are their own taxonomy, not children '
+    + 'of the 30 show-level themes — the two levels cut the catalog differently. A theme that '
+    + 'reaches across many shows is what makes “what else is like this?” answerable.'));
+  const stats = el('div', 'dstats');
+  [[V.length, 'themes'], [totalEps.toLocaleString(), 'applications'],
+   [`${Math.round((wide / V.length) * 100)}%`, 'reach 3+ shows']]
+    .forEach(([n, l]) => { const x = el('span'); x.appendChild(el('b', null, String(n))); x.append(' ' + l); stats.appendChild(x); });
+  head.appendChild(stats);
+  view.appendChild(head);
+
+  if (!sorted.length) { view.appendChild(el('p', 'empty', 'No theme matches those filters.')); return; }
+
+  const maxShows = Math.max(...V.map(t => t.sc), 1);
+  const grid = el('div', 'tgrid');
+  sorted.forEach((t, i) => {
+    const c = el('button', 'tcard');
+    c.onclick = () => go('#/theme/' + encodeURIComponent(t.s));
+    c.style.animationDelay = Math.min(i, 18) * 12 + 'ms';
+
+    const top = el('div', 'tcard-top');
+    top.appendChild(el('span', 'tcard-name', t.n));
+    if (t.junk) { const b = el('span', 'tag warn', 'junk?'); b.title = 'Definition reads as a catch-all'; top.appendChild(b); }
+    if (t.spec) { const b = el('span', 'tag warn', '1 show'); b.title = 'Used by a single show'; top.appendChild(b); }
+    c.appendChild(top);
+    c.appendChild(el('p', 'tcard-def', t.d));
+
+    // Reach is the number that matters, so it gets a bar rather than a bare count.
+    const reach = el('div', 'tcard-reach');
+    const bar = el('span', 'tbar');
+    const fill = el('i'); fill.style.width = (t.sc / maxShows) * 100 + '%';
+    bar.appendChild(fill);
+    reach.appendChild(bar);
+    const n = el('span', 'tcard-n');
+    n.appendChild(el('b', null, String(t.sc)));
+    n.append(t.sc === 1 ? ' show' : ' shows');
+    n.append(` · ${t.ec.toLocaleString()} ep${t.ec === 1 ? '' : 's'}`);
+    reach.appendChild(n);
+    c.appendChild(reach);
+
+    const rel = (t.rel || []).map(r => (state.data.themes[r] || {}).name).filter(Boolean);
+    if (rel.length) {
+      const f = el('div', 'tcard-rel');
+      rel.forEach(x => f.appendChild(el('span', 'tag', x)));
+      c.appendChild(f);
+    }
+    grid.appendChild(c);
+  });
+  view.appendChild(grid);
+}
 
 /* ---------- theme detail: the point of the whole exercise ----------
    One theme, every show that uses it. If this page is empty or single-show for most
