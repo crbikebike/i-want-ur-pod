@@ -139,14 +139,31 @@ removed. Nothing is deleted from the corpus or from any show's output.
 
 - `curation/arc-bakeoff/episode-themes/<slug>.json` per show — same shape as
   `swindled.json`: `{slug, title, models, vocabulary[], episodes[], agreement{}}`. Committed.
-- `curation/arc-bakeoff/episode-themes/_run-report.json` — per show: episodes in/out,
-  vocabulary size, confidence spread, audit pass/fail with reasons.
-- **`curation/arc-bakeoff/theming-recap.html`** — the thing to read first. What ran, what it
-  found, best and worst vocabularies, shows that failed audit, junk-drawer suspects, and the
-  low-confidence pile worth scanning. Follow the tone of `recap.html` in the same directory.
+- `curation/arc-bakeoff/episode-themes/_run-report.json` — committed. Per show: episodes
+  in/out, vocabulary size, confidence spread, audit pass/fail with reasons, junk-drawer
+  suspects (any theme whose definition reads mostly as exclusions), and the sample agreement
+  numbers. This is the recap. **It is data, not a document.**
 
-Then rerun `python3 curation/arc-bakeoff/build-catalog-index.py` so the workbench picks it
-all up — its Model confidence facet currently covers only Swindled.
+**Do not write a standalone recap HTML.** There is a running workbench —
+`python3 scripts/serve-catalog.py --tailscale`, `tools/catalog-browser/` — and the report
+belongs in it, not in an unhosted file nobody opens.
+
+Wire it through:
+
+1. `build-catalog-index.py` reads `_run-report.json` and puts it in `catalog-index.json`
+   under a top-level `run` key, alongside the per-show theme data it already folds in.
+2. The workbench's **System** view renders it. That view currently holds explanatory prose
+   about the architecture — **replace that prose with the run report.** Live numbers about
+   what actually happened are what a running tool should show; the architecture is written
+   down in `docs/design/the-catalog.md` and does not need repeating in the UI.
+3. Sort it so the useful thing is first: shows that failed audit, then junk-drawer suspects,
+   then lowest agreement, then everything that passed.
+
+Then rerun `python3 curation/arc-bakeoff/build-catalog-index.py` so the Model confidence
+facet covers more than Swindled, and restart the server.
+
+Match the existing style — `tools/catalog-browser/app.css` tokens, no framework, no build
+step, both themes. Do not restructure the workbench's navigation.
 
 ## Verification before claiming success
 
