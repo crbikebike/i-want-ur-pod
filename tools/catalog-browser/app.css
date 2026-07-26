@@ -344,6 +344,26 @@ button, input, select { font: inherit; color: inherit; }
 .sub-h { font-family: var(--mono); font-size: .74rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .1em; color: var(--text-faint); margin: var(--sp-6) 0 var(--sp-3); }
 
+/* the store's shape — indentation carries containment */
+.tree { display: flex; flex-direction: column; gap: var(--sp-2); max-width: 58rem; }
+.trow { background: var(--surface); border-radius: var(--r-md); box-shadow: var(--elev-list);
+  padding: var(--sp-3) var(--sp-4); border-left: 3px solid var(--separator); position: relative; }
+.trow.d1 { margin-left: var(--sp-6); }
+.trow.d2 { margin-left: calc(var(--sp-6) * 2); }
+.trow.ok { border-left-color: var(--ok); }
+.trow.model { border-left-color: var(--proposed); }
+.trow.plain { border-left-color: var(--text-faint); }
+.trow-t { font-family: var(--mono); font-size: .82rem; font-weight: 700; letter-spacing: .06em; }
+.trow-n { font-family: var(--mono); font-size: .74rem; color: var(--text-faint); margin-left: var(--sp-2);
+  font-variant-numeric: tabular-nums; }
+.trow::before { content: ""; position: absolute; left: calc(var(--sp-6) * -1 + 8px); top: -10px;
+  bottom: 50%; width: 1px; background: var(--separator); }
+.trow.d0::before, .trow.d1 + .trow.d1::before { display: none; }
+.trow.d1::before, .trow.d2::before { display: block; }
+.trow.d0::before { display: none; }
+
+.exts td:nth-child(4) { max-width: 34rem; }
+
 /* flowcharts — hand-rolled SVG, themed through CSS vars */
 .chart { width: 100%; max-width: 74rem; height: auto; display: block;
   margin: 0 0 var(--sp-3); overflow: visible; }
@@ -353,6 +373,7 @@ button, input, select { font: inherit; color: inherit; }
 .chart .ok .shape { fill: color-mix(in srgb, var(--ok) 15%, var(--surface)); stroke: var(--ok); }
 .chart .err .shape { fill: color-mix(in srgb, var(--bad) 14%, var(--surface)); stroke: var(--bad); }
 .chart .warn .shape { fill: color-mix(in srgb, var(--meh) 14%, var(--surface)); stroke: var(--meh); }
+.chart .model .shape { fill: color-mix(in srgb, var(--proposed) 16%, var(--surface)); stroke: var(--proposed); }
 .chart .muted .shape { fill: none; stroke: var(--separator); stroke-dasharray: 4 4; }
 .chart .nlabel { font-family: var(--font); font-size: 12.5px; font-weight: 700;
   fill: var(--text); letter-spacing: -.01em; }

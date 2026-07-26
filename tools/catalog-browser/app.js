@@ -648,41 +648,49 @@ function flowchart(spec) {
   return svg;
 }
 
-/* Every branch in PodcastDetailViewModel.load(), verbatim from the code. */
-const CHART_LOAD = {
-  w: 1180, h: 660, alt: 'Which data reaches the screen when a show is opened',
+/* What happens to one show — the only path that matters for understanding the store. */
+const CHART_INTAKE = {
+  w: 1080, h: 545, alt: 'How one show ends up with arcs, themes, or nothing',
   nodes: [
-    { id: 'start', cx: 472, y: 14, w: 230, h: 42, kind: 'start', label: 'You open a show' },
-    { id: 'loading', cx: 472, y: 82, w: 210, h: 36, kind: 'proc', lines: ['`state = .loading`'] },
-    { id: 'd1', cx: 472, y: 142, w: 268, h: 76, kind: 'dec', lines: ['Can the local', 'store be read?'] },
-    { id: 'errA', cx: 900, y: 158, w: 214, h: 46, kind: 'err', lines: ['.error — nothing shown'] },
-    { id: 'd2', cx: 472, y: 250, w: 300, h: 86, kind: 'dec', lines: ['Saved copy that', 'already has episodes?'] },
-    { id: 'storeR', cx: 197, y: 368, w: 290, h: 54, kind: 'ok', lines: ['.loaded(saved) — on screen', 'with no network at all'] },
-    { id: 'd3', cx: 197, y: 452, w: 250, h: 74, kind: 'dec', lines: ['Background', 'refresh OK?'] },
-    { id: 'keep', cx: 95, y: 562, w: 190, h: 58, kind: 'muted', lines: ['Nothing happens —', 'saved view stands'] },
-    { id: 'swap', cx: 300, y: 562, w: 190, h: 58, kind: 'ok', lines: ['.loaded(fresh)', 'swaps in'] },
-    { id: 'd4', cx: 748, y: 368, w: 244, h: 80, kind: 'dec', lines: ['Feed fetch OK?', '(you are waiting)'] },
-    { id: 'freshC', cx: 520, y: 562, w: 190, h: 58, kind: 'ok', lines: ['.loaded(fresh)'] },
-    { id: 'd5', cx: 975, y: 452, w: 234, h: 74, kind: 'dec', lines: ['Any saved row', 'at all?'] },
-    { id: 'emptyR', cx: 870, y: 562, w: 204, h: 66, kind: 'warn', lines: ['.loaded — but 0', 'episodes, so no shelf'] },
-    { id: 'errB', cx: 1090, y: 562, w: 168, h: 46, kind: 'err', lines: ['.error'] },
+    { id: 'feed', cx: 250, y: 12, w: 260, h: 44, kind: 'start', label: "One show's RSS feed" },
+    { id: 'd1', cx: 250, y: 82, w: 300, h: 76, kind: 'dec', lines: ['Does the feed publish', 'enough of the show?'] },
+    { id: 'oLabel', cx: 760, y: 94, w: 350, h: 64, kind: 'warn',
+      lines: ['Feed labelled, nothing grouped', '`TAL — 15 of ~892 · WeCrashed — 1`'] },
+    { id: 'd2', cx: 250, y: 196, w: 310, h: 80, kind: 'dec', lines: ['Do episode titles carry', 'a counter or a pattern?'] },
+    { id: 'oArcs', cx: 760, y: 210, w: 350, h: 64, kind: 'ok',
+      lines: ['ARCS stored', '`Am. History Tellers 85 · Radiolab 5`'] },
+    { id: 'd3', cx: 250, y: 314, w: 310, h: 86, kind: 'dec', lines: ['An anthology — many', 'standalone episodes?'] },
+    { id: 'oThemes', cx: 760, y: 330, w: 350, h: 64, kind: 'model',
+      lines: ['THEMES proposed by the model', '`Swindled — 14 over 153 stories`'] },
+    { id: 'oNone', cx: 250, y: 452, w: 320, h: 62, kind: 'muted',
+      lines: ['Nothing stored — correct', '`Normal Gossip — a new guest weekly`'] },
   ],
   edges: [
-    { from: 'start', to: 'loading' },
-    { from: 'loading', to: 'd1' },
-    { from: 'd1', to: 'errA', side: true, label: 'no', dim: true },
+    { from: 'feed', to: 'd1' },
+    { from: 'd1', to: 'oLabel', side: true, label: 'no', dim: true },
     { from: 'd1', to: 'd2', label: 'yes' },
-    { from: 'd2', to: 'storeR', label: 'yes' },
-    { from: 'd2', to: 'd4', label: 'no' },
-    { from: 'storeR', to: 'd3' },
-    { from: 'd3', to: 'keep', label: 'no', dim: true },
-    { from: 'd3', to: 'swap', label: 'yes' },
-    { from: 'd4', to: 'freshC', label: 'yes' },
-    { from: 'd4', to: 'd5', label: 'no' },
-    { from: 'd5', to: 'emptyR', label: 'yes', dim: true },
-    { from: 'd5', to: 'errB', label: 'no', dim: true },
+    { from: 'd2', to: 'oArcs', side: true, label: 'yes' },
+    { from: 'd2', to: 'd3', label: 'no' },
+    { from: 'd3', to: 'oThemes', side: true, label: 'yes' },
+    { from: 'd3', to: 'oNone', label: 'no', dim: true },
   ],
 };
+
+/* The four shows you keep asking about, and what the store actually holds for each. */
+const EXAMPLES = [
+  { show: 'American History Tellers', eps: '484 episodes', holds: '85 arcs', kind: 'ok',
+    why: 'Titles are “Name | Episode title | 3”. The counter is right there, so regex groups it and no model is involved.' },
+  { show: 'Radiolab', eps: '659 episodes', holds: '5 arcs', kind: 'ok',
+    why: 'Five genuinely named series — Border Trilogy, The Other Latif. The other 636 episodes are standalone and would need themes, which have not been run yet.' },
+  { show: 'Swindled', eps: '147 episodes', holds: '14 themes over 153 stories', kind: 'model',
+    why: 'Zero arcs — every episode is a different scandal. But the titles name the subject (“The Descent (OceanGate)”), so a model could group them by the kind of story.' },
+  { show: 'This American Life', eps: '15 public of ~892', holds: 'nothing, and a label', kind: 'warn',
+    why: 'The feed publishes a rolling window. There is nothing to group because 98% of the show is not public. A TAL+ subscriber’s own feed would have it all.' },
+  { show: 'WeCrashed', eps: '1 public episode', holds: 'nothing, and a label', kind: 'warn',
+    why: 'The feed carries episode one plus an item literally titled “Where to find Episodes 2-7”. The archive is behind a subscription.' },
+  { show: 'Normal Gossip', eps: '107 episodes', holds: 'nothing', kind: 'muted',
+    why: 'A different guest every week with a deliberately cryptic title. Finding nothing here is the right answer, not a failure.' },
+];
 
 /* Separate on purpose: this runs on EVERY render, not once per open. */
 const CHART_SHELF = {
@@ -708,30 +716,6 @@ const CHART_SHELF = {
     { from: 'dB', to: 'filt', label: 'yes' },
   ],
 };
-
-const OPEN_STEPS = [
-  { t: 'You tap a show', where: 'device', when: '0 ms',
-    d: 'The detail screen appears and asks for the feed. Nothing is on screen yet.',
-    code: 'PodcastDetailViewModel.load()' },
-  { t: 'The store answers first', where: 'device', when: 'instant',
-    d: 'SwiftData is checked for a saved copy. If it already has episodes the screen renders from it immediately — the network is never on the critical path for a show you have opened before.',
-    code: 'modelContext.fetch(FetchDescriptor<Podcast>)' },
-  { t: 'The feed refreshes behind you', where: 'network', when: 'background',
-    d: 'The RSS is fetched and upserted so new episodes and season numbers land. If it fails — offline, feed down — the failure is swallowed and what you are already reading stands. An error is never shown over live data.',
-    code: 'fetcher.fetch → FeedUpsert.upsert' },
-  { t: 'Arcs are derived, not stored', where: 'device', when: 'every render',
-    d: 'Arcs are a computed property. Each access re-runs the grouping over the episode list from scratch — nothing is cached, so the shelf can never be stale relative to the episodes.',
-    code: 'ArcDerivation.groupIntoArcs(episodes)' },
-  { t: 'Grouping runs in three passes', where: 'device', when: '',
-    d: 'Prefix-clustering with re-release dedup and the anthology guard; then chaptered-season cards for whatever is left over; then merge, newest arc first.',
-    code: 'clusterGuarded → chapteredSeasonCards → mergeByRecency' },
-  { t: 'The shelf appears — or does not', where: 'device', when: '',
-    d: 'If no arcs come back, the Story arcs shelf is hidden entirely rather than showing an empty row. A singles-only show looks like it always did.',
-    code: 'if !viewModel.arcs.isEmpty' },
-  { t: 'You tap an arc card', where: 'device', when: '',
-    d: 'The episode list filters to that arc and a “Showing: … ✕” chip appears. Add all queues the whole arc oldest-first, so it plays Part 1 → N even though the list is newest-first.',
-    code: 'selectedArcID · queueStore.add' },
-];
 
 const LADDER = [
   { t: 'A grouping you approved', st: 'planned', src: 'shipped data',
@@ -797,9 +781,10 @@ function node(n) {
 }
 
 const SYS_SECTIONS = [
-  ['open', 'Opening a show'],
-  ['decide', 'What decides what you see'],
-  ['build', 'Where the data comes from'],
+  ['holds', 'What the store holds'],
+  ['intake', 'How a show gets in'],
+  ['shows', 'Six real shows'],
+  ['out', 'How it reaches the app'],
   ['sync', 'What syncs, and when'],
 ];
 
@@ -821,8 +806,9 @@ function renderSystem() {
 
   view.appendChild(el('h1', 'dtitle', 'How this works'));
   view.appendChild(el('p', 'ddesc',
-    'Two timelines that are easy to confuse: what the phone does in the moment you open a show, '
-    + 'and what this machine does — occasionally, by hand — to produce the data it reads.'));
+    'A catalog of story arcs and themes, built show by show on this machine and exported to a file '
+    + 'the app reads. Regex proposes, a model proposes where regex cannot, and you decide. '
+    + `${items.toLocaleString()} groupings exist so far; ${judged === 1 ? '1 has' : judged + ' have'} a verdict.`));
 
   const legend = el('div', 'legend2');
   [['built', 'built and running'], ['partial', 'partly built'], ['planned', 'not built yet']]
@@ -837,31 +823,99 @@ function renderSystem() {
   legend.appendChild(jump);
   view.appendChild(legend);
 
-  /* 1 — runtime */
-  const s1 = sysHead('open', 'Opening a show',
-    'Two things happen, and they are not the same thing. First the view model decides which '
-    + 'episodes reach the screen — that runs once per open and branches five ways. Then the view '
-    + 'decides whether an arcs shelf appears — that runs on every render.');
-
-  s1.appendChild(el('h3', 'sub-h', 'A · Which episodes reach the screen — PodcastDetailViewModel.load()'));
-  s1.appendChild(flowchart(CHART_LOAD));
+  /* 1 — the data model */
+  const s1 = sysHead('holds', 'What the store holds',
+    'One row per show, and under it the groupings found for that show. A grouping is either an '
+    + 'ARC (a run of episodes that is one story) or a THEME (a kind of story, for shows that have '
+    + 'no arcs). Both point at episodes by guid. Your verdict sits beside them.');
+  const tree = el('div', 'tree');
+  const treeRows = [
+    { d: 0, t: 'SHOW', n: '315', k: 'ok', s: 'joined to catalog.json on slugify(title)',
+      d2: 'Swindled, Radiolab, This American Life…' },
+    { d: 1, t: 'ARC', n: '1,583', k: 'ok', s: 'name · season · the episodes in it',
+      d2: '“Border Trilogy” — 6 episodes of Radiolab' },
+    { d: 1, t: 'THEME', n: '14', k: 'model', s: 'name · definition · parent · the episodes in it',
+      d2: '“Unsafe Products & Corporate Cover-Ups” — 20 Swindled episodes' },
+    { d: 2, t: 'parent theme', n: '30', k: 'plain', s: 'the catalog-wide themes already in the app',
+      d2: 'that one rolls up to “The Institutional Cover-Up”' },
+    { d: 1, t: 'YOUR VERDICT', n: '1', k: 'ok', s: 'right · wrong · unsure · no-arcs-here',
+      d2: 'beats any detector that disagrees' },
+  ];
+  treeRows.forEach(r => {
+    const row = el('div', 'trow d' + r.d + ' ' + r.k);
+    const h = el('div', 'node-h');
+    const left = el('span');
+    left.appendChild(el('span', 'trow-t', r.t));
+    left.appendChild(el('span', 'trow-n', '×' + r.n));
+    h.appendChild(left);
+    row.appendChild(h);
+    row.appendChild(el('code', 'node-s', r.s));
+    row.appendChild(el('p', 'node-d', r.d2));
+    tree.appendChild(row);
+  });
+  s1.appendChild(tree);
   s1.appendChild(el('p', 'flow-note',
-    'The left branch is the common one: open a show you have opened before and it paints from the '
-    + 'local store with no network on the critical path, then quietly refreshes. A failed refresh '
-    + 'there is swallowed — you are never shown an error over something you are already reading. '
-    + 'You only ever wait on the network down the right branch, when there is nothing saved to show.'));
-
-  s1.appendChild(el('h3', 'sub-h', 'B · Whether the arcs shelf appears — on every render'));
-  s1.appendChild(flowchart(CHART_SHELF));
-  s1.appendChild(el('p', 'flow-note',
-    'Arcs are a computed property, so this whole path re-runs each time the view draws. Nothing is '
-    + 'cached and nothing is looked up: no server call, no arc table, no cache to invalidate. The '
-    + 'phone groups the episodes itself, from title text it already has.'));
+    'Everything above lives in one SQLite file on this machine. Nothing about it is live and '
+    + 'nothing about it is on the phone yet — the phone still derives arcs itself, which is the '
+    + 'gap the store closes.'));
   view.appendChild(s1);
 
-  /* 2 — precedence */
-  const s2 = sysHead('decide', 'What decides what you see',
-    'When the store ships, the phone will ask these in order and stop at the first answer. Today only the third rung exists.');
+  /* 2 — intake */
+  const s2i = sysHead('intake', 'How a show gets in',
+    'Each show takes exactly one path through this. Which path it takes is why Swindled has themes, '
+    + 'Radiolab has arcs, and This American Life has neither.');
+  s2i.appendChild(flowchart(CHART_INTAKE));
+  s2i.appendChild(el('p', 'flow-note',
+    'Regex runs first because it is free and exact. The model is only asked about shows regex '
+    + 'could not group — which is why Swindled got themes and American History Tellers never needed '
+    + 'them. Whatever comes out, you rule on it, and your ruling is what ships.'));
+
+  s2i.appendChild(el('h3', 'sub-h', 'When two of them disagree about the same show'));
+  const stack = el('div', 'stack');
+  LAYERS.forEach((l, i) => {
+    const row = el('div', 'layer ' + l.c);
+    row.appendChild(el('span', 'layer-rank', String(i + 1)));
+    const body = el('div');
+    body.appendChild(el('div', 'node-t', l.t));
+    body.appendChild(el('code', 'node-s', l.s));
+    body.appendChild(el('p', 'node-d', l.d));
+    row.appendChild(body);
+    stack.appendChild(row);
+  });
+  s2i.appendChild(stack);
+  s2i.appendChild(el('p', 'flow-note',
+    'Re-running a detector or the model can only add candidates. Neither can change a call you '
+    + 'already made, because groupings are matched across re-runs by which episodes they contain, '
+    + 'not by their position in a list.'));
+  view.appendChild(s2i);
+
+  /* 3 — worked examples */
+  const s3e = sysHead('shows', 'Six real shows',
+    'The same six paths, with the actual numbers from the corpus.');
+  const exw = el('div', 'tablewrap');
+  const ext = el('table', 'synct exts');
+  const eth = el('thead'); const ehr = el('tr');
+  ['Show', 'In the feed', 'What the store holds', 'Why'].forEach(h => ehr.appendChild(el('th', null, h)));
+  eth.appendChild(ehr); ext.appendChild(eth);
+  const etb = el('tbody');
+  EXAMPLES.forEach(x => {
+    const tr = el('tr');
+    tr.appendChild(el('td', 'sync-what', x.show));
+    tr.appendChild(el('td', 'dim', x.eps));
+    const h = el('td');
+    h.appendChild(el('span', 'tag ' + (x.kind === 'ok' ? 'on' : x.kind === 'model' ? 'model' : x.kind === 'warn' ? 'warn' : 'none'), x.holds));
+    tr.appendChild(h);
+    tr.appendChild(el('td', null, x.why));
+    etb.appendChild(tr);
+  });
+  ext.appendChild(etb); exw.appendChild(ext); s3e.appendChild(exw);
+  view.appendChild(s3e);
+
+  /* 4 — out to the app */
+  const s2 = sysHead('out', 'How it reaches the app',
+    'The store is exported to a file the app reads. When that ships, the phone will ask these in '
+    + 'order and stop at the first answer — today only the third rung exists, which is why the '
+    + 'phone still computes arcs itself on every render.');
   const ladder = el('div', 'ladder');
   LADDER.forEach((l, i) => {
     const row = el('div', 'rung ' + l.st);
@@ -891,39 +945,15 @@ function renderSystem() {
       two.appendChild(c);
     });
   s2.appendChild(two);
+
+  s2.appendChild(el('h3', 'sub-h', 'What the phone does today, with no store'));
+  s2.appendChild(flowchart(CHART_SHELF));
+  s2.appendChild(el('p', 'flow-note',
+    'Arcs are a computed property in the app, so this re-runs every time the view draws — nothing '
+    + 'cached, nothing looked up. Once the export ships, rungs 1 and 2 answer first and this '
+    + 'becomes the fallback rather than the whole story.'));
   view.appendChild(s2);
 
-  /* 3 — build time */
-  const s3 = sysHead('build', 'Where the data comes from',
-    `On this machine, not the phone. Three things propose structure and one of them is you — `
-    + `${items.toLocaleString()} groupings exist, ${judged === 1 ? '1 has' : judged + ' have'} a verdict.`);
-  const flow = el('div', 'flow');
-  PIPELINE.forEach((col, i) => {
-    if (i) flow.appendChild(el('div', 'arrow', '→'));
-    const c = el('div', 'col');
-    c.appendChild(el('h3', 'col-h', col.head));
-    col.nodes.forEach(n => c.appendChild(node(n)));
-    flow.appendChild(c);
-  });
-  s3.appendChild(flow);
-
-  s3.appendChild(el('h3', 'sub-h', 'Priority when they disagree'));
-  const stack = el('div', 'stack');
-  LAYERS.forEach((l, i) => {
-    const row = el('div', 'layer ' + l.c);
-    row.appendChild(el('span', 'layer-rank', String(i + 1)));
-    const body = el('div');
-    body.appendChild(el('div', 'node-t', l.t));
-    body.appendChild(el('code', 'node-s', l.s));
-    body.appendChild(el('p', 'node-d', l.d));
-    row.appendChild(body);
-    stack.appendChild(row);
-  });
-  s3.appendChild(stack);
-  s3.appendChild(el('p', 'flow-note',
-    'Re-running a detector or the model can only add candidates. Neither can change a call you '
-    + 'already made, because ids are matched by episode overlap rather than position.'));
-  view.appendChild(s3);
 
   /* 4 — sync */
   const s4 = sysHead('sync', 'What syncs, and when',
