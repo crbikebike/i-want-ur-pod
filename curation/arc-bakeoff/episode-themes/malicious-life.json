@@ -6,10 +6,152 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "hacking-and-cybercrime",
+   "count": 5
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 2
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 2
+  },
+  {
+   "slug": "surveillance-and-privacy",
+   "count": 2
+  },
+  {
+   "slug": "terrorism-and-aftermath",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "32dc6815-4807-4297-9813-83a2a31c306f",
+   "display": "Weev, Part 2",
+   "segment": "",
+   "subject": "Weev, Part 2",
+   "iso": "2024-12-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "801e0198-9f16-405b-b70d-5b7053cc6e2a",
+   "display": "Weev, Part 1",
+   "segment": "",
+   "subject": "Weev, Part 1",
+   "iso": "2024-11-27",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3b97e1ac-1541-449b-99f9-248d81315a8d",
+   "display": "Cuckoo Spear [B-Side]",
+   "segment": "",
+   "subject": "Cuckoo Spear [B-Side]",
+   "iso": "2024-11-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "59c1fe83-62d0-4eae-a383-c9d3229e1007",
+   "display": "The Man Who Went To War With Anonymous - And Lost",
+   "segment": "",
+   "subject": "And Lost",
+   "iso": "2024-11-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "64660ffc-03fe-4e50-9472-98bd13fca40f",
+   "display": "What Can Organizations Learn from \"Grim Beeper\"? [B-Side]",
+   "segment": "",
+   "subject": "What Can Organizations Learn from \"Grim Beeper\"? [B-Side]",
+   "iso": "2024-11-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d8493b62-adf8-4529-acc0-7fe0e4897702",
+   "display": "The Fappening/Celebgate",
+   "segment": "",
+   "subject": "The Fappening/Celebgate",
+   "iso": "2024-10-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'hacking-and-cybercrime' is 5/6 (83%)"
  ]
 }

@@ -6,10 +6,194 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "civil-rights-struggle",
+   "count": 5
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 4
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 3
+  },
+  {
+   "slug": "political-scandal",
+   "count": 2
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "06418854-8c08-11eb-9662-6f118b582bf0",
+   "display": "08: The Conspiracy",
+   "segment": "",
+   "subject": "The Conspiracy",
+   "iso": "2021-05-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "government-secrecy",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "063cdda4-8c08-11eb-9662-bbe8786b14b9",
+   "display": "07: The Spies",
+   "segment": "",
+   "subject": "The Spies",
+   "iso": "2021-05-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "063756e0-8c08-11eb-9662-3f48ca5f3b99",
+   "display": "06: The Fugitive",
+   "segment": "",
+   "subject": "The Fugitive",
+   "iso": "2021-05-04",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "06331b34-8c08-11eb-9662-739c41f2bdce",
+   "display": "05: The Trials",
+   "segment": "",
+   "subject": "The Trials",
+   "iso": "2021-04-27",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "062db5b8-8c08-11eb-9662-83b47127227d",
+   "display": "04: The Activists",
+   "segment": "",
+   "subject": "The Activists",
+   "iso": "2021-04-20",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0628896c-8c08-11eb-9662-cbbf4cacdbec",
+   "display": "03: The FBI",
+   "segment": "",
+   "subject": "The FBI",
+   "iso": "2021-04-13",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0624568a-8c08-11eb-9662-e347994e6128",
+   "display": "02: The Assassination",
+   "segment": "",
+   "subject": "The Assassination",
+   "iso": "2021-04-06",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "061cdb8a-8c08-11eb-9662-6324f523fe9c",
+   "display": "01: The Fire",
+   "segment": "",
+   "subject": "The Fire",
+   "iso": "2021-03-30",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

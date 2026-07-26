@@ -6,10 +6,153 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "hollywood-history",
+   "count": 6
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 3
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 1
+  },
+  {
+   "slug": "mental-health",
+   "count": 1
+  },
+  {
+   "slug": "romance-and-heartbreak",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "http://www.infiniteguest.org/?p=254",
+   "display": "2: Frank Sinatra in Outer Space",
+   "segment": "",
+   "subject": "Frank Sinatra in Outer Space",
+   "iso": "2014-04-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hollywood-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.infiniteguest.org/?p=253",
+   "display": "3: Happy 110th Birthday, Val Lewton",
+   "segment": "",
+   "subject": "Happy 110th Birthday, Val Lewton",
+   "iso": "2014-05-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hollywood-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.infiniteguest.org/?p=252",
+   "display": "4: (The Printing of) the Legend of Frances Farmer",
+   "segment": "",
+   "subject": "(The Printing of) the Legend of Frances Farmer",
+   "iso": "2014-05-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hollywood-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "mental-health",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.infiniteguest.org/?p=251",
+   "display": "5: The Lives, Deaths and Afterlives of Judy Garland",
+   "segment": "",
+   "subject": "The Lives, Deaths and Afterlives of Judy Garland",
+   "iso": "2014-06-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hollywood-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.infiniteguest.org/?p=250",
+   "display": "6: Isabella Rossellini in the 1990s",
+   "segment": "",
+   "subject": "Isabella Rossellini in the 1990s",
+   "iso": "2014-06-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hollywood-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.infiniteguest.org/?p=249",
+   "display": "7: The Many Loves of Howard Hughes, Chapter 1",
+   "segment": "",
+   "subject": "The Many Loves of Howard Hughes, Chapter 1",
+   "iso": "2014-06-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hollywood-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'hollywood-history' is 6/6 (100%)",
+  "only 1 theme(s) across 6 episodes"
  ]
 }

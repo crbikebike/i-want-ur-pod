@@ -6,10 +6,222 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "identity-impostor",
+   "count": 2
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 2
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 2
+  },
+  {
+   "slug": "internet-culture",
+   "count": 1
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 1
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 1
+  },
+  {
+   "slug": "medical-deception",
+   "count": 1
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 1
+  },
+  {
+   "slug": "parenting",
+   "count": 1
+  },
+  {
+   "slug": "sports-scandal",
+   "count": 1
+  },
+  {
+   "slug": "romance-and-catfishing",
+   "count": 1
+  },
+  {
+   "slug": "media-criticism",
+   "count": 1
+  },
+  {
+   "slug": "investment-fraud",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "25867ec5-58ac-4de3-80ee-ef51e4c68fde",
+   "display": "The Wannabe Pilot: Fish Swim, Birds Fly, and Randy Lies",
+   "segment": "",
+   "subject": "Fish Swim, Birds Fly, and Randy Lies",
+   "iso": "2026-07-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "18ad6c79-a3c7-4e7a-889d-846626e98beb",
+   "display": "For The Love Of Dogs: The Scam Shelters Abusing Animals For Clicks",
+   "segment": "",
+   "subject": "The Scam Shelters Abusing Animals For Clicks",
+   "iso": "2026-07-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "internet-culture",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6793b2b3-4a56-4d55-9366-195e0317cad9",
+   "display": "REVISITED: The Kid Who Couldn’t Stop Playing Cop",
+   "segment": "",
+   "subject": "The Kid Who Couldn’t Stop Playing Cop",
+   "iso": "2026-07-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9acc881e-1555-4da6-9c40-fa8c9583a5c1",
+   "display": "Mother of All Stories Part 2: Mom On The Run",
+   "segment": "",
+   "subject": "Mom On The Run",
+   "iso": "2026-06-25",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "medical-deception",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ef0aecfd-db15-43ba-8f53-9b109b7daf39",
+   "display": "Mother of All Stories Part 1: A Daughter Falls Under A Spell",
+   "segment": "",
+   "subject": "A Daughter Falls Under A Spell",
+   "iso": "2026-06-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "cult-and-control",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "parenting",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "be9242e5-0012-426d-8b12-6f64ddb7d777",
+   "display": "Mr 10 Percent: The Suburban Dad Who Fleeced Global Soccer",
+   "segment": "",
+   "subject": "The Suburban Dad Who Fleeced Global Soccer",
+   "iso": "2026-06-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sports-scandal",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ade86330-4629-4625-9024-d5e3c5064361",
+   "display": "Fetal Attraction: The Reality Star And The Woman He Wished He’d Never Met",
+   "segment": "",
+   "subject": "The Reality Star And The Woman He Wished He’d Never Met",
+   "iso": "2026-06-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8f0e665a-fde6-4ada-9a5c-756248cf0934",
+   "display": "Laundry Man: The Wild Ride of the Pig Butcher's Banker",
+   "segment": "",
+   "subject": "The Wild Ride of the Pig Butcher's Banker",
+   "iso": "2026-05-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investment-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

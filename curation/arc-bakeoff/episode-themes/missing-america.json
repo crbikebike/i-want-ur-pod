@@ -6,10 +6,358 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "political-scandal",
+   "count": 6
+  },
+  {
+   "slug": "presidential-power",
+   "count": 3
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 2
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 2
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 2
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 2
+  },
+  {
+   "slug": "protest-movement",
+   "count": 1
+  },
+  {
+   "slug": "sport-and-politics",
+   "count": 1
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "climate-change",
+   "count": 1
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 1
+  },
+  {
+   "slug": "terrorism-and-aftermath",
+   "count": 1
+  },
+  {
+   "slug": "religious-abuse",
+   "count": 1
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  },
+  {
+   "slug": "online-radicalisation",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "484c9ea7-8e3c-410f-900a-f8c36433427f",
+   "display": "Introducing Pod Save the UK: Protest, Eurovision and Showgirls",
+   "segment": "",
+   "subject": "Protest, Eurovision and Showgirls",
+   "iso": "2023-05-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "protest-movement",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a4c6a1d3-f836-481c-80c7-b83894c07000",
+   "display": "World Corrupt Episode 1: A Toxic Love Affair between Politics and Sports",
+   "segment": "",
+   "subject": "A Toxic Love Affair between Politics and Sports",
+   "iso": "2022-10-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sport-and-politics",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ae1d547a-a03a-4782-906f-8b43f0724ed6",
+   "display": "Introducing: Another Russia",
+   "segment": "",
+   "subject": "Another Russia",
+   "iso": "2022-08-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "40893c0c-e5d4-4737-a276-66e79bc7fe63",
+   "display": "Introducing: Mother Country Radicals",
+   "segment": "",
+   "subject": "Mother Country Radicals",
+   "iso": "2022-06-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "extremist-movement",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d49639e4-d5cd-11ea-9613-639787eff047",
+   "display": "9. Reclaiming America",
+   "segment": "",
+   "subject": "Reclaiming America",
+   "iso": "2020-10-06",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "presidential-power",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "cb8a9ffc-d5cd-11ea-993b-5f5fa33c57e8",
+   "display": "8. Climate Change",
+   "segment": "",
+   "subject": "Climate Change",
+   "iso": "2020-09-29",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "climate-change",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "c7a5e298-d5cd-11ea-94f1-6381e56834cc",
+   "display": "7. Xenophobia",
+   "segment": "",
+   "subject": "Xenophobia",
+   "iso": "2020-09-22",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c46150d6-d5cd-11ea-9671-c3f1cd14dfc6",
+   "display": "6. Endless War",
+   "segment": "",
+   "subject": "Endless War",
+   "iso": "2020-09-15",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "bfc7aa66-d5cd-11ea-81e9-cbf58c5b8a88",
+   "display": "5. Sectarianism",
+   "segment": "",
+   "subject": "Sectarianism",
+   "iso": "2020-09-08",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "religious-abuse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ba3a67c8-d5cd-11ea-9613-638e75462e65",
+   "display": "4. Disinformation",
+   "segment": "",
+   "subject": "Disinformation",
+   "iso": "2020-09-01",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "online-radicalisation",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b3f4f252-d5cd-11ea-ac0c-b3b5c592917c",
+   "display": "3. Authoritarianism",
+   "segment": "",
+   "subject": "Authoritarianism",
+   "iso": "2020-08-25",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9e1d632e-d5cd-11ea-b69c-d768b446870f",
+   "display": "2. Nationalism",
+   "segment": "",
+   "subject": "Nationalism",
+   "iso": "2020-08-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "extremist-movement",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "735e88fc-d5cd-11ea-965f-1793f2007293",
+   "display": "1. Trumpism",
+   "segment": "",
+   "subject": "Trumpism",
+   "iso": "2020-08-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "presidential-power",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6638d836-ce06-11ea-a009-03e22ddad739",
+   "display": "Introducing Missing America (coming 8/11)",
+   "segment": "",
+   "subject": "coming 8/11",
+   "iso": "2020-07-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "presidential-power",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

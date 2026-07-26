@@ -6,10 +6,239 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "investigative-process",
+   "count": 9
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 3
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 2
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "missing-person",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "urn:bbc:podcast:p09kllps",
+   "display": "12. Anna and Angelina",
+   "segment": "",
+   "subject": "Anna and Angelina",
+   "iso": "2021-06-06",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p07f05nh",
+   "display": "11. Turning Detective - Live",
+   "segment": "",
+   "subject": "Live",
+   "iso": "2019-06-24",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p06bcm9x",
+   "display": "10. Underground",
+   "segment": "",
+   "subject": "Underground",
+   "iso": "2018-06-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p069nvqv",
+   "display": "9. The Isdal Girl",
+   "segment": "",
+   "subject": "The Isdal Girl",
+   "iso": "2018-06-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p068w4jc",
+   "display": "8. Case Closed",
+   "segment": "",
+   "subject": "Case Closed",
+   "iso": "2018-06-04",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p068d6w0",
+   "display": "7. Mystery Men",
+   "segment": "",
+   "subject": "Mystery Men",
+   "iso": "2018-05-28",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p067l572",
+   "display": "6. Spycatcher",
+   "segment": "",
+   "subject": "Spycatcher",
+   "iso": "2018-05-21",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p066xf2f",
+   "display": "5. The Penguin",
+   "segment": "",
+   "subject": "The Penguin",
+   "iso": "2018-05-14",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0668qg4",
+   "display": "4. Telltale Tooth",
+   "segment": "",
+   "subject": "Telltale Tooth",
+   "iso": "2018-05-07",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p065k61k",
+   "display": "3. The Remote Archive",
+   "segment": "",
+   "subject": "The Remote Archive",
+   "iso": "2018-04-30",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p064y75b",
+   "display": "2. A Case of Clues",
+   "segment": "",
+   "subject": "A Case of Clues",
+   "iso": "2018-04-23",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0646dbd",
+   "display": "1. The Isdal Woman",
+   "segment": "",
+   "subject": "The Isdal Woman",
+   "iso": "2018-04-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

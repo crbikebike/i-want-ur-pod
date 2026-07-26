@@ -6,10 +6,166 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "sports-history",
+   "count": 2
+  },
+  {
+   "slug": "racial-violence",
+   "count": 2
+  },
+  {
+   "slug": "history-retold",
+   "count": 2
+  },
+  {
+   "slug": "tech-industry-power",
+   "count": 1
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 1
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 1
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
+   "slug": "books-and-writing",
+   "count": 1
+  },
+  {
+   "slug": "elections-and-voting",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "5e41068d-3392-4c07-96d5-b2ae00fed8c3",
+   "display": "Iron Man from X Man: The Elon Musk Origin Story",
+   "segment": "",
+   "subject": "The Elon Musk Origin Story",
+   "iso": "2025-03-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "tech-industry-power",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6b1b0f39-a327-454d-8f35-b20401478bc4",
+   "display": "Part 2: Long Jump, Tall Tale",
+   "segment": "",
+   "subject": "Long Jump, Tall Tale",
+   "iso": "2024-10-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "sports-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "racial-violence",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "06821e93-23bd-42df-af56-b20401384223",
+   "display": "Part 1: The Jiggle & the Giddy Up",
+   "segment": "",
+   "subject": "The Jiggle & the Giddy Up",
+   "iso": "2024-10-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "sports-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "racial-violence",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b8ff9f11-9fb3-4363-a8ac-b172010f3381",
+   "display": "70 Years of Brown v. Board of Education",
+   "segment": "",
+   "subject": "70 Years of Brown v. Board of Education",
+   "iso": "2024-05-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "legal-precedent",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c496070d-7421-486e-8ccf-b12b014e9f32",
+   "display": "The Returns: A Conversation with Jill Lepore",
+   "segment": "",
+   "subject": "A Conversation with Jill Lepore",
+   "iso": "2024-03-07",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "books-and-writing",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1bb40d44-51da-4f23-b722-b12400f71266",
+   "display": "The Returns: Epiphany",
+   "segment": "",
+   "subject": "Epiphany",
+   "iso": "2024-02-29",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

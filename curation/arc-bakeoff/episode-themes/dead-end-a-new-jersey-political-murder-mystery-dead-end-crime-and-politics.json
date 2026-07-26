@@ -6,10 +6,357 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "political-scandal",
+   "count": 8
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 3
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 3
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 3
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 2
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 2
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "bribery-and-kickbacks",
+   "count": 1
+  },
+  {
+   "slug": "romance-and-heartbreak",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 1
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 1
+  },
+  {
+   "slug": "family-secret",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "1c19d8c9-19c6-47ce-aa24-2a36efbfb2cc",
+   "display": "Nancy Invites You to an In-Person Event at WNYC - this Wednesday!",
+   "segment": "",
+   "subject": "Nancy Invites You to an In-Person Event at WNYC - this Wednesday!",
+   "iso": "2026-06-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "04a090c2-5a25-41d5-8192-22da905591e0",
+   "display": "The Felon",
+   "segment": "",
+   "subject": "The Felon",
+   "iso": "2025-06-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "99d9cc2f-2e71-49ed-b551-22f7240d83b9",
+   "display": "The Lover",
+   "segment": "",
+   "subject": "The Lover",
+   "iso": "2025-06-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "ff3a5ed7-6df5-4058-88c0-6ead45ef5a69",
+   "display": "The Fighter",
+   "segment": "",
+   "subject": "The Fighter",
+   "iso": "2025-06-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "460f31d2-90a7-4c4c-aa85-d78d4925eb03",
+   "display": "Dismissal",
+   "segment": "",
+   "subject": "Dismissal",
+   "iso": "2025-02-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d3a649e7-af61-494d-8a36-b4e3660d5664",
+   "display": "George Norcross Takes a Front Row Seat for His Own Indictment",
+   "segment": "",
+   "subject": "George Norcross Takes a Front Row Seat for His Own Indictment",
+   "iso": "2024-06-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "77b680f3-7264-4046-9acf-557bbc47b7a6",
+   "display": "Update: The Norcross Enterprise Takes a Hit",
+   "segment": "",
+   "subject": "The Norcross Enterprise Takes a Hit",
+   "iso": "2024-06-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8395c93f-47ff-490f-a1b3-27a95a433785",
+   "display": "EPISODE 8: Dead End",
+   "segment": "",
+   "subject": "Dead End",
+   "iso": "2022-06-07",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "532be60b-3a0a-4286-9776-b7500ecab87f",
+   "display": "EPISODE 7: Breaking News - \"Thou Shalt Pursue\"",
+   "segment": "",
+   "subject": "\"Thou Shalt Pursue\"",
+   "iso": "2022-05-31",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "967a6e27-d7f6-4921-98c4-4d196e27d686",
+   "display": "EPISODE 6: On the (Camden) Waterfront",
+   "segment": "",
+   "subject": "On the (Camden) Waterfront",
+   "iso": "2022-05-24",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "7d838411-499e-49df-9dfe-e64a51727c74",
+   "display": "EPISODE 5: New Jersey’s Other Boss",
+   "segment": "",
+   "subject": "New Jersey’s Other Boss",
+   "iso": "2022-05-17",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "24453f39-3aea-495f-9493-81b8bf66cc02",
+   "display": "EPISODE 4: The Dirt on the Garden State",
+   "segment": "",
+   "subject": "The Dirt on the Garden State",
+   "iso": "2022-05-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "60902ea6-6d3c-4682-a1de-0fcfb3427775",
+   "display": "EPISODE 3: A Bloody Fingerprint, A Bent Fire Poker, and Mystery DNA",
+   "segment": "",
+   "subject": "A Bloody Fingerprint, A Bent Fire Poker, and Mystery DNA",
+   "iso": "2022-05-03",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c5c5e540-feec-4217-a544-8cbbbfa1f33f",
+   "display": "EPISODE 2: Not Your “Typical” Murder Suicide",
+   "segment": "",
+   "subject": "Not Your “Typical” Murder Suicide",
+   "iso": "2022-04-28",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5ab2421a-b67b-4e0c-a3e9-8c8f705007b7",
+   "display": "EPISODE 1: Meet the Sheridans",
+   "segment": "",
+   "subject": "Meet the Sheridans",
+   "iso": "2022-04-26",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

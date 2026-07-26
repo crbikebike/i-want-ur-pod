@@ -6,10 +6,166 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "murder-close-to-home",
+   "count": 2
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 2
+  },
+  {
+   "slug": "history-retold",
+   "count": 2
+  },
+  {
+   "slug": "medical-deception",
+   "count": 1
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 1
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 1
+  },
+  {
+   "slug": "serial-offender",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "667a857b-c061-40d5-a847-8ad00e1a4045",
+   "display": "Die Leiche im Gartenteich",
+   "segment": "",
+   "subject": "Die Leiche im Gartenteich",
+   "iso": "2026-07-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "aa99ff42-2b87-4736-8aa5-52b6e0082ce3",
+   "display": "Die Phantompatienten des Dr. O.",
+   "segment": "",
+   "subject": "Die Phantompatienten des Dr. O.",
+   "iso": "2026-06-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-deception",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4cfe6cbc-4940-4fba-8819-34814e976e06",
+   "display": "Tod am Großglockner – Teil 1: Auf den Spuren einer Toten",
+   "segment": "",
+   "subject": "Auf den Spuren einer Toten",
+   "iso": "2026-06-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1d9034a0-44a4-411f-82d7-b7d56490ff2f",
+   "display": "Der Prophet und der Werwolf",
+   "segment": "",
+   "subject": "Der Prophet und der Werwolf",
+   "iso": "2026-06-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b4e474ce-b828-4714-b7a9-80f3439dccaa",
+   "display": "Es zog ihn hin zum Mord",
+   "segment": "",
+   "subject": "Es zog ihn hin zum Mord",
+   "iso": "2026-06-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a33ed24b-4bc9-4dc2-8168-3197e7ef167d",
+   "display": "Meine Mitschüler, die Mörder",
+   "segment": "",
+   "subject": "Meine Mitschüler, die Mörder",
+   "iso": "2026-06-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

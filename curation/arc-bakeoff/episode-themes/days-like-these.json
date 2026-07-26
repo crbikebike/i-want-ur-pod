@@ -6,10 +6,214 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "sense-of-place",
+   "count": 3
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 2
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 2
+  },
+  {
+   "slug": "food-and-drink",
+   "count": 2
+  },
+  {
+   "slug": "natural-disaster",
+   "count": 1
+  },
+  {
+   "slug": "chronic-illness",
+   "count": 1
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 1
+  },
+  {
+   "slug": "immigrant-experience",
+   "count": 1
+  },
+  {
+   "slug": "survival-story",
+   "count": 1
+  },
+  {
+   "slug": "music-scene-history",
+   "count": 1
+  },
+  {
+   "slug": "protest-movement",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "https://www.abc.net.au/listen/programs/days-like-these/introducing-the-weather-that-changed-us/104723034",
+   "display": "INTRODUCING — The Weather That Changed Us",
+   "segment": "INTRODUCING",
+   "subject": "The Weather That Changed Us",
+   "iso": "2024-12-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "natural-disaster",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/days-like-these/anita-jack-dragon-dai-gum-loong-sun-loong-golden-bendigo-museum/104026312",
+   "display": "How to build a dragon",
+   "segment": "",
+   "subject": "How to build a dragon",
+   "iso": "2024-09-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sense-of-place",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "art-and-artists",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/days-like-these/miriam-in-disney-world/104026236",
+   "display": "Miriam in Disney World",
+   "segment": "",
+   "subject": "Miriam in Disney World",
+   "iso": "2024-09-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "personal-transformation",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "art-and-artists",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/days-like-these/brent-wallwork-served-up-solutions-to-diet-related-disease/104026066",
+   "display": "How Brent served up solutions to diet-related disease",
+   "segment": "",
+   "subject": "How Brent served up solutions to diet-related disease",
+   "iso": "2024-09-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "food-and-drink",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "chronic-illness",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/days-like-these/jess-ho-is-done-talking/104025920",
+   "display": "Jess Ho is done talking sh*t",
+   "segment": "",
+   "subject": "Jess Ho is done talking sh*t",
+   "iso": "2024-08-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "personal-transformation",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/days-like-these/dumplings-and-violins-xiaotang-qin-sydney-man-playing-restaurant/104025850",
+   "display": "Dumplings and violins",
+   "segment": "",
+   "subject": "Dumplings and violins",
+   "iso": "2024-08-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "food-and-drink",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/days-like-these/the-brazilian-package/104026210",
+   "display": "The Brazilian Package",
+   "segment": "",
+   "subject": "The Brazilian Package",
+   "iso": "2024-08-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "survival-story",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/days-like-these/music-is-ronny-kareni-weapon-of-choice/104025632",
+   "display": "Music is Ronny’s weapon of choice",
+   "segment": "",
+   "subject": "Music is Ronny’s weapon of choice",
+   "iso": "2024-08-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "music-scene-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "protest-movement",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

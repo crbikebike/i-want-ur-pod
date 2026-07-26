@@ -6,10 +6,166 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "archives-and-objects",
+   "count": 2
+  },
+  {
+   "slug": "history-retold",
+   "count": 2
+  },
+  {
+   "slug": "racial-violence",
+   "count": 2
+  },
+  {
+   "slug": "chronic-illness",
+   "count": 1
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  },
+  {
+   "slug": "space-exploration",
+   "count": 1
+  },
+  {
+   "slug": "death-penalty",
+   "count": 1
+  },
+  {
+   "slug": "scientific-discovery",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "23a8cc2b-4c3e-4037-92a5-757c48c213ec_1",
+   "display": "My Iron Lung: Remembering Martha Lillard",
+   "segment": "",
+   "subject": "Remembering Martha Lillard",
+   "iso": "2026-07-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "chronic-illness",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_35_3fc85934-816e-4cfb-94f3-93de806f7186",
+   "display": "Soweto 1976",
+   "segment": "",
+   "subject": "Soweto 1976",
+   "iso": "2026-06-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_35_b678ff11-095f-433f-9bc0-9b9bb2f76b43",
+   "display": "30 Years of Teenage Diaries",
+   "segment": "",
+   "subject": "30 Years of Teenage Diaries",
+   "iso": "2026-06-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "personal-transformation",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_35_f8856020-112c-4843-89d6-f6aac1cd8a7f",
+   "display": "The Almost Astronaut",
+   "segment": "",
+   "subject": "The Almost Astronaut",
+   "iso": "2026-05-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "space-exploration",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "racial-violence",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_35_d808943e-3cce-4daa-83a5-6e82fc0fe41d",
+   "display": "Willie McGee and the Traveling Electric Chair",
+   "segment": "",
+   "subject": "Willie McGee and the Traveling Electric Chair",
+   "iso": "2026-05-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "racial-violence",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_35_47d0f65b-8a62-45a6-99b1-59401b04168f",
+   "display": "Sealab: A Home on the Ocean Floor",
+   "segment": "",
+   "subject": "A Home on the Ocean Floor",
+   "iso": "2026-04-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "scientific-discovery",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

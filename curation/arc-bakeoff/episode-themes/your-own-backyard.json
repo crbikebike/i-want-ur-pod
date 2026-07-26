@@ -6,10 +6,450 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "courtroom-trial",
+   "count": 15
+  },
+  {
+   "slug": "investigative-process",
+   "count": 7
+  },
+  {
+   "slug": "missing-person",
+   "count": 5
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 3
+  },
+  {
+   "slug": "serial-offender",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "e7515fa1-7435-42bb-97c8-2490ae86fde2",
+   "display": "Closer to Closure: A Conversation with the Smart Family",
+   "segment": "",
+   "subject": "A Conversation with the Smart Family",
+   "iso": "2023-10-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f3d5d378-3fdf-46d5-a8bb-10a390f196f2",
+   "display": "People vs. Flores: The Conclusion Part Four",
+   "segment": "",
+   "subject": "The Conclusion Part Four",
+   "iso": "2023-07-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4cfe609a-acfb-4118-91a0-d019d50c315e",
+   "display": "People vs. Flores: The Conclusion Part Three",
+   "segment": "",
+   "subject": "The Conclusion Part Three",
+   "iso": "2023-07-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0b04babf-b78a-42bc-99d8-0c9000ca2508",
+   "display": "People vs. Flores: The Conclusion Part Two",
+   "segment": "",
+   "subject": "The Conclusion Part Two",
+   "iso": "2023-05-25",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a01ec2b7-0ff7-4171-a8ff-5f3b059083d7",
+   "display": "People vs. Flores: The Conclusion Part One",
+   "segment": "",
+   "subject": "The Conclusion Part One",
+   "iso": "2023-05-12",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e01192e5-40c7-4391-ace4-cae3631308f0",
+   "display": "A Brief Update",
+   "segment": "",
+   "subject": "A Brief Update",
+   "iso": "2022-12-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "b1661341-d8bc-42ef-91f5-ee3aa0cd780b",
+   "display": "People vs. Flores: Defense and Rebuttal",
+   "segment": "",
+   "subject": "Defense and Rebuttal",
+   "iso": "2022-10-17",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8558af9c-4361-4239-ae61-47af33238cd3",
+   "display": "People vs. Flores: Weeks 9 and 10",
+   "segment": "",
+   "subject": "Weeks 9 and 10",
+   "iso": "2022-10-02",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a62e1a4e-3a2b-4916-971f-ed29e4d1af29",
+   "display": "People vs. Flores: Week 8",
+   "segment": "",
+   "subject": "Week 8",
+   "iso": "2022-09-12",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9b648e4a-9f76-42ca-b6f3-34378cccaf59",
+   "display": "People vs. Flores: Week 7",
+   "segment": "",
+   "subject": "Week 7",
+   "iso": "2022-09-07",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b8a76c93-589e-4b0b-95b6-45a6a2212a13",
+   "display": "People vs. Flores: Week 6",
+   "segment": "",
+   "subject": "Week 6",
+   "iso": "2022-08-29",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0cbdfda2-5447-465b-9a4f-a55371be0d41",
+   "display": "People vs. Flores: Weeks 4 and 5",
+   "segment": "",
+   "subject": "Weeks 4 and 5",
+   "iso": "2022-08-24",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "95411e59-3570-4847-9670-2c2db010127c",
+   "display": "People vs. Flores: Week 3",
+   "segment": "",
+   "subject": "Week 3",
+   "iso": "2022-08-08",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6d357bfb-0765-4eff-a966-2b1e99371570",
+   "display": "People vs. Flores: Weeks 1 and 2",
+   "segment": "",
+   "subject": "Weeks 1 and 2",
+   "iso": "2022-08-02",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e3fe7b58-7307-4331-a162-ca08a8132d36",
+   "display": "People vs. Flores #2: Jury, Final Motions, Subpoena",
+   "segment": "",
+   "subject": "Jury, Final Motions, Subpoena",
+   "iso": "2022-07-24",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bebf313c-d090-48d8-93a8-c59c8d287589",
+   "display": "People vs. Flores #1: Motions",
+   "segment": "",
+   "subject": "Motions",
+   "iso": "2022-06-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a48501e6-0f36-4baf-9c76-9ddd459909ab",
+   "display": "Episode 10: The Beginning of The End Part 2",
+   "segment": "",
+   "subject": "The Beginning of The End Part 2",
+   "iso": "2021-07-06",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c3b694e8-3709-4259-8826-bf56ea7505ab",
+   "display": "Episode 09: The Beginning of The End Part 1",
+   "segment": "",
+   "subject": "The Beginning of The End Part 1",
+   "iso": "2021-07-06",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4fa0bedb-120b-4857-a9ec-0739f3e51e92",
+   "display": "Episode 08: The 16-Hour Gap",
+   "segment": "",
+   "subject": "The 16-Hour Gap",
+   "iso": "2020-11-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d1e22e08-b281-4340-83ac-f4f85061badb",
+   "display": "Episode 07: The Iceberg",
+   "segment": "",
+   "subject": "The Iceberg",
+   "iso": "2020-01-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d47bd675934149e4a90bb125e0089243",
+   "display": "Episode 06: Ongoing and Active",
+   "segment": "",
+   "subject": "Ongoing and Active",
+   "iso": "2019-11-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3a2cab6876eb4ce58bb49515375c9a55",
+   "display": "Episode 05: The P",
+   "segment": "",
+   "subject": "The P",
+   "iso": "2019-10-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "997323504f234bdbbb3f2c1bed6de47f",
+   "display": "Episode 04: Son Of Susan",
+   "segment": "",
+   "subject": "Son Of Susan",
+   "iso": "2019-10-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ee70c8487bcb46d98c879bbd319d2f05",
+   "display": "Episode 03: Their Own Backyard",
+   "segment": "",
+   "subject": "Their Own Backyard",
+   "iso": "2019-10-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "fd2157f45d3f4ed894c8d8a0a8544f40",
+   "display": "Episode 02: The Only Suspect",
+   "segment": "",
+   "subject": "The Only Suspect",
+   "iso": "2019-10-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "67590c04f7f948cd88064d1002efd089",
+   "display": "Episode 01: A Face On A Billboard",
+   "segment": "",
+   "subject": "A Face On A Billboard",
+   "iso": "2019-09-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

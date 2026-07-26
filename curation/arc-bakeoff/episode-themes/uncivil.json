@@ -6,10 +6,326 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "history-retold",
+   "count": 7
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 6
+  },
+  {
+   "slug": "slavery-and-its-legacy",
+   "count": 5
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 4
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 2
+  },
+  {
+   "slug": "protest-movement",
+   "count": 1
+  },
+  {
+   "slug": "racial-violence",
+   "count": 1
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 1
+  },
+  {
+   "slug": "music-scene-history",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "782b0932-1853-11eb-b0c7-dbcfad0b78f6",
+   "display": "Introducing Resistance: Is It Too Revolutionary?",
+   "segment": "",
+   "subject": "Is It Too Revolutionary?",
+   "iso": "2020-10-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "protest-movement",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d7ff12d2-e45b-11e8-bcb9-27ac9a16b86a",
+   "display": "The Fugitive",
+   "segment": "",
+   "subject": "The Fugitive",
+   "iso": "2018-11-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0e53d666-e460-11e8-bb5b-4754e7ee36a8",
+   "display": "The Ring",
+   "segment": "",
+   "subject": "The Ring",
+   "iso": "2018-11-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8bd28188-0b4d-11e8-b55f-3bdbcadf5a22",
+   "display": "Uncivil Presents: The Nod",
+   "segment": "",
+   "subject": "The Nod",
+   "iso": "2018-02-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "racial-violence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6da417fa-9409-11e7-b285-cf19fcbb1da4",
+   "display": "The Portrait",
+   "segment": "",
+   "subject": "The Portrait",
+   "iso": "2017-12-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6d9abd86-9409-11e7-b285-17834168778a",
+   "display": "The Assets",
+   "segment": "",
+   "subject": "The Assets",
+   "iso": "2017-12-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6d934484-9409-11e7-b285-3fb11ecd66d2",
+   "display": "The Sentence",
+   "segment": "",
+   "subject": "The Sentence",
+   "iso": "2017-12-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6d8a2a0c-9409-11e7-b285-47bfe89fd6af",
+   "display": "The Paper",
+   "segment": "",
+   "subject": "The Paper",
+   "iso": "2017-12-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6d820c1e-9409-11e7-b285-0740c5c3c5e6",
+   "display": "The Song",
+   "segment": "",
+   "subject": "The Song",
+   "iso": "2017-11-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "music-scene-history",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "6d7ab432-9409-11e7-b285-f3dd15060cec",
+   "display": "The Spin",
+   "segment": "",
+   "subject": "The Spin",
+   "iso": "2017-11-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6d7343c8-9409-11e7-b285-17ce07a3debe",
+   "display": "The Soldiers",
+   "segment": "",
+   "subject": "The Soldiers",
+   "iso": "2017-11-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6d6b8dd6-9409-11e7-b285-e334254513fb",
+   "display": "The Takedown",
+   "segment": "",
+   "subject": "The Takedown",
+   "iso": "2017-10-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6d63df8c-9409-11e7-b285-7309493d2db9",
+   "display": "The Deed",
+   "segment": "",
+   "subject": "The Deed",
+   "iso": "2017-10-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6d592f74-9409-11e7-b285-f76a850c5be4",
+   "display": "The Raid",
+   "segment": "",
+   "subject": "The Raid",
+   "iso": "2017-10-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

@@ -6,10 +6,266 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "serial-offender",
+   "count": 4
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 3
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 2
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "disaster-reconstruction",
+   "count": 1
+  },
+  {
+   "slug": "prison-life",
+   "count": 1
+  },
+  {
+   "slug": "death-penalty",
+   "count": 1
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 1
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 1
+  },
+  {
+   "slug": "survival-story",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "63242a11-0bca-4b5c-a494-ace1013e7f90",
+   "display": "A Conversation about Policing",
+   "segment": "",
+   "subject": "A Conversation about Policing",
+   "iso": "2021-03-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8c77521c-c8ac-45f5-a349-ac8c012772fc",
+   "display": "A Conversation About Survivalism",
+   "segment": "",
+   "subject": "A Conversation About Survivalism",
+   "iso": "2021-03-01",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "290284ab-a685-42f5-a33a-ac8c01288283",
+   "display": "Chapter 8: Danger Signs",
+   "segment": "",
+   "subject": "Danger Signs",
+   "iso": "2021-02-22",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "disaster-reconstruction",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ddf557f8-2cc9-4778-96bc-ac8c01285540",
+   "display": "Chapter 7: George Smith",
+   "segment": "",
+   "subject": "George Smith",
+   "iso": "2021-02-15",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "prison-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "serial-offender",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "e90ab1ed-b010-49b4-a5a3-ac8c0127ed0f",
+   "display": "Chapter 6: The Trial",
+   "segment": "",
+   "subject": "The Trial",
+   "iso": "2021-02-08",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f7f3ed7a-7622-4951-8ca4-ac8c0127a63e",
+   "display": "Chapter 5: Big Guns",
+   "segment": "",
+   "subject": "Big Guns",
+   "iso": "2021-02-01",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d054e6dc-bb4c-4718-b485-ac8c0126de15",
+   "display": "Chapter 4: The Final Chase",
+   "segment": "",
+   "subject": "The Final Chase",
+   "iso": "2021-01-25",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "survival-story",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d4aca3bb-55c0-4ba6-89fd-ac8c012694c9",
+   "display": "Chapter 3: The Robbers",
+   "segment": "",
+   "subject": "The Robbers",
+   "iso": "2021-01-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "dd136701-18b1-43ba-8ac4-ac8c012651cd",
+   "display": "Chapter 2: The Firefight",
+   "segment": "",
+   "subject": "The Firefight",
+   "iso": "2021-01-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b1ebef68-5c1b-4634-8a81-ac8c0125fbb0",
+   "display": "Chapter 1: The Robbery",
+   "segment": "",
+   "subject": "The Robbery",
+   "iso": "2021-01-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

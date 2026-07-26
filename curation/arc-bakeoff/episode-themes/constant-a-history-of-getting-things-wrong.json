@@ -6,10 +6,186 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "history-retold",
+   "count": 8
+  },
+  {
+   "slug": "medical-research",
+   "count": 2
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "folklore-and-legend",
+   "count": 1
+  },
+  {
+   "slug": "archives-and-objects",
+   "count": 1
+  },
+  {
+   "slug": "scientific-discovery",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "d11f3234-7e32-11f1-800f-0bcb1136df53",
+   "display": "Woman in Pieces",
+   "segment": "",
+   "subject": "Woman in Pieces",
+   "iso": "2026-07-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "identity-impostor",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "19bd4f32-7242-11f1-a82a-db2a9ec1f375",
+   "display": "Do You Think He Saur Us (Redux)",
+   "segment": "",
+   "subject": "Redux",
+   "iso": "2026-06-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6aa97540-680d-11f1-960e-8774589c21f0",
+   "display": "You're Being Homunculus",
+   "segment": "",
+   "subject": "You're Being Homunculus",
+   "iso": "2026-06-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "72154404-5c40-11f1-bfe7-d38355ec06e6",
+   "display": "It's a Secret 5 Everyone",
+   "segment": "",
+   "subject": "It's a Secret 5 Everyone",
+   "iso": "2026-06-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "0afb1b6e-52bc-11f1-af32-e7152fc41047",
+   "display": "The Valley of Death, Part Two",
+   "segment": "",
+   "subject": "The Valley of Death, Part Two",
+   "iso": "2026-05-19",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "medical-research",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d6c3902e-471c-11f1-ae08-db16340d661d",
+   "display": "The Valley of Death, Part One",
+   "segment": "",
+   "subject": "The Valley of Death, Part One",
+   "iso": "2026-05-05",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "medical-research",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a41725ce-3cbc-11f1-a626-67129b0621ad",
+   "display": "When in Rome?",
+   "segment": "",
+   "subject": "When in Rome?",
+   "iso": "2026-04-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d172b916-3046-11f1-b271-3b0b10e77274",
+   "display": "The Last Alchemist, Part Two",
+   "segment": "",
+   "subject": "The Last Alchemist, Part Two",
+   "iso": "2026-04-07",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "history-retold",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'history-retold' is 5/8 (62%)"
  ]
 }

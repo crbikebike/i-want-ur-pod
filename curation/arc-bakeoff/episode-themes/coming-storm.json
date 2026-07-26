@@ -6,10 +6,438 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "conspiracy-theory",
+   "count": 14
+  },
+  {
+   "slug": "political-scandal",
+   "count": 11
+  },
+  {
+   "slug": "online-radicalisation",
+   "count": 2
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "media-criticism",
+   "count": 2
+  },
+  {
+   "slug": "tech-industry-power",
+   "count": 2
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "urn:bbc:podcast:m001324q",
+   "display": "1. The Dead Body",
+   "segment": "",
+   "subject": "The Dead Body",
+   "iso": "2022-01-04",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "online-radicalisation",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m00139c3",
+   "display": "2. Sex, Lies, and… a Videotape",
+   "segment": "",
+   "subject": "Sex, Lies, and… a Videotape",
+   "iso": "2022-01-04",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m0013hqs",
+   "display": "3. The Basement",
+   "segment": "",
+   "subject": "The Basement",
+   "iso": "2022-01-04",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "online-radicalisation",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bchpyg",
+   "display": "4. Q Drops",
+   "segment": "",
+   "subject": "Q Drops",
+   "iso": "2022-01-04",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bchqwh",
+   "display": "5. Blowback",
+   "segment": "",
+   "subject": "Blowback",
+   "iso": "2022-01-04",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bchrdr",
+   "display": "6. The Usual Suspects",
+   "segment": "",
+   "subject": "The Usual Suspects",
+   "iso": "2022-01-04",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bchs4q",
+   "display": "7. Welcome to the Future",
+   "segment": "",
+   "subject": "Welcome to the Future",
+   "iso": "2022-01-04",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m0014p7b",
+   "display": "8. Epilogue",
+   "segment": "",
+   "subject": "Epilogue",
+   "iso": "2022-02-22",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m001dxt0",
+   "display": "The Mid-Terms: 1. Groomers",
+   "segment": "",
+   "subject": "1. Groomers",
+   "iso": "2022-11-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m001f4h5",
+   "display": "The Mid-Terms: 2. The Regime",
+   "segment": "",
+   "subject": "2. The Regime",
+   "iso": "2022-11-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m001fcgx",
+   "display": "The Louis Theroux Interview",
+   "segment": "",
+   "subject": "The Louis Theroux Interview",
+   "iso": "2022-11-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0jn1f4d",
+   "display": "Welcome Back",
+   "segment": "",
+   "subject": "Welcome Back",
+   "iso": "2024-09-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m0022yv2",
+   "display": "1. The Yogi",
+   "segment": "",
+   "subject": "The Yogi",
+   "iso": "2024-09-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m0023051",
+   "display": "2. Flight 007",
+   "segment": "",
+   "subject": "Flight 007",
+   "iso": "2024-09-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m00237v8",
+   "display": "3. The Enemy Within",
+   "segment": "",
+   "subject": "The Enemy Within",
+   "iso": "2024-09-25",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "extremist-movement",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m0023ds8",
+   "display": "4. The Jump",
+   "segment": "",
+   "subject": "The Jump",
+   "iso": "2024-10-02",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m0023q2v",
+   "display": "5. The Photocopier",
+   "segment": "",
+   "subject": "The Photocopier",
+   "iso": "2024-10-09",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "tech-industry-power",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m0023xzt",
+   "display": "6. Kompromat",
+   "segment": "",
+   "subject": "Kompromat",
+   "iso": "2024-10-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m00244l5",
+   "display": "7. Wonderland",
+   "segment": "",
+   "subject": "Wonderland",
+   "iso": "2024-10-23",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "tech-industry-power",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m0024f30",
+   "display": "8. The Last Election…?",
+   "segment": "",
+   "subject": "The Last Election…?",
+   "iso": "2024-10-30",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m00274nk",
+   "display": "Inauguration Bonus",
+   "segment": "",
+   "subject": "Inauguration Bonus",
+   "iso": "2025-01-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0kjbp4q",
+   "display": "Inauguration: Live Q&A",
+   "segment": "",
+   "subject": "Live Q&A",
+   "iso": "2025-01-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m002fcbv",
+   "display": "Live at Hay Festival",
+   "segment": "",
+   "subject": "Live at Hay Festival",
+   "iso": "2025-07-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "media-criticism",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

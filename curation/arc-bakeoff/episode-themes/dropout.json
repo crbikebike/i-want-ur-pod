@@ -6,10 +6,634 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "corporate-fraud",
+   "count": 26
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 18
+  },
+  {
+   "slug": "whistleblower",
+   "count": 3
+  },
+  {
+   "slug": "startup-collapse",
+   "count": 3
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 2
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 1
+  },
+  {
+   "slug": "family-secret",
+   "count": 1
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 1
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 1
+  },
+  {
+   "slug": "tech-industry-power",
+   "count": 1
+  },
+  {
+   "slug": "business-rivalry",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "37dfd9f0-67a9-11ed-9e97-97535fa94bbc",
+   "display": "Bonus: Sentenced",
+   "segment": "",
+   "subject": "Sentenced",
+   "iso": "2022-11-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "314355a0-fe67-11ec-b170-7f5a03b8c751",
+   "display": "The Sunny Balwani Verdict",
+   "segment": "",
+   "subject": "The Sunny Balwani Verdict",
+   "iso": "2022-07-08",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c9df79b8-6dfa-11ec-81bb-0736365518fc",
+   "display": "The Verdict",
+   "segment": "",
+   "subject": "The Verdict",
+   "iso": "2022-01-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5d632d74-6216-11ec-8901-cb3cc408ce2f",
+   "display": "Closing Arguments",
+   "segment": "",
+   "subject": "Closing Arguments",
+   "iso": "2021-12-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d660eb48-38c3-11ec-a799-8760f3995d20",
+   "display": "The Defense Rests",
+   "segment": "",
+   "subject": "The Defense Rests",
+   "iso": "2021-12-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d63e8436-38c3-11ec-a799-3f4fed1c22fa",
+   "display": "Accusations and Evasions",
+   "segment": "",
+   "subject": "Accusations and Evasions",
+   "iso": "2021-12-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d61c23b4-38c3-11ec-a799-c3f2f23324ad",
+   "display": "Reframing the Narrative",
+   "segment": "",
+   "subject": "Reframing the Narrative",
+   "iso": "2021-11-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d5f886c0-38c3-11ec-a799-d3b722230eee",
+   "display": "The Prosecution Rests & Elizabeth Speaks",
+   "segment": "",
+   "subject": "The Prosecution Rests & Elizabeth Speaks",
+   "iso": "2021-11-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d5d5423c-38c3-11ec-a799-f76e01d9cf38",
+   "display": "The Beginning of the End",
+   "segment": "",
+   "subject": "The Beginning of the End",
+   "iso": "2021-11-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d5b1fe9e-38c3-11ec-a799-f34582440023",
+   "display": "Patterns",
+   "segment": "",
+   "subject": "Patterns",
+   "iso": "2021-11-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d58fc6e4-38c3-11ec-a799-671962bd5e20",
+   "display": "The Investors",
+   "segment": "",
+   "subject": "The Investors",
+   "iso": "2021-11-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f271765c-f531-11eb-b514-4312101ee71a",
+   "display": "The Therabros",
+   "segment": "",
+   "subject": "The Therabros",
+   "iso": "2021-10-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f26029a6-f531-11eb-b514-db879fe125e0",
+   "display": "The Clients",
+   "segment": "",
+   "subject": "The Clients",
+   "iso": "2021-10-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f24ff9b4-f531-11eb-b514-c37e29fac411",
+   "display": "Crime and Punishment",
+   "segment": "",
+   "subject": "Crime and Punishment",
+   "iso": "2021-10-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f23f5d3e-f531-11eb-b514-b739389d1b60",
+   "display": "Sounding the Alarm",
+   "segment": "",
+   "subject": "Sounding the Alarm",
+   "iso": "2021-10-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "whistleblower",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f22f0970-f531-11eb-b514-037cc981282f",
+   "display": "The General and the Patient",
+   "segment": "",
+   "subject": "The General and the Patient",
+   "iso": "2021-09-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "442c651c-1a7e-11ec-be5e-3baca8addec4",
+   "display": "Mystery Men",
+   "segment": "",
+   "subject": "Mystery Men",
+   "iso": "2021-09-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "whistleblower",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f21e3b22-f531-11eb-b514-9f74f038d2c3",
+   "display": "Setting the Stage",
+   "segment": "",
+   "subject": "Setting the Stage",
+   "iso": "2021-09-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f20dec86-f531-11eb-b514-373b4edf2b8a",
+   "display": "The Jury",
+   "segment": "",
+   "subject": "The Jury",
+   "iso": "2021-09-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f1fd3972-f531-11eb-b514-dfb6da9e9fbb",
+   "display": "Bombshell",
+   "segment": "",
+   "subject": "Bombshell",
+   "iso": "2021-08-31",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f1ebdcae-f531-11eb-b514-b7b1b570376e",
+   "display": "Where Have You Been, Elizabeth Holmes?",
+   "segment": "",
+   "subject": "Where Have You Been, Elizabeth Holmes?",
+   "iso": "2021-08-31",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e17f202e-f531-11eb-b9d0-1734c7cbf4cd",
+   "display": "Introducing 'The Dropout: Elizabeth Holmes on Trial'",
+   "segment": "",
+   "subject": "Elizabeth Holmes on Trial'",
+   "iso": "2021-08-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3599996/3599996_2019-02-26-205036.mp3",
+   "display": "6. What Now?",
+   "segment": "",
+   "subject": "What Now?",
+   "iso": "2019-02-27",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3597729/3597729_2019-02-19-234529.mp3",
+   "display": "5. The Downfall",
+   "segment": "",
+   "subject": "The Downfall",
+   "iso": "2019-02-20",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3595474/3595474_2019-02-12-210714.mp3",
+   "display": "4. The Whistleblower",
+   "segment": "",
+   "subject": "The Whistleblower",
+   "iso": "2019-02-13",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "whistleblower",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3593202/3593202_2019-02-05-204502.mp3",
+   "display": "3. A Star is Born",
+   "segment": "",
+   "subject": "A Star is Born",
+   "iso": "2019-02-06",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "startup-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3590453/3590453_2019-01-28-185853.mp3",
+   "display": "2. The Enforcer",
+   "segment": "",
+   "subject": "The Enforcer",
+   "iso": "2019-01-30",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "business-rivalry",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3588431/3588431_2019-01-22-155031.mp3",
+   "display": "1. Myth-Making",
+   "segment": "",
+   "subject": "Myth-Making",
+   "iso": "2019-01-23",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "startup-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3584615/3584615_2019-01-10-174615.mp3",
+   "display": "Trailer: The Rise and Fall of Elizabeth Holmes' Theranos",
+   "segment": "",
+   "subject": "The Rise and Fall of Elizabeth Holmes' Theranos",
+   "iso": "2019-01-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "startup-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

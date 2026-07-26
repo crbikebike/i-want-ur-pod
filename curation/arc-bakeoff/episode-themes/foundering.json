@@ -6,10 +6,150 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "tech-industry-power",
+   "count": 4
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 3
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 3
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 1
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "3ca28120-a0ac-4c20-b542-b442015830cf",
+   "display": "Bob Lee Part 5: Tech vs. San Francisco",
+   "segment": "",
+   "subject": "Tech vs. San Francisco",
+   "iso": "2026-05-07",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "655e0963-da89-41f8-ae76-b43b01388b86",
+   "display": "Bob Lee Part 4: The Made-for-TV Murder Trial",
+   "segment": "",
+   "subject": "The Made-for-TV Murder Trial",
+   "iso": "2026-04-30",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7d5fd4a0-22fa-47fb-a7f1-b43401371c20",
+   "display": "Bob Lee Part 3: The Brilliant Programmer and a Lot of Wild Living",
+   "segment": "",
+   "subject": "The Brilliant Programmer and a Lot of Wild Living",
+   "iso": "2026-04-23",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6d1145ac-c6f3-4705-a778-b42d0163614a",
+   "display": "Bob Lee Part 2: The Brother Did It",
+   "segment": "",
+   "subject": "The Brother Did It",
+   "iso": "2026-04-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8ffe7d5c-c9db-4a46-8c41-b42d01616295",
+   "display": "Bob Lee Part 1: San Francisco Has Blood On Its Hands",
+   "segment": "",
+   "subject": "San Francisco Has Blood On Its Hands",
+   "iso": "2026-04-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "be640beb-89e1-4694-a9b0-b3f0011c9dc9",
+   "display": "Preview: The Sixth Bureau, Episode 1",
+   "segment": "",
+   "subject": "The Sixth Bureau, Episode 1",
+   "iso": "2026-02-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

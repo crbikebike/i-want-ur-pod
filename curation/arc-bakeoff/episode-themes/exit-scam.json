@@ -6,10 +6,193 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "crypto-collapse",
+   "count": 8
+  },
+  {
+   "slug": "investment-fraud",
+   "count": 4
+  },
+  {
+   "slug": "body-never-found",
+   "count": 2
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "8f47325c-d221-11eb-bbe4-4b94ffe9eb2b",
+   "display": "Part VIII: The Exit",
+   "segment": "",
+   "subject": "The Exit",
+   "iso": "2021-06-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investment-fraud",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "590cf8ae-cca7-11eb-80a3-fbec4e320c93",
+   "display": "Part VII: The Wife",
+   "segment": "",
+   "subject": "The Wife",
+   "iso": "2021-06-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investment-fraud",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c0950630-c930-11eb-ab5f-630ddef47474",
+   "display": "Part VI: The Coffin",
+   "segment": "",
+   "subject": "The Coffin",
+   "iso": "2021-06-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1ecff298-c1af-11eb-bea6-df7cbccdb73e",
+   "display": "Part V: The Old Friend",
+   "segment": "",
+   "subject": "The Old Friend",
+   "iso": "2021-06-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f8af367c-bc2d-11eb-98a5-f397db9ffa09",
+   "display": "Part IV: The Chris Markay Account",
+   "segment": "",
+   "subject": "The Chris Markay Account",
+   "iso": "2021-05-31",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investment-fraud",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bc3cfde4-b716-11eb-b38f-ff0e881ed451",
+   "display": "Part III: The Ponzi Schemer",
+   "segment": "",
+   "subject": "The Ponzi Schemer",
+   "iso": "2021-05-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5c528ed8-b12d-11eb-9840-b712c2dda3a1",
+   "display": "Part II: The Co-Founder",
+   "segment": "",
+   "subject": "The Co-Founder",
+   "iso": "2021-05-17",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investment-fraud",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8565dee6-b129-11eb-8313-3bae73744aad",
+   "display": "Part I: The Lost Password",
+   "segment": "",
+   "subject": "The Lost Password",
+   "iso": "2021-05-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'crypto-collapse' is 8/8 (100%)",
+  "only 1 theme(s) across 8 episodes"
  ]
 }

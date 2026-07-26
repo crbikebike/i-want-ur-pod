@@ -6,10 +6,162 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "charismatic-con",
+   "count": 3
+  },
+  {
+   "slug": "corporate-negligence",
+   "count": 3
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 1
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 1
+  },
+  {
+   "slug": "environmental-contamination",
+   "count": 1
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 1
+  },
+  {
+   "slug": "investment-fraud",
+   "count": 1
+  },
+  {
+   "slug": "religious-abuse",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "audioboom-019f36a7-c902-7a6a-9010-873c3ae6377f",
+   "display": "S10 Ep141: The Mirage (Nikola Motor Company)",
+   "segment": "",
+   "subject": "Nikola Motor Company",
+   "iso": "2026-07-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "70f500b6-1323-11ec-b462-d3ce86ccdffc",
+   "display": "Rerun: The Outbreak (Peanut Corporation of America)",
+   "segment": "",
+   "subject": "Peanut Corporation of America",
+   "iso": "2021-09-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "audioboom-019e869e-b45f-7de0-bbb7-ac09118d43ad",
+   "display": "S10 Ep140: The Ghost Town (Times Beach, Missouri)",
+   "segment": "",
+   "subject": "Times Beach, Missouri",
+   "iso": "2026-06-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0ac6b2e0-1eef-11f0-83e5-2bed518dbc2e",
+   "display": "S10 Ep139: The Abandoned (Paria diving tragedy)",
+   "segment": "",
+   "subject": "Paria diving tragedy",
+   "iso": "2026-04-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b15a0e86-1ebd-11f0-91d1-77e9285b1286",
+   "display": "S10 Ep138: The Lampoon (Tim Durham)",
+   "segment": "",
+   "subject": "Tim Durham",
+   "iso": "2026-03-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investment-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "fdd9c4a0-1eee-11f0-ac4c-53ebf67aca2e",
+   "display": "S10 Ep137: The Apostle (David E. Taylor)",
+   "segment": "",
+   "subject": "David E. Taylor",
+   "iso": "2026-02-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "religious-abuse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

@@ -6,10 +6,522 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "organised-crime",
+   "count": 10
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 4
+  },
+  {
+   "slug": "investigative-process",
+   "count": 4
+  },
+  {
+   "slug": "political-scandal",
+   "count": 3
+  },
+  {
+   "slug": "bribery-and-kickbacks",
+   "count": 3
+  },
+  {
+   "slug": "tech-industry-power",
+   "count": 3
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 2
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 1
+  },
+  {
+   "slug": "informant-and-undercover",
+   "count": 1
+  },
+  {
+   "slug": "business-rivalry",
+   "count": 1
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 1
+  },
+  {
+   "slug": "corporate-negligence",
+   "count": 1
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 1
+  },
+  {
+   "slug": "investment-fraud",
+   "count": 1
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 1
+  },
+  {
+   "slug": "startup-collapse",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "8948f211-365d-4a46-9c2c-b32801784d62",
+   "display": "Episode 8: Matryoshka",
+   "segment": "",
+   "subject": "Matryoshka",
+   "iso": "2025-07-29",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c76afbf3-58df-45e1-9adb-b322000379a6",
+   "display": "Episode 7: From Russia With Love",
+   "segment": "",
+   "subject": "From Russia With Love",
+   "iso": "2025-07-22",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e7a6688c-600a-4359-b70f-b31b001d663c",
+   "display": "Episode 6: Maestro",
+   "segment": "",
+   "subject": "Maestro",
+   "iso": "2025-07-15",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "84065047-d15f-450a-b298-b30d001335d5",
+   "display": "Episode 5: A Different Set of Rules",
+   "segment": "",
+   "subject": "A Different Set of Rules",
+   "iso": "2025-07-01",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0e8cc5c9-c885-409b-ad87-b3050143274d",
+   "display": "Episode 4: Backbearings",
+   "segment": "",
+   "subject": "Backbearings",
+   "iso": "2025-06-24",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c3bd00ea-3163-43c4-993e-b2fb00f0bc4f",
+   "display": "Episode 3: Thrill Seeking",
+   "segment": "",
+   "subject": "Thrill Seeking",
+   "iso": "2025-06-17",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "30619d1b-93c5-4bab-a453-b2f701666dc4",
+   "display": "Episode 2: The Friendship Society",
+   "segment": "",
+   "subject": "The Friendship Society",
+   "iso": "2025-06-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "political-scandal",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "2548c678-babf-48e2-a02a-b2f7015db8e7",
+   "display": "Episode 1: The Bribe",
+   "segment": "",
+   "subject": "The Bribe",
+   "iso": "2025-06-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "87d7d785-cce0-49d9-a81d-b0e000ffb22b",
+   "display": "Episode 8 - The Red Notebook",
+   "segment": "",
+   "subject": "The Red Notebook",
+   "iso": "2023-12-26",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ce7b949b-7454-404f-80ee-b0de0142fbf2",
+   "display": "Episode 7 - Against the Ropes",
+   "segment": "",
+   "subject": "Against the Ropes",
+   "iso": "2023-12-21",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d9d7e6f0-2953-4ad5-a2c3-b0dc01096f7d",
+   "display": "Episode 6 - Ties with Tehran",
+   "segment": "",
+   "subject": "Ties with Tehran",
+   "iso": "2023-12-19",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4e777b31-925e-48c2-9851-b0d601014b00",
+   "display": "Episode 5 - Nerds vs Narcos",
+   "segment": "",
+   "subject": "Nerds vs Narcos",
+   "iso": "2023-12-14",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9f2cdf45-b596-4840-8d17-b0d2010bacd0",
+   "display": "Episode 4 - Gangster's Paradise",
+   "segment": "",
+   "subject": "Gangster's Paradise",
+   "iso": "2023-12-12",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "118dcbd8-f1b4-4551-a583-b0d00108a0f2",
+   "display": "Episode 3 - Sun, Guns & Sangria",
+   "segment": "",
+   "subject": "Sun, Guns & Sangria",
+   "iso": "2023-12-07",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5315fc71-609b-4ad0-a19f-b0ce010af6b9",
+   "display": "Episode 2 - Cocaine CEO",
+   "segment": "",
+   "subject": "Cocaine CEO",
+   "iso": "2023-12-05",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "business-rivalry",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "de1c1ffa-3a64-4ae2-baf0-b0ce00f89803",
+   "display": "Episode 1 - Murder Brokers",
+   "segment": "",
+   "subject": "Murder Brokers",
+   "iso": "2023-12-05",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "organised-crime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5eb2321f-1c89-4968-9378-aed60110f793",
+   "display": "Episode 8: Inside Porn's Star Chamber",
+   "segment": "",
+   "subject": "Inside Porn's Star Chamber",
+   "iso": "2022-07-19",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "3398c79d-64bd-4bfc-8286-aed0001cc80a",
+   "display": "Episode 7:  Porn Meets OnlyFans",
+   "segment": "",
+   "subject": "Porn Meets OnlyFans",
+   "iso": "2022-07-12",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "tech-industry-power",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a9bef4e0-5623-44e9-8ee4-aec800e99d95",
+   "display": "Episode 6: Knocking on the Door of a Porn Empire",
+   "segment": "",
+   "subject": "Knocking on the Door of a Porn Empire",
+   "iso": "2022-07-05",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b1f3bec8-e9fe-4eb3-9616-aec100ce9336",
+   "display": "Episode 5: The Billionaire Who Took Down Porn",
+   "segment": "",
+   "subject": "The Billionaire Who Took Down Porn",
+   "iso": "2022-06-28",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "63d0dd7b-c2fc-44c2-910f-aeba013dd2d6",
+   "display": "Episode 4: Playboy vs. Rusty and Edie",
+   "segment": "",
+   "subject": "Playboy vs. Rusty and Edie",
+   "iso": "2022-06-21",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "legal-precedent",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c053f422-e540-4121-8ec9-aeb3013b96d3",
+   "display": "Episode 3: Mr. Goldman, Mr. Sex",
+   "segment": "",
+   "subject": "Mr. Goldman, Mr. Sex",
+   "iso": "2022-06-14",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "03c41443-af82-458d-abc5-aeac0144979b",
+   "display": "Episode 2: The Darth Vader of Porn",
+   "segment": "",
+   "subject": "The Darth Vader of Porn",
+   "iso": "2022-06-07",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "startup-collapse",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b30e253a-6593-4aab-8ec8-aeac0135654a",
+   "display": "Episode 1: Porn Meets the Internet",
+   "segment": "",
+   "subject": "Porn Meets the Internet",
+   "iso": "2022-06-06",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "tech-industry-power",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

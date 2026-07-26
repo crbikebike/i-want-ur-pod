@@ -6,10 +6,213 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "investigative-process",
+   "count": 3
+  },
+  {
+   "slug": "serial-offender",
+   "count": 2
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 2
+  },
+  {
+   "slug": "missing-person",
+   "count": 2
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 2
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 1
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "c5f88cb4-f44d-4a8b-bc1e-b14d0055e13e",
+   "display": "The High Cost of Hate",
+   "segment": "",
+   "subject": "The High Cost of Hate",
+   "iso": "2024-04-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "7b8bffd0-68f0-42e2-95d8-b147001873aa",
+   "display": "Fighting for the Truth",
+   "segment": "",
+   "subject": "Fighting for the Truth",
+   "iso": "2024-04-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2ceccfcc-0066-418c-8c58-b139002356df",
+   "display": "The Scott Johnson Story",
+   "segment": "",
+   "subject": "The Scott Johnson Story",
+   "iso": "2024-03-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "e9337472-517f-4529-9d7c-b13f002e85c6",
+   "display": "Coming soon: Bondi Badlands season two",
+   "segment": "",
+   "subject": "Bondi Badlands season two",
+   "iso": "2024-03-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "acbb138c-5522-4c4b-b073-af4200113598",
+   "display": "Out now: The Confession",
+   "segment": "",
+   "subject": "The Confession",
+   "iso": "2022-11-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "747b383e-52a5-4b31-8441-adcf005832bb",
+   "display": "Justice At Last",
+   "segment": "",
+   "subject": "Justice At Last",
+   "iso": "2021-10-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "57c998c4-cabb-434f-9acc-adc50023fe03",
+   "display": "Thrill Killers",
+   "segment": "",
+   "subject": "Thrill Killers",
+   "iso": "2021-10-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d61468fd-dc9f-4c69-a764-adbb001df80f",
+   "display": "Blood City",
+   "segment": "",
+   "subject": "Blood City",
+   "iso": "2021-10-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "857cb221-9f21-4633-b9ab-adba00756beb",
+   "display": "Murder of a Barman",
+   "segment": "",
+   "subject": "Murder of a Barman",
+   "iso": "2021-10-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "79b1abc1-f118-47cb-89d5-adb300642029",
+   "display": "A Newsreader Vanishes",
+   "segment": "",
+   "subject": "A Newsreader Vanishes",
+   "iso": "2021-09-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "675cadc7-6ef0-4795-b2d9-adb000700ea0",
+   "display": "Introducing Bondi Badlands",
+   "segment": "",
+   "subject": "Introducing Bondi Badlands",
+   "iso": "2021-09-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

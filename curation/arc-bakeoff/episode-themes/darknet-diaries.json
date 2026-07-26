@@ -6,10 +6,204 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "hacking-and-cybercrime",
+   "count": 5
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 4
+  },
+  {
+   "slug": "surveillance-and-privacy",
+   "count": 2
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 1
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  },
+  {
+   "slug": "music-industry-business",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "prx_7057_791c66f0-0bfc-420d-96a3-816c78a17f4c",
+   "display": "177: National Public Data",
+   "segment": "",
+   "subject": "National Public Data",
+   "iso": "2026-07-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_84de1d2b-0222-4815-88f6-ead9afcf4d08",
+   "display": "176: NSL",
+   "segment": "",
+   "subject": "NSL",
+   "iso": "2026-07-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "government-secrecy",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_633acbfe-c5eb-4c84-9d97-536526b6d67f",
+   "display": "175: Bayrob",
+   "segment": "",
+   "subject": "Bayrob",
+   "iso": "2026-06-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_9912ef67-3bb3-4233-acb9-f9b3eb213180",
+   "display": "174: Pacific Rim",
+   "segment": "",
+   "subject": "Pacific Rim",
+   "iso": "2026-05-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_1c9ead67-2af4-45f7-b74f-3330ff11c0c1",
+   "display": "173: Tarjeteros",
+   "segment": "",
+   "subject": "Tarjeteros",
+   "iso": "2026-04-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_cb64ead7-d1f0-41c4-885c-84ce8b3e42d9",
+   "display": "172: SuperBox",
+   "segment": "",
+   "subject": "SuperBox",
+   "iso": "2026-04-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_043c723a-13a1-48dc-8977-3ff2621e8a92",
+   "display": "171: Melody Fraud",
+   "segment": "",
+   "subject": "Melody Fraud",
+   "iso": "2026-03-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "music-industry-business",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_02c8d2f1-68db-4edf-9e73-ca6f9ea40b72",
+   "display": "170: Phrack",
+   "segment": "",
+   "subject": "Phrack",
+   "iso": "2026-02-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'hacking-and-cybercrime' is 5/8 (62%)"
  ]
 }

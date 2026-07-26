@@ -6,10 +6,218 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "mental-health",
+   "count": 3
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 2
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 1
+  },
+  {
+   "slug": "missing-person",
+   "count": 1
+  },
+  {
+   "slug": "medical-research",
+   "count": 1
+  },
+  {
+   "slug": "ageing-and-mortality",
+   "count": 1
+  },
+  {
+   "slug": "scientific-discovery",
+   "count": 1
+  },
+  {
+   "slug": "ai-and-society",
+   "count": 1
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 1
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 1
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/long-read-the-girl-who-vanished-from-her-bed/106927894",
+   "display": "Long Read | The Girl Who Vanished From Her Bed: Part One",
+   "segment": "Long Read",
+   "subject": "Part One",
+   "iso": "2026-07-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/beef-battle-for-the-blue-zones-2/106875904",
+   "display": "Beef | Battle for the Blue Zones 2",
+   "segment": "",
+   "subject": "Battle for the Blue Zones 2",
+   "iso": "2026-07-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-research",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/beef-battle-for-the-blue-zones/106847254",
+   "display": "Beef | Battle for the Blue Zones",
+   "segment": "",
+   "subject": "Battle for the Blue Zones",
+   "iso": "2026-06-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "ageing-and-mortality",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/dark-reality-australia-ai-dream-factory-companion-tech/106820552",
+   "display": "The dark reality of Australia's AI dream factory",
+   "segment": "",
+   "subject": "The dark reality of Australia's AI dream factory",
+   "iso": "2026-06-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "ai-and-society",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/03-tammy-s-story-new-asylums-investigation-prisons-nsw-psychosis/106791530",
+   "display": "03 Tammy's Story | New Asylums",
+   "segment": "",
+   "subject": "New Asylums",
+   "iso": "2026-06-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/02-tammy-s-story-searching-for-safety/106756014",
+   "display": "02 Tammy's Story | Searching for Safety",
+   "segment": "",
+   "subject": "Searching for Safety",
+   "iso": "2026-06-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "mental-health",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/01-tammy-s-story-the-red-cup/106728656",
+   "display": "01 Tammy's Story | The Red Cup",
+   "segment": "",
+   "subject": "The Red Cup",
+   "iso": "2026-05-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "mental-health",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/introducing-tammy-s-story/106685682",
+   "display": "Introducing | Tammy's Story",
+   "segment": "",
+   "subject": "Tammy's Story",
+   "iso": "2026-05-15",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "mental-health",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

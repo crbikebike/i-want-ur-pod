@@ -6,10 +6,396 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "cold-case-reopened",
+   "count": 5
+  },
+  {
+   "slug": "romance-and-heartbreak",
+   "count": 5
+  },
+  {
+   "slug": "family-secret",
+   "count": 5
+  },
+  {
+   "slug": "missing-person",
+   "count": 4
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 2
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 2
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 1
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 1
+  },
+  {
+   "slug": "surveillance-and-privacy",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 1
+  },
+  {
+   "slug": "child-victim",
+   "count": 1
+  },
+  {
+   "slug": "romance-and-catfishing",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "fa7d8185-aa13-42c3-b209-b2ec00726574",
+   "display": "Listen to Episode 1 of The Gangster's Ghost: Dead Man Talking",
+   "segment": "",
+   "subject": "Listen to Episode 1 of The Gangster's Ghost: Dead Man Talking",
+   "iso": "2025-05-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ba5c443a-8e47-4de3-8eed-8ddf831a020d",
+   "display": "Episode 16 - Arrest",
+   "segment": "",
+   "subject": "Arrest",
+   "iso": "2018-12-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e69198c5-d82e-4a21-a6fd-1223d6782a7a",
+   "display": "Episode 15 - Digging",
+   "segment": "",
+   "subject": "Digging",
+   "iso": "2018-11-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "7731ae05-7197-4bc6-b16a-4154e4461903",
+   "display": "Episode 14 - Decision Time",
+   "segment": "",
+   "subject": "Decision Time",
+   "iso": "2018-08-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8c3a326b-ee87-4d2e-9d85-2bfa44c56d09",
+   "display": "Episode 13 - The System",
+   "segment": "",
+   "subject": "The System",
+   "iso": "2018-08-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "443c29b9-c1f3-4fd7-957d-cccf230eb8c9",
+   "display": "Episode 12 - Momentum",
+   "segment": "",
+   "subject": "Momentum",
+   "iso": "2018-08-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a6a0e094-2634-44bf-b7e6-88a9183a1adf",
+   "display": "Episode 11 - Loyalty",
+   "segment": "",
+   "subject": "Loyalty",
+   "iso": "2018-07-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f704362d-f9a6-4f1b-b96e-7d88223a2fdd",
+   "display": "Episode 10 - Damaged",
+   "segment": "",
+   "subject": "Damaged",
+   "iso": "2018-07-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "60a0765c-de08-4780-933b-582858ceeae3",
+   "display": "Episode 9 - Dreamworld",
+   "segment": "",
+   "subject": "Dreamworld",
+   "iso": "2018-07-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sense-of-place",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "ae5a9ddb-5c33-47c3-a846-1e90a3cb0915",
+   "display": "Episode 8 - Hopeless",
+   "segment": "",
+   "subject": "Hopeless",
+   "iso": "2018-07-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "3c3146b3-324c-4068-aa55-4ccd57d0355d",
+   "display": "Episode 7 - The Rings",
+   "segment": "",
+   "subject": "The Rings",
+   "iso": "2018-06-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "cc4a2b12-5e91-4845-8826-255921dc6caa",
+   "display": "Episode 6 - Gone",
+   "segment": "",
+   "subject": "Gone",
+   "iso": "2018-06-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d446ea4d-4b00-4602-9b51-0455f9aa950d",
+   "display": "Episode 5 - A Lovely Drink",
+   "segment": "",
+   "subject": "A Lovely Drink",
+   "iso": "2018-06-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c77a739c-ddd8-4957-8760-923b3d4ab7e1",
+   "display": "Episode 4 - Soft Soil",
+   "segment": "",
+   "subject": "Soft Soil",
+   "iso": "2018-06-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "family-secret",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a7d49110-fb9e-407c-8705-d1d75c08b7a0",
+   "display": "Episode 3 - Bruised",
+   "segment": "",
+   "subject": "Bruised",
+   "iso": "2018-05-31",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "family-secret",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "82cd66a9-b790-4ab2-9eb5-53ff01a7418c",
+   "display": "Episode 2 - Cromer High",
+   "segment": "",
+   "subject": "Cromer High",
+   "iso": "2018-05-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "child-victim",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "romance-and-catfishing",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "fd1de2ee-51ff-45e5-af6a-c766177dfc92",
+   "display": "Episode 1 - Bayview",
+   "segment": "",
+   "subject": "Bayview",
+   "iso": "2018-05-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

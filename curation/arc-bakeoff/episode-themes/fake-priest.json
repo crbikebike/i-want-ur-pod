@@ -6,10 +6,201 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "charismatic-con",
+   "count": 8
+  },
+  {
+   "slug": "religious-abuse",
+   "count": 2
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 1
+  },
+  {
+   "slug": "family-secret",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "72639962-9b82-4413-a1e8-6b308d837433",
+   "display": "How To Get Away With Fraud",
+   "segment": "",
+   "subject": "How To Get Away With Fraud",
+   "iso": "2022-06-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "22469663-a98c-4c5a-97cd-8743542b47e3",
+   "display": "Origin Story",
+   "segment": "",
+   "subject": "Origin Story",
+   "iso": "2022-06-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9c5e385d-bc95-4d61-a7b4-4f763d0c0032",
+   "display": "Two Dead Priests",
+   "segment": "",
+   "subject": "Two Dead Priests",
+   "iso": "2022-06-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "religious-abuse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c1c74b7f-3ec8-4686-ad62-608158fe6da7",
+   "display": "No Good Deed Goes Unpunished",
+   "segment": "",
+   "subject": "No Good Deed Goes Unpunished",
+   "iso": "2022-06-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "c2200c16-5a21-4832-817f-f118373c54fc",
+   "display": "Meet The Browns",
+   "segment": "",
+   "subject": "Meet The Browns",
+   "iso": "2022-06-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2851531a-7155-42e0-bf2a-3043791ec4bb",
+   "display": "Llama Drama",
+   "segment": "",
+   "subject": "Llama Drama",
+   "iso": "2022-06-15",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f03796c9-2569-401b-a6b3-10bd370f0a12",
+   "display": "The Teacher",
+   "segment": "",
+   "subject": "The Teacher",
+   "iso": "2022-06-15",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4f49905b-29ba-4996-8b65-4b6a3b6d8158",
+   "display": "Coming Home",
+   "segment": "",
+   "subject": "Coming Home",
+   "iso": "2022-06-15",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "89129a1e-8e1b-42d0-a744-f7d8b0247ada",
+   "display": "An Unholy Priest",
+   "segment": "",
+   "subject": "An Unholy Priest",
+   "iso": "2022-06-15",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'charismatic-con' is 7/9 (78%)"
  ]
 }

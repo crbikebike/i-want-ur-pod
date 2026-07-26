@@ -6,10 +6,170 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "scientific-discovery",
+   "count": 2
+  },
+  {
+   "slug": "animal-behaviour",
+   "count": 2
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 1
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 1
+  },
+  {
+   "slug": "nuclear-age",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 1
+  },
+  {
+   "slug": "parenting",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "2d0b93a7-a51e-4971-9bcc-9dbb67b1aa68",
+   "display": "Neither Confirm Nor Deny",
+   "segment": "",
+   "subject": "Neither Confirm Nor Deny",
+   "iso": "2026-07-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "government-secrecy",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "496eb621-c667-472f-9c68-ccfd28dcb3fd",
+   "display": "The Holy Shiver",
+   "segment": "",
+   "subject": "The Holy Shiver",
+   "iso": "2026-07-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "scientific-discovery",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c5f8432b-177a-4061-8cb7-8036fdb48dce",
+   "display": "Atomic Artifacts",
+   "segment": "",
+   "subject": "Atomic Artifacts",
+   "iso": "2026-07-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "nuclear-age",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "78702572-7bd9-4b2f-aa08-85e55f2ac89c",
+   "display": "The Gondolier",
+   "segment": "",
+   "subject": "The Gondolier",
+   "iso": "2026-06-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b90ba470-203b-4403-8e25-31adc19b74cb",
+   "display": "This is Your Brain on Hormones",
+   "segment": "",
+   "subject": "This is Your Brain on Hormones",
+   "iso": "2026-06-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "scientific-discovery",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "reproductive-health",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a828e411-fc3a-4b43-a520-392b98a67c31",
+   "display": "Bonus: Wild Animal Dads from Terrestrials",
+   "segment": "",
+   "subject": "Wild Animal Dads from Terrestrials",
+   "iso": "2026-06-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "animal-behaviour",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "parenting",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

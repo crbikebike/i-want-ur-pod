@@ -6,10 +6,164 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "community-in-conflict",
+   "count": 4
+  },
+  {
+   "slug": "history-retold",
+   "count": 2
+  },
+  {
+   "slug": "elections-and-voting",
+   "count": 1
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 1
+  },
+  {
+   "slug": "sports-history",
+   "count": 1
+  },
+  {
+   "slug": "food-and-drink",
+   "count": 1
+  },
+  {
+   "slug": "psychology-of-belief",
+   "count": 1
+  },
+  {
+   "slug": "slavery-and-its-legacy",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "6dae2063-6e7f-48b2-9a2c-b4810165183f",
+   "display": "The Staten Island Problem - Part  3: The Tuvalu Effect",
+   "segment": "",
+   "subject": "The Tuvalu Effect",
+   "iso": "2026-07-23",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "community-in-conflict",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6eb007a3-0ca2-47a4-ba03-b4810156776b",
+   "display": "The Staten Island Problem - Part 2: A New Map",
+   "segment": "",
+   "subject": "A New Map",
+   "iso": "2026-07-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "community-in-conflict",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c252b1e8-ba60-41a1-8b65-b4810134a5c8",
+   "display": "The Staten Island Problem - Part 1: The Mayor vs. the Borough President",
+   "segment": "",
+   "subject": "The Mayor vs. the Borough President",
+   "iso": "2026-07-09",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "community-in-conflict",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "10e5846a-b42c-45c6-8e16-b47f01875ffa",
+   "display": "Revenge of \"A Good Walk Spoiled\"",
+   "segment": "",
+   "subject": "Revenge of \"A Good Walk Spoiled\"",
+   "iso": "2026-07-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "community-in-conflict",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sports-history",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "144891ef-ddcd-4ab5-b77d-b474000be013",
+   "display": "Frankenfood | The Mistakes Series",
+   "segment": "",
+   "subject": "The Mistakes Series",
+   "iso": "2026-06-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "food-and-drink",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b330848f-f7ca-491e-9745-b46700fd548e",
+   "display": "Reconstruction: The Unfinished Promise",
+   "segment": "",
+   "subject": "The Unfinished Promise",
+   "iso": "2026-06-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'community-in-conflict' is 4/6 (67%)"
  ]
 }

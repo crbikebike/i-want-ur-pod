@@ -6,10 +6,166 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "history-retold",
+   "count": 2
+  },
+  {
+   "slug": "serial-offender",
+   "count": 2
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 2
+  },
+  {
+   "slug": "prison-life",
+   "count": 1
+  },
+  {
+   "slug": "space-exploration",
+   "count": 1
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 1
+  },
+  {
+   "slug": "folklore-and-legend",
+   "count": 1
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 1
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "audioboom-019f6ad2-89c1-7971-8ac1-91d1b7386791",
+   "display": "ShortHand: Alcatraz – Escape from Devil's Island",
+   "segment": "",
+   "subject": "Alcatraz – Escape from Devil's Island",
+   "iso": "2026-07-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "prison-life",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "audioboom-019f705f-44b7-7639-b8c9-a512ca484fc5",
+   "display": "FROM THE VAULT -  Richard Chase: The Vampire of Sacramento - Parts 1&2",
+   "segment": "FROM THE VAULT",
+   "subject": "The Vampire of Sacramento - Parts 1&2",
+   "iso": "2026-07-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "audioboom-019f6abe-5514-7a56-a6fb-57894483a42f",
+   "display": "ShortHand: The Space Race",
+   "segment": "",
+   "subject": "The Space Race",
+   "iso": "2026-07-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "space-exploration",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "audioboom-019f619d-2550-74da-ba7d-1b475e65a23e",
+   "display": "Juana Barraza: Mexico's Notorious 'Little Old Lady Killer' | #459",
+   "segment": "",
+   "subject": "Mexico's Notorious 'Little Old Lady Killer' | #459",
+   "iso": "2026-07-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "audioboom-019f3d57-3922-7891-b2bf-12f85a804d65",
+   "display": "ShortHand: Cajun Cryptids",
+   "segment": "",
+   "subject": "Cajun Cryptids",
+   "iso": "2026-07-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "audioboom-019f4779-a470-7a1e-90d3-18f3fba1210b",
+   "display": "FROM THE VAULT - The Staircase: Michael Peterson - Parts 1&2",
+   "segment": "FROM THE VAULT",
+   "subject": "Michael Peterson - Parts 1&2",
+   "iso": "2026-07-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

@@ -6,10 +6,154 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "serial-offender",
+   "count": 3
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 3
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 2
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 2
+  },
+  {
+   "slug": "internet-culture",
+   "count": 1
+  },
+  {
+   "slug": "murder-for-hire",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/ARKXdr26Fxh2KhYvBNXzAAormcVHIqr53bpgUBBxCM0",
+   "display": "Jeffrey Dahmer - The Milwaukee Monster",
+   "segment": "",
+   "subject": "The Milwaukee Monster",
+   "iso": "2026-07-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/JtOrD9YVW_kpT8SnqIna7SnoNEtyTWqYa4F5YDOr74w",
+   "display": "ENCORE: Revisiting Alex Murdaugh - A Conversation with Valerie Bauerlein",
+   "segment": "",
+   "subject": "A Conversation with Valerie Bauerlein",
+   "iso": "2026-07-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/aOXr2aEMB5PjESAYsXK-i4AP8UOwkFEd7BiKdoyPe9E",
+   "display": "Albert DeSalvo: \"The Boston Strangler\"",
+   "segment": "",
+   "subject": "\"The Boston Strangler\"",
+   "iso": "2026-07-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/YynZvrYHUWu4Zlzj6h_Q_nmpls7jw2mxaOyrx3eeEOM",
+   "display": "John Edward Robinson: The Internet's First Serial Killer",
+   "segment": "",
+   "subject": "The Internet's First Serial Killer",
+   "iso": "2026-06-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "internet-culture",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0SnwHZgJnxwqqCFrdDWcrsmz3BVqvNWB3ab2jhMPdRA",
+   "display": "Pam Hupp: \"The Killer Next Door\"",
+   "segment": "",
+   "subject": "\"The Killer Next Door\"",
+   "iso": "2026-06-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/KU3iFHblWlVxf1pV9tknzE9ozz1DHzHu3zWBszsje10",
+   "display": "Oscar Pistorius: The \"Blade Runner\" Killer",
+   "segment": "",
+   "subject": "The \"Blade Runner\" Killer",
+   "iso": "2026-06-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

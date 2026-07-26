@@ -6,10 +6,146 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "missing-person",
+   "count": 5
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 3
+  },
+  {
+   "slug": "investigative-process",
+   "count": 3
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/update-hope-on-the-horizon/106816066",
+   "display": "UPDATE | Expanse: The Nannup Four - Hope on the horizon",
+   "segment": "",
+   "subject": "The Nannup Four - Hope on the horizon",
+   "iso": "2026-06-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/behind-the-scenes-dominique-bayens-in-conversation/106612212",
+   "display": "Behind the scenes | S6 host Dominique Bayens in conversation",
+   "segment": "",
+   "subject": "S6 host Dominique Bayens in conversation",
+   "iso": "2026-04-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/bonus-inside-the-nannup-four-police-investigation/106582984",
+   "display": "BONUS | Inside the Nannup Four police investigation",
+   "segment": "",
+   "subject": "Inside the Nannup Four police investigation",
+   "iso": "2026-04-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/bonus-who-was-tony-popic-/106560688",
+   "display": "BONUS | Who was Tony Popic?",
+   "segment": "",
+   "subject": "Who was Tony Popic?",
+   "iso": "2026-04-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/06-expanse-the-nannup-four-northcliffe-/106535904",
+   "display": "06 Expanse: The Nannup Four | Northcliffe",
+   "segment": "",
+   "subject": "The Nannup Four | Northcliffe",
+   "iso": "2026-04-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/05-expanse-the-nannup-four-simon-says-/106495302",
+   "display": "05 Expanse: The Nannup Four | Simon says",
+   "segment": "",
+   "subject": "The Nannup Four | Simon says",
+   "iso": "2026-03-31",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "charismatic-con",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

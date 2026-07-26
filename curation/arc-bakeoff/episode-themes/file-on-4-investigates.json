@@ -6,10 +6,174 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "institutional-coverup",
+   "count": 2
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 1
+  },
+  {
+   "slug": "whistleblower",
+   "count": 1
+  },
+  {
+   "slug": "political-scandal",
+   "count": 1
+  },
+  {
+   "slug": "adoption-and-origins",
+   "count": 1
+  },
+  {
+   "slug": "education-system-failure",
+   "count": 1
+  },
+  {
+   "slug": "child-victim",
+   "count": 1
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "slavery-and-its-legacy",
+   "count": 1
+  },
+  {
+   "slug": "religious-community",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "urn:bbc:podcast:m002z746",
+   "display": "Letby Hospital: Maternity failings at the Countess of Chester",
+   "segment": "",
+   "subject": "Maternity failings at the Countess of Chester",
+   "iso": "2026-07-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m002yx47",
+   "display": "Epstein Files: Lutnick, the Royals and the British Whistleblower",
+   "segment": "",
+   "subject": "Lutnick, the Royals and the British Whistleblower",
+   "iso": "2026-07-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "whistleblower",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m001pmkj",
+   "display": "Jon Holmes, Generation Shame",
+   "segment": "",
+   "subject": "Jon Holmes, Generation Shame",
+   "iso": "2026-07-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "adoption-and-origins",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m002ybc5",
+   "display": "Strict schools: Taking discipline too far?",
+   "segment": "",
+   "subject": "Taking discipline too far?",
+   "iso": "2026-06-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "education-system-failure",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "child-victim",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m002xzhj",
+   "display": "Fake Marriages - The real story",
+   "segment": "",
+   "subject": "The real story",
+   "iso": "2026-06-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m002xp35",
+   "display": "Sins of the past: Should the Church of England pay for its links to slavery?",
+   "segment": "",
+   "subject": "Should the Church of England pay for its links to slavery?",
+   "iso": "2026-06-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "religious-community",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

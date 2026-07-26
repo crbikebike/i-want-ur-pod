@@ -364,6 +364,48 @@ def print_vocab():
         print(f"{t['slug']}\t{t['definition']}")
 
 
+def pending(limit):
+    """Print episodes that still have no assignment, as compact TSV.
+
+    Lets the main loop label in bulk alongside the agent pass -- same output
+    directory, same format, no coordination needed beyond skipping what is done.
+    """
+    def clean(x):
+        return (x or "").replace("\t", " ").replace("\n", " ").strip()
+
+    done = set(parse_assign_dir("assign"))
+    # Round-robin across shows, not alphabetical. Partial coverage spread over all 303
+    # shows demonstrates cross-show discovery; the same effort spent finishing shows
+    # A through C leaves most theme pages empty.
+    queues = []
+    for path in sorted(IN_DIR.glob("*.json")):
+        show = json.loads(path.read_text())
+        rows = [r for r in show["episodes"] if (show["slug"], r["i"]) not in done]
+        if rows:
+            queues.append((show["slug"], rows))
+
+    out, n, depth = [], 0, 0
+    while n < limit and queues:
+        progressed = False
+        for slug, rows in queues:
+            if depth >= len(rows):
+                continue
+            progressed = True
+            r = rows[depth]
+            out.append("\t".join([slug, str(r["i"]),
+                                  clean(r["segment"]) or "-",
+                                  clean(r["subject"])[:90],
+                                  clean(r["desc"])[:DESC_CHARS]]))
+            n += 1
+            if n >= limit:
+                break
+        if not progressed:
+            break
+        depth += 1
+    print(f"# {n} pending episodes ({len(done)} assigned, {len(queues)} shows still open)")
+    print("\n".join(out))
+
+
 # --- finalize ---------------------------------------------------------------------
 def audit_catalog(vocab, per_show, known_show_themes):
     problems = []
@@ -423,6 +465,21 @@ def audit_show(show):
     return flags
 
 
+# Agents occasionally return a near-miss slug (US spelling, a plural, a synonym).
+# Map the ones actually seen rather than discarding the row -- the judgement was fine,
+# only the spelling was off. Anything still unmatched is caught by the audit.
+SLUG_ALIASES = {
+    "organized-scam-industry": "organised-scam-industry",
+    "organized-crime": "organised-crime",
+    "cybercrime-related": "hacking-and-cybercrime",
+    "cybercrime": "hacking-and-cybercrime",
+    "corporate-power": "monopoly-and-market-power",
+    "international-cooperation": "war-and-its-conduct",
+    "psychological-belief": "psychology-of-belief",
+    "crime": "",
+}
+
+
 def parse_assign_dir(subdir):
     """{(slug, i): [ {slug, role, confidence}, ... ]} from compact agent output.
 
@@ -448,13 +505,17 @@ def parse_assign_dir(subdir):
             if not prim:
                 bad += 1
                 continue
+            prim = SLUG_ALIASES.get(prim, prim)
+            if not prim:
+                bad += 1
+                continue
             apps = [{"slug": prim, "role": "primary",
                      "confidence": conf if conf in ("high", "medium", "low") else "medium"}]
             for extra in f[4:]:
                 if not extra.strip():
                     continue
                 bits = extra.split(",")
-                sl = bits[0].strip()
+                sl = SLUG_ALIASES.get(bits[0].strip(), bits[0].strip())
                 c = (bits[1].strip().lower() if len(bits) > 1 else "medium")
                 if sl and sl != prim:
                     apps.append({"slug": sl, "role": "secondary",
@@ -630,6 +691,8 @@ def main():
     b.add_argument("--assign", action="store_true", help="use the assign batch plan")
     b.add_argument("--brief", action="store_true", help="short descriptions (open coding)")
     sub.add_parser("vocab")
+    pd = sub.add_parser("pending")
+    pd.add_argument("--limit", type=int, default=400)
     ll = sub.add_parser("labels")
     ll.add_argument("--slice", type=int, default=0)
     ll.add_argument("--slices", type=int, default=1)
@@ -642,6 +705,8 @@ def main():
         batch(args.batch_id, not args.no_desc,
               "_assign-plan.json" if args.assign else "_batch-plan.json",
               args.brief)
+    elif args.cmd == "pending":
+        pending(args.limit)
     elif args.cmd == "vocab":
         print_vocab()
     elif args.cmd == "labels":

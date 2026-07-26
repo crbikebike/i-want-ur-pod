@@ -6,10 +6,162 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "sport-and-politics",
+   "count": 2
+  },
+  {
+   "slug": "gender-identity",
+   "count": 2
+  },
+  {
+   "slug": "grief-and-loss",
+   "count": 2
+  },
+  {
+   "slug": "friendship",
+   "count": 2
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  },
+  {
+   "slug": "family-secret",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "1c2f1ab4-71f0-40e1-940b-5c429eb002ba",
+   "display": "\"The Network\" from NPR's Embedded",
+   "segment": "",
+   "subject": "\"The Network\" from NPR's Embedded",
+   "iso": "2025-07-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a8754bbc-ec9a-4cb8-bb90-d18763de07e2",
+   "display": "Alternate Realities from NPR's Embedded",
+   "segment": "",
+   "subject": "Alternate Realities from NPR's Embedded",
+   "iso": "2025-02-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "family-secret",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0380162e-efed-4bfb-aad8-ed55b89eb481",
+   "display": "Tested (Ep 2): Questions of a Physical Nature",
+   "segment": "",
+   "subject": "Questions of a Physical Nature",
+   "iso": "2024-08-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sport-and-politics",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "gender-identity",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "38428461-a93f-4e6c-a3ba-88e608b0a474",
+   "display": "Tested (Ep 1): The Choice",
+   "segment": "",
+   "subject": "The Choice",
+   "iso": "2024-08-22",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sport-and-politics",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "gender-identity",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1f31d1d8-bd9b-489a-a38f-1343e7bed1c7",
+   "display": "The Goodbye Show",
+   "segment": "",
+   "subject": "The Goodbye Show",
+   "iso": "2023-04-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "grief-and-loss",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "friendship",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b75dc9c8-f027-4884-93cb-9f1bf75282ba",
+   "display": "Revisiting Love and Lapses: A Conversation with Code Switch host B.A. Parker",
+   "segment": "",
+   "subject": "A Conversation with Code Switch host B.A. Parker",
+   "iso": "2022-12-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "grief-and-loss",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "friendship",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

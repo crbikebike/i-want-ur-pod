@@ -6,10 +6,241 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "cold-war-espionage",
+   "count": 5
+  },
+  {
+   "slug": "music-scene-history",
+   "count": 4
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 2
+  },
+  {
+   "slug": "political-scandal",
+   "count": 2
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 1
+  },
+  {
+   "slug": "music-industry-business",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "0a9b9730-03d6-11ee-a7c7-cba794f3342f",
+   "display": "Introducing Dreamtown: The Story of Adelanto",
+   "segment": "",
+   "subject": "The Story of Adelanto",
+   "iso": "2023-06-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "bc931734-2c7c-11ec-9d25-db4f0e1e7d03",
+   "display": "An Avocado Revolution | Introducing 544 Days",
+   "segment": "",
+   "subject": "Introducing 544 Days",
+   "iso": "2021-10-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "government-secrecy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ceab2c7e-b7fa-11ea-9f40-cfbd2ff06e0e",
+   "display": "8. Hello, Klaus",
+   "segment": "",
+   "subject": "Hello, Klaus",
+   "iso": "2020-06-29",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "44c52e22-a0f5-11ea-a571-fb796d3b730d",
+   "display": "7. Rorschach",
+   "segment": "",
+   "subject": "Rorschach",
+   "iso": "2020-06-22",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "62ae36f0-9ba4-11ea-9b6d-7b6df6e9436a",
+   "display": "6. The Doctor Is In",
+   "segment": "",
+   "subject": "The Doctor Is In",
+   "iso": "2020-06-15",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "e9fd7c52-9ba3-11ea-b22b-4f066ae3c2b9",
+   "display": "5. I Follow The Moskva",
+   "segment": "",
+   "subject": "I Follow The Moskva",
+   "iso": "2020-06-08",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "music-scene-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4f75182a-99f0-11ea-b6eb-73498a307ec0",
+   "display": "4. The KGB Rock Club",
+   "segment": "",
+   "subject": "The KGB Rock Club",
+   "iso": "2020-06-01",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "music-scene-history",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "3ab76224-99ed-11ea-ae27-fb54b58bf0e0",
+   "display": "3. America’s Secret Weapon",
+   "segment": "",
+   "subject": "America’s Secret Weapon",
+   "iso": "2020-05-25",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9800e1ec-91a7-11ea-b677-df6787d45e50",
+   "display": "2. You Call It An Operation, We Call It A Performance",
+   "segment": "",
+   "subject": "You Call It An Operation, We Call It A Performance",
+   "iso": "2020-05-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "music-scene-history",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "69891f22-8654-11ea-a2a0-6f3d0d3a22b0",
+   "display": "1. My Friend Michael",
+   "segment": "",
+   "subject": "My Friend Michael",
+   "iso": "2020-05-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "music-scene-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

@@ -6,10 +6,158 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "medical-research",
+   "count": 5
+  },
+  {
+   "slug": "mental-health",
+   "count": 2
+  },
+  {
+   "slug": "gender-identity",
+   "count": 1
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 1
+  },
+  {
+   "slug": "addiction-and-recovery",
+   "count": 1
+  },
+  {
+   "slug": "psychology-of-belief",
+   "count": 1
+  },
+  {
+   "slug": "chronic-illness",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "ondrugs-e150dd71-7b7b-489b-ad37-288c06a0f810",
+   "display": "Where can I get gender-affirming drugs?",
+   "segment": "",
+   "subject": "Where can I get gender-affirming drugs?",
+   "iso": "2025-03-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gender-identity",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ondrugs-e5a700e5-cc33-40a0-bdef-d5ea2203c0d7",
+   "display": "S3 EP 9 Do drugs belong in therapy?",
+   "segment": "",
+   "subject": "S3 EP 9 Do drugs belong in therapy?",
+   "iso": "2025-03-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "mental-health",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "medical-research",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ondrugs-e2084bff-1c3a-4fad-818b-e1b40e32b89c",
+   "display": "S3 E8 Should I keep vaping?",
+   "segment": "",
+   "subject": "S3 E8 Should I keep vaping?",
+   "iso": "2025-02-24",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "medical-research",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ondrugs-f7aae693-dfad-4076-9dbf-2ac8bab79236",
+   "display": "S3 E7 What’s the deal with Ketamine?",
+   "segment": "",
+   "subject": "S3 E7 What’s the deal with Ketamine?",
+   "iso": "2025-02-17",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "medical-research",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "mental-health",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ondrugs-63b8c4a9-25cf-4634-ae9a-4c97f2212716",
+   "display": "S3 E6 Anesthetic: Where do we go when we go under?",
+   "segment": "",
+   "subject": "Where do we go when we go under?",
+   "iso": "2025-02-10",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "medical-research",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ondrugs-270dc9ad-83bc-4ec2-96a6-8a33110de8fd",
+   "display": "S3 E5 Is Ozempic right for you?",
+   "segment": "",
+   "subject": "S3 E5 Is Ozempic right for you?",
+   "iso": "2025-02-03",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "medical-research",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "chronic-illness",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

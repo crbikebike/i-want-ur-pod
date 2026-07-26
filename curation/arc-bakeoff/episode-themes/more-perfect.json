@@ -6,10 +6,164 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "legal-precedent",
+   "count": 5
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 1
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 1
+  },
+  {
+   "slug": "slavery-and-its-legacy",
+   "count": 1
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 1
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 1
+  },
+  {
+   "slug": "media-criticism",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "8c77aa33-2284-431c-9394-8635ddd1c45a",
+   "display": "No More Souters - Revisited",
+   "segment": "",
+   "subject": "Revisited",
+   "iso": "2025-05-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "legal-precedent",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "20cfdc39-7a33-4c94-a700-63711612e9b5",
+   "display": "Andy Warhol and the Art of Judging Art",
+   "segment": "",
+   "subject": "Andy Warhol and the Art of Judging Art",
+   "iso": "2023-08-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "legal-precedent",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "art-and-artists",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "df19a0d5-d4b6-4f33-b719-fb97202f81b0",
+   "display": "The Original Anti-Vaxxer",
+   "segment": "",
+   "subject": "The Original Anti-Vaxxer",
+   "iso": "2023-07-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "legal-precedent",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8772a253-e755-455f-891b-0eb02e632e70",
+   "display": "Not Even Past: Dred Scott Reprise",
+   "segment": "",
+   "subject": "Dred Scott Reprise",
+   "iso": "2023-07-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "legal-precedent",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c8e66fe7-dd9e-4628-87ea-f84e63344f5c",
+   "display": "No More Souters",
+   "segment": "",
+   "subject": "No More Souters",
+   "iso": "2023-07-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "legal-precedent",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "614af44f-e60f-4b5b-bff8-1f77e13e4704",
+   "display": "Off the Record, On the Stand",
+   "segment": "",
+   "subject": "Off the Record, On the Stand",
+   "iso": "2023-06-29",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "extremist-movement",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'legal-precedent' is 4/6 (67%)"
  ]
 }

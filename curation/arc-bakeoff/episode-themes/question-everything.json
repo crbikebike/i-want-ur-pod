@@ -6,10 +6,160 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "media-criticism",
+   "count": 5
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 1
+  },
+  {
+   "slug": "child-victim",
+   "count": 1
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 1
+  },
+  {
+   "slug": "climate-change",
+   "count": 1
+  },
+  {
+   "slug": "prosecutorial-power",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "29560e88-e6f3-414f-98ef-6010661ec684",
+   "display": "The Sunscreen Paradox",
+   "segment": "",
+   "subject": "The Sunscreen Paradox",
+   "iso": "2026-07-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "media-criticism",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "fbd33e99-5245-4e6b-9d69-3f490b012234",
+   "display": "The Sting That Exposed How Meta Endangers Kids",
+   "segment": "",
+   "subject": "The Sting That Exposed How Meta Endangers Kids",
+   "iso": "2026-07-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "media-criticism",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "child-victim",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "063aa859-3d3d-476e-9ae1-9209be03eae0",
+   "display": "Ashley St. Clair is Fighting X – And Tried To Stop This Episode",
+   "segment": "",
+   "subject": "And Tried To Stop This Episode",
+   "iso": "2026-06-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "media-criticism",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "53b56870-8da6-4af4-a7a4-6b7cb57963a0",
+   "display": "How a Tiny Newsroom Helped Bring Down Hungary’s Authoritarian Leader",
+   "segment": "",
+   "subject": "How a Tiny Newsroom Helped Bring Down Hungary’s Authoritarian Leader",
+   "iso": "2026-06-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "media-criticism",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "government-secrecy",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ea5f6e53-72ae-4b09-b693-873f5272f061",
+   "display": "From Drilled: Carbon Cowboys",
+   "segment": "",
+   "subject": "Carbon Cowboys",
+   "iso": "2026-06-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "climate-change",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "524082c3-b404-457c-a3c4-3ea6c249c98a",
+   "display": "‘Kick Him Off The Bench.’ A Judge in Trump’s Pulitzer Case Gets a Prize",
+   "segment": "",
+   "subject": "‘Kick Him Off The Bench.’ A Judge in Trump’s Pulitzer Case Gets a Prize",
+   "iso": "2026-05-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "media-criticism",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'media-criticism' is 5/6 (83%)"
  ]
 }

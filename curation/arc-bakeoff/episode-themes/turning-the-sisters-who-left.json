@@ -6,10 +6,242 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "religious-community",
+   "count": 5
+  },
+  {
+   "slug": "religious-abuse",
+   "count": 4
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 3
+  },
+  {
+   "slug": "faith-and-doubt",
+   "count": 3
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 2
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 1
+  },
+  {
+   "slug": "estrangement-and-reconciliation",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "1e6c7148-e8c7-11eb-8649-b75637463e3a",
+   "display": "S1: Ep 10 - Out There",
+   "segment": "",
+   "subject": "Out There",
+   "iso": "2021-07-20",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "personal-transformation",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "27b44c56-e342-11eb-a3af-03dc2ba91625",
+   "display": "S1: Ep 9 - Highway of Broken Glass",
+   "segment": "",
+   "subject": "Highway of Broken Glass",
+   "iso": "2021-07-13",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "cult-and-control",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "7888461c-ddc7-11eb-a304-673a9501636c",
+   "display": "S1: Ep 8 - Saint of Darkness",
+   "segment": "",
+   "subject": "Saint of Darkness",
+   "iso": "2021-07-06",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "religious-community",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4dc978fc-d844-11eb-b449-ffee1cd178c4",
+   "display": "S1: Ep 7 - Silence",
+   "segment": "",
+   "subject": "Silence",
+   "iso": "2021-06-29",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "religious-abuse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "36dbb69c-cd44-11eb-a308-1f07b97b3f22",
+   "display": "S1: Ep 6 - The Third Floor",
+   "segment": "",
+   "subject": "The Third Floor",
+   "iso": "2021-06-15",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "religious-community",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "11f08766-c7c4-11eb-9fdf-2b5c1e113f05",
+   "display": "S1: Ep 5 - Particular Friendship",
+   "segment": "",
+   "subject": "Particular Friendship",
+   "iso": "2021-06-08",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "cult-and-control",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "religious-community",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ac379c72-c22b-11eb-b1cc-1ba9fcb3c92f",
+   "display": "S1: Ep 4 - The Devil's Advocates",
+   "segment": "",
+   "subject": "The Devil's Advocates",
+   "iso": "2021-06-01",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "religious-abuse",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "history-retold",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c4def2fc-bc8b-11eb-8051-bbf3228912f2",
+   "display": "S1: Ep 3 - Mother",
+   "segment": "",
+   "subject": "Mother",
+   "iso": "2021-05-25",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "faith-and-doubt",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "2e0b2b54-b72f-11eb-ad99-3f8e4f2e611e",
+   "display": "S1: Ep 2 - Love, To Be Real, Has To Hurt",
+   "segment": "",
+   "subject": "Love, To Be Real, Has To Hurt",
+   "iso": "2021-05-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "religious-community",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "54482d46-b70a-11eb-9d42-53d03964e2b3",
+   "display": "S1: Ep 1 - No Turning Back",
+   "segment": "",
+   "subject": "No Turning Back",
+   "iso": "2021-05-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "religious-community",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

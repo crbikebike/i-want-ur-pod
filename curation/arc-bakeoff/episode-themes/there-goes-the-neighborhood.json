@@ -6,10 +6,489 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "gentrification-and-housing",
+   "count": 21
+  },
+  {
+   "slug": "community-in-conflict",
+   "count": 5
+  },
+  {
+   "slug": "racial-violence",
+   "count": 3
+  },
+  {
+   "slug": "political-scandal",
+   "count": 2
+  },
+  {
+   "slug": "media-criticism",
+   "count": 2
+  },
+  {
+   "slug": "immigrant-experience",
+   "count": 1
+  },
+  {
+   "slug": "homelessness-and-poverty",
+   "count": 1
+  },
+  {
+   "slug": "economic-policy",
+   "count": 1
+  },
+  {
+   "slug": "food-and-drink",
+   "count": 1
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 1
+  },
+  {
+   "slug": "design-and-architecture",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 1
+  },
+  {
+   "slug": "investment-fraud",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "f123ed67-9d62-4ff6-bb27-1e3192f7f416",
+   "display": "The Land Rush",
+   "segment": "",
+   "subject": "The Land Rush",
+   "iso": "2019-11-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "919f518e-647a-4462-a67d-094cdb6b23d8",
+   "display": "Buying into Black",
+   "segment": "",
+   "subject": "Buying into Black",
+   "iso": "2019-11-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "31a97e31-4e1b-4faf-b5d2-79c38559f8bc",
+   "display": "Premium Elevation",
+   "segment": "",
+   "subject": "Premium Elevation",
+   "iso": "2019-11-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "racial-violence",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/shackled-market/",
+   "display": "Shackled to the Market",
+   "segment": "",
+   "subject": "Shackled to the Market",
+   "iso": "2017-11-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "homelessness-and-poverty",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/no-more-la-traffic-put-it-way/",
+   "display": "Gentrification: No More L.A. Traffic, Put It That Way",
+   "segment": "",
+   "subject": "No More L.A. Traffic, Put It That Way",
+   "iso": "2017-10-31",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/coffee-pizza-and-beer/",
+   "display": "Coffee, Pizza and Beer",
+   "segment": "",
+   "subject": "Coffee, Pizza and Beer",
+   "iso": "2017-10-24",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "food-and-drink",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/change-name-arts-district-luxury-district/",
+   "display": "Change the Name of the Arts District to the Luxury District",
+   "segment": "",
+   "subject": "Change the Name of the Arts District to the Luxury District",
+   "iso": "2017-10-17",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "art-and-artists",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/they-want-my-house/",
+   "display": "They Want My House",
+   "segment": "",
+   "subject": "They Want My House",
+   "iso": "2017-10-10",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/black-neighborhood-you-arent-black/",
+   "display": "This Is a Black Neighborhood. You Aren’t Black.",
+   "segment": "",
+   "subject": "This Is a Black Neighborhood. You Aren’t Black.",
+   "iso": "2017-10-03",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/i-didnt-want-evict-you/",
+   "display": "I Didn’t Want to Evict You",
+   "segment": "",
+   "subject": "I Didn’t Want to Evict You",
+   "iso": "2017-09-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/all-these-people-moving-new-buildings-new-apartments/",
+   "display": "All These People Moving In, New Buildings, New Apartments",
+   "segment": "",
+   "subject": "All These People Moving In, New Buildings, New Apartments",
+   "iso": "2017-09-26",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "design-and-architecture",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/east-new-york-did-it-work/",
+   "display": "East New York, Did It Work?",
+   "segment": "",
+   "subject": "East New York, Did It Work?",
+   "iso": "2017-09-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/episode-9-debrief/",
+   "display": "There Went the Neighborhood",
+   "segment": "",
+   "subject": "There Went the Neighborhood",
+   "iso": "2016-05-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/our-town-nyc-displaced-brooklyn-neighborhood-gentrification/",
+   "display": "Our Town",
+   "segment": "",
+   "subject": "Our Town",
+   "iso": "2016-04-27",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/its-complicated-culture-clash-brooklyn-neighborhood-gentrification/",
+   "display": "It's Complicated",
+   "segment": "",
+   "subject": "It's Complicated",
+   "iso": "2016-04-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/trickery-fraud-deception-foreclosures-scams-brooklyn-neighborhood-gentrification/",
+   "display": "Trickery, Fraud and Deception",
+   "segment": "",
+   "subject": "Trickery, Fraud and Deception",
+   "iso": "2016-04-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/williamsburg-whats-good-inclusion-exclusion-brooklyn-neighborhood-gentrification/",
+   "display": "Williamsburg, What's Good?",
+   "segment": "",
+   "subject": "Williamsburg, What's Good?",
+   "iso": "2016-04-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/plan-rezoning-brooklyn-neighborhood-gentrification/",
+   "display": "Here’s the Plan",
+   "segment": "",
+   "subject": "Here’s the Plan",
+   "iso": "2016-03-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/turf-war-east-new-york-brooklyn-neighborhood-gentrification/",
+   "display": "Turf Wars",
+   "segment": "",
+   "subject": "Turf Wars",
+   "iso": "2016-03-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/east-new-york-brooklyn-neighborhood-gentrification/",
+   "display": "'Brooklyn, We Go Hard'",
+   "segment": "",
+   "subject": "'Brooklyn, We Go Hard'",
+   "iso": "2016-03-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/mouth-ear-brooklyn-gentrification/",
+   "display": "Mouth to Ear",
+   "segment": "",
+   "subject": "Mouth to Ear",
+   "iso": "2016-03-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'gentrification-and-housing' is 21/21 (100%)",
+  "only 1 theme(s) across 21 episodes"
  ]
 }

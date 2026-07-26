@@ -6,10 +6,226 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "missing-person",
+   "count": 9
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 3
+  },
+  {
+   "slug": "immigrant-experience",
+   "count": 2
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "kidnapping-and-captivity",
+   "count": 1
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "urn:bbc:podcast:p0bfxc4d",
+   "display": "1. When the Wind Changed",
+   "segment": "",
+   "subject": "When the Wind Changed",
+   "iso": "2022-01-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bfxnmv",
+   "display": "2. A Ransom Note",
+   "segment": "",
+   "subject": "A Ransom Note",
+   "iso": "2022-01-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bhv6kl",
+   "display": "3. Somebody of Interest",
+   "segment": "",
+   "subject": "Somebody of Interest",
+   "iso": "2022-01-19",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bhv9kw",
+   "display": "4. I Was Never There",
+   "segment": "",
+   "subject": "I Was Never There",
+   "iso": "2022-01-19",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bk5p6w",
+   "display": "5. A Judgement",
+   "segment": "",
+   "subject": "A Judgement",
+   "iso": "2022-01-26",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bk5s2b",
+   "display": "6. The Walk Through",
+   "segment": "",
+   "subject": "The Walk Through",
+   "iso": "2022-01-26",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bk7kd9",
+   "display": "7. Mercury's Story",
+   "segment": "",
+   "subject": "Mercury's Story",
+   "iso": "2022-01-26",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bljvp1",
+   "display": "8. The Girl With Blonde Hair And Blue Eyes",
+   "segment": "",
+   "subject": "The Girl With Blonde Hair And Blue Eyes",
+   "iso": "2022-02-02",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m001sls0",
+   "display": "9. A New Lead",
+   "segment": "",
+   "subject": "A New Lead",
+   "iso": "2023-11-20",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0m5ny9g",
+   "display": "10. Case Closed?",
+   "segment": "",
+   "subject": "Case Closed?",
+   "iso": "2025-09-29",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'missing-person' is 9/10 (90%)"
  ]
 }

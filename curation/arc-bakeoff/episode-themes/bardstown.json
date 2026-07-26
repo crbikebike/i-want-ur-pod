@@ -6,10 +6,639 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "unsolved-murder",
+   "count": 25
+  },
+  {
+   "slug": "missing-person",
+   "count": 5
+  },
+  {
+   "slug": "investigative-process",
+   "count": 4
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 3
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 3
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 3
+  },
+  {
+   "slug": "grief-and-loss",
+   "count": 2
+  },
+  {
+   "slug": "community-in-conflict",
+   "count": 2
+  },
+  {
+   "slug": "child-victim",
+   "count": 2
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 2
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 2
+  },
+  {
+   "slug": "murder-for-hire",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "9ab243e8-719e-4de6-9713-4cdf7dd46649",
+   "display": "Back to Bardstown: All Eyes On Them | Ep. 5",
+   "segment": "",
+   "subject": "All Eyes On Them | Ep. 5",
+   "iso": "2024-04-23",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "missing-person",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b3eca6d3-fd04-4f89-a836-dacac5a99740",
+   "display": "Back to Bardstown: Sherry, Are You Ready? | Ep. 4",
+   "segment": "",
+   "subject": "Sherry, Are You Ready? | Ep. 4",
+   "iso": "2024-04-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ce08a884-005d-4720-ae0b-3b690195c025",
+   "display": "Back to Bardstown: The Truth Will Set You Free | Ep. 3",
+   "segment": "",
+   "subject": "The Truth Will Set You Free | Ep. 3",
+   "iso": "2024-04-09",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "87dfa80c-ce58-4d28-b804-0f51de718ff0",
+   "display": "Back to Bardstown: Conspiracy to Murder | Ep. 2",
+   "segment": "",
+   "subject": "Conspiracy to Murder | Ep. 2",
+   "iso": "2024-04-02",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9ac8492c-e871-11ee-b47a-23952ff60b79",
+   "display": "Back to Bardstown: Shock and Confusion | Ep. 1",
+   "segment": "",
+   "subject": "Shock and Confusion | Ep. 1",
+   "iso": "2024-03-26",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "14f42574-b18e-11ee-a0ea-5749ef6b72cb",
+   "display": "Unsolved: Missing in the Mountains | Ep. 7",
+   "segment": "",
+   "subject": "Missing in the Mountains | Ep. 7",
+   "iso": "2022-11-21",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "child-victim",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "14f42d62-b18e-11ee-a0ea-3bc4e046f64b",
+   "display": "Unsolved: A Face Without a Name | Ep. 6",
+   "segment": "",
+   "subject": "A Face Without a Name | Ep. 6",
+   "iso": "2022-11-14",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "14f433f2-b18e-11ee-a0ea-dfa71aa6d24a",
+   "display": "Unsolved: A Legacy Lives On | Ep. 5",
+   "segment": "",
+   "subject": "A Legacy Lives On | Ep. 5",
+   "iso": "2022-11-07",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "14f43b86-b18e-11ee-a0ea-632c635d0aa3",
+   "display": "Unsolved: A Secret Sin | Ep. 4",
+   "segment": "",
+   "subject": "A Secret Sin | Ep. 4",
+   "iso": "2022-10-31",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "14f4a558-b18e-11ee-a0ea-b7f0caef5d6f",
+   "display": "Unsolved: Murder in Cabin 28 | Ep. 3",
+   "segment": "",
+   "subject": "Murder in Cabin 28 | Ep. 3",
+   "iso": "2022-10-24",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "14f4846a-b18e-11ee-a0ea-07305e2a2b05",
+   "display": "Unsolved: Back in Bardstown | Ep. 2",
+   "segment": "",
+   "subject": "Back in Bardstown | Ep. 2",
+   "iso": "2022-10-17",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "14f41d68-b18e-11ee-a0ea-1725cf8b1274",
+   "display": "Unsolved: 18 Miles Away | Ep. 1",
+   "segment": "",
+   "subject": "18 Miles Away | Ep. 1",
+   "iso": "2022-10-17",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "child-victim",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "14f45b5c-b18e-11ee-a0ea-837afc2f6fd3",
+   "display": "Lacombe: Ashes | Ep. 8",
+   "segment": "",
+   "subject": "Ashes | Ep. 8",
+   "iso": "2021-05-12",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "14f46016-b18e-11ee-a0ea-e7377a1acb53",
+   "display": "Lacombe: Still Smoldering | Ep. 7",
+   "segment": "",
+   "subject": "Still Smoldering | Ep. 7",
+   "iso": "2021-05-05",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "14f3ce6c-b18e-11ee-a0ea-836edfdba234",
+   "display": "Lacombe: A Second Opinion | Ep. 6",
+   "segment": "",
+   "subject": "A Second Opinion | Ep. 6",
+   "iso": "2021-04-28",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "14f49a9a-b18e-11ee-a0ea-eb09ef1fc68c",
+   "display": "Lacombe: Manner of Death | Ep. 5",
+   "segment": "",
+   "subject": "Manner of Death | Ep. 5",
+   "iso": "2021-04-21",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "14f464a8-b18e-11ee-a0ea-bbf074e6dbc3",
+   "display": "Lacombe: The Funeral | Ep. 4",
+   "segment": "",
+   "subject": "The Funeral | Ep. 4",
+   "iso": "2021-04-14",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "14f4acb0-b18e-11ee-a0ea-bf2c19ad38db",
+   "display": "Lacombe: More and More Afraid | Ep. 3",
+   "segment": "",
+   "subject": "More and More Afraid | Ep. 3",
+   "iso": "2021-04-07",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "14f49108-b18e-11ee-a0ea-af6bfbf7349a",
+   "display": "Lacombe: A Fortress in the Woods | Ep. 2",
+   "segment": "",
+   "subject": "A Fortress in the Woods | Ep. 2",
+   "iso": "2021-03-31",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "14f46a02-b18e-11ee-a0ea-e3a26fb2da40",
+   "display": "Lacombe: The Fire | Ep. 1",
+   "segment": "",
+   "subject": "The Fire | Ep. 1",
+   "iso": "2021-03-31",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bardstown.podbean.com/listener-feedback-and-questions-with-shay-mcalister-and-jessica-noll-a025ba78dc80f0a1b53339725249952e",
+   "display": "Bardstown: Listener Q&A",
+   "segment": "",
+   "subject": "Listener Q&A",
+   "iso": "2019-10-23",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "bardstown.podbean.com/connections-1571173932-637863473b070777dc5c3378b9bc60c3",
+   "display": "Bardstown: Connections | Ep. 9",
+   "segment": "",
+   "subject": "Connections | Ep. 9",
+   "iso": "2019-10-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "bardstown.podbean.com/hunting-the-houcks-15d22b903ba031112c53c2dbcaac05cc",
+   "display": "Bardstown: Hunting the Houcks | Ep. 8",
+   "segment": "",
+   "subject": "Hunting the Houcks | Ep. 8",
+   "iso": "2019-10-09",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bardstown.podbean.com/the-hunter-1569974921-a87b30ab8e408bc075106110f427d7d7",
+   "display": "Bardstown: The Hunter | Ep. 7",
+   "segment": "",
+   "subject": "The Hunter | Ep. 7",
+   "iso": "2019-10-02",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "bardstown.podbean.com/the-suspect-9579d15d1f525815a33c571433cf28f4",
+   "display": "Bardstown: Prime Suspect | Ep. 6",
+   "segment": "",
+   "subject": "Prime Suspect | Ep. 6",
+   "iso": "2019-09-25",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bardstown.podbean.com/episode-5-family-ties-663e73c00eae290119127bef645c2409",
+   "display": "Bardstown: The Brothers | Ep. 5",
+   "segment": "",
+   "subject": "The Brothers | Ep. 5",
+   "iso": "2019-09-18",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bardstown.podbean.com/episode-4-missing-mothers-4d8ea66b83a12bc2d1829cfba274836f",
+   "display": "Bardstown: Missing Mothers | Ep. 4",
+   "segment": "",
+   "subject": "Missing Mothers | Ep. 4",
+   "iso": "2019-09-11",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "bardstown.podbean.com/episode-3-the-netherlands-06b33600c28b1b77f03b292275fe94e6",
+   "display": "Bardstown: The Netherlands | Ep. 3",
+   "segment": "",
+   "subject": "The Netherlands | Ep. 3",
+   "iso": "2019-09-04",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bardstown.podbean.com/episode-2-badge-139-3ce5eb9c95e28c475eb87e293067c2a7",
+   "display": "Bardstown: Badge 139 | Ep. 2",
+   "segment": "",
+   "subject": "Badge 139 | Ep. 2",
+   "iso": "2019-08-28",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "bardstown.podbean.com/episode-1-the-most-beautiful-small-town-in-the-america-803244241854f0b424f047a197649091",
+   "display": "Bardstown: The Most Beautiful Small Town in America | Ep. 1",
+   "segment": "",
+   "subject": "The Most Beautiful Small Town in America | Ep. 1",
+   "iso": "2019-08-21",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "sense-of-place",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'unsolved-murder' is 24/30 (80%)"
  ]
 }

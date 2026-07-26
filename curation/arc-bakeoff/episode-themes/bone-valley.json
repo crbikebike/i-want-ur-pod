@@ -6,10 +6,198 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "wrongful-conviction",
+   "count": 5
+  },
+  {
+   "slug": "investigative-process",
+   "count": 3
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 3
+  },
+  {
+   "slug": "serial-offender",
+   "count": 2
+  },
+  {
+   "slug": "missing-person",
+   "count": 1
+  },
+  {
+   "slug": "death-penalty",
+   "count": 1
+  },
+  {
+   "slug": "grief-and-loss",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "9d05eac5-2840-41de-8e54-af16012f9e4e",
+   "display": "Chapter 1 | God Help Us",
+   "segment": "Chapter 1",
+   "subject": "God Help Us",
+   "iso": "2022-09-21",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c7b40790-d403-4267-a0ba-af1601621f61",
+   "display": "Chapter 2 | Combee Critters",
+   "segment": "Chapter 2",
+   "subject": "Combee Critters",
+   "iso": "2022-09-21",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3f634562-ad51-491a-8e3f-af1d0165b941",
+   "display": "Chapter 3 | Trial by Ambush",
+   "segment": "Chapter 3",
+   "subject": "Trial by Ambush",
+   "iso": "2022-09-28",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "death-penalty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8d028b09-70b2-41b5-9fda-af1d01061cda",
+   "display": "Chapter 4 | Dog with a Bone",
+   "segment": "Chapter 4",
+   "subject": "Dog with a Bone",
+   "iso": "2022-10-05",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ae2843d0-4002-4aa2-b851-af250111c1e8",
+   "display": "Chapter 5 | Bam Bam",
+   "segment": "Chapter 5",
+   "subject": "Bam Bam",
+   "iso": "2022-10-12",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2068e004-8d5d-4ef3-9181-af30017b0370",
+   "display": "Chapter 6 | Know That I Know",
+   "segment": "Chapter 6",
+   "subject": "Know That I Know",
+   "iso": "2022-10-19",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "serial-offender",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "investigative-process",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "17f79e48-0cec-4ae9-8c14-af30017b762d",
+   "display": "Chapter 7 | I Lost It",
+   "segment": "",
+   "subject": "I Lost It",
+   "iso": "2022-10-26",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9c3235ad-f6c0-4474-a435-af30017be46f",
+   "display": "Chapter 8 | Dear Mr. King",
+   "segment": "",
+   "subject": "Dear Mr. King",
+   "iso": "2022-11-02",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

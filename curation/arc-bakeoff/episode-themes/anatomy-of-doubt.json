@@ -6,10 +6,238 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "cold-case-reopened",
+   "count": 3
+  },
+  {
+   "slug": "disaster-reconstruction",
+   "count": 3
+  },
+  {
+   "slug": "missing-person",
+   "count": 2
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 2
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 1
+  },
+  {
+   "slug": "religious-abuse",
+   "count": 1
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 1
+  },
+  {
+   "slug": "corporate-negligence",
+   "count": 1
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 1
+  },
+  {
+   "slug": "whistleblower",
+   "count": 1
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 1
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "f7dfd878-2dfe-4494-ba36-103cb8fe65ff",
+   "display": "EP196 - Anatomy of the American Dyatlov Pass",
+   "segment": "",
+   "subject": "Anatomy of the American Dyatlov Pass",
+   "iso": "2026-07-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "56bd963e-9526-4c1c-ab65-b1dc943a8400",
+   "display": "EP195 - The Anatomy of an Impossible Vanishing Brian Shaffer",
+   "segment": "",
+   "subject": "The Anatomy of an Impossible Vanishing Brian Shaffer",
+   "iso": "2026-07-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "missing-person",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1529d4be-8732-4fae-ae43-5c2c3611bfbe",
+   "display": "EP194 - The Anatomy of a Cold War Ghost: The Bizarre Case of the Isdal Woman",
+   "segment": "",
+   "subject": "The Bizarre Case of the Isdal Woman",
+   "iso": "2026-07-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7a4d4385-9c90-4ed7-a2ad-4f3f78342b57",
+   "display": "EP193 - The Station Nightclub Fire: The Anatomy of a Preventable Tragedy",
+   "segment": "",
+   "subject": "The Anatomy of a Preventable Tragedy",
+   "iso": "2026-06-25",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "disaster-reconstruction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "733bf098-6007-4669-afb1-25cb5eb4c9c7",
+   "display": "EP192 - The Anatomy of a Holy Fraud: The Collapse of Jim Bakker",
+   "segment": "",
+   "subject": "The Collapse of Jim Bakker",
+   "iso": "2026-06-18",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "religious-abuse",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "charismatic-con",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7657e9bf-2546-4c51-913e-15768aaeac3c",
+   "display": "EP191 - The Deepwater Horizon Disaster and the Anatomy of Environmental Manslaughter",
+   "segment": "",
+   "subject": "The Deepwater Horizon Disaster and the Anatomy of Environmental Manslaughter",
+   "iso": "2026-06-11",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "disaster-reconstruction",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7b54f305-c02b-470c-94a9-f8989a59bacf",
+   "display": "EP190 - Shadow Sovereign: Mossack Fonseca and the Anatomy of the Offshore Economy",
+   "segment": "",
+   "subject": "Mossack Fonseca and the Anatomy of the Offshore Economy",
+   "iso": "2026-06-04",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "whistleblower",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3c950cb8-6477-4c75-ba4d-ec0ebc716bcb",
+   "display": "EP189 - The Anatomy of a Bullet The Rust Film Set Tragedy and the Failure of Safety",
+   "segment": "",
+   "subject": "The Anatomy of a Bullet The Rust Film Set Tragedy and the Failure of Safety",
+   "iso": "2026-05-28",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "regulatory-failure",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "disaster-reconstruction",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "01b4c0af-0a93-4828-9f6c-b5d2e97ea03f",
+   "display": "EP188 - Wayne Couzens and the Fatal Illusion of Absolute Police Authority",
+   "segment": "",
+   "subject": "Wayne Couzens and the Fatal Illusion of Absolute Police Authority",
+   "iso": "2026-05-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

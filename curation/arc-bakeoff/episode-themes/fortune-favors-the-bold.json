@@ -6,10 +6,492 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "economic-policy",
+   "count": 9
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 9
+  },
+  {
+   "slug": "tech-industry-power",
+   "count": 3
+  },
+  {
+   "slug": "surveillance-and-privacy",
+   "count": 2
+  },
+  {
+   "slug": "transport-and-infrastructure",
+   "count": 2
+  },
+  {
+   "slug": "design-and-architecture",
+   "count": 2
+  },
+  {
+   "slug": "management-and-leadership",
+   "count": 2
+  },
+  {
+   "slug": "internet-culture",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  },
+  {
+   "slug": "environmental-contamination",
+   "count": 1
+  },
+  {
+   "slug": "education-system-failure",
+   "count": 1
+  },
+  {
+   "slug": "parenting",
+   "count": 1
+  },
+  {
+   "slug": "homelessness-and-poverty",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "advertising-and-persuasion",
+   "count": 1
+  },
+  {
+   "slug": "ai-and-society",
+   "count": 1
+  },
+  {
+   "slug": "corporate-negligence",
+   "count": 1
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "09412dc6-696c-11ea-9b57-1729e016c5f0",
+   "display": "How Can We Stay Bold? (Live at On Air Fest)",
+   "segment": "",
+   "subject": "Live at On Air Fest",
+   "iso": "2020-03-19",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "economic-policy",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "86824f36-5e3b-11ea-b511-ef17691c4d9c",
+   "display": "How Do We Manage Our Passwords?",
+   "segment": "",
+   "subject": "How Do We Manage Our Passwords?",
+   "iso": "2020-03-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ec25b9c0-58f7-11ea-b87c-bf6d6fe809cb",
+   "display": "How Do I Make Work Work for Me?  (Part Two)",
+   "segment": "",
+   "subject": "Part Two",
+   "iso": "2020-02-27",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "41a92416-535f-11ea-a91b-f7554a39627d",
+   "display": "How Do I Make Work Work for Me? (Part One)",
+   "segment": "",
+   "subject": "Part One",
+   "iso": "2020-02-20",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9afb27a6-4858-11ea-8cb2-e3ac72565d2b",
+   "display": "How Can I Travel Responsibly?",
+   "segment": "",
+   "subject": "How Can I Travel Responsibly?",
+   "iso": "2020-02-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "environmental-contamination",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "fa3c9dba-4305-11ea-8c02-6fb5c6424ca4",
+   "display": "How Can My City Be More Inclusive?",
+   "segment": "",
+   "subject": "How Can My City Be More Inclusive?",
+   "iso": "2020-01-30",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "transport-and-infrastructure",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "design-and-architecture",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "182342cc-3d69-11ea-9fd2-e3dafa764907",
+   "display": "What Do We Get When We Pay for School?",
+   "segment": "",
+   "subject": "What Do We Get When We Pay for School?",
+   "iso": "2020-01-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "education-system-failure",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "249aef1a-37d7-11ea-a70c-b3262da2d39f",
+   "display": "How Do We Define Ourselves...Financially?",
+   "segment": "",
+   "subject": "How Do We Define Ourselves...Financially?",
+   "iso": "2020-01-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "economic-policy",
+     "role": "primary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d2e93c2c-047d-11e9-8eb0-178d803fc177",
+   "display": "Small Business Is Everyone’s Business",
+   "segment": "",
+   "subject": "Small Business Is Everyone’s Business",
+   "iso": "2019-01-09",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "economic-policy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a6dd1aea-047d-11e9-ae42-233c70abb455",
+   "display": "Better, Faster, Smarter: Cities of the Future",
+   "segment": "",
+   "subject": "Cities of the Future",
+   "iso": "2019-01-02",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "design-and-architecture",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "transport-and-infrastructure",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "05defe20-fd65-11e8-adb6-e70f371db4b5",
+   "display": "Reskilling: Good for Workers…and Companies, too",
+   "segment": "",
+   "subject": "Good for Workers…and Companies, too",
+   "iso": "2018-12-12",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "62a69390-f7dc-11e8-9851-ab596816526b",
+   "display": "Who Gets to Be Creditworthy?",
+   "segment": "",
+   "subject": "Who Gets to Be Creditworthy?",
+   "iso": "2018-12-05",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "economic-policy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "dc6cc082-ed0f-11e8-b891-67046e850a0a",
+   "display": "Financial Literacy: Money Lessons for a Digital World",
+   "segment": "",
+   "subject": "Money Lessons for a Digital World",
+   "iso": "2018-11-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "economic-policy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "parenting",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5f49c00e-e793-11e8-936b-db4c5df49a8a",
+   "display": "Upward Mobility: Turning the Tide",
+   "segment": "",
+   "subject": "Turning the Tide",
+   "iso": "2018-11-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "43fb1d96-e222-11e8-b992-eba2f0f6f9fa",
+   "display": "Coming Soon: Fortune Favors the Bold, Season 2",
+   "segment": "",
+   "subject": "Fortune Favors the Bold, Season 2",
+   "iso": "2018-11-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "medium"
+    },
+    {
+     "slug": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d109a9fc-2605-11e8-8bf5-d3868a6eaf9d",
+   "display": "The Cashless Society: A Live Episode",
+   "segment": "",
+   "subject": "A Live Episode",
+   "iso": "2018-03-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "tech-industry-power",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "88faa224-1110-11e8-9f03-0b9eea207858",
+   "display": "Future-Proofing Your Career",
+   "segment": "",
+   "subject": "Future-Proofing Your Career",
+   "iso": "2018-02-20",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "bb4a95ea-0de6-11e8-9594-1fe50b09b9c8",
+   "display": "You 2.0",
+   "segment": "",
+   "subject": "You 2.0",
+   "iso": "2018-02-13",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "ai-and-society",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "47e5f490-082e-11e8-a27b-5f70d8e9243e",
+   "display": "The Business Case for Doing Good",
+   "segment": "",
+   "subject": "The Business Case for Doing Good",
+   "iso": "2018-02-06",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "management-and-leadership",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c32f6e5a-ff8d-11e7-ba79-274fa02a9a5a",
+   "display": "The Next American Dream",
+   "segment": "",
+   "subject": "The Next American Dream",
+   "iso": "2018-01-23",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "economic-policy",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "de2756a0-f7d1-11e7-b651-3f3a4abbfcc9",
+   "display": "Modern Nomads: The Future of Work",
+   "segment": "",
+   "subject": "The Future of Work",
+   "iso": "2018-01-16",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

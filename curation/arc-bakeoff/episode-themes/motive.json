@@ -6,10 +6,134 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "organised-crime",
+   "count": 2
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 2
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 1
+  },
+  {
+   "slug": "child-victim",
+   "count": 1
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "73174b90-b882-11ed-96ee-e1ba06858346",
+   "display": "6: Aftermath",
+   "segment": "",
+   "subject": "Aftermath",
+   "iso": "2023-03-02",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "investigative-process",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "81582f50-b349-11ed-8ea2-e3f8627d0f20",
+   "display": "5: Collateral Damage",
+   "segment": "",
+   "subject": "Collateral Damage",
+   "iso": "2023-02-23",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "70a04d60-ad85-11ed-a6c1-bd3466dd1c96",
+   "display": "4: Getting In And Getting Out",
+   "segment": "",
+   "subject": "Getting In And Getting Out",
+   "iso": "2023-02-16",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "child-victim",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4be3a6b0-a7c0-11ed-bc20-8ba0978119a3",
+   "display": "3: Underpaid And Underappreciated",
+   "segment": "",
+   "subject": "Underpaid And Underappreciated",
+   "iso": "2023-02-09",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "302a6950-a256-11ed-aa95-29601a38fc1d",
+   "display": "2: De/Escalation",
+   "segment": "",
+   "subject": "De/Escalation",
+   "iso": "2023-02-02",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "2de5a950-9d0e-11ed-9314-b9ce474848bf",
+   "display": "1: After The Gunfire",
+   "segment": "",
+   "subject": "After The Gunfire",
+   "iso": "2023-01-26",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "police-misconduct",
+     "role": "primary",
+     "confidence": "low"
+    }
+   ]
+  }
+ ],
  "agreement": {},
- "auditFlags": [
-  "no episodes"
- ]
+ "auditFlags": []
 }

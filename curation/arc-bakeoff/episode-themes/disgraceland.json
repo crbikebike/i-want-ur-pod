@@ -6,10 +6,172 @@
   "consolidate": "sonnet",
   "assign": "haiku"
  },
- "themesUsed": [],
- "episodes": [],
+ "themesUsed": [
+  {
+   "slug": "music-scene-history",
+   "count": 6
+  },
+  {
+   "slug": "musician-death",
+   "count": 5
+  },
+  {
+   "slug": "musician-downfall",
+   "count": 1
+  },
+  {
+   "slug": "organised-crime",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "88068547-4bed-4ae4-b062-b48e000d7be6",
+   "display": "Dolly Parton: How the Country Icon Nearly Became the Subject of Her Own Murder Ballad",
+   "segment": "",
+   "subject": "How the Country Icon Nearly Became the Subject of Her Own Murder Ballad",
+   "iso": "2026-07-21",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "musician-downfall",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "music-scene-history",
+     "role": "secondary",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d80ac4bb-59ef-4c3f-98e7-b48c001a49e2",
+   "display": "The Notorious B.I.G. Pt. 2: A Dead Rivalry, New Inspiration and a Murder Mystery for the Ages (Rewind)",
+   "segment": "",
+   "subject": "Rewind",
+   "iso": "2026-07-19",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "musician-death",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "music-scene-history",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e057d40b-15e8-4109-861a-b48c00176e60",
+   "display": "The Notorious B.I.G. Pt. 1: Dealing Crack on the Corner, Spitting Beef and Creating One of the Greatest Hip-Hop Albums of All Time (Rewind)",
+   "segment": "",
+   "subject": "Rewind",
+   "iso": "2026-07-19",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "musician-death",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "music-scene-history",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d78c55d4-77de-4a1b-8c31-b487002a5a64",
+   "display": "Happy Mondays: How Thieves, Drug Dealers, and Would-Be Kidnappers Took Over Madchester’s Music Scene",
+   "segment": "",
+   "subject": "How Thieves, Drug Dealers, and Would-Be Kidnappers Took Over Madchester’s Music Scene",
+   "iso": "2026-07-14",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "music-scene-history",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "organised-crime",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5ee52ddc-d59c-4476-97ab-b485003b5a10",
+   "display": "John Lennon (Pt. 2): “The phony must die, said the catcher in the rye.” (Rewind)",
+   "segment": "",
+   "subject": "Rewind",
+   "iso": "2026-07-12",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "musician-death",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "music-scene-history",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c15a5ae3-1d5e-4ffa-bb5d-b4850034c12b",
+   "display": "John Lennon (Pt. 1): “John Lennon, I’m going to kill you, you phony bastard.” (Rewind)",
+   "segment": "",
+   "subject": "Rewind",
+   "iso": "2026-07-12",
+   "inArc": true,
+   "themes": [
+    {
+     "slug": "musician-death",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "music-scene-history",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2d204023-a8d2-46bd-a29d-b47f017a9f4f",
+   "display": "Jim Morrison: Who Killed Jim Morrison?",
+   "segment": "",
+   "subject": "Who Killed Jim Morrison?",
+   "iso": "2026-07-07",
+   "inArc": false,
+   "themes": [
+    {
+     "slug": "musician-death",
+     "role": "primary",
+     "confidence": "high"
+    },
+    {
+     "slug": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "high"
+    }
+   ]
+  }
+ ],
  "agreement": {},
  "auditFlags": [
-  "no episodes"
+  "collapsed: 'musician-death' is 5/7 (71%)"
  ]
 }
