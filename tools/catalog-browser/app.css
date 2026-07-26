@@ -331,8 +331,54 @@ button, input, select { font: inherit; color: inherit; }
 .trim { font-size: .76rem; color: var(--text-faint); font-style: italic; padding-top: var(--sp-3); }
 
 /* ============ system ============ */
-.legend2 { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin: var(--sp-4) 0 var(--sp-6);
-  font-size: .8rem; color: var(--text-dim); }
+.legend2 { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4);
+  margin: var(--sp-4) 0 var(--sp-6); font-size: .8rem; color: var(--text-dim);
+  padding-bottom: var(--sp-4); border-bottom: 1px solid var(--hairline); }
+.jump { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin-left: auto; }
+.jump a { font-family: var(--mono); font-size: .72rem; font-weight: 700; text-decoration: none;
+  color: var(--text-dim); background: var(--chip); padding: 4px 10px; border-radius: var(--r-pill); }
+.jump a:hover { color: var(--text); }
+
+.sys { scroll-margin-top: 68px; margin-bottom: var(--sp-7); }
+.sys-sub { max-width: 66ch; margin: 0 0 var(--sp-4); font-size: .86rem; color: var(--text-dim); }
+.sub-h { font-family: var(--mono); font-size: .74rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--text-faint); margin: var(--sp-6) 0 var(--sp-3); }
+
+/* runtime sequence — numbered, because order is the whole point */
+.steps { list-style: none; counter-reset: s; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: var(--sp-2); max-width: 56rem; }
+.step { counter-increment: s; position: relative; background: var(--surface);
+  border-radius: var(--r-md); box-shadow: var(--elev-list);
+  padding: var(--sp-3) var(--sp-4) var(--sp-3) 3.1rem; }
+.step::before { content: counter(s); position: absolute; left: var(--sp-4); top: var(--sp-3);
+  font-family: var(--mono); font-size: .82rem; font-weight: 700; color: var(--accent); }
+.step::after { content: ""; position: absolute; left: calc(var(--sp-4) + 5px); top: 2.3rem; bottom: -10px;
+  width: 1px; background: var(--separator); }
+.step:last-child::after { display: none; }
+.step-h { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3);
+  flex-wrap: wrap; }
+.step-t { font-size: .92rem; font-weight: 800; letter-spacing: -.01em; }
+.step-tags { display: flex; gap: 4px; flex: none; }
+
+/* precedence — a ladder you stop descending at the first answer */
+.ladder { display: flex; flex-direction: column; gap: var(--sp-2); max-width: 56rem; }
+.rung { display: flex; gap: var(--sp-3); align-items: flex-start; background: var(--surface);
+  border-radius: var(--r-md); box-shadow: var(--elev-list); padding: var(--sp-3) var(--sp-4);
+  border-left: 3px solid var(--separator); }
+.rung.built { border-left-color: var(--accent-2); }
+.rung.planned { background: none; box-shadow: none; border: 1px dashed var(--separator); border-left-width: 3px; }
+.rung-n { font-family: var(--mono); font-size: 1.05rem; font-weight: 700; color: var(--text-faint); line-height: 1.35; }
+
+.tablewrap { overflow-x: auto; max-width: 62rem; }
+.synct { width: 100%; border-collapse: collapse; font-size: .84rem; }
+.synct th { text-align: left; font-family: var(--mono); font-size: .68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em; color: var(--text-faint);
+  padding: 0 var(--sp-3) var(--sp-2) 0; border-bottom: 1px solid var(--separator); white-space: nowrap; }
+.synct td { padding: var(--sp-3) var(--sp-3) var(--sp-3) 0; border-bottom: .5px solid var(--separator);
+  vertical-align: top; color: var(--text-dim); }
+.synct td.dim { color: var(--text-faint); }
+.synct td:first-child { display: flex; align-items: center; gap: var(--sp-2); white-space: nowrap; }
+.sync-what { color: var(--text); font-weight: 700; }
 .lg { display: inline-flex; align-items: center; gap: 6px; }
 .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; display: inline-block; }
 .dot.built { background: var(--accent-2); }

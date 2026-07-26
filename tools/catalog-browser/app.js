@@ -562,7 +562,61 @@ function themeCard(s, t, i, r) {
   return card;
 }
 
-/* ---------- system ---------- */
+/* ---------- system ----------
+   Structured as two timelines people conflate: what happens on the phone when you
+   open a show (milliseconds), and what happens on this machine to produce the data
+   it reads (occasional, manual). Plus the rule that decides between them. */
+
+const OPEN_STEPS = [
+  { t: 'You tap a show', where: 'device', when: '0 ms',
+    d: 'The detail screen appears and asks for the feed. Nothing is on screen yet.',
+    code: 'PodcastDetailViewModel.load()' },
+  { t: 'The store answers first', where: 'device', when: 'instant',
+    d: 'SwiftData is checked for a saved copy. If it already has episodes the screen renders from it immediately — the network is never on the critical path for a show you have opened before.',
+    code: 'modelContext.fetch(FetchDescriptor<Podcast>)' },
+  { t: 'The feed refreshes behind you', where: 'network', when: 'background',
+    d: 'The RSS is fetched and upserted so new episodes and season numbers land. If it fails — offline, feed down — the failure is swallowed and what you are already reading stands. An error is never shown over live data.',
+    code: 'fetcher.fetch → FeedUpsert.upsert' },
+  { t: 'Arcs are derived, not stored', where: 'device', when: 'every render',
+    d: 'Arcs are a computed property. Each access re-runs the grouping over the episode list from scratch — nothing is cached, so the shelf can never be stale relative to the episodes.',
+    code: 'ArcDerivation.groupIntoArcs(episodes)' },
+  { t: 'Grouping runs in three passes', where: 'device', when: '',
+    d: 'Prefix-clustering with re-release dedup and the anthology guard; then chaptered-season cards for whatever is left over; then merge, newest arc first.',
+    code: 'clusterGuarded → chapteredSeasonCards → mergeByRecency' },
+  { t: 'The shelf appears — or does not', where: 'device', when: '',
+    d: 'If no arcs come back, the Story arcs shelf is hidden entirely rather than showing an empty row. A singles-only show looks like it always did.',
+    code: 'if !viewModel.arcs.isEmpty' },
+  { t: 'You tap an arc card', where: 'device', when: '',
+    d: 'The episode list filters to that arc and a “Showing: … ✕” chip appears. Add all queues the whole arc oldest-first, so it plays Part 1 → N even though the list is newest-first.',
+    code: 'selectedArcID · queueStore.add' },
+];
+
+const LADDER = [
+  { t: 'A grouping you approved', st: 'planned', src: 'shipped data',
+    d: 'Curated in this workbench and exported. Beats everything below it, including a detector that disagrees.' },
+  { t: 'A model-proposed theme', st: 'planned', src: 'shipped data',
+    d: 'For anthologies where no arc exists. Ships in the same file, marked as proposed rather than confirmed.' },
+  { t: 'On-device regex', st: 'built', src: 'computed on the phone',
+    d: 'What runs today for everything — and the only thing that will ever run for a feed you added yourself, because it is not in the catalog.' },
+  { t: 'Nothing', st: 'built', src: '—',
+    d: 'No arcs derived, so the shelf is hidden. This is a correct answer for most interview and news shows.' },
+];
+
+const SYNCS = [
+  { what: 'Episodes', from: "the show's own RSS", when: 'every time you open it, in the background',
+    off: 'the last saved copy renders', st: 'built' },
+  { what: 'Show catalog', from: 'catalog.json bundled in the app', when: 'with each app release',
+    off: 'always available', st: 'built' },
+  { what: 'Arcs & themes', from: 'bundled snapshot, then a versioned file on a static host',
+    when: 'version check on launch; one download when it changes', off: 'the bundled snapshot stands', st: 'planned' },
+  { what: 'Feed corpus', from: 'scripts/fetch-atlas-feeds.py', when: 'manual, resumable, skips what it has',
+    off: 'n/a — this machine only', st: 'built' },
+  { what: 'Detection', from: 'approaches.py over the corpus', when: 'manual, after a rule change',
+    off: 'n/a', st: 'built' },
+  { what: 'Model themes', from: 'episode-theme-workflow.mjs', when: 'manual, one show at a time',
+    off: 'n/a', st: 'partial' },
+];
+
 const PIPELINE = [
   { head: 'Sources', nodes: [
     { t: '315 RSS snapshots', s: 'curation/feeds/', st: 'built', d: 'Titles, dates, season tags. No descriptions.' },
@@ -600,21 +654,108 @@ function node(n) {
   return b;
 }
 
+const SYS_SECTIONS = [
+  ['open', 'Opening a show'],
+  ['decide', 'What decides what you see'],
+  ['build', 'Where the data comes from'],
+  ['sync', 'What syncs, and when'],
+];
+
+function sysHead(id, title, sub) {
+  const wrap = el('section', 'sys');
+  wrap.id = 'sys-' + id;
+  const sec = el('div', 'sec');
+  sec.appendChild(el('h2', null, title));
+  wrap.appendChild(sec);
+  if (sub) wrap.appendChild(el('p', 'sys-sub', sub));
+  return wrap;
+}
+
 function renderSystem() {
   const { items, judged } = totals();
   $('#crumb').textContent = '';
   const view = $('#view');
   view.replaceChildren();
+
   view.appendChild(el('h1', 'dtitle', 'How this works'));
   view.appendChild(el('p', 'ddesc',
-    `Three things propose structure over the catalog. One of them is you, and you win. `
-    + `${items.toLocaleString()} groupings exist; ${judged} have a verdict.`));
+    'Two timelines that are easy to confuse: what the phone does in the moment you open a show, '
+    + 'and what this machine does — occasionally, by hand — to produce the data it reads.'));
 
   const legend = el('div', 'legend2');
   [['built', 'built and running'], ['partial', 'partly built'], ['planned', 'not built yet']]
     .forEach(([k, label]) => { const s = el('span', 'lg'); s.appendChild(el('span', 'dot ' + k)); s.append(label); legend.appendChild(s); });
+  const jump = el('nav', 'jump');
+  SYS_SECTIONS.forEach(([id, label]) => {
+    const a = el('a', null, label);
+    a.href = '#sys-' + id;
+    a.onclick = e => { e.preventDefault(); $('#sys-' + id).scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+    jump.appendChild(a);
+  });
+  legend.appendChild(jump);
   view.appendChild(legend);
 
+  /* 1 — runtime */
+  const s1 = sysHead('open', 'Opening a show',
+    'On the phone, in milliseconds. This is everything that happens between your tap and the shelf appearing.');
+  const steps = el('ol', 'steps');
+  OPEN_STEPS.forEach(st => {
+    const li = el('li', 'step');
+    const h = el('div', 'step-h');
+    h.appendChild(el('span', 'step-t', st.t));
+    const tags = el('span', 'step-tags');
+    tags.appendChild(el('span', 'tag ' + (st.where === 'network' ? 'warn' : ''), st.where === 'network' ? 'network' : 'on device'));
+    if (st.when) tags.appendChild(el('span', 'tag', st.when));
+    h.appendChild(tags);
+    li.appendChild(h);
+    li.appendChild(el('p', 'node-d', st.d));
+    li.appendChild(el('code', 'node-s', st.code));
+    steps.appendChild(li);
+  });
+  s1.appendChild(steps);
+  s1.appendChild(el('p', 'flow-note',
+    'Note what is absent: no server call, no arc lookup, no cache to invalidate. Today the phone '
+    + 'computes every arc itself, every time, from title text it already has.'));
+  view.appendChild(s1);
+
+  /* 2 — precedence */
+  const s2 = sysHead('decide', 'What decides what you see',
+    'When the store ships, the phone will ask these in order and stop at the first answer. Today only the third rung exists.');
+  const ladder = el('div', 'ladder');
+  LADDER.forEach((l, i) => {
+    const row = el('div', 'rung ' + l.st);
+    row.appendChild(el('span', 'rung-n', String(i + 1)));
+    const body = el('div');
+    const h = el('div', 'node-h');
+    h.appendChild(el('span', 'node-t', l.t));
+    h.appendChild(el('span', 'dot ' + l.st));
+    body.appendChild(h);
+    body.appendChild(el('code', 'node-s', l.src));
+    body.appendChild(el('p', 'node-d', l.d));
+    row.appendChild(body);
+    ladder.appendChild(row);
+  });
+  s2.appendChild(ladder);
+
+  const two = el('div', 'twocol');
+  [{ t: 'A catalog show', d: 'Radiolab, Swindled, the other 313. Arcs and themes are computed here, curated by you, and shipped as data. The phone reads rather than works.' },
+   { t: 'A feed you added yourself', d: 'A premium or private feed — a TAL+ URL. Never in the catalog, so there is no data to ship and rungs 1 and 2 are always empty. It falls to on-device regex, which is why that detector still has to be good.' }]
+    .forEach(x => {
+      const c = el('div', 'node built');
+      const h = el('div', 'node-h');
+      h.appendChild(el('span', 'node-t', x.t));
+      h.appendChild(el('span', 'dot built'));
+      c.appendChild(h);
+      c.appendChild(el('p', 'node-d', x.d));
+      two.appendChild(c);
+    });
+  s2.appendChild(two);
+  view.appendChild(s2);
+
+  /* 3 — build time */
+  const s3 = sysHead('build', 'Where the data comes from',
+    `On this machine, not the phone. Three things propose structure and one of them is you — `
+    + `${items.toLocaleString()} groupings exist, ${judged === 1 ? '1 has' : judged + ' have'} a verdict.`);
   const flow = el('div', 'flow');
   PIPELINE.forEach((col, i) => {
     if (i) flow.appendChild(el('div', 'arrow', '→'));
@@ -623,12 +764,9 @@ function renderSystem() {
     col.nodes.forEach(n => c.appendChild(node(n)));
     flow.appendChild(c);
   });
-  view.appendChild(flow);
-  view.appendChild(el('p', 'flow-note',
-    'Verdicts flow back into the store, so re-running a detector or the model can only add candidates — never change a call you already made.'));
+  s3.appendChild(flow);
 
-  const sec = el('div', 'sec'); sec.appendChild(el('h2', null, 'The rule that makes it safe'));
-  view.appendChild(sec);
+  s3.appendChild(el('h3', 'sub-h', 'Priority when they disagree'));
   const stack = el('div', 'stack');
   LAYERS.forEach((l, i) => {
     const row = el('div', 'layer ' + l.c);
@@ -640,23 +778,36 @@ function renderSystem() {
     row.appendChild(body);
     stack.appendChild(row);
   });
-  view.appendChild(stack);
+  s3.appendChild(stack);
+  s3.appendChild(el('p', 'flow-note',
+    'Re-running a detector or the model can only add candidates. Neither can change a call you '
+    + 'already made, because ids are matched by episode overlap rather than position.'));
+  view.appendChild(s3);
 
-  const sec2 = el('div', 'sec'); sec2.appendChild(el('h2', null, 'Two kinds of show'));
-  view.appendChild(sec2);
-  const two = el('div', 'twocol');
-  [{ t: 'A catalog show', d: 'Radiolab, Swindled, the other 313. Arcs and themes are computed here, curated by you, and shipped to the app as data. The app does no work.' },
-   { t: 'A feed you add yourself', d: 'A premium or private feed — your TAL+ URL. It is not in the catalog and never will be, so there is no data to ship. The app derives arcs on device with the same regex rules. This is why the regex detector still has to be good.' }]
-    .forEach(x => {
-      const c = el('div', 'node built');
-      const h = el('div', 'node-h');
-      h.appendChild(el('span', 'node-t', x.t));
-      h.appendChild(el('span', 'dot built'));
-      c.appendChild(h);
-      c.appendChild(el('p', 'node-d', x.d));
-      two.appendChild(c);
-    });
-  view.appendChild(two);
+  /* 4 — sync */
+  const s4 = sysHead('sync', 'What syncs, and when',
+    'Nothing here is live. Every row is either bundled with the app, fetched per show open, or run by hand.');
+  const tw = el('div', 'tablewrap');
+  const t = el('table', 'synct');
+  const thead = el('thead');
+  const hr = el('tr');
+  ['', 'Comes from', 'Refreshed', 'Offline'].forEach(h => hr.appendChild(el('th', null, h)));
+  thead.appendChild(hr); t.appendChild(thead);
+  const tb = el('tbody');
+  SYNCS.forEach(r => {
+    const tr = el('tr');
+    const first = el('td');
+    first.appendChild(el('span', 'dot ' + r.st));
+    first.appendChild(el('span', 'sync-what', r.what));
+    tr.appendChild(first);
+    tr.appendChild(el('td', null, r.from));
+    tr.appendChild(el('td', null, r.when));
+    tr.appendChild(el('td', 'dim', r.off));
+    tb.appendChild(tr);
+  });
+  t.appendChild(tb); tw.appendChild(t); s4.appendChild(tw);
+  view.appendChild(s4);
+
   view.appendChild(el('p', 'hint', 'Full detail: docs/design/taxonomy-architecture.md'));
 }
 
