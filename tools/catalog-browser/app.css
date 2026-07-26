@@ -251,10 +251,24 @@ select.cat { height: 38px; border: 0; border-radius: var(--r-field); background:
 .ep.off .ep-t { color: var(--text-dim); font-weight: 500; }
 .trim { font-size: .76rem; color: var(--text-faint); font-style: italic; padding: var(--sp-3) 0 0; }
 
+/* ---------- top nav ---------- */
+.viewnav { display: flex; gap: 2px; background: var(--chip); border-radius: var(--r-pill);
+  padding: 3px; flex: none; }
+.viewnav a { text-decoration: none; color: var(--text-dim); font-size: .8rem; font-weight: 700;
+  padding: 6px 14px; border-radius: var(--r-pill); white-space: nowrap;
+  transition: background var(--dur-fast), color var(--dur-fast); }
+.viewnav a:hover { color: var(--text); }
+.viewnav a[aria-current="page"] { background: var(--surface); color: var(--text); box-shadow: var(--elev-list); }
+
+/* catalog-only controls have nothing to act on outside the catalog, and the
+   diagram wants the full width the sidebar was using */
+body[data-view="architecture"] .search,
+body[data-view="architecture"] .cat,
+body[data-view="architecture"] .result-count,
+body[data-view="architecture"] .sidebar { display: none; }
+body[data-view="architecture"] .app { grid-template-columns: minmax(0, 1fr); }
+
 /* ---------- architecture view ---------- */
-.howlink { margin-top: auto; padding-top: var(--sp-4); font-size: .8rem; font-weight: 700;
-  color: var(--accent); text-decoration: none; }
-.howlink:hover { text-decoration: underline; }
 
 .legend2 { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin: var(--sp-4) 0 var(--sp-6);
   font-size: .8rem; color: var(--text-dim); }

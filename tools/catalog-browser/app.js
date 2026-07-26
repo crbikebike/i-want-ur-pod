@@ -139,6 +139,15 @@ window.addEventListener('hashchange', fromHash);
 
 /* ---------- render ---------- */
 function render() {
+  // Drives the nav's active state, and hides the catalog-only controls (search,
+  // category, pattern filters) on views where they do nothing.
+  const view = state.page === 'architecture' ? 'architecture' : 'catalog';
+  document.body.dataset.view = view;
+  document.querySelectorAll('.viewnav a').forEach(a => {
+    const on = a.dataset.view === view;
+    a.setAttribute('aria-current', on ? 'page' : 'false');
+  });
+
   if (state.page === 'architecture') return renderArchitecture();
   state.slug ? renderDetail() : renderGrid();
 }
@@ -417,10 +426,6 @@ function renderArchitecture() {
   const view = $('#view');
   view.replaceChildren();
   $('#count').textContent = '';
-
-  const back = el('button', 'back', '← Catalog');
-  back.onclick = () => { state.page = null; openShow(null); };
-  view.appendChild(back);
 
   view.appendChild(el('h1', 'dtitle', 'How this works'));
   view.appendChild(el('p', 'ddesc',

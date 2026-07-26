@@ -13,11 +13,14 @@
     <div class="totals" id="totals"></div>
     <button class="filters-toggle" id="filters" aria-expanded="false" aria-controls="patterns">Filters</button>
     <nav id="patterns" aria-label="Filter by detection pattern"></nav>
-    <a class="howlink" href="#/architecture">How this works →</a>
   </aside>
 
   <main class="main">
     <div class="topbar">
+      <nav class="viewnav" aria-label="Views">
+        <a href="#/" data-view="catalog">Catalog</a>
+        <a href="#/architecture" data-view="architecture">How it works</a>
+      </nav>
       <input class="search" id="q" type="search" placeholder="Search shows…" aria-label="Search shows">
       <select class="cat" id="cat" aria-label="Filter by category"></select>
       <span class="result-count" id="count"></span>
