@@ -36,6 +36,11 @@ const showThemes = s => (s.themesUsed || [])
   .map(([gi, count]) => { const t = themeAt(gi); return t ? { ...t, gi, count } : null; })
   .filter(Boolean);
 
+/* Does this episode carry theme `gi` at all — as its primary or as a secondary?
+   themesUsed counts every application, so the filter has to as well; matching only the
+   primary made 31% of the theme chips return zero rows. */
+const epHasTheme = (e, gi) => e[5] === gi || (e[7] || []).some(([x]) => x === gi);
+
 /* Every show that uses a theme, for the cross-show theme page. */
 function showsUsing(gi) {
   return state.data.shows
@@ -647,7 +652,7 @@ function renderTheme() {
   let n = 0;
   for (const { s: sh } of users) {
     for (const e of sh.eps) {
-      if (e[5] !== gi && !(e[7] || []).some(([x]) => x === gi)) continue;
+      if (!epHasTheme(e, gi)) continue;
       if (n++ >= 200) break;
       const row = el('div', 'ep');
       row.appendChild(el('span', 'ep-date', fmtDate(e[1])));
@@ -793,7 +798,7 @@ function renderDetail() {
   // A confidence filter narrows the episode list too, so picking "Low" and opening a show
   // lands you on exactly the rows worth a second look.
   const shown = state.arc != null ? s.eps.filter(e => e[4] === state.arc)
-              : state.theme != null ? s.eps.filter(e => e[5] === state.theme)
+              : state.theme != null ? s.eps.filter(e => epHasTheme(e, state.theme))
               : state.f.conf ? s.eps.filter(e => e[6] === state.f.conf) : s.eps;
   esec.appendChild(el('span', 'count', String(shown.length)));
   esec.appendChild(el('div', 'spacer'));
@@ -833,6 +838,10 @@ function renderDetail() {
     row.appendChild(body);
 
     const tag = el('span', 'ep-tags');
+    // Filtered to a theme, say which rows only carry it as a secondary — otherwise a
+    // chip counting 6 looks identical whether those are primaries or not.
+    if (state.theme != null && e[5] !== state.theme)
+      tag.appendChild(el('span', 'tag sec', 'secondary'));
     // Confidence rides on each application, so a shaky secondary shows its own badge
     // instead of hiding behind a strong primary.
     if (e[6] && e[6] !== 'h')
