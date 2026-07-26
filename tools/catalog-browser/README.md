@@ -58,7 +58,7 @@ python3 curation/arc-bakeoff/build-episode-themes.py merge --slug swindled --res
 Three passes: Sonnet open-codes every episode with no fixed vocabulary, Sonnet consolidates the
 raw labels into 10–16 defined themes, Haiku assigns primary + up to two secondary from that frozen
 list. The assignment runs **twice with different batching**; where the two runs disagree the theme
-boundary is fuzzy, and that percentage is reported in the UI. It is the honest measure — the audit
+boundary is fuzzy, and that percentage is reported in the UI. That is the real measure — the audit
 only proves the shape is sane, not that the categories are real.
 
 Adding another anthology means adding an entry to `SHOWS` in `build-episode-themes.py` describing
