@@ -22,11 +22,22 @@ A show marked *"no arcs here"* exports as an empty list. Those labelled negative
 valuable ones: with `score.evaluate(score_negatives=True)` an arc invented on an arcless feed
 counts as pure junk, which is the failure mode the current 50-show gold set can't see.
 
-A **How this works** view at `#/architecture` diagrams the whole pipeline, with every box
-marked built / partly built / not built yet. It is the fastest way to see what actually exists.
+## Three modes
 
-**Keys:** `j`/`k` move · `enter` open · `1` right · `2` wrong · `3` unsure · `0` clear ·
-`n` no arcs here · `esc` back.
+The job is deciding whether ~1,600 detected groupings are real, so the tool is built around
+that rather than around browsing.
+
+- **Browse** — the catalog, faceted by review state, detection rule, feed status and category.
+- **Review** — a queue. One grouping per screen with its episodes, judged by keyboard. Facets
+  apply here too, so "review only limited-series arcs" is one click.
+- **System** — what the pipeline is, with every box marked built / partly built / not built.
+
+Colour carries provenance, matching the merge rule in
+`docs/design/taxonomy-architecture.md`: mint means you decided it, grape means the model
+proposed it, plain means regex detected it, coral means it still wants your attention.
+
+**Keys:** `/` search · `j`/`k` move · `enter` open · `1` real · `2` not real · `3` unsure ·
+`esc` back.
 
 Regenerate the index after changing `approaches.py` — arc indices are positional, and the
 exporter will flag any verdict that no longer lines up rather than mis-attach it.
