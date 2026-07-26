@@ -106,6 +106,34 @@ buffering and seek-over-network edge case, and it worked. But it's a bad default
 discovery app where the whole point is trying something new immediately. The React app
 should stream, and treat download as an explicit offline action.
 
+## 6b. Audio comes from the feed, at play time
+
+The catalog shipped metadata and a `feedUrl`. It never held an audio URL. The app resolved
+audio at runtime: `FeedFetcher(URLSession.shared)` fetched the feed body,
+`FeedParser.parse()` read `<enclosure url>` where `type` was `audio/*`, and the result became
+`ParsedEpisode.audioURL`.
+
+Three details that matter, all of which the React app must reimplement:
+
+- **Items with no usable audio enclosure are skipped** before an episode object is ever
+  constructed. There is no such thing as an unplayable episode in the store.
+- **Feed bodies go through the shared HTTP cache.** `URLCache.shared` was configured once at
+  launch (50MB memory / 500MB disk) and both artwork and feed fetches read it. Never stand up
+  a bespoke, cache-disabled client for a read path — that silently opts out of this and
+  reintroduces the re-fetch cost the cache exists to remove.
+- **Store-first render.** Resolve from the local store synchronously and show it, *then*
+  refresh from the network in the background, best-effort. A failed background refresh is
+  swallowed — the cached render stands, and no error is surfaced over live data. Only a
+  genuinely empty store puts a fetch on the critical path.
+
+Why this stays true in the new architecture: enclosure URLs are volatile. Tracking prefixes
+rotate and dynamic ad insertion can make them session-specific, so a cached URL is a dead
+play button. Duration is the opposite — it never changes once published — so the catalog
+caches it for display while the player still trusts the feed.
+
+Old homes: `Packages/FeedParsingKit/`, `docs/design/data-loading.md`,
+`IWantUrPod/Detail/PodcastDetailViewModel.swift`.
+
 ## 7. Queue invariants
 
 - `order` is contiguous and ascending from 0 after **any** mutation. Smallest plays next.
@@ -152,6 +180,6 @@ injected through context) rather than values sprinkled at call sites.
 
 | | |
 |---|---|
-| **Keep** | two-tier explore, gesture split, stateless deck, one adaptive detail screen, root-level providers, shell-owned chrome, playback state machine, queue invariants, arc filtering, kit-first provenance, design tokens |
+| **Keep** | two-tier explore, gesture split, stateless deck, one adaptive detail screen, root-level providers, shell-owned chrome, feed-resolved audio, shared HTTP cache, store-first render, playback state machine, queue invariants, arc filtering, kit-first provenance, design tokens |
 | **Drop** | download-first playback, the kit's hidden-row mock workaround, xcodegen and the whole Xcode project layer |
 | **Deferred** | CarPlay IA — the template design is worth re-reading when a native car layer happens (`docs/design/carplay-ia.md`) |

@@ -49,9 +49,9 @@ without them, degrading gracefully — see **Degradation** below.
 - **5 slugs exist in both tiers**: `political-scandal`, `institutional-coverup`,
   `police-misconduct`, `wrongful-conviction`, `family-secret`.
 - **12 shows have no episode labels** (315 in `catalog.json`, 303 with episode-themes).
-- **No episode duration and no audio URL exist anywhere in the source.** Neither does an
-  un-truncated description — `descriptions/` values are cut at roughly 250 characters
-  with an ellipsis.
+- **No episode duration exists anywhere in the source.** Neither does an un-truncated
+  description — `descriptions/` values are cut at roughly 250 characters with an ellipsis.
+  Audio URLs are absent too, and that is correct — see **Audio and freshness**.
 
 ---
 
@@ -98,8 +98,12 @@ CREATE TABLE episodes (
   episode_type   TEXT,
   published_at   TEXT,              -- ISO date
   description    TEXT,              -- truncated at source; see Degradation
-  duration_s     INTEGER,           -- NULL until Phase 4 fetches it
-  audio_url      TEXT,              -- NULL until Phase 4 fetches it
+  duration_s     INTEGER,           -- DISPLAY HINT ONLY. Cached so browse can show
+                                    -- "6 parts, 4h 20m" without fetching 300 feeds.
+                                    -- The player always trusts the live feed.
+                                    -- NULL until Phase 4 fetches it.
+  available      INTEGER NOT NULL DEFAULT 1,  -- 0 when a reconcile finds it gone from
+                                    -- the feed. Never delete: the labels are ours.
   arc_id         INTEGER REFERENCES arcs(id),
   UNIQUE (show_id, guid)
 );
@@ -197,6 +201,35 @@ Two constraints doing real work:
   two-tier promise is enforced by the database, not by a convention someone remembers.
 
 ---
+
+## Audio and freshness
+
+**The catalog never stores an audio URL.** Audio belongs to the show's host and is resolved
+from the live feed at play time. This is not a preference — enclosure URLs are volatile.
+Tracking prefixes (Podtrac, Chartable, Megaphone) rotate, and dynamic ad insertion can make
+a URL session-specific. A URL cached three months ago is a dead play button.
+
+| Concern | Owner |
+|---|---|
+| Audio URL | The show's host. Resolved from the live feed at play time. **Never stored.** |
+| Duration | Catalog caches it for display. The player trusts the feed. |
+| Episode list | Catalog renders first; the live feed reconciles by guid in the background. |
+
+**Store-first reconcile**, carried over from the Swift app (see
+`docs/patterns-from-swift.md`): render the catalog's episode list immediately, fetch the feed
+in the background, merge on guid.
+
+- New episodes append and get regex arcs from `detector/arc-cascade.py`.
+- Episodes gone from the feed set `available = 0`. They are never deleted — the themes and
+  arcs attached to them are our work, not the publisher's.
+- Items with no usable audio enclosure are skipped, exactly as `FeedParser` did.
+- **A failed fetch is swallowed.** The cached view stands. Never show an error over live data.
+
+This is also what actually delivers the freshness promise: the app reads the feed anyway in
+order to play anything, so it is current between catalog releases for free. The Phase 4
+publisher's job is depth (labels, arcs, duration), not recency.
+
+Nothing in `catalog/` may reference an enclosure or an audio URL. `verify.py` greps for it.
 
 ## Identity rules
 
@@ -374,9 +407,9 @@ because the build lost it." The second fails the gate; the first doesn't.
 
 ## Carried forward, not solved here
 
-- **No duration, no audio URL.** Nothing in the source has them, so no app can play
-  anything yet. Phase 4's publisher must fetch enclosure URL and duration per episode. The
-  columns exist now so that lands as an update, not a migration.
+- **No duration.** Phase 4's publisher fetches it per episode while it's already combing
+  feeds. The column exists now so that lands as an update, not a migration. Audio needs no
+  such treatment — see **Audio and freshness**.
 - **Descriptions are truncated** at ~250 characters with an ellipsis. Since Phase 3 extracts
   subjects from titles and descriptions only, this caps subject quality. Phase 4 should
   re-fetch them in full while it's already reading every feed.

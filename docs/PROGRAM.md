@@ -100,6 +100,7 @@ releases       (version, built_at, show_count, episode_count, notes)
 ```
 
 Key rules:
+- **The catalog never stores an audio URL.** Audio belongs to the show's host, resolved from the live feed at play time. Enclosure URLs are volatile — tracking prefixes rotate and dynamic ad insertion makes them session-specific, so a cached one is a dead play button. Duration is cached as a display hint only; the player trusts the feed.
 - **Stable identity.** Every entity has an immutable slug. Incremental releases never renumber.
 - **`themes.parent_id`** implements the two tiers. Tier-1 rows are the browsable 30; tier-2 rows are the fine episode themes and must have a parent.
 - **`edges.why`** holds the human-readable reason a connection exists. This is what powers "explain the connection" — the path is displayable, not just computable.
@@ -141,6 +142,10 @@ Batched relabel with escalation. LLM arc detection with confidence. Subject extr
 
 ### Phase 4 — hfab publisher
 Always-on agent: comb feeds, label new episodes, publish incremental releases to R2. Auto-publishes labels. Alerts on anomalies (new theme appearing, show going silent, confidence dropping). Holds arcs and vocabulary changes for approval.
+
+While combing, it also fills in episode duration and re-fetches descriptions at full length (the 2026-07 run truncated them at ~250 characters, which caps subject-extraction quality). It never fetches or stores audio URLs.
+
+**The publisher's job is depth, not recency.** The app is already current between releases because store-first reconcile reads each show's live feed on open — it has to, in order to resolve audio at all. New episodes therefore appear immediately with regex arcs; the publisher is what later gives them real labels and real arcs.
 
 **Gate:** a new episode appears in a release without you touching anything, and a deliberately broken feed raises an alert instead of shipping garbage.
 
