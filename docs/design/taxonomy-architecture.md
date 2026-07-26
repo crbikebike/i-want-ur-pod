@@ -226,6 +226,49 @@ The verdict seed is the delicate one: those rows key on positional arc index, so
 they must be resolved to durable ids **during** migration, while the detector
 output that produced them is reproducible. Migrating them later is not possible.
 
+## The corpus is not the show
+
+A show's public RSS is often not its archive, and the store must never assume it is.
+
+**This American Life** publishes a rolling window: its feed carries 15 items numbered
+884–892, while roughly 892 episodes exist. **Twenty-six shows are samplers** — a trailer
+and episode one, with the rest behind a subscription. The NYT and Serial Productions
+catalogues are almost entirely this shape, and some publishers say so outright: Wondery
+ships an item titled *"Where to find Episodes 2-6 of The Shrink Next Door"*.
+
+This is **not** our truncation. `scripts/fetch-atlas-feeds.py` caps at 800 episodes, so a
+feed holding two items served two. The only feeds we cut are the handful sitting exactly
+at 800.
+
+`build-catalog-index.py` labels every such feed, and the browser shows the reason on the
+show rather than reporting "no arcs found", which would blame the detector for a
+publisher's decision:
+
+| Label | Shows | Meaning |
+|---|---|---|
+| `sampler` | 26 | Only the opening is public |
+| `short-series` | 5 | A genuinely complete short run |
+| `unknown-short` | 6 | Short, no numbering to reason from |
+| `empty-feed` | 3 | Serves no full episodes at all |
+| `windowed` | 1 | Recent episodes only (This American Life) |
+
+Detection is deliberately conservative. `windowed` requires a *contiguous* run of episode
+numbers starting far above 1 — a depth ratio alone produces false positives, because
+Criminal and RedHanded both carry a stray `episodeNumber` of 10001 as a sort key while
+numbering honestly from 1.
+
+Consequences for the design:
+
+- **Arcs in the store are derived from what was public.** A subscriber pasting their own
+  premium feed URL sees strictly more episodes than the catalog ever will.
+- **This is precisely the on-device regex path's job.** For a private feed there is no
+  store entry and never will be, so `EpisodeArcs.swift` is the primary path for those
+  shows, not a fallback. It has to keep working.
+- `feedAccess` from `curation/atlas-source.json` (`free-public` / `early-access-paywall` /
+  `subscription-only`) is carried through as supporting context, but it is **not** a
+  reliable completeness signal on its own: *1619* and *Caliphate* are marked `free-public`
+  and are still samplers.
+
 ## Open decisions
 
 - **Is the published export public?** It contains nothing sensitive — everything

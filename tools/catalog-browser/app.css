@@ -150,6 +150,13 @@ select.cat { height: 38px; border: 0; border-radius: var(--r-field); background:
 .tag.on { color: var(--on-accent); background: var(--accent); }
 .tag.none { color: var(--text-faint); }
 .tag.struct { color: var(--accent-2); background: color-mix(in srgb, var(--accent-2) 15%, transparent); }
+.tag.warn { color: var(--meh); background: color-mix(in srgb, var(--meh) 18%, transparent); }
+
+.feednote { background: var(--surface); border-radius: var(--r-md); box-shadow: var(--elev-list);
+  border-left: 3px solid var(--meh); padding: var(--sp-3) var(--sp-4); margin-top: var(--sp-5);
+  font-size: .88rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-2); }
+.feednote strong { font-weight: 800; color: var(--meh); }
+.feednote p { flex-basis: 100%; margin: 4px 0 0; font-size: .82rem; color: var(--text-dim); }
 
 .judged { position: absolute; top: 10px; right: 10px; width: 10px; height: 10px; border-radius: 50%;
   box-shadow: 0 0 0 2px var(--surface); }

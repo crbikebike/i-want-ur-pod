@@ -23,6 +23,7 @@ ROOT = HERE.parent.parent
 FEEDS = ROOT / "curation" / "feeds"
 CATALOG = ROOT / "curation" / "catalog" / "catalog.json"
 THEMES = ROOT / "curation" / "catalog" / "themes.json"
+ATLAS = ROOT / "curation" / "atlas-data.json"
 EP_THEMES = HERE / "episode-themes"
 OUT = HERE / "catalog-index.json"
 
@@ -55,8 +56,99 @@ PATTERNS = {
     "affix-suffix":   ("Shared closing phrase", "structural", "Every episode ends with the same phrase"),
 }
 
+# ---------------------------------------------------------------------------
+# Why a feed is small
+# ---------------------------------------------------------------------------
+# A show with two episodes is usually not a short show. Most of the time the
+# publisher puts a trailer and episode one in the public feed and keeps the rest
+# behind a subscription -- the NYT and Serial Productions catalogues are almost
+# entirely this. Some feeds say it outright: Wondery ships an item literally
+# titled "Where to find Episodes 2-6 of The Shrink Next Door".
+#
+# This is NOT our truncation. fetch-atlas-feeds.py caps at 800 episodes, so a
+# feed holding 2 items genuinely served 2. The only feeds we cut are the ones
+# sitting exactly at 800.
+SMALL_FEED_MAX = 6
+WORD_ORD = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
+            "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10}
+SAMPLER_MARKER = re.compile(
+    r'where to (find|hear|listen)|rest of (the )?(this )?(series|season|episodes)|'
+    r'listen to the rest|full series (on|at)|subscribe to hear', re.I)
+ORD_PATTERNS = [
+    re.compile(r'^\s*(\d{1,3})\s*[:.\-]'),
+    re.compile(r'^\s*(?:part|chapter|episode|ep\.?)\s+(\d{1,3}|' + "|".join(WORD_ORD) + r')\b', re.I),
+    re.compile(r'^\s*(?:s\d+\s*)?e(?:pisode)?\s*(\d{1,3})\b', re.I),
+    re.compile(r'^\s*(' + "|".join(WORD_ORD) + r')\s*:', re.I),
+]
+
+SMALL_FEED_LABELS = {
+    "sampler": "Only the opening is public",
+    "short-series": "A genuinely short series",
+    "empty-feed": "Feed serves no episodes",
+    "unknown-short": "Short, reason unclear",
+    "windowed": "Recent episodes only",
+}
+
+
+def _ordinal(e):
+    if e.get("episodeNumber"):
+        return e["episodeNumber"]
+    for rx in ORD_PATTERNS:
+        m = rx.match(e["title"])
+        if m:
+            v = m.group(1).lower()
+            return WORD_ORD.get(v, int(v) if v.isdigit() else None)
+    return None
+
+
+def _windowed(full):
+    """A rolling window: This American Life numbers 884-892 while ~892 exist.
+
+    The signature is a CONTIGUOUS run of episode numbers starting far above 1.
+    Depth alone is not enough -- Criminal and RedHanded both carry a stray
+    episodeNumber of 10001 as a sort key while genuinely numbering from 1, and a
+    naive max/count ratio flags them as windowed when their archives are intact.
+    """
+    ords = sorted({o for o in (_ordinal(e) for e in full) if o})
+    if len(ords) < 5:
+        return None
+    best = run = [ords[0]]
+    for prev, cur in zip(ords, ords[1:]):
+        run = run + [cur] if cur == prev + 1 else [cur]
+        if len(run) > len(best):
+            best = run
+    if best[0] <= 10:                       # numbering reaches back to the start
+        return None
+    if len(best) < 0.6 * len(ords):         # not one clean recent block
+        return None
+    if best[-1] < 3 * len(full):            # archive is not meaningfully deeper
+        return None
+    return "windowed", (f"numbered {best[0]}-{best[-1]}, so roughly {best[-1]} exist "
+                        f"but only {len(full)} are public")
+
+
+def small_feed_reason(episodes):
+    """Explain a feed with almost nothing in it, or None when it is a normal feed."""
+    full = [e for e in episodes if e.get("episodeType", "full") == "full"]
+    if len(full) >= SMALL_FEED_MAX:
+        return _windowed(full)
+    if not full:
+        return "empty-feed", "the feed carries no full episodes at all"
+    if any(SAMPLER_MARKER.search(e["title"]) for e in episodes):
+        return "sampler", "the feed says outright where the rest of the episodes are"
+    ords = sorted(o for o in (_ordinal(e) for e in full) if o)
+    if ords:
+        if ords == list(range(1, len(ords) + 1)) and len(ords) == len(full) >= 3:
+            return "short-series", f"a complete run of {len(full)}"
+        if min(ords) == 1:
+            return "sampler", (f"starts at episode 1 and stops at {max(ords)}"
+                               if max(ords) <= 2 else
+                               f"starts at episode 1, only {len(full)} published")
+    return "unknown-short", f"{len(full)} episodes, no numbering to go on"
+
+
 NO_ARC_GROUPS = {
-    "too-few":     ("Too few episodes", "We only captured a handful of episodes — a fetch-window artifact, not a detector failure."),
+    "too-few":     ("Too few episodes", "The feed itself holds almost nothing — see the reason on each show. Usually the publisher keeps the rest behind a subscription."),
     "season-tag":  ("Season tag, unproven", "The season tag would group these, but Bear Grease puts 60 episodes in one season — the tag alone can’t be trusted."),
     "no-signal":   ("Small, no signal", "Small and unnumbered, but spread over too long a window to be a limited series."),
     "anthology":   ("Big anthology", "Hundreds of standalone episodes. Finding nothing here is usually the right answer."),
@@ -183,6 +275,13 @@ def no_arc_group(full):
 def main():
     catalog = json.loads(CATALOG.read_text())
     themes = {t["slug"]: t for t in json.loads(THEMES.read_text())}
+    # feedAccess is hand-curated in atlas-source and dropped by build-catalog.py.
+    # It says whether a show is paywalled, which is context for a small feed --
+    # though not decisive: 1619 and Caliphate are "free-public" and still sampled.
+    access = {}
+    if ATLAS.exists():
+        for s in json.loads(ATLAS.read_text()).get("shows", []):
+            access[(s.get("title") or "").strip().lower()] = s.get("access")
 
     by_slug, dupes = {}, []
     for rec in catalog:
@@ -265,6 +364,9 @@ def main():
             "desc": rec.get("description") or "",
             "themes": rec.get("themes") or [],
             "nEps": len(full),
+            "access": access.get(rec["title"].strip().lower()) or "",
+            "small": ({"label": SMALL_FEED_LABELS[small[0]], "why": small[1], "key": small[0]}
+                      if (small := small_feed_reason(eps)) else None),
             "span": span_months(full),
             "seasons": len({e["season"] for e in full if e["season"] is not None}),
             "patterns": sorted(set(pats)),

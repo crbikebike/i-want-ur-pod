@@ -174,10 +174,14 @@ function showCard(s, i) {
       const meta = state.data.patterns[p];
       if (meta) foot.appendChild(el('span', 'tag' + (meta.family === 'structural' ? ' struct' : ''), meta.label));
     });
+  } else if (s.small) {
+    // why the feed is nearly empty beats "no arcs found", which blames the detector
+    foot.appendChild(el('span', 'tag warn', s.small.label));
   } else {
     const g = state.data.noArcGroups[s.group];
     foot.appendChild(el('span', 'tag none', g ? g.label : 'no arcs'));
   }
+  if (s.small && s.arcs.length) foot.appendChild(el('span', 'tag warn', s.small.label));
   c.appendChild(foot);
 
   const v = verdictMark(s.slug);
@@ -244,6 +248,20 @@ function renderDetail() {
   head.appendChild(meta);
   view.appendChild(head);
 
+  // Say why a feed is nearly empty. Almost always the publisher's choice, not ours.
+  if (s.small) {
+    const box = el('div', 'feednote');
+    box.appendChild(el('strong', null, s.small.label));
+    box.appendChild(el('span', null, ' — ' + s.small.why + '.'));
+    if (s.access && s.access !== 'free-public') {
+      box.appendChild(el('span', 'tag warn', s.access.replace(/-/g, ' ')));
+    }
+    box.appendChild(el('p', null,
+      'The fetch takes up to 800 episodes, so this is what the feed served — not a truncated download. '
+      + 'A subscriber’s own feed URL would carry the full archive.'));
+    view.appendChild(box);
+  }
+
   // arcs
   if (s.arcs.length) {
     const sec = el('div', 'sec');
@@ -255,10 +273,13 @@ function renderDetail() {
     s.arcs.forEach((arc, i) => wrap.appendChild(arcCard(s, arc, i, rec)));
     view.appendChild(wrap);
   } else {
-    const g = state.data.noArcGroups[s.group];
+    // A feed note already explains the show; the generic bucket hint would only
+    // contradict it (TAL is "unnumbered" by the bucket and 884-892 by the note).
+    const g = s.small ? null : state.data.noArcGroups[s.group];
     const sec = el('div', 'sec');
     sec.appendChild(el('h2', null, 'No arcs detected'));
     if (g) sec.appendChild(el('span', 'count', g.label));
+    else if (s.small) sec.appendChild(el('span', 'count', 'not enough feed to tell'));
     view.appendChild(sec);
     if (g) view.appendChild(el('p', 'ddesc', g.hint));
   }
