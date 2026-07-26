@@ -22,6 +22,9 @@ A show marked *"no arcs here"* exports as an empty list. Those labelled negative
 valuable ones: with `score.evaluate(score_negatives=True)` an arc invented on an arcless feed
 counts as pure junk, which is the failure mode the current 50-show gold set can't see.
 
+A **How this works** view at `#/architecture` diagrams the whole pipeline, with every box
+marked built / partly built / not built yet. It is the fastest way to see what actually exists.
+
 **Keys:** `j`/`k` move · `enter` open · `1` right · `2` wrong · `3` unsure · `0` clear ·
 `n` no arcs here · `esc` back.
 

@@ -123,9 +123,15 @@ function openShow(slug) {
 }
 
 function fromHash() {
+  if (location.hash === '#/architecture') {
+    state.page = 'architecture'; state.slug = null;
+    if (state.data) render();
+    return;
+  }
   const m = /^#\/show\/(.+)$/.exec(location.hash);
   const slug = m ? decodeURIComponent(m[1]) : null;
-  if (slug === state.slug) return;
+  if (state.page !== 'architecture' && slug === state.slug) return;
+  state.page = null;
   state.slug = slug; state.arc = null; state.theme = null; state.cursor = 0;
   if (state.data) render();
 }
@@ -133,6 +139,7 @@ window.addEventListener('hashchange', fromHash);
 
 /* ---------- render ---------- */
 function render() {
+  if (state.page === 'architecture') return renderArchitecture();
   state.slug ? renderDetail() : renderGrid();
 }
 
@@ -352,6 +359,143 @@ function renderDetail() {
   if (state.arc == null && s.eps.length < s.nEps)
     view.appendChild(el('p', 'trim', `Showing ${s.eps.length} of ${s.nEps} episodes — every arc member, plus a sample of the rest.`));
   view.appendChild(el('p', 'hint', 'j / k arcs · 1 right · 2 wrong · 3 unsure · 0 clear · n no arcs · esc back'));
+}
+
+/* ---------- architecture view ---------- */
+/* Hand-built in CSS so there is no diagram library to install, and so it uses the
+   same tokens as everything else. Status on every box is the point: this is as much
+   a map of what does NOT exist yet as of what does. */
+const PIPELINE = [
+  { head: 'Sources', nodes: [
+    { t: '315 RSS snapshots', s: 'curation/feeds/', st: 'built',
+      d: 'Titles, dates, season tags. No descriptions.' },
+    { t: 'Catalog metadata', s: 'catalog.json', st: 'built',
+      d: '315 shows — art, network, themes. Joined on slugify(title).' },
+  ]},
+  { head: 'Producers', nodes: [
+    { t: 'Regex detector', s: 'approaches.py · A8-cascade', st: 'built',
+      d: '1,583 arcs across 221 shows, from 10 title patterns + 7 structural rules.' },
+    { t: 'Model proposer', s: 'episode-theme-workflow.mjs', st: 'partial',
+      d: 'Themes anthologies that have no arcs. Sonnet codes + consolidates, Haiku assigns. Swindled done; 101 large feeds to go.' },
+    { t: 'You', s: 'the catalog browser', st: 'built',
+      d: 'Right / wrong / unsure per arc and theme. The only source that can add what no algorithm finds.' },
+  ]},
+  { head: 'Store', nodes: [
+    { t: 'SQLite', s: 'arcs · themes · verdicts · edit log', st: 'planned',
+      d: 'Durable ids matched across re-detection by member overlap, so a regex change cannot renumber your decisions.' },
+  ]},
+  { head: 'Delivery', nodes: [
+    { t: 'Local API', s: 'serve-catalog.py :8420', st: 'built',
+      d: 'Read and write. Localhost by default, --tailscale to opt in. Never public.' },
+    { t: 'Export', s: 'manifest + versioned JSON', st: 'planned',
+      d: '198 KB gzipped. Immutable filename, so it caches forever.' },
+    { t: 'Static host', s: 'Cloudflare Pages', st: 'planned',
+      d: 'Free tier. No server, no auth, nothing to keep running.' },
+    { t: 'iOS app', s: 'IWantUrPod/Resources/', st: 'planned',
+      d: 'Ships a snapshot so a cold install works offline, then refreshes when reachable.' },
+  ]},
+];
+
+const LAYERS = [
+  { t: 'Authored', s: 'you', st: 'built', d: 'Precious. Never overwritten by anything below.' },
+  { t: 'Proposed', s: 'the model', st: 'partial', d: 'Regenerable. Thrown away and redone freely.' },
+  { t: 'Detected', s: 'regex', st: 'built', d: 'Regenerable. Good at named series and counters.' },
+];
+
+function node(n) {
+  const b = el('div', 'node ' + n.st);
+  const h = el('div', 'node-h');
+  h.appendChild(el('span', 'node-t', n.t));
+  h.appendChild(el('span', 'dot ' + n.st));
+  b.appendChild(h);
+  b.appendChild(el('code', 'node-s', n.s));
+  b.appendChild(el('p', 'node-d', n.d));
+  return b;
+}
+
+function renderArchitecture() {
+  const view = $('#view');
+  view.replaceChildren();
+  $('#count').textContent = '';
+
+  const back = el('button', 'back', '← Catalog');
+  back.onclick = () => { state.page = null; openShow(null); };
+  view.appendChild(back);
+
+  view.appendChild(el('h1', 'dtitle', 'How this works'));
+  view.appendChild(el('p', 'ddesc',
+    'Three things propose structure over the catalog. One of them is you, and you win.'));
+
+  const legend = el('div', 'legend2');
+  [['built', 'built and running'], ['partial', 'partly built'], ['planned', 'not built yet']]
+    .forEach(([k, label]) => {
+      const s = el('span', 'lg');
+      s.appendChild(el('span', 'dot ' + k));
+      s.append(label);
+      legend.appendChild(s);
+    });
+  view.appendChild(legend);
+
+  // main pipeline
+  const flow = el('div', 'flow');
+  PIPELINE.forEach((col, i) => {
+    if (i) flow.appendChild(el('div', 'arrow', '→'));
+    const c = el('div', 'col');
+    c.appendChild(el('h3', 'col-h', col.head));
+    col.nodes.forEach(n => c.appendChild(node(n)));
+    flow.appendChild(c);
+  });
+  view.appendChild(flow);
+
+  view.appendChild(el('p', 'flow-note',
+    'Verdicts you record flow back into the store, so re-running a detector or the model can only '
+    + 'add candidates — never change a call you already made.'));
+
+  // merge rule
+  view.appendChild(sectionHead('The rule that makes it safe'));
+  const stack = el('div', 'stack');
+  LAYERS.forEach((l, i) => {
+    const row = el('div', 'layer ' + l.st);
+    row.appendChild(el('span', 'layer-rank', String(i + 1)));
+    const body = el('div');
+    body.appendChild(el('div', 'node-t', l.t + ' '));
+    body.appendChild(el('code', 'node-s', l.s));
+    body.appendChild(el('p', 'node-d', l.d));
+    row.appendChild(body);
+    stack.appendChild(row);
+  });
+  view.appendChild(stack);
+
+  // the two paths
+  view.appendChild(sectionHead('Two kinds of show'));
+  const two = el('div', 'twocol');
+  [
+    { t: 'A catalog show', st: 'built',
+      d: 'Radiolab, Swindled, the other 313. Arcs and themes are computed here, curated by you, '
+         + 'and shipped to the app as data. The app does no work.' },
+    { t: 'A feed you add yourself', st: 'built',
+      d: 'A premium or private feed — your TAL+ URL. It is not in the catalog and never will be, '
+         + 'so there is no data to ship. The app derives arcs on device with the same regex rules. '
+         + 'This is why the regex detector still has to be good.' },
+  ].forEach(x => {
+    const c = el('div', 'node ' + x.st);
+    const h = el('div', 'node-h');
+    h.appendChild(el('span', 'node-t', x.t));
+    h.appendChild(el('span', 'dot ' + x.st));
+    c.appendChild(h);
+    c.appendChild(el('p', 'node-d', x.d));
+    two.appendChild(c);
+  });
+  view.appendChild(two);
+
+  view.appendChild(el('p', 'hint',
+    'Full detail: docs/design/taxonomy-architecture.md'));
+}
+
+function sectionHead(title) {
+  const sec = el('div', 'sec');
+  sec.appendChild(el('h2', null, title));
+  return sec;
 }
 
 function themeCard(s, t, i, rec) {
