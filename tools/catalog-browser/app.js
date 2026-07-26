@@ -567,6 +567,148 @@ function themeCard(s, t, i, r) {
    open a show (milliseconds), and what happens on this machine to produce the data
    it reads (occasional, manual). Plus the rule that decides between them. */
 
+/* ---- flowchart renderer ----
+   Small on purpose: nodes carry absolute coordinates, edges are routed as either a
+   vertical elbow or a straight horizontal side-exit. Enough for a decision tree,
+   and it means no diagram library. Colours come from CSS vars so both themes work. */
+const SVGNS = 'http://www.w3.org/2000/svg';
+const svgEl = (t, attrs) => {
+  const n = document.createElementNS(SVGNS, t);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  return n;
+};
+
+function flowchart(spec) {
+  const svg = svgEl('svg', {
+    viewBox: `0 0 ${spec.w} ${spec.h}`, class: 'chart',
+    role: 'img', 'aria-label': spec.alt || 'flow diagram',
+  });
+  const defs = svgEl('defs');
+  ['arrow', 'arrow-dim'].forEach(id => {
+    const m = svgEl('marker', { id, viewBox: '0 0 10 10', refX: '9', refY: '5',
+      markerWidth: '6', markerHeight: '6', orient: 'auto-start-reverse' });
+    m.appendChild(svgEl('path', { d: 'M0,0 L10,5 L0,10 z', class: id }));
+    defs.appendChild(m);
+  });
+  svg.appendChild(defs);
+
+  const N = {};
+  spec.nodes.forEach(n => { N[n.id] = n; });
+  const left = n => n.cx - n.w / 2, right = n => n.cx + n.w / 2;
+  const bottom = n => n.y + n.h, midY = n => n.y + n.h / 2;
+
+  // edges first so boxes paint over the line ends
+  spec.edges.forEach(e => {
+    const a = N[e.from], b = N[e.to];
+    const g = svgEl('g', { class: 'edge' + (e.dim ? ' dim' : '') });
+    let d, lx, ly;
+    if (e.side) {
+      d = `M ${right(a)} ${midY(a)} H ${left(b)}`;
+      lx = (right(a) + left(b)) / 2; ly = midY(a) - 8;
+    } else if (Math.abs(a.cx - b.cx) < 1) {
+      d = `M ${a.cx} ${bottom(a)} V ${b.y}`;
+      lx = a.cx + 12; ly = (bottom(a) + b.y) / 2 + 4;
+    } else {
+      const my = bottom(a) + Math.max(16, (b.y - bottom(a)) / 2);
+      d = `M ${a.cx} ${bottom(a)} V ${my} H ${b.cx} V ${b.y}`;
+      // Sit the label over its own horizontal run, not at the split — otherwise the
+      // yes and no of one decision collide.
+      lx = (a.cx + b.cx) / 2; ly = my - 7;
+    }
+    g.appendChild(svgEl('path', { d, class: 'link', 'marker-end': `url(#${e.dim ? 'arrow-dim' : 'arrow'})` }));
+    if (e.label) {
+      const t = svgEl('text', { x: lx, y: ly, class: 'elabel',
+        'text-anchor': (e.side || Math.abs(a.cx - b.cx) > 1) ? 'middle' : 'start' });
+      t.textContent = e.label;
+      g.appendChild(t);
+    }
+    svg.appendChild(g);
+  });
+
+  spec.nodes.forEach(n => {
+    const g = svgEl('g', { class: 'node-g ' + n.kind });
+    if (n.kind === 'dec') {
+      g.appendChild(svgEl('polygon', { class: 'shape',
+        points: `${n.cx},${n.y} ${right(n)},${midY(n)} ${n.cx},${bottom(n)} ${left(n)},${midY(n)}` }));
+    } else {
+      g.appendChild(svgEl('rect', { class: 'shape', x: left(n), y: n.y, width: n.w, height: n.h,
+        rx: n.kind === 'start' ? n.h / 2 : 10 }));
+    }
+    const lines = n.lines || [n.label];
+    const lh = 15, startY = midY(n) - ((lines.length - 1) * lh) / 2 + 4;
+    lines.forEach((ln, i) => {
+      const mono = ln.startsWith('`');
+      const t = svgEl('text', { x: n.cx, y: startY + i * lh, 'text-anchor': 'middle',
+        class: 'nlabel' + (mono ? ' mono' : '') });
+      t.textContent = mono ? ln.replace(/`/g, '') : ln;
+      g.appendChild(t);
+    });
+    svg.appendChild(g);
+  });
+  return svg;
+}
+
+/* Every branch in PodcastDetailViewModel.load(), verbatim from the code. */
+const CHART_LOAD = {
+  w: 1180, h: 660, alt: 'Which data reaches the screen when a show is opened',
+  nodes: [
+    { id: 'start', cx: 472, y: 14, w: 230, h: 42, kind: 'start', label: 'You open a show' },
+    { id: 'loading', cx: 472, y: 82, w: 210, h: 36, kind: 'proc', lines: ['`state = .loading`'] },
+    { id: 'd1', cx: 472, y: 142, w: 268, h: 76, kind: 'dec', lines: ['Can the local', 'store be read?'] },
+    { id: 'errA', cx: 900, y: 158, w: 214, h: 46, kind: 'err', lines: ['.error — nothing shown'] },
+    { id: 'd2', cx: 472, y: 250, w: 300, h: 86, kind: 'dec', lines: ['Saved copy that', 'already has episodes?'] },
+    { id: 'storeR', cx: 197, y: 368, w: 290, h: 54, kind: 'ok', lines: ['.loaded(saved) — on screen', 'with no network at all'] },
+    { id: 'd3', cx: 197, y: 452, w: 250, h: 74, kind: 'dec', lines: ['Background', 'refresh OK?'] },
+    { id: 'keep', cx: 95, y: 562, w: 190, h: 58, kind: 'muted', lines: ['Nothing happens —', 'saved view stands'] },
+    { id: 'swap', cx: 300, y: 562, w: 190, h: 58, kind: 'ok', lines: ['.loaded(fresh)', 'swaps in'] },
+    { id: 'd4', cx: 748, y: 368, w: 244, h: 80, kind: 'dec', lines: ['Feed fetch OK?', '(you are waiting)'] },
+    { id: 'freshC', cx: 520, y: 562, w: 190, h: 58, kind: 'ok', lines: ['.loaded(fresh)'] },
+    { id: 'd5', cx: 975, y: 452, w: 234, h: 74, kind: 'dec', lines: ['Any saved row', 'at all?'] },
+    { id: 'emptyR', cx: 870, y: 562, w: 204, h: 66, kind: 'warn', lines: ['.loaded — but 0', 'episodes, so no shelf'] },
+    { id: 'errB', cx: 1090, y: 562, w: 168, h: 46, kind: 'err', lines: ['.error'] },
+  ],
+  edges: [
+    { from: 'start', to: 'loading' },
+    { from: 'loading', to: 'd1' },
+    { from: 'd1', to: 'errA', side: true, label: 'no', dim: true },
+    { from: 'd1', to: 'd2', label: 'yes' },
+    { from: 'd2', to: 'storeR', label: 'yes' },
+    { from: 'd2', to: 'd4', label: 'no' },
+    { from: 'storeR', to: 'd3' },
+    { from: 'd3', to: 'keep', label: 'no', dim: true },
+    { from: 'd3', to: 'swap', label: 'yes' },
+    { from: 'd4', to: 'freshC', label: 'yes' },
+    { from: 'd4', to: 'd5', label: 'no' },
+    { from: 'd5', to: 'emptyR', label: 'yes', dim: true },
+    { from: 'd5', to: 'errB', label: 'no', dim: true },
+  ],
+};
+
+/* Separate on purpose: this runs on EVERY render, not once per open. */
+const CHART_SHELF = {
+  w: 940, h: 500, alt: 'How the app decides whether to show the story arcs shelf',
+  nodes: [
+    { id: 'eps', cx: 250, y: 12, w: 280, h: 42, kind: 'start', label: 'Episodes are on screen' },
+    { id: 'derive', cx: 250, y: 78, w: 360, h: 56, kind: 'proc',
+      lines: ['`ArcDerivation.groupIntoArcs(episodes)`', 'every render — nothing cached'] },
+    { id: 'dA', cx: 250, y: 168, w: 230, h: 72, kind: 'dec', lines: ['Any arcs', 'came back?'] },
+    { id: 'hidden', cx: 680, y: 181, w: 250, h: 46, kind: 'muted', label: 'Shelf hidden entirely' },
+    { id: 'shelf', cx: 250, y: 274, w: 260, h: 48, kind: 'ok', label: 'Story arcs shelf shows' },
+    { id: 'dB', cx: 250, y: 348, w: 230, h: 72, kind: 'dec', lines: ['You tap', 'an arc card?'] },
+    { id: 'full', cx: 680, y: 361, w: 250, h: 46, kind: 'muted', label: 'Full episode list' },
+    { id: 'filt', cx: 250, y: 446, w: 330, h: 48, kind: 'ok', label: 'List filters + “Showing: … ✕”' },
+  ],
+  edges: [
+    { from: 'eps', to: 'derive' },
+    { from: 'derive', to: 'dA' },
+    { from: 'dA', to: 'hidden', side: true, label: 'no', dim: true },
+    { from: 'dA', to: 'shelf', label: 'yes' },
+    { from: 'shelf', to: 'dB' },
+    { from: 'dB', to: 'full', side: true, label: 'no', dim: true },
+    { from: 'dB', to: 'filt', label: 'yes' },
+  ],
+};
+
 const OPEN_STEPS = [
   { t: 'You tap a show', where: 'device', when: '0 ms',
     d: 'The detail screen appears and asks for the feed. Nothing is on screen yet.',
@@ -697,25 +839,24 @@ function renderSystem() {
 
   /* 1 — runtime */
   const s1 = sysHead('open', 'Opening a show',
-    'On the phone, in milliseconds. This is everything that happens between your tap and the shelf appearing.');
-  const steps = el('ol', 'steps');
-  OPEN_STEPS.forEach(st => {
-    const li = el('li', 'step');
-    const h = el('div', 'step-h');
-    h.appendChild(el('span', 'step-t', st.t));
-    const tags = el('span', 'step-tags');
-    tags.appendChild(el('span', 'tag ' + (st.where === 'network' ? 'warn' : ''), st.where === 'network' ? 'network' : 'on device'));
-    if (st.when) tags.appendChild(el('span', 'tag', st.when));
-    h.appendChild(tags);
-    li.appendChild(h);
-    li.appendChild(el('p', 'node-d', st.d));
-    li.appendChild(el('code', 'node-s', st.code));
-    steps.appendChild(li);
-  });
-  s1.appendChild(steps);
+    'Two things happen, and they are not the same thing. First the view model decides which '
+    + 'episodes reach the screen — that runs once per open and branches five ways. Then the view '
+    + 'decides whether an arcs shelf appears — that runs on every render.');
+
+  s1.appendChild(el('h3', 'sub-h', 'A · Which episodes reach the screen — PodcastDetailViewModel.load()'));
+  s1.appendChild(flowchart(CHART_LOAD));
   s1.appendChild(el('p', 'flow-note',
-    'Note what is absent: no server call, no arc lookup, no cache to invalidate. Today the phone '
-    + 'computes every arc itself, every time, from title text it already has.'));
+    'The left branch is the common one: open a show you have opened before and it paints from the '
+    + 'local store with no network on the critical path, then quietly refreshes. A failed refresh '
+    + 'there is swallowed — you are never shown an error over something you are already reading. '
+    + 'You only ever wait on the network down the right branch, when there is nothing saved to show.'));
+
+  s1.appendChild(el('h3', 'sub-h', 'B · Whether the arcs shelf appears — on every render'));
+  s1.appendChild(flowchart(CHART_SHELF));
+  s1.appendChild(el('p', 'flow-note',
+    'Arcs are a computed property, so this whole path re-runs each time the view draws. Nothing is '
+    + 'cached and nothing is looked up: no server call, no arc table, no cache to invalidate. The '
+    + 'phone groups the episodes itself, from title text it already has.'));
   view.appendChild(s1);
 
   /* 2 — precedence */

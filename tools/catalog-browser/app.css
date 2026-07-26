@@ -344,6 +344,27 @@ button, input, select { font: inherit; color: inherit; }
 .sub-h { font-family: var(--mono); font-size: .74rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .1em; color: var(--text-faint); margin: var(--sp-6) 0 var(--sp-3); }
 
+/* flowcharts — hand-rolled SVG, themed through CSS vars */
+.chart { width: 100%; max-width: 74rem; height: auto; display: block;
+  margin: 0 0 var(--sp-3); overflow: visible; }
+.chart .shape { fill: var(--surface); stroke: var(--separator); stroke-width: 1.2; }
+.chart .start .shape { fill: color-mix(in srgb, var(--accent) 16%, var(--surface)); stroke: var(--accent); }
+.chart .dec .shape { fill: var(--surface-2); stroke: var(--text-faint); }
+.chart .ok .shape { fill: color-mix(in srgb, var(--ok) 15%, var(--surface)); stroke: var(--ok); }
+.chart .err .shape { fill: color-mix(in srgb, var(--bad) 14%, var(--surface)); stroke: var(--bad); }
+.chart .warn .shape { fill: color-mix(in srgb, var(--meh) 14%, var(--surface)); stroke: var(--meh); }
+.chart .muted .shape { fill: none; stroke: var(--separator); stroke-dasharray: 4 4; }
+.chart .nlabel { font-family: var(--font); font-size: 12.5px; font-weight: 700;
+  fill: var(--text); letter-spacing: -.01em; }
+.chart .nlabel.mono { font-family: var(--mono); font-size: 11.5px; font-weight: 400; fill: var(--accent); }
+.chart .muted .nlabel, .chart .dec .nlabel { font-weight: 600; }
+.chart .muted .nlabel { fill: var(--text-dim); }
+.chart .link { fill: none; stroke: var(--text-faint); stroke-width: 1.4; }
+.chart .edge.dim .link { stroke: var(--separator); stroke-dasharray: 5 4; }
+.chart .arrow { fill: var(--text-faint); }
+.chart .arrow-dim { fill: var(--separator); }
+.chart .elabel { font-family: var(--mono); font-size: 11px; font-weight: 700; fill: var(--text-faint); }
+
 /* runtime sequence — numbered, because order is the whole point */
 .steps { list-style: none; counter-reset: s; margin: 0; padding: 0;
   display: flex; flex-direction: column; gap: var(--sp-2); max-width: 56rem; }
