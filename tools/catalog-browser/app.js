@@ -19,7 +19,7 @@ const el = (t, c, x) => { const n = document.createElement(t); if (c) n.classNam
 const state = {
   data: null, verdicts: {},
   mode: 'browse', slug: null,
-  f: { rule: null, feed: null, review: null, cat: '' },
+  f: { rule: null, feed: null, review: null, cat: '', conf: null },
   q: '', cursor: 0, qi: 0, arc: null, theme: null,
 };
 
@@ -84,8 +84,9 @@ function matches(s, q) {
 
 function visible() {
   const q = state.q.trim().toLowerCase();
-  const { rule, feed, review, cat } = state.f;
+  const { rule, feed, review, cat, conf } = state.f;
   return state.data.shows.filter(s => {
+    if (conf && !(s.conf && s.conf[conf])) return false;
     if (cat && s.category !== cat) return false;
     if (feed && (s.small ? s.small.key : 'normal') !== feed) return false;
     if (review && showState(s) !== review) return false;
@@ -189,6 +190,17 @@ function renderFacets(mode) {
   const set = (k, v) => { state.f[k] = v; state.cursor = 0; state.qi = 0; render(); };
   const count = fn => shows.filter(fn).length;
 
+  // How sure the model was. Only model-proposed themes carry this — regex arcs have no
+  // confidence to report, so the group hides itself until some show has one.
+  const conf = k => shows.reduce((n, s) => n + ((s.conf && s.conf[k]) || 0), 0);
+  if (conf('l') + conf('m') + conf('h')) {
+    box.appendChild(facetGroup('Model confidence', [
+      ['l', 'Low', conf('l')],
+      ['m', 'Medium', conf('m')],
+      ['h', 'High', conf('h')],
+    ], state.f.conf, v => set('conf', v)));
+  }
+
   box.appendChild(facetGroup('Review state', [
     ['todo', 'Not started', count(s => showState(s) === 'todo')],
     ['mixed', 'Part-judged', count(s => showState(s) === 'mixed')],
@@ -223,9 +235,9 @@ function renderFacets(mode) {
   g.appendChild(sel);
   box.appendChild(g);
 
-  if (state.f.rule || state.f.feed || state.f.review || state.f.cat) {
+  if (state.f.rule || state.f.feed || state.f.review || state.f.cat || state.f.conf) {
     const clear = el('button', 'facet-clear', 'Clear filters');
-    clear.onclick = () => { state.f = { rule: null, feed: null, review: null, cat: '' };
+    clear.onclick = () => { state.f = { rule: null, feed: null, review: null, cat: '', conf: null };
       state.cursor = 0; state.qi = 0; render(); };
     box.appendChild(clear);
   }
@@ -479,14 +491,23 @@ function renderDetail() {
 
   const esec = el('div', 'sec');
   esec.appendChild(el('h2', null, 'Episodes'));
+  // A confidence filter narrows the episode list too, so picking "Low" and opening a show
+  // lands you on exactly the rows worth a second look.
   const shown = state.arc != null ? s.eps.filter(e => e[4] === state.arc)
-              : state.theme != null ? s.eps.filter(e => e[5] === state.theme) : s.eps;
+              : state.theme != null ? s.eps.filter(e => e[5] === state.theme)
+              : state.f.conf ? s.eps.filter(e => e[6] === state.f.conf) : s.eps;
   esec.appendChild(el('span', 'count', String(shown.length)));
   esec.appendChild(el('div', 'spacer'));
-  if (state.arc != null || state.theme != null) {
-    const label = state.arc != null ? s.arcs[state.arc].n : s.themes_vocab[state.theme].n;
+  if (state.arc != null || state.theme != null || state.f.conf) {
+    const label = state.arc != null ? s.arcs[state.arc].n
+                : state.theme != null ? s.themes_vocab[state.theme].n
+                : ({ l: 'Low', m: 'Medium', h: 'High' })[state.f.conf] + ' confidence';
     const f = el('button', 'ep-filter', `Showing: ${label}  ✕`);
-    f.onclick = () => { state.arc = state.theme = null; renderDetail(); };
+    f.onclick = () => {
+      state.arc = state.theme = null;
+      if (!(state.arc != null || state.theme != null)) state.f.conf = null;
+      render();
+    };
     esec.appendChild(f);
   }
   view.appendChild(esec);
@@ -501,7 +522,10 @@ function renderDetail() {
       body.appendChild(el('span', 'ep-arc ep-theme', s.themes_vocab[e[5]].n));
     body.append(e[0]);
     row.appendChild(body);
-    const tag = el('span');
+    const tag = el('span', 'ep-tags');
+    if (e[6] === 'l' || e[6] === 'm')
+      tag.appendChild(el('span', 'tag ' + (e[6] === 'l' ? 'conf-l' : 'conf-m'),
+        e[6] === 'l' ? 'low' : 'med'));
     if (e[3]) tag.appendChild(el('span', 'tag', e[3]));
     else if (e[2] != null) tag.appendChild(el('span', 'tag', 'S' + e[2]));
     row.appendChild(tag);

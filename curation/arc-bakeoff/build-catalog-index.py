@@ -172,7 +172,8 @@ def load_episode_themes(slug):
     by_guid = {}
     for ep in data.get("episodes", []):
         by_guid[ep["guid"]] = (idx.get(ep.get("primary"), -1),
-                               [idx[s] for s in (ep.get("secondary") or []) if s in idx])
+                               [idx[s] for s in (ep.get("secondary") or []) if s in idx],
+                               (ep.get("confidence") or "")[:1])   # h | m | l
     return data, by_guid
 
 
@@ -377,11 +378,14 @@ def main():
                              for v in (ep_themes or {}).get("vocabulary", [])],
             "themes_meta": {"agreement": (ep_themes or {}).get("agreement", {}),
                             "models": (ep_themes or {}).get("models", {})} if ep_themes else None,
-            # [title, date, season, non-full type, arc index or -1, theme index or -1]
+            # how sure the model was, so the shaky handful can be found and scanned
+            "conf": collections.Counter(v[2] for v in theme_of.values() if v[2]) or None,
+            # [title, date, season, non-full type, arc index or -1, theme index or -1, confidence]
             "eps": [[e["title"][:TITLE_CAP], e["iso"], e["season"],
                      "" if e["episodeType"] == "full" else e["episodeType"],
                      arc_of.get(e["guid"], -1),
-                     theme_of.get(e["guid"], (-1, []))[0]] for e in keep],
+                     theme_of.get(e["guid"], (-1, [], ""))[0],
+                     theme_of.get(e["guid"], (-1, [], ""))[2]] for e in keep],
         })
 
     if unmatched:

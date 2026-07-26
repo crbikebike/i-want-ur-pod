@@ -205,6 +205,9 @@ button, input, select { font: inherit; color: inherit; }
 .tag.struct { color: var(--accent-2); background: color-mix(in srgb, var(--accent-2) 15%, transparent); }
 .tag.warn { color: var(--meh); background: color-mix(in srgb, var(--meh) 18%, transparent); }
 .tag.none { color: var(--text-faint); }
+.tag.conf-l { color: var(--bad); background: color-mix(in srgb, var(--bad) 18%, transparent); }
+.tag.conf-m { color: var(--meh); background: color-mix(in srgb, var(--meh) 18%, transparent); }
+.ep-tags { display: inline-flex; gap: 4px; align-items: baseline; }
 
 /* ============ review queue ============ */
 .queue { max-width: 62rem; }
