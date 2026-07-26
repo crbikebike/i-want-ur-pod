@@ -476,6 +476,10 @@ SLUG_ALIASES = {
     "corporate-power": "monopoly-and-market-power",
     "international-cooperation": "war-and-its-conduct",
     "psychological-belief": "psychology-of-belief",
+    "workplace-conditions": "work-and-labour-conditions",
+    "work-conditions": "work-and-labour-conditions",
+    "aging-and-mortality": "ageing-and-mortality",
+    "organised-crime-industry": "organised-crime",
     "crime": "",
 }
 
@@ -493,6 +497,12 @@ def parse_assign_dir(subdir):
             if not line or line.startswith("#"):
                 continue
             f = line.split("\t")
+            # Some agents echo the batch's segment column back, shifting every field
+            # right by one: slug, i, "-", primary, confidence. Detect it by the
+            # confidence landing where a theme should be, and drop the stray column.
+            if len(f) >= 5 and f[4].strip().lower() in ("high", "medium", "low") \
+                    and f[3].strip().lower() not in ("high", "medium", "low"):
+                f = [f[0], f[1]] + f[3:]
             if len(f) < 4:
                 bad += 1
                 continue
