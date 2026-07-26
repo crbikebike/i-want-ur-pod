@@ -41,3 +41,10 @@ curation/arc-bakeoff/memprec-*.json
 curation/arc-bakeoff/verdicts-*.json
 curation/arc-bakeoff/_adj_*.json
 curation/arc-bakeoff/gold_manifest.json
+
+# --- catalog browser: generated data (embeds the gitignored corpus) ---------
+# human-verdicts.json is deliberately NOT ignored -- it is the human output and
+# the whole point of the tool. Note curation/arc-bakeoff/verdicts-*.json above
+# already matches a different, machine-generated file; don't rename into it.
+curation/arc-bakeoff/catalog-index.json
+curation/arc-bakeoff/gold-human.json

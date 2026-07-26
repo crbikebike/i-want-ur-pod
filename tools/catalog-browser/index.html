@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalog · arcs</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">i want ur pod <span>· arcs</span></div>
+    <div class="totals" id="totals"></div>
+    <button class="filters-toggle" id="filters" aria-expanded="false" aria-controls="patterns">Filters</button>
+    <nav id="patterns" aria-label="Filter by detection pattern"></nav>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <input class="search" id="q" type="search" placeholder="Search shows…" aria-label="Search shows">
+      <select class="cat" id="cat" aria-label="Filter by category"></select>
+      <span class="result-count" id="count"></span>
+      <button class="icon-btn" id="theme" aria-label="Toggle light and dark">◐</button>
+    </div>
+    <div class="view" id="view"><p class="empty">Loading…</p></div>
+  </main>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
