@@ -4,7 +4,7 @@
 
 The on-device regex taxonomy answered its question: yes, you can group episodes into arcs on the fly, for about 30% of them. That proved the browsing experience works — users said it beats every other podcast app at finding things. But 30% coverage can't carry the product, and the reason isn't the detector. It's that the data underneath was never designed.
 
-Today the catalog is 329 loose JSON files. The taxonomy exists in three unconnected places: 30 show-level themes, a separate fine-grained episode vocabulary, and regex arc labels. Nothing shares an identity. The app reads a flattened snapshot that throws most of it away. Two catalog entries are limited series pointed at their parent show's RSS feed, so they claim 700 episodes each. That is the convolution — a data model problem wearing a Swift costume.
+Today the catalog is hundreds of loose JSON files. The taxonomy exists in three unconnected places: 30 show-level themes, a separate fine-grained episode vocabulary, and regex arc labels. Nothing shares an identity. The app reads a flattened snapshot that throws most of it away. Two catalog entries are limited series pointed at their parent show's RSS feed, so they claim 700 episodes each. That is the convolution — a data model problem wearing a Swift costume.
 
 This program starts over on the data. It builds one permanent, queryable catalog with a graph on top, an admin tool to keep it good, and a React app that works on web, iOS, and Android from one codebase.
 
@@ -117,8 +117,11 @@ Each phase gets its own spec and plan, written when it starts — not now. Phase
 Build the schema, migrate everything, build the edges, prove the queries.
 
 **Gate:**
-- All 310 shows and ~27,600 episodes migrated. Zero orphans.
-- Fine episode vocabulary extracted and every term mapped to one of the 30 parents.
+- All 315 catalog shows migrated. All 27,444 labelled episodes across 303 shows migrated.
+  Zero orphans. The 12 shows with no episode labels are recorded as depth 1, not dropped.
+- All 148 fine themes carry a tier-1 parent. 36 already have one in
+  `_vocabulary.json`'s `relatedShowThemes`; 5 more resolve by same-slug match; the
+  remaining ~107 are mapped LLM-assisted and reviewed.
 - Edges built. Traversal under 50ms on device-class hardware.
 - Three named queries return rows a human agrees with:
   - **next-thing** — given a show or arc, 3 unrelated shows that scratch the same itch
