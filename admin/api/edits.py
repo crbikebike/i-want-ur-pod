@@ -44,6 +44,8 @@ WRITABLE: dict[str, tuple[str, set[str]]] = {
                              # the fit assessment: a model's opinion, not a verdict
                              "fit_verdict", "fit_confidence", "fit_reason",
                              "fit_checked_at", "fit_model",
+                             # when a show was last read for story arcs, and by what
+                             "arcs_checked_at", "arcs_checked_by", "arcs_checked_eps",
                              # Re-matching a show that was pointed at the wrong podcast
                              # has to change these. Unlike slug and guid, nothing else
                              # references them, and the partial unique index still
