@@ -181,28 +181,32 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- what is on the sheet ---------- */
 
-.flag {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  background: var(--brick-wash);
-  border-left: 3px solid var(--brick);
+/* A margin note, in the tone the thing deserves. `warn` is a real problem needing a
+   decision; `info` is something worth knowing that is nobody's fault -- showing
+   cross-promotion in red sent Chris toward cutting a show that should be kept. */
+.note {
   border-radius: var(--r-sm);
-  padding: 11px 13px;
+  padding: 10px 13px 11px;
   font-size: 14px;
   color: var(--ink);
 }
-.flag b {
+.note p { margin: 0; }
+.note.warn { background: var(--brick-wash); border-left: 3px solid var(--brick); }
+.note.info { background: var(--cement-wash); border-left: 3px solid var(--cement); }
+
+.note b {
+  display: block;
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--brick);
   font-weight: 400;
-  padding-top: 3px;
-  white-space: nowrap;
+  margin-bottom: 4px;
 }
-.flag ul { margin: 0; padding-left: 16px; color: var(--ink-soft); }
+.note.warn b { color: var(--brick); }
+.note.info b { color: var(--cement); }
+
+.note .means { color: var(--ink-soft); font-size: 13px; margin-top: 3px; }
 
 .top { display: flex; gap: 14px; align-items: flex-start; }
 .art {

@@ -31,23 +31,9 @@ from catalog.build.normalize import normalize_feed_url, slugify
 
 RUN_ID = "2026-07-theming"
 
-# Shows whose feed demonstrably belongs to a different programme, where guid-overlap
-# detection cannot help because the parent show is not in the catalog at all. Flagged
-# for the Phase 2 inclusion queue rather than guessed at here.
-#
-# "Fake Diana: Case of the Missing Blue Diamond" is catalogued as a limited series but
-# its feed returns 722 episodes of an ongoing numbered true-crime show ("692 // ...").
-# "Serial (Season 1)" is not Serial. Its feed is an RSS-parser test fixture on an S3
-# bucket, with episodes titled "No Summary" and "Only Item Description with CDATA". All
-# seven were theme-labelled anyway.
-EXPLICIT_SUSPECTS = {
-    "Fake Diana: Case of the Missing Blue Diamond": "feed returns an unrelated ongoing show",
-    "Serial (Season 1)": "feed is an RSS-parser test fixture, not a podcast",
-    # Catalogued as Goalhanger's history series, but feeds.megaphone.fm/empire serves the
-    # crypto show of the same name -- 657 episodes of finance news, theme-labelled as
-    # narrative history. A title collision, not a duplicate feed.
-    "Empire": "feed serves a different show with the same name (crypto, not history)",
-}
+# Shows whose feed serves a different programme than the row claims. The list lives in
+# admin/api/suspects.py so the workbench can explain each one rather than just flag it.
+from admin.api.suspects import EXPLICIT_SUSPECTS  # noqa: E402
 
 # Language is detected from EPISODE TITLES, not from the show description: descriptions
 # in catalog.json were written by the curator in English, so they say nothing about the

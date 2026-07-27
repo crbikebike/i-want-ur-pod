@@ -85,45 +85,106 @@ def inclusion_counts(conn: sqlite3.Connection) -> dict:
     }
 
 
-def _evidence(conn: sqlite3.Connection, show_id: int) -> list[str]:
-    """Why this show was flagged. Empty for shows nobody has doubted.
+def _note(conn: sqlite3.Connection, show_id: int) -> dict | None:
+    """Why a show was flagged, and -- the part that matters -- what it means for you.
 
-    Read from the import's note in `edits` rather than recomputed, so the reason a human
-    sees is the reason the importer actually had.
+    The first version stated facts and stopped: "7 episodes are also in The Loop". True,
+    and useless. It does not say what The Loop is, whether either show is at fault, or
+    which button that implies. Chris read it and could not act on it, which is the only
+    test a warning has to pass.
+
+    There are three different problems wearing one red badge, and only two of them are
+    inclusion questions:
+
+      duplicate-entry   Two catalogue rows point at one feed. One is a season or limited
+                        series filed as though it were its own programme. A real
+                        keep/cut: keep the parent, cut the child.
+
+      cross-promotion   Different feeds, overlapping episodes. A show ran a sibling
+                        series in its main feed to give it an audience -- Ear Hustle
+                        carried all seven episodes of The Loop. Both shows are real and
+                        both should be kept. Not an inclusion question at all; the
+                        double-counted episodes belong to the duplicates queue.
+
+      wrong-feed        The feed serves a different programme than the row claims.
+                        Something is broken and it is not a matter of taste.
     """
-    slug = conn.execute("SELECT slug FROM shows WHERE id = ?", (show_id,)).fetchone()
-    if not slug:
-        return []
-    slug = slug[0]
+    row = conn.execute(
+        "SELECT title, feed_url, include_verdict FROM shows WHERE id = ?", (show_id,)
+    ).fetchone()
+    if not row or row[2] != "suspect":
+        return None
+    title, feed_url, _ = row
 
-    out = []
-    shares = conn.execute(
-        """
-        SELECT group_concat(other.title, ' · ')
-        FROM shows me JOIN shows other
-          ON other.feed_url = me.feed_url AND other.id != me.id AND other.deleted_at IS NULL
-        WHERE me.id = ?
-        """,
-        (show_id,),
-    ).fetchone()[0]
-    if shares:
-        out.append(f"Shares its feed with {shares}")
+    # 1. Same feed as another row.
+    peers = [
+        r[0] for r in conn.execute(
+            "SELECT title FROM shows WHERE feed_url = ? AND id != ? AND deleted_at IS NULL",
+            (feed_url, show_id),
+        )
+    ]
+    if peers:
+        other = peers[0]
+        child = ":" in title or "presents" in title.lower() or title.startswith(other)
+        return {
+            "kind": "duplicate-entry",
+            "tone": "warn",
+            "label": "Same feed",
+            "detail": [f"{title} and {other} are the same feed."],
+            "meaning": (
+                "One of them is a duplicate — probably a season filed as its own show. "
+                "Keep the parent, cut the other. Nothing is destroyed."
+                if child else
+                "They may genuinely be two programmes a publisher shipped together. "
+                "If so, keep both."
+            ),
+        }
 
+    # 2. Different feeds, shared episodes.
     overlap = conn.execute(
         """
         SELECT other.title, count(*) n
         FROM episodes mine
         JOIN episodes theirs ON theirs.guid = mine.guid AND theirs.show_id != mine.show_id
         JOIN shows other ON other.id = theirs.show_id AND other.deleted_at IS NULL
-        WHERE mine.show_id = ?
-        GROUP BY other.id HAVING n > 2 ORDER BY n DESC LIMIT 2
+        WHERE mine.show_id = ? AND mine.deleted_at IS NULL
+        GROUP BY other.id HAVING n > 2 ORDER BY n DESC LIMIT 1
         """,
         (show_id,),
-    ).fetchall()
-    for title, n in overlap:
-        out.append(f"{n} episodes are also in {title}")
+    ).fetchone()
+    if overlap:
+        other, n = overlap
+        return {
+            "kind": "cross-promotion",
+            "tone": "info",
+            "label": "Shares episodes",
+            "detail": [f"{n} episodes appear in both this and {other}, on separate feeds."],
+            "meaning": (
+                "Normal cross-promotion. Both are real shows — keep both. The doubled "
+                "episodes get sorted elsewhere."
+            ),
+        }
 
-    return out
+    # 3. Flagged at import for a reason the feed itself gives away.
+    from admin.api.suspects import EXPLICIT_SUSPECTS
+
+    reason = EXPLICIT_SUSPECTS.get(title)
+    if reason:
+        return {
+            "kind": "wrong-feed",
+            "tone": "warn",
+            "label": "Wrong feed",
+            "detail": [reason.capitalize() + "."],
+            "meaning": "The row and the feed are different shows. Cut it; the feed gets fixed separately.",
+        }
+
+    return {
+        "kind": "unclear",
+        "tone": "info",
+        "label": "Flagged at import",
+        "detail": ["The importer was unsure but did not say why."],
+        "meaning": "Judge it on its merits.",
+    }
 
 
 def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -> dict | None:
@@ -192,7 +253,7 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
         "themes": themes,
         "subjects": subjects,
         "flagged": verdict == "suspect",
-        "evidence": _evidence(conn, show_id) if verdict == "suspect" else [],
+        "note": _note(conn, show_id),
     }
 
 

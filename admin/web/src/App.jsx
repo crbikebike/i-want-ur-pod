@@ -154,7 +154,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="head">
-        <h1>Does it belong?</h1>
+        <h1>Keep or Cut</h1>
         {counts && (
           <div className="left">
             <b>{counts.waiting}</b> to go
@@ -212,12 +212,6 @@ function Verdict({ kind, label, keys, onPick, disabled }) {
 function Card({ show, leaving }) {
   return (
     <article className={`card arriving ${leaving ? `leaving ${leaving}` : ""}`}>
-      {show.flagged && show.evidence.length > 0 && (
-        <div className="flag">
-          <b>Flagged</b>
-          <ul>{show.evidence.map((e) => <li key={e}>{e}</li>)}</ul>
-        </div>
-      )}
 
       <div className="top">
         {/* Artwork is a nice-to-have and 20 shows have none. A broken-image box would
@@ -238,6 +232,14 @@ function Card({ show, leaving }) {
           </p>
         </div>
       </div>
+
+      {show.note && (
+        <div className={`note ${show.note.tone}`}>
+          <b>{show.note.label}</b>
+          {show.note.detail.map((d) => <p key={d}>{d}</p>)}
+          <p className="means">{show.note.meaning}</p>
+        </div>
+      )}
 
       {show.pitch && <p className="pitch">{show.pitch}</p>}
       {show.description && <p className="blurb">{show.description}</p>}

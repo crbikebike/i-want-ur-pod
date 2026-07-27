@@ -158,31 +158,56 @@ def test_recent_episodes_are_newest_first(db):
     assert queues.inclusion_next(db)["recentEpisodes"][0] == "A ep 5"
 
 
-def test_an_ordinary_show_carries_no_evidence(db):
+def test_an_ordinary_show_carries_no_note(db):
     add_show(db, "a", "A")
-    assert queues.inclusion_next(db)["evidence"] == []
-    assert queues.inclusion_next(db)["flagged"] is False
+    item = queues.inclusion_next(db)
+    assert item["note"] is None
+    assert item["flagged"] is False
 
 
-def test_a_shared_feed_is_explained_on_the_card(db):
-    """The 16 flagged shows must say why, or the flag is just an accusation."""
+def test_a_shared_feed_says_one_of_them_is_a_duplicate(db):
+    """A warning that states a fact and stops is not actionable. It has to say which
+    button that implies."""
     add_show(db, "slow-burn", "Slow Burn", feed="http://shared")
     add_show(db, "slow-burn-biggie", "Slow Burn: Biggie & Tupac",
              verdict="suspect", feed="http://shared")
-    item = queues.inclusion_next(db)
-    assert item["flagged"] is True
-    assert any("Shares its feed with Slow Burn" in e for e in item["evidence"])
+    note = queues.inclusion_next(db)["note"]
+    assert note["kind"] == "duplicate-entry"
+    assert note["tone"] == "warn"
+    assert "Slow Burn" in note["detail"][0]
+    assert "duplicate" in note["meaning"] and "Keep the parent" in note["meaning"]
 
 
-def test_overlapping_episodes_are_explained(db):
-    a = add_show(db, "turning", "The Turning", episodes=6)
-    b = add_show(db, "turning-sisters", "The Turning: The Sisters", verdict="suspect")
+def test_cross_promotion_is_not_dressed_up_as_a_problem(db):
+    """Ear Hustle carried all seven episodes of The Loop. Both are real shows and both
+    should be kept -- showing that in red sends you to the wrong decision."""
+    a = add_show(db, "ear-hustle", "Ear Hustle", episodes=6, feed="http://eh")
+    b = add_show(db, "loop", "The Loop", verdict="suspect", feed="http://loop")
     for i in range(6):
         db.execute("INSERT INTO episodes (show_id, guid, title) VALUES (?,?,?)",
-                   (b, f"turning-{i}", f"dup {i}"))
+                   (b, f"ear-hustle-{i}", f"The Loop Ep. {i}"))
     db.commit()
-    item = queues.inclusion_next(db)
-    assert any("also in The Turning" in e for e in item["evidence"])
+    note = queues.inclusion_next(db)["note"]
+    assert note["kind"] == "cross-promotion"
+    assert note["tone"] == "info"
+    assert "Ear Hustle" in note["detail"][0]
+    assert "keep both" in note["meaning"].lower()
+
+
+def test_a_wrong_feed_says_what_the_feed_actually_serves(db):
+    """Empire is catalogued as Goalhanger's history series; the feed is a crypto show."""
+    add_show(db, "empire", "Empire", verdict="suspect")
+    note = queues.inclusion_next(db)["note"]
+    assert note["kind"] == "wrong-feed"
+    assert note["tone"] == "warn"
+    assert "crypto" in note["detail"][0]
+
+
+def test_every_note_says_what_it_means_for_the_decision(db):
+    """The whole point. A note without a `meaning` is the old useless warning."""
+    add_show(db, "a", "A", verdict="suspect")
+    note = queues.inclusion_next(db)["note"]
+    assert note["meaning"] and len(note["meaning"]) > 20
 
 
 def test_soft_deleted_episodes_are_not_counted(db):
