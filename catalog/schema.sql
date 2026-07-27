@@ -73,9 +73,9 @@ CREATE TABLE episodes (
   -- GUIDs are only unique within a feed, never globally.
   guid           TEXT NOT NULL,
   title          TEXT NOT NULL,
-  -- The title with its arc/segment prefix stripped: "American Revolution | Saratoga | 4"
-  -- has subject "Saratoga | 4".
-  subject        TEXT,
+  -- No stored "title minus the arc prefix" column. It was called `subject`, which now
+  -- means something else entirely, and it is derivable from title + the arc name at
+  -- display time -- so storing it only created something that could drift.
   season         INTEGER,
   episode_number INTEGER,
   episode_type   TEXT,
@@ -95,21 +95,40 @@ CREATE TABLE episodes (
 CREATE INDEX episodes_by_show ON episodes (show_id, published_at DESC);
 CREATE INDEX episodes_by_arc  ON episodes (arc_id);
 
+-- The vocabulary has two levels with two names.
+--
+--   THEME   the 30 broad, hand-authored categories. This is the browsable layer -- the
+--           deck a person swipes -- and it is what a whole SHOW is tagged with.
+--   SUBJECT the 148 finer labels. This is what an individual EPISODE is about, and every
+--           subject rolls up to exactly one theme.
+--
+-- Two tables rather than one self-referencing table with a tier column, which is what
+-- this was first. Splitting them makes `slug` plainly unique in each namespace -- five
+-- slugs (political-scandal, institutional-coverup, police-misconduct,
+-- wrongful-conviction, family-secret) legitimately exist at both levels, and a shared
+-- table needed a composite key and a CHECK constraint to express what a NOT NULL foreign
+-- key now says by itself.
+--
+-- Not called "category": shows.apple_category is a different thing (Apple's directory
+-- taxonomy) and the two would be confused constantly.
 CREATE TABLE themes (
   id          INTEGER PRIMARY KEY,
-  slug        TEXT NOT NULL,
-  tier        INTEGER NOT NULL CHECK (tier IN (1,2)),
+  slug        TEXT NOT NULL UNIQUE,
+  name        TEXT NOT NULL,
+  description TEXT
+);
+
+CREATE TABLE subjects (
+  id          INTEGER PRIMARY KEY,
+  slug        TEXT NOT NULL UNIQUE,
   name        TEXT NOT NULL,
   description TEXT,
-  parent_id   INTEGER REFERENCES themes(id),
-  -- NOT unique on slug alone. Five slugs legitimately exist at both levels
-  -- (political-scandal, institutional-coverup, police-misconduct, wrongful-conviction,
-  -- family-secret) and a slug-only key would silently collapse them.
-  UNIQUE (tier, slug),
-  -- The two-tier promise, enforced by the database rather than by convention: a tier-2
-  -- theme without a parent cannot be inserted.
-  CHECK ((tier = 1 AND parent_id IS NULL) OR (tier = 2 AND parent_id IS NOT NULL))
+  -- Every subject belongs to a theme. This is the two-tier promise, and it is now just a
+  -- NOT NULL foreign key: an unparented subject cannot be inserted.
+  theme_id    INTEGER NOT NULL REFERENCES themes(id)
 );
+
+CREATE INDEX subjects_by_theme ON subjects (theme_id);
 
 CREATE TABLE people (
   id   INTEGER PRIMARY KEY,
@@ -118,7 +137,10 @@ CREATE TABLE people (
   role TEXT
 );
 
-CREATE TABLE subjects (
+-- Real-world things a story is about: the case, the company, the person investigated, the
+-- place, the era. Populated in Phase 3. Named `entities` rather than `subjects` because
+-- Subject now means the episode-level vocabulary above.
+CREATE TABLE entities (
   id   INTEGER PRIMARY KEY,
   slug TEXT NOT NULL UNIQUE,
   name TEXT NOT NULL,
@@ -131,9 +153,11 @@ CREATE TABLE show_themes (
   PRIMARY KEY (show_id, theme_id)
 );
 
-CREATE TABLE episode_themes (
+-- Episodes carry subjects, not themes. A show's theme is the broad promise; an episode's
+-- subject is what that particular episode is actually about.
+CREATE TABLE episode_subjects (
   episode_id INTEGER NOT NULL REFERENCES episodes(id),
-  theme_id   INTEGER NOT NULL REFERENCES themes(id),
+  subject_id INTEGER NOT NULL REFERENCES subjects(id),
   role       TEXT NOT NULL CHECK (role IN ('primary','secondary')),
   confidence TEXT NOT NULL CHECK (confidence IN ('low','medium','high')),
   -- Votes agreeing. NULL for the 2026-07 Haiku run, which recorded agreement per show
@@ -141,10 +165,10 @@ CREATE TABLE episode_themes (
   agreement  INTEGER,
   model      TEXT,
   run_id     TEXT,
-  PRIMARY KEY (episode_id, theme_id)
+  PRIMARY KEY (episode_id, subject_id)
 );
 
-CREATE INDEX episode_themes_by_theme ON episode_themes (theme_id, confidence);
+CREATE INDEX episode_subjects_by_subject ON episode_subjects (subject_id, confidence);
 
 -- The traversal layer. Entirely derived from the tables above, so it is always safe to
 -- delete and rebuild.
@@ -172,7 +196,8 @@ CREATE INDEX edges_in  ON edges (dst_type, dst_id, kind, weight DESC);
 -- would silently land on a different row next time. entity_key formats:
 --
 --   show     <show-slug>
---   theme    <tier>:<theme-slug>          -- tier matters; 5 slugs exist at both
+--   theme    <theme-slug>
+--   subject  <subject-slug>
 --   arc      <show-slug>/<arc-slug>
 --   episode  <show-slug>/<guid>
 --   catalog  ''                           -- build-wide notes, not replayable
@@ -180,7 +205,8 @@ CREATE TABLE edits (
   id          INTEGER PRIMARY KEY,
   at          TEXT NOT NULL,
   actor       TEXT NOT NULL,
-  entity_type TEXT NOT NULL CHECK (entity_type IN ('show','theme','arc','episode','catalog')),
+  entity_type TEXT NOT NULL
+              CHECK (entity_type IN ('show','theme','subject','arc','episode','catalog')),
   entity_key  TEXT NOT NULL,
   field       TEXT NOT NULL,
   before      TEXT,
@@ -210,7 +236,6 @@ CREATE TABLE releases (
 -- description.
 CREATE VIRTUAL TABLE search USING fts5(
   title,
-  subject,
   description,
   show_title,
   content = '',

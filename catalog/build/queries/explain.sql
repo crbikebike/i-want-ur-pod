@@ -11,6 +11,11 @@
 -- History, Retold" -- true, but it never said what the two shows had in between, so it
 -- explained nothing.
 --
+-- Node labels come from CASE + primary-key subqueries rather than a UNION ALL of every
+-- named table. The union version had to materialize 1,292 rows on every call and took the
+-- worst case to 40 ms of a 50 ms budget; indexed PK lookups do the same job for a handful
+-- of rows actually on the path.
+--
 -- Written as three explicit joins rather than a recursive walk. A recursive CTE explores
 -- every path from the source before checking whether any reached the target: with ~20
 -- edges per node that is 20^3 partial paths, each doing string concatenation and a
@@ -26,14 +31,6 @@ WITH ends AS (
     (SELECT id FROM shows WHERE slug = :to_slug)   AS dst
 ),
 
--- A node's display name, whatever type it is. This is the price of a generic edges
--- table, and it buys paths through node types no hand-written join anticipated.
-labelled AS (
-  SELECT 'show' AS t, id, title AS label FROM shows
-  UNION ALL SELECT 'theme',   id, name FROM themes
-  UNION ALL SELECT 'arc',     id, name FROM arcs
-),
-
 h1 AS (
   SELECT 1 AS hops,
          '(' || e.why || ')' AS explanation,
@@ -45,28 +42,42 @@ h1 AS (
 
 h2 AS (
   SELECT 2 AS hops,
-         '(' || a.why || ') -> ' || m.label || ' -> (' || b.why || ')' AS explanation,
+         '(' || a.why || ') -> ' || CASE a.dst_type
+             WHEN 'show'    THEN (SELECT title FROM shows    WHERE id = a.dst_id)
+             WHEN 'theme'   THEN (SELECT name  FROM themes   WHERE id = a.dst_id)
+             WHEN 'subject' THEN (SELECT name  FROM subjects WHERE id = a.dst_id)
+             WHEN 'arc'     THEN (SELECT name  FROM arcs     WHERE id = a.dst_id)
+           END || ' -> (' || b.why || ')'
+           AS explanation,
          a.weight + b.weight AS strength
   FROM ends
   JOIN edges a ON a.src_type = 'show' AND a.src_id = ends.src
-  JOIN labelled m ON m.t = a.dst_type AND m.id = a.dst_id
   JOIN edges b ON b.src_type = a.dst_type AND b.src_id = a.dst_id
               AND b.dst_type = 'show'     AND b.dst_id = ends.dst
   WHERE NOT (a.dst_type = 'show' AND a.dst_id = ends.src)
 ),
 
--- The characteristic 3-hop shape is show -> fine theme -> its parent theme -> show,
--- which is exactly the connection the two-tier vocabulary exists to express.
+-- The characteristic 3-hop shape is show -> subject -> its theme -> show, which is
+-- exactly the connection the two-level vocabulary exists to express.
 h3 AS (
   SELECT 3 AS hops,
-         '(' || a.why || ') -> ' || m1.label || ' -> (' || b.why || ') -> ' || m2.label
-              || ' -> (' || c.why || ')' AS explanation,
+         '(' || a.why || ') -> ' || CASE a.dst_type
+             WHEN 'show'    THEN (SELECT title FROM shows    WHERE id = a.dst_id)
+             WHEN 'theme'   THEN (SELECT name  FROM themes   WHERE id = a.dst_id)
+             WHEN 'subject' THEN (SELECT name  FROM subjects WHERE id = a.dst_id)
+             WHEN 'arc'     THEN (SELECT name  FROM arcs     WHERE id = a.dst_id)
+           END || ' -> (' || b.why
+              || ') -> ' || CASE b.dst_type
+             WHEN 'show'    THEN (SELECT title FROM shows    WHERE id = b.dst_id)
+             WHEN 'theme'   THEN (SELECT name  FROM themes   WHERE id = b.dst_id)
+             WHEN 'subject' THEN (SELECT name  FROM subjects WHERE id = b.dst_id)
+             WHEN 'arc'     THEN (SELECT name  FROM arcs     WHERE id = b.dst_id)
+           END || ' -> (' || c.why || ')'
+           AS explanation,
          a.weight + b.weight + c.weight AS strength
   FROM ends
   JOIN edges a ON a.src_type = 'show' AND a.src_id = ends.src
-  JOIN labelled m1 ON m1.t = a.dst_type AND m1.id = a.dst_id
   JOIN edges b ON b.src_type = a.dst_type AND b.src_id = a.dst_id
-  JOIN labelled m2 ON m2.t = b.dst_type AND m2.id = b.dst_id
   JOIN edges c ON c.src_type = b.dst_type AND c.src_id = b.dst_id
               AND c.dst_type = 'show'     AND c.dst_id = ends.dst
   WHERE NOT (a.dst_type = 'show' AND a.dst_id = ends.src)

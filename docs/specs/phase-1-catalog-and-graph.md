@@ -20,8 +20,8 @@ Everything below is read-only. The build never writes to `curation/source/`.
 | Path | Shape | Counts |
 |---|---|---|
 | `catalog.json` | `[{id, title, author, network, feedUrl, homeUrl, artworkUrl, category, years, why, description, themes[]}]` | 315 shows |
-| `themes.json` | `[{slug, name, description, showCount}]` | 30 tier-1 themes |
-| `episode-themes/_vocabulary.json` | `{themes: [{slug, name, definition, relatedShowThemes[], episodeCount, showCount, junkDrawerSuspect, showSpecific}], models}` | 148 tier-2 themes |
+| `themes.json` | `[{slug, name, description, showCount}]` | 30 themes |
+| `episode-themes/_vocabulary.json` | `{themes: [{slug, name, definition, relatedShowThemes[], episodeCount, showCount, junkDrawerSuspect, showSpecific}], models}` | 148 subjects |
 | `episode-themes/<slug>.json` | `{slug, title, models, themesUsed[], episodes: [{guid, display, segment, subject, iso, inArc, themes:[{slug, role, confidence}]}], agreement, auditFlags}` | 303 shows, 27,444 episodes |
 | `feeds/<slug>.json` | `{slug, title, network, feedUrl, itunesCollection, matchScore, episodeCount, episodes:[{guid, title, season, episodeNumber, episodeType, iso}]}` | 316 shows |
 | `descriptions/<slug>.json` | `{slug, fetchedAt, feedUrl, liveItems, storedEpisodes, matched, episodes: {guid: text}}` | 306 shows |
@@ -43,7 +43,7 @@ without them, degrading gracefully — see **Degradation** below.
   **289 distinct** segment names.
 - **`inArc` is true on 6,649 of 27,444 episodes (24.2%)** — the coverage ceiling that
   started this whole rewrite.
-- **36 of 148** tier-2 themes already name a tier-1 parent in `relatedShowThemes`. Zero
+- **36 of 148** subjects already name a tier-1 parent in `relatedShowThemes`. Zero
   name a parent outside the 30. Zero name more than one. Zero are flagged
   `junkDrawerSuspect`.
 - **5 slugs exist in both tiers**: `political-scandal`, `institutional-coverup`,
@@ -197,8 +197,8 @@ Four constraints doing real work:
 
 - **`themes` is unique on `(tier, slug)`, not `slug`.** Five slugs legitimately exist at
   both levels. A slug-only key would silently collapse them.
-- **The `themes` CHECK** makes an unparented tier-2 theme impossible to insert. The
-  two-tier promise is enforced by the database, not by a convention someone remembers.
+- **The `themes` CHECK** makes an unparented subject impossible to insert. The
+  two-level promise is enforced by the database, not by a convention someone remembers.
 - **`feed_url` is covered by a partial unique index, not a plain UNIQUE:**
   `CREATE UNIQUE INDEX ... ON shows (feed_url) WHERE include_verdict <> 'suspect'`.
   Eight groups of catalogued shows share a feed and cannot be merged until Phase 2, so a
@@ -257,7 +257,7 @@ Nothing in `catalog/` may reference an enclosure or an audio URL. `verify.py` gr
 
 ## Two-tier theme resolution
 
-All 148 tier-2 themes must end up with a parent. Three passes, cheapest first:
+All 148 subjects must end up with a parent. Three passes, cheapest first:
 
 1. **`relatedShowThemes`** — 36 themes name exactly one tier-1 slug. Take it. Source
    recorded as `vocabulary`.
@@ -274,7 +274,7 @@ Write the mapping to `catalog/build/theme-parents.json` so it is inspectable and
 outside the database. The database is still the source of truth; this file is the build's
 working record of how it got there.
 
-**Sanity check, not a gate:** no tier-1 theme should end up with more than ~15 children or
+**Sanity check, not a gate:** no theme should end up with more than ~15 children or
 zero children. Either means the mapping or the top 30 needs a look. Report it; don't fail
 the build.
 
@@ -313,7 +313,7 @@ Episode → theme edges were specified here and then deliberately dropped: there
 of them, they would be 76% of the graph and ~8 MB of the shipped file, and nothing
 traverses them — they are always read through `episode_themes`, which is indexed for it.
 
-| `shares_theme` | show → show | Jaccard over tier-1 themes | "both cover <theme>" |
+| `shares_theme` | show → show | Jaccard over themes | "both cover <theme>" |
 | `shares_fine_theme` | show → show | cosine over tier-2 episode-theme volume | "both dig into <theme>" |
 | `same_network` | show → show | 0.3 | "both from <network>" |
 | `theme_parent` | theme (2) → theme (1) | 1.0 | "a kind of <parent>" |
@@ -393,7 +393,7 @@ because the build lost it." The second fails the gate; the first doesn't.
 1. **Counts.** 315 shows. 27,444 episodes across 303 shows. 30 tier-1 and 148 tier-2
    themes. Every count asserted against the source files, not hardcoded.
 2. **No orphans.** Zero foreign key violations (`PRAGMA foreign_key_check` empty). Every
-   episode has a show. Every tier-2 theme has a tier-1 parent. Every `episode_themes` row
+   episode has a show. Every subject has a tier-1 parent. Every `episode_themes` row
    resolves to a real theme.
 3. **Join integrity.** Every `catalog.json` row matched a slug by `feed_url`, or is
    explicitly listed as unmatched with a reason. The 12 label-less shows are present at

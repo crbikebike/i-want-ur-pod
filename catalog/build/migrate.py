@@ -9,8 +9,8 @@ Corrections are not lost by that. The `edits` table is carried over from the pre
 build and replayed as the last step, which is what makes "SQLite is the source of truth"
 survive a rebuild. See replay.py.
 
-Order matters in exactly two places: themes must exist before episodes can link to them,
-and edges are derived last from everything else.
+Order matters in exactly two places: the vocabulary must exist before episodes can link
+to subjects, and edges are derived last from everything else.
 """
 
 from __future__ import annotations
@@ -21,13 +21,13 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from catalog.build import arcs, edges, fingerprint, fts, load_source, replay, themes
+from catalog.build import arcs, edges, fingerprint, fts, load_source, replay, vocabulary
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SOURCE = ROOT / "curation/source"
 DEFAULT_OUT = ROOT / "catalog/releases/catalog.db"
 SCHEMA = ROOT / "catalog/schema.sql"
-THEME_PARENTS = ROOT / "catalog/build/theme-parents.json"
+SUBJECT_THEMES = ROOT / "catalog/build/subject-themes.json"
 
 
 def build(
@@ -56,8 +56,8 @@ def build(
     if carried:
         say(f"carried {carried} edits forward from {carry_edits_from}")
 
-    say("-- themes")
-    for line in themes.build(conn, source, THEME_PARENTS).lines():
+    say("-- vocabulary")
+    for line in vocabulary.build(conn, source, SUBJECT_THEMES).lines():
         say(line)
 
     say("-- source")

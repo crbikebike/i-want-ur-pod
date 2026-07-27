@@ -1,7 +1,7 @@
 """The schema's constraints must reject bad data, not merely document that it's bad.
 
 A CHECK that isn't exercised is a comment. These tests are the difference between
-"the two-tier promise is enforced by the database" and "we remembered to be careful."
+"the two-level promise is enforced by the database" and "we remembered to be careful."
 """
 
 import sqlite3
@@ -23,9 +23,9 @@ def db():
 
 @pytest.fixture
 def seeded(db):
-    """A tier-1 theme and one show, so child rows have something to point at."""
+    """One theme and one show, so child rows have something to point at."""
     db.execute(
-        "INSERT INTO themes (id, slug, tier, name) VALUES (1, 'political-scandal', 1, 'Political Scandal')"
+        "INSERT INTO themes (id, slug, name) VALUES (1, 'political-scandal', 'Political Scandal')"
     )
     db.execute("INSERT INTO shows (id, slug, title, feed_url) VALUES (1, 's', 'S', 'http://f')")
     db.commit()
@@ -34,7 +34,10 @@ def seeded(db):
 
 def test_schema_applies_cleanly(db):
     tables = {r[0] for r in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
-    assert {"shows", "episodes", "arcs", "themes", "edges", "edits", "releases"} <= tables
+    assert {
+        "shows", "episodes", "arcs", "themes", "subjects", "episode_subjects",
+        "entities", "edges", "edits", "releases",
+    } <= tables
 
 
 def test_fts5_is_available(db):
@@ -43,49 +46,56 @@ def test_fts5_is_available(db):
     assert db.execute("SELECT 1 FROM search WHERE 0").fetchall() == []
 
 
-# --- themes: the two-tier promise -----------------------------------------------
+# --- vocabulary: themes and subjects ------------------------------------------
 
 
-def test_tier1_theme_needs_no_parent(db):
-    db.execute("INSERT INTO themes (id, slug, tier, name) VALUES (1, 't', 1, 'T')")
+def test_a_theme_needs_no_parent(db):
+    db.execute("INSERT INTO themes (id, slug, name) VALUES (1, 't', 'T')")
 
 
-def test_tier2_theme_without_a_parent_is_rejected(seeded):
+def test_a_subject_without_a_theme_is_rejected(seeded):
+    """The two-level promise. Now just a NOT NULL foreign key rather than a CHECK."""
     with pytest.raises(sqlite3.IntegrityError):
-        seeded.execute("INSERT INTO themes (id, slug, tier, name) VALUES (2, 'orphan', 2, 'Orphan')")
+        seeded.execute("INSERT INTO subjects (id, slug, name) VALUES (1, 'orphan', 'Orphan')")
 
 
-def test_tier1_theme_with_a_parent_is_rejected(seeded):
+def test_a_subject_pointing_at_a_missing_theme_is_rejected(seeded):
     with pytest.raises(sqlite3.IntegrityError):
         seeded.execute(
-            "INSERT INTO themes (id, slug, tier, name, parent_id) VALUES (2, 'bad', 1, 'Bad', 1)"
+            "INSERT INTO subjects (id, slug, name, theme_id) VALUES (1, 's', 'S', 999)"
         )
 
 
-def test_the_same_slug_may_exist_at_both_tiers(seeded):
-    """Five real slugs do this. A slug-only key would silently collapse them."""
+def test_the_same_slug_may_be_a_theme_and_a_subject(seeded):
+    """Five real slugs do this -- political-scandal, institutional-coverup,
+    police-misconduct, wrongful-conviction, family-secret. Separate tables make it
+    natural; the single-table version needed a composite key to allow it."""
     seeded.execute(
-        "INSERT INTO themes (id, slug, tier, name, parent_id) "
-        "VALUES (2, 'political-scandal', 2, 'The Scandal That Broke', 1)"
+        "INSERT INTO subjects (id, slug, name, theme_id) "
+        "VALUES (1, 'political-scandal', 'The Scandal That Broke', 1)"
     )
-    rows = seeded.execute("SELECT tier FROM themes WHERE slug = 'political-scandal'").fetchall()
-    assert sorted(r[0] for r in rows) == [1, 2]
+    assert seeded.execute("SELECT count(*) FROM themes WHERE slug='political-scandal'").fetchone()[0] == 1
+    assert seeded.execute("SELECT count(*) FROM subjects WHERE slug='political-scandal'").fetchone()[0] == 1
 
 
-def test_duplicate_tier_and_slug_is_rejected(seeded):
-    seeded.execute(
-        "INSERT INTO themes (id, slug, tier, name, parent_id) VALUES (2, 'x', 2, 'X', 1)"
-    )
+def test_theme_slugs_are_unique(seeded):
+    with pytest.raises(sqlite3.IntegrityError):
+        seeded.execute("INSERT INTO themes (id, slug, name) VALUES (2, 'political-scandal', 'Dupe')")
+
+
+def test_subject_slugs_are_unique(seeded):
+    seeded.execute("INSERT INTO subjects (id, slug, name, theme_id) VALUES (1, 'x', 'X', 1)")
+    with pytest.raises(sqlite3.IntegrityError):
+        seeded.execute("INSERT INTO subjects (id, slug, name, theme_id) VALUES (2, 'x', 'Dupe', 1)")
+
+
+def test_episode_subjects_reject_a_bad_role(seeded):
+    seeded.execute("INSERT INTO subjects (id, slug, name, theme_id) VALUES (1, 'x', 'X', 1)")
+    seeded.execute("INSERT INTO episodes (id, show_id, guid, title) VALUES (1, 1, 'g', 'E')")
     with pytest.raises(sqlite3.IntegrityError):
         seeded.execute(
-            "INSERT INTO themes (id, slug, tier, name, parent_id) VALUES (3, 'x', 2, 'Dupe', 1)"
-        )
-
-
-def test_tier_must_be_1_or_2(seeded):
-    with pytest.raises(sqlite3.IntegrityError):
-        seeded.execute(
-            "INSERT INTO themes (id, slug, tier, name, parent_id) VALUES (2, 't3', 3, 'T3', 1)"
+            "INSERT INTO episode_subjects (episode_id, subject_id, role, confidence) "
+            "VALUES (1, 1, 'tertiary', 'high')"
         )
 
 

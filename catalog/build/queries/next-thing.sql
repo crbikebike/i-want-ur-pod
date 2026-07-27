@@ -5,9 +5,9 @@
 --
 -- Three rules make this different from a similarity sort:
 --
--- 1. The fine-theme signal outranks the browse-theme signal. Two shows can share
---    "True Crime, Deep-Dive" and have nothing in common; sharing an episode-theme
---    profile means they actually dig at the same thing.
+-- 1. The SUBJECT signal outranks the THEME signal. Two shows can share the theme
+--    "True Crime, Deep-Dive" and have nothing in common; sharing a subject profile --
+--    what their episodes are actually about -- means they dig at the same thing.
 -- 2. Same publisher is PENALIZED, not rewarded. Recommending more of the same network's
 --    back catalogue is what every other podcast app does, and the goal here is to move
 --    someone toward work they would never have found.
@@ -21,16 +21,16 @@ WITH seed AS (
 scored AS (
   SELECT
     e.dst_id                       AS show_id,
-    max(CASE WHEN e.kind = 'shares_fine_theme' THEN e.weight END) AS fine,
-    max(CASE WHEN e.kind = 'shares_theme'      THEN e.weight END) AS coarse,
+    max(CASE WHEN e.kind = 'shares_subject' THEN e.weight END) AS subject_score,
+    max(CASE WHEN e.kind = 'shares_theme'      THEN e.weight END) AS theme_score,
     -- Keep the reason attached to the strongest signal, so the sentence shown to the
     -- person is the one that actually drove the choice.
-    max(CASE WHEN e.kind = 'shares_fine_theme' THEN e.weight END || '|' ||
-        CASE WHEN e.kind = 'shares_fine_theme' THEN e.why ELSE '' END) AS fine_why,
-    max(CASE WHEN e.kind = 'shares_theme' THEN e.why END) AS coarse_why
+    max(CASE WHEN e.kind = 'shares_subject' THEN e.weight END || '|' ||
+        CASE WHEN e.kind = 'shares_subject' THEN e.why ELSE '' END) AS subject_why,
+    max(CASE WHEN e.kind = 'shares_theme' THEN e.why END) AS theme_why
   FROM edges e, seed
   WHERE e.src_type = 'show' AND e.src_id = seed.id AND e.dst_type = 'show'
-    AND e.kind IN ('shares_fine_theme', 'shares_theme')
+    AND e.kind IN ('shares_subject', 'shares_theme')
   GROUP BY e.dst_id
 )
 SELECT
@@ -38,12 +38,12 @@ SELECT
   s.title,
   s.why,
   round(
-    (coalesce(sc.fine, 0) * 2.0 + coalesce(sc.coarse, 0))
+    (coalesce(sc.subject_score, 0) * 2.0 + coalesce(sc.theme_score, 0))
     * CASE WHEN s.network_id IS NOT NULL AND s.network_id = seed.network_id
            THEN 0.5 ELSE 1.0 END,
     4
   ) AS score,
-  coalesce(nullif(substr(sc.fine_why, instr(sc.fine_why, '|') + 1), ''), sc.coarse_why) AS why_related,
+  coalesce(nullif(substr(sc.subject_why, instr(sc.subject_why, '|') + 1), ''), sc.theme_why) AS why_related,
   s.depth
 FROM scored sc
 JOIN shows s ON s.id = sc.show_id, seed

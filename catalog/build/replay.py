@@ -23,8 +23,9 @@ from dataclasses import dataclass, field
 REPLAYABLE = {
     "show": {"title", "why", "description", "lang", "depth", "include_verdict", "artwork_url"},
     "theme": {"name", "description"},
+    "subject": {"name", "description", "theme_id"},
     "arc": {"name", "description", "confidence", "kind"},
-    "episode": {"title", "subject", "description", "available", "duration_s"},
+    "episode": {"title", "description", "available", "duration_s"},
 }
 
 
@@ -67,9 +68,13 @@ def apply_all(conn: sqlite3.Connection) -> ReplayReport:
             report.skipped_missing_entity.append(f"#{edit_id} {entity_type} {entity_key}")
             continue
 
-        table = {"show": "shows", "theme": "themes", "arc": "arcs", "episode": "episodes"}[
-            entity_type
-        ]
+        table = {
+            "show": "shows",
+            "theme": "themes",
+            "subject": "subjects",
+            "arc": "arcs",
+            "episode": "episodes",
+        }[entity_type]
         conn.execute(f'UPDATE "{table}" SET "{field_name}" = ? WHERE id = ?', (after, target))
         report.applied += 1
 
@@ -82,12 +87,9 @@ def _resolve(conn: sqlite3.Connection, entity_type: str, key: str) -> int | None
     if entity_type == "show":
         row = conn.execute("SELECT id FROM shows WHERE slug = ?", (key,)).fetchone()
     elif entity_type == "theme":
-        tier, _, slug = key.partition(":")
-        if not slug or not tier.isdigit():
-            return None
-        row = conn.execute(
-            "SELECT id FROM themes WHERE tier = ? AND slug = ?", (int(tier), slug)
-        ).fetchone()
+        row = conn.execute("SELECT id FROM themes WHERE slug = ?", (key,)).fetchone()
+    elif entity_type == "subject":
+        row = conn.execute("SELECT id FROM subjects WHERE slug = ?", (key,)).fetchone()
     elif entity_type == "arc":
         show_slug, _, arc_slug = key.partition("/")
         row = conn.execute(

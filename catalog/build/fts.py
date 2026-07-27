@@ -17,8 +17,8 @@ def build(conn: sqlite3.Connection) -> int:
     # A contentless FTS5 table rejects a plain DELETE; this is the supported way.
     conn.execute("INSERT INTO search (search) VALUES ('delete-all')")
     cur = conn.execute(
-        "INSERT INTO search (rowid, title, subject, description, show_title) "
-        "SELECT e.id, e.title, coalesce(e.subject, ''), coalesce(e.description, ''), s.title "
+        "INSERT INTO search (rowid, title, description, show_title) "
+        "SELECT e.id, e.title, coalesce(e.description, ''), s.title "
         "FROM episodes e JOIN shows s ON s.id = e.show_id"
     )
     count = cur.rowcount

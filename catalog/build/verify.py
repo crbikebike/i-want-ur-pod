@@ -51,8 +51,8 @@ class Gate:
 
 def source_counts(source: Path) -> dict[str, int]:
     catalog = json.loads((source / "catalog.json").read_text())
-    tier1 = json.loads((source / "themes.json").read_text())
-    tier2 = json.loads((source / "episode-themes/_vocabulary.json").read_text())["themes"]
+    themes = json.loads((source / "themes.json").read_text())
+    subjects = json.loads((source / "episode-themes/_vocabulary.json").read_text())["themes"]
 
     labelled_shows = 0
     episodes = 0
@@ -66,13 +66,23 @@ def source_counts(source: Path) -> dict[str, int]:
         episodes += len(eps)
         unique_episodes += len({e["guid"] for e in eps})
 
+    # Episodes the theming run never saw, recovered into a tracked file. Unlabelled, so
+    # they raise the episode count without raising the labelled count.
+    recovered_path = source / "recovered-episodes.json"
+    recovered = 0
+    if recovered_path.is_file():
+        payload = json.loads(recovered_path.read_text())
+        recovered = sum(len(v) for v in (payload.get("recovered") or {}).values())
+
     return {
         "shows": len(catalog),
-        "tier1": len(tier1),
-        "tier2": len(tier2),
+        "themes": len(themes),
+        "subjects": len(subjects),
         "labelled_shows": labelled_shows,
         "episodes": episodes,
         "unique_episodes": unique_episodes,
+        "recovered": recovered,
+        "expected_episodes": unique_episodes + recovered,
     }
 
 
@@ -90,23 +100,35 @@ def check_counts(conn, gate: Gate, src: dict) -> None:
     # Episode rows can legitimately be fewer than raw source rows: a repeated guid
     # inside one show is skipped. Unique guids is the number that must match.
     gate.check(
-        f"episodes: {got.get('episodes')} (source unique guids {src['unique_episodes']})",
-        got.get("episodes") == src["unique_episodes"],
-        f"raw source rows {src['episodes']}, "
+        f"episodes: {got.get('episodes')} "
+        f"(labelled {src['unique_episodes']} + recovered {src['recovered']})",
+        got.get("episodes") == src["expected_episodes"],
+        f"raw labelled rows {src['episodes']}, "
         f"{src['episodes'] - src['unique_episodes']} repeated guid(s) skipped",
     )
-    t1 = conn.execute("SELECT count(*) FROM themes WHERE tier = 1").fetchone()[0]
-    t2 = conn.execute("SELECT count(*) FROM themes WHERE tier = 2").fetchone()[0]
-    gate.check(f"tier-1 themes: {t1} (source {src['tier1']})", t1 == src["tier1"])
-    gate.check(f"tier-2 themes: {t2} (source {src['tier2']})", t2 == src["tier2"])
+    nt = conn.execute("SELECT count(*) FROM themes").fetchone()[0]
+    ns = conn.execute("SELECT count(*) FROM subjects").fetchone()[0]
+    gate.check(f"themes: {nt} (source {src['themes']})", nt == src["themes"])
+    gate.check(f"subjects: {ns} (source {src['subjects']})", ns == src["subjects"])
 
-    shows_with_eps = conn.execute(
-        "SELECT count(DISTINCT show_id) FROM episodes"
+    shows_with_eps = conn.execute("SELECT count(DISTINCT show_id) FROM episodes").fetchone()[0]
+    gate.check(
+        f"every show carries at least one episode: {shows_with_eps} of {src['shows']}",
+        shows_with_eps == src["shows"],
+    )
+    with_subjects = conn.execute(
+        "SELECT count(DISTINCT e.show_id) FROM episodes e "
+        "JOIN episode_subjects es ON es.episode_id = e.id"
     ).fetchone()[0]
     gate.check(
-        f"shows carrying episodes: {shows_with_eps} (source {src['labelled_shows']})",
-        shows_with_eps == src["labelled_shows"],
+        f"shows with labelled episodes: {with_subjects} (source {src['labelled_shows']})",
+        with_subjects == src["labelled_shows"],
     )
+    unlabelled = conn.execute(
+        "SELECT count(*) FROM episodes e WHERE NOT EXISTS "
+        "(SELECT 1 FROM episode_subjects es WHERE es.episode_id = e.id)"
+    ).fetchone()[0]
+    gate.note(f"{unlabelled} episodes carry no subject yet -- Phase 3 labels them")
 
 
 def check_integrity(conn, gate: Gate) -> None:
@@ -114,15 +136,11 @@ def check_integrity(conn, gate: Gate) -> None:
     violations = conn.execute("PRAGMA foreign_key_check").fetchall()
     gate.check("foreign keys intact", not violations, f"{len(violations)} violation(s)")
 
-    unparented = conn.execute(
-        "SELECT count(*) FROM themes WHERE tier = 2 AND parent_id IS NULL"
+    orphan_subjects = conn.execute(
+        "SELECT count(*) FROM subjects s LEFT JOIN themes t ON t.id = s.theme_id "
+        "WHERE t.id IS NULL"
     ).fetchone()[0]
-    gate.check("every tier-2 theme has a parent", unparented == 0, f"{unparented} unparented")
-
-    bad_parent = conn.execute(
-        "SELECT count(*) FROM themes c JOIN themes p ON p.id = c.parent_id WHERE p.tier <> 1"
-    ).fetchone()[0]
-    gate.check("no tier-2 theme parents to another tier-2", bad_parent == 0)
+    gate.check("every subject belongs to a real theme", orphan_subjects == 0)
 
     orphan_eps = conn.execute(
         "SELECT count(*) FROM episodes e LEFT JOIN shows s ON s.id = e.show_id WHERE s.id IS NULL"
@@ -130,10 +148,10 @@ def check_integrity(conn, gate: Gate) -> None:
     gate.check("every episode has a show", orphan_eps == 0)
 
     orphan_links = conn.execute(
-        "SELECT count(*) FROM episode_themes et LEFT JOIN themes t ON t.id = et.theme_id "
-        "WHERE t.id IS NULL"
+        "SELECT count(*) FROM episode_subjects es LEFT JOIN subjects s ON s.id = es.subject_id "
+        "WHERE s.id IS NULL"
     ).fetchone()[0]
-    gate.check("every episode-theme link resolves", orphan_links == 0)
+    gate.check("every episode-subject link resolves", orphan_links == 0)
 
     dangling_arcs = conn.execute(
         "SELECT count(*) FROM episodes WHERE arc_id IS NOT NULL AND arc_id NOT IN "
@@ -149,11 +167,11 @@ def check_joins(conn, gate: Gate, src: dict) -> None:
     ]
     expected_depth1 = src["shows"] - src["labelled_shows"]
     gate.check(
-        f"shows with no episode labels held at depth 1: {len(depth1)}",
+        f"shows with no labelled episodes held at depth 1: {len(depth1)}",
         len(depth1) == expected_depth1,
         f"expected {expected_depth1}",
     )
-    gate.note(f"depth-1 shows: {', '.join(depth1)}")
+    gate.note(f"depth-1 shows (browsable, not yet labelled): {', '.join(depth1)}")
 
     empty_feed = conn.execute(
         "SELECT count(*) FROM shows WHERE feed_url IS NULL OR trim(feed_url) = ''"
@@ -203,8 +221,9 @@ def check_edges(conn, gate: Gate) -> None:
     gate.note(f"edge kinds: {kinds}")
 
     no_entry = conn.execute(
-        "SELECT count(*) FROM shows s WHERE depth >= 2 AND NOT EXISTS "
-        "(SELECT 1 FROM edges e WHERE e.src_type='show' AND e.src_id=s.id AND e.kind='entry_point')"
+        "SELECT count(*) FROM shows s WHERE EXISTS (SELECT 1 FROM episodes WHERE show_id = s.id) "
+        "AND NOT EXISTS (SELECT 1 FROM edges e WHERE e.src_type='show' AND e.src_id=s.id "
+        "AND e.kind='entry_point')"
     ).fetchone()[0]
     gate.check("every show with episodes has an entry point", no_entry == 0, f"{no_entry} without")
 

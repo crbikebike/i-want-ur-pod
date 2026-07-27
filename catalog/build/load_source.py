@@ -1,6 +1,10 @@
-"""Read curation/source/ into the catalog: networks, shows, episodes, theme links.
+"""Read curation/source/ into the catalog: networks, shows, episodes, vocabulary links.
 
-Runs after themes.build(), because episode_themes needs theme ids.
+Runs after vocabulary.build(), because episode_subjects needs subject ids.
+
+Shows are tagged with THEMES (the browsable 30). Episodes carry SUBJECTS (the finer 148).
+The source files call both levels "themes" -- they are read-only inputs, so the
+translation happens here rather than by rewriting them.
 
 The join, and why it is on title rather than feed_url
 -----------------------------------------------------
@@ -84,7 +88,9 @@ class LoadReport:
     shows: int = 0
     episodes: int = 0
     show_theme_links: int = 0
-    episode_theme_links: int = 0
+    episode_subject_links: int = 0
+    recovered_episodes: int = 0
+    recovered_shows: int = 0
     depth1_shows: list[str] = field(default_factory=list)
     unjoined: list[str] = field(default_factory=list)
     feed_url_mismatches: list[str] = field(default_factory=list)
@@ -92,7 +98,7 @@ class LoadReport:
     duplicate_pairs: list[tuple[str, str, int]] = field(default_factory=list)
     suspects: dict[str, str] = field(default_factory=dict)
     non_english: dict[str, str] = field(default_factory=dict)
-    unknown_theme_slugs: dict[str, int] = field(default_factory=dict)
+    unknown_subject_slugs: dict[str, int] = field(default_factory=dict)
     repeated_guids: list[str] = field(default_factory=list)
     enriched_from_feeds: int = 0
     enriched_from_descriptions: int = 0
@@ -102,8 +108,10 @@ class LoadReport:
         out = [
             f"loaded: {self.shows} shows, {self.episodes} episodes, {self.networks} networks",
             f"  show->theme links   : {self.show_theme_links}",
-            f"  episode->theme links: {self.episode_theme_links}",
+            f"  episode->subject links: {self.episode_subject_links}",
             f"  depth-1 shows (no episode labels): {len(self.depth1_shows)}",
+            f"  recovered episodes: {self.recovered_episodes} across "
+            f"{self.recovered_shows} shows (unlabelled; Phase 3 labels them)",
         ]
         if self.optional_inputs_missing:
             out.append(f"  optional inputs absent: {', '.join(self.optional_inputs_missing)}")
@@ -116,8 +124,10 @@ class LoadReport:
             out.append(f"  WARN feed_url disagreements: {self.feed_url_mismatches}")
         if self.unjoined:
             out.append(f"  WARN catalog rows that failed to join: {self.unjoined}")
-        if self.unknown_theme_slugs:
-            out.append(f"  WARN episode themes not in the vocabulary: {self.unknown_theme_slugs}")
+        if self.unknown_subject_slugs:
+            out.append(
+                f"  WARN episode subjects not in the vocabulary: {self.unknown_subject_slugs}"
+            )
         if self.repeated_guids:
             out.append(f"  WARN episodes skipped for a repeated guid: {self.repeated_guids}")
         out.append(
@@ -142,6 +152,20 @@ def _read_episode_themes(source: Path) -> dict[str, dict]:
         data = json.loads(path.read_text())
         out[data.get("slug") or path.stem] = data
     return out
+
+
+def _read_recovered(source: Path) -> dict[str, list[dict]]:
+    """Episodes that exist in feeds/ but never reached the labelled corpus.
+
+    Two causes, both recorded in the file itself: the 2026-07 theming run filtered its
+    input to episodeType == 'full' (dropping every bonus, which is where mini-series live),
+    and 12 shows were never themed at all. Tracked in git so the build does not depend on
+    the gitignored raw corpus. These episodes carry no subjects -- Phase 3 labels them.
+    """
+    path = source / "recovered-episodes.json"
+    if not path.is_file():
+        return {}
+    return json.loads(path.read_text()).get("recovered") or {}
 
 
 def _read_optional(source: Path, subdir: str, key: str) -> dict[str, dict]:
@@ -275,6 +299,7 @@ def load(conn: sqlite3.Connection, source: Path) -> LoadReport:
 
     catalog = json.loads((source / "catalog.json").read_text())
     episode_themes = _read_episode_themes(source)
+    recovered = _read_recovered(source)
     feeds = _read_optional(source, "feeds", "slug")
     descriptions = _read_optional(source, "descriptions", "slug")
 
@@ -304,12 +329,8 @@ def load(conn: sqlite3.Connection, source: Path) -> LoadReport:
     report.duplicate_pairs = content_pairs
     suspects_by_slug = _pick_suspects(feed_groups, content_pairs)
 
-    theme_ids = {
-        slug: tid for slug, tid in conn.execute("SELECT slug, id FROM themes WHERE tier = 1")
-    }
-    fine_theme_ids = {
-        slug: tid for slug, tid in conn.execute("SELECT slug, id FROM themes WHERE tier = 2")
-    }
+    theme_ids = {slug: tid for slug, tid in conn.execute("SELECT slug, id FROM themes")}
+    subject_ids = {slug: sid for slug, sid in conn.execute("SELECT slug, id FROM subjects")}
 
     network_ids: dict[str, int] = {}
 
@@ -391,7 +412,11 @@ def load(conn: sqlite3.Connection, source: Path) -> LoadReport:
                 episode_themes[slug],
                 feeds.get(slug),
                 descriptions.get(slug),
-                fine_theme_ids,
+                subject_ids,
+            )
+        if slug in recovered:
+            _insert_recovered(
+                conn, report, show_id, recovered[slug], descriptions.get(slug)
             )
 
     if note_dupes := [f"{a}~{b}" for a, b, _ in content_pairs] + [
@@ -434,7 +459,7 @@ def _upsert_network(conn, cache: dict[str, int], name: str | None) -> int | None
 
 def _insert_episodes(
     conn, report: LoadReport, show_id: int, labelled: dict, feed: dict | None,
-    described: dict | None, fine_theme_ids: dict[str, int],
+    described: dict | None, subject_ids: dict[str, int],
 ) -> None:
     feed_by_guid = {}
     if feed:
@@ -460,13 +485,12 @@ def _insert_episodes(
             report.enriched_from_descriptions += 1
 
         cur = conn.execute(
-            "INSERT INTO episodes (show_id, guid, title, subject, season, episode_number, "
-            "episode_type, published_at, description) VALUES (?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO episodes (show_id, guid, title, season, episode_number, "
+            "episode_type, published_at, description) VALUES (?,?,?,?,?,?,?,?)",
             (
                 show_id,
                 guid,
                 ep.get("display") or "Untitled Episode",
-                ep.get("subject") or None,
                 extra.get("season"),
                 extra.get("episodeNumber"),
                 extra.get("episodeType"),
@@ -478,23 +502,61 @@ def _insert_episodes(
         report.episodes += 1
 
         model = (labelled.get("models") or {}).get("assign")
-        for theme in ep.get("themes") or []:
-            tid = fine_theme_ids.get(theme.get("slug"))
-            if tid is None:
-                slug = theme.get("slug")
-                report.unknown_theme_slugs[slug] = report.unknown_theme_slugs.get(slug, 0) + 1
+        # The source calls these "themes"; at episode level they are subjects.
+        for entry in ep.get("themes") or []:
+            sid = subject_ids.get(entry.get("slug"))
+            if sid is None:
+                slug = entry.get("slug")
+                report.unknown_subject_slugs[slug] = report.unknown_subject_slugs.get(slug, 0) + 1
                 continue
-            # OR IGNORE: a handful of episodes name the same theme twice, once per role.
+            # OR IGNORE: a handful of episodes name the same subject twice, once per role.
             conn.execute(
-                "INSERT OR IGNORE INTO episode_themes (episode_id, theme_id, role, "
+                "INSERT OR IGNORE INTO episode_subjects (episode_id, subject_id, role, "
                 "confidence, agreement, model, run_id) VALUES (?,?,?,?,NULL,?,?)",
                 (
                     episode_id,
-                    tid,
-                    theme.get("role") or "secondary",
-                    theme.get("confidence") or "low",
+                    sid,
+                    entry.get("role") or "secondary",
+                    entry.get("confidence") or "low",
                     model,
                     RUN_ID,
                 ),
             )
-            report.episode_theme_links += 1
+            report.episode_subject_links += 1
+
+
+def _insert_recovered(
+    conn, report: LoadReport, show_id: int, episodes: list[dict], described: dict | None
+) -> None:
+    """Insert episodes the theming run never saw.
+
+    Identical to a normal episode row except there are no subjects to attach. episode_type
+    is always stored so arc detection and the UI can exclude trailers, which are adverts
+    for the show rather than something anyone wants recommended.
+    """
+    texts = (described or {}).get("episodes") or {}
+    added = 0
+    for ep in episodes:
+        guid = ep["guid"]
+        try:
+            conn.execute(
+                "INSERT INTO episodes (show_id, guid, title, season, episode_number, "
+                "episode_type, published_at, description) VALUES (?,?,?,?,?,?,?,?)",
+                (
+                    show_id,
+                    guid,
+                    ep.get("title") or "Untitled Episode",
+                    ep.get("season"),
+                    ep.get("episodeNumber"),
+                    ep.get("episodeType"),
+                    ep.get("iso"),
+                    texts.get(guid),
+                ),
+            )
+        except sqlite3.IntegrityError:
+            # Already present from the labelled corpus. Recovery is additive only.
+            continue
+        added += 1
+    report.recovered_episodes += added
+    if added:
+        report.recovered_shows += 1
