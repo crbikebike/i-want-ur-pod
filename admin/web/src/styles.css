@@ -23,7 +23,6 @@
 :root {
   /* paper */
   --desk: #d9caac;          /* kraft construction paper, the work surface */
-  --desk-deep: #cbb994;     /* its shadowed edge */
   --sheet: #f4ecda;         /* the cream sheet you write on */
   --sheet-warm: #ece1c9;    /* a second sheet, tucked behind */
 
@@ -144,18 +143,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .stage { position: relative; overflow: hidden; padding: 15px 15px 0; }
 
-/* The sheet often runs past the fold. A soft edge says "more below" without adding a
-   scrollbar to a phone that hides them anyway. */
-.stage::after {
-  content: "";
-  position: absolute;
-  left: 16px; right: 16px; bottom: 0;
-  height: 26px;
-  background: linear-gradient(to top, var(--sheet), transparent);
-  border-radius: 0 0 var(--r) var(--r);
-  pointer-events: none;
-}
-
 .card {
   height: 100%;
   overflow-y: auto;
@@ -270,7 +257,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: flex;
   flex-direction: column;
   gap: 9px;
-  background: linear-gradient(to top, var(--desk-deep) 55%, transparent);
 }
 
 .verdicts { display: grid; grid-template-columns: 1fr 0.68fr 1fr; gap: 9px; }
