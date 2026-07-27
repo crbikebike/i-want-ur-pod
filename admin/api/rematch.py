@@ -57,6 +57,49 @@ def similarity(a: str | None, b: str | None) -> float:
     return difflib.SequenceMatcher(None, a, b).ratio()
 
 
+# Words that appear in half the publisher names in podcasting and identify nobody.
+_GENERIC_PUBLISHER = {
+    "media", "podcast", "podcasts", "network", "networks", "production", "productions",
+    "studio", "studios", "audio", "group", "inc", "llc", "ltd", "entertainment",
+    "original", "originals", "co", "company", "and", "the",
+}
+
+
+def publisher_similarity(ours: str | None, theirs: str | None) -> float:
+    """How much two publisher names agree, judged on shared names rather than shared text.
+
+    Whole-string similarity was too blunt, and it cost us both shows Chris found by hand.
+    Our `network` column is a curator's prose note, not a database field: "Radiotopia /
+    PRX" against Apple's "Benjamen Walker & Radiotopia" scores 0.50 by character overlap
+    and misses the 0.60 gate, even though the word that matters -- Radiotopia -- is
+    plainly in both. The decorations on either side dilute the one token carrying the
+    evidence.
+
+    So: if the two names share a distinctive word, they agree. Generic trade words are
+    struck out first, because "Media" and "Podcasts" are in half the publisher names in
+    the business and identify nobody, and short tokens are ignored because initialisms
+    collide -- ABC is a broadcaster, a network and a record label.
+
+    This is looser than what it replaces, and deliberately so: it only ever raises the
+    publisher score, and the title gate is untouched. Earshot cannot reach RN Drive on a
+    shared "ABC" because its title scores 0.14, and that is the gate doing the work it
+    was put there to do.
+    """
+    def distinctive(s):
+        return {t for t in _norm(s).split() if len(t) >= 4 and t not in _GENERIC_PUBLISHER}
+
+    a, b = distinctive(ours), distinctive(theirs)
+    if not a or not b:
+        return 0.0
+    if a & b:
+        return 0.95
+    # The fallback runs on the distinctive words alone, not the raw names. Comparing
+    # whole strings let a shared trade word carry the score by itself: "Wondery
+    # Productions" against "Tenderfoot Productions" is 0.78 by character overlap and
+    # clears the gate on the strength of the one word that means nothing.
+    return similarity(" ".join(sorted(a)), " ".join(sorted(b)))
+
+
 @dataclass
 class Candidate:
     name: str
@@ -115,7 +158,7 @@ def rank(title: str, network: str | None, results: list[dict]) -> list[Candidate
             artwork=r.get("artworkUrl600") or r.get("artworkUrl100", ""),
         )
         c.title_score = similarity(title, c.name)
-        c.publisher_score = similarity(network, c.artist) if network else 0.0
+        c.publisher_score = publisher_similarity(network, c.artist) if network else 0.0
         c.total = c.title_score + 1.5 * c.publisher_score
         out.append(c)
     out.sort(key=lambda c: -c.total)
