@@ -23,7 +23,7 @@ from __future__ import annotations
 import json
 import sqlite3
 
-from admin.api.queues import thumbnail
+from admin.api.queues import _links, thumbnail
 
 
 def counts(conn: sqlite3.Connection) -> dict:
@@ -60,7 +60,7 @@ def next_card(conn: sqlite3.Connection, skipped: list[int] | None = None) -> dic
     row = conn.execute(
         f"""
         SELECT p.id, p.show_id, p.feed_url, p.feed_title, p.feed_author, p.episode_count,
-               p.image_url, p.sample, p.source, p.title_score, p.publisher_score,
+               p.image_url, p.sample, p.source, p.title_score, p.publisher_score, p.home_url,
                s.slug, s.title, s.description, s.why, s.feed_url, s.artwork_url,
                s.artwork_updated_at, s.include_verdict, s.years, n.name
         FROM feed_proposals p
@@ -76,7 +76,7 @@ def next_card(conn: sqlite3.Connection, skipped: list[int] | None = None) -> dic
         return None
 
     (pid, show_id, feed_url, feed_title, feed_author, eps, image, sample, source,
-     ts, ps, slug, title, description, why, current_feed, artwork, artwork_at,
+     ts, ps, cand_home, slug, title, description, why, current_feed, artwork, artwork_at,
      verdict, years, network) = row
 
     others = conn.execute(
@@ -110,6 +110,10 @@ def next_card(conn: sqlite3.Connection, skipped: list[int] | None = None) -> dic
             "titleScore": ts,
             "publisherScore": ps,
         },
+        # The same door the inclusion card offers. Reading six episode titles narrows it;
+        # listening settles it, and a card that only argues is a card you leave open.
+        # Titled on the *candidate*, since that is the thing being judged.
+        "links": _links(feed_title or title, cand_home),
         # Said plainly, because "p=0.62" is not a reason to press a button.
         "alsoWaiting": others,
         "meaning": _meaning(network, feed_author, others),
@@ -152,7 +156,7 @@ def record(conn: sqlite3.Connection, proposal_id: int, decision: str) -> None:
 def add(conn: sqlite3.Connection, *, show_id: int, feed_url: str, feed_title: str | None,
         feed_author: str | None, episode_count: int, image_url: str | None,
         sample: list[str], source: str, title_score: float = 0.0,
-        publisher_score: float = 0.0) -> int | None:
+        publisher_score: float = 0.0, home_url: str | None = None) -> int | None:
     """Offer a candidate. Returns None if this show/feed pair was already decided."""
     seen = conn.execute(
         "SELECT id, resolved_at FROM feed_proposals WHERE show_id = ? AND feed_url = ?",
@@ -161,9 +165,10 @@ def add(conn: sqlite3.Connection, *, show_id: int, feed_url: str, feed_title: st
         return None
     cur = conn.execute(
         "INSERT INTO feed_proposals (show_id, feed_url, feed_title, feed_author, "
-        "episode_count, image_url, sample, source, title_score, publisher_score) "
-        "VALUES (?,?,?,?,?,?,?,?,?,?)",
+        "episode_count, image_url, sample, source, title_score, publisher_score, home_url) "
+        "VALUES (?,?,?,?,?,?,?,?,?,?,?)",
         (show_id, feed_url, feed_title, feed_author, episode_count, image_url,
-         json.dumps(sample, ensure_ascii=False), source, title_score, publisher_score))
+         json.dumps(sample, ensure_ascii=False), source, title_score, publisher_score,
+         home_url))
     conn.commit()
     return cur.lastrowid

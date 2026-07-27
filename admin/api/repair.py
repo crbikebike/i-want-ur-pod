@@ -45,6 +45,11 @@ class Outcome:
     status: str                      # repointed | unresolved | already-right
     detail: str = ""
     feed_url: str | None = None
+    # Resolved when the proposal was made and carried here, so confirming a card does not
+    # depend on the 4 GB dump still being present. Without this, a confirm on a machine
+    # with no dump clears home_url and the card loses its player -- the exact regression
+    # this field was added to stop.
+    home_url: str | None = None
     feed_title: str | None = None
     feed_author: str | None = None
     episodes: int = 0
@@ -104,12 +109,15 @@ def resolve(conn: sqlite3.Connection, show_id: int, index: pi.Index | None,
         if not verdict.ok:
             rejected.append(f"{url[:48]} — {verdict.reason[:80]}")
             continue
+        # Keyword arguments, not positional. Adding `home_url` to Outcome shifted every
+        # field after it, so feed.title landed in home_url and the episode count landed in
+        # feed_author -- silently, because the dataclass takes anything.
+        common = dict(feed_url=url, feed_title=feed.title, feed_author=feed.author,
+                      episodes=len(feed.episodes), rejected=rejected)
         if url == current:
             return Outcome(slug, title, network, "already-right",
-                           "the feed it is already on checks out", url, feed.title,
-                           feed.author, len(feed.episodes), rejected), feed
-        return Outcome(slug, title, network, "repointed", verdict.reason, url, feed.title,
-                       feed.author, len(feed.episodes), rejected), feed
+                           "the feed it is already on checks out", **common), feed
+        return Outcome(slug, title, network, "repointed", verdict.reason, **common), feed
 
     return Outcome(slug, title, network, "unresolved",
                    f"no candidate feed confirmed out of {len(tries)}",
@@ -136,7 +144,7 @@ def apply(conn: sqlite3.Connection, show_id: int, outcome: Outcome, feed: feeds.
         # slide-up player: with no Apple id there is nothing to embed, so "Listen and
         # look" degraded to a bare search link opening in a new tab. Leaving the queue to
         # answer a question about the queue is a good way not to come back.
-        home = pi.itunes_home(outcome.feed_url)
+        home = outcome.home_url or pi.itunes_home(outcome.feed_url)
         for field_name, value in (("feed_url", outcome.feed_url),
                                   ("home_url", home),
                                   ("artwork_url", feed.image or None)):

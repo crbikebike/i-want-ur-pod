@@ -54,7 +54,13 @@ export default function App() {
       // settled and the taste questions are next. Falling through is what makes "feeds
       // first" an ordering rather than a mode the user has to know about.
       if (mode === "feeds" && !data.item) {
+        // Clearing the item is not tidiness. The two queues carry different shapes, and
+        // leaving the last feed card in state while the mode flips meant Card rendered it
+        // and threw on show.links.map -- React unmounts the tree and the whole screen goes
+        // blank, which is what "the all-finished screen is empty" actually was.
         skipped.current = [];
+        setItem(null);
+        setDone(false);
         setMode("inclusion");
         return;
       }
@@ -239,7 +245,7 @@ export default function App() {
         {!error && done && <Finished session={session} counts={counts} />}
         {!error && !done && !item && <Loading />}
         {!error && item && mode === "feeds" && (
-          <FeedCard key={item.id} item={item} leaving={leaving} />
+          <FeedCard key={item.id} item={item} leaving={leaving} onPreview={setPreview} />
         )}
         {!error && item && mode !== "feeds" && (
           <Card key={item.id} show={item} leaving={leaving} onPreview={setPreview} />
@@ -353,7 +359,7 @@ function Verdict({ kind, label, keys, onPick, disabled }) {
  * titles are the part that settles it. Publisher names argue; "7 Hebrew Words for Praise"
  * against "a true-crime docuseries about April Balascio" does not.
  */
-function FeedCard({ item, leaving }) {
+function FeedCard({ item, leaving, onPreview }) {
   const c = item.candidate;
   return (
     <article className={`card arriving ${leaving ? `leaving ${leaving}` : ""}`}>
@@ -377,6 +383,20 @@ function FeedCard({ item, leaving }) {
             {c.sample.map((t, i) => <li key={i}>{t}</li>)}
           </ul>
         </div>
+      </div>
+
+      <div className="links">
+        {(item.links || []).map((l) =>
+          l.embed ? (
+            <button key={l.href} className="go" onClick={() => onPreview(l)}>
+              {l.label} <span aria-hidden="true">▴</span>
+            </button>
+          ) : (
+            <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="go">
+              {l.label} <span aria-hidden="true">↗</span>
+            </a>
+          )
+        )}
       </div>
 
       <p className="means">{item.meaning}</p>

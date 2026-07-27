@@ -141,16 +141,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- the sheet ---------- */
 
-/* Horizontal stays hidden so a card can fly off the side; vertical has to scroll, because
-   the feed card carries six episode titles and runs taller than a phone. It was clipping
-   the sentence that says what rejecting a candidate costs. */
-.stage {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 15px 15px 0;
-}
+/* Hidden, so a card can fly off the side. The card itself already carries
+   `max-height: 100%; overflow-y: auto`, so a tall one scrolls inside its own edge -- a
+   second scroll container here was redundant and only made `.state`'s height:100% harder
+   to reason about. */
+.stage { position: relative; overflow: hidden; padding: 15px 15px 0; }
 
 .card {
   overflow-y: auto;

@@ -118,12 +118,12 @@ def decide_feed(proposal_id: int, body: dict = Body(...)) -> dict:
 
     with db() as conn:
         row = conn.execute(
-            "SELECT p.show_id, p.feed_url, s.slug, s.title FROM feed_proposals p "
+            "SELECT p.show_id, p.feed_url, p.home_url, s.slug, s.title FROM feed_proposals p "
             "JOIN shows s ON s.id = p.show_id WHERE p.id = ? AND p.resolved_at IS NULL",
             (proposal_id,)).fetchone()
         if not row:
             raise HTTPException(404, "no such proposal, or it is already decided")
-        show_id, feed_url, slug, title = row
+        show_id, feed_url, home_url, slug, title = row
 
         applied = []
         if decision == "confirmed":
@@ -134,8 +134,8 @@ def decide_feed(proposal_id: int, body: dict = Body(...)) -> dict:
                 # rejected would mean never offering the right answer again.
                 raise HTTPException(502, f"could not read the feed — {e}")
             outcome = repair.Outcome(slug, title, None, "repointed",
-                                     "confirmed in the feed queue", feed_url, feed.title,
-                                     feed.author, len(feed.episodes))
+                                     "confirmed in the feed queue", feed_url, home_url,
+                                     feed.title, feed.author, len(feed.episodes))
             applied = repair.apply(conn, show_id, outcome, feed)
 
         feedqueue.record(conn, proposal_id, decision)
