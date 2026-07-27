@@ -169,6 +169,8 @@ def _note(conn: sqlite3.Connection, show_id: int) -> dict | None:
         return {
             "kind": "cross-promotion",
             "tone": "info",
+            # A foregone conclusion, so this never becomes a card. See auto.py.
+            "auto": "keep",
             "label": "Shares episodes",
             "detail": [f"{n} episodes appear in both this and {other}, on separate feeds."],
             "meaning": (

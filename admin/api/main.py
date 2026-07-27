@@ -19,7 +19,7 @@ from fastapi import Body, FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from admin.api import edits, queues
+from admin.api import auto, edits, queues
 from catalog.build import migrations
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -47,8 +47,11 @@ def _startup() -> None:
         )
     with db() as conn:
         conn.execute("PRAGMA journal_mode = WAL")
-        report = migrations.apply_all(conn)
-        for line in report.lines():
+        for line in migrations.apply_all(conn).lines():
+            print(line)
+        # Settle anything with a foregone conclusion before a human is shown a queue of
+        # questions that includes answers.
+        for line in auto.resolve(conn).lines():
             print(line)
 
 

@@ -165,3 +165,62 @@ def test_renaming_happens_when_the_feed_disagrees_with_every_row(db, log):
     merge.apply_plan(db, p, decisions_path=log)
     titles = {r[0] for r in db.execute("SELECT title FROM shows WHERE deleted_at IS NULL")}
     assert titles == {"Making"}
+
+
+# --- foregone conclusions --------------------------------------------------------
+
+
+def test_cross_promotion_is_settled_without_asking(db, log):
+    """Chris: "keep both they are both real shows" is now the most common. I agree and
+    these don't need my manual review."""
+    from admin.api import auto
+    keep = add(db, "eh", "Ear Hustle", "http://eh", verdict="unreviewed", episodes=6)
+    loop = add(db, "loop", "The Loop", "http://loop", verdict="suspect")
+    for i in range(6):
+        db.execute("INSERT INTO episodes (show_id, guid, title) VALUES (?,?,?)",
+                   (loop, f"http://eh-{i}", f"The Loop {i}"))
+    db.commit()
+
+    report = auto.resolve(db, decisions_path=log)
+    assert [(t, v) for t, v, _ in report.settled] == [("The Loop", "keep")]
+    assert db.execute("SELECT include_verdict FROM shows WHERE id=?", (loop,)).fetchone()[0] == "keep"
+    assert queues.inclusion_counts(db)["flagged"] == 0
+
+
+def test_a_wrong_feed_is_left_for_a_human(db, log):
+    """"The feed serves a different show" might mean cut the row or fix the feed. That
+    is a judgement, so it stays a card."""
+    from admin.api import auto
+    add(db, "empire", "Empire", "http://empire", verdict="suspect")
+    assert auto.resolve(db, decisions_path=log).settled == []
+    assert db.execute(
+        "SELECT include_verdict FROM shows WHERE slug='empire'").fetchone()[0] == "suspect"
+
+
+def test_an_automatic_decision_is_logged_and_undoable(db, log):
+    """One that cannot be seen or reversed is just a silent one."""
+    from admin.api import auto
+    add(db, "eh", "Ear Hustle", "http://eh", verdict="unreviewed", episodes=4)
+    loop = add(db, "loop", "The Loop", "http://loop", verdict="suspect")
+    for i in range(4):
+        db.execute("INSERT INTO episodes (show_id, guid, title) VALUES (?,?,?)",
+                   (loop, f"http://eh-{i}", f"L{i}"))
+    db.commit()
+    auto.resolve(db, decisions_path=log)
+
+    row = db.execute("SELECT actor, note FROM edits ORDER BY id DESC LIMIT 1").fetchone()
+    assert row[0] == "agent:auto"
+    assert "cross-promotion" in row[1]
+    assert log.exists()
+
+
+def test_running_twice_settles_nothing_new(db, log):
+    from admin.api import auto
+    add(db, "eh", "Ear Hustle", "http://eh", verdict="unreviewed", episodes=4)
+    loop = add(db, "loop", "The Loop", "http://loop", verdict="suspect")
+    for i in range(4):
+        db.execute("INSERT INTO episodes (show_id, guid, title) VALUES (?,?,?)",
+                   (loop, f"http://eh-{i}", f"L{i}"))
+    db.commit()
+    auto.resolve(db, decisions_path=log)
+    assert auto.resolve(db, decisions_path=log).settled == []
