@@ -1,0 +1,324 @@
+/* The workbench.
+ *
+ * Direction: a sorting table. One card in the hand, a decision, the card leaves, the
+ * pile goes down. Everything here serves that loop and nothing competes with it.
+ *
+ * Palette is the project's own (design/kit/tokens.html) so the back office looks like
+ * the product it serves. Coral is navigation and progress only -- verdicts own green,
+ * red and grey, and if the accent shared those colours the feedback would stop reading
+ * as feedback.
+ */
+
+@font-face {
+  font-family: "Plex";
+  src: url("/plex-mono.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --coral: #ff6a4d;
+  --mint: #34e0c4;
+
+  --bg: #0e0b12;
+  --surface: #1c1722;
+  --surface-2: #262030;
+  --hairline: rgba(255, 255, 255, 0.09);
+  --text: #f8f3ef;
+  --dim: #aba1b4;
+  --faint: #8b8291;
+
+  /* Verdicts. Deliberately not the brand accent. */
+  --keep: #3ddc97;
+  --cut: #ff5a5f;
+  --skip: #7d768a;
+
+  --mono: "Plex", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+
+  --r: 18px;
+  --r-sm: 11px;
+  --pill: 999px;
+
+  /* Real device insets: this lives in the thumb zone on a phone with a home bar. */
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.45;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- shell ---------- */
+
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.head {
+  padding: calc(var(--safe-t) + 14px) 18px 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.head h1 {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.left {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--dim);
+}
+.left b { color: var(--text); font-weight: 400; }
+
+/* The pile going down. Coral, because progress is navigation not verdict. */
+.track {
+  height: 2px;
+  background: var(--hairline);
+  margin: 0 18px;
+  border-radius: var(--pill);
+  overflow: hidden;
+}
+.track span {
+  display: block;
+  height: 100%;
+  background: var(--coral);
+  border-radius: var(--pill);
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---------- the card ---------- */
+
+.stage {
+  position: relative;
+  overflow: hidden;
+  padding: 14px 14px 0;
+}
+
+.card {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r);
+  padding: 20px 18px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Leaving: the verdict IS the animation. No message needed. */
+.card.leaving {
+  animation: fly 0.34s cubic-bezier(0.4, 0, 1, 1) forwards;
+  pointer-events: none;
+}
+.card.keep   { box-shadow: inset 0 0 0 2px var(--keep), 0 0 60px -20px var(--keep); }
+.card.cut    { box-shadow: inset 0 0 0 2px var(--cut),  0 0 60px -20px var(--cut); }
+.card.skip   { box-shadow: inset 0 0 0 2px var(--skip); }
+
+@keyframes fly {
+  to { transform: translateY(-14%) scale(0.94); opacity: 0; }
+}
+
+.card.arriving { animation: rise 0.3s cubic-bezier(0.22, 0.61, 0.36, 1); }
+@keyframes rise {
+  from { transform: translateY(10px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card.leaving, .card.arriving { animation-duration: 0.01ms; }
+  .track span { transition: none; }
+}
+
+/* ---------- card contents ---------- */
+
+.flag {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  background: rgba(255, 90, 95, 0.09);
+  border: 1px solid rgba(255, 90, 95, 0.3);
+  border-radius: var(--r-sm);
+  padding: 11px 13px;
+  font-size: 14px;
+}
+.flag b {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cut);
+  font-weight: 400;
+  padding-top: 2px;
+  white-space: nowrap;
+}
+.flag ul { margin: 0; padding-left: 16px; color: var(--dim); }
+
+.top { display: flex; gap: 14px; align-items: flex-start; }
+.art {
+  width: 76px; height: 76px; flex: none;
+  border-radius: 13px;
+  background: var(--surface-2);
+  object-fit: cover;
+}
+.title { margin: 0; font-size: 25px; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
+.by { margin: 5px 0 0; font-size: 13.5px; color: var(--faint); }
+
+.pitch { margin: 0; font-size: 15.5px; color: var(--text); }
+.blurb { margin: 0; font-size: 14px; color: var(--dim); }
+
+.facts { display: flex; flex-wrap: wrap; gap: 6px; }
+.fact {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 4px 9px;
+  border-radius: var(--pill);
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--dim);
+}
+.fact.arcs { color: var(--mint); background: rgba(52, 224, 196, 0.13); }
+
+.sec > h2 {
+  margin: 0 0 7px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.eps { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.eps li {
+  font-size: 14px;
+  color: var(--dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- the toast ---------- */
+
+.toast {
+  padding: 12px 14px calc(var(--safe-b) + 14px);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  background: linear-gradient(to top, var(--bg) 62%, transparent);
+}
+
+.verdicts { display: grid; grid-template-columns: 1fr 0.7fr 1fr; gap: 9px; }
+
+.v {
+  height: 62px;
+  border-radius: 15px;
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid var(--hairline);
+  background: var(--surface);
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+.v:active { transform: scale(0.95); }
+.v.keep { color: var(--keep); border-color: rgba(61, 220, 151, 0.4); }
+.v.keep:active { background: rgba(61, 220, 151, 0.16); }
+.v.cut { color: var(--cut); border-color: rgba(255, 90, 95, 0.4); }
+.v.cut:active { background: rgba(255, 90, 95, 0.16); }
+.v.skip { color: var(--skip); }
+.v.skip:active { background: rgba(125, 118, 138, 0.18); }
+.v:disabled { opacity: 0.35; }
+
+/* Undo occupies a fixed slot so the buttons never jump under a thumb already moving. */
+.undo {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-size: 13.5px;
+  color: var(--dim);
+}
+.undo button {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--coral);
+  padding: 5px 13px;
+  border: 1px solid rgba(255, 106, 77, 0.36);
+  border-radius: var(--pill);
+}
+.undo .what { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.undo .what b { font-weight: 400; }
+.undo .what.keep b { color: var(--keep); }
+.undo .what.cut b { color: var(--cut); }
+.undo .what.skip b { color: var(--skip); }
+
+.undo.gone { visibility: hidden; }
+
+/* ---------- states ---------- */
+
+.state {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 40px 26px;
+  color: var(--dim);
+}
+.state .big { font-size: 44px; }
+.state h2 { margin: 0; font-size: 21px; color: var(--text); }
+.state p { margin: 0; max-width: 34ch; font-size: 15px; }
+.state .tally {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.err {
+  margin: 14px;
+  padding: 13px 15px;
+  border-radius: var(--r-sm);
+  background: rgba(255, 90, 95, 0.1);
+  border: 1px solid rgba(255, 90, 95, 0.3);
+  font-size: 14px;
+}
+
+@media (min-width: 620px) {
+  .v { height: 56px; }
+  .title { font-size: 28px; }
+}
