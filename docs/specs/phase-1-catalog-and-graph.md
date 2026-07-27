@@ -1,6 +1,12 @@
 # Phase 1 — Catalog and graph
 
-Status: spec. Written 2026-07-26. Program context: `docs/PROGRAM.md`.
+Status: **complete, gate passed 2026-07-26.** Program context: `docs/PROGRAM.md`.
+
+Delivered: 315 shows, 31,653 episodes, 32 themes, 148 subjects, 799 arcs, 14,137 edges,
+83 tests, reproducible by content hash. The three named queries return rows a human
+reviewed and accepted. What Phase 1 deliberately did not do — relabelling, LLM arcs,
+entity extraction, inclusion audits — is listed under **Out of scope** at the end, and
+16 shows plus 8 subject mappings are queued for Phase 2.
 
 ## Goal
 

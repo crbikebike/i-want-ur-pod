@@ -120,8 +120,15 @@ Key rules:
 
 Each phase gets its own spec and plan, written when it starts — not now. Phases only advance when their gate passes.
 
-### Phase 1 — Catalog + graph
+### Phase 1 — Catalog + graph ✅ complete 2026-07-26
 Build the schema, migrate everything, build the edges, prove the queries.
+
+**Gate — passed.** All seven automated checks green, and Chris reviewed the query output
+across all 315 shows and judged the rows defensible. Built artifact: 315 shows, 31,653
+episodes, 32 themes, 148 subjects, 799 arcs (589 verified), 14,137 edges, 31 MB, seven
+seconds, reproducible by content hash. 83 tests.
+
+Re-run it any time with `python -m catalog.build.migrate && python -m catalog.build.verify`.
 
 **Gate:**
 - All 315 catalog shows migrated, every one carrying at least one episode. 31,653 episodes:
