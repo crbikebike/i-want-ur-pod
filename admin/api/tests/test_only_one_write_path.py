@@ -93,3 +93,41 @@ def test_the_guard_would_actually_catch_something(tmp_path):
 def test_edits_is_the_only_exemption():
     """If this list grows, the single-door promise is being negotiated away."""
     assert EXEMPT == {"edits.py"}
+
+
+# --- who gets the network traffic ------------------------------------------------
+
+# Podcast Index gives us a 4.7M-row dump as a single file. It is generous, it is free, and
+# it is a volunteer project. Hammering their API when the answer is already on disk would
+# be rude and would eventually get us blocked.
+PODCASTINDEX_API = re.compile(r"api\.podcastindex\.org", re.IGNORECASE)
+
+# The one permitted mention: the download URL, which lives in a docstring so a person can
+# find it. It is a different host from the API.
+PODCASTINDEX_DUMP = re.compile(r"public\.podcastindex\.org", re.IGNORECASE)
+
+
+@pytest.mark.parametrize("path", sorted(API.glob("*.py")), ids=lambda p: p.name)
+def test_no_module_calls_the_podcastindex_api(path):
+    """The dump is a file, not an API. One download, then zero requests.
+
+    If a show is missing from it the fallback is Apple, which is a commercial service with
+    a published search endpoint built for exactly this. Bulk episode text comes from the
+    publisher's own feed, which is the only place it exists.
+    """
+    source = path.read_text()
+    hits = [line.strip() for line in source.splitlines() if PODCASTINDEX_API.search(line)]
+    assert not hits, (
+        f"{path.name} reaches api.podcastindex.org:\n  " + "\n  ".join(hits)
+        + "\n\nUse the local dump (admin/api/podcastindex.py) or fall back to Apple."
+    )
+
+
+def test_the_dump_url_is_still_documented_somewhere():
+    """A guard that only forbids is a guard that eventually deletes the thing it protects.
+
+    Somebody has to be able to find where the dump comes from, and the answer must not be
+    'git log'.
+    """
+    mentions = [p.name for p in API.glob("*.py") if PODCASTINDEX_DUMP.search(p.read_text())]
+    assert mentions, "nothing records where the Podcast Index dump is downloaded from"

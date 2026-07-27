@@ -299,3 +299,73 @@ def test_nothing_is_ingested_when_the_log_cannot_be(db, tmp_path):
         edits.ingest_episodes(db, show_id=1, episodes=[ep("n1", "New")], actor="agent:comber",
                               note="x", decisions_path=unwritable / "decisions.jsonl")
     assert db.execute("SELECT count(*) FROM episodes WHERE show_id=1").fetchone()[0] == 1
+
+
+# --- refreshing publisher facts --------------------------------------------------
+
+
+def test_a_longer_description_replaces_a_truncated_one(db, log):
+    """The 2026-07 import cut every description at 299 characters. 24,000 episodes carry
+    a third of what the feed offers, and subject labelling reads that text."""
+    db.execute("UPDATE episodes SET description = ? WHERE id = 1", ("x" * 299,))
+    db.commit()
+    got = edits.refresh_episodes(db, show_id=1, episodes=[ep("g1", "Ep One", description="y" * 1200)],
+                                 actor="agent:comb", note="re-read", decisions_path=log)
+    assert got["longer"] == 1
+    assert len(db.execute("SELECT description FROM episodes WHERE id=1").fetchone()[0]) == 1200
+    assert read_log(log)[-1]["descriptions"] == 1
+
+
+def test_a_shorter_description_is_refused(db, log):
+    """A publisher who shortens their blurb, or a feed serving a summary in place of the
+    full text, must not cost us the longer version. A refresh that can lose data is not a
+    refresh."""
+    db.execute("UPDATE episodes SET description = ? WHERE id = 1", ("long " * 200,))
+    db.commit()
+    before = db.execute("SELECT description FROM episodes WHERE id=1").fetchone()[0]
+    edits.refresh_episodes(db, show_id=1, episodes=[ep("g1", "Ep One", description="short")],
+                           actor="agent:comb", note="re-read", decisions_path=log)
+    assert db.execute("SELECT description FROM episodes WHERE id=1").fetchone()[0] == before
+
+
+def test_duration_is_filled_but_never_overwritten(db, log):
+    """Duration is cached as a display hint. Ours may have been corrected; theirs may
+    rotate with a re-encode."""
+    edits.refresh_episodes(db, show_id=1, episodes=[ep("g1", "Ep One", duration_s=3723)],
+                           actor="agent:comb", note="re-read", decisions_path=log)
+    assert db.execute("SELECT duration_s FROM episodes WHERE id=1").fetchone()[0] == 3723
+    edits.refresh_episodes(db, show_id=1, episodes=[ep("g1", "Ep One", duration_s=9999)],
+                           actor="agent:comb", note="re-read", decisions_path=log)
+    assert db.execute("SELECT duration_s FROM episodes WHERE id=1").fetchone()[0] == 3723
+
+
+def test_the_title_is_never_touched(db, log):
+    """A title can be corrected by hand and a re-read would silently undo it. Nobody is
+    hand-correcting 28,000 descriptions, so those are safe to replace."""
+    db.execute("UPDATE episodes SET title = 'Our Corrected Title' WHERE id = 1")
+    db.commit()
+    edits.refresh_episodes(db, show_id=1,
+                           episodes=[ep("g1", "Publisher's Title", description="z" * 500)],
+                           actor="agent:comb", note="re-read", decisions_path=log)
+    assert db.execute("SELECT title FROM episodes WHERE id=1").fetchone()[0] == "Our Corrected Title"
+
+
+def test_an_episode_we_do_not_hold_is_ignored(db, log):
+    """Refresh updates what is there. Adding what is missing is ingest_episodes' job, and
+    conflating them would let a refresh quietly resurrect episodes a merge had hidden."""
+    edits.refresh_episodes(db, show_id=1,
+                           episodes=[ep("brand-new", "New", description="a" * 400)],
+                           actor="agent:comb", note="re-read", decisions_path=log)
+    assert db.execute("SELECT count(*) FROM episodes WHERE show_id=1").fetchone()[0] == 1
+
+
+def test_a_pass_that_changes_nothing_writes_nothing(db, log):
+    """288 feeds re-read weekly would otherwise put 288 empty lines in the log every time."""
+    db.execute("UPDATE episodes SET description = ?, duration_s = 60 WHERE id = 1", ("z" * 900,))
+    db.commit()
+    got = edits.refresh_episodes(db, show_id=1, episodes=[ep("g1", "Ep One", description="short",
+                                                            duration_s=60)],
+                                 actor="agent:comb", note="re-read", decisions_path=log)
+    assert got["longer"] == 0 and got["durations"] == 0
+    assert read_log(log) == []
+    assert db.execute("SELECT count(*) FROM edits WHERE field='refresh'").fetchone()[0] == 0

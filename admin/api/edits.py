@@ -288,6 +288,87 @@ def ingest_episodes(
     return {"added": added, "existing": existing}
 
 
+def refresh_episodes(
+    conn: sqlite3.Connection,
+    *,
+    show_id: int,
+    episodes: list,
+    actor: str,
+    note: str,
+    decisions_path: Path | None = None,
+) -> dict:
+    """Replace description and duration on episodes we already hold, from the feed.
+
+    Deliberately not `ingest_episodes`, which never overwrites an existing row. That rule
+    is right for what it guards -- arcs, subjects and verdicts hang off those rows and
+    they are our work, not the publisher's. These two fields are the opposite: they are
+    the publisher's own words about their own episode, and ours are a bad copy. The
+    2026-07 import truncated every description at 299 characters, so 24,000 episodes are
+    carrying a third of the text the feed actually offers.
+
+    Title is left alone on purpose. A title can be corrected by hand and a re-read would
+    silently undo that; a description cannot be corrected by hand because nobody is
+    rewriting 28,000 blurbs.
+
+    Nothing is overwritten with less than we already have. A publisher who shortens a
+    description, or a feed that serves a summary in place of the full text, must not cost
+    us the longer version -- that would turn a refresh into data loss, quietly, at scale.
+    """
+    at = _now()
+    key = entity_key(conn, "show", show_id)
+    longer = filled = unchanged = 0
+    try:
+        for ep in episodes:
+            row = conn.execute(
+                "SELECT id, description, duration_s FROM episodes "
+                "WHERE show_id = ? AND guid = ?", (show_id, ep.guid)).fetchone()
+            if not row:
+                continue
+            eid, have_desc, have_dur = row
+
+            touched = False
+
+            new_desc = (ep.description or "").strip()
+            if new_desc and len(new_desc) > len(have_desc or ""):
+                conn.execute("UPDATE episodes SET description = ? WHERE id = ?",
+                             (new_desc, eid))
+                longer += 1
+                touched = True
+
+            if ep.duration_s and have_dur is None:
+                conn.execute("UPDATE episodes SET duration_s = ? WHERE id = ?",
+                             (ep.duration_s, eid))
+                filled += 1
+                touched = True
+
+            if not touched:
+                unchanged += 1
+
+        if not (longer or filled):
+            conn.rollback()
+            return {"longer": 0, "durations": 0, "unchanged": unchanged}
+
+        conn.execute(
+            "INSERT INTO edits (at, actor, entity_type, entity_key, field, before, after, note) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (at, actor, "episode", f"{key}/*", "refresh", None, str(longer),
+             f"{note} ({longer} descriptions lengthened, {filled} durations filled)"))
+        path = decisions_path or DECISIONS
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps({
+                "at": at, "actor": actor, "entity": "episode", "key": f"{key}/*",
+                "field": "refresh", "descriptions": longer, "durations": filled,
+                "note": note,
+            }, ensure_ascii=False) + "\n")
+            fh.flush()
+    except Exception:
+        conn.rollback()
+        raise
+    conn.commit()
+    return {"longer": longer, "durations": filled, "unchanged": unchanged}
+
+
 def undo(conn: sqlite3.Connection, edit_id: int, *, decisions_path: Path | None = None) -> Edit:
     """Put a field back the way it was.
 
