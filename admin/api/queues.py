@@ -42,10 +42,25 @@ _SHUFFLE = "((s.id * 2654435761) % 1000003)"
 _APPLE_SIZE = re.compile(r"/\d+x\d+bb\.(jpg|png)$", re.IGNORECASE)
 
 
-def thumbnail(url: str | None, px: int = 300) -> str | None:
+def thumbnail(url: str | None, px: int = 300, updated_at: str | None = None) -> str | None:
+    """A small version of a show's cover, with a cachebust when the art has changed.
+
+    Apple serves covers with `cache-control: max-age=16480651` -- 190 days. Once a phone
+    has a copy, no amount of re-scanning feeds will dislodge it; only a different URL
+    will. So when the comber records that a show's artwork changed, that timestamp rides
+    along as ?v= and every cache in the path treats it as a new image.
+
+    No timestamp means no parameter, which is right: we have no evidence the art ever
+    changed, and inventing a version would defeat caching for nothing.
+    """
     if not url or not url.strip():
         return None
-    return _APPLE_SIZE.sub(lambda m: f"/{px}x{px}bb.{m.group(1)}", url)
+    small = _APPLE_SIZE.sub(lambda m: f"/{px}x{px}bb.{m.group(1)}", url)
+    if not updated_at:
+        return small
+    version = re.sub(r"\D", "", updated_at)[:14]
+    joiner = "&" if "?" in small else "?"
+    return f"{small}{joiner}v={version}"
 
 
 def inclusion_counts(conn: sqlite3.Connection) -> dict:
@@ -122,7 +137,7 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
     row = conn.execute(
         f"""
         SELECT s.id, s.slug, s.title, s.why, s.description, s.artwork_url,
-               s.apple_category, s.years, s.lang, s.include_verdict,
+               s.artwork_updated_at, s.apple_category, s.years, s.lang, s.include_verdict,
                n.name AS network,
                (SELECT count(*) FROM episodes WHERE show_id = s.id AND deleted_at IS NULL) AS eps,
                (SELECT count(*) FROM arcs WHERE show_id = s.id AND deleted_at IS NULL) AS arcs
@@ -138,8 +153,8 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
     if not row:
         return None
 
-    (show_id, slug, title, why, description, artwork, category, years, lang,
-     verdict, network, eps, arcs) = row
+    (show_id, slug, title, why, description, artwork, artwork_updated_at, category,
+     years, lang, verdict, network, eps, arcs) = row
 
     episodes = [
         r[0] for r in conn.execute(
@@ -170,7 +185,7 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
         "lang": lang,
         "pitch": why,
         "description": description,
-        "artwork": thumbnail(artwork),
+        "artwork": thumbnail(artwork, updated_at=artwork_updated_at),
         "episodeCount": eps,
         "arcCount": arcs,
         "recentEpisodes": episodes,

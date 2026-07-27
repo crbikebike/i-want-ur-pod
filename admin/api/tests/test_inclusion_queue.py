@@ -265,3 +265,40 @@ def test_the_card_carries_the_thumbnail_not_the_original(db):
                ("https://is1-ssl.mzstatic.com/a/b.jpg/3000x3000bb.jpg", sid))
     db.commit()
     assert "300x300bb" in queues.inclusion_next(db)["artwork"]
+
+
+def test_no_cachebust_until_the_art_is_known_to_have_changed():
+    """Inventing a version would defeat a 190-day cache for nothing."""
+    u = "https://is1-ssl.mzstatic.com/a/b.jpg/3000x3000bb.jpg"
+    assert "?" not in queues.thumbnail(u)
+
+
+def test_a_changed_cover_gets_a_new_url():
+    """Apple sends cache-control: max-age=16480651 -- 190 days. Once a phone holds a
+    copy, only a different URL will dislodge it."""
+    u = "https://is1-ssl.mzstatic.com/a/b.jpg/3000x3000bb.jpg"
+    first = queues.thumbnail(u, updated_at="2026-07-27T02:00:00+00:00")
+    later = queues.thumbnail(u, updated_at="2026-11-03T09:15:00+00:00")
+    assert "v=" in first and first != later
+
+
+def test_the_cachebust_is_stable_for_the_same_timestamp():
+    """It must not change per request, or every load re-downloads the cover."""
+    u = "https://is1-ssl.mzstatic.com/a/b.jpg/3000x3000bb.jpg"
+    stamp = "2026-07-27T02:00:00+00:00"
+    assert queues.thumbnail(u, updated_at=stamp) == queues.thumbnail(u, updated_at=stamp)
+
+
+def test_the_cachebust_joins_an_existing_query_correctly():
+    u = "https://example.com/cover.jpg?token=abc"
+    assert queues.thumbnail(u, updated_at="2026-07-27") == "https://example.com/cover.jpg?token=abc&v=20260727"
+
+
+def test_the_card_carries_the_cachebust(db):
+    sid = add_show(db, "a", "A")
+    db.execute("UPDATE shows SET artwork_url = ?, artwork_updated_at = ? WHERE id = ?",
+               ("https://is1-ssl.mzstatic.com/a/b.jpg/3000x3000bb.jpg",
+                "2026-07-27T02:00:00+00:00", sid))
+    db.commit()
+    art = queues.inclusion_next(db)["artwork"]
+    assert "300x300bb" in art and "v=20260727020000" in art
