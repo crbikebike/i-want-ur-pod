@@ -146,11 +146,83 @@ def test_the_card_carries_only_what_the_decision_needs(db):
     add_show(db, "s-town", "S-Town", episodes=7)
     item = queues.inclusion_next(db)
 
-    assert set(item) == {"id", "slug", "title", "network", "years", "artwork", "note", "links"}
+    assert set(item) == {"id", "slug", "title", "network", "years", "artwork", "note",
+                         "assessment", "links"}
     assert item["title"] == "S-Town"
     assert item["network"] == "Wondery"
     assert item["note"]["label"]
     assert item["links"][0]["href"].startswith("https://podcasts.apple.com/")
+
+
+# --- the fit read on the card ----------------------------------------------------
+
+
+def assess(conn, show_id, verdict, confidence, reason):
+    conn.execute(
+        "UPDATE shows SET fit_verdict=?, fit_confidence=?, fit_reason=?, fit_model=?, "
+        "fit_checked_at='2026-07-27T03:28:12+00:00' WHERE id=?",
+        (verdict, confidence, reason, "claude-sonnet-5", show_id))
+    conn.commit()
+
+
+def test_the_card_carries_the_reasoning_not_just_the_label(db):
+    """The reason is the point of the block.
+
+    "mixed" on its own is a label you either trust or ignore, and neither makes the next
+    decision faster. "Numbered narrative chapters, but a heavy run of aftershow interview
+    episodes" is a claim you can check against the Apple page one tap away and disagree
+    with specifically."""
+    sid = add_show(db, "scamanda", "Scamanda")
+    assess(db, sid, "mixed", "medium",
+           "Core season is numbered narrative chapters, but a heavy run of bonus "
+           "aftershow interview episodes.")
+
+    fit = queues.inclusion_next(db)["assessment"]
+    assert fit["verdict"] == "mixed"
+    assert "aftershow interview" in fit["reason"]
+    assert fit["sure"] == "fairly sure"      # `medium` spelled out, not printed raw
+    assert fit["meaning"]                    # what is still open, given that verdict
+    assert fit["by"] == "claude-sonnet-5"
+
+
+def test_an_assessment_replaces_never_reviewed_rather_than_sitting_under_it(db):
+    """Printing a stock line about the original import above an assessment written two
+    days ago tells you nothing and contradicts the block beneath it."""
+    sid = add_show(db, "a", "A")
+    assert queues.inclusion_next(db)["note"]["label"] == "Never reviewed"
+
+    assess(db, sid, "narrative", "medium", "Numbered multi-part runs with story titles.")
+    item = queues.inclusion_next(db)
+    assert item["note"] is None
+    assert item["assessment"]["verdict"] == "narrative"
+
+
+def test_a_flag_and_an_assessment_both_show(db):
+    """They answer different questions -- is this feed broken, and is this show the right
+    kind of thing -- so one never stands in for the other."""
+    sid = add_show(db, "a", "A", verdict="suspect", feed="http://shared")
+    add_show(db, "b", "B", feed="http://shared")
+    assess(db, sid, "unclear", "low", "Recent titles do not match the description at all.")
+
+    item = queues.inclusion_next(db)
+    assert item["note"]["kind"] == "duplicate-entry"
+    assert item["assessment"]["sure"] == "a guess"
+
+
+def test_a_verdict_with_no_reason_is_not_shown(db):
+    """A bare label on the card would read as settled when nothing supports it."""
+    sid = add_show(db, "a", "A")
+    assess(db, sid, "talk", "high", "")
+    assert queues.inclusion_next(db)["assessment"] is None
+
+
+def test_no_assessment_carries_a_verdict_colour(db):
+    """Green, red and gray are the three buttons' alone. A card that arrived already
+    tinted would be deciding for the person it is asking."""
+    sid = add_show(db, "a", "A")
+    assess(db, sid, "talk", "high", "Every recent episode title is a guest name.")
+    fit = queues.inclusion_next(db)["assessment"]
+    assert "tone" not in fit and "colour" not in fit and "color" not in fit
 
 
 def test_every_card_says_why_it_is_being_reviewed(db):

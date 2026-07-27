@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-/* Vetting the catalog.
+/* The Catalog Roster Queue.
  *
- * The job: the catalog is meant to hold story-driven, investigative shows and nothing
- * else -- no host-interviews-guest talk shows. 315 were imported from an earlier list
+ * The job: deciding who is on the roster. The catalog is meant to hold story-driven,
+ * investigative shows and nothing else -- no host-interviews-guest talk shows. 315 were imported from an earlier list
  * and none has ever been checked against that standard, so Comedy, Sports and
  * Self-Improvement entries are in there right now. This is where each show is checked
  * and either stays in the catalog or does not.
@@ -163,7 +163,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="head">
-        <h1>Vetting the Catalog</h1>
+        <h1>Catalog Roster Queue</h1>
         {counts && (
           <div className="left">
             <b>{counts.waiting}</b> to go
@@ -281,11 +281,15 @@ function Card({ show, leaving, onPreview }) {
         </div>
       </div>
 
-      <div className={`note ${show.note.tone}`}>
-        <b>{show.note.label}</b>
-        {show.note.detail.map((d) => <p key={d}>{d}</p>)}
-        <p className="means">{show.note.meaning}</p>
-      </div>
+      {show.note && (
+        <div className={`note ${show.note.tone}`}>
+          <b>{show.note.label}</b>
+          {show.note.detail.map((d) => <p key={d}>{d}</p>)}
+          <p className="means">{show.note.meaning}</p>
+        </div>
+      )}
+
+      {show.assessment && <Assessment fit={show.assessment} />}
 
       <div className="links">
         {show.links.map((l) =>
@@ -301,6 +305,30 @@ function Card({ show, leaving, onPreview }) {
         )}
       </div>
     </article>
+  );
+}
+
+/* What the fit agent made of this show, and why.
+ *
+ * The reason is the whole reason this block exists. Every show in this queue was read
+ * once already; without the reasoning that read is just a label you either trust or
+ * ignore, and neither makes the next decision faster. With it, the card is arguing a
+ * case you can check against the Apple page one tap away.
+ *
+ * The verdict is a chip and the confidence is spelled out next to it in words -- "a
+ * guess" carries the caveat that `low` does not. Nothing here is green or red; see
+ * queues._assessment for why that matters.
+ */
+function Assessment({ fit }) {
+  return (
+    <div className="fit">
+      <b>
+        Assessed <span className={`chip ${fit.verdict}`}>{fit.verdict}</span>
+        <i>{fit.sure}</i>
+      </b>
+      <p className="why">{fit.reason}</p>
+      <p className="means">{fit.meaning}</p>
+    </div>
   );
 }
 

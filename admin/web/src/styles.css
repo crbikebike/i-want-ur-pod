@@ -208,6 +208,59 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .note .means { color: var(--ink-soft); font-size: 13px; margin-top: 3px; }
 
+/* The fit read: a slip of paper clipped to the card rather than another painted panel.
+   Same left rule as .note so the two stack as one column of margin notes, but on the
+   second sheet colour and with a dashed edge -- it is somebody's opinion, not a fact the
+   catalog holds about itself. No verdict colours here on purpose; green and red are the
+   buttons' alone. */
+.fit {
+  background: var(--sheet-warm);
+  border-left: 3px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 10px 13px 11px;
+  font-size: 14px;
+  color: var(--ink);
+}
+.fit p { margin: 0; }
+
+.fit b {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--ink-faint);
+  margin-bottom: 5px;
+}
+.fit b i {
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 11px;
+}
+
+.chip {
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  padding: 2px 7px 3px;
+  border-radius: var(--pill);
+  background: var(--cement-wash);
+  color: var(--cement);
+  box-shadow: inset 0 0 0 1px var(--rule-soft);
+}
+/* Only `talk` is tinted, and toward cement rather than the cut colour. It is the one
+   verdict that argues against a show being here at all, so it earns a little weight --
+   but tinting it brick would decide the card before the human touched it. */
+.chip.talk { background: var(--cement); color: var(--sheet); box-shadow: none; }
+
+/* The reasoning gets the room. It is quoted evidence, so it is set a notch larger than
+   the meaning line under it and left ragged rather than justified. */
+.fit .why { line-height: 1.42; text-wrap: pretty; }
+.fit .means { color: var(--ink-soft); font-size: 13px; margin-top: 5px; }
+
 .top { display: flex; gap: 14px; align-items: flex-start; }
 .art {
   width: 76px; height: 76px; flex: none;

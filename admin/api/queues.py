@@ -201,6 +201,48 @@ def _note(conn: sqlite3.Connection, show_id: int) -> dict | None:
     }
 
 
+# What each fit verdict means for the button you are about to press. The assessment is
+# not the decision -- a model said this, and you are the one who decides -- so each line
+# says what is still open rather than which way to go.
+_FIT_MEANS = {
+    "narrative": "Reads as story-driven. Confirm and keep.",
+    "talk": "Reads as a host-and-guest show, which is what this catalog excludes.",
+    "mixed": "Genuinely both. Where your line sits is the whole question here.",
+    "unclear": "Could not tell from the feed. Look before deciding.",
+}
+
+# Confidence in plain words. `high` never reaches a card on its own -- auto.py settles
+# those -- so it only appears here alongside a flag or after an undo.
+_FIT_SURE = {
+    "high": "confident",
+    "medium": "fairly sure",
+    "low": "a guess",
+}
+
+
+def _assessment(verdict, confidence, reason, model, checked_at) -> dict | None:
+    """The fit read, shown as evidence rather than as an answer.
+
+    Deliberately not coloured green or red. Those three colours mean keep, cut and skip
+    everywhere else in this tool, and borrowing one here would put a verdict on the card
+    before the human pressed anything -- which is precisely the thing the queue exists to
+    avoid. It is a neutral margin note with its reasoning attached, and the reasoning is
+    the point: "not narrative" is unarguable, while "every recent title is a guest name"
+    is something you can look at and disagree with.
+    """
+    if not verdict or not reason:
+        return None
+    return {
+        "verdict": verdict,
+        "confidence": confidence,
+        "sure": _FIT_SURE.get(confidence, confidence or ""),
+        "reason": reason,
+        "meaning": _FIT_MEANS.get(verdict, ""),
+        "by": model or "a model",
+        "at": checked_at,
+    }
+
+
 def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -> dict | None:
     """The next show to judge, with everything needed to judge it on one screen."""
     skipped = skipped or []
@@ -213,6 +255,7 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
         f"""
         SELECT s.id, s.slug, s.title, s.home_url, s.artwork_url,
                s.artwork_updated_at, s.apple_category, s.years, s.lang, s.include_verdict,
+               s.fit_verdict, s.fit_confidence, s.fit_reason, s.fit_model, s.fit_checked_at,
                n.name AS network,
                (SELECT count(*) FROM episodes WHERE show_id = s.id AND deleted_at IS NULL) AS eps,
                (SELECT count(*) FROM arcs WHERE show_id = s.id AND deleted_at IS NULL) AS arcs
@@ -229,11 +272,18 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
         return None
 
     (show_id, slug, title, home_url, artwork, artwork_updated_at, category,
-     years, lang, verdict, network, eps, arcs) = row
+     years, lang, verdict, fit_verdict, fit_confidence, fit_reason, fit_model,
+     fit_checked_at, network, eps, arcs) = row
 
+    assessment = _assessment(fit_verdict, fit_confidence, fit_reason, fit_model,
+                             fit_checked_at)
 
     note = _note(conn, show_id)
-    if note is None:
+    # "Never reviewed" only when that is still true. Most of what reaches this queue now
+    # has been read by the fit agent, and printing a stock line about the import above an
+    # assessment written two days ago tells you nothing and contradicts the block under
+    # it. Where an assessment exists it *is* the note.
+    if note is None and assessment is None:
         note = {
             "kind": "unreviewed",
             "tone": "info",
@@ -246,6 +296,7 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
         }
 
     return {
+        "assessment": assessment,
         "id": show_id,
         "slug": slug,
         "title": title,
