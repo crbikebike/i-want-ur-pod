@@ -83,13 +83,20 @@ def _discover(directory: Path) -> list[tuple[int, str, Path]]:
 def _statements(sql: str) -> list[str]:
     """Split on semicolons, dropping comments and blanks.
 
-    Good enough because migrations are additive DDL. A semicolon inside a string literal
-    would break this, which is a reason not to put one in a migration.
+    Trailing comments are stripped as well as whole comment lines. Only dropping whole
+    lines meant `ALTER TABLE t ADD COLUMN c TEXT;  -- what c is for` split into the
+    statement and a fragment starting with `--`, which then failed the additive check as
+    though the comment were SQL.
+
+    Good enough because migrations are additive DDL. A `--` or a semicolon inside a
+    string literal would break this, which is a reason not to put either in a migration.
     """
-    without_comments = "\n".join(
-        line for line in sql.splitlines() if not line.strip().startswith("--")
-    )
-    return [s.strip() for s in without_comments.split(";") if s.strip()]
+    lines = []
+    for line in sql.splitlines():
+        code = line.split("--", 1)[0]
+        if code.strip():
+            lines.append(code)
+    return [s.strip() for s in "\n".join(lines).split(";") if s.strip()]
 
 
 def _check_additive(name: str, sql: str) -> None:

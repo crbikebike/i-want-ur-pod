@@ -204,3 +204,21 @@ def test_soft_deleting_a_show_keeps_its_episodes(db):
     db.execute("INSERT INTO episodes (id, show_id, guid, title) VALUES (1,1,'g','E')")
     db.execute("UPDATE shows SET deleted_at='2026-07-27' WHERE id=1")
     assert db.execute("SELECT count(*) FROM episodes").fetchone()[0] == 1
+
+
+def test_a_trailing_comment_is_not_mistaken_for_sql(db, tmp_path):
+    """Regression: only whole comment lines were stripped, so `ALTER TABLE ...;  -- why`
+    split into the statement and a fragment starting with `--`, which then failed the
+    additive check as though the comment were a statement."""
+    write(tmp_path, "001-t.sql",
+          "CREATE TABLE t (id INTEGER PRIMARY KEY);\n"
+          "ALTER TABLE t ADD COLUMN c TEXT;   -- what c is for\n")
+    migrations.apply_all(db, tmp_path)
+    assert "c" in {r[1] for r in db.execute("PRAGMA table_info(t)")}
+
+
+def test_a_destructive_statement_still_fails_with_comments_around_it(db, tmp_path):
+    write(tmp_path, "001-bad.sql",
+          "-- innocent preamble\nDROP TABLE shows;  -- trailing note\n")
+    with pytest.raises(ValueError, match="additive only"):
+        migrations.apply_all(db, tmp_path)

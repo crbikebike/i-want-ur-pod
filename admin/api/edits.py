@@ -40,7 +40,10 @@ DECISIONS = ROOT / "curation/source/decisions.jsonl"
 # audit trail and undo as any other.
 WRITABLE: dict[str, tuple[str, set[str]]] = {
     "show":    ("shows",    {"include_verdict", "depth", "lang", "title", "why", "description",
-                             "deleted_at", "deleted_reason"}),
+                             "deleted_at", "deleted_reason",
+                             # the fit assessment: a model's opinion, not a verdict
+                             "fit_verdict", "fit_confidence", "fit_reason",
+                             "fit_checked_at", "fit_model"}),
     "theme":   ("themes",   {"name", "description", "deleted_at"}),
     "subject": ("subjects", {"name", "description", "theme_id", "deleted_at"}),
     "arc":     ("arcs",     {"name", "description", "confidence", "kind",

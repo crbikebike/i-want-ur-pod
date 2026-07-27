@@ -184,7 +184,16 @@ def test_a_show_with_a_stored_apple_link_uses_it(db):
     db.commit()
     link = queues.inclusion_next(db)["links"][0]
     assert link["href"] == "https://podcasts.apple.com/us/podcast/a/id1"
-    assert link["label"] == "Open in Apple Podcasts"
+    # Opens in place rather than in a tab: the embed player is frameable where the
+    # ordinary page is not.
+    assert link["embed"] == "https://embed.podcasts.apple.com/us/podcast/id1"
+
+
+def test_a_show_we_cannot_embed_falls_back_to_a_tab(db):
+    add_show(db, "a", "A")   # no home_url, so no id to embed
+    link = queues.inclusion_next(db)["links"][0]
+    assert link["embed"] is None
+    assert "search?term=" in link["href"]
 
 
 def test_a_show_without_one_gets_a_search_instead(db):
