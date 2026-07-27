@@ -1,12 +1,16 @@
 /* The workbench.
  *
- * Direction: a sorting table. One card in the hand, a decision, the card leaves, the
- * pile goes down. Everything here serves that loop and nothing competes with it.
+ * Working on warm construction paper: a kraft-toned desk, a cream sheet laid on it, and
+ * dark ink. Colour comes from the palette new cars use -- Toyota's Cement and Lunar
+ * Rock, Subaru's Autumn Green and Horizon Blue. Deep pastels: chalky and desaturated,
+ * substantial rather than sweet.
  *
- * Palette is the project's own (design/kit/tokens.html) so the back office looks like
- * the product it serves. Coral is navigation and progress only -- verdicts own green,
- * red and grey, and if the accent shared those colours the feedback would stop reading
- * as feedback.
+ * Deliberately one world. No dark variant, no prefers-color-scheme. Paper is the whole
+ * idea and an inverted paper is just a grey screen.
+ *
+ * The one rule the colour has to obey: Horizon Blue is navigation and progress, and the
+ * three verdict colours are only ever verdicts. If the accent borrowed green or red the
+ * feedback would stop reading as feedback.
  */
 
 @font-face {
@@ -17,64 +21,85 @@
 }
 
 :root {
-  --coral: #ff6a4d;
-  --mint: #34e0c4;
+  /* paper */
+  --desk: #d9caac;          /* kraft construction paper, the work surface */
+  --desk-deep: #cbb994;     /* its shadowed edge */
+  --sheet: #f4ecda;         /* the cream sheet you write on */
+  --sheet-warm: #ece1c9;    /* a second sheet, tucked behind */
 
-  --bg: #0e0b12;
-  --surface: #1c1722;
-  --surface-2: #262030;
-  --hairline: rgba(255, 255, 255, 0.09);
-  --text: #f8f3ef;
-  --dim: #aba1b4;
-  --faint: #8b8291;
+  /* ink */
+  --ink: #2b2721;
+  --ink-soft: #5f574b;
+  --ink-faint: #8a7f6e;
+  --rule: rgba(43, 39, 33, 0.16);
+  --rule-soft: rgba(43, 39, 33, 0.09);
 
-  /* Verdicts. Deliberately not the brand accent. */
-  --keep: #3ddc97;
-  --cut: #ff5a5f;
-  --skip: #7d768a;
+  /* The car park. Deepened from the showroom swatches so 13px uppercase mono clears
+     4.5:1 against both the cream sheet and the painted panels -- the first pass sat at
+     3.8:1, which is a nice colour you cannot read. */
+  --green: #4f7052;         /* Subaru Autumn Green */
+  --green-wash: rgba(79, 112, 82, 0.15);
+  --brick: #97493d;         /* muted Barcelona red */
+  --brick-wash: rgba(151, 73, 61, 0.13);
+  --cement: #6f665a;        /* Toyota Cement */
+  --cement-wash: rgba(111, 102, 90, 0.15);
+  --horizon: #41628a;       /* Subaru Horizon Blue -- navigation only */
+  --horizon-wash: rgba(65, 98, 138, 0.13);
 
   --mono: "Plex", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --sans: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 
-  --r: 18px;
-  --r-sm: 11px;
+  --r: 6px;                 /* paper is cut, not rounded */
+  --r-sm: 4px;
   --pill: 999px;
 
-  /* Real device insets: this lives in the thumb zone on a phone with a home bar. */
+  /* pencil-soft, warm, never black */
+  --lift: 0 1px 0 rgba(255, 250, 240, 0.5), 0 2px 3px rgba(94, 72, 40, 0.13),
+          0 12px 22px -14px rgba(94, 72, 40, 0.3);
+
   --safe-b: env(safe-area-inset-bottom, 0px);
   --safe-t: env(safe-area-inset-top, 0px);
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
 html, body, #root { height: 100%; }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+  color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.45;
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
+
+  /* Construction paper: fibres, flecks, and an uneven tone. Three cheap layers rather
+     than an image, so it costs nothing and never pixelates. */
+  background-color: var(--desk);
+  background-image:
+    radial-gradient(rgba(255, 252, 245, 0.5) 0.6px, transparent 0.7px),
+    radial-gradient(rgba(120, 95, 60, 0.16) 0.5px, transparent 0.6px),
+    linear-gradient(102deg, rgba(255, 250, 238, 0.24) 0%, transparent 46%,
+                    rgba(150, 120, 78, 0.13) 100%);
+  background-size: 7px 7px, 11px 11px, 100% 100%;
+  background-position: 0 0, 3px 4px, 0 0;
 }
 
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; border-radius: 6px; }
+:focus-visible { outline: 2px solid var(--horizon); outline-offset: 3px; border-radius: 3px; }
 
 /* ---------- shell ---------- */
 
 .app {
   height: 100%;
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
   max-width: 620px;
   margin: 0 auto;
 }
 
 .head {
-  padding: calc(var(--safe-t) + 14px) 18px 10px;
+  padding: calc(var(--safe-t) + 15px) 20px 9px;
   display: flex;
   align-items: baseline;
   gap: 12px;
@@ -83,11 +108,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .head h1 {
   margin: 0;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 400;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--ink-soft);
 }
 
 .left {
@@ -95,63 +120,71 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-family: var(--mono);
   font-size: 13px;
   font-variant-numeric: tabular-nums;
-  color: var(--dim);
+  color: var(--ink-faint);
 }
-.left b { color: var(--text); font-weight: 400; }
+.left b { color: var(--ink); font-weight: 400; }
 
-/* The pile going down. Coral, because progress is navigation not verdict. */
+/* Ruled line, like the margin rule on a worksheet. */
 .track {
-  height: 2px;
-  background: var(--hairline);
-  margin: 0 18px;
+  height: 3px;
+  background: var(--rule-soft);
+  margin: 0 20px;
   border-radius: var(--pill);
   overflow: hidden;
 }
 .track span {
   display: block;
   height: 100%;
-  background: var(--coral);
+  background: var(--horizon);
   border-radius: var(--pill);
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* ---------- the card ---------- */
+/* ---------- the sheet ---------- */
 
-.stage {
-  position: relative;
-  overflow: hidden;
-  padding: 14px 14px 0;
+.stage { position: relative; overflow: hidden; padding: 15px 15px 0; }
+
+/* The sheet often runs past the fold. A soft edge says "more below" without adding a
+   scrollbar to a phone that hides them anyway. */
+.stage::after {
+  content: "";
+  position: absolute;
+  left: 16px; right: 16px; bottom: 0;
+  height: 26px;
+  background: linear-gradient(to top, var(--sheet), transparent);
+  border-radius: 0 0 var(--r) var(--r);
+  pointer-events: none;
 }
 
 .card {
   height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background: var(--surface);
-  border: 1px solid var(--hairline);
+  background: var(--sheet);
+  border: 1px solid var(--rule);
   border-radius: var(--r);
-  padding: 20px 18px 26px;
+  box-shadow: var(--lift);
+  padding: 20px 19px 26px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 15px;
 }
 
-/* Leaving: the verdict IS the animation. No message needed. */
-.card.leaving {
-  animation: fly 0.34s cubic-bezier(0.4, 0, 1, 1) forwards;
-  pointer-events: none;
-}
-.card.keep   { box-shadow: inset 0 0 0 2px var(--keep), 0 0 60px -20px var(--keep); }
-.card.cut    { box-shadow: inset 0 0 0 2px var(--cut),  0 0 60px -20px var(--cut); }
-.card.skip   { box-shadow: inset 0 0 0 2px var(--skip); }
+/* Leaving: the sheet takes the colour of the decision with it. The motion is the
+   feedback -- no toast, no message. */
+.card.leaving { animation: fly 0.34s cubic-bezier(0.4, 0, 1, 1) forwards; pointer-events: none; }
+.card.keep { background: color-mix(in srgb, var(--green) 13%, var(--sheet)); border-color: var(--green); }
+.card.cut  { background: color-mix(in srgb, var(--brick) 13%, var(--sheet)); border-color: var(--brick); }
+.card.skip { background: color-mix(in srgb, var(--cement) 15%, var(--sheet)); border-color: var(--cement); }
 
 @keyframes fly {
-  to { transform: translateY(-14%) scale(0.94); opacity: 0; }
+  to { transform: translateY(-13%) rotate(-1.2deg) scale(0.95); opacity: 0; }
 }
 
-.card.arriving { animation: rise 0.3s cubic-bezier(0.22, 0.61, 0.36, 1); }
-@keyframes rise {
-  from { transform: translateY(10px); opacity: 0; }
+/* Arriving: the next sheet is dealt onto the desk. */
+.card.arriving { animation: deal 0.32s cubic-bezier(0.22, 0.61, 0.36, 1); }
+@keyframes deal {
+  from { transform: translateY(13px) rotate(0.8deg); opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -159,68 +192,72 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .track span { transition: none; }
 }
 
-/* ---------- card contents ---------- */
+/* ---------- what is on the sheet ---------- */
 
 .flag {
   display: flex;
-  gap: 9px;
+  gap: 10px;
   align-items: flex-start;
-  background: rgba(255, 90, 95, 0.09);
-  border: 1px solid rgba(255, 90, 95, 0.3);
+  background: var(--brick-wash);
+  border-left: 3px solid var(--brick);
   border-radius: var(--r-sm);
   padding: 11px 13px;
   font-size: 14px;
+  color: var(--ink);
 }
 .flag b {
   font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.1em;
+  font-size: 10px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cut);
+  color: var(--brick);
   font-weight: 400;
-  padding-top: 2px;
+  padding-top: 3px;
   white-space: nowrap;
 }
-.flag ul { margin: 0; padding-left: 16px; color: var(--dim); }
+.flag ul { margin: 0; padding-left: 16px; color: var(--ink-soft); }
 
 .top { display: flex; gap: 14px; align-items: flex-start; }
 .art {
   width: 76px; height: 76px; flex: none;
-  border-radius: 13px;
-  background: var(--surface-2);
+  border-radius: var(--r-sm);
+  background: var(--sheet-warm);
+  border: 1px solid var(--rule);
   object-fit: cover;
 }
-.title { margin: 0; font-size: 25px; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
-.by { margin: 5px 0 0; font-size: 13.5px; color: var(--faint); }
+.title { margin: 0; font-size: 26px; line-height: 1.12; letter-spacing: -0.017em; text-wrap: balance; }
+.by { margin: 6px 0 0; font-size: 13.5px; color: var(--ink-faint); }
 
-.pitch { margin: 0; font-size: 15.5px; color: var(--text); }
-.blurb { margin: 0; font-size: 14px; color: var(--dim); }
+.pitch { margin: 0; font-size: 15.5px; }
+.blurb { margin: 0; font-size: 14px; color: var(--ink-soft); }
 
 .facts { display: flex; flex-wrap: wrap; gap: 6px; }
 .fact {
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   padding: 4px 9px;
   border-radius: var(--pill);
-  background: rgba(255, 255, 255, 0.07);
-  color: var(--dim);
+  background: var(--cement-wash);
+  color: var(--ink-soft);
 }
-.fact.arcs { color: var(--mint); background: rgba(52, 224, 196, 0.13); }
+.fact.arcs { color: var(--green); background: var(--green-wash); }
 
 .sec > h2 {
-  margin: 0 0 7px;
+  margin: 0 0 8px;
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 400;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--ink-faint);
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--rule-soft);
 }
-.eps { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.eps { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .eps li {
   font-size: 14px;
-  color: var(--dim);
+  color: var(--ink-soft);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -229,61 +266,83 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- the toast ---------- */
 
 .toast {
-  padding: 12px 14px calc(var(--safe-b) + 14px);
+  padding: 12px 15px calc(var(--safe-b) + 15px);
   display: flex;
   flex-direction: column;
   gap: 9px;
-  background: linear-gradient(to top, var(--bg) 62%, transparent);
+  background: linear-gradient(to top, var(--desk-deep) 55%, transparent);
 }
 
-.verdicts { display: grid; grid-template-columns: 1fr 0.7fr 1fr; gap: 9px; }
+.verdicts { display: grid; grid-template-columns: 1fr 0.68fr 1fr; gap: 9px; }
 
+/* Painted panels, not glass. Colour fill with ink-dark text, like a car in a lot. */
 .v {
   height: 62px;
-  border-radius: 15px;
+  border-radius: var(--r);
   font-family: var(--mono);
-  font-size: 14px;
-  letter-spacing: 0.05em;
+  font-size: 13.5px;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  border: 1px solid var(--hairline);
-  background: var(--surface);
-  transition: transform 0.12s ease, background 0.12s ease;
+  color: var(--sheet);
+  border: 1px solid rgba(43, 39, 33, 0.22);
+  box-shadow: 0 1px 0 rgba(255, 250, 240, 0.35) inset, 0 2px 4px rgba(94, 72, 40, 0.22);
+  transition: transform 0.11s ease, filter 0.11s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
 }
-.v:active { transform: scale(0.95); }
-.v.keep { color: var(--keep); border-color: rgba(61, 220, 151, 0.4); }
-.v.keep:active { background: rgba(61, 220, 151, 0.16); }
-.v.cut { color: var(--cut); border-color: rgba(255, 90, 95, 0.4); }
-.v.cut:active { background: rgba(255, 90, 95, 0.16); }
-.v.skip { color: var(--skip); }
-.v.skip:active { background: rgba(125, 118, 138, 0.18); }
-.v:disabled { opacity: 0.35; }
 
-/* Undo occupies a fixed slot so the buttons never jump under a thumb already moving. */
+/* Stamped into the panel rather than sitting on it. Hidden where there is no keyboard:
+   a shortcut hint on a phone is a lie. */
+.v kbd {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: rgba(255, 252, 244, 0.72);
+  background: rgba(43, 39, 33, 0.24);
+  box-shadow: 0 1px 0 rgba(255, 250, 240, 0.18);
+}
+@media (hover: none) and (pointer: coarse) {
+  .v kbd { display: none; }
+  .v { gap: 0; }
+}
+.v:active { transform: translateY(1.5px) scale(0.985); filter: brightness(0.93); }
+.v.keep { background: var(--green); }
+.v.cut { background: var(--brick); }
+.v.skip { background: var(--cement); }
+.v:disabled { opacity: 0.4; box-shadow: none; }
+
+/* Fixed slot, so the buttons never jump under a thumb already moving. */
 .undo {
   height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 10px;
   font-size: 13.5px;
-  color: var(--dim);
+  color: var(--ink-soft);
 }
 .undo button {
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--coral);
+  color: var(--horizon);
   padding: 5px 13px;
-  border: 1px solid rgba(255, 106, 77, 0.36);
+  border: 1px solid var(--horizon);
   border-radius: var(--pill);
+  background: var(--horizon-wash);
 }
 .undo .what { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.undo .what b { font-weight: 400; }
-.undo .what.keep b { color: var(--keep); }
-.undo .what.cut b { color: var(--cut); }
-.undo .what.skip b { color: var(--skip); }
-
+.undo .what b { font-weight: 600; }
+.undo .what.keep b { color: var(--green); }
+.undo .what.cut b { color: var(--brick); }
+.undo .what.skip b { color: var(--ink-faint); }
 .undo.gone { visibility: hidden; }
 
 /* ---------- states ---------- */
@@ -297,28 +356,29 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: 12px;
   text-align: center;
   padding: 40px 26px;
-  color: var(--dim);
+  color: var(--ink-soft);
 }
-.state .big { font-size: 44px; }
-.state h2 { margin: 0; font-size: 21px; color: var(--text); }
+.state .big { font-size: 46px; color: var(--green); line-height: 1; }
+.state h2 { margin: 0; font-size: 22px; color: var(--ink); }
 .state p { margin: 0; max-width: 34ch; font-size: 15px; }
 .state .tally {
   font-family: var(--mono);
   font-size: 13px;
-  color: var(--faint);
+  color: var(--ink-faint);
   font-variant-numeric: tabular-nums;
 }
 
 .err {
-  margin: 14px;
+  margin: 15px;
   padding: 13px 15px;
   border-radius: var(--r-sm);
-  background: rgba(255, 90, 95, 0.1);
-  border: 1px solid rgba(255, 90, 95, 0.3);
+  background: var(--brick-wash);
+  border-left: 3px solid var(--brick);
   font-size: 14px;
+  color: var(--ink);
 }
 
 @media (min-width: 620px) {
   .v { height: 56px; }
-  .title { font-size: 28px; }
+  .title { font-size: 29px; }
 }

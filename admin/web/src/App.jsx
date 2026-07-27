@@ -113,13 +113,36 @@ export default function App() {
     }
   }
 
-  // Keyboard for desktop. The phone never sees these.
+  /* Keyboard, for clearing a queue at a desk.
+   *
+   * Letters are mnemonic and arrows follow the buttons' left-to-right order, so the
+   * hand can use whichever it reaches for. Both are printed on the buttons -- a
+   * shortcut nobody can see is one nobody uses.
+   *
+   * Two guards worth keeping. Space is skip, but Space also activates a focused
+   * button; without the target check, tabbing to Keep and pressing Space would keep
+   * AND skip. And any modifier is ignored, so browser and OS chords still work --
+   * except Cmd/Ctrl+Z, which everyone's fingers already know means undo.
+   */
   useEffect(() => {
     const onKey = (ev) => {
-      if (ev.key === "k" || ev.key === "ArrowRight") decide("keep");
-      else if (ev.key === "c" || ev.key === "ArrowLeft") decide("cut");
-      else if (ev.key === "s" || ev.key === " ") { ev.preventDefault(); decide("skip"); }
-      else if (ev.key === "u") undo();
+      const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(ev.target.tagName) || ev.target.isContentEditable;
+      if (typing) return;
+
+      if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "z") {
+        ev.preventDefault();
+        undo();
+        return;
+      }
+      if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+
+      const onAButton = ev.target.tagName === "BUTTON";
+      const key = ev.key.toLowerCase();
+
+      if (key === "k" || ev.key === "ArrowRight") decide("keep");
+      else if (key === "c" || ev.key === "ArrowLeft") decide("cut");
+      else if (key === "s" || (ev.key === " " && !onAButton)) { ev.preventDefault(); decide("skip"); }
+      else if (key === "u") undo();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -161,18 +184,28 @@ export default function App() {
           <button onClick={undo}>Undo</button>
         </div>
         <div className="verdicts">
-          <button className="v cut" onClick={() => decide("cut")} disabled={!item || !!leaving}>
-            Cut
-          </button>
-          <button className="v skip" onClick={() => decide("skip")} disabled={!item || !!leaving}>
-            Skip
-          </button>
-          <button className="v keep" onClick={() => decide("keep")} disabled={!item || !!leaving}>
-            Keep
-          </button>
+          <Verdict kind="cut" label="Cut" keys="C" onPick={decide} disabled={!item || !!leaving} />
+          <Verdict kind="skip" label="Skip" keys="S" onPick={decide} disabled={!item || !!leaving} />
+          <Verdict kind="keep" label="Keep" keys="K" onPick={decide} disabled={!item || !!leaving} />
         </div>
       </div>
     </div>
+  );
+}
+
+/* The key hint is rendered but hidden on touch devices, where it would be a lie. */
+function Verdict({ kind, label, keys, onPick, disabled }) {
+  return (
+    <button
+      className={`v ${kind}`}
+      onClick={() => onPick(kind)}
+      disabled={disabled}
+      aria-keyshortcuts={keys}
+      title={`${label} (${keys})`}
+    >
+      <span>{label}</span>
+      <kbd>{keys}</kbd>
+    </button>
   );
 }
 
