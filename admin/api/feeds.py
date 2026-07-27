@@ -275,5 +275,33 @@ def verify(feed: Feed, *, network: str | None, expect_title: str | None = None) 
                    p, feed.title, feed.author, len(feed.episodes), feed.sample())
 
 
+_TAG = re.compile(r"<[^>]+>")
+_BOILERPLATE = re.compile(
+    r"\s*(see (privacy policy|omnystudio\.com/listener)|learn more about your ad choices|"
+    r"privacy policy|california privacy notice|hosted on acast|"
+    r"to listen to all our|become a member at)\b.*$",
+    re.IGNORECASE | re.DOTALL)
+
+
+def plain_text(html: str | None, limit: int | None = None) -> str:
+    """A description as prose, for reading rather than rendering.
+
+    Feeds carry markup -- `<p>`, `&ndash;`, `&rsquo;` -- and a tail of legal boilerplate
+    that every episode of a network repeats verbatim. Both are stored as sent, because
+    that is what the publisher published, and both are stripped here because neither is
+    what a model should be shown. On a 20-episode batch the boilerplate alone is a few
+    hundred wasted tokens and a paragraph of text identical across every item, which is
+    exactly the kind of thing that makes a batch read as repetitive.
+    """
+    import html as _html
+
+    if not html:
+        return ""
+    text = _html.unescape(_TAG.sub(" ", html))
+    text = _BOILERPLATE.sub("", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text[:limit].rstrip() if limit else text
+
+
 def now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")

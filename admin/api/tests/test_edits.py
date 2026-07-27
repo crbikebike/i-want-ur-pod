@@ -369,3 +369,81 @@ def test_a_pass_that_changes_nothing_writes_nothing(db, log):
     assert got["longer"] == 0 and got["durations"] == 0
     assert read_log(log) == []
     assert db.execute("SELECT count(*) FROM edits WHERE field='refresh'").fetchone()[0] == 0
+
+
+# --- creating arcs ---------------------------------------------------------------
+
+
+def arc(slug, name, members, **kw):
+    return {"slug": slug, "name": name, "members": members,
+            "source": kw.pop("source", "llm"), **kw}
+
+
+def add_eps(conn, show_id, n, start=2):
+    for i in range(start, start + n):
+        conn.execute("INSERT INTO episodes (show_id, guid, title) VALUES (?,?,?)",
+                     (show_id, f"g{i}", f"Ep {i}"))
+    conn.commit()
+
+
+def test_creating_an_arc_attaches_its_episodes(db, log):
+    add_eps(db, 1, 3)
+    got = edits.create_arcs(db, show_id=1, arcs=[arc("hunt", "Hunting Season", ["g2", "g3", "g4"])],
+                            actor="agent:arcs", note="A8", decisions_path=log)
+    assert got == {"arcs": 1, "episodes": 3, "skipped": 0}
+    aid = db.execute("SELECT id FROM arcs WHERE slug='hunt'").fetchone()[0]
+    assert db.execute("SELECT count(*) FROM episodes WHERE arc_id=?", (aid,)).fetchone()[0] == 3
+    assert read_log(log)[-1]["arcs"] == 1
+
+
+def test_a_one_episode_arc_is_dropped(db, log):
+    """A 'story' of one episode is a title that happened to match a pattern."""
+    add_eps(db, 1, 1)
+    got = edits.create_arcs(db, show_id=1, arcs=[arc("solo", "Solo", ["g2"])],
+                            actor="agent:arcs", note="A8", decisions_path=log)
+    assert got["arcs"] == 0 and got["skipped"] == 1
+    assert db.execute("SELECT count(*) FROM arcs WHERE slug='solo'").fetchone()[0] == 0
+    assert read_log(log) == []
+
+
+def test_an_episode_already_in_an_arc_is_not_stolen(db, log):
+    """episodes.arc_id is a single FK, so ordering decides. Hand-adjudicated gold arcs are
+    written first and a detector's guess can never take an episode off one."""
+    add_eps(db, 1, 3)
+    db.execute("UPDATE episodes SET arc_id = 1 WHERE guid IN ('g2','g3')")
+    db.commit()
+    got = edits.create_arcs(db, show_id=1, arcs=[arc("greedy", "Greedy", ["g2", "g3", "g4"])],
+                            actor="agent:arcs", note="A8", decisions_path=log)
+    # Only g4 was free, so the arc falls under two members and is dropped whole.
+    assert got["arcs"] == 0
+    assert db.execute("SELECT arc_id FROM episodes WHERE guid='g2'").fetchone()[0] == 1
+
+
+def test_soft_deleted_episodes_are_not_arc_members(db, log):
+    add_eps(db, 1, 3)
+    db.execute("UPDATE episodes SET deleted_at='2026-07-27T00:00:00+00:00' WHERE guid='g2'")
+    db.commit()
+    got = edits.create_arcs(db, show_id=1, arcs=[arc("a", "A", ["g2", "g3", "g4"])],
+                            actor="agent:arcs", note="A8", decisions_path=log)
+    assert got["episodes"] == 2
+
+
+def test_a_batch_of_arcs_is_one_log_line(db, log):
+    add_eps(db, 1, 8)
+    edits.create_arcs(db, show_id=1, arcs=[
+        arc("a", "A", ["g2", "g3"]), arc("b", "B", ["g4", "g5"]), arc("c", "C", ["g6", "g7"])],
+        actor="agent:arcs", note="A8", decisions_path=log)
+    assert len(read_log(log)) == 1
+    assert "3 arcs over 6 episodes" in db.execute(
+        "SELECT note FROM edits ORDER BY id DESC LIMIT 1").fetchone()[0]
+
+
+def test_a_duplicate_slug_is_refused_by_the_schema(db, log):
+    """UNIQUE (show_id, slug). Two arcs cannot share an identity within one show, so
+    collisions have to be resolved before the write, not after."""
+    add_eps(db, 1, 4)
+    with pytest.raises(sqlite3.IntegrityError):
+        edits.create_arcs(db, show_id=1, arcs=[
+            arc("same", "One", ["g2", "g3"]), arc("same", "Two", ["g4", "g5"])],
+            actor="agent:arcs", note="A8", decisions_path=log)
+    assert db.execute("SELECT count(*) FROM arcs WHERE slug='same'").fetchone()[0] == 0

@@ -157,3 +157,41 @@ def test_the_verdict_carries_evidence_a_person_can_argue_with():
     assert v.episode_count == 208
     assert len(v.sample) == 8
     assert "✗" in v.describe()
+
+
+# --- description as prose --------------------------------------------------------
+
+
+def test_markup_and_entities_come_out_as_text():
+    """Feeds carry markup. A model should be shown the words, not the tags."""
+    # `&rsquo;` is a curly apostrophe, not an ASCII one, and it stays curly -- unescaping
+    # is not the same as transliterating, and rewriting a publisher's punctuation would be
+    # a different decision than stripping their markup.
+    got = feeds.plain_text("<p>It&rsquo;s easy to dismiss these &ndash; but they spread.</p>")
+    assert got == "It’s easy to dismiss these – but they spread."
+
+
+def test_network_boilerplate_is_cut():
+    """Every episode of a network repeats the same legal tail verbatim. On a 20-episode
+    batch that is a few hundred wasted tokens and a paragraph identical across items."""
+    got = feeds.plain_text(
+        "In November 1992, a camera crew soars above Kilauea.\n\n"
+        "See Privacy Policy at https://art19.com/privacy and California Privacy Notice "
+        "at https://art19.com/privacy#do-not-sell-my-info.")
+    assert got == "In November 1992, a camera crew soars above Kilauea."
+
+
+def test_it_is_cut_to_length_on_a_word_boundary_or_shorter():
+    assert len(feeds.plain_text("word " * 400, 100)) <= 100
+
+
+def test_nothing_in_nothing_out():
+    assert feeds.plain_text(None) == "" and feeds.plain_text("") == ""
+
+
+def test_the_stored_description_is_left_alone():
+    """plain_text is for prompts. What the publisher sent is what gets stored -- stripping
+    at write time would mean the catalog could never render the markup it was given."""
+    raw = "<p>Hello</p>"
+    feeds.plain_text(raw)
+    assert raw == "<p>Hello</p>"

@@ -288,6 +288,83 @@ def ingest_episodes(
     return {"added": added, "existing": existing}
 
 
+def create_arcs(
+    conn: sqlite3.Connection,
+    *,
+    show_id: int,
+    arcs: list[dict],
+    actor: str,
+    note: str,
+    decisions_path: Path | None = None,
+) -> dict:
+    """Create arcs and attach their episodes. The third insert door.
+
+    `apply()` can rename an arc but cannot make one, and `episodes.arc_id` is not editable
+    through it at all, so grouping episodes into a story has had no way in. Each arc is
+    `{slug, name, kind, confidence, source, members: [guid, ...]}`.
+
+    An episode belongs to at most one arc -- `episodes.arc_id` is a single nullable
+    foreign key -- so an episode already claimed is left where it is. That is what makes
+    the ordering matter: hand-adjudicated `gold` arcs are written first and a detector's
+    guess can never take an episode off one.
+
+    An arc that ends up with fewer than two members is dropped rather than stored. A
+    "story" of one episode is a title that happened to match a pattern, and 799 of those
+    would bury the real ones.
+    """
+    at = _now()
+    key = entity_key(conn, "show", show_id)
+    made, attached, skipped = 0, 0, 0
+    try:
+        for arc in arcs:
+            free = [
+                r[0] for r in conn.execute(
+                    "SELECT id FROM episodes WHERE show_id = ? AND guid IN (%s) "
+                    "AND arc_id IS NULL AND deleted_at IS NULL"
+                    % ",".join("?" * len(arc["members"])),
+                    (show_id, *arc["members"]))
+            ] if arc["members"] else []
+
+            if len(free) < 2:
+                skipped += 1
+                continue
+
+            cur = conn.execute(
+                "INSERT INTO arcs (show_id, slug, kind, name, description, confidence, source) "
+                "VALUES (?,?,?,?,?,?,?)",
+                (show_id, arc["slug"], arc.get("kind", "arc"), arc["name"],
+                 arc.get("description"), arc.get("confidence", "low"), arc["source"]))
+            arc_id = cur.lastrowid
+            conn.executemany("UPDATE episodes SET arc_id = ? WHERE id = ?",
+                             [(arc_id, eid) for eid in free])
+            made += 1
+            attached += len(free)
+
+        if not made:
+            conn.rollback()
+            return {"arcs": 0, "episodes": 0, "skipped": skipped}
+
+        conn.execute(
+            "INSERT INTO edits (at, actor, entity_type, entity_key, field, before, after, note) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (at, actor, "arc", f"{key}/*", "create", None, str(made),
+             f"{note} ({made} arcs over {attached} episodes, {skipped} too small to keep)"))
+        path = decisions_path or DECISIONS
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps({
+                "at": at, "actor": actor, "entity": "arc", "key": f"{key}/*",
+                "field": "create", "arcs": made, "episodes": attached,
+                "skipped": skipped, "note": note,
+            }, ensure_ascii=False) + "\n")
+            fh.flush()
+    except Exception:
+        conn.rollback()
+        raise
+    conn.commit()
+    return {"arcs": made, "episodes": attached, "skipped": skipped}
+
+
 def refresh_episodes(
     conn: sqlite3.Connection,
     *,
