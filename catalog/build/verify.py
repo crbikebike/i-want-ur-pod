@@ -52,6 +52,9 @@ class Gate:
 def source_counts(source: Path) -> dict[str, int]:
     catalog = json.loads((source / "catalog.json").read_text())
     themes = json.loads((source / "themes.json").read_text())
+    added_path = ROOT / "catalog/build/added-themes.json"
+    if added_path.is_file():
+        themes = themes + json.loads(added_path.read_text())["themes"]
     subjects = json.loads((source / "episode-themes/_vocabulary.json").read_text())["themes"]
 
     labelled_shows = 0

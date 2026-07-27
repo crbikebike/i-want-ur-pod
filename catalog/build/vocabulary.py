@@ -2,8 +2,9 @@
 
 Runs before the episode loader, because episode_subjects needs subject ids to exist.
 
-  THEME    the 30 broad hand-authored categories. The browsable layer -- the deck a
-           person swipes -- and what a whole SHOW is tagged with.
+  THEME    the broad hand-authored categories (30 in the source file, plus any in
+           added-themes.json). The browsable layer -- the deck a person swipes -- and
+           what a whole SHOW is tagged with.
   SUBJECT  the 148 finer labels. What an individual EPISODE is about. Every subject
            belongs to exactly one theme, which the schema enforces with a NOT NULL
            foreign key.
@@ -13,9 +14,9 @@ The source files still use the older word "theme" for both levels (themes.json h
 Those are read-only inputs, so the translation happens here rather than by rewriting them.
 
 Every subject's theme is resolved by three passes, strongest signal first:
-  1. the slug exists at both levels, so it belongs to its own namesake        (5)
+  1. the slug exists at both levels, so it belongs to its own namesake        (6)
   2. `relatedShowThemes` in the source already names one                     (34)
-  3. the committed hand-authored mapping in subject-themes.json             (109)
+  3. the committed hand-authored mapping in subject-themes.json             (108)
                                                                       total 148
 
 Same-slug deliberately outranks the hint. `police-misconduct` exists at both levels but
@@ -55,8 +56,25 @@ class VocabularyReport:
         return out
 
 
-def build(conn: sqlite3.Connection, source: Path, mapping_file: Path) -> VocabularyReport:
+def build(
+    conn: sqlite3.Connection,
+    source: Path,
+    mapping_file: Path,
+    added_themes_file: Path | None = None,
+) -> VocabularyReport:
     theme_rows = json.loads((source / "themes.json").read_text())
+
+    # curation/source/themes.json is a read-only input, so themes added after the original
+    # 30 live in a committed additions file. The 30 were authored before the 27k episodes
+    # were labelled; the mapping then surfaced clusters with no home.
+    added_themes_file = added_themes_file or Path(__file__).parent / "added-themes.json"
+    if added_themes_file.exists():
+        added = json.loads(added_themes_file.read_text())["themes"]
+        known = {t["slug"] for t in theme_rows}
+        for row in added:
+            if row["slug"] in known:
+                raise ValueError(f"added theme {row['slug']!r} already exists in themes.json")
+            theme_rows.append(row)
     subject_rows = json.loads((source / "episode-themes/_vocabulary.json").read_text())["themes"]
     authored = {r["slug"]: r for r in json.loads(mapping_file.read_text())["subjects"]}
 

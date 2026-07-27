@@ -294,12 +294,25 @@ The mapping is committed so it is inspectable and diffable outside the database,
 **Sanity check, not a gate:** no theme should end up with more than ~15 subjects or zero.
 Either means the mapping or the top 30 needs a look. Report it; don't fail the build.
 
-**What it revealed.** 24 of the 109 authored mappings are low-confidence, covering 7,294
-episodes, and they cluster. The largest is a "lived experience" group — romance, friendship,
-parenting, grief, mental health, ageing, queer life, disability, addiction, homelessness —
-with no natural home among the 30; 2,551 episodes were filed under *Personal Mysteries &
-Obsessions* for want of anywhere better. Smaller gaps exist for design/craft, place,
-economics, labour and housing. That is a vocabulary question for Phase 2, not a mapping bug.
+**What it revealed, and what was done about it.** The first pass left 24 of 109 authored
+mappings at low confidence over 7,294 episodes, and they clustered — which was a signal that
+the 30 were incomplete rather than that the mapping was wrong. The 30 were authored before
+the 27,000 episodes were labelled, so the data now knew things the vocabulary did not.
+
+Two themes were added (`catalog/build/added-themes.json`, since `themes.json` is read-only):
+
+| | Subjects | Primary eps | Rank of 32 |
+|---|---|---|---|
+| **Being Human** — a life at close range | 13 | 2,194 | 3rd |
+| **A Sense of Place** — somewhere specific, and what living there does | 3 | 579 | 15th |
+
+That moved 15 subjects out of poor fits and cut low confidence to **8 subjects / 2,415
+episodes**. The remainder are single-subject gaps with no cluster behind them: economics,
+design, labour, how-the-law-works, food, clothing, language, transport. Left for Phase 2.
+
+`A Sense of Place`'s theme slug deliberately matches the existing subject slug
+`sense-of-place`, so the same-slug pass resolves that subject automatically — the sixth
+such pair.
 
 ---
 

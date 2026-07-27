@@ -29,7 +29,7 @@ This program starts over on the data. It builds one permanent, queryable catalog
 | Source of truth | The SQLite database itself, with an append-only `edits` table for audit and undo. |
 | Schema shape | Normal typed tables + one generic `edges` table for traversal. |
 | Node types | Show, Episode, Arc, Theme, Subject, Person, Network, Entity. Schema holds all; populate in waves. |
-| Taxonomy | Two levels. **Themes** are the browsable 30, tagged on shows. **Subjects** are the 148 finer labels, carried by episodes; each belongs to one theme. |
+| Taxonomy | Two levels. **Themes** are the browsable set (32) tagged on shows. **Subjects** are the 148 finer labels carried by episodes; each belongs to one theme. |
 | Series identity | `Arc.kind` = `series` \| `arc`. Duplicate shows merge into their parent feed via the inclusion queue. |
 | Swipe unit | Theme cards, as today. Proven. |
 | Episode labels | Re-run batched (20/call), escalate to 3 votes only on doubt. ~5–8k calls, not 82k. |
@@ -83,7 +83,7 @@ design/kit/
 
 Typed tables carry the facts. One `edges` table carries the relationships, so traversal and "explain the connection" are generic instead of hand-written per path.
 
-**The vocabulary has two levels and two names.** A **Theme** is one of the 30 broad, hand-authored categories — the browsable layer, the deck a person swipes, and what a whole *show* is tagged with. A **Subject** is one of the 148 finer labels, what an individual *episode* is about, and every subject belongs to exactly one theme. Nothing is called "category": `shows.apple_category` is Apple's directory taxonomy and the two would be confused constantly.
+**The vocabulary has two levels and two names.** A **Theme** is one of the 32 broad, hand-authored categories — the browsable layer, the deck a person swipes, and what a whole *show* is tagged with. A **Subject** is one of the 148 finer labels, what an individual *episode* is about, and every subject belongs to exactly one theme. Nothing is called "category": `shows.apple_category` is Apple's directory taxonomy and the two would be confused constantly.
 
 ```sql
 shows       (id, slug, title, network_id, feed_url, home_url, artwork_url,
@@ -91,7 +91,7 @@ shows       (id, slug, title, network_id, feed_url, home_url, artwork_url,
 episodes    (id, show_id, guid, title, season, episode_number, episode_type,
              published_at, description, duration_s, available, arc_id)
 arcs        (id, show_id, slug, kind, name, description, confidence, source)
-themes      (id, slug, name, description)                  -- the browsable 30
+themes      (id, slug, name, description)                  -- the browsable 32
 subjects    (id, slug, name, description, theme_id)        -- the 148, each under a theme
 people      (id, slug, name, role)
 networks    (id, slug, name)
@@ -109,6 +109,7 @@ Key rules:
 - **Stable identity.** Every entity has an immutable slug. Incremental releases never renumber. **`edits.entity_key` is a stable string, never an internal id** — every build regenerates those integers, so an edit keyed on `id = 42` would silently land on a different row.
 - **Themes and subjects are separate tables**, which makes `slug` plainly unique in each. Five slugs legitimately exist at both levels (`political-scandal`, `institutional-coverup`, `police-misconduct`, `wrongful-conviction`, `family-secret`); one shared table needed a composite key and a CHECK constraint to express what `subjects.theme_id NOT NULL` now says by itself.
 - **`edges.why`** holds the human-readable reason a connection exists. This is what powers "explain the connection" — the path is displayable, not just computable.
+- **Themes 31 and 32 were added after the first mapping pass.** `curation/source/themes.json` is a read-only input, so additions live in `catalog/build/added-themes.json` and the build appends them. The original 30 were authored before the 27k episodes were labelled; mapping subjects onto them surfaced two clusters with no home — **Being Human** (lived experience, now the 3rd-largest theme) and **A Sense of Place**. That cut low-confidence mappings from 24 subjects / 7,294 episodes to 8 / 2,415.
 - **`shows.depth`** is 1–4 (metadata → episodes labelled → arcs → subjects). The UI reads it and never offers what a show doesn't have.
 - **`edits`** is append-only. It is both the undo log and the few-shot example store for re-runs.
 - **FTS5** virtual table over show and episode text for search.

@@ -1,7 +1,7 @@
 {
   "authored": "2026-07-26",
   "by": "claude",
-  "what": "Each of the 148 subjects (the episode-level vocabulary) belongs to exactly one of the 30 themes (the browsable layer). 5 resolve by same-slug and 34 by the source's own relatedShowThemes hint; the 109 below needed a human call. confidence 'low' means no theme among the 30 really fits and the note says why -- review those first.",
+  "what": "Each of the 148 subjects (the episode-level vocabulary) belongs to exactly one theme. Themes numbered 31 and 32 were added after the first pass -- see added-themes.json -- so subjects that had been forced under a poor fit now name the theme they were always describing. confidence 'low' means no theme really fits and the note says why; review those first.",
   "subjects": [
     {
       "slug": "investigative-process",
@@ -22,15 +22,6 @@
       "note": ""
     },
     {
-      "slug": "sense-of-place",
-      "name": "This Particular Place",
-      "theme": "historical-reconstruction",
-      "confidence": "low",
-      "source": "llm",
-      "episodeCount": 974,
-      "note": "GAP: no place/documentary parent"
-    },
-    {
       "slug": "media-criticism",
       "name": "How the Story Got Told",
       "theme": "media-internet-culture",
@@ -42,11 +33,11 @@
     {
       "slug": "personal-transformation",
       "name": "The Turn",
-      "theme": "personal-mystery",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 938,
-      "note": "GAP: lived experience"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "survival-story",
@@ -78,11 +69,11 @@
     {
       "slug": "romance-and-heartbreak",
       "name": "Falling In and Out of Love",
-      "theme": "personal-mystery",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 719,
-      "note": "GAP: lived experience"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "tech-industry-power",
@@ -312,11 +303,11 @@
     {
       "slug": "mental-health",
       "name": "The Mind Under Strain",
-      "theme": "medical-harm",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 332,
-      "note": "GAP: lived experience, not harm done by medicine"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "songwriting-craft",
@@ -393,11 +384,11 @@
     {
       "slug": "grief-and-loss",
       "name": "Living With Loss",
-      "theme": "survivor-testimony",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 286,
-      "note": "GAP: lived experience"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "ai-and-society",
@@ -438,11 +429,11 @@
     {
       "slug": "addiction-and-recovery",
       "name": "Addiction",
-      "theme": "survivor-testimony",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 234,
-      "note": "GAP: lived experience"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "kidnapping-and-captivity",
@@ -492,20 +483,20 @@
     {
       "slug": "community-in-conflict",
       "name": "A Community Divided",
-      "theme": "personal-mystery",
-      "confidence": "low",
+      "theme": "sense-of-place",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 212,
-      "note": "GAP: no community/civic parent"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "parenting",
       "name": "Raising Children",
-      "theme": "family-secret",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 208,
-      "note": "GAP: lived experience, no secret involved"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "medical-research",
@@ -519,11 +510,11 @@
     {
       "slug": "friendship",
       "name": "Friends",
-      "theme": "personal-mystery",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 194,
-      "note": "GAP: lived experience"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "forensic-evidence",
@@ -591,11 +582,11 @@
     {
       "slug": "gender-identity",
       "name": "Gender and Transition",
-      "theme": "personal-mystery",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 164,
-      "note": "GAP: lived experience"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "management-and-leadership",
@@ -699,11 +690,11 @@
     {
       "slug": "queer-life",
       "name": "Queer Lives",
-      "theme": "personal-mystery",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 128,
-      "note": "GAP: lived experience"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "audio-drama-scifi",
@@ -735,11 +726,11 @@
     {
       "slug": "disability-and-access",
       "name": "Access and Disability",
-      "theme": "personal-mystery",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 117,
-      "note": "GAP: lived experience"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "mythology",
@@ -789,11 +780,11 @@
     {
       "slug": "gentrification-and-housing",
       "name": "Who Gets to Live Here",
-      "theme": "environmental-climate",
-      "confidence": "low",
+      "theme": "sense-of-place",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 102,
-      "note": "GAP: no cities/housing parent"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "musician-downfall",
@@ -816,11 +807,11 @@
     {
       "slug": "chronic-illness",
       "name": "Living With Illness",
-      "theme": "medical-harm",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 98,
-      "note": "GAP: lived experience, not harm done by medicine"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "juvenile-justice",
@@ -843,11 +834,11 @@
     {
       "slug": "homelessness-and-poverty",
       "name": "Without a Home",
-      "theme": "survivor-testimony",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 94,
-      "note": "GAP: lived experience"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "true-crime-as-genre",
@@ -897,11 +888,11 @@
     {
       "slug": "ageing-and-mortality",
       "name": "Getting Older, Facing the End",
-      "theme": "personal-mystery",
-      "confidence": "low",
+      "theme": "being-human",
+      "confidence": "high",
       "source": "llm",
       "episodeCount": 79,
-      "note": "GAP: lived experience"
+      "note": "moved to the new theme it was always describing"
     },
     {
       "slug": "adoption-and-origins",

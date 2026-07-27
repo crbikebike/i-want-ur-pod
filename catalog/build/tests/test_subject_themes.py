@@ -14,6 +14,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[3]
 SRC = ROOT / "curation/source"
 MAPPING = ROOT / "catalog/build/subject-themes.json"
+ADDED = ROOT / "catalog/build/added-themes.json"
 
 VALID_CONFIDENCE = {"high", "medium", "low"}
 
@@ -21,6 +22,8 @@ VALID_CONFIDENCE = {"high", "medium", "low"}
 @pytest.fixture(scope="module")
 def data():
     themes = {t["slug"] for t in json.loads((SRC / "themes.json").read_text())}
+    if ADDED.is_file():
+        themes |= {t["slug"] for t in json.loads(ADDED.read_text())["themes"]}
     vocab = json.loads((SRC / "episode-themes/_vocabulary.json").read_text())["themes"]
     mapping = json.loads(MAPPING.read_text())
     needs = [

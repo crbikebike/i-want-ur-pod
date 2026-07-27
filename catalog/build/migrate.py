@@ -28,6 +28,7 @@ DEFAULT_SOURCE = ROOT / "curation/source"
 DEFAULT_OUT = ROOT / "catalog/releases/catalog.db"
 SCHEMA = ROOT / "catalog/schema.sql"
 SUBJECT_THEMES = ROOT / "catalog/build/subject-themes.json"
+ADDED_THEMES = ROOT / "catalog/build/added-themes.json"
 
 
 def build(
@@ -57,7 +58,7 @@ def build(
         say(f"carried {carried} edits forward from {carry_edits_from}")
 
     say("-- vocabulary")
-    for line in vocabulary.build(conn, source, SUBJECT_THEMES).lines():
+    for line in vocabulary.build(conn, source, SUBJECT_THEMES, ADDED_THEMES).lines():
         say(line)
 
     say("-- source")
