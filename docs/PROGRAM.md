@@ -28,15 +28,15 @@ This program starts over on the data. It builds one permanent, queryable catalog
 | Ship format | One SQLite `.db` file per release. |
 | Source of truth | The SQLite database itself, with an append-only `edits` table for audit and undo. |
 | Schema shape | Normal typed tables + one generic `edges` table for traversal. |
-| Node types | Show, Episode, Arc, Theme, Person, Network, Subject. Schema holds all; populate in waves. |
-| Taxonomy | Two tiers. The 30 stay browsable; every fine episode theme declares a parent. |
+| Node types | Show, Episode, Arc, Theme, Subject, Person, Network, Entity. Schema holds all; populate in waves. |
+| Taxonomy | Two levels. **Themes** are the browsable 30, tagged on shows. **Subjects** are the 148 finer labels, carried by episodes; each belongs to one theme. |
 | Series identity | `Arc.kind` = `series` \| `arc`. Duplicate shows merge into their parent feed via the inclusion queue. |
 | Swipe unit | Theme cards, as today. Proven. |
 | Episode labels | Re-run batched (20/call), escalate to 3 votes only on doubt. ~5–8k calls, not 82k. |
 | Arcs | LLM-built with confidence, lowest-confidence reviewed first. Regex cascade retained for user feeds only. |
 | Inclusion | Audit the ~40 suspicious shows, not all 310. |
 | Publish gate | Tiered depth. Every show ships, carrying a depth level the UI respects. |
-| Coverage | Accept current gaps. The hfab agent backfills over time; gap-spotting is an admin tool report. |
+| Coverage | Accept remaining gaps. 4,210 episodes dropped by the 2026-07 run's `episodeType == 'full'` filter were recovered in Phase 1; the hfab agent backfills the rest, and gap-spotting is an admin tool report. |
 | Language | Multilingual data, English vocabulary, filterable by language. |
 | Vocabulary | Editable in the admin tool from day one. |
 | Corrections | Both pin the value AND accumulate as few-shot examples for re-runs. |
@@ -83,26 +83,31 @@ design/kit/
 
 Typed tables carry the facts. One `edges` table carries the relationships, so traversal and "explain the connection" are generic instead of hand-written per path.
 
+**The vocabulary has two levels and two names.** A **Theme** is one of the 30 broad, hand-authored categories — the browsable layer, the deck a person swipes, and what a whole *show* is tagged with. A **Subject** is one of the 148 finer labels, what an individual *episode* is about, and every subject belongs to exactly one theme. Nothing is called "category": `shows.apple_category` is Apple's directory taxonomy and the two would be confused constantly.
+
 ```sql
 shows       (id, slug, title, network_id, feed_url, home_url, artwork_url,
              lang, apple_category, years, why, description, depth, include_verdict)
-episodes    (id, show_id, guid, title, subject, published_at, duration, arc_id)
-arcs        (id, show_id, kind, name, description, start_ep, end_ep, confidence, source)
-themes      (id, slug, name, description, parent_id, tier)
+episodes    (id, show_id, guid, title, season, episode_number, episode_type,
+             published_at, description, duration_s, available, arc_id)
+arcs        (id, show_id, slug, kind, name, description, confidence, source)
+themes      (id, slug, name, description)                  -- the browsable 30
+subjects    (id, slug, name, description, theme_id)        -- the 148, each under a theme
 people      (id, slug, name, role)
 networks    (id, slug, name)
-subjects    (id, slug, name, kind)          -- case, company, person, place, era
+entities    (id, slug, name, kind)      -- real-world: case, company, person, place, era
 
-episode_themes (episode_id, theme_id, role, confidence, vote_agreement, model, run_id)
-edges          (src_type, src_id, dst_type, dst_id, kind, weight, why)
-edits          (id, at, actor, entity_type, entity_id, field, before, after, note)
-releases       (version, built_at, show_count, episode_count, notes)
+show_themes      (show_id, theme_id)
+episode_subjects (episode_id, subject_id, role, confidence, agreement, model, run_id)
+edges            (src_type, src_id, dst_type, dst_id, kind, weight, why)
+edits            (id, at, actor, entity_type, entity_key, field, before, after, note)
+releases         (version, built_at, show_count, episode_count, content_hash, notes)
 ```
 
 Key rules:
 - **The catalog never stores an audio URL.** Audio belongs to the show's host, resolved from the live feed at play time. Enclosure URLs are volatile — tracking prefixes rotate and dynamic ad insertion makes them session-specific, so a cached one is a dead play button. Duration is cached as a display hint only; the player trusts the feed.
-- **Stable identity.** Every entity has an immutable slug. Incremental releases never renumber.
-- **`themes.parent_id`** implements the two tiers. Tier-1 rows are the browsable 30; tier-2 rows are the fine episode themes and must have a parent.
+- **Stable identity.** Every entity has an immutable slug. Incremental releases never renumber. **`edits.entity_key` is a stable string, never an internal id** — every build regenerates those integers, so an edit keyed on `id = 42` would silently land on a different row.
+- **Themes and subjects are separate tables**, which makes `slug` plainly unique in each. Five slugs legitimately exist at both levels (`political-scandal`, `institutional-coverup`, `police-misconduct`, `wrongful-conviction`, `family-secret`); one shared table needed a composite key and a CHECK constraint to express what `subjects.theme_id NOT NULL` now says by itself.
 - **`edges.why`** holds the human-readable reason a connection exists. This is what powers "explain the connection" — the path is displayable, not just computable.
 - **`shows.depth`** is 1–4 (metadata → episodes labelled → arcs → subjects). The UI reads it and never offers what a show doesn't have.
 - **`edits`** is append-only. It is both the undo log and the few-shot example store for re-runs.
@@ -118,11 +123,12 @@ Each phase gets its own spec and plan, written when it starts — not now. Phase
 Build the schema, migrate everything, build the edges, prove the queries.
 
 **Gate:**
-- All 315 catalog shows migrated. All 27,444 labelled episodes across 303 shows migrated.
-  Zero orphans. The 12 shows with no episode labels are recorded as depth 1, not dropped.
-- All 148 fine themes carry a tier-1 parent. 36 already have one in
-  `_vocabulary.json`'s `relatedShowThemes`; 5 more resolve by same-slug match; the
-  remaining ~107 are mapped LLM-assisted and reviewed.
+- All 315 catalog shows migrated, every one carrying at least one episode. 31,653 episodes:
+  27,443 labelled plus 4,210 recovered from the theming run's `episodeType` filter. Zero
+  orphans. The 12 shows with no *labelled* episodes stay at depth 1 but are browsable.
+- All 148 subjects belong to a theme. 5 resolve by same-slug match, 34 from
+  `_vocabulary.json`'s `relatedShowThemes`, and the remaining 109 are hand-authored in
+  `catalog/build/subject-themes.json` with a confidence each and reviewed in Phase 2.
 - Edges built. Traversal under 50ms on device-class hardware.
 - Three named queries return rows a human agrees with:
   - **next-thing** — given a show or arc, 3 unrelated shows that scratch the same itch

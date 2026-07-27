@@ -20,8 +20,8 @@ Everything below is read-only. The build never writes to `curation/source/`.
 | Path | Shape | Counts |
 |---|---|---|
 | `catalog.json` | `[{id, title, author, network, feedUrl, homeUrl, artworkUrl, category, years, why, description, themes[]}]` | 315 shows |
-| `themes.json` | `[{slug, name, description, showCount}]` | 30 themes |
-| `episode-themes/_vocabulary.json` | `{themes: [{slug, name, definition, relatedShowThemes[], episodeCount, showCount, junkDrawerSuspect, showSpecific}], models}` | 148 subjects |
+| `themes.json` | `[{slug, name, description, showCount}]` | 30 **themes** |
+| `episode-themes/_vocabulary.json` (its `themes` array is our **subjects**) | `{themes: [{slug, name, definition, relatedShowThemes[], episodeCount, showCount, junkDrawerSuspect, showSpecific}], models}` | 148 subjects |
 | `episode-themes/<slug>.json` | `{slug, title, models, themesUsed[], episodes: [{guid, display, segment, subject, iso, inArc, themes:[{slug, role, confidence}]}], agreement, auditFlags}` | 303 shows, 27,444 episodes |
 | `feeds/<slug>.json` | `{slug, title, network, feedUrl, itunesCollection, matchScore, episodeCount, episodes:[{guid, title, season, episodeNumber, episodeType, iso}]}` | 316 shows |
 | `descriptions/<slug>.json` | `{slug, fetchedAt, feedUrl, liveItems, storedEpisodes, matched, episodes: {guid: text}}` | 306 shows |
@@ -43,10 +43,10 @@ without them, degrading gracefully — see **Degradation** below.
   **289 distinct** segment names.
 - **`inArc` is true on 6,649 of 27,444 episodes (24.2%)** — the coverage ceiling that
   started this whole rewrite.
-- **36 of 148** subjects already name a tier-1 parent in `relatedShowThemes`. Zero
-  name a parent outside the 30. Zero name more than one. Zero are flagged
-  `junkDrawerSuspect`.
-- **5 slugs exist in both tiers**: `political-scandal`, `institutional-coverup`,
+- **36 of 148** subjects already name a theme in `relatedShowThemes`. Zero name one
+  outside the 30. Zero name more than one. Zero are flagged `junkDrawerSuspect`. (5 of
+  those 36 also match a theme slug exactly, which wins, so the split is 5 / 34 / 109.)
+- **5 slugs exist at both levels**: `political-scandal`, `institutional-coverup`,
   `police-misconduct`, `wrongful-conviction`, `family-secret`.
 - **12 shows have no episode labels** (315 in `catalog.json`, 303 with episode-themes).
 - **No episode duration exists anywhere in the source.** Neither does an un-truncated
@@ -92,7 +92,6 @@ CREATE TABLE episodes (
   show_id        INTEGER NOT NULL REFERENCES shows(id),
   guid           TEXT NOT NULL,
   title          TEXT NOT NULL,     -- `display`, verbatim from the feed
-  subject        TEXT,              -- title with the segment prefix stripped
   season         INTEGER,
   episode_number INTEGER,
   episode_type   TEXT,
@@ -121,19 +120,33 @@ CREATE TABLE arcs (
   UNIQUE (show_id, slug)
 );
 
+-- The vocabulary has two levels with two names. THEME = one of the 30 broad browsable
+-- categories, tagged on a SHOW. SUBJECT = one of the 148 finer labels, carried by an
+-- EPISODE, each belonging to exactly one theme.
+--
+-- Two tables rather than one with a tier column: five slugs legitimately exist at both
+-- levels, and separate namespaces make `slug` plainly unique in each. What needed a
+-- composite key plus a CHECK constraint is now a NOT NULL foreign key.
 CREATE TABLE themes (
   id          INTEGER PRIMARY KEY,
-  slug        TEXT NOT NULL,
-  tier        INTEGER NOT NULL CHECK (tier IN (1,2)),
+  slug        TEXT NOT NULL UNIQUE,
   name        TEXT NOT NULL,
-  description TEXT,
-  parent_id   INTEGER REFERENCES themes(id),
-  UNIQUE (tier, slug),                          -- NOT slug alone: 5 slugs span both tiers
-  CHECK ((tier = 1 AND parent_id IS NULL) OR (tier = 2 AND parent_id IS NOT NULL))
+  description TEXT
 );
 
-CREATE TABLE people   (id INTEGER PRIMARY KEY, slug TEXT NOT NULL UNIQUE, name TEXT NOT NULL);
-CREATE TABLE subjects (id INTEGER PRIMARY KEY, slug TEXT NOT NULL UNIQUE, name TEXT NOT NULL,
+CREATE TABLE subjects (
+  id          INTEGER PRIMARY KEY,
+  slug        TEXT NOT NULL UNIQUE,
+  name        TEXT NOT NULL,
+  description TEXT,
+  theme_id    INTEGER NOT NULL REFERENCES themes(id)   -- the two-level promise
+);
+
+CREATE TABLE people   (id INTEGER PRIMARY KEY, slug TEXT NOT NULL UNIQUE, name TEXT NOT NULL,
+                       role TEXT);
+-- Real-world things a story is about. Populated in Phase 3. Called `entities` because
+-- Subject now means the episode-level vocabulary.
+CREATE TABLE entities (id INTEGER PRIMARY KEY, slug TEXT NOT NULL UNIQUE, name TEXT NOT NULL,
                        kind TEXT CHECK (kind IN ('case','company','person','place','era','work')));
 
 CREATE TABLE show_themes (
@@ -142,15 +155,15 @@ CREATE TABLE show_themes (
   PRIMARY KEY (show_id, theme_id)
 );
 
-CREATE TABLE episode_themes (
+CREATE TABLE episode_subjects (
   episode_id INTEGER NOT NULL REFERENCES episodes(id),
-  theme_id   INTEGER NOT NULL REFERENCES themes(id),
+  subject_id INTEGER NOT NULL REFERENCES subjects(id),
   role       TEXT NOT NULL CHECK (role IN ('primary','secondary')),
   confidence TEXT NOT NULL CHECK (confidence IN ('low','medium','high')),
   agreement  INTEGER,               -- votes agreeing; NULL for the 2026-07 Haiku run
   model      TEXT,
   run_id     TEXT,
-  PRIMARY KEY (episode_id, theme_id)
+  PRIMARY KEY (episode_id, subject_id)
 );
 
 CREATE TABLE edges (
@@ -160,7 +173,7 @@ CREATE TABLE edges (
   dst_id   INTEGER NOT NULL,
   kind     TEXT NOT NULL,
   weight   REAL NOT NULL DEFAULT 1.0,
-  why      TEXT,                    -- human-readable; this is what the UI displays
+  why      TEXT NOT NULL,           -- human-readable; this is what the UI displays
   PRIMARY KEY (src_type, src_id, dst_type, dst_id, kind)
 );
 CREATE INDEX edges_out ON edges (src_type, src_id, kind, weight DESC);
@@ -195,10 +208,11 @@ CREATE VIRTUAL TABLE search USING fts5(
 
 Four constraints doing real work:
 
-- **`themes` is unique on `(tier, slug)`, not `slug`.** Five slugs legitimately exist at
-  both levels. A slug-only key would silently collapse them.
-- **The `themes` CHECK** makes an unparented subject impossible to insert. The
-  two-level promise is enforced by the database, not by a convention someone remembers.
+- **Themes and subjects are separate tables**, so `slug` is plainly unique in each. Five
+  slugs legitimately exist at both levels; one shared table would have collapsed them, or
+  needed a composite key and a CHECK constraint to avoid it.
+- **`subjects.theme_id` is NOT NULL.** The two-level promise is enforced by the database,
+  not by a convention someone remembers: a subject with no theme cannot be inserted.
 - **`feed_url` is covered by a partial unique index, not a plain UNIQUE:**
   `CREATE UNIQUE INDEX ... ON shows (feed_url) WHERE include_verdict <> 'suspect'`.
   Eight groups of catalogued shows share a feed and cannot be merged until Phase 2, so a
@@ -207,8 +221,8 @@ Four constraints doing real work:
   duplicate impossible to insert while letting a flagged one through.
 - **`edits.entity_key` is a stable string, never an internal id.** Every build regenerates
   the integer ids, so an edit recorded against `id = 42` would silently land on a different
-  row next time. Keys are `<show-slug>`, `<tier>:<theme-slug>`, `<show-slug>/<arc-slug>`,
-  `<show-slug>/<guid>`.
+  row next time. Keys are `<show-slug>`, `<theme-slug>`, `<subject-slug>`,
+  `<show-slug>/<arc-slug>`, `<show-slug>/<guid>`.
 
 ---
 
@@ -255,28 +269,37 @@ Nothing in `catalog/` may reference an enclosure or an audio URL. `verify.py` gr
 
 ---
 
-## Two-tier theme resolution
+## Resolving every subject's theme
 
-All 148 subjects must end up with a parent. Three passes, cheapest first:
+All 148 subjects must end up under a theme. Three passes, strongest signal first:
 
-1. **`relatedShowThemes`** — 36 themes name exactly one tier-1 slug. Take it. Source
-   recorded as `vocabulary`.
-2. **Same-slug match** — the 5 cross-tier slugs parent to their tier-1 namesake. This is
-   semantically right: "Political Scandal" the browse category, `political-scandal` the
-   specific episode theme beneath it. Source recorded as `same-slug`.
-3. **Assisted mapping** — the remaining ~107 go to a model, one batch, with all 30 tier-1
-   names and descriptions plus each tier-2 name, definition, episode count, and the tier-1
-   themes of the shows that actually use it. Output is a single parent per theme with a
-   confidence. Source recorded as `llm`, and every one lands in the Phase 2 review queue
+1. **Same-slug match** — the 5 slugs that exist at both levels belong to their own
+   namesake: "Political Scandal" the browse theme, `political-scandal` the specific episode
+   subject beneath it. Recorded as `same-slug`.
+2. **`relatedShowThemes`** — 34 of the rest name exactly one theme in the source
+   vocabulary. Take it. Recorded as `source-hint`.
+3. **Authored mapping** — the remaining 109 are hand-authored in
+   `catalog/build/subject-themes.json`, each with a confidence and, where the fit is poor, a
+   note saying why. Recorded as `authored`, and every one lands in the Phase 2 review queue
    ordered worst-confidence-first.
 
-Write the mapping to `catalog/build/theme-parents.json` so it is inspectable and diffable
-outside the database. The database is still the source of truth; this file is the build's
-working record of how it got there.
+Same-slug deliberately outranks the source hint. `police-misconduct` exists at both levels
+but its hint points at `institutional-coverup`; following the hint would file the subject
+"Police Who Broke the Rules" under The Institutional Cover-Up and leave the Police
+Misconduct theme with no subjects at all.
 
-**Sanity check, not a gate:** no theme should end up with more than ~15 children or
-zero children. Either means the mapping or the top 30 needs a look. Report it; don't fail
-the build.
+The mapping is committed so it is inspectable and diffable outside the database, and
+`catalog/build/tests/test_subject_themes.py` fails if it drifts from the source vocabulary.
+
+**Sanity check, not a gate:** no theme should end up with more than ~15 subjects or zero.
+Either means the mapping or the top 30 needs a look. Report it; don't fail the build.
+
+**What it revealed.** 24 of the 109 authored mappings are low-confidence, covering 7,294
+episodes, and they cluster. The largest is a "lived experience" group — romance, friendship,
+parenting, grief, mental health, ageing, queer life, disability, addiction, homelessness —
+with no natural home among the 30; 2,551 episodes were filed under *Personal Mysteries &
+Obsessions* for want of anywhere better. Smaller gaps exist for design/craft, place,
+economics, labour and housing. That is a vocabulary question for Phase 2, not a mapping bug.
 
 ---
 
@@ -308,13 +331,14 @@ always safe to delete and rebuild.
 
 | kind | src → dst | weight | `why` |
 |---|---|---|---|
-| `show_theme` | show → theme (tier 1) | 1.0 | "tagged <theme>" |
+| `show_theme` | show → theme | 1.0 | "tagged <theme>" |
 Episode → theme edges were specified here and then deliberately dropped: there are 43,818
 of them, they would be 76% of the graph and ~8 MB of the shipped file, and nothing
 traverses them — they are always read through `episode_themes`, which is indexed for it.
 
 | `shares_theme` | show → show | Jaccard over themes | "both cover <theme>" |
-| `shares_fine_theme` | show → show | cosine over tier-2 episode-theme volume | "both dig into <theme>" |
+| `shares_subject` | show → show | cosine over episode-subject volume | "both dig into <subject>" |
+| `subject_theme` | subject → theme | 1.0 | "a kind of <theme>" |
 | `same_network` | show → show | 0.3 | "both from <network>" |
 | `theme_parent` | theme (2) → theme (1) | 1.0 | "a kind of <parent>" |
 | `arc_of` | arc → show | 1.0 | "a story arc in <show>" |
@@ -359,7 +383,7 @@ catalog/
   build/
     migrate.py           orchestrates; the only entry point
     load_source.py       read + normalize curation/source/, join on feed_url
-    themes.py            three-pass tier-2 parent resolution
+    vocabulary.py        themes + subjects, three-pass theme resolution
     arcs.py              gold + segment seeding
     edges.py             derive the edges table, prune
     fts.py               populate the search index
@@ -390,10 +414,11 @@ because the build lost it." The second fails the gate; the first doesn't.
 
 `python catalog/build/verify.py` must exit 0. It checks:
 
-1. **Counts.** 315 shows. 27,444 episodes across 303 shows. 30 tier-1 and 148 tier-2
-   themes. Every count asserted against the source files, not hardcoded.
+1. **Counts.** 315 shows, every one carrying at least one episode. 31,653 episodes
+   (27,443 labelled + 4,210 recovered). 303 shows with labelled episodes. 30 themes and
+   148 subjects. Every count asserted against the source files, not hardcoded.
 2. **No orphans.** Zero foreign key violations (`PRAGMA foreign_key_check` empty). Every
-   episode has a show. Every subject has a tier-1 parent. Every `episode_themes` row
+   episode has a show. Every subject belongs to a theme. Every `episode_subjects` row
    resolves to a real theme.
 3. **Join integrity.** Every `catalog.json` row matched a slug by `feed_url`, or is
    explicitly listed as unmatched with a reason. The 12 label-less shows are present at
