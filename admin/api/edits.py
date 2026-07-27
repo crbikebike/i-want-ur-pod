@@ -149,6 +149,65 @@ def apply(
     return Edit(edit_id, entity_type, key, field, before, after)
 
 
+def apply_to_many(
+    conn: sqlite3.Connection,
+    *,
+    entity_type: str,
+    scope_sql: str,
+    scope_args: tuple,
+    field: str,
+    after,
+    actor: str,
+    note: str,
+    entity_key: str,
+    decisions_path: Path | None = None,
+) -> int:
+    """Set one field across many rows, logged once.
+
+    Merging a duplicate hides 623 episodes at a stroke. Routing that through apply() row
+    by row would put 623 entries in the log for a single decision, which buries the
+    decisions that matter -- so this writes one entry describing the sweep, with the
+    count in it.
+
+    Still the same door: the rows change, `edits` gets an entry, decisions.jsonl gets a
+    line, all in one transaction. `scope_sql` is a WHERE clause, never interpolated with
+    caller data.
+    """
+    if entity_type not in WRITABLE:
+        raise EditError(f"{entity_type!r} is not editable")
+    table, allowed = WRITABLE[entity_type]
+    if field not in allowed:
+        raise EditError(f"{entity_type}.{field} is not editable")
+
+    at = _now()
+    try:
+        cur = conn.execute(
+            f'UPDATE "{table}" SET "{field}" = ? WHERE {scope_sql}', (after, *scope_args)
+        )
+        n = cur.rowcount
+        if n == 0:
+            conn.rollback()
+            return 0
+        conn.execute(
+            "INSERT INTO edits (at, actor, entity_type, entity_key, field, before, after, note) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (at, actor, entity_type, entity_key, field, None, after, f"{note} ({n} rows)"),
+        )
+        path = decisions_path or DECISIONS
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps({
+                "at": at, "actor": actor, "entity": entity_type, "key": entity_key,
+                "field": field, "after": after, "rows": n, "note": note,
+            }, ensure_ascii=False) + "\n")
+            fh.flush()
+    except Exception:
+        conn.rollback()
+        raise
+    conn.commit()
+    return n
+
+
 def undo(conn: sqlite3.Connection, edit_id: int, *, decisions_path: Path | None = None) -> Edit:
     """Put a field back the way it was.
 

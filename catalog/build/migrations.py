@@ -10,10 +10,12 @@ catalog/migrations/, applied in order, exactly once, recorded in schema_version.
 
 Two rules, both enforced below:
 
-  ADDITIVE ONLY. A migration may CREATE, or ALTER TABLE ... ADD COLUMN. It may not DROP
-  or rewrite data. Anything that needs to destroy something is a decision a human makes
-  through the workbench, where it gets logged and can be undone -- not something that
-  happens silently at startup.
+  ADDITIVE ONLY, where "additive" is about data rather than schema objects. A migration
+  may CREATE, or ALTER TABLE ... ADD COLUMN, and it may DROP an INDEX -- an index holds
+  no data, so dropping one destroys nothing and recreating it with a better condition is
+  the only way to fix one. It may not DROP a table, DELETE, UPDATE, or rename. Anything
+  that would destroy or rewrite data is a decision a human makes in the workbench, where
+  it is logged and reversible, not something that happens silently at startup.
 
   IMMUTABLE ONCE APPLIED. Migrations are checksummed. Editing one after it has run is
   almost always a mistake -- the databases that already ran it will never see the change
@@ -35,6 +37,7 @@ MIGRATIONS_DIR = Path(__file__).resolve().parents[1] / "migrations"
 _ALLOWED = re.compile(
     r"^\s*(CREATE\s+(TABLE|INDEX|UNIQUE\s+INDEX|VIEW|VIRTUAL\s+TABLE|TRIGGER)"
     r"|ALTER\s+TABLE\s+\S+\s+ADD\s+COLUMN"
+    r"|DROP\s+INDEX"
     r"|INSERT\s+INTO)",
     re.IGNORECASE,
 )
