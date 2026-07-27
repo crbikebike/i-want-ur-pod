@@ -73,12 +73,26 @@ def pending(conn: sqlite3.Connection, limit: int = 20,
         i, n = slice_of
         where, args = "AND a.id % ? = ?", [n, i]
 
+    # Arcs the namer has already dealt with never come back.
+    #
+    # Flagging an arc as ungroupable drops its confidence but leaves its name alone -- the
+    # name is not the problem, the grouping is. So the name still fails `says_nothing`, and
+    # without this clause the arc reappeared in the very next batch, forever. An agent
+    # working slice 2 found that within three calls and stopped rather than looping, which
+    # is exactly what its brief told it to do.
+    #
+    # The audit trail is the state. `edits` already records every touch, keyed on
+    # show-slug/arc-slug, so there is no new column and no way for the two to disagree.
     rows = conn.execute(
         f"""
         SELECT a.id, a.slug, a.name, a.source, s.id, s.title, s.description
         FROM arcs a JOIN shows s ON s.id = a.show_id
         WHERE a.deleted_at IS NULL AND s.deleted_at IS NULL
           AND a.name IS NOT NULL {where}
+          AND NOT EXISTS (
+                SELECT 1 FROM edits e
+                WHERE e.actor = 'agent:arcname'
+                  AND e.entity_key = s.slug || '/' || a.slug)
         ORDER BY a.id
         """,
         args,
@@ -134,18 +148,32 @@ def record(conn: sqlite3.Connection, names: list[dict], *,
         current, show_title = row
 
         if unnameable:
-            # The episodes do not tell one story. Dropping the confidence is what puts it
-            # at the front of the review queue, which orders on lowest first.
-            try:
-                edits.apply(conn, entity_type="arc", entity_id=arc_id, field="confidence",
-                            after="low", actor="agent:arcname",
-                            note=item.get("reason") or "no common subject across these episodes",
-                            decisions_path=decisions_path)
-            except edits.EditError as e:
-                if "already" not in str(e):
-                    skipped.append(f"{arc_id}: {e}")
+            # The episodes do not tell one story.
+            #
+            # The reason goes in `description` first, and that is deliberate. Dropping
+            # confidence was the whole flag at first, and an arc whose confidence was
+            # *already* low produced a no-op edit -- refused, so no row in `edits`, so the
+            # "already handled" clause in pending() had nothing to match and the arc came
+            # back regardless. Writing the reason always writes something, and it is where
+            # a reviewer will look for it anyway.
+            reason = item.get("reason") or "no common subject across these episodes"
+            wrote = False
+            for f, value in (("description", reason[:400]), ("confidence", "low")):
+                try:
+                    edits.apply(conn, entity_type="arc", entity_id=arc_id, field=f,
+                                after=value, actor="agent:arcname", note=reason,
+                                decisions_path=decisions_path)
+                    wrote = True
+                except edits.EditError as e:
+                    if "already" not in str(e):
+                        skipped.append(f"{arc_id}: {f} refused — {e}")
+                        break
+            else:
+                if not wrote:
+                    skipped.append(f"{arc_id}: already flagged with this exact reason")
                     continue
-            flagged += 1
+                flagged += 1
+                continue
             continue
 
         if not name:
