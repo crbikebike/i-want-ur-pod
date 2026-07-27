@@ -9,6 +9,8 @@ gates pull against each other, and loosening either one has put a known bug stra
 back, so both directions are pinned.
 """
 
+import sqlite3
+
 import pytest
 
 from admin.api import rematch
@@ -107,3 +109,43 @@ def test_a_candidate_with_no_feed_is_not_a_candidate():
     assert rematch.rank("The Clearing", "Gimlet", [
         {"collectionName": "The Clearing", "artistName": "Pineapple Street Media / Gimlet"},
     ]) == []
+
+
+# --- the Apple page a repaired row links to ---------------------------------------
+
+
+def test_the_apple_page_is_looked_up_by_feed_url(tmp_path):
+    """Repairing a row has to *replace* its home_url, not drop it.
+
+    The old one pointed at the wrong show's Apple page -- Homecoming's led to "The
+    Homecoming Podcast with Dr. Thema" -- so keeping it was never an option. But a first
+    version simply cleared it, and that quietly cost the card its slide-up player: with no
+    Apple id there is nothing to embed, so "Listen and look" degraded to a bare search
+    link in a new tab. Chris noticed within the hour.
+
+    Keyed on the feed URL, so it is exact rather than another name match.
+    """
+    from admin.api import podcastindex as pi
+
+    dump = tmp_path / "feeds.db"
+    conn = sqlite3.connect(dump)
+    conn.execute("CREATE TABLE podcasts (url TEXT, originalUrl TEXT, itunesId INTEGER)")
+    conn.execute("INSERT INTO podcasts VALUES (?,?,?)",
+                 ("https://feeds.megaphone.fm/homecoming", "", 1170934381))
+    conn.execute("INSERT INTO podcasts VALUES (?,?,?)",
+                 ("https://example.com/nolisting", "", None))
+    conn.commit(); conn.close()
+
+    assert pi.itunes_home("https://feeds.megaphone.fm/homecoming", dump=dump) == \
+        "https://podcasts.apple.com/us/podcast/id1170934381"
+    # A feed Apple has never listed, and a feed the dump has never seen. Both are "no
+    # answer", and the card falls back to a search rather than linking somewhere wrong.
+    assert pi.itunes_home("https://example.com/nolisting", dump=dump) is None
+    assert pi.itunes_home("https://example.com/unknown", dump=dump) is None
+
+
+def test_no_dump_is_not_an_error(tmp_path):
+    """The workbench has to run without a 4 GB file present."""
+    from admin.api import podcastindex as pi
+    assert pi.itunes_home("https://feeds.megaphone.fm/homecoming",
+                          dump=tmp_path / "absent.db") is None

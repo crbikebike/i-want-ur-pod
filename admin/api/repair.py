@@ -126,13 +126,19 @@ def apply(conn: sqlite3.Connection, show_id: int, outcome: Outcome, feed: feeds.
     if outcome.status == "repointed":
         note = (f"confirmed against the feed: {outcome.feed_title!r} "
                 f"by {outcome.feed_author!r}")
-        # home_url and artwork_url described the *wrong* show as surely as feed_url did.
-        # Leaving them would put the wrong podcast's cover on the card and send the
-        # "Listen and look" link to the wrong Apple page -- the exact thing that made
-        # these rows undecidable. The feed's own image replaces the artwork; home_url is
-        # cleared rather than guessed, and the card falls back to an Apple search.
+        # home_url and artwork_url described the *wrong* show as surely as feed_url did --
+        # Homecoming's Apple link led to "The Homecoming Podcast with Dr. Thema" -- so
+        # they are replaced, not kept. The feed carries its own cover. The Apple page is
+        # looked up by feed URL in the dump, which is exact rather than another name
+        # match.
+        #
+        # A first version simply cleared home_url, and that quietly cost the card its
+        # slide-up player: with no Apple id there is nothing to embed, so "Listen and
+        # look" degraded to a bare search link opening in a new tab. Leaving the queue to
+        # answer a question about the queue is a good way not to come back.
+        home = pi.itunes_home(outcome.feed_url)
         for field_name, value in (("feed_url", outcome.feed_url),
-                                  ("home_url", None),
+                                  ("home_url", home),
                                   ("artwork_url", feed.image or None)):
             try:
                 edits.apply(conn, entity_type="show", entity_id=show_id, field=field_name,

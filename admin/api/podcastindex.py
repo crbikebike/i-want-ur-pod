@@ -97,6 +97,43 @@ SELECT = """
     FROM podcasts
 """
 
+# Where the dump lives when nobody says otherwise. Absent on most machines, and every
+# caller here treats that as "no answer" rather than an error -- the workbench has to run
+# without a 4 GB file present.
+import os
+
+DUMP = Path(os.environ.get("PODCASTINDEX_DUMP", "")) if os.environ.get("PODCASTINDEX_DUMP") \
+    else None
+
+
+def itunes_home(feed_url: str, dump: str | Path | None = None) -> str | None:
+    """The Apple Podcasts page for a feed, looked up by the feed URL itself.
+
+    This exists because repairing a row has to replace its `home_url`, not just drop it.
+    The old one pointed at the wrong show's Apple page -- Homecoming's led to "The
+    Homecoming Podcast with Dr. Thema" -- so keeping it was not an option, but clearing it
+    cost the card its slide-up player and left a bare search link in place of the one
+    thing that lets you actually check a show.
+
+    Keyed on the feed URL, which makes it exact rather than another name match: the dump
+    stores Apple's own id next to the feed it belongs to. Apple offers no feed-to-id
+    lookup of its own, so this only works with the dump present, and returns None without
+    it.
+    """
+    path = Path(dump) if dump else DUMP
+    if not path or not Path(path).exists() or not feed_url:
+        return None
+    conn = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+    try:
+        row = conn.execute(
+            "SELECT itunesId FROM podcasts WHERE url = ? OR originalUrl = ?",
+            (feed_url, feed_url)).fetchone()
+    finally:
+        conn.close()
+    if not row or not row[0]:
+        return None
+    return f"https://podcasts.apple.com/us/podcast/id{row[0]}"
+
 
 class Index:
     """A read-only view over the dump. Never written to; it is somebody else's data."""
