@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import re
 import sqlite3
+from urllib.parse import quote_plus
 
 # Deterministic per show so the order is stable across page loads, and shuffled enough
 # that it is not alphabetical. sqlite has no hash(), so the guid-ish mix below does.
@@ -83,6 +84,17 @@ def inclusion_counts(conn: sqlite3.Connection) -> dict:
         "cut": cut,
         "total": waiting + flagged + kept + cut,
     }
+
+
+# Apple categories that are rarely narrative. Not a verdict and not a sort key -- sorting
+# by this put 30 for 30, Rough Translation and Bodies in the first ten, all excellent. But
+# as a stated fact on a card it is honest: here is why this one is worth a look.
+_ODD_CATEGORIES = {
+    "Comedy", "Sports", "Self-Improvement", "Relationships", "Health & Fitness",
+    "Video Games", "Daily News", "News Commentary", "Entertainment News",
+    "Music Commentary", "Education", "Education for Kids", "Christianity", "Islam",
+    "Business", "Management", "Technology", "Tech News", "Fashion & Beauty",
+}
 
 
 def _note(conn: sqlite3.Connection, show_id: int) -> dict | None:
@@ -197,7 +209,7 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
 
     row = conn.execute(
         f"""
-        SELECT s.id, s.slug, s.title, s.why, s.description, s.artwork_url,
+        SELECT s.id, s.slug, s.title, s.home_url, s.artwork_url,
                s.artwork_updated_at, s.apple_category, s.years, s.lang, s.include_verdict,
                n.name AS network,
                (SELECT count(*) FROM episodes WHERE show_id = s.id AND deleted_at IS NULL) AS eps,
@@ -214,47 +226,55 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
     if not row:
         return None
 
-    (show_id, slug, title, why, description, artwork, artwork_updated_at, category,
+    (show_id, slug, title, home_url, artwork, artwork_updated_at, category,
      years, lang, verdict, network, eps, arcs) = row
 
-    episodes = [
-        r[0] for r in conn.execute(
-            "SELECT title FROM episodes WHERE show_id = ? AND deleted_at IS NULL "
-            "ORDER BY published_at DESC LIMIT 5", (show_id,))
-    ]
-    themes = [
-        r[0] for r in conn.execute(
-            "SELECT t.name FROM show_themes st JOIN themes t ON t.id = st.theme_id "
-            "WHERE st.show_id = ? ORDER BY t.name", (show_id,))
-    ]
-    subjects = [
-        r[0] for r in conn.execute(
-            "SELECT su.name FROM episode_subjects es "
-            "JOIN subjects su ON su.id = es.subject_id "
-            "JOIN episodes e ON e.id = es.episode_id "
-            "WHERE e.show_id = ? AND es.role = 'primary' "
-            "GROUP BY su.id ORDER BY count(*) DESC LIMIT 4", (show_id,))
-    ]
+
+    note = _note(conn, show_id)
+    if note is None:
+        note = {
+            "kind": "unreviewed",
+            "tone": "info",
+            "label": "Never reviewed",
+            "detail": ["Imported with the original 315 and never checked against the "
+                       "story-driven standard."],
+            "meaning": (f"Filed under {category}, which is rarely narrative."
+                        if category in _ODD_CATEGORIES else
+                        "No specific doubt — confirm it belongs and move on."),
+        }
 
     return {
         "id": show_id,
         "slug": slug,
         "title": title,
         "network": network,
-        "category": category,
         "years": years,
-        "lang": lang,
-        "pitch": why,
-        "description": description,
         "artwork": thumbnail(artwork, updated_at=artwork_updated_at),
-        "episodeCount": eps,
-        "arcCount": arcs,
-        "recentEpisodes": episodes,
-        "themes": themes,
-        "subjects": subjects,
-        "flagged": verdict == "suspect",
-        "note": _note(conn, show_id),
+        "note": note,
+        "links": _links(title, home_url),
     }
+
+
+def _links(title: str, home_url: str | None) -> list[dict]:
+    """Somewhere to go and actually look.
+
+    The card cannot tell you whether a show is narrated or two people chatting -- only
+    listening can. So the card frames the question and hands you the door, rather than
+    piling up metadata that still would not settle it.
+    """
+    out = []
+    if home_url and "podcasts.apple.com" in home_url:
+        out.append({"label": "Open in Apple Podcasts", "href": home_url, "primary": True})
+    else:
+        # 20 shows have no stored link. A search is worse than a direct link and much
+        # better than a dead end.
+        term = quote_plus(title)
+        out.append({
+            "label": "Find in Apple Podcasts",
+            "href": f"https://podcasts.apple.com/us/search?term={term}",
+            "primary": True,
+        })
+    return out
 
 
 # Verdicts a human may record here. 'suspect' is absent on purpose: it is what the

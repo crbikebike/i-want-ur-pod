@@ -1,6 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-/* The inclusion queue.
+/* Vetting the catalog.
+ *
+ * The job: the catalog is meant to hold story-driven, investigative shows and nothing
+ * else -- no host-interviews-guest talk shows. 315 were imported from an earlier list
+ * and none has ever been checked against that standard, so Comedy, Sports and
+ * Self-Improvement entries are in there right now. This is where each show is checked
+ * and either stays in the catalog or does not.
  *
  * One show fills the screen. You keep it, cut it, or skip it. The card leaves carrying
  * the colour of what you chose, the count goes down, and the next one rises.
@@ -154,7 +160,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="head">
-        <h1>Keep or Cut</h1>
+        <h1>Vetting the Catalog</h1>
         {counts && (
           <div className="left">
             <b>{counts.waiting}</b> to go
@@ -212,63 +218,31 @@ function Verdict({ kind, label, keys, onPick, disabled }) {
 function Card({ show, leaving }) {
   return (
     <article className={`card arriving ${leaving ? `leaving ${leaving}` : ""}`}>
-
       <div className="top">
-        {/* Artwork is a nice-to-have and 20 shows have none. A broken-image box would
-            be worse than no image, so a failed load removes itself. */}
         {show.artwork && (
-          <img
-            className="art"
-            src={show.artwork}
-            alt=""
-            loading="lazy"
-            onError={(e) => { e.currentTarget.style.display = "none"; }}
-          />
+          <img className="art" src={show.artwork} alt="" loading="lazy"
+               onError={(e) => { e.currentTarget.style.display = "none"; }} />
         )}
         <div>
           <h2 className="title">{show.title}</h2>
-          <p className="by">
-            {[show.network, show.years].filter(Boolean).join(" · ")}
-          </p>
+          <p className="by">{[show.network, show.years].filter(Boolean).join(" · ")}</p>
         </div>
       </div>
 
-      {show.note && (
-        <div className={`note ${show.note.tone}`}>
-          <b>{show.note.label}</b>
-          {show.note.detail.map((d) => <p key={d}>{d}</p>)}
-          <p className="means">{show.note.meaning}</p>
-        </div>
-      )}
-
-      {show.pitch && <p className="pitch">{show.pitch}</p>}
-      {show.description && <p className="blurb">{show.description}</p>}
-
-      <div className="facts">
-        <span className="fact">{show.episodeCount.toLocaleString()} episodes</span>
-        {show.arcCount > 0 && <span className="fact arcs">{show.arcCount} arcs</span>}
-        {show.category && <span className="fact">{show.category}</span>}
-        {show.lang !== "en" && <span className="fact">{show.lang}</span>}
-        {show.themes.map((t) => <span className="fact" key={t}>{t}</span>)}
+      <div className={`note ${show.note.tone}`}>
+        <b>{show.note.label}</b>
+        {show.note.detail.map((d) => <p key={d}>{d}</p>)}
+        <p className="means">{show.note.meaning}</p>
       </div>
 
-      {show.recentEpisodes.length > 0 && (
-        <div className="sec">
-          <h2>Most recent episodes</h2>
-          <ul className="eps">
-            {show.recentEpisodes.map((e, i) => <li key={i}>{e}</li>)}
-          </ul>
-        </div>
-      )}
-
-      {show.subjects.length > 0 && (
-        <div className="sec">
-          <h2>What its episodes are about</h2>
-          <div className="facts">
-            {show.subjects.map((s) => <span className="fact" key={s}>{s}</span>)}
-          </div>
-        </div>
-      )}
+      <div className="links">
+        {show.links.map((l) => (
+          <a key={l.href} href={l.href} target="_blank" rel="noreferrer"
+             className={l.primary ? "go primary" : "go"}>
+            {l.label} <span aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
     </article>
   );
 }

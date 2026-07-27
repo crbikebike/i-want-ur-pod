@@ -136,33 +136,64 @@ def test_decided_shows_do_not_come_back(db, log):
 # --- what a card carries ---------------------------------------------------------
 
 
-def test_the_card_has_enough_to_decide_without_tapping_through(db):
-    sid = add_show(db, "s-town", "S-Town", episodes=7)
-    db.execute("INSERT INTO show_themes (show_id, theme_id) VALUES (?, 1)", (sid,))
-    db.execute("INSERT INTO arcs (show_id, slug, kind, name, source) "
-               "VALUES (?, 'ch', 'arc', 'Chapter One', 'gold')", (sid,))
-    db.commit()
+def test_the_card_carries_only_what_the_decision_needs(db):
+    """Three things: what it is, why you are looking at it, and where to go and check.
 
+    Everything else came off. Pitch, description, episode counts, theme chips and a
+    sample of episode titles were all on here, and none of them could settle the actual
+    question -- whether this is narrated storytelling or two people chatting. Only
+    listening settles that, so the card frames the question and hands over the door."""
+    add_show(db, "s-town", "S-Town", episodes=7)
     item = queues.inclusion_next(db)
+
+    assert set(item) == {"id", "slug", "title", "network", "years", "artwork", "note", "links"}
     assert item["title"] == "S-Town"
     assert item["network"] == "Wondery"
-    assert item["pitch"]
-    assert item["episodeCount"] == 7
-    assert item["arcCount"] == 1
-    assert len(item["recentEpisodes"]) == 5      # newest first, capped
-    assert item["themes"] == ["True Crime"]
+    assert item["note"]["label"]
+    assert item["links"][0]["href"].startswith("https://podcasts.apple.com/")
 
 
-def test_recent_episodes_are_newest_first(db):
-    add_show(db, "a", "A", episodes=6)
-    assert queues.inclusion_next(db)["recentEpisodes"][0] == "A ep 5"
-
-
-def test_an_ordinary_show_carries_no_note(db):
+def test_every_card_says_why_it_is_being_reviewed(db):
+    """A queue that does not say why is asking you to guess at its reasoning."""
     add_show(db, "a", "A")
-    item = queues.inclusion_next(db)
-    assert item["note"] is None
-    assert item["flagged"] is False
+    note = queues.inclusion_next(db)["note"]
+    assert note is not None
+    assert note["label"] and note["detail"] and note["meaning"]
+
+
+def test_an_odd_category_is_stated_as_the_reason(db):
+    """Not a verdict -- sorting by category is useless -- but as a stated fact it is
+    honest about why this one is worth a look."""
+    sid = add_show(db, "a", "A Comedy Show")
+    db.execute("UPDATE shows SET apple_category='Comedy' WHERE id=?", (sid,))
+    db.commit()
+    assert "Comedy" in queues.inclusion_next(db)["note"]["meaning"]
+
+
+def test_an_ordinary_category_admits_there_is_no_specific_doubt(db):
+    sid = add_show(db, "a", "A")
+    db.execute("UPDATE shows SET apple_category='Documentary' WHERE id=?", (sid,))
+    db.commit()
+    assert "No specific doubt" in queues.inclusion_next(db)["note"]["meaning"]
+
+
+def test_a_show_with_a_stored_apple_link_uses_it(db):
+    sid = add_show(db, "a", "A")
+    db.execute("UPDATE shows SET home_url='https://podcasts.apple.com/us/podcast/a/id1' "
+               "WHERE id=?", (sid,))
+    db.commit()
+    link = queues.inclusion_next(db)["links"][0]
+    assert link["href"] == "https://podcasts.apple.com/us/podcast/a/id1"
+    assert link["label"] == "Open in Apple Podcasts"
+
+
+def test_a_show_without_one_gets_a_search_instead(db):
+    """20 shows have no stored link. A search is worse than a direct link and much
+    better than a dead end."""
+    add_show(db, "a", "Alice Isn't Dead")
+    link = queues.inclusion_next(db)["links"][0]
+    assert "search?term=Alice+Isn%27t+Dead" in link["href"]
+    assert link["label"] == "Find in Apple Podcasts"
 
 
 def test_a_shared_feed_says_one_of_them_is_a_duplicate(db):
@@ -210,11 +241,13 @@ def test_every_note_says_what_it_means_for_the_decision(db):
     assert note["meaning"] and len(note["meaning"]) > 20
 
 
-def test_soft_deleted_episodes_are_not_counted(db):
-    sid = add_show(db, "a", "A", episodes=4)
-    db.execute("UPDATE episodes SET deleted_at='2026-07-27' WHERE show_id=? AND guid='a-0'", (sid,))
+def test_a_soft_deleted_show_never_reaches_the_queue(db):
+    add_show(db, "gone", "Gone")
+    add_show(db, "here", "Here")
+    db.execute("UPDATE shows SET deleted_at='2026-07-27' WHERE slug='gone'")
     db.commit()
-    assert queues.inclusion_next(db)["episodeCount"] == 3
+    for _ in range(3):
+        assert queues.inclusion_next(db)["slug"] == "here"
 
 
 # --- verdicts --------------------------------------------------------------------

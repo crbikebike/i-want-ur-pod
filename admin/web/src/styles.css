@@ -144,8 +144,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .stage { position: relative; overflow: hidden; padding: 15px 15px 0; }
 
 .card {
-  height: 100%;
   overflow-y: auto;
+  max-height: 100%;
   -webkit-overflow-scrolling: touch;
   background: var(--sheet);
   border: 1px solid var(--rule);
@@ -219,8 +219,23 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .title { margin: 0; font-size: 26px; line-height: 1.12; letter-spacing: -0.017em; text-wrap: balance; }
 .by { margin: 6px 0 0; font-size: 13.5px; color: var(--ink-faint); }
 
-.pitch { margin: 0; font-size: 15.5px; }
-.blurb { margin: 0; font-size: 14px; color: var(--ink-soft); }
+/* Somewhere to actually go and look. The card frames the question; this settles it. */
+.links { display: flex; flex-direction: column; gap: 8px; }
+.go {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 13px 15px;
+  border-radius: var(--r-sm);
+  color: var(--horizon);
+  border: 1px solid var(--horizon);
+  background: var(--horizon-wash);
+}
+.go span { font-size: 13px; opacity: 0.7; }
+.go:active { filter: brightness(0.96); }
 
 .facts { display: flex; flex-wrap: wrap; gap: 6px; }
 .fact {
