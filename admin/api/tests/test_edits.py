@@ -231,3 +231,71 @@ def test_a_deletion_can_carry_its_reason(db, log):
     edits.apply(db, entity_type="show", entity_id=1, field="deleted_reason",
                 after="dead-feed", decisions_path=log)
     assert db.execute("SELECT deleted_reason FROM shows WHERE id=1").fetchone()[0] == "dead-feed"
+
+
+# --- ingesting episodes: the insert door ----------------------------------------
+
+
+def ep(guid, title, **kw):
+    from admin.api.feeds import Episode
+    return Episode(guid=guid, title=title, **kw)
+
+
+def test_ingesting_lands_in_all_three_places(db, log):
+    """apply() cannot do this -- it changes a field on a row that already exists, and
+    there is no row yet -- but the promise has to hold anyway."""
+    got = edits.ingest_episodes(db, show_id=1, episodes=[ep("n1", "New One"), ep("n2", "New Two")],
+                                actor="agent:comber", note="feed corrected", decisions_path=log)
+    assert got == {"added": 2, "existing": 0}
+    assert db.execute("SELECT count(*) FROM episodes WHERE show_id=1").fetchone()[0] == 3
+    assert db.execute("SELECT count(*) FROM edits WHERE field='ingest'").fetchone()[0] == 1
+    assert read_log(log)[-1]["added"] == 2
+
+
+def test_a_batch_is_one_log_line_not_one_per_episode(db, log):
+    """Repointing Empire brings back 658 episodes. 658 log lines would bury the decision
+    that mattered."""
+    edits.ingest_episodes(db, show_id=1, episodes=[ep(f"g{i}", f"Ep {i}") for i in range(200)],
+                          actor="agent:comber", note="backfill", decisions_path=log)
+    assert len(read_log(log)) == 1
+    # 199, not 200: the fixture's show already carries g1, and the count reports what
+    # actually changed rather than what was offered.
+    assert "199 added, 1 already present" in db.execute(
+        "SELECT note FROM edits ORDER BY id DESC LIMIT 1").fetchone()[0]
+
+
+def test_an_episode_already_present_is_left_alone(db, log):
+    """Re-reading a feed should converge, not churn. Arcs, subjects and verdicts hang off
+    these rows and they are our work, not the publisher's."""
+    db.execute("UPDATE episodes SET title='Our Edited Title' WHERE id=1")
+    db.commit()
+    got = edits.ingest_episodes(db, show_id=1, episodes=[ep("g1", "Publisher's Title")],
+                                actor="agent:comber", note="refresh", decisions_path=log)
+    assert got == {"added": 0, "existing": 1}
+    assert db.execute("SELECT title FROM episodes WHERE id=1").fetchone()[0] == "Our Edited Title"
+
+
+def test_ingesting_restores_an_episode_a_bad_rematch_hid(db, log):
+    """A wrong re-match hides every episode. Pointing the row back at the right feed has
+    to bring them out again, or the fix leaves the show empty."""
+    edits.apply(db, entity_type="episode", entity_id=1, field="deleted_at",
+                after="2026-07-27T00:00:00+00:00", decisions_path=log)
+    edits.ingest_episodes(db, show_id=1, episodes=[ep("g1", "Ep One")],
+                          actor="agent:comber", note="feed corrected", decisions_path=log)
+    assert db.execute("SELECT deleted_at FROM episodes WHERE id=1").fetchone()[0] is None
+
+
+def test_ingesting_nothing_writes_nothing(db, log):
+    assert edits.ingest_episodes(db, show_id=1, episodes=[], actor="agent:comber",
+                                 note="empty feed", decisions_path=log) == {"added": 0, "existing": 0}
+    assert db.execute("SELECT count(*) FROM edits WHERE field='ingest'").fetchone()[0] == 0
+    assert read_log(log) == []
+
+
+def test_nothing_is_ingested_when_the_log_cannot_be(db, tmp_path):
+    unwritable = tmp_path / "nope"
+    unwritable.write_text("i am a file, not a directory")
+    with pytest.raises(Exception):
+        edits.ingest_episodes(db, show_id=1, episodes=[ep("n1", "New")], actor="agent:comber",
+                              note="x", decisions_path=unwritable / "decisions.jsonl")
+    assert db.execute("SELECT count(*) FROM episodes WHERE show_id=1").fetchone()[0] == 1

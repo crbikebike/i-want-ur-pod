@@ -216,6 +216,78 @@ def apply_to_many(
     return n
 
 
+def ingest_episodes(
+    conn: sqlite3.Connection,
+    *,
+    show_id: int,
+    episodes: list,
+    actor: str,
+    note: str,
+    decisions_path: Path | None = None,
+) -> dict:
+    """Add episodes read from a feed. The insert door.
+
+    `apply()` cannot do this: it changes one field on a row that already exists, and there
+    is no row yet. But the same promise has to hold -- the database changes, `edits` gets
+    an entry, decisions.jsonl gets a line, one transaction -- or the single-write-path
+    rule is true only for the writes that happen to be convenient.
+
+    Logged once with a count rather than once per episode, for the reason apply_to_many
+    exists: repointing Empire brings back 658 episodes, and 658 log lines would bury the
+    one decision that mattered.
+
+    This is not a judgement, so it is never attributed to a human. It is what a publisher
+    says is in their feed, and re-reading the feed later should converge on the same
+    answer: existing GUIDs are left alone rather than overwritten, because the catalog's
+    own work -- arcs, subjects, verdicts -- hangs off those rows.
+    """
+    at = _now()
+    key = entity_key(conn, "show", show_id)
+    added, existing = 0, 0
+    try:
+        for ep in episodes:
+            already = conn.execute(
+                "SELECT id, deleted_at FROM episodes WHERE show_id = ? AND guid = ?",
+                (show_id, ep.guid)).fetchone()
+            if already:
+                # Un-hide one that a bad re-match had swept away, but never rewrite its
+                # fields -- anything attached to it was our work, not the publisher's.
+                if already[1] is not None:
+                    conn.execute("UPDATE episodes SET deleted_at = NULL, deleted_reason = NULL "
+                                 "WHERE id = ?", (already[0],))
+                existing += 1
+                continue
+            conn.execute(
+                "INSERT INTO episodes (show_id, guid, title, published_at, description, "
+                "season, episode_number, episode_type, duration_s) VALUES (?,?,?,?,?,?,?,?,?)",
+                (show_id, ep.guid, ep.title, ep.published_at, ep.description,
+                 ep.season, ep.episode_number, ep.episode_type, ep.duration_s))
+            added += 1
+
+        if added == 0 and existing == 0:
+            conn.rollback()
+            return {"added": 0, "existing": 0}
+
+        conn.execute(
+            "INSERT INTO edits (at, actor, entity_type, entity_key, field, before, after, note) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (at, actor, "episode", f"{key}/*", "ingest", None, str(added),
+             f"{note} ({added} added, {existing} already present)"))
+        path = decisions_path or DECISIONS
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps({
+                "at": at, "actor": actor, "entity": "episode", "key": f"{key}/*",
+                "field": "ingest", "added": added, "existing": existing, "note": note,
+            }, ensure_ascii=False) + "\n")
+            fh.flush()
+    except Exception:
+        conn.rollback()
+        raise
+    conn.commit()
+    return {"added": added, "existing": existing}
+
+
 def undo(conn: sqlite3.Connection, edit_id: int, *, decisions_path: Path | None = None) -> Edit:
     """Put a field back the way it was.
 
