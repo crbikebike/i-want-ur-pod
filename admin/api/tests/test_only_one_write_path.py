@@ -30,6 +30,9 @@ WRITE_SQL = re.compile(
 CATALOG_TABLES = {
     "shows", "episodes", "arcs", "themes", "subjects", "episode_subjects",
     "show_themes", "edges", "entities", "people", "networks",
+    # Phase 3's label storage. Added here the moment the tables existed: a guard that
+    # lags the schema protects the tables nobody is writing yet.
+    "episode_labels", "episode_entities",
 }
 
 

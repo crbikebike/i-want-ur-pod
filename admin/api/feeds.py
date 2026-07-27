@@ -276,10 +276,20 @@ def verify(feed: Feed, *, network: str | None, expect_title: str | None = None) 
 
 
 _TAG = re.compile(r"<[^>]+>")
+# The tail every network staples to every episode. Matched from the first marker to the
+# end, because these always come last and always come in clumps -- one episode of
+# Revisionist History carries an iHeart ad line, an omnystudio privacy line and a
+# show-website line in a row. Across 29,181 episodes at 20 per batch, this is the
+# difference between the model reading stories and reading the same legal paragraph 20
+# times per call.
 _BOILERPLATE = re.compile(
-    r"\s*(see (privacy policy|omnystudio\.com/listener)|learn more about your ad choices|"
-    r"privacy policy|california privacy notice|hosted on acast|"
-    r"to listen to all our|become a member at)\b.*$",
+    r"\s*(see (the )?(privacy policy|omnystudio\.com|megaphone\.fm|acast\.com)"
+    r"|learn more about your ad[- ]choices"
+    r"|privacy policy|california privacy notice|do-not-sell-my-info"
+    r"|hosted on acast|our sponsors provide|advertising inquiries"
+    r"|to listen to all our|become a member at|sign up for|subscribe at"
+    r"|for more (information|episodes), visit|find out more at"
+    r"|to learn more about the topics covered in this episode)\b.*$",
     re.IGNORECASE | re.DOTALL)
 
 

@@ -195,3 +195,21 @@ def test_the_stored_description_is_left_alone():
     raw = "<p>Hello</p>"
     feeds.plain_text(raw)
     assert raw == "<p>Hello</p>"
+
+
+def test_a_clump_of_boilerplate_goes_together():
+    """One Revisionist History episode carries an ad line, a privacy line and a website
+    line in a row. Cutting from the first marker to the end takes all three -- they always
+    come last and always come in clumps."""
+    got = feeds.plain_text(
+        "A painting took England by storm, then the artist vanished. "
+        "To learn more about the topics covered in this episode, visit www.example.com "
+        "Learn more about your ad-choices at https://www.iheartpodcastnetwork.com "
+        "See omnystudio.com/listener for privacy information.")
+    assert got == "A painting took England by storm, then the artist vanished."
+
+
+def test_a_hyphen_is_not_a_hiding_place():
+    """The first version matched "ad choices" and missed "ad-choices", which is what
+    iHeart actually writes on every episode it publishes."""
+    assert feeds.plain_text("The story. Learn more about your ad-choices at x.com") == "The story."

@@ -447,3 +447,114 @@ def test_a_duplicate_slug_is_refused_by_the_schema(db, log):
             arc("same", "One", ["g2", "g3"]), arc("same", "Two", ["g4", "g5"])],
             actor="agent:arcs", note="A8", decisions_path=log)
     assert db.execute("SELECT count(*) FROM arcs WHERE slug='same'").fetchone()[0] == 0
+
+
+# --- labelling episodes ----------------------------------------------------------
+
+
+def label(eid, slugs, entities=None):
+    return {"episode_id": eid,
+            "subjects": [{"slug": s, "role": r, "confidence": c, "agreement": a, "votes": v}
+                         for s, r, c, a, v in slugs],
+            "entities": entities or []}
+
+
+def test_a_batch_of_labels_lands_with_its_votes(db, log):
+    """`agreement` was NULL on all 43,818 rows of the last run. The schema comment says
+    outright: "Phase 3's relabel populates it." """
+    got = edits.label_episodes(
+        db, labels=[label(1, [("grief", "primary", "high", 3, 3)])],
+        run_id="2026-07-relabel", model="claude-sonnet-5", actor="agent:label",
+        note="relabel", decisions_path=log)
+    assert got["episodes"] == 1 and got["subjects"] == 1
+    row = db.execute("SELECT role, confidence, agreement, votes, model FROM episode_labels "
+                     "WHERE run_id='2026-07-relabel'").fetchone()
+    assert row == ("primary", "high", 3, 3, "claude-sonnet-5")
+
+
+def test_the_old_run_is_not_disturbed(db, log):
+    """Two runs coexist because run_id is in the key. The 2026-07 pass is the only thing
+    the new one can be measured against."""
+    db.execute("INSERT INTO episode_labels (episode_id, subject_id, run_id, role, confidence) "
+               "VALUES (1, 1, '2026-07-theming', 'primary', 'high')")
+    db.commit()
+    edits.label_episodes(db, labels=[label(1, [("grief", "primary", "low", 2, 3)])],
+                         run_id="2026-07-relabel", model="m", actor="agent:label",
+                         note="relabel", decisions_path=log)
+    assert db.execute("SELECT count(*) FROM episode_labels").fetchone()[0] == 2
+    assert db.execute("SELECT confidence FROM episode_labels WHERE run_id='2026-07-theming'"
+                      ).fetchone()[0] == "high"
+
+
+def test_a_subject_outside_the_vocabulary_is_refused_not_guessed_at(db, log):
+    """The last run kept a hand-maintained near-miss map, including one entry that silently
+    dropped the row. Nobody could then tell a real answer from a typo the pipeline had
+    repaired."""
+    got = edits.label_episodes(
+        db, labels=[label(1, [("grief", "primary", "high", None, None),
+                              ("invented-slug", "secondary", "low", None, None)])],
+        run_id="r", model="m", actor="agent:label", note="relabel", decisions_path=log)
+    assert got["subjects"] == 1
+    assert got["unknown"] == {"invented-slug": 1}
+
+
+def test_a_batch_is_one_log_line(db, log):
+    """43,818 rows at one line each would bury every decision a person ever made."""
+    for i in range(2, 12):
+        db.execute("INSERT INTO episodes (id, show_id, guid, title) VALUES (?,1,?,?)",
+                   (i, f"g{i}", f"Ep {i}"))
+    db.commit()
+    edits.label_episodes(db, labels=[label(i, [("grief", "primary", "high", None, None)])
+                                     for i in range(1, 12)],
+                         run_id="r", model="m", actor="agent:label", note="relabel",
+                         decisions_path=log)
+    assert len(read_log(log)) == 1
+    assert read_log(log)[0]["episodes"] == 11
+
+
+def test_entities_are_created_on_sight(db, log):
+    """Open-world by nature -- there is no fixed list of every case and company."""
+    edits.label_episodes(
+        db, labels=[label(1, [("grief", "primary", "high", None, None)],
+                          entities=[{"name": "Theranos", "kind": "company", "confidence": "high"}])],
+        run_id="r", model="m", actor="agent:label", note="relabel", decisions_path=log)
+    assert db.execute("SELECT name, kind FROM entities").fetchone() == ("Theranos", "company")
+    assert db.execute("SELECT count(*) FROM episode_entities").fetchone()[0] == 1
+
+
+def test_an_entity_name_means_different_things_in_different_kinds(db, log):
+    """"Enron" the company and "Enron" the film are different things. Collapsing them
+    would make the graph claim a connection that is only a coincidence of naming."""
+    edits.label_episodes(
+        db, labels=[label(1, [("grief", "primary", "high", None, None)], entities=[
+            {"name": "Enron", "kind": "company", "confidence": "high"},
+            {"name": "Enron", "kind": "work", "confidence": "medium"}])],
+        run_id="r", model="m", actor="agent:label", note="relabel", decisions_path=log)
+    assert db.execute("SELECT count(*) FROM entities").fetchone()[0] == 2
+
+
+def test_relabelling_the_same_episode_in_one_run_replaces_rather_than_collides(db, log):
+    edits.label_episodes(db, labels=[label(1, [("grief", "primary", "low", None, None)])],
+                         run_id="r", model="m", actor="agent:label", note="a", decisions_path=log)
+    edits.label_episodes(db, labels=[label(1, [("grief", "primary", "high", 3, 3)])],
+                         run_id="r", model="m", actor="agent:label", note="b", decisions_path=log)
+    rows = db.execute("SELECT confidence, agreement FROM episode_labels WHERE run_id='r'").fetchall()
+    assert rows == [("high", 3)]
+
+
+def test_a_soft_deleted_episode_is_not_labelled(db, log):
+    db.execute("UPDATE episodes SET deleted_at='2026-07-27T00:00:00+00:00' WHERE id=1")
+    db.commit()
+    got = edits.label_episodes(db, labels=[label(1, [("grief", "primary", "high", None, None)])],
+                               run_id="r", model="m", actor="agent:label", note="x",
+                               decisions_path=log)
+    assert got["episodes"] == 0 and got["subjects"] == 0
+
+
+def test_a_batch_that_places_nothing_writes_nothing(db, log):
+    got = edits.label_episodes(db, labels=[label(1, [("nope", "primary", "high", None, None)])],
+                               run_id="r", model="m", actor="agent:label", note="x",
+                               decisions_path=log)
+    assert got["subjects"] == 0
+    assert read_log(log) == []
+    assert db.execute("SELECT count(*) FROM edits WHERE field='label'").fetchone()[0] == 0

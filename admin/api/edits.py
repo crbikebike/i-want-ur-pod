@@ -290,6 +290,118 @@ def ingest_episodes(
     return {"added": added, "existing": existing}
 
 
+def label_episodes(
+    conn: sqlite3.Connection,
+    *,
+    labels: list[dict],
+    run_id: str,
+    model: str,
+    actor: str,
+    note: str,
+    decisions_path: Path | None = None,
+) -> dict:
+    """Write what a batch of episodes is about. The fourth insert door.
+
+    Each item is `{episode_id, subjects: [{slug, role, confidence, agreement, votes}],
+    entities: [{name, kind, confidence}]}`.
+
+    Logged once for the batch, with counts. The last run produced 43,818 rows; one line
+    each would bury every decision a person ever made in the same log. Same reasoning as
+    `apply_to_many`.
+
+    **Subjects outside the fixed 148 are refused, not aliased.** The previous run kept a
+    hand-maintained near-miss map -- US/UK spellings, `cybercrime` to
+    `hacking-and-cybercrime`, and one entry that silently *dropped* the row -- which meant
+    nobody could tell a model's genuine answer from a typo the pipeline had guessed at.
+    A slug that is not in the vocabulary is a proposal, and proposals go to a queue.
+
+    Entities are created on sight. They are open-world by nature -- there is no fixed list
+    of every case and company in the world -- and the confidence recorded with the link is
+    what a reviewer sorts on.
+    """
+    at = _now()
+    subjects = {slug: sid for sid, slug in
+                conn.execute("SELECT id, slug FROM subjects WHERE deleted_at IS NULL")}
+
+    placed = ents = episodes = 0
+    unknown: dict[str, int] = {}
+    try:
+        for item in labels:
+            eid = item.get("episode_id")
+            if not conn.execute("SELECT 1 FROM episodes WHERE id = ? AND deleted_at IS NULL",
+                                (eid,)).fetchone():
+                continue
+            episodes += 1
+
+            for s in item.get("subjects") or []:
+                sid = subjects.get(s.get("slug"))
+                if sid is None:
+                    unknown[s.get("slug")] = unknown.get(s.get("slug"), 0) + 1
+                    continue
+                conn.execute(
+                    "INSERT OR REPLACE INTO episode_labels (episode_id, subject_id, run_id, "
+                    "role, confidence, agreement, votes, model, at) VALUES (?,?,?,?,?,?,?,?,?)",
+                    (eid, sid, run_id, s.get("role", "secondary"),
+                     s.get("confidence", "low"), s.get("agreement"), s.get("votes"),
+                     model, at))
+                placed += 1
+
+            for e in item.get("entities") or []:
+                name, kind = (e.get("name") or "").strip(), e.get("kind")
+                if not name or not kind:
+                    continue
+                slug = _entity_slug(name, kind)
+                row = conn.execute("SELECT id FROM entities WHERE slug = ?", (slug,)).fetchone()
+                if row:
+                    ent_id = row[0]
+                else:
+                    ent_id = conn.execute(
+                        "INSERT INTO entities (slug, name, kind) VALUES (?,?,?)",
+                        (slug, name, kind)).lastrowid
+                conn.execute(
+                    "INSERT OR REPLACE INTO episode_entities (episode_id, entity_id, run_id, "
+                    "confidence, at) VALUES (?,?,?,?,?)",
+                    (eid, ent_id, run_id, e.get("confidence", "low"), at))
+                ents += 1
+
+        if not placed:
+            conn.rollback()
+            return {"episodes": 0, "subjects": 0, "entities": 0, "unknown": unknown}
+
+        conn.execute(
+            "INSERT INTO edits (at, actor, entity_type, entity_key, field, before, after, note) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (at, actor, "episode", f"run:{run_id}", "label", None, str(placed),
+             f"{note} ({episodes} episodes, {placed} subjects, {ents} entities)"))
+        path = decisions_path or DECISIONS
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps({
+                "at": at, "actor": actor, "entity": "episode", "key": f"run:{run_id}",
+                "field": "label", "episodes": episodes, "subjects": placed,
+                "entities": ents, "model": model, "note": note,
+            }, ensure_ascii=False) + "\n")
+            fh.flush()
+    except Exception:
+        conn.rollback()
+        raise
+    conn.commit()
+    return {"episodes": episodes, "subjects": placed, "entities": ents, "unknown": unknown}
+
+
+def _entity_slug(name: str, kind: str) -> str:
+    """Entities are keyed on name *and* kind. "Enron" the company and "Enron" the film are
+    different things, and collapsing them would make the graph claim a connection that is
+    only a coincidence of naming."""
+    import re
+    import unicodedata
+
+    decomposed = unicodedata.normalize("NFKD", name)
+    ascii_only = "".join(c for c in decomposed if not unicodedata.combining(c))
+    base = re.sub(r"[^a-z0-9]+", "-", ascii_only.lower()).strip("-") or "unnamed"
+    return f"{kind}:{base}"
+
+
 def create_arcs(
     conn: sqlite3.Connection,
     *,
