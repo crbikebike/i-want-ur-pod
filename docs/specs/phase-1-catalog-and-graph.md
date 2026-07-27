@@ -44,7 +44,7 @@ without them, degrading gracefully — see **Degradation** below.
 - **`inArc` is true on 6,649 of 27,444 episodes (24.2%)** — the coverage ceiling that
   started this whole rewrite.
 - **36 of 148** subjects already name a theme in `relatedShowThemes`. Zero name one
-  outside the 30. Zero name more than one. Zero are flagged `junkDrawerSuspect`. (5 of
+  outside the set. Zero name more than one. Zero are flagged `junkDrawerSuspect`. (5 of
   those 36 also match a theme slug exactly, which wins, so the split is 5 / 34 / 109.)
 - **5 slugs exist at both levels**: `political-scandal`, `institutional-coverup`,
   `police-misconduct`, `wrongful-conviction`, `family-secret`.
@@ -120,7 +120,7 @@ CREATE TABLE arcs (
   UNIQUE (show_id, slug)
 );
 
--- The vocabulary has two levels with two names. THEME = one of the 30 broad browsable
+-- The vocabulary has two levels with two names. THEME = one of the broad browsable
 -- categories, tagged on a SHOW. SUBJECT = one of the 148 finer labels, carried by an
 -- EPISODE, each belonging to exactly one theme.
 --

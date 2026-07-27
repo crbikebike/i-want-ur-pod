@@ -97,7 +97,7 @@ CREATE INDEX episodes_by_arc  ON episodes (arc_id);
 
 -- The vocabulary has two levels with two names.
 --
---   THEME   the 30 broad, hand-authored categories. This is the browsable layer -- the
+--   THEME   the broad, hand-authored categories (32 today). This is the browsable layer -- the
 --           deck a person swipes -- and it is what a whole SHOW is tagged with.
 --   SUBJECT the 148 finer labels. This is what an individual EPISODE is about, and every
 --           subject rolls up to exactly one theme.

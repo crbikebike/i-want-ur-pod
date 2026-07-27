@@ -162,7 +162,7 @@ def _prune(pairs: dict[int, list[tuple[int, float, str]]], report: EdgeReport) -
 
 
 def _shares_theme(conn, report) -> None:
-    """Overlap of the 30 browsable themes. Coarse, but it is what the deck is built on."""
+    """Overlap of the browsable themes. Coarse, but it is what the swipe deck is built on."""
     themes_by_show = defaultdict(set)
     names = {}
     for sid, tid, tname in conn.execute(

@@ -1,3 +1,8 @@
+> **Superseded 2026-07-26.** Written for the Swift app's flattened catalog.json. The
+> permanent catalog replaces it -- see `docs/PROGRAM.md` and
+> `docs/specs/phase-1-catalog-and-graph.md`. There are 32 themes now, not 30, and the
+> episode-level vocabulary is called Subjects. Kept for the reasoning, not the facts.
+
 # The Catalog
 
 Audience: anyone working on story arcs, themes, or the show taxonomy. This is the
