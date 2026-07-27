@@ -116,9 +116,24 @@ def comb(conn: sqlite3.Connection, *, dump=None, dry_run: bool = False,
             note="feed re-read at full length", decisions_path=decisions_path)
         run.tally("descriptions", got["longer"])
         run.tally("durations", got["durations"])
-        if got["longer"] or got["durations"]:
-            print(f"  ✓ {title[:38]:<40} {got['longer']:>4} descriptions, "
-                  f"{got['durations']:>4} durations", flush=True)
+
+        # And add what we never had. The first version of this pass only *refreshed*, and
+        # that was a real gap: the feed was already open, every episode was in hand, and
+        # episodes we did not hold were dropped on the floor. The original import stopped
+        # at 800 per show, so 7am was short 1,278 episodes and Behind the Bastards 358 --
+        # found only because an agent reading arcs noticed shows that ended too early.
+        added = edits.ingest_episodes(
+            conn, show_id=show_id, episodes=feed.episodes, actor="agent:comb",
+            note="present in the feed and missing from the catalog",
+            decisions_path=decisions_path)
+        run.tally("new-episodes", added["added"])
+
+        if got["longer"] or got["durations"] or added["added"]:
+            note = (f"  ✓ {title[:38]:<40} {got['longer']:>4} descriptions, "
+                    f"{got['durations']:>4} durations")
+            if added["added"]:
+                note += f", {added['added']:>4} NEW"
+            print(note, flush=True)
 
     runs.finish(conn, run)
     return run

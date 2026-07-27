@@ -184,3 +184,27 @@ def test_a_long_problem_list_is_truncated_not_dropped(db):
     runs.finish(db, run)
     summary = db.execute("SELECT summary FROM runs").fetchone()[0]
     assert "problems 12" in summary and "+7 more" in summary
+
+
+def test_a_pass_adds_episodes_the_catalog_never_had(db, log, monkeypatch):
+    """The first version of this pass only refreshed, and that was a real gap. The feed
+    was already open and every episode was in hand; ones we did not hold were dropped on
+    the floor. The original import stopped at 800 per show, so 7am was short 1,278
+    episodes -- found only because an agent reading arcs noticed shows ending too early."""
+    add_show(db, "a", "A Show", eps=2)
+    monkeypatch.setattr(feeds, "read", lambda url, **k: feed_with("a", n=5))
+
+    run = comb.comb(db, decisions_path=log)
+    assert run.tallies["new-episodes"] == 3
+    assert db.execute("SELECT count(*) FROM episodes").fetchone()[0] == 5
+
+
+def test_ingesting_does_not_resurrect_a_hidden_episode_from_another_show(db, log, monkeypatch):
+    """Repairing a wrong feed hides the other podcast's episodes. Those guids are not in
+    the corrected feed, so a re-comb must leave them hidden."""
+    sid = add_show(db, "a", "A Show", eps=2)
+    db.execute("UPDATE episodes SET deleted_at='2026-07-27T00:00:00+00:00' WHERE guid='a-0'")
+    db.commit()
+    monkeypatch.setattr(feeds, "read", lambda url, **k: feed_with("b", n=2))
+    comb.comb(db, decisions_path=log)
+    assert db.execute("SELECT deleted_at FROM episodes WHERE guid='a-0'").fetchone()[0]
