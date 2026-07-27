@@ -1,0 +1,91 @@
+-- QUESTION: "How are these two shows related?"
+--
+-- Parameters: :from_slug, :to_slug
+-- Returns the shortest path, up to 3 hops, narrated so a person can read it:
+--
+--   Bear Grease --(both dig into Food and How We Eat)--> The Kitchen Sisters Present
+--               --(both cover History, Retold)--> Slow Burn
+--
+-- Naming the nodes it passes through is the whole point. An earlier version chained only
+-- the edge reasons, which produced "both dig into Food and How We Eat > both cover
+-- History, Retold" -- true, but it never said what the two shows had in between, so it
+-- explained nothing.
+--
+-- Node labels come from CASE + primary-key subqueries rather than a UNION ALL of every
+-- named table. The union version had to materialize 1,292 rows on every call and took the
+-- worst case to 40 ms of a 50 ms budget; indexed PK lookups do the same job for a handful
+-- of rows actually on the path.
+--
+-- Written as three explicit joins rather than a recursive walk. A recursive CTE explores
+-- every path from the source before checking whether any reached the target: with ~20
+-- edges per node that is 20^3 partial paths, each doing string concatenation and a
+-- visited-set scan, and it measured 594 ms. Both endpoints are known, so this meets in
+-- the middle instead -- indexed from each end. Same answers, under 10 ms.
+--
+-- Bounded at 3 hops deliberately. Beyond three, every show connects to every other and
+-- the explanation stops explaining.
+
+WITH ends AS (
+  SELECT
+    (SELECT id FROM shows WHERE slug = :from_slug) AS src,
+    (SELECT id FROM shows WHERE slug = :to_slug)   AS dst
+),
+
+h1 AS (
+  SELECT 1 AS hops,
+         '(' || e.why || ')' AS explanation,
+         e.weight AS strength
+  FROM ends, edges e
+  WHERE e.src_type = 'show' AND e.src_id = ends.src
+    AND e.dst_type = 'show' AND e.dst_id = ends.dst
+),
+
+h2 AS (
+  SELECT 2 AS hops,
+         '(' || a.why || ') -> ' || CASE a.dst_type
+             WHEN 'show'    THEN (SELECT title FROM shows    WHERE id = a.dst_id)
+             WHEN 'theme'   THEN (SELECT name  FROM themes   WHERE id = a.dst_id)
+             WHEN 'subject' THEN (SELECT name  FROM subjects WHERE id = a.dst_id)
+             WHEN 'arc'     THEN (SELECT name  FROM arcs     WHERE id = a.dst_id)
+           END || ' -> (' || b.why || ')'
+           AS explanation,
+         a.weight + b.weight AS strength
+  FROM ends
+  JOIN edges a ON a.src_type = 'show' AND a.src_id = ends.src
+  JOIN edges b ON b.src_type = a.dst_type AND b.src_id = a.dst_id
+              AND b.dst_type = 'show'     AND b.dst_id = ends.dst
+  WHERE NOT (a.dst_type = 'show' AND a.dst_id = ends.src)
+),
+
+-- The characteristic 3-hop shape is show -> subject -> its theme -> show, which is
+-- exactly the connection the two-level vocabulary exists to express.
+h3 AS (
+  SELECT 3 AS hops,
+         '(' || a.why || ') -> ' || CASE a.dst_type
+             WHEN 'show'    THEN (SELECT title FROM shows    WHERE id = a.dst_id)
+             WHEN 'theme'   THEN (SELECT name  FROM themes   WHERE id = a.dst_id)
+             WHEN 'subject' THEN (SELECT name  FROM subjects WHERE id = a.dst_id)
+             WHEN 'arc'     THEN (SELECT name  FROM arcs     WHERE id = a.dst_id)
+           END || ' -> (' || b.why
+              || ') -> ' || CASE b.dst_type
+             WHEN 'show'    THEN (SELECT title FROM shows    WHERE id = b.dst_id)
+             WHEN 'theme'   THEN (SELECT name  FROM themes   WHERE id = b.dst_id)
+             WHEN 'subject' THEN (SELECT name  FROM subjects WHERE id = b.dst_id)
+             WHEN 'arc'     THEN (SELECT name  FROM arcs     WHERE id = b.dst_id)
+           END || ' -> (' || c.why || ')'
+           AS explanation,
+         a.weight + b.weight + c.weight AS strength
+  FROM ends
+  JOIN edges a ON a.src_type = 'show' AND a.src_id = ends.src
+  JOIN edges b ON b.src_type = a.dst_type AND b.src_id = a.dst_id
+  JOIN edges c ON c.src_type = b.dst_type AND c.src_id = b.dst_id
+              AND c.dst_type = 'show'     AND c.dst_id = ends.dst
+  WHERE NOT (a.dst_type = 'show' AND a.dst_id = ends.src)
+    AND NOT (b.dst_type = 'show' AND b.dst_id = ends.src)
+    AND NOT (b.dst_type = a.src_type AND b.dst_id = a.src_id)
+)
+
+SELECT hops, explanation, round(strength, 3) AS strength
+FROM (SELECT * FROM h1 UNION ALL SELECT * FROM h2 UNION ALL SELECT * FROM h3)
+ORDER BY hops ASC, strength DESC
+LIMIT 1;

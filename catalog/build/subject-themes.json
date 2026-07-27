@@ -1,0 +1,979 @@
+{
+  "authored": "2026-07-26",
+  "by": "claude",
+  "what": "Each of the 148 subjects (the episode-level vocabulary) belongs to exactly one theme. Themes numbered 31 and 32 were added after the first pass -- see added-themes.json -- so subjects that had been forced under a poor fit now name the theme they were always describing. confidence 'low' means no theme really fits and the note says why; review those first.",
+  "subjects": [
+    {
+      "slug": "investigative-process",
+      "name": "How the Reporting Was Done",
+      "theme": "media-internet-culture",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 1078,
+      "note": "the craft of reporting, not the wrongdoing it finds"
+    },
+    {
+      "slug": "celebrity-life",
+      "name": "The Famous Person",
+      "theme": "media-internet-culture",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 1033,
+      "note": ""
+    },
+    {
+      "slug": "media-criticism",
+      "name": "How the Story Got Told",
+      "theme": "media-internet-culture",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 947,
+      "note": ""
+    },
+    {
+      "slug": "personal-transformation",
+      "name": "The Turn",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 938,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "survival-story",
+      "name": "Staying Alive",
+      "theme": "survivor-testimony",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 831,
+      "note": ""
+    },
+    {
+      "slug": "business-rivalry",
+      "name": "Two Companies at War",
+      "theme": "business-empire",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 743,
+      "note": ""
+    },
+    {
+      "slug": "murder-close-to-home",
+      "name": "Killed by Someone Known",
+      "theme": "true-crime",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 742,
+      "note": ""
+    },
+    {
+      "slug": "romance-and-heartbreak",
+      "name": "Falling In and Out of Love",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 719,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "tech-industry-power",
+      "name": "How Big Tech Got Big",
+      "theme": "business-empire",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 709,
+      "note": "empire-building, not malfunction"
+    },
+    {
+      "slug": "economic-policy",
+      "name": "Money and Policy",
+      "theme": "business-empire",
+      "confidence": "low",
+      "source": "llm",
+      "episodeCount": 624,
+      "note": "GAP: no economics/policy parent"
+    },
+    {
+      "slug": "audio-drama-mystery",
+      "name": "Scripted Mystery",
+      "theme": "speculative-fiction-as-journalism",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 604,
+      "note": ""
+    },
+    {
+      "slug": "child-victim",
+      "name": "When the Victim Is a Child",
+      "theme": "true-crime",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 577,
+      "note": "could sit under abuse of power"
+    },
+    {
+      "slug": "making-of-a-work",
+      "name": "How It Got Made",
+      "theme": "media-internet-culture",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 571,
+      "note": ""
+    },
+    {
+      "slug": "serial-offender",
+      "name": "The Serial Offender",
+      "theme": "serial-killer",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 547,
+      "note": ""
+    },
+    {
+      "slug": "organised-crime",
+      "name": "Organised Crime",
+      "theme": "true-crime",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 526,
+      "note": ""
+    },
+    {
+      "slug": "hacking-and-cybercrime",
+      "name": "Breaking Into Systems",
+      "theme": "tech-gone-wrong",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 483,
+      "note": ""
+    },
+    {
+      "slug": "design-and-architecture",
+      "name": "Why It Looks Like That",
+      "theme": "media-internet-culture",
+      "confidence": "low",
+      "source": "llm",
+      "episodeCount": 467,
+      "note": "GAP: no design/craft parent among the 30"
+    },
+    {
+      "slug": "courtroom-trial",
+      "name": "Inside the Trial",
+      "theme": "true-crime",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 433,
+      "note": ""
+    },
+    {
+      "slug": "government-secrecy",
+      "name": "What the State Hid",
+      "theme": "institutional-coverup",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 427,
+      "note": ""
+    },
+    {
+      "slug": "games-and-play",
+      "name": "Games and the People Who Play",
+      "theme": "media-internet-culture",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 419,
+      "note": ""
+    },
+    {
+      "slug": "internet-culture",
+      "name": "How the Internet Behaves",
+      "theme": "media-internet-culture",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 409,
+      "note": ""
+    },
+    {
+      "slug": "psychology-of-belief",
+      "name": "Why People Believe",
+      "theme": "science-wonder",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 405,
+      "note": ""
+    },
+    {
+      "slug": "animal-behaviour",
+      "name": "What Animals Do",
+      "theme": "science-wonder",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 398,
+      "note": ""
+    },
+    {
+      "slug": "extremist-movement",
+      "name": "The Movement on the Fringe",
+      "theme": "war-conflict",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 394,
+      "note": "could sit under cults/high-control"
+    },
+    {
+      "slug": "supernatural-encounter",
+      "name": "Something Not Explainable",
+      "theme": "personal-mystery",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 387,
+      "note": ""
+    },
+    {
+      "slug": "folklore-and-legend",
+      "name": "The Old Story",
+      "theme": "historical-reconstruction",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 380,
+      "note": ""
+    },
+    {
+      "slug": "work-and-labour-conditions",
+      "name": "The Conditions of the Job",
+      "theme": "abuse-of-power",
+      "confidence": "low",
+      "source": "llm",
+      "episodeCount": 377,
+      "note": "GAP: no labour/work parent"
+    },
+    {
+      "slug": "scientific-discovery",
+      "name": "Figuring It Out",
+      "theme": "science-wonder",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 364,
+      "note": ""
+    },
+    {
+      "slug": "legal-precedent",
+      "name": "The Case That Changed the Law",
+      "theme": "wrongful-conviction",
+      "confidence": "low",
+      "source": "llm",
+      "episodeCount": 363,
+      "note": "GAP: no 'how the law works' parent; grouped by justice-system proximity"
+    },
+    {
+      "slug": "elections-and-voting",
+      "name": "The Vote",
+      "theme": "political-scandal",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 344,
+      "note": ""
+    },
+    {
+      "slug": "prison-life",
+      "name": "Life Inside",
+      "theme": "survivor-testimony",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 343,
+      "note": ""
+    },
+    {
+      "slug": "sports-history",
+      "name": "The Game That Mattered",
+      "theme": "sports-narrative",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 336,
+      "note": ""
+    },
+    {
+      "slug": "immigration-and-borders",
+      "name": "Crossing the Border",
+      "theme": "immigration",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 334,
+      "note": ""
+    },
+    {
+      "slug": "mental-health",
+      "name": "The Mind Under Strain",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 332,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "songwriting-craft",
+      "name": "How the Song Was Made",
+      "theme": "music-history",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 330,
+      "note": ""
+    },
+    {
+      "slug": "books-and-writing",
+      "name": "Writers and Books",
+      "theme": "media-internet-culture",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 329,
+      "note": ""
+    },
+    {
+      "slug": "epidemic-and-public-health",
+      "name": "Disease at Scale",
+      "theme": "medical-harm",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 316,
+      "note": ""
+    },
+    {
+      "slug": "conspiracy-theory",
+      "name": "The Theory That Spread",
+      "theme": "media-internet-culture",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 315,
+      "note": "spread is a media phenomenon"
+    },
+    {
+      "slug": "everyday-mystery",
+      "name": "The Small Mystery",
+      "theme": "personal-mystery",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 310,
+      "note": ""
+    },
+    {
+      "slug": "art-and-artists",
+      "name": "Making Art",
+      "theme": "media-internet-culture",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 301,
+      "note": ""
+    },
+    {
+      "slug": "cult-and-control",
+      "name": "Total Control",
+      "theme": "cult-high-control-group",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 297,
+      "note": ""
+    },
+    {
+      "slug": "regulatory-failure",
+      "name": "Nobody Was Watching",
+      "theme": "institutional-coverup",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 293,
+      "note": ""
+    },
+    {
+      "slug": "grief-and-loss",
+      "name": "Living With Loss",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 286,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "ai-and-society",
+      "name": "Living With AI",
+      "theme": "tech-gone-wrong",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 281,
+      "note": ""
+    },
+    {
+      "slug": "food-and-drink",
+      "name": "Food and How We Eat",
+      "theme": "media-internet-culture",
+      "confidence": "low",
+      "source": "llm",
+      "episodeCount": 263,
+      "note": "GAP: no everyday-culture parent"
+    },
+    {
+      "slug": "terrorism-and-aftermath",
+      "name": "The Attack and After",
+      "theme": "war-conflict",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 252,
+      "note": ""
+    },
+    {
+      "slug": "religious-community",
+      "name": "Inside the Congregation",
+      "theme": "religion-faith",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 236,
+      "note": ""
+    },
+    {
+      "slug": "addiction-and-recovery",
+      "name": "Addiction",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 234,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "kidnapping-and-captivity",
+      "name": "Taken and Held",
+      "theme": "disappearance-missing-persons",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 231,
+      "note": ""
+    },
+    {
+      "slug": "protest-movement",
+      "name": "People in the Street",
+      "theme": "racial-injustice-civil-rights",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 227,
+      "note": "most of the corpus is civil-rights protest"
+    },
+    {
+      "slug": "faith-and-doubt",
+      "name": "Belief and Losing It",
+      "theme": "religion-faith",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 216,
+      "note": ""
+    },
+    {
+      "slug": "natural-disaster",
+      "name": "When Nature Hit",
+      "theme": "environmental-climate",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 212,
+      "note": ""
+    },
+    {
+      "slug": "audio-drama-horror",
+      "name": "Scripted Horror",
+      "theme": "speculative-fiction-as-journalism",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 212,
+      "note": ""
+    },
+    {
+      "slug": "community-in-conflict",
+      "name": "A Community Divided",
+      "theme": "sense-of-place",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 212,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "parenting",
+      "name": "Raising Children",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 208,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "medical-research",
+      "name": "At the Edge of Medicine",
+      "theme": "science-wonder",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 198,
+      "note": ""
+    },
+    {
+      "slug": "friendship",
+      "name": "Friends",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 194,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "forensic-evidence",
+      "name": "The Evidence Itself",
+      "theme": "true-crime",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 185,
+      "note": ""
+    },
+    {
+      "slug": "surveillance-and-privacy",
+      "name": "Being Watched",
+      "theme": "tech-gone-wrong",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 184,
+      "note": ""
+    },
+    {
+      "slug": "education-system-failure",
+      "name": "Schools That Failed Them",
+      "theme": "institutional-coverup",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 183,
+      "note": ""
+    },
+    {
+      "slug": "advertising-and-persuasion",
+      "name": "Selling It",
+      "theme": "media-internet-culture",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 181,
+      "note": ""
+    },
+    {
+      "slug": "climate-change",
+      "name": "A Changing Climate",
+      "theme": "environmental-climate",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 170,
+      "note": ""
+    },
+    {
+      "slug": "reproductive-health",
+      "name": "Bodies and Reproduction",
+      "theme": "medical-harm",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 168,
+      "note": ""
+    },
+    {
+      "slug": "music-industry-business",
+      "name": "The Business Behind the Music",
+      "theme": "music-history",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 167,
+      "note": ""
+    },
+    {
+      "slug": "gender-identity",
+      "name": "Gender and Transition",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 164,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "management-and-leadership",
+      "name": "Running Things",
+      "theme": "business-empire",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 152,
+      "note": ""
+    },
+    {
+      "slug": "immigrant-experience",
+      "name": "Starting Over Somewhere Else",
+      "theme": "immigration",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 151,
+      "note": ""
+    },
+    {
+      "slug": "paranormal-investigation",
+      "name": "Investigating the Paranormal",
+      "theme": "personal-mystery",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 147,
+      "note": ""
+    },
+    {
+      "slug": "space-exploration",
+      "name": "Getting to Space",
+      "theme": "science-wonder",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 145,
+      "note": ""
+    },
+    {
+      "slug": "war-crimes-accountability",
+      "name": "Answering for War",
+      "theme": "war-conflict",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 143,
+      "note": ""
+    },
+    {
+      "slug": "estrangement-and-reconciliation",
+      "name": "Broken and Mended Relationships",
+      "theme": "family-secret",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 143,
+      "note": ""
+    },
+    {
+      "slug": "engineering-failure",
+      "name": "The Thing That Broke",
+      "theme": "tech-gone-wrong",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 141,
+      "note": ""
+    },
+    {
+      "slug": "fashion-and-clothing",
+      "name": "What We Wear",
+      "theme": "media-internet-culture",
+      "confidence": "low",
+      "source": "llm",
+      "episodeCount": 140,
+      "note": "GAP: no design/craft parent"
+    },
+    {
+      "slug": "athlete-profile",
+      "name": "The Athlete",
+      "theme": "sports-narrative",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 137,
+      "note": ""
+    },
+    {
+      "slug": "archives-and-objects",
+      "name": "The Object That Survived",
+      "theme": "historical-reconstruction",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 132,
+      "note": ""
+    },
+    {
+      "slug": "organised-scam-industry",
+      "name": "Scamming as an Industry",
+      "theme": "financial-fraud",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 130,
+      "note": ""
+    },
+    {
+      "slug": "queer-life",
+      "name": "Queer Lives",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 128,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "audio-drama-scifi",
+      "name": "Scripted Science Fiction",
+      "theme": "speculative-fiction-as-journalism",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 127,
+      "note": ""
+    },
+    {
+      "slug": "medical-deception",
+      "name": "Faking Illness or Cure",
+      "theme": "medical-harm",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 122,
+      "note": "could sit under the con artist"
+    },
+    {
+      "slug": "sports-scandal",
+      "name": "Cheating and Cover-Ups in Sport",
+      "theme": "sports-narrative",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 120,
+      "note": ""
+    },
+    {
+      "slug": "disability-and-access",
+      "name": "Access and Disability",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 117,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "mythology",
+      "name": "Myth",
+      "theme": "historical-reconstruction",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 115,
+      "note": ""
+    },
+    {
+      "slug": "informant-and-undercover",
+      "name": "The Informant",
+      "theme": "espionage-intelligence",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 111,
+      "note": ""
+    },
+    {
+      "slug": "crypto-collapse",
+      "name": "Crypto Gone Wrong",
+      "theme": "financial-fraud",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 107,
+      "note": ""
+    },
+    {
+      "slug": "cost-of-fame",
+      "name": "What Fame Cost",
+      "theme": "media-internet-culture",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 106,
+      "note": ""
+    },
+    {
+      "slug": "online-radicalisation",
+      "name": "Down the Rabbit Hole",
+      "theme": "media-internet-culture",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 103,
+      "note": "could equally sit under extremism"
+    },
+    {
+      "slug": "gentrification-and-housing",
+      "name": "Who Gets to Live Here",
+      "theme": "sense-of-place",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 102,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "musician-downfall",
+      "name": "The Musician Came Apart",
+      "theme": "music-history",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 99,
+      "note": ""
+    },
+    {
+      "slug": "language-and-words",
+      "name": "Words and Where They Came From",
+      "theme": "media-internet-culture",
+      "confidence": "low",
+      "source": "llm",
+      "episodeCount": 98,
+      "note": "GAP: no language/ideas parent"
+    },
+    {
+      "slug": "chronic-illness",
+      "name": "Living With Illness",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 98,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "juvenile-justice",
+      "name": "Children in the System",
+      "theme": "wrongful-conviction",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 97,
+      "note": ""
+    },
+    {
+      "slug": "whistleblower",
+      "name": "The Person Who Spoke Up",
+      "theme": "institutional-coverup",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 95,
+      "note": ""
+    },
+    {
+      "slug": "homelessness-and-poverty",
+      "name": "Without a Home",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 94,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "true-crime-as-genre",
+      "name": "True Crime About True Crime",
+      "theme": "media-internet-culture",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 92,
+      "note": "the genre examining itself"
+    },
+    {
+      "slug": "sex-work-and-exploitation",
+      "name": "Sex, Work and Coercion",
+      "theme": "abuse-of-power",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 91,
+      "note": ""
+    },
+    {
+      "slug": "reentry-after-prison",
+      "name": "After Release",
+      "theme": "survivor-testimony",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 87,
+      "note": ""
+    },
+    {
+      "slug": "musician-death",
+      "name": "The Artist Who Died",
+      "theme": "music-history",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 86,
+      "note": ""
+    },
+    {
+      "slug": "transport-and-infrastructure",
+      "name": "How Things Move",
+      "theme": "tech-gone-wrong",
+      "confidence": "low",
+      "source": "llm",
+      "episodeCount": 83,
+      "note": "GAP: no built-environment parent"
+    },
+    {
+      "slug": "ageing-and-mortality",
+      "name": "Getting Older, Facing the End",
+      "theme": "being-human",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 79,
+      "note": "moved to the new theme it was always describing"
+    },
+    {
+      "slug": "adoption-and-origins",
+      "name": "Finding Where You Came From",
+      "theme": "family-secret",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 74,
+      "note": ""
+    },
+    {
+      "slug": "sport-and-politics",
+      "name": "Sport as Politics",
+      "theme": "sports-narrative",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 72,
+      "note": ""
+    },
+    {
+      "slug": "reality-television",
+      "name": "The Camera Was On",
+      "theme": "media-internet-culture",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 71,
+      "note": ""
+    },
+    {
+      "slug": "prosecutorial-power",
+      "name": "The Power to Charge",
+      "theme": "abuse-of-power",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 68,
+      "note": ""
+    },
+    {
+      "slug": "death-penalty",
+      "name": "Facing Execution",
+      "theme": "wrongful-conviction",
+      "confidence": "medium",
+      "source": "llm",
+      "episodeCount": 66,
+      "note": ""
+    },
+    {
+      "slug": "monopoly-and-market-power",
+      "name": "Too Big to Compete With",
+      "theme": "business-empire",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 57,
+      "note": ""
+    },
+    {
+      "slug": "murder-for-hire",
+      "name": "Paid to Kill",
+      "theme": "true-crime",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 50,
+      "note": ""
+    },
+    {
+      "slug": "apocalyptic-fiction",
+      "name": "After the Collapse",
+      "theme": "speculative-fiction-as-journalism",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 36,
+      "note": ""
+    },
+    {
+      "slug": "private-equity-and-debt",
+      "name": "Bought and Loaded With Debt",
+      "theme": "business-empire",
+      "confidence": "high",
+      "source": "llm",
+      "episodeCount": 24,
+      "note": ""
+    }
+  ]
+}
