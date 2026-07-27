@@ -168,3 +168,39 @@ def test_runs_status_is_constrained(db):
     migrations.apply_all(db, REAL_MIGRATIONS)
     with pytest.raises(sqlite3.IntegrityError):
         db.execute("INSERT INTO runs (kind, status) VALUES ('relabel', 'vibing')")
+
+
+# --- soft delete, the database-wide rule -----------------------------------------
+
+
+def test_every_entity_table_can_be_soft_deleted(db):
+    """Nothing here is ever removed. Every row cost a fetch, a model call, or a human
+    deciding -- trading that for disk space is a bad deal."""
+    db.executescript(SCHEMA.read_text())
+    migrations.apply_all(db, REAL_MIGRATIONS)
+    for table in ("shows", "episodes", "arcs", "themes", "subjects",
+                  "entities", "people", "networks"):
+        cols = {r[1] for r in db.execute(f"PRAGMA table_info({table})")}
+        assert "deleted_at" in cols, f"{table} cannot be soft deleted"
+
+
+def test_a_soft_delete_round_trips(db):
+    db.executescript(SCHEMA.read_text())
+    migrations.apply_all(db, REAL_MIGRATIONS)
+    db.execute("INSERT INTO shows (id, slug, title, feed_url) VALUES (1,'s','S','http://f')")
+    live = "SELECT count(*) FROM shows WHERE deleted_at IS NULL"
+
+    db.execute("UPDATE shows SET deleted_at='2026-07-27', deleted_reason='dead-feed' WHERE id=1")
+    assert db.execute(live).fetchone()[0] == 0
+    db.execute("UPDATE shows SET deleted_at=NULL, deleted_reason=NULL WHERE id=1")
+    assert db.execute(live).fetchone()[0] == 1
+
+
+def test_soft_deleting_a_show_keeps_its_episodes(db):
+    """Merging a duplicate into its parent used to destroy a row. Now it hides one."""
+    db.executescript(SCHEMA.read_text())
+    migrations.apply_all(db, REAL_MIGRATIONS)
+    db.execute("INSERT INTO shows (id, slug, title, feed_url) VALUES (1,'s','S','http://f')")
+    db.execute("INSERT INTO episodes (id, show_id, guid, title) VALUES (1,1,'g','E')")
+    db.execute("UPDATE shows SET deleted_at='2026-07-27' WHERE id=1")
+    assert db.execute("SELECT count(*) FROM episodes").fetchone()[0] == 1

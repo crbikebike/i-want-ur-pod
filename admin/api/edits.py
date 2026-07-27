@@ -34,12 +34,19 @@ DECISIONS = ROOT / "curation/source/decisions.jsonl"
 # Deliberately narrow. Slugs, GUIDs and feed URLs are absent because everything in the
 # catalog references them; renaming one silently orphans whatever points at it. Renaming
 # a *slug* is a merge, which is its own explicit action with its own confirmation.
+#
+# `deleted_at` is editable everywhere because deletion is soft throughout: setting it
+# hides the row, clearing it brings the row back, and both are just edits with the same
+# audit trail and undo as any other.
 WRITABLE: dict[str, tuple[str, set[str]]] = {
-    "show":    ("shows",    {"include_verdict", "depth", "lang", "title", "why", "description"}),
-    "theme":   ("themes",   {"name", "description"}),
-    "subject": ("subjects", {"name", "description", "theme_id"}),
-    "arc":     ("arcs",     {"name", "description", "confidence", "kind"}),
-    "episode": ("episodes", {"title", "description", "available", "duration_s"}),
+    "show":    ("shows",    {"include_verdict", "depth", "lang", "title", "why", "description",
+                             "deleted_at", "deleted_reason"}),
+    "theme":   ("themes",   {"name", "description", "deleted_at"}),
+    "subject": ("subjects", {"name", "description", "theme_id", "deleted_at"}),
+    "arc":     ("arcs",     {"name", "description", "confidence", "kind",
+                             "deleted_at", "deleted_reason"}),
+    "episode": ("episodes", {"title", "description", "available", "duration_s",
+                             "deleted_at", "deleted_reason"}),
 }
 
 # How an entity's stable key is built. Never the integer id: those are assigned at import

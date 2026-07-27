@@ -12,6 +12,7 @@ from pathlib import Path
 import pytest
 
 from admin.api import edits
+from catalog.build import migrations
 
 ROOT = Path(__file__).resolve().parents[3]
 SCHEMA = ROOT / "catalog/schema.sql"
@@ -19,8 +20,11 @@ SCHEMA = ROOT / "catalog/schema.sql"
 
 @pytest.fixture
 def db():
+    # Schema *and* migrations, because that is what the running catalog is. A fixture
+    # built from schema.sql alone would pass while the real database failed.
     conn = sqlite3.connect(":memory:")
     conn.executescript(SCHEMA.read_text())
+    migrations.apply_all(conn)
     conn.execute("PRAGMA foreign_keys = ON")
     conn.execute("INSERT INTO themes (id, slug, name) VALUES (1, 'true-crime', 'True Crime')")
     conn.execute("INSERT INTO themes (id, slug, name) VALUES (2, 'being-human', 'Being Human')")
@@ -196,3 +200,23 @@ def test_the_log_is_append_only_across_many_edits(db, log):
         edits.apply(db, entity_type="show", entity_id=1, field="include_verdict",
                     after=verdict, decisions_path=log)
     assert [r["after"] for r in read_log(log)] == ["keep", "suspect", "cut"]
+
+
+# --- soft delete through the one door -------------------------------------------
+
+
+def test_soft_deleting_is_just_an_edit(db, log):
+    """Same audit trail, same undo, no special path."""
+    e = edits.apply(db, entity_type="show", entity_id=1, field="deleted_at",
+                    after="2026-07-27T00:00:00+00:00", note="dead feed", decisions_path=log)
+    assert db.execute("SELECT count(*) FROM shows WHERE deleted_at IS NULL").fetchone()[0] == 0
+    assert read_log(log)[-1]["field"] == "deleted_at"
+
+    edits.undo(db, e.edit_id, decisions_path=log)
+    assert db.execute("SELECT count(*) FROM shows WHERE deleted_at IS NULL").fetchone()[0] == 1
+
+
+def test_a_deletion_can_carry_its_reason(db, log):
+    edits.apply(db, entity_type="show", entity_id=1, field="deleted_reason",
+                after="dead-feed", decisions_path=log)
+    assert db.execute("SELECT deleted_reason FROM shows WHERE id=1").fetchone()[0] == "dead-feed"
