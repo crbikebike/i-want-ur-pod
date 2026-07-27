@@ -31,6 +31,7 @@ export default function App() {
   const [leaving, setLeaving] = useState(null); // 'keep' | 'cut' | 'skip'
   const [lastEdit, setLastEdit] = useState(null);
   const [session, setSession] = useState({ keep: 0, cut: 0, skip: 0 });
+  const [preview, setPreview] = useState(null);   // the slid-up Apple player
 
   const skipped = useRef([]);
   const undoTimer = useRef(null);
@@ -66,6 +67,7 @@ export default function App() {
 
     // Animate first. The decision already happened in your head; the UI should agree.
     setLeaving(verdict);
+    setPreview(null);
     setSession((s) => ({ ...s, [verdict]: s[verdict] + 1 }));
 
     if (verdict === "skip") {
@@ -135,6 +137,7 @@ export default function App() {
       const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(ev.target.tagName) || ev.target.isContentEditable;
       if (typing) return;
 
+      if (ev.key === "Escape") { setPreview(null); return; }
       if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "z") {
         ev.preventDefault();
         undo();
@@ -177,9 +180,11 @@ export default function App() {
         {!error && done && <Finished session={session} counts={counts} />}
         {!error && !done && !item && <Loading />}
         {!error && item && (
-          <Card key={item.id} show={item} leaving={leaving} />
+          <Card key={item.id} show={item} leaving={leaving} onPreview={setPreview} />
         )}
       </main>
+
+      {preview && <Preview link={preview} onClose={() => setPreview(null)} />}
 
       <div className="toast">
         <div className={`undo ${lastEdit ? "" : "gone"}`}>
@@ -199,6 +204,53 @@ export default function App() {
   );
 }
 
+/* Apple's embed player, slid up in place.
+ *
+ * Their ordinary pages are X-Frame-Options: DENY; the embed is not, and it carries the
+ * description, episode list and playable previews -- which is the whole question. It
+ * stops above the verdict buttons, so you can listen and then decide without dismissing
+ * anything.
+ *
+ * I could not verify it paints in headless Chrome -- it shows only Apple's placeholder
+ * there, twice, on both URL forms and both origins, which is probably the missing media
+ * stack rather than a real failure. Since I could not prove it, the sheet says so after
+ * a few seconds and offers the tab instead. A blank grey box with no way out would be
+ * worse than the new tab this replaced.
+ */
+function Preview({ link, onClose }) {
+  const [slow, setSlow] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setSlow(true), 3500);
+    return () => clearTimeout(t);
+  }, []);
+
+  return (
+    <>
+      <button className="scrim" onClick={onClose} aria-label="Close preview" />
+      <section className="sheet" role="dialog" aria-label="Preview">
+        <header>
+          <span className="grab" aria-hidden="true" />
+          <a href={link.href} target="_blank" rel="noreferrer">Open in Apple ↗</a>
+          <button onClick={onClose}>Close</button>
+        </header>
+        <div className="frame">
+          <iframe
+            title="Apple Podcasts preview"
+            src={link.embed}
+            allow="autoplay *; encrypted-media *;"
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation"
+          />
+          {slow && (
+            <p className="stuck">
+              Not loading? <a href={link.href} target="_blank" rel="noreferrer">Open it in Apple Podcasts ↗</a>
+            </p>
+          )}
+        </div>
+      </section>
+    </>
+  );
+}
+
 /* The key hint is rendered but hidden on touch devices, where it would be a lie. */
 function Verdict({ kind, label, keys, onPick, disabled }) {
   return (
@@ -215,7 +267,7 @@ function Verdict({ kind, label, keys, onPick, disabled }) {
   );
 }
 
-function Card({ show, leaving }) {
+function Card({ show, leaving, onPreview }) {
   return (
     <article className={`card arriving ${leaving ? `leaving ${leaving}` : ""}`}>
       <div className="top">
@@ -236,12 +288,17 @@ function Card({ show, leaving }) {
       </div>
 
       <div className="links">
-        {show.links.map((l) => (
-          <a key={l.href} href={l.href} target="_blank" rel="noreferrer"
-             className={l.primary ? "go primary" : "go"}>
-            {l.label} <span aria-hidden="true">↗</span>
-          </a>
-        ))}
+        {show.links.map((l) =>
+          l.embed ? (
+            <button key={l.href} className="go" onClick={() => onPreview(l)}>
+              {l.label} <span aria-hidden="true">▴</span>
+            </button>
+          ) : (
+            <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="go">
+              {l.label} <span aria-hidden="true">↗</span>
+            </a>
+          )
+        )}
       </div>
     </article>
   );

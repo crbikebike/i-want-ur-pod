@@ -387,3 +387,112 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .v { height: 56px; }
   .title { font-size: 29px; }
 }
+
+
+/* ---------- the preview sheet ----------
+ *
+ * Apple's ordinary pages refuse to be framed; their embed player does not, and it
+ * carries the description, the episode list and playable previews -- which is the whole
+ * question. Leaving the queue to answer a question about the queue is a good way to not
+ * come back, so it slides up in place instead.
+ *
+ * It deliberately stops above the verdict buttons. Listen, decide, and the sheet closes
+ * itself as the card leaves -- no dismissing anything.
+ */
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 39, 33, 0.34);
+  border: 0;
+  padding: 0;
+  z-index: 5;
+  animation: dim 0.22s ease;
+}
+@keyframes dim { from { opacity: 0; } }
+
+.sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  /* clears the toast: two rows of controls plus the home bar */
+  bottom: calc(96px + var(--safe-b));
+  max-width: 620px;
+  margin: 0 auto;
+  height: min(62vh, 560px);
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: var(--r) var(--r) 0 0;
+  box-shadow: 0 -6px 30px -12px rgba(94, 72, 40, 0.45);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  z-index: 6;
+  animation: slide-up 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+@keyframes slide-up { from { transform: translateY(14%); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet, .scrim { animation-duration: 0.01ms; }
+}
+
+.sheet header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 14px 10px;
+  border-bottom: 1px solid var(--rule-soft);
+  position: relative;
+}
+.sheet .grab {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 3px;
+  border-radius: var(--pill);
+  background: var(--rule);
+}
+.sheet header a,
+.sheet header button {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--horizon);
+  padding: 5px 11px;
+  border-radius: var(--pill);
+  border: 1px solid var(--horizon);
+  background: var(--horizon-wash);
+  margin-top: 4px;
+}
+.sheet header button { margin-left: auto; color: var(--ink-soft); border-color: var(--rule); background: none; }
+
+.sheet .frame { position: relative; overflow: hidden; }
+.sheet iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: var(--sheet-warm);
+  display: block;
+}
+
+/* Shown only if the frame is still blank after a few seconds. Sits at the bottom so it
+   never covers a player that did load. */
+.sheet .stuck {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  margin: 0;
+  padding: 9px 14px calc(9px + var(--safe-b));
+  background: var(--sheet-warm);
+  border-top: 1px solid var(--rule-soft);
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.sheet .stuck a { color: var(--horizon); }
+
+/* The opener is a button, not a link, but should read the same as one. */
+button.go { width: 100%; text-align: left; font-family: inherit; }

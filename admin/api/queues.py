@@ -257,23 +257,37 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
     }
 
 
+_APPLE_ID = re.compile(r"/id(\d+)")
+
+
 def _links(title: str, home_url: str | None) -> list[dict]:
     """Somewhere to go and actually look.
 
     The card cannot tell you whether a show is narrated or two people chatting -- only
-    listening can. So the card frames the question and hands you the door, rather than
-    piling up metadata that still would not settle it.
+    listening can. So the card frames the question and hands you the door.
+
+    Where possible that door opens in place rather than in a new tab. Apple's ordinary
+    pages refuse to be framed (X-Frame-Options: DENY) but their embed player does not,
+    and it carries the description, the episode list and playable previews -- everything
+    the question actually turns on. Leaving the queue to answer a question about the
+    queue is a good way to not come back.
     """
     out = []
-    if home_url and "podcasts.apple.com" in home_url:
-        out.append({"label": "Open in Apple Podcasts", "href": home_url, "primary": True})
+    apple_id = _APPLE_ID.search(home_url or "")
+    if home_url and apple_id:
+        out.append({
+            "label": "Listen and look",
+            "href": home_url,
+            "embed": f"https://embed.podcasts.apple.com/us/podcast/id{apple_id.group(1)}",
+            "primary": True,
+        })
     else:
-        # 20 shows have no stored link. A search is worse than a direct link and much
-        # better than a dead end.
-        term = quote_plus(title)
+        # 20 shows have no stored link, so there is no id to embed. A search opens in a
+        # tab, which is worse than a preview and much better than a dead end.
         out.append({
             "label": "Find in Apple Podcasts",
-            "href": f"https://podcasts.apple.com/us/search?term={term}",
+            "href": f"https://podcasts.apple.com/us/search?term={quote_plus(title)}",
+            "embed": None,
             "primary": True,
         })
     return out
