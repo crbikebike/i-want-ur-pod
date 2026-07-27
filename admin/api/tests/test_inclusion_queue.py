@@ -225,3 +225,43 @@ def test_an_empty_skip_list_does_not_empty_the_queue(db):
     add_show(db, "a", "A")
     assert queues.inclusion_next(db, skipped=[]) is not None
     assert queues.inclusion_next(db, skipped=None) is not None
+
+
+# --- artwork ---------------------------------------------------------------------
+
+
+def test_artwork_is_served_at_a_sane_size():
+    """The catalog stores Apple's 3000x3000 original -- 3.9 MB for a 76px thumbnail.
+    A thirty-card session on cellular would pull over 100 MB."""
+    big = ("https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/84/75/9f/"
+           "84759f65/mza_8038583962796645034.jpg/3000x3000bb.jpg")
+    assert queues.thumbnail(big).endswith("/300x300bb.jpg")
+
+
+def test_thumbnail_keeps_the_rest_of_the_url_intact():
+    big = "https://is1-ssl.mzstatic.com/a/b/c.jpg/3000x3000bb.jpg"
+    assert queues.thumbnail(big) == "https://is1-ssl.mzstatic.com/a/b/c.jpg/300x300bb.jpg"
+
+
+def test_thumbnail_handles_png():
+    assert queues.thumbnail("https://x/y/1200x1200bb.png").endswith("/300x300bb.png")
+
+
+@pytest.mark.parametrize("value", [None, "", "   "])
+def test_missing_artwork_becomes_none(value):
+    """20 shows have none. An empty string would render a broken image box."""
+    assert queues.thumbnail(value) is None
+
+
+def test_a_url_we_do_not_recognise_is_left_alone(db):
+    """Not every host is Apple. Better untouched than mangled."""
+    other = "https://example.com/cover.jpg"
+    assert queues.thumbnail(other) == other
+
+
+def test_the_card_carries_the_thumbnail_not_the_original(db):
+    sid = add_show(db, "a", "A")
+    db.execute("UPDATE shows SET artwork_url = ? WHERE id = ?",
+               ("https://is1-ssl.mzstatic.com/a/b.jpg/3000x3000bb.jpg", sid))
+    db.commit()
+    assert "300x300bb" in queues.inclusion_next(db)["artwork"]

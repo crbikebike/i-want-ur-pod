@@ -25,11 +25,27 @@ cards -- the only ten some sessions get -- on shows that were never in doubt.
 
 from __future__ import annotations
 
+import re
 import sqlite3
 
 # Deterministic per show so the order is stable across page loads, and shuffled enough
 # that it is not alphabetical. sqlite has no hash(), so the guid-ish mix below does.
 _SHUFFLE = "((s.id * 2654435761) % 1000003)"
+
+# Every one of the 295 artwork URLs is an Apple 3000x3000 original: 3.9 MB for something
+# rendered at 76 CSS pixels. A thirty-card session on cellular would pull over 100 MB and
+# every card would sit waiting on it. Apple serves any size from the same path, and the
+# 300px version is 38 KB.
+#
+# Derived at read time rather than rewritten in the catalog, because the stored URL is
+# the canonical one and a future detail view may well want the full-size image.
+_APPLE_SIZE = re.compile(r"/\d+x\d+bb\.(jpg|png)$", re.IGNORECASE)
+
+
+def thumbnail(url: str | None, px: int = 300) -> str | None:
+    if not url or not url.strip():
+        return None
+    return _APPLE_SIZE.sub(lambda m: f"/{px}x{px}bb.{m.group(1)}", url)
 
 
 def inclusion_counts(conn: sqlite3.Connection) -> dict:
@@ -154,7 +170,7 @@ def inclusion_next(conn: sqlite3.Connection, skipped: list[int] | None = None) -
         "lang": lang,
         "pitch": why,
         "description": description,
-        "artwork": artwork,
+        "artwork": thumbnail(artwork),
         "episodeCount": eps,
         "arcCount": arcs,
         "recentEpisodes": episodes,
