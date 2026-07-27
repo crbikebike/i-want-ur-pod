@@ -32,7 +32,12 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
-from admin.api.rematch import publisher_similarity
+from admin.api.rematch import _GENERIC_PUBLISHER, _norm, publisher_similarity
+
+
+def _distinctive(s: str | None) -> set[str]:
+    """The words in a name that identify anybody. Same rule the publisher scorer uses."""
+    return {t for t in _norm(s).split() if len(t) >= 4 and t not in _GENERIC_PUBLISHER}
 
 ITUNES = "{http://www.itunes.com/dtds/podcast-1.0.dtd}"
 CONTENT = "{http://purl.org/rss/1.0/modules/content/}"
@@ -65,6 +70,10 @@ class Feed:
     title: str
     author: str | None
     description: str | None
+    # Phase 4's comber has to watch this anyway -- publishers replace cover art and Apple
+    # serves it with a 190-day max-age, so only a feed read can notice. Repairs need it
+    # for a simpler reason: the artwork on a mispointed row is the wrong show's face.
+    image: str | None = None
     episodes: list[Episode] = field(default_factory=list)
 
     def sample(self, n: int = 8) -> list[str]:
@@ -188,11 +197,16 @@ def parse(xml: str, url: str = "") -> Feed:
             duration_s=parse_duration(_text(item, f"{ITUNES}duration")),
         ))
 
+    # <itunes:image href="..."> carries it as an attribute; plain RSS nests <image><url>.
+    itunes_image = channel.find(f"{ITUNES}image")
+    image = (itunes_image.get("href") or "").strip() if itunes_image is not None else ""
+
     return Feed(
         url=url,
         title=_text(channel, "title") or "",
         author=_text(channel, f"{ITUNES}author", "managingEditor"),
         description=_text(channel, "description", f"{ITUNES}summary"),
+        image=image or _text(channel, "image/url"),
         episodes=episodes,
     )
 
@@ -239,6 +253,14 @@ def verify(feed: Feed, *, network: str | None, expect_title: str | None = None) 
     publisher, so the catalog's title no longer matched the correct feed either.
     """
     p = publisher_similarity(network, feed.author)
+
+    # A self-titled-feed rule lived here briefly and was removed. The idea was that
+    # "Reading Sirens" by "Reading Sirens" carries no independent evidence, which is true,
+    # but every form of the test also rejected real shows named after their maker --
+    # Benjamen Walker's Theory of Everything, and Lea Thau's. What the bad matches
+    # actually had in common was agreeing on a word that identifies nobody, so the fix
+    # belongs in _GENERIC_PUBLISHER, where "radio" and "sounds" now sit, and not here.
+
     if len(feed.episodes) < MIN_EPISODES:
         return Verdict(False, f"only {len(feed.episodes)} episodes; too thin to confirm",
                        p, feed.title, feed.author, len(feed.episodes), feed.sample())

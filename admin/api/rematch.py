@@ -62,6 +62,9 @@ _GENERIC_PUBLISHER = {
     "media", "podcast", "podcasts", "network", "networks", "production", "productions",
     "studio", "studios", "audio", "group", "inc", "llc", "ltd", "entertainment",
     "original", "originals", "co", "company", "and", "the",
+    # "radio" earned its place here: it matched "Love + Radio" to a Japanese TBS Radio
+    # programme, and it would match any two of the BBC, ABC and CBC to each other.
+    "radio", "sounds", "fm", "news", "presents", "show", "shows",
 }
 
 
