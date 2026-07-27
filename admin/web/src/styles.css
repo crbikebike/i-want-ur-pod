@@ -141,7 +141,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- the sheet ---------- */
 
-.stage { position: relative; overflow: hidden; padding: 15px 15px 0; }
+/* Horizontal stays hidden so a card can fly off the side; vertical has to scroll, because
+   the feed card carries six episode titles and runs taller than a phone. It was clipping
+   the sentence that says what rejecting a candidate costs. */
+.stage {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 15px 15px 0;
+}
 
 .card {
   overflow-y: auto;
@@ -207,6 +216,62 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .note.info b { color: var(--cement); }
 
 .note .means { color: var(--ink-soft); font-size: 13px; margin-top: 3px; }
+
+/* Two claims, side by side, because the decision is a comparison and not a lookup.
+
+   Stacked on a phone -- catalog first, feed second, in the order you read them -- and
+   side by side once there is room. The feed panel is the second sheet colour so the eye
+   knows which half is evidence and which half is what we already believed. */
+.compare { display: grid; gap: 10px; min-width: 0; }
+@media (min-width: 620px) { .compare { grid-template-columns: 1fr 1fr; } }
+
+.side {
+  background: var(--sheet-warm);
+  border-radius: var(--r-sm);
+  border-left: 3px solid var(--rule);
+  padding: 10px 13px 12px;
+  font-size: 14px;
+  /* Grid children default to min-width:auto, so one long unbreakable episode title
+     widened the track past the phone and pushed the whole card off-screen. */
+  min-width: 0;
+}
+.side p { margin: 0; overflow-wrap: anywhere; }
+.side b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--ink-faint);
+  margin-bottom: 5px;
+}
+.side.cand { border-left-color: var(--horizon); background: var(--horizon-wash); }
+.side.cand b { color: var(--horizon); }
+
+.feedname { font-weight: 600; line-height: 1.25; }
+.author { color: var(--ink-soft); font-size: 12.5px; margin-top: 2px !important; }
+
+/* The episode titles. The whole reason this card exists -- publisher names argue with
+   each other and episode titles simply settle it. Monospaced and tight so a run of them
+   reads as a list of evidence rather than as prose. */
+.eps {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.eps li {
+  padding: 2px 0 2px 10px;
+  border-top: 1px solid var(--rule-soft);
+  overflow-wrap: anywhere;
+}
+.eps li::before { content: "·"; margin-left: -10px; padding-right: 5px; color: var(--ink-faint); }
+
+.card > .means { color: var(--ink-soft); font-size: 13px; margin: 0; }
 
 /* The fit read: a slip of paper clipped to the card rather than another painted panel.
    Same left rule as .note so the two stack as one column of margin notes, but on the
@@ -313,14 +378,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   padding-bottom: 5px;
   border-bottom: 1px solid var(--rule-soft);
 }
-.eps { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
-.eps li {
-  font-size: 14px;
-  color: var(--ink-soft);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+/* An older `.eps` block lived here, left over from when the inclusion card listed episode
+   titles. Nothing rendered it any more, but it sat later in the file than the feed card's
+   `.eps` and quietly won the cascade -- its `white-space: nowrap` truncated the one piece
+   of evidence the feed card exists to show. Deleted rather than reordered: dead rules that
+   still take effect are worse than dead rules. */
 
 /* ---------- the toast ---------- */
 

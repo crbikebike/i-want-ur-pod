@@ -19,7 +19,7 @@ from fastapi import Body, FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from admin.api import auto, edits, queues
+from admin.api import auto, edits, feedqueue, feeds, queues, repair
 from catalog.build import migrations
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -88,6 +88,58 @@ def judge(show_id: int, body: dict = Body(...)) -> dict:
         except edits.EditError as e:
             raise HTTPException(400, str(e))
         return {"editId": edit.edit_id, "counts": queues.inclusion_counts(conn)}
+
+
+# --- the feed queue ---------------------------------------------------------------
+
+
+@app.get("/api/queues/feeds")
+def feed_queue(skip: str = "") -> dict:
+    """A row that points at the wrong podcast, and the best candidate for the right one."""
+    skipped = [int(s) for s in skip.split(",") if s.strip().isdigit()]
+    with db() as conn:
+        return {
+            "counts": feedqueue.counts(conn),
+            "item": feedqueue.next_card(conn, skipped),
+        }
+
+
+@app.post("/api/queues/feeds/{proposal_id}")
+def decide_feed(proposal_id: int, body: dict = Body(...)) -> dict:
+    """Confirming repoints the show and pulls its episodes; rejecting only closes the card.
+
+    The repoint itself goes through edits.apply() inside repair.apply(), so it lands in
+    `edits` and decisions.jsonl and undoes like anything else. feed_proposals only records
+    that the question was answered, so a rejected candidate is not offered again.
+    """
+    decision = body.get("decision")
+    if decision not in ("confirmed", "rejected"):
+        raise HTTPException(400, "decision must be 'confirmed' or 'rejected'")
+
+    with db() as conn:
+        row = conn.execute(
+            "SELECT p.show_id, p.feed_url, s.slug, s.title FROM feed_proposals p "
+            "JOIN shows s ON s.id = p.show_id WHERE p.id = ? AND p.resolved_at IS NULL",
+            (proposal_id,)).fetchone()
+        if not row:
+            raise HTTPException(404, "no such proposal, or it is already decided")
+        show_id, feed_url, slug, title = row
+
+        applied = []
+        if decision == "confirmed":
+            try:
+                feed = feeds.read(feed_url)
+            except feeds.FeedError as e:
+                # Do not close the card: the feed may simply be down, and marking it
+                # rejected would mean never offering the right answer again.
+                raise HTTPException(502, f"could not read the feed — {e}")
+            outcome = repair.Outcome(slug, title, None, "repointed",
+                                     "confirmed in the feed queue", feed_url, feed.title,
+                                     feed.author, len(feed.episodes))
+            applied = repair.apply(conn, show_id, outcome, feed)
+
+        feedqueue.record(conn, proposal_id, decision)
+        return {"applied": applied, "counts": feedqueue.counts(conn)}
 
 
 @app.post("/api/edits/{edit_id}/undo")
