@@ -68,7 +68,8 @@ def vocabulary(conn: sqlite3.Connection) -> list[dict]:
 
 
 def pending(conn: sqlite3.Connection, limit: int = 20,
-            slice_of: tuple[int, int] | None = None) -> list[dict]:
+            slice_of: tuple[int, int] | None = None,
+            show: str | None = None) -> list[dict]:
     """Episodes this run has not labelled yet, newest-show-first within a show.
 
     Grouped by show and kept in publication order, because an episode is easier to place
@@ -83,6 +84,11 @@ def pending(conn: sqlite3.Connection, limit: int = 20,
     if slice_of:
         i, n = slice_of
         where, args = "AND e.id % ? = ?", [n, i]
+    # One show at a time, for a pilot: the only way to compare this run against the last
+    # one is to label the same shows it labelled and read both.
+    if show:
+        where += " AND s.slug = ?"
+        args.append(show)
 
     rows = conn.execute(
         f"""
@@ -235,6 +241,7 @@ def main(argv: list[str] | None = None) -> int:
     nxt = sub.add_parser("next", help="a batch of episodes to label, as JSON")
     nxt.add_argument("--limit", type=int, default=20)
     nxt.add_argument("--slice", help="i/n -- only episodes where id %% n == i")
+    nxt.add_argument("--show", help="one show's slug, for a pilot")
 
     sub.add_parser("vocab", help="the 148 subjects with their definitions")
 
@@ -253,7 +260,8 @@ def main(argv: list[str] | None = None) -> int:
             i, n = (int(x) for x in args.slice.split("/"))
             sl = (i, n)
         print(json.dumps({"remaining": remaining(conn),
-                          "episodes": pending(conn, args.limit, sl)}, indent=1))
+                          "episodes": pending(conn, args.limit, sl,
+                                              getattr(args, "show", None))}, indent=1))
     elif args.cmd == "vocab":
         print(json.dumps({"subjects": vocabulary(conn)}, indent=1))
     elif args.cmd == "record":

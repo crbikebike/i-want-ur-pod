@@ -169,3 +169,15 @@ def test_entities_land_with_their_kind(db, log):
 def test_the_run_is_named_so_the_old_one_survives(db, log):
     label.record(db, [lab(1, [sub("grief")])], decisions_path=log)
     assert db.execute("SELECT DISTINCT run_id FROM episode_labels").fetchone()[0] == label.RUN_ID
+
+
+def test_a_pilot_can_be_scoped_to_one_show(db):
+    """The only way to compare this run against the last is to label the same shows it
+    labelled and read both side by side."""
+    db.execute("INSERT INTO shows (id, slug, title, feed_url, include_verdict, why) "
+               "VALUES (2,'other','Other','http://g','keep','x')")
+    db.execute("INSERT INTO episodes (id, show_id, guid, title, published_at) "
+               "VALUES (9,2,'x','Elsewhere','2020-01-01')")
+    db.commit()
+    assert {e["show"] for e in label.pending(db, limit=99, show="s-town")} == {"S-Town"}
+    assert len(label.pending(db, limit=99)) == 4

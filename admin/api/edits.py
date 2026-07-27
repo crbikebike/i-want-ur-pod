@@ -290,6 +290,64 @@ def ingest_episodes(
     return {"added": added, "existing": existing}
 
 
+def create_subject(
+    conn: sqlite3.Connection,
+    *,
+    slug: str,
+    name: str,
+    description: str,
+    theme_id: int,
+    actor: str = "human",
+    note: str | None = None,
+    decisions_path: Path | None = None,
+) -> Edit:
+    """Add a subject to the browsable vocabulary. The fifth door.
+
+    Deliberately one at a time, through the normal log, even when forty are accepted in a
+    sitting. A subject is a thing a person will browse by for years; each one arriving as
+    its own undoable line is the difference between "we added forty" and being able to say
+    which forty and take one back.
+
+    The description is required, not optional. It is what a labelling pass reads to decide
+    what belongs, and the last vocabulary's own brief said it plainly: vagueness there
+    becomes noise everywhere.
+    """
+    if not (slug and name and description):
+        raise EditError("a subject needs a slug, a name and a definition")
+    if conn.execute("SELECT 1 FROM subjects WHERE slug = ?", (slug,)).fetchone():
+        raise EditError(f"subject {slug!r} already exists")
+    if not conn.execute("SELECT 1 FROM themes WHERE id = ? AND deleted_at IS NULL",
+                        (theme_id,)).fetchone():
+        raise EditError(f"no live theme with id {theme_id}")
+
+    at = _now()
+    try:
+        cur = conn.execute(
+            "INSERT INTO subjects (slug, name, description, theme_id) VALUES (?,?,?,?)",
+            (slug, name, description, theme_id))
+        subject_id = cur.lastrowid
+        edit = conn.execute(
+            "INSERT INTO edits (at, actor, entity_type, entity_key, field, before, after, note) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (at, actor, "subject", slug, "created", None, name, note))
+        path = decisions_path or DECISIONS
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps({
+                "id": edit.lastrowid, "at": at, "actor": actor, "entity": "subject",
+                "key": slug, "field": "created", "after": name,
+                "definition": description, "note": note,
+            }, ensure_ascii=False) + "\n")
+            fh.flush()
+    except EditError:
+        raise
+    except Exception:
+        conn.rollback()
+        raise
+    conn.commit()
+    return Edit(edit.lastrowid, "subject", slug, "created", None, name)
+
+
 def label_episodes(
     conn: sqlite3.Connection,
     *,
