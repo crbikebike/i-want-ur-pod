@@ -44,12 +44,17 @@ class AutoReport:
 
 def resolve(conn: sqlite3.Connection, *, decisions_path=None) -> AutoReport:
     report = AutoReport()
-    rows = conn.execute(
+    _settle_notes(conn, report, decisions_path)
+    _settle_confident_fit(conn, report, decisions_path)
+    return report
+
+
+def _settle_notes(conn, report, decisions_path) -> None:
+    """Flags whose note carries its own answer -- today, cross-promotion."""
+    for show_id, title in conn.execute(
         "SELECT id, title FROM shows "
         "WHERE include_verdict = 'suspect' AND deleted_at IS NULL ORDER BY title"
-    ).fetchall()
-
-    for show_id, title in rows:
+    ).fetchall():
         note = queues._note(conn, show_id)
         verdict = (note or {}).get("auto")
         if verdict not in queues.VERDICTS:
@@ -57,8 +62,32 @@ def resolve(conn: sqlite3.Connection, *, decisions_path=None) -> AutoReport:
         edits.apply(
             conn, entity_type="show", entity_id=show_id, field="include_verdict",
             after=verdict, actor="agent:auto",
-            note=f"{note['kind']}: {note['meaning']}",
-            decisions_path=decisions_path,
+            note=f"{note['kind']}: {note['meaning']}", decisions_path=decisions_path,
         )
         report.settled.append((title, verdict, note["kind"]))
-    return report
+
+
+def _settle_confident_fit(conn, report, decisions_path) -> None:
+    """A confident narrative assessment keeps the show.
+
+    Chris: auto-settle the narrative/high's to keep, saves me for the real judgement
+    calls. That is the same trade as cross-promotion -- 222 cards whose answer is
+    already printed on them, crowding out the ones that need a person.
+
+    Only narrative and only high. `talk` is not automated in the other direction: cutting
+    a show on a model's say-so removes it from the product, and the whole reason the fit
+    brief tells the analyst to be stingy with `high` is that a wrong one either admits a
+    talk show or throws out something good. Keeping is recoverable in a way that a queue
+    nobody revisits is not.
+    """
+    for show_id, title, reason in conn.execute(
+        "SELECT id, title, fit_reason FROM shows "
+        "WHERE deleted_at IS NULL AND include_verdict = 'unreviewed' "
+        "  AND fit_verdict = 'narrative' AND fit_confidence = 'high' ORDER BY title"
+    ).fetchall():
+        edits.apply(
+            conn, entity_type="show", entity_id=show_id, field="include_verdict",
+            after="keep", actor="agent:auto",
+            note=f"narrative, high confidence: {reason}", decisions_path=decisions_path,
+        )
+        report.settled.append((title, "keep", "narrative/high"))

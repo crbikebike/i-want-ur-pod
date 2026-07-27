@@ -224,3 +224,55 @@ def test_running_twice_settles_nothing_new(db, log):
     db.commit()
     auto.resolve(db, decisions_path=log)
     assert auto.resolve(db, decisions_path=log).settled == []
+
+
+def test_a_confident_narrative_assessment_keeps_the_show(db, log):
+    """Chris: auto-settle the narrative/high's to keep, saves me for the real judgement
+    calls."""
+    from admin.api import auto
+    sid = add(db, "a", "A", "http://a", verdict="unreviewed")
+    db.execute("UPDATE shows SET fit_verdict='narrative', fit_confidence='high', "
+               "fit_reason='numbered multi-part runs' WHERE id=?", (sid,))
+    db.commit()
+    auto.resolve(db, decisions_path=log)
+    assert db.execute("SELECT include_verdict FROM shows WHERE id=?", (sid,)).fetchone()[0] == "keep"
+
+
+@pytest.mark.parametrize("verdict,confidence", [
+    ("narrative", "medium"), ("narrative", "low"),
+    ("mixed", "high"), ("unclear", "high"),
+])
+def test_anything_less_than_confident_narrative_stays_a_card(db, log, verdict, confidence):
+    from admin.api import auto
+    sid = add(db, "a", "A", "http://a", verdict="unreviewed")
+    db.execute("UPDATE shows SET fit_verdict=?, fit_confidence=?, fit_reason='r' WHERE id=?",
+               (verdict, confidence, sid))
+    db.commit()
+    auto.resolve(db, decisions_path=log)
+    assert db.execute(
+        "SELECT include_verdict FROM shows WHERE id=?", (sid,)).fetchone()[0] == "unreviewed"
+
+
+def test_a_confident_talk_verdict_does_not_cut_anything(db, log):
+    """Keeping is recoverable. Cutting on a model's say-so removes a show from the
+    product, and nobody revisits a queue of things already gone."""
+    from admin.api import auto
+    sid = add(db, "a", "A", "http://a", verdict="unreviewed")
+    db.execute("UPDATE shows SET fit_verdict='talk', fit_confidence='high', "
+               "fit_reason='every title is a guest name' WHERE id=?", (sid,))
+    db.commit()
+    auto.resolve(db, decisions_path=log)
+    assert db.execute(
+        "SELECT include_verdict FROM shows WHERE id=?", (sid,)).fetchone()[0] == "unreviewed"
+
+
+def test_an_automatic_keep_is_attributed_and_carries_its_reason(db, log):
+    from admin.api import auto
+    sid = add(db, "a", "A", "http://a", verdict="unreviewed")
+    db.execute("UPDATE shows SET fit_verdict='narrative', fit_confidence='high', "
+               "fit_reason='single narrator throughout' WHERE id=?", (sid,))
+    db.commit()
+    auto.resolve(db, decisions_path=log)
+    actor, note = db.execute(
+        "SELECT actor, note FROM edits ORDER BY id DESC LIMIT 1").fetchone()
+    assert actor == "agent:auto" and "single narrator throughout" in note

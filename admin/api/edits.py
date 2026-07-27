@@ -43,7 +43,12 @@ WRITABLE: dict[str, tuple[str, set[str]]] = {
                              "deleted_at", "deleted_reason",
                              # the fit assessment: a model's opinion, not a verdict
                              "fit_verdict", "fit_confidence", "fit_reason",
-                             "fit_checked_at", "fit_model"}),
+                             "fit_checked_at", "fit_model",
+                             # Re-matching a show that was pointed at the wrong podcast
+                             # has to change these. Unlike slug and guid, nothing else
+                             # references them, and the partial unique index still
+                             # prevents two live shows landing on one feed.
+                             "feed_url", "home_url", "artwork_url"}),
     "theme":   ("themes",   {"name", "description", "deleted_at"}),
     "subject": ("subjects", {"name", "description", "theme_id", "deleted_at"}),
     "arc":     ("arcs",     {"name", "description", "confidence", "kind",

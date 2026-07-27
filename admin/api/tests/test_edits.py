@@ -104,14 +104,25 @@ def test_nothing_is_written_when_the_log_cannot_be(db, tmp_path):
 
 
 @pytest.mark.parametrize("entity_type,field", [
-    ("show", "slug"), ("show", "feed_url"), ("theme", "slug"),
-    ("subject", "slug"), ("episode", "guid"), ("arc", "slug"),
+    ("show", "slug"), ("theme", "slug"), ("subject", "slug"),
+    ("episode", "guid"), ("arc", "slug"),
 ])
 def test_identity_fields_are_locked(db, log, entity_type, field):
     """Everything references these. Changing one silently orphans whatever points at it."""
     with pytest.raises(edits.EditError, match="not editable"):
         edits.apply(db, entity_type=entity_type, entity_id=1, field=field,
                     after="anything", decisions_path=log)
+
+
+def test_feed_url_is_editable_because_a_show_can_be_pointed_at_the_wrong_podcast(db, log):
+    """It looks like identity but is not. Twenty shows were matched to a different
+    podcast sharing their name, and fixing that means changing the feed. Nothing
+    references feed_url the way things reference a slug -- episodes hang off show_id --
+    and the partial unique index still stops two live shows landing on one feed."""
+    edits.apply(db, entity_type="show", entity_id=1, field="feed_url",
+                after="http://the-right-one", decisions_path=log)
+    assert db.execute(
+        "SELECT feed_url FROM shows WHERE id=1").fetchone()[0] == "http://the-right-one"
 
 
 def test_unknown_entity_kinds_are_refused(db, log):
