@@ -39,7 +39,11 @@ from admin.api import edits, feeds
 ROOT = Path(__file__).resolve().parents[2]
 DB = ROOT / "catalog/catalog.db"
 
-RUN_ID = "2026-07-relabel"
+# The vocabulary size is in the name because it is the thing that changed. The 200-episode
+# pilot ran against 148 subjects and its answers are preserved under the old id -- but they
+# were chosen from a vocabulary that had one word for the built environment, which is the
+# gap the pilot itself found, so those episodes are labelled again here rather than kept.
+RUN_ID = "2026-07-relabel-v176"
 
 ROLES = {"primary", "secondary"}
 CONFIDENCE = {"low", "medium", "high"}
