@@ -106,7 +106,17 @@ def pending(conn: sqlite3.Connection, limit: int = 20,
           AND NOT EXISTS (SELECT 1 FROM episode_labels l
                           WHERE l.episode_id = e.id AND l.run_id = ?)
           {where}
-        ORDER BY s.id, e.published_at
+        -- Arcless shows first. For an anthology, subjects are the only way anyone
+        -- navigates 800 episodes -- there is no "start with the 6-part story" to fall
+        -- back on -- so a label there is worth more than the same label on a show that
+        -- already has arcs. Then biggest show first, because a half-labelled show is
+        -- less useful than a whole small one, and then publication order within a show
+        -- so an episode is placed with its neighbours visible.
+        ORDER BY (SELECT count(*) FROM arcs a2
+                  WHERE a2.show_id = s.id AND a2.deleted_at IS NULL) = 0 DESC,
+                 (SELECT count(*) FROM episodes e2
+                  WHERE e2.show_id = s.id AND e2.deleted_at IS NULL) DESC,
+                 s.id, e.published_at
         LIMIT ?
         """,
         (RUN_ID, *args, limit),
