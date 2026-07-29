@@ -41,6 +41,10 @@ DB = ROOT / "catalog/catalog.db"
 
 RUN_ID = "2026-07-vocab-split"
 
+# The labelling run a split is measured against. Runs coexist by `run_id`, so this has to
+# be named rather than left open -- see sample().
+CURRENT_RUN = "2026-07-relabel-v176"
+
 # Above this many episodes on one subject, browsing it means scrolling an undifferentiated
 # list. The measure is per *subject*, not per theme -- a theme-level ratio hides exactly
 # the case both pilots found. "Media & Internet Culture" holds 18 subjects and looks
@@ -49,12 +53,16 @@ RUN_ID = "2026-07-vocab-split"
 CROWDED = 350
 
 
-def crowded(conn: sqlite3.Connection) -> list[dict]:
+def crowded(conn: sqlite3.Connection, *, run_id: str = CURRENT_RUN) -> list[dict]:
     """Subjects carrying more episodes than anyone can browse.
 
     Ranked by how many, because that is the order in which splitting helps -- and reported
     with the shows that lean on each, since a subject used by twenty shows is a genuine
     category while one used by two is usually those shows' beat needing its own word.
+
+    Counted within one run. Three label runs coexist, so an unfiltered count sums a subject
+    across all of them and reports roughly double -- which would flag subjects as too
+    crowded to browse when they are not, and set the whole splitting effort chasing noise.
     """
     rows = conn.execute(
         """
@@ -64,39 +72,50 @@ def crowded(conn: sqlite3.Connection) -> list[dict]:
         JOIN subjects sub ON sub.id = l.subject_id
         JOIN themes t ON t.id = sub.theme_id
         JOIN episodes e ON e.id = l.episode_id
-        WHERE l.role = 'primary' AND sub.deleted_at IS NULL AND e.deleted_at IS NULL
+        WHERE l.role = 'primary' AND l.run_id = ?
+          AND sub.deleted_at IS NULL AND e.deleted_at IS NULL
         GROUP BY sub.id
         HAVING eps >= ?
         ORDER BY eps DESC
-        """, (CROWDED,)
+        """, (run_id, CROWDED,)
     ).fetchall()
 
     return [
         {"subjectId": sid, "slug": slug, "name": name, "definition": definition,
          "themeId": tid, "theme": theme_name, "themeSlug": theme_slug,
          "episodes": eps, "shows": shows,
-         "leanedOnBy": _top_shows(conn, sid)}
+         "leanedOnBy": _top_shows(conn, sid, run_id)}
         for sid, slug, name, definition, tid, theme_slug, theme_name, eps, shows in rows
     ]
 
 
-def _top_shows(conn: sqlite3.Connection, subject_id: int) -> list[dict]:
+def _top_shows(conn: sqlite3.Connection, subject_id: int,
+               run_id: str = CURRENT_RUN) -> list[dict]:
     return [
         {"show": t, "episodes": n}
         for t, n in conn.execute(
             """SELECT s.title, count(*) n FROM episode_labels l
                JOIN episodes e ON e.id = l.episode_id JOIN shows s ON s.id = e.show_id
-               WHERE l.subject_id = ? AND l.role = 'primary' AND e.deleted_at IS NULL
-               GROUP BY s.id ORDER BY n DESC LIMIT 4""", (subject_id,))
+               WHERE l.subject_id = ? AND l.role = 'primary' AND l.run_id = ?
+                 AND e.deleted_at IS NULL
+               GROUP BY s.id ORDER BY n DESC LIMIT 4""", (subject_id, run_id))
     ]
 
 
-def sample(conn: sqlite3.Connection, subject_slug: str, limit: int = 60) -> dict:
+def sample(conn: sqlite3.Connection, subject_slug: str, limit: int = 60,
+           *, run_id: str = CURRENT_RUN) -> dict:
     """Episodes currently carrying one subject, spread across the shows that use it.
 
     Spread, not the first 60. A subject's problem is usually that it spans several kinds
     of story, and taking a prefix would show one show's worth of them -- which is exactly
     how you conclude a split is unnecessary.
+
+    One run and primaries only. Label runs coexist by `run_id`, so an unfiltered query
+    returns the same episode once per run that labelled it, and a splitter measuring "what
+    fraction of this subject is really X" divides by a padded denominator. A secondary label
+    is also the wrong evidence for a split: the question is what a subject is the *main*
+    home for. A splitter caught this by hand-drawing its own sample; it should not have had
+    to.
     """
     row = conn.execute(
         "SELECT sub.id, sub.name, sub.description, t.id, t.name FROM subjects sub "
@@ -113,8 +132,9 @@ def sample(conn: sqlite3.Connection, subject_slug: str, limit: int = 60) -> dict
                JOIN episodes e ON e.id = l.episode_id
                JOIN shows s ON s.id = e.show_id
                WHERE l.subject_id = ? AND e.deleted_at IS NULL
+                 AND l.run_id = ? AND l.role = 'primary'
                ORDER BY (e.id * 2654435761) % 1000003
-               LIMIT ?""", (sid, limit))
+               LIMIT ?""", (sid, run_id, limit))
     ]
     return {"subjectId": sid, "slug": subject_slug, "name": name,
             "definition": definition, "theme": theme_name, "themeId": theme_id,
@@ -219,11 +239,14 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest="cmd", required=True)
 
-    sub.add_parser("crowded", help="subjects carrying more episodes than anyone can browse")
+    crw = sub.add_parser("crowded",
+                         help="subjects carrying more episodes than anyone can browse")
+    crw.add_argument("--run", default=CURRENT_RUN)
 
     smp = sub.add_parser("sample", help="episodes carrying one subject, spread across shows")
     smp.add_argument("--subject", required=True)
     smp.add_argument("--limit", type=int, default=60)
+    smp.add_argument("--run", default=CURRENT_RUN)
 
     pro = sub.add_parser("propose", help="record proposed subjects")
     pro.add_argument("file", type=Path)
@@ -238,9 +261,9 @@ def main(argv: list[str] | None = None) -> int:
     conn = _open()
 
     if args.cmd == "crowded":
-        print(json.dumps({"subjects": crowded(conn)}, indent=1))
+        print(json.dumps({"subjects": crowded(conn, run_id=args.run)}, indent=1))
     elif args.cmd == "sample":
-        print(json.dumps(sample(conn, args.subject, args.limit), indent=1))
+        print(json.dumps(sample(conn, args.subject, args.limit, run_id=args.run), indent=1))
     elif args.cmd == "propose":
         payload = json.loads(args.file.read_text())
         items = payload["subjects"] if isinstance(payload, dict) else payload

@@ -558,3 +558,16 @@ def test_a_batch_that_places_nothing_writes_nothing(db, log):
     assert got["subjects"] == 0
     assert read_log(log) == []
     assert db.execute("SELECT count(*) FROM edits WHERE field='label'").fetchone()[0] == 0
+
+
+def test_a_retired_subject_records_why(db, log):
+    """Retiring a subject changes what a listener can navigate by. `arcs` and `episodes`
+    both carried `deleted_reason`; `subjects` only had the timestamp, so the one door could
+    soft-delete browsable vocabulary and leave no argument behind."""
+    sid = db.execute("SELECT id FROM subjects LIMIT 1").fetchone()[0]
+    edits.apply(db, entity_type="subject", entity_id=sid, field="deleted_at",
+                after="2026-07-29T00:00:00+00:00", decisions_path=log)
+    edits.apply(db, entity_type="subject", entity_id=sid, field="deleted_reason",
+                after="duplicate of another subject in the same theme", decisions_path=log)
+    assert db.execute("SELECT deleted_reason FROM subjects WHERE id=?",
+                      (sid,)).fetchone()[0] == "duplicate of another subject in the same theme"

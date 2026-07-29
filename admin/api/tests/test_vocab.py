@@ -41,13 +41,22 @@ def log(tmp_path):
     return tmp_path / "decisions.jsonl"
 
 
-def load(conn, subject_id, n, show_id=1):
+def load(conn, subject_id, n, show_id=1, run_id=vocab.CURRENT_RUN, role="primary"):
     for i in range(n):
         eid = conn.execute(
             "INSERT INTO episodes (show_id, guid, title, description) VALUES (?,?,?,?)",
-            (show_id, f"g{subject_id}-{show_id}-{i}", f"Ep {i}", "<p>About a thing.</p>")).lastrowid
+            (show_id, f"g{subject_id}-{show_id}-{role}-{i}", f"Ep {i}",
+             "<p>About a thing.</p>")).lastrowid
         conn.execute("INSERT INTO episode_labels (episode_id, subject_id, run_id, role, "
-                     "confidence) VALUES (?,?,'r','primary','high')", (eid, subject_id))
+                     "confidence) VALUES (?,?,?,?,'high')", (eid, subject_id, run_id, role))
+    conn.commit()
+
+
+def relabel(conn, subject_id, run_id):
+    """Label every existing episode again under a second run, as a real rerun would."""
+    for eid, in conn.execute("SELECT id FROM episodes").fetchall():
+        conn.execute("INSERT INTO episode_labels (episode_id, subject_id, run_id, role, "
+                     "confidence) VALUES (?,?,?,'primary','high')", (eid, subject_id, run_id))
     conn.commit()
 
 
@@ -184,3 +193,36 @@ def test_a_subject_cannot_be_orphaned_from_its_theme(db, log):
     with pytest.raises(edits.EditError):
         edits.create_subject(db, slug="x", name="X", description="d", theme_id=99,
                              decisions_path=log)
+
+
+# Three label runs coexist by design -- the 2026-07 Haiku pass, the pilot, and the current
+# relabel -- and none overwrites another. An unfiltered count therefore sums a subject
+# across every run that touched it and reports roughly double, which flags subjects as too
+# crowded to browse when they are not. A splitter caught this by hand-drawing its own
+# sample after `sample` handed it exact duplicate episodes.
+
+
+def test_an_earlier_run_does_not_inflate_the_count(db):
+    load(db, 1, 200)
+    relabel(db, 1, "2026-07-theming")
+    assert vocab.crowded(db) == []                       # 200 in this run, not 400
+
+
+def test_a_secondary_label_is_not_evidence_for_a_split(db):
+    """The question a split answers is what a subject is the *main* home for."""
+    load(db, 1, 4)
+    load(db, 1, 4, role="secondary")
+    assert len(vocab.sample(db, "design-and-architecture", limit=20)["episodes"]) == 4
+
+
+def test_a_sample_holds_each_episode_once(db):
+    load(db, 1, 6)
+    relabel(db, 1, "2026-07-theming")
+    got = vocab.sample(db, "design-and-architecture", limit=20)["episodes"]
+    assert len(got) == len({e["title"] for e in got}) == 6
+
+
+def test_an_older_run_can_still_be_asked_about(db):
+    load(db, 1, 6, run_id="2026-07-theming")
+    assert vocab.sample(db, "design-and-architecture", run_id="2026-07-theming")["episodes"]
+    assert vocab.sample(db, "design-and-architecture")["episodes"] == []

@@ -52,7 +52,8 @@ WRITABLE: dict[str, tuple[str, set[str]]] = {
                              # prevents two live shows landing on one feed.
                              "feed_url", "home_url", "artwork_url"}),
     "theme":   ("themes",   {"name", "description", "deleted_at"}),
-    "subject": ("subjects", {"name", "description", "theme_id", "deleted_at"}),
+    "subject": ("subjects", {"name", "description", "theme_id",
+                             "deleted_at", "deleted_reason"}),
     "arc":     ("arcs",     {"name", "description", "confidence", "kind",
                              "deleted_at", "deleted_reason"}),
     "episode": ("episodes", {"title", "description", "available", "duration_s",
