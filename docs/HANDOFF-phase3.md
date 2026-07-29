@@ -103,3 +103,43 @@ subjects are the only way anyone navigates.
 Three label runs coexist by `run_id` and none overwrites another: `2026-07-theming`
 (43,818 rows, the original Haiku pass), `2026-07-relabel` (319, the pilot against 148
 subjects), and `2026-07-relabel-v176` (this one).
+
+## Resuming after a session limit
+
+Nothing is lost when a run is cut off. Every batch commits the row, the `edits` entry and
+the `decisions.jsonl` line in one transaction before the next batch is fetched, so the
+worst case per agent is one batch of 20 episodes never started. There is no partial state
+and nothing to clean up.
+
+```bash
+python3 -m admin.api.label status     # how far it got, and the confidence split
+git status --short                    # decisions.jsonl is the only thing agents touch
+```
+
+Then relaunch. Briefs are at `scratchpad/lab-{0..7}.md`, one per slice, each capped at
+10 batches so agents stop cleanly and write their report rather than being killed
+mid-thought. Those reports are where every vocabulary fix has come from.
+
+### Metering
+
+**One wave of 8 agents ≈ 1,600–2,400 episodes.** At 25% done, roughly 9–13 waves remain.
+
+Three dials, in the order worth reaching for:
+
+1. **Fewer agents per wave.** Four instead of eight halves the burn rate and costs
+   nothing but elapsed time — the slices are independent, so any subset makes progress.
+2. **Lower the batch cap.** 10 batches is set in the briefs. Five makes each agent
+   cheaper and the reports more frequent.
+3. **Prioritise instead of completing.** The queue is already ordered so the most useful
+   episodes come first: arcless shows, then biggest. Stopping at 60% would still cover
+   every show where subjects are the only navigation.
+
+**What not to do:** raise `--limit` above 20 per call. The batch size is what keeps each
+episode getting read rather than skimmed, and the last pass's failure mode was exactly
+that — 150 characters per episode and no time spent on any of them.
+
+### If a wave is cut off mid-flight
+
+Nothing. Check `status`, relaunch. The `NOT EXISTS` clause in `pending()` means an episode
+already labelled is never offered again, so a relaunched agent picks up cleanly with no
+duplicate work and no gap.
