@@ -10,6 +10,31 @@ sitting; everything below is resumable from the commands in the last section.
 went from 2,073 to 27,484. A second pass added **1,685 episodes** the import never had —
 three shows sat at exactly 800, which was a cap, and 7am alone was short 1,278.
 
+**Job 0, the second time.** The first re-read reported success and had silently skipped a
+quarter of the catalog. `feeds.py` took the **first** non-empty of `<itunes:summary>`,
+`<description>`, `<content:encoded>` — and many publishers use `itunes:summary` as a
+one-line teaser. 99% Invisible offers 178 characters there and 1,070 in `<description>`.
+`refresh_episodes` never overwrites with less, so the comb read the teaser, correctly
+declined to shrink the 299-character import text, and logged a clean run. Two rules that
+are each right alone; the second hid the first.
+
+Fixed to take the **fullest** description, measured on the prose so HTML markup does not
+win on tag bytes. Re-combed: **10,587 descriptions grew**, catalog average now 1,195.
+
+| show | before | after |
+|---|---|---|
+| Zeit Verbrechen | 446 | 3,292 |
+| Behind the Bastards | 299 | 2,184 |
+| Swindled | 283 | 1,408 |
+| 99% Invisible | 299 | 1,070 |
+| 7am | 299 | 1,041 |
+
+**The cost:** roughly **2,250 episodes were relabelled on ~299 characters** before the fix,
+including all 781 of 99% Invisible — the show that scored 0.45 agreement last time. They
+are under-read rather than wrong. Redoing them means a fresh `run_id`; `pending()` will
+not re-serve them under `2026-07-relabel-v176`. Not done, and it is a decision, not an
+oversight.
+
 **Jobs 1–3 — arcs.** The A8 cascade had never been run on this catalog; `catalog/build/arcs.py`
 reads an older `segment` field. Running it, then reading the 66 shows it cannot parse:
 
@@ -28,7 +53,7 @@ nothing reads them again.
 flagged as not actually stories. Every flagged arc carries its reason in
 `arcs.description`.
 
-**Vocabulary 148 → 179.** Driven by evidence, not guesswork — see below.
+**Vocabulary 148 → 182.** Driven by evidence, not guesswork — see below.
 
 ## The gate needs restating
 
@@ -51,6 +76,18 @@ same gap it gets acted on.
 4. **When a Government Falls** — was defined as *"outside the US and UK"*, which is
    geography relative to a reader this catalog does not have. A UK prime minister
    resigning had nowhere to go.
+
+5. **The Job** (`heist-and-robbery`) — five agents, five different weak fallbacks.
+6. **Killed by a Stranger** (`stranger-homicide`) — four agents. The vocabulary covered
+   partner, family, neighbour, serial, for-hire and unsolved, so a single solved killing by
+   a stranger had nowhere to go. Casefile and Zeit Verbrechen are full of them.
+7. **A Shooting and What Followed** (`mass-shooting`) — five agents. A spree was landing on
+   `serial-offender`, whose definition is a pattern *across time*, which is the opposite
+   shape.
+
+The tell each time was not agreement about the gap. It was **disagreement about the
+fallback** — five agents reaching for five different wrong shelves means the shelf they
+want does not exist.
 
 Two candidates were **declined** and that matters as much: an abusive-relationship subject
 (real but only 2% of its parent, folded into a definition instead) and an industry-sector
