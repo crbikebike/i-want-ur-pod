@@ -123,6 +123,30 @@ def _text(node, *paths) -> str | None:
     return None
 
 
+def _richest(node, *paths) -> str | None:
+    """The fullest description an item offers, not the first one it happens to carry.
+
+    Publishers do not agree on which element holds the real text. Many use
+    `<itunes:summary>` as a one-line teaser and put the episode notes in `<description>`
+    or `<content:encoded>`; others do the reverse. Taking the first non-empty element
+    therefore reads a teaser for a whole show at a time and never notices -- 99% Invisible
+    offers 178 characters in `<itunes:summary>` and 1,070 in `<description>`.
+
+    Measured on the prose rather than the markup, so an HTML-wrapped `<content:encoded>`
+    does not win on tag bytes alone.
+    """
+    best, best_len = None, 0
+    for p in paths:
+        found = node.find(p)
+        text = (found.text or "").strip() if found is not None else ""
+        if not text:
+            continue
+        n = len(plain_text(text, 100_000) or "")
+        if n > best_len:
+            best, best_len = text, n
+    return best
+
+
 def _int(value: str | None) -> int | None:
     try:
         return int(str(value).strip())
@@ -190,7 +214,7 @@ def parse(xml: str, url: str = "") -> Feed:
             guid=guid,
             title=re.sub(r"\s+", " ", title).strip(),
             published_at=_published(item),
-            description=_text(item, f"{ITUNES}summary", "description", f"{CONTENT}encoded"),
+            description=_richest(item, f"{ITUNES}summary", "description", f"{CONTENT}encoded"),
             season=_int(_text(item, f"{ITUNES}season")),
             episode_number=_int(_text(item, f"{ITUNES}episode")),
             episode_type=_text(item, f"{ITUNES}episodeType"),

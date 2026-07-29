@@ -213,3 +213,34 @@ def test_a_hyphen_is_not_a_hiding_place():
     """The first version matched "ad choices" and missed "ad-choices", which is what
     iHeart actually writes on every episode it publishes."""
     assert feeds.plain_text("The story. Learn more about your ad-choices at x.com") == "The story."
+
+
+# The description a publisher means is not always the first one they list. 99% Invisible
+# puts a 178-character teaser in <itunes:summary> and 1,070 characters of notes in
+# <description>, so reading the first non-empty element labelled 781 episodes on a teaser
+# -- and `refresh_episodes`, which never overwrites with less, kept the truncated import
+# text and hid the miss.
+TEASER_AND_NOTES = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+ <channel><title>Show</title>
+  <item>
+   <title>Teaser first</title><guid>a</guid>
+   <itunes:summary>A one-line teaser.</itunes:summary>
+   <description>The full notes, which run considerably longer than the teaser does and
+   are what a labelling pass actually needs to read.</description>
+  </item>
+  <item>
+   <title>Markup does not win on tag bytes</title><guid>b</guid>
+   <itunes:summary>This summary is the longest prose of the three by a clear margin, and
+   it should win even though the encoded block carries more raw characters.</itunes:summary>
+   <content:encoded>&lt;p&gt;&lt;strong&gt;&lt;em&gt;Short.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</content:encoded>
+  </item>
+ </channel>
+</rss>"""
+
+
+def test_the_fullest_description_wins_not_the_first_one_listed():
+    first, second = feeds.parse(TEASER_AND_NOTES).episodes
+    assert first.description.startswith("The full notes")
+    assert second.description.startswith("This summary is the longest")
