@@ -53,7 +53,16 @@ nothing reads them again.
 flagged as not actually stories. Every flagged arc carries its reason in
 `arcs.description`.
 
-**Vocabulary 148 → 182.** Driven by evidence, not guesswork — see below.
+**Vocabulary 148 → 198.** Driven by evidence, not guesswork — see below. Every one of the
+20 subjects added during the relabel has been used; none is dead weight. The heaviest are
+`film-career-biography` (107), `founder-biography` (100), `political-persecution` (85) and
+`heist-and-robbery` (85); the lightest are `offshore-secrecy` (4) and `talking-about-music`
+(2), both added late with little left to catch.
+
+One subject was **retired**: `music-scene-history`, a duplicate of `music-scene-movement`
+in the same theme. Two agents said they could not tell them apart, and one named the
+consequence — two agents labelling the same episode differently registers as *disagreement*
+rather than as the vocabulary fault it is.
 
 ## The gate needs restating
 
@@ -126,13 +135,18 @@ subject. No new subject fixes it. A `kind` field on episodes would.
 
 ## Still open
 
-**Politician profiles.** No subject for a political figure's career, where `celebrity-life`
-covers everyone else's. Three mentions; clears the bar. Not added yet.
-
 **Format, not subject.** Year-end roundups, podcast-recommendation episodes, cross-promo
 bundles, trivia segments, Business Wars roundtables, Revisionist History essays. Four
 agents, same conclusion: *"these aren't about a subject so much as a format the vocabulary
-doesn't model."* No new subject fixes this. A `kind` field on episodes would.
+doesn't model."* No new subject fixes this. A `kind` field on episodes would. By the end of
+the run this had drawn roughly fifteen reports and is the single largest unaddressed thing.
+
+**No `group` entity kind, and it is blocked rather than forgotten.** Four agents filed a
+band, the Provisional IRA, Hezbollah, the CIA, the NRA and the White Helmets as `company`.
+`entities.kind` carries a CHECK constraint over six literal values; SQLite can only widen a
+CHECK by rebuilding the table, which the additive-only migration rule forbids. So it is a
+decision about that rule. `test_a_group_is_still_refused_and_this_is_a_known_gap` is what
+flips when someone makes it.
 
 **One primary is sometimes wrong.** Cautionary Tales pairs two unrelated stories per
 episode; This American Life bundles three to five. Forcing one primary is real information
@@ -159,14 +173,14 @@ python3 -m admin.api.arcname status      # 0 — done
 python3 -m admin.api.arcfind status      # 0 — done
 ```
 
-**Where it stopped: 28,004 of 29,215 labelled, 1,211 left, in four slices.**
+**Where it stopped: 28,044 of 29,215 labelled — 96% — with 1,171 left in four slices.**
 
 | slice | left |
 |---|---|
-| 3 | 375 |
+| 3 | 355 |
 | 1 | 328 |
 | 4 | 278 |
-| 0 | 230 |
+| 0 | 210 |
 
 Slices 2, 5, 6 and 7 are finished. The run stopped on a **subagent cap** — 200 spawned in
 one session — not on tokens and not on anything being wrong. Raise
