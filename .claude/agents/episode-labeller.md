@@ -56,6 +56,12 @@ correct outcome for a coin flip. A wrong `high` ships.
 The real-world things the episode is about. Kinds: `case`, `company`, `person`, `place`,
 `era`, `work`.
 
+There is **no `group` kind** and it is a known gap, not an oversight. A band, an armed
+group, an agency or a charity — the Provisional IRA, Hezbollah, the CIA, the NRA, New Order
+— has to go somewhere, and `company` is the least-wrong of the six. Use it, and do not
+spend time looking for a better one. Widening the list needs a schema decision a person has
+to make.
+
 These power "explain the connection" — two shows linked because both covered Theranos is a
 connection a person accepts instantly. So: **the things the episode is genuinely about**,
 not everything it mentions. Three at most, usually one or two, sometimes none.

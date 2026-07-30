@@ -47,6 +47,13 @@ RUN_ID = "2026-07-relabel-v176"
 
 ROLES = {"primary", "secondary"}
 CONFIDENCE = {"low", "medium", "high"}
+# Four agents have asked for a `group` kind, filing a band, the Provisional IRA, Hezbollah,
+# the Weather Underground, the CIA, the NRA, the White Helmets and a street gang as
+# `company` and each saying it was the least-wrong option. They are right -- a company has
+# owners and a balance sheet and none of those do -- but this set is not where it is
+# enforced. `entities.kind` carries a CHECK constraint naming these six, and SQLite can
+# only widen a CHECK by rebuilding the table, which the additive-only migration rule
+# forbids. Adding `group` is therefore a decision about that rule, not a one-line change.
 ENTITY_KINDS = {"case", "company", "person", "place", "era", "work"}
 
 # A guard, not an economy. Behind the Bastards carries one description of 81,700

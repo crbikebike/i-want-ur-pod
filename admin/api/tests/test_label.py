@@ -143,6 +143,21 @@ def test_an_unknown_entity_kind_is_refused(db, log):
     assert got["labelled"] == 0 and "vehicle" in got["skipped"][0]
 
 
+def test_a_group_is_still_refused_and_this_is_a_known_gap(db, log):
+    """Four agents filed a band, the Provisional IRA, the CIA and a street gang as
+    `company`, each calling it the least-wrong option. They are right that it is wrong --
+    the kind shows on the card, so "company: Provisional IRA" is a visible error.
+
+    It is not fixed, and this test pins why rather than pretending otherwise.
+    `entities.kind` carries a CHECK constraint over six values, SQLite can only widen a
+    CHECK by rebuilding the table, and the additive-only migration rule forbids that. When
+    someone decides to relax the rule, this test is what flips."""
+    got = label.record(db, [lab(1, [sub("grief")],
+                                entities=[{"name": "Provisional IRA", "kind": "group"}])],
+                       decisions_path=log)
+    assert got["labelled"] == 0 and "group" in got["skipped"][0]
+
+
 def test_one_bad_episode_does_not_lose_the_good_ones(db, log):
     """A batch of 20 with one malformed answer must not throw away the other 19."""
     got = label.record(db, [lab(1, [sub("grief")]),
