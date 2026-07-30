@@ -108,8 +108,14 @@ rather than in the vocabulary.
 | An act of kindness that changed a life | 4 | Kind World | `friendship`, `personal-transformation`, `chronic-illness` |
 | Bail, pretrial detention, the release lever | 3 | Uncuffed, 70 Million, Ear Hustle | `prison-life`, `reentry-after-prison` |
 | A non-musician performer's life — Houdini, Annie Oakley, Andre the Giant | 2 | Disgraceland, Hollywoodland | `celebrity-life`, `history-retold` |
-| Anti-LGBTQ bias killing, where `racial-violence` covers the race case | 1 | Bondi Badlands | `unsolved-murder` + `protest-movement` |
+| Anti-LGBTQ bias killing, where `racial-violence` covers the race case | 2 | Bondi Badlands | `unsolved-murder` + `protest-movement` / `queer-life` |
 | A big company that is not a tech company | 2 | Land of the Giants | `tech-industry-power`, even for Disney |
+| Wildlife and rare-plant trafficking | 2 | Bad Seeds, Criminal | `regulatory-failure`, `informant-and-undercover` |
+
+The hate-crime one is worth a second look because it is an **asymmetry**, not just a hole:
+`racial-violence` gives a bias motive a home when the bias is racial, and nothing does when
+it is not. That is the same shape as the women-only scope I wrote into
+`gendered-constraint` and had to widen a few hours later.
 
 **The one that is not a vocabulary gap.** Recurring news-analysis shows — Elon Inc., The
 Journal, Foundering, Background Briefing, Trump Inc. — drew something like fifteen reports
