@@ -93,6 +93,31 @@ Two candidates were **declined** and that matters as much: an abusive-relationsh
 (real but only 2% of its parent, folded into a definition instead) and an industry-sector
 split of Business Wars (divides by industry, so it has no natural end).
 
+## For the redo pass: gaps that cleared the bar too late
+
+These reached three or more independent reports **after** the shows that produce them were
+already fully labelled. A new subject would have caught nothing, so none was added. They
+are not open questions — the evidence is in — they are work for the pass that relabels.
+
+Check `left_to_do` before adding any of them; that check is the whole reason they are here
+rather than in the vocabulary.
+
+| gap | reports | the shows | where it landed instead |
+|---|---|---|---|
+| A military commander or a monk — Crazy Horse, Joan of Arc, Ungern-Sternberg, Ikkyu Sojun | 2 | History on Fire | `pioneer-biography`, `war-and-its-conduct` |
+| An act of kindness that changed a life | 4 | Kind World | `friendship`, `personal-transformation`, `chronic-illness` |
+| Bail, pretrial detention, the release lever | 3 | Uncuffed, 70 Million, Ear Hustle | `prison-life`, `reentry-after-prison` |
+| A non-musician performer's life — Houdini, Annie Oakley, Andre the Giant | 2 | Disgraceland, Hollywoodland | `celebrity-life`, `history-retold` |
+| Anti-LGBTQ bias killing, where `racial-violence` covers the race case | 1 | Bondi Badlands | `unsolved-murder` + `protest-movement` |
+| A big company that is not a tech company | 2 | Land of the Giants | `tech-industry-power`, even for Disney |
+
+**The one that is not a vocabulary gap.** Recurring news-analysis shows — Elon Inc., The
+Journal, Foundering, Background Briefing, Trump Inc. — drew something like fifteen reports
+across the run. An agent put it exactly: `tech-industry-power` became the default for Elon
+Inc. even on episodes about custody battles and platform moderation. This is the same
+family as trailers, clip shows and legal explainers: the *format* is the problem, not the
+subject. No new subject fixes it. A `kind` field on episodes would.
+
 ## Still open
 
 **Politician profiles.** No subject for a political figure's career, where `celebrity-life`
