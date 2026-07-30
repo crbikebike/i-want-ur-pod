@@ -159,6 +159,20 @@ python3 -m admin.api.arcname status      # 0 — done
 python3 -m admin.api.arcfind status      # 0 — done
 ```
 
+**Where it stopped: 28,004 of 29,215 labelled, 1,211 left, in four slices.**
+
+| slice | left |
+|---|---|
+| 3 | 375 |
+| 1 | 328 |
+| 4 | 278 |
+| 0 | 230 |
+
+Slices 2, 5, 6 and 7 are finished. The run stopped on a **subagent cap** — 200 spawned in
+one session — not on tokens and not on anything being wrong. Raise
+`CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`, or start a fresh session, and relaunch those four
+briefs. Two waves finishes it.
+
 **Set the subagent model to Sonnet explicitly on every launch.** The plan's locked
 decision is *"Ceiling stays Sonnet, never Opus."*
 
