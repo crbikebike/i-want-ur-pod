@@ -261,7 +261,16 @@ def main(argv: list[str] | None = None) -> int:
 
     rec = sub.add_parser("record", help="write labels back")
     rec.add_argument("file", type=Path)
-    rec.add_argument("--model", default="claude-sonnet-5")
+    # A default here is a *claim* about what ran, not a measurement of it, and it will be
+    # believed later. 25,317 rows once asserted claude-sonnet-5 because this default said
+    # so while Opus was actually doing the reading -- the labeller agent pins Sonnet in its
+    # frontmatter, but the waves were launched against the general-purpose agent type, so
+    # the frontmatter never applied. Launch via `subagent_type: episode-labeller` and the
+    # default is true. Launch any other way and it silently is not.
+    # `edits.restate_label_model` is the repair if it happens again.
+    rec.add_argument("--model", default="claude-sonnet-5",
+                     help="what actually read the episodes; the default assumes the "
+                          "episode-labeller agent type, which pins Sonnet")
 
     sub.add_parser("status", help="how many episodes are left")
 

@@ -619,6 +619,72 @@ def refresh_episodes(
     return {"longer": longer, "durations": filled, "unchanged": unchanged}
 
 
+def restate_label_model(
+    conn: sqlite3.Connection,
+    *,
+    run_id: str,
+    model: str,
+    on_or_after: str,
+    before: str | None = None,
+    actor: str,
+    note: str,
+    decisions_path: Path | None = None,
+) -> dict:
+    """Correct which model a batch of labels was actually produced by.
+
+    `label_episodes` takes the model as a caller-supplied string, and `label.py record`
+    defaults it. That default is right until the thing running the pass is not what the
+    default says -- and then 36,401 rows assert a provenance nobody checked. It happened:
+    the labeller agent definition pins Sonnet in its frontmatter, waves were launched
+    against the general-purpose agent type instead, so the frontmatter never applied and
+    Opus wrote rows stamped `claude-sonnet-5`.
+
+    The `model` column exists so runs can be compared against each other. A column that
+    quietly lies is worse than an empty one, so correcting it is a catalog write and comes
+    through the door like any other.
+
+    Bounded by time on purpose. Only the rows whose provenance is actually known should be
+    restated; where it is genuinely unknown, the right move is to leave it and say so
+    rather than guess a value that reads as fact.
+    """
+    at = _now()
+    window = [run_id, on_or_after]
+    clause = "run_id = ? AND at >= ?"
+    if before:
+        clause += " AND at < ?"
+        window.append(before)
+
+    was = conn.execute(
+        f"SELECT model, count(*) FROM episode_labels WHERE {clause} GROUP BY model",
+        window).fetchall()
+    rows = sum(n for _, n in was)
+    if not rows:
+        return {"restated": 0, "was": {}}
+
+    try:
+        conn.execute(f"UPDATE episode_labels SET model = ? WHERE {clause}", [model, *window])
+        conn.execute(
+            "INSERT INTO edits (at, actor, entity_type, entity_key, field, before, after, note) "
+            "VALUES (?,?,?,?,?,?,?,?)",
+            (at, actor, "episode", f"{run_id}/*", "label-model",
+             json.dumps({m: n for m, n in was}), model,
+             f"{note} ({rows} rows restated)"))
+        path = decisions_path or DECISIONS
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps({
+                "at": at, "actor": actor, "entity": "episode", "key": f"{run_id}/*",
+                "field": "label-model", "before": {m: n for m, n in was}, "after": model,
+                "rows": rows, "onOrAfter": on_or_after, "before_ts": before, "note": note,
+            }, ensure_ascii=False) + "\n")
+            fh.flush()
+    except Exception:
+        conn.rollback()
+        raise
+    conn.commit()
+    return {"restated": rows, "was": {m: n for m, n in was}}
+
+
 def undo(conn: sqlite3.Connection, edit_id: int, *, decisions_path: Path | None = None) -> Edit:
     """Put a field back the way it was.
 

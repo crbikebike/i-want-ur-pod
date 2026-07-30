@@ -571,3 +571,59 @@ def test_a_retired_subject_records_why(db, log):
                 after="duplicate of another subject in the same theme", decisions_path=log)
     assert db.execute("SELECT deleted_reason FROM subjects WHERE id=?",
                       (sid,)).fetchone()[0] == "duplicate of another subject in the same theme"
+
+
+# `label_episodes` takes the model as a caller-supplied string and `label.py record`
+# defaults it, so the column asserts a provenance nobody checks. It went wrong: the
+# labeller agent pins Sonnet in its frontmatter, waves were launched against the
+# general-purpose agent type instead, and Opus wrote 25,317 rows stamped claude-sonnet-5.
+# The column exists so runs can be compared; one that quietly lies is worse than an empty
+# one, so correcting it comes through the door.
+
+
+def labels(db, n, at, model="claude-sonnet-5", run_id="r"):
+    for i in range(n):
+        eid = db.execute("INSERT INTO episodes (show_id, guid, title) VALUES (1,?,?)",
+                         (f"g-{at}-{i}", f"Ep {i}")).lastrowid
+        db.execute("INSERT INTO episode_labels (episode_id, subject_id, run_id, role, "
+                   "confidence, model, at) VALUES (?,1,?,'primary','high',?,?)",
+                   (eid, run_id, model, at))
+    db.commit()
+
+
+def test_a_misattributed_run_can_be_restated(db, log):
+    labels(db, 3, "2026-07-29T01:00:00+00:00")
+    got = edits.restate_label_model(db, run_id="r", model="claude-opus-5",
+                                   on_or_after="2026-07-29", actor="human",
+                                   note="ran on the wrong agent type", decisions_path=log)
+    assert got == {"restated": 3, "was": {"claude-sonnet-5": 3}}
+    assert db.execute("SELECT DISTINCT model FROM episode_labels").fetchone()[0] == "claude-opus-5"
+
+
+def test_rows_outside_the_window_keep_their_recorded_model(db, log):
+    """Where provenance is genuinely unknown, leaving it and saying so beats guessing a
+    value that then reads as fact."""
+    labels(db, 2, "2026-07-28T01:00:00+00:00")
+    labels(db, 3, "2026-07-29T01:00:00+00:00")
+    edits.restate_label_model(db, run_id="r", model="claude-opus-5",
+                              on_or_after="2026-07-29", actor="human", note="x",
+                              decisions_path=log)
+    assert db.execute("SELECT count(*) FROM episode_labels WHERE model='claude-sonnet-5'"
+                      ).fetchone()[0] == 2
+
+
+def test_restating_leaves_an_edit_carrying_what_it_was(db, log):
+    labels(db, 3, "2026-07-29T01:00:00+00:00")
+    edits.restate_label_model(db, run_id="r", model="claude-opus-5",
+                              on_or_after="2026-07-29", actor="human", note="x",
+                              decisions_path=log)
+    row = db.execute("SELECT before, after, note FROM edits WHERE field='label-model'").fetchone()
+    assert "claude-sonnet-5" in row[0] and row[1] == "claude-opus-5" and "3 rows" in row[2]
+    assert "label-model" in log.read_text()
+
+
+def test_restating_nothing_is_not_an_edit(db, log):
+    assert edits.restate_label_model(db, run_id="nope", model="m", on_or_after="2026-01-01",
+                                    actor="human", note="x",
+                                    decisions_path=log)["restated"] == 0
+    assert db.execute("SELECT count(*) FROM edits WHERE field='label-model'").fetchone()[0] == 0

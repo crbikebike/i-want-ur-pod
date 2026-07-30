@@ -128,6 +128,16 @@ python3 -m admin.api.arcname status      # 0 — done
 python3 -m admin.api.arcfind status      # 0 — done
 ```
 
+**Launch the waves as the `episode-labeller` agent type.** Its frontmatter pins
+`model: sonnet`, which is the locked decision in the plan — *"Ceiling stays Sonnet, never
+Opus."* Launched as a general-purpose agent the frontmatter never applies, the session
+model does the reading, and `label.py record` still stamps `claude-sonnet-5`. That
+happened for **25,317 rows on 2026-07-29**, which cost far more than the plan budgeted and
+left the `model` column asserting something false. Those rows have been restated to
+`claude-opus-5` through `edits.restate_label_model`. The 11,084 rows from 2026-07-28 are
+deliberately left as `claude-sonnet-5`: what ran them is genuinely unknown, and a guess
+would read as fact.
+
 The relabel runs as waves of eight agents keyed on `id % 8`. Each does 200–300 episodes
 before running out of room; relaunch against whatever `remaining` reports. Briefs are at
 `scratchpad/lab-{0..7}.md`, and the agent definition is
