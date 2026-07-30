@@ -262,15 +262,15 @@ def main(argv: list[str] | None = None) -> int:
     rec = sub.add_parser("record", help="write labels back")
     rec.add_argument("file", type=Path)
     # A default here is a *claim* about what ran, not a measurement of it, and it will be
-    # believed later. 25,317 rows once asserted claude-sonnet-5 because this default said
-    # so while Opus was actually doing the reading -- the labeller agent pins Sonnet in its
-    # frontmatter, but the waves were launched against the general-purpose agent type, so
-    # the frontmatter never applied. Launch via `subagent_type: episode-labeller` and the
-    # default is true. Launch any other way and it silently is not.
-    # `edits.restate_label_model` is the repair if it happens again.
+    # believed later. 25,317 rows once asserted claude-sonnet-5 because this default said so
+    # while Opus was doing the reading. The trap is worth naming precisely:
+    # `.claude/agents/episode-labeller.md` carries `model: sonnet`, but those files are not
+    # registered as agent types here, so that line has never bound anything. The model must
+    # be set on the subagent launch itself; nothing in this repo can enforce it.
+    # `edits.restate_label_model` is the repair when it goes wrong anyway.
     rec.add_argument("--model", default="claude-sonnet-5",
-                     help="what actually read the episodes; the default assumes the "
-                          "episode-labeller agent type, which pins Sonnet")
+                     help="what actually read the episodes -- pass it if the launcher did "
+                          "not set the subagent model to Sonnet")
 
     sub.add_parser("status", help="how many episodes are left")
 

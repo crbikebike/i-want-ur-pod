@@ -128,15 +128,25 @@ python3 -m admin.api.arcname status      # 0 — done
 python3 -m admin.api.arcfind status      # 0 — done
 ```
 
-**Launch the waves as the `episode-labeller` agent type.** Its frontmatter pins
-`model: sonnet`, which is the locked decision in the plan — *"Ceiling stays Sonnet, never
-Opus."* Launched as a general-purpose agent the frontmatter never applies, the session
-model does the reading, and `label.py record` still stamps `claude-sonnet-5`. That
-happened for **25,317 rows on 2026-07-29**, which cost far more than the plan budgeted and
-left the `model` column asserting something false. Those rows have been restated to
-`claude-opus-5` through `edits.restate_label_model`. The 11,084 rows from 2026-07-28 are
-deliberately left as `claude-sonnet-5`: what ran them is genuinely unknown, and a guess
-would read as fact.
+**Set the subagent model to Sonnet explicitly on every launch.** The plan's locked
+decision is *"Ceiling stays Sonnet, never Opus."*
+
+The trap: **`.claude/agents/*.md` are not registered as agent types in this environment.**
+`.claude/agents/episode-labeller.md` carries `model: sonnet` in its frontmatter and that
+line has never taken effect — asking for `subagent_type: episode-labeller` fails with
+"agent type not found". Those files are documentation of the contract, not configuration
+that binds a model. The same is true of `arc-finder`, `arc-namer`, `vocab-splitter` and
+`fit-analyst`.
+
+So the model has to be set on the launch call itself. Miss it and the session model does
+the reading while `label.py record` stamps its `claude-sonnet-5` default regardless. That
+happened for **25,317 rows on 2026-07-29** — far over budget, and the `model` column
+asserting something false. Restated to `claude-opus-5` through
+`edits.restate_label_model`.
+
+The 11,084 rows from 2026-07-28 are left as `claude-sonnet-5`. Since the agent type has
+never been reachable, those were probably Opus too — but "probably" is not a provenance,
+and inventing one is the failure this section exists to prevent.
 
 The relabel runs as waves of eight agents keyed on `id % 8`. Each does 200–300 episodes
 before running out of room; relaunch against whatever `remaining` reports. Briefs are at
