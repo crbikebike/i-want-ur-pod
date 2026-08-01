@@ -1,7 +1,14 @@
-# Phase 3 handoff — 2026-07-27
+# Phase 3 handoff — 2026-07-27, updated 2026-08-01
 
-Written mid-run. The relabel is not finished and does not need to be finished in one
-sitting; everything below is resumable from the commands in the last section.
+**The relabel is finished. `python3 -m admin.api.label status` reports `remaining: 0`.**
+
+29,215 episodes across 275 kept shows, all labelled against the v176 vocabulary. No kept
+show is untouched. Final confidence split: **19,005 high, 22,624 medium, 4,996 low**.
+
+The body below was written mid-run on 2026-07-27 and is kept as the record of how the pass
+was reasoned about. Where it has been overtaken by events, the correction sits next to it
+rather than replacing it — the mistakes are the useful part. Start at *Where it finished*
+for the current state.
 
 ## Done
 
@@ -102,6 +109,57 @@ Two candidates were **declined** and that matters as much: an abusive-relationsh
 (real but only 2% of its parent, folded into a definition instead) and an industry-sector
 split of Business Wars (divides by industry, so it has no natural end).
 
+## Where it finished — 2026-08-01
+
+The last 1,011 episodes were labelled in two waves of Sonnet 5 agents: four agents on
+slices 0, 1, 3 and 4, then two more to empty the tail. 1,643 subject rows. Every row
+carries `model = claude-sonnet-5` and that is true rather than a default stamped over Opus
+work — the model was set on each launch call, per the section below.
+
+| slice | left at 07-30 | now |
+|---|---|---|
+| 1 | 328 | 0 |
+| 4 | 278 | 0 |
+| 0 | 210 | 0 |
+| 3 | 355 | 0 |
+
+**Two gaps from the table below were acted on**, both having reached a third independent
+report during the final waves:
+
+- **`anti-queer-violence` ("Killed for Being Queer")** — added, subject 200, in the same
+  theme as `racial-violence` and splitting from it. Four agents hit it on *Bondi Badlands*
+  and filed it four different ways — `unsolved-murder`, `cold-case-reopened`,
+  `stranger-homicide`, `vanishing-and-institutional-failure` — each naming the
+  investigation and none naming the motive. That scatter is the tell this document
+  describes: disagreement about the fallback, not about the gap.
+
+  Widening `racial-violence` to cover any bias motive was the other option and matches the
+  house pattern — `mass-shooting` widened past firearms, `presidential-power` past the US.
+  Declined, because those widenings removed a distinction nobody browses by and this one
+  would collapse a distinction people do. `racial-violence` carries 404 episodes.
+
+- **Wildlife and rare-plant trafficking** — declined as a subject, named in
+  `organised-crime`'s definition instead (edit 5093). Three reports, but the catalog behind
+  it is six to ten episodes: *Bad Seeds*, Radiolab's Rhino Hunter, Snap Judgment's Chasing
+  Thunder, a Bear Grease anti-poaching episode, *The Outlaw Ocean*. That is
+  `offshore-secrecy` territory. Same handling as the abusive-relationship candidate.
+
+**`anti-queer-violence` has zero episodes on it.** It was created after the pass that would
+have used it. Nothing routes to it until someone relabels the episodes that argued for it —
+the five in the proposal's `examples` are the known starting set. A subject with no episodes
+is exactly the dead weight the vocabulary has avoided so far, so this is the first thing to
+close.
+
+**One known-wrong label.** A *Growing Joy with Plants* cross-promo sits on `food-and-drink`.
+The agent that wrote it said so in the same breath — plants are not food. One row.
+
+**A trap for the next person running waves.** The top-level `remaining` field returned by
+`label next` counts **all eight slices**, not the caller's. Two agents in the first wave
+read it as their own and reported wrong remaining counts — one claimed 236 left in a slice
+that had 78. Their labelling was fine; only their arithmetic was wrong. Telling the second
+wave to ignore the field and treat an empty `episodes` array as the only end-of-slice
+signal fixed it completely. Say it explicitly in the launch prompt.
+
 ## For the redo pass: gaps that cleared the bar too late
 
 These reached three or more independent reports **after** the shows that produce them were
@@ -117,9 +175,13 @@ rather than in the vocabulary.
 | An act of kindness that changed a life | 4 | Kind World | `friendship`, `personal-transformation`, `chronic-illness` |
 | Bail, pretrial detention, the release lever | 3 | Uncuffed, 70 Million, Ear Hustle | `prison-life`, `reentry-after-prison` |
 | A non-musician performer's life — Houdini, Annie Oakley, Andre the Giant | 2 | Disgraceland, Hollywoodland | `celebrity-life`, `history-retold` |
-| Anti-LGBTQ bias killing, where `racial-violence` covers the race case | 2 | Bondi Badlands | `unsolved-murder` + `protest-movement` / `queer-life` |
+| ~~Anti-LGBTQ bias killing, where `racial-violence` covers the race case~~ | ~~2~~ → 4 | Bondi Badlands | **Resolved 08-01: `anti-queer-violence` added** |
 | A big company that is not a tech company | 2 | Land of the Giants | `tech-industry-power`, even for Disney |
-| Wildlife and rare-plant trafficking | 2 | Bad Seeds, Criminal | `regulatory-failure`, `informant-and-undercover` |
+| ~~Wildlife and rare-plant trafficking~~ | ~~2~~ → 3 | Bad Seeds, Criminal | **Resolved 08-01: named in `organised-crime`** |
+
+Both resolved rows are kept rather than deleted, because the thing worth remembering is
+that each sat at 2 reports for days and cleared the bar only in the last waves. The rule
+held: neither was added on the strength of the first two.
 
 The hate-crime one is worth a second look because it is an **asymmetry**, not just a hole:
 `racial-violence` gives a bias motive a home when the bias is racial, and nothing does when
@@ -173,29 +235,24 @@ python3 -m admin.api.arcname status      # 0 — done
 python3 -m admin.api.arcfind status      # 0 — done
 ```
 
-**Where it stopped: 28,044 of 29,215 labelled — 96% — with 1,171 left in four slices.**
+**Where it stopped on 07-30: 28,044 of 29,215 labelled — 96% — with 1,171 left in four
+slices.** Two waves on 08-01 cleared the rest. `remaining` is now 0 and there is nothing to
+relaunch; the rest of this section is kept for the next pass that needs waves.
 
-| slice | left |
-|---|---|
-| 3 | 355 |
-| 1 | 328 |
-| 4 | 278 |
-| 0 | 210 |
-
-Slices 2, 5, 6 and 7 are finished. The run stopped on a **subagent cap** — 200 spawned in
-one session — not on tokens and not on anything being wrong. Raise
-`CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION`, or start a fresh session, and relaunch those four
-briefs. Two waves finishes it.
+The 07-30 run stopped on a **subagent cap** — 200 spawned in one session — not on tokens
+and not on anything being wrong.
 
 **Set the subagent model to Sonnet explicitly on every launch.** The plan's locked
 decision is *"Ceiling stays Sonnet, never Opus."*
 
-The trap: **`.claude/agents/*.md` are not registered as agent types in this environment.**
-`.claude/agents/episode-labeller.md` carries `model: sonnet` in its frontmatter and that
-line has never taken effect — asking for `subagent_type: episode-labeller` fails with
-"agent type not found". Those files are documentation of the contract, not configuration
-that binds a model. The same is true of `arc-finder`, `arc-namer`, `vocab-splitter` and
-`fit-analyst`.
+The trap, as written on 07-27: **`.claude/agents/*.md` are not registered as agent types in
+this environment.** Asking for `subagent_type: episode-labeller` failed with "agent type
+not found", so those files were documentation of the contract, not configuration.
+
+**This changed by 08-01.** `episode-labeller` is now registered and reachable, and all six
+agents in the final waves ran as that type. Set the model on the launch call anyway. The
+frontmatter `model: sonnet` may or may not bind depending on how the type was resolved, and
+"may or may not" is not a provenance — which is the whole lesson of the paragraph below.
 
 So the model has to be set on the launch call itself. Miss it and the session model does
 the reading while `label.py record` stamps its `claude-sonnet-5` default regardless. That
@@ -203,14 +260,18 @@ happened for **25,317 rows on 2026-07-29** — far over budget, and the `model` 
 asserting something false. Restated to `claude-opus-5` through
 `edits.restate_label_model`.
 
-The 11,084 rows from 2026-07-28 are left as `claude-sonnet-5`. Since the agent type has
-never been reachable, those were probably Opus too — but "probably" is not a provenance,
-and inventing one is the failure this section exists to prevent.
+The 11,084 rows from 2026-07-28 are left as `claude-sonnet-5`. Since the agent type was not
+reachable on that date, those were probably Opus too — but "probably" is not a provenance,
+and inventing one is the failure this section exists to prevent. Leave them.
 
 The relabel runs as waves of eight agents keyed on `id % 8`. Each does 200–300 episodes
-before running out of room; relaunch against whatever `remaining` reports. Briefs are at
-`scratchpad/lab-{0..7}.md`, and the agent definition is
-`.claude/agents/episode-labeller.md`.
+before running out of room. Relaunch against a **per-slice** count —
+`id % 8 = n AND NOT EXISTS(...)` — never against the `remaining` field, which spans all
+eight slices and misled two agents on 08-01. Briefs are at
+`docs/briefs/lab-{0..7}.md`, and the agent definition is
+`.claude/agents/episode-labeller.md`. (Until 08-01 this document pointed at
+`scratchpad/lab-{0..7}.md`, which never existed in the repo — the briefs lived only in a
+session-scoped temp dir and were one cleanup away from being lost. They are committed now.)
 
 Queue order is deliberate: **arcless shows first**, then biggest first. The pass will not
 finish in one sitting, so whatever fraction completes should be the fraction where
@@ -232,7 +293,7 @@ python3 -m admin.api.label status     # how far it got, and the confidence split
 git status --short                    # decisions.jsonl is the only thing agents touch
 ```
 
-Then relaunch. Briefs are at `scratchpad/lab-{0..7}.md`, one per slice, each capped at
+Then relaunch. Briefs are at `docs/briefs/lab-{0..7}.md`, one per slice, each capped at
 10 batches so agents stop cleanly and write their report rather than being killed
 mid-thought. Those reports are where every vocabulary fix has come from.
 
