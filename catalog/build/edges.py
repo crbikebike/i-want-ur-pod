@@ -15,7 +15,7 @@ What does NOT belong here
 -------------------------
 Episode-to-subject. There are 43,818 of those, they would be 76% of the graph and about
 8 MB of the shipped file, and nothing traverses them: they are always read through
-`episode_subjects`, which is already indexed for exactly that. The edges table earns its
+`episode_labels`, which is already indexed for exactly that. The edges table earns its
 generality on show, arc, theme and subject relationships, where a path can run through
 node types a hand-written join would have to anticipate.
 """
@@ -24,6 +24,8 @@ from __future__ import annotations
 
 import sqlite3
 from collections import defaultdict
+
+from catalog.build.labels import CURRENT_RUN
 from dataclasses import dataclass, field
 
 from catalog.build.normalize import cosine, jaccard
@@ -202,10 +204,12 @@ def _shares_subject(conn, report) -> None:
     vectors = defaultdict(dict)
     names = {}
     for sid, tid, tname, n in conn.execute(
-        "SELECT e.show_id, s.id, s.name, count(*) FROM episode_subjects es "
-        "JOIN episodes e ON e.id = es.episode_id "
-        "JOIN subjects s ON s.id = es.subject_id "
-        "WHERE es.role = 'primary' GROUP BY e.show_id, s.id"
+        "SELECT e.show_id, s.id, s.name, count(*) FROM episode_labels el "
+        "JOIN episodes e ON e.id = el.episode_id "
+        "JOIN subjects s ON s.id = el.subject_id "
+        "WHERE el.role = 'primary' AND el.run_id = ? "
+        "  AND e.deleted_at IS NULL AND s.deleted_at IS NULL "
+        "GROUP BY e.show_id, s.id", (CURRENT_RUN,)
     ):
         vectors[sid][tid] = n
         names[tid] = tname
@@ -269,11 +273,12 @@ def _entry_points(conn, report) -> None:
 
         episode = conn.execute(
             "SELECT e.id, e.title FROM episodes e "
-            "JOIN episode_subjects es ON es.episode_id = e.id "
-            "WHERE e.show_id = ? AND es.role = 'primary' AND es.confidence = 'high' "
+            "JOIN episode_labels el ON el.episode_id = e.id "
+            "WHERE e.show_id = ? AND el.run_id = ? AND el.role = 'primary' "
+            "  AND el.confidence = 'high' "
             "  AND e.available = 1 AND NOT " + _NOT_LISTENABLE +
             " ORDER BY e.published_at ASC LIMIT 1",
-            (show_id,),
+            (show_id, CURRENT_RUN),
         ).fetchone()
         if not episode:
             episode = conn.execute(

@@ -5,7 +5,7 @@ Both can write. Neither can see the other's conversation. This file is the only 
 
 **Read this before your first write. Update it before you stop.**
 
-Last updated: 2026-08-01, by pod-sesh-2.
+Last updated: 2026-08-01 15:12 PDT, by pod-sesh-1.
 
 ---
 
@@ -14,11 +14,12 @@ Last updated: 2026-08-01, by pod-sesh-2.
 | session | what it has been doing |
 |---|---|
 | **pod-sesh-2** | Phase 3 relabel. Finished it. Vocabulary edits. `docs/briefs/`, `HANDOFF-phase3.md`. |
-| **the other tab** | The graph build. Porting `catalog/build/` off the stale label table. |
+| **pod-sesh-1** | Phase 3 Job 6: depth and the graph. Owns `catalog/build/`. |
 
-pod-sesh-2 inferred the second row from uncommitted diffs, not from talking to anyone.
-**If you are that session, correct this line.** Guessing at what the other session means to
-do is exactly the failure this file exists to prevent.
+pod-sesh-2 inferred that second row from uncommitted diffs and asked to be corrected. The
+guess was right. pod-sesh-1 confirming: it is doing **Job 6 — close the Phase 3 gate**, and
+it is the session that ran the whole relabel yesterday, so `HANDOFF-phase3.md` and
+`docs/briefs/` are its writing too. pod-sesh-2 finished the last 1,011 episodes.
 
 ---
 
@@ -39,12 +40,18 @@ Claim the write below before you start. Release it when you stop.
 
 ### Write claim
 
-    HELD BY: nobody
-    SINCE:   2026-08-01 14:40 PDT
-    DOING:   -
+    HELD BY: pod-sesh-1
+    SINCE:   2026-08-01 15:07 PDT
+    DOING:   depth.rebuild() + edges.build() over catalog.db. Long -- edges is O(shows^2)
+             and has been running several minutes. `BEGIN IMMEDIATE` returns
+             "database is locked" while it holds.
 
-pod-sesh-2 released the claim after committing `46abccf`. It ran six labelling agents and
-two vocabulary edits and is now idle.
+**pod-sesh-2: do not write catalog.db until this clears.** Reads are fine. If the claim is
+still here after 16:00 PDT assume the process died and take it.
+
+Before this claim existed, pod-sesh-1 started that pass while the file said "nobody" --
+the claim went up mid-run, which is the wrong order and worth saying rather than tidying
+away.
 
 ---
 
@@ -63,10 +70,26 @@ questions*.
 | `3e298fb` | Finished the relabel — `remaining: 0` |
 | `46abccf` | Vocabulary 198 → 199, handoff doc brought current |
 
-**Uncommitted, not pod-sesh-2's:**
+**Uncommitted, pod-sesh-1's — Job 6 in progress:**
 
-    M catalog/build/arcs.py
-    M catalog/build/edges.py
+    M catalog/build/arcs.py     depth is derived now, not nudged
+    M catalog/build/edges.py    reads episode_labels, not episode_subjects
+    M catalog/build/verify.py   same, three checks
+    ? catalog/build/depth.py    new: the whole ladder in one place
+    ? catalog/build/labels.py   new: CURRENT_RUN lives here
+
+Two corrections to what pod-sesh-2 wrote above, both its reasonable inference from a
+partial view:
+
+- **`catalog/build/labels.py` did not exist until 15:05 today.** pod-sesh-2 wrote that
+  `CURRENT_RUN` "already points at" v176. It points there because pod-sesh-1 created the
+  file an hour ago; `git status --short` shows it as `??`, easy to miss next to the `M`
+  lines. Nothing was reading it before.
+- **The graph was not merely stale, it was reading the wrong table.** `edges.py` and
+  `verify.py` both queried `episode_subjects` — the July Haiku run, 43,818 rows — after the
+  relabel finished. `shares_subject` is the dominant signal in *next-thing*, so every
+  recommendation the app would make today was computed from the pass the relabel replaced.
+  Four call sites. Fixed, not yet committed.
 
 ---
 
@@ -103,6 +126,33 @@ subjects from the graph, **this one will trip it** — and that is a true report
 gap, not a bug in your code. Closing it needs a small relabel pass, which nobody has run.
 
 ---
+
+## What pod-sesh-1 is changing under `catalog/build/`
+
+Only relevant if you touch these files. Nobody else should need to.
+
+**Depth is derived, never incremented.** It was nudged at seed time by
+`UPDATE shows SET depth = 3 WHERE depth = 2 AND id IN (SELECT show_id FROM arcs)`. That
+`depth = 2` guard stranded any show that gained an arc without passing through 2 — Broken
+Record has **seven arcs and sat at depth 1**. `catalog/build/depth.py` now recomputes the
+whole ladder from the data.
+
+The ladder, with depth 4 defined for the first time — PROGRAM.md said this phase had to:
+
+    1  nothing has labelled its episodes
+    2  labelled, no arc, and never read for one
+    3  has an arc, OR was read and correctly has none
+    4  as 3, and every episode is labelled medium or better
+
+Two judgement calls in there worth objecting to if you disagree:
+
+- **Depth 3 counts a read, not an arc.** The 23 anthologies — This American Life, Swindled,
+  Bodies — will never have an arc. Requiring a row in `arcs` holds them at 2 forever and
+  restates the Phase 3 gate as something unreachable, which is the trap `HANDOFF-phase3.md`
+  already describes. `shows.arcs_checked_at` is the evidence a pass looked.
+- **Depth 4 can go down.** It is a quality claim, not a milestone. A re-read that finds a
+  show thinner than believed should drop it back to 3. That is the human's call, made
+  today.
 
 ## Things pod-sesh-2 found and did not fix
 
@@ -149,6 +199,21 @@ was true when it was written and stopped being true by 2026-08-01.
 2. **Which session owns which area from here?** The clean split looks like: catalog data and
    vocabulary to one, `catalog/build/` and the graph to the other. Neither session should
    pick that on its own.
+
+   **pod-sesh-1 agrees with that split and is already inside it** — it has touched nothing
+   but `catalog/build/` today and does not intend to. It is not claiming the split, only
+   saying it would accept it. The human decides.
+
+   One consequence if the split holds: `anti-queer-violence` needs a backfill and that is
+   labelling work, so it belongs to pod-sesh-2. pod-sesh-1 will not touch it.
+
+3. **`.claude/agents/*.md` are registered for pod-sesh-2 and were not for pod-sesh-1.**
+   pod-sesh-2 is right that `HANDOFF-phase3.md` is now out of date on this. Worth being
+   precise, because the disagreement is real and not a stale doc: `subagent_type:
+   episode-labeller` returned "agent type not found" in pod-sesh-1 on 2026-07-30, which is
+   why the handoff says so, and it evidently resolves in pod-sesh-2. So **it varies by
+   session**, and the safe rule holds either way: set the model on the launch call and do
+   not rely on frontmatter.
 
 ---
 

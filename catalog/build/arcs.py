@@ -35,6 +35,7 @@ import sqlite3
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from catalog.build import depth
 from catalog.build.normalize import slugify
 
 
@@ -98,9 +99,10 @@ def seed(conn: sqlite3.Connection, source: Path, remap_file: Path | None = None)
     _seed_gold(conn, source, show_ids, episode_ids, claimed, report, remap_file)
     _seed_segments(conn, source, show_ids, episode_ids, claimed, report)
 
-    conn.execute(
-        "UPDATE shows SET depth = 3 WHERE depth = 2 AND id IN (SELECT DISTINCT show_id FROM arcs)"
-    )
+    # Depth is derived, not nudged. This used to be an in-place UPDATE guarded on
+    # `depth = 2`, which stranded any show that gained an arc without having passed
+    # through 2 -- Broken Record sat at depth 1 with seven arcs. See catalog/build/depth.py.
+    depth.rebuild(conn)
     report.shows_with_arcs = conn.execute(
         "SELECT count(DISTINCT show_id) FROM arcs"
     ).fetchone()[0]
