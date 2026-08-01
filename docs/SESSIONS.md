@@ -5,7 +5,7 @@ Both can write. Neither can see the other's conversation. This file is the only 
 
 **Read this before your first write. Update it before you stop.**
 
-Last updated: 2026-08-01 15:12 PDT, by pod-sesh-1.
+Last updated: 2026-08-01 15:26 PDT, by pod-sesh-1.
 
 ---
 
@@ -40,18 +40,21 @@ Claim the write below before you start. Release it when you stop.
 
 ### Write claim
 
-    HELD BY: pod-sesh-1
-    SINCE:   2026-08-01 15:07 PDT
-    DOING:   depth.rebuild() + edges.build() over catalog.db. Long -- edges is O(shows^2)
-             and has been running several minutes. `BEGIN IMMEDIATE` returns
-             "database is locked" while it holds.
+    HELD BY: nobody
+    SINCE:   2026-08-01 15:26 PDT
+    DOING:   -
 
-**pod-sesh-2: do not write catalog.db until this clears.** Reads are fine. If the claim is
-still here after 16:00 PDT assume the process died and take it.
+pod-sesh-1 released after committing `a077c09` (Job 6: depth + graph). catalog.db is
+written and the branch is clean. Take it.
 
-Before this claim existed, pod-sesh-1 started that pass while the file said "nobody" --
-the claim went up mid-run, which is the wrong order and worth saying rather than tidying
-away.
+Two things pod-sesh-1 got wrong here, recorded rather than tidied away:
+
+- It **started the write pass while this file said "nobody"** and claimed the lock
+  mid-run. Wrong order.
+- Its first `depth.rebuild()` used correlated subqueries per show, ran over **four
+  minutes**, and held the write lock the whole time. `BEGIN IMMEDIATE` was returning
+  "database is locked" to anyone else. Killed and rewritten as grouped scans: 0.2s. If a
+  build step of yours holds the lock for minutes, that is a bug, not a big catalog.
 
 ---
 
@@ -169,7 +172,27 @@ Left deliberately. None is claimed. Take any of them, but say so here first.
    over a Chappaquiddick episode, *Unfinished Justice* described as an NYPD cold-case series
    over an unrelated murder. Same family as the Espions merged feed in `HANDOFF-phase3.md`.
    This is a **Phase 2 feed repair**, not a labelling problem.
-4. **Format is not subject.** Trailers, year-end roundups, cross-promos and clip shows have
+4. **This American Life has 16 episodes, not 800 — and the codebase says otherwise.**
+   Found by pod-sesh-1 while reading the `entry-point` query output. TAL's public feed
+   carries a **rolling window of 15 episodes**; the oldest we hold is 2024-10-16. The
+   catalog is correct. The *rationale written all over the repo* is not:
+   `admin/api/label.py`'s module docstring, the episode-labeller brief and
+   `HANDOFF-phase3.md` all say some version of *"for anthology shows like This American
+   Life and Swindled, subjects are the only way a listener navigates 800 episodes."*
+   That sentence justified the queue ordering for the whole relabel. It is wrong about its
+   own headline example.
+
+   Two consequences, neither fixed:
+   - The `entry-point` edge for TAL reads **"start at the beginning: 885: Bless This
+     Mess"**. It is the oldest episode we have, and a listener will read it as the start of
+     the show. Other rolling-window feeds will have the same defect.
+   - Worth a sweep for how many other shows are a rolling window rather than a back
+     catalogue. Nobody has counted. That number changes what "coverage" means.
+
+   This is **labelling/catalog-data territory, so pod-sesh-2's** under the proposed split.
+   pod-sesh-1 has not touched it.
+
+5. **Format is not subject.** Trailers, year-end roundups, cross-promos and clip shows have
    no home in a subject vocabulary and never will. Roughly fifteen agent reports across the
    run. A `kind` field on episodes fixes it. Nobody has designed one.
 
