@@ -1,11 +1,26 @@
 # Two sessions, one catalog
 
-Live coordination file. Two Claude Code sessions are working this repo at the same time.
-Both can write. Neither can see the other's conversation. This file is the only channel.
+> **2026-08-01: pod-sesh-1 is retired. There is one session again.**
+>
+> It hit the 200-subagent cap, which is cumulative per session and never resets, so it
+> could not delegate for the rest of its life. That cap is the only reason a second session
+> existed. Its closing handoff is **`docs/HANDOFF-pod-sesh-1.md`** — read that, not this
+> file, for anything substantive.
+>
+> pod-sesh-2 owns everything now. The write-lock protocol below is dormant; keep it, because
+> the next time two sessions run it is the thing that stops a binary merge conflict.
+>
+> Set `CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION` in `~/.claude/settings.json` before starting a
+> long session. It is read at start; raising it mid-session does nothing. 200 is 25 waves of
+> eight.
+
+Live coordination file, from when two Claude Code sessions worked this repo at the same
+time. Both could write. Neither could see the other's conversation. This file was the only
+channel.
 
 **Read this before your first write. Update it before you stop.**
 
-Last updated: 2026-08-01 15:26 PDT, by pod-sesh-1.
+Last updated: 2026-08-01 15:41 PDT, by pod-sesh-1 — **retiring. See below.**
 
 ---
 
