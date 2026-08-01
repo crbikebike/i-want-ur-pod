@@ -1,0 +1,61 @@
+{
+ "slug": "con",
+ "title": "The Con",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "audio-drama-mystery",
+   "count": 3
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "2d0dab1f-27d3-42cd-8123-45a378ad91a0",
+   "subjects": [
+    {
+     "subject": "audio-drama-mystery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "ac86005a-1dd4-427a-a483-b56d296d8603",
+   "subjects": [
+    {
+     "subject": "audio-drama-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "0bc6bef3-867f-41cd-8d69-a7f4dbff0cd0",
+   "subjects": [
+    {
+     "subject": "audio-drama-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "73c5572e-4245-4fa3-922c-8e9cbc4888ce",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

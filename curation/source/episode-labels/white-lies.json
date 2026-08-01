@@ -1,0 +1,427 @@
+{
+ "slug": "white-lies",
+ "title": "White Lies",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "immigration-and-borders",
+   "count": 4
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 4
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 3
+  },
+  {
+   "slug": "racial-violence",
+   "count": 3
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "cc694081-b5fe-47e4-b730-51193a721175",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Reeb",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "09a03741-0fb3-4705-adf4-650a834da269",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Reeb",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "224060e6-0a3c-4c50-bb9d-1bcd9674cbd9",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Reeb",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6f65189f-8af9-41c0-aea9-f25cc2d563be",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Reeb",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6364d1c0-fc9a-49c3-a2ba-4b938057260f",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Reeb",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e867aba6-536c-46ff-8cf3-a143898a0691",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jimmie Lee Jackson",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Rev. James Reeb",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8709b6d2-fdfc-4226-a075-6d080ed3e7b3",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Reeb",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "008ff8e5-da86-4647-9f7e-5bdc75494d37",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Reeb",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d72fc29e-7c0e-4d9b-974a-5a905c024706",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "9a91b32c-0f9b-4d1d-801d-04a5cd8401de",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7ec1112a-4d6e-45c1-9fa2-8db19e37980b",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariel boatlift",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "72559820-c453-4742-be63-90a01b118e86",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fidel Castro",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mariel boatlift",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "21236241-fdf9-421a-ac49-36078e086f26",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariel boatlift",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "3a313e8c-7e31-43b1-92c0-7afd87e312ea",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "d39bd440-884f-4415-a91d-98a01b390cba",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "499a2dff-d5bc-47cd-8130-550bac5ab65e",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariel boatlift",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ea34da74-9dbd-43ea-a559-dcfe1f65e482",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cuba",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

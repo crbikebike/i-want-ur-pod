@@ -1,0 +1,276 @@
+{
+ "slug": "floodlines",
+ "title": "Floodlines",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "natural-disaster",
+   "count": 8
+  },
+  {
+   "slug": "engineering-failure",
+   "count": 1
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 1
+  },
+  {
+   "slug": "racial-violence",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "4c9dd5ea-5d9d-11ea-bf93-23f6b2d141e8",
+   "subjects": [
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Katrina",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1b9a2984-6410-11ea-848c-1333f0416261",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Katrina",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4086cfcc-6410-11ea-ace7-6731ac3ea15c",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Katrina",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ae1dd2ba-6410-11ea-8941-e72a7fa76d86",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "engineering-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Katrina",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a6876bd4-640f-11ea-88e9-b30417ae9ac5",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Katrina",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "cb0d7c28-640f-11ea-8941-afbb51c301c6",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Katrina",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "60953f60-6410-11ea-965c-fbd88405aed4",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Katrina",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "120cc8c6-6411-11ea-8941-77313e9d1b95",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "e494cc18-6410-11ea-88e9-d73e6f034a10",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Katrina",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "17f019e0-b6da-11ed-b463-27485ee63d66",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Martin Luther King Jr.",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "74cbdd2c-5ce4-11f0-9920-6b086e2e2f46",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Katrina",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

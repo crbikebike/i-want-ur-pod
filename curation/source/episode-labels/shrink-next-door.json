@@ -1,0 +1,113 @@
+{
+ "slug": "shrink-next-door",
+ "title": "The Shrink Next Door",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "charismatic-con",
+   "count": 3
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/U1rkY018AJqIRfU5xMWZN22JXhgxNz_6czMZ8JFWCIM",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Isaac Herschkopf",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Joe Nocera",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/sLjQ-jjZ3PDJoaS5xYI6gxj0Mrl16ULH7ZU5Egv8jjM",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Isaac Herschkopf",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/zmsimg86sL9HXVWRZp5PA2Vb5jsMzy7oSje81VKSOzI",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/cO_8V8QKUuNwi2wDYZYvWI2knRfIlayZQyMfmGbQPDk",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/loST686DsW_wwjpKnw21kG6ADYB_WeVCSjtnEhp1MEU",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Arthur Knight",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Nicholas Rossi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

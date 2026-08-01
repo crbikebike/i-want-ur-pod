@@ -1,0 +1,409 @@
+{
+ "slug": "over-my-dead-body",
+ "title": "Over My Dead Body",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "murder-for-hire",
+   "count": 4
+  },
+  {
+   "slug": "intimate-partner-homicide",
+   "count": 3
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 3
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 2
+  },
+  {
+   "slug": "missing-person",
+   "count": 2
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 1
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/bnd_dXWcti6J0ZpJZeDloRzWNBi-d2RWfrj9kkwHwB0",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/4rQM1Yd923knR9848crXDeVJourwgtXpLZOnySpg8Fs",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Hk0byKPsiwzREECbV6eGMG5NNgKjIAJjvsTNhqOlYDs",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carole Baskin",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Joe Exotic",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/jbBrE_P4D2U07Hf2RJBvkzl5M0amgjChUq119xvMfdo",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carole Baskin",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Joe Exotic",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/LFxz4p4fRWIQAGLiuNUFdJ48qZJbFeswcuRrnmz8s1s",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fox Lake, Illinois",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/-0Ctj3Df3cKOXYgRLTSHPGUaqlS7MA1GrXLFVX8XYUE",
+   "subjects": [
+    {
+     "subject": "employee-embezzlement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles \"GI Joe\" Gliniewicz",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Fox Lake, Illinois",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/FMFIi0p42_fWl2BjCcGM39DSHOrNhAyEKp2tEArbNG8",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joe Exotic",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "John Cameron Mitchell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0mWkYWl3C21Nyc46k2eQTEt7RGA7GHqFL-j-P3RyEII",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carole Baskin",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Joe Exotic",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/pHws0wSD_t2TXfN6MuoP_wV-aJYlkcGyvAc36GryPR0",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carole Baskin",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Joe Exotic",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/aBvLleXvDS7J5Xsf1yR_eDWq18yJ-UB34gufUDt3n9U",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/4RDz4zm9inmVryd_AFVk_xoP_N4vlJUX-LVJDWn8fcw",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Denise Williams",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mike Williams",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/q3GmYewNBQgbb8nj7nAjlZFIESrjVMpSfMmbMUo1RyE",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Uvj_AIZJnvNLoUAMXaarzm14QQLEfRnvJXfVUAxIsI4",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/YmxH6wVyVjSXieEDFy8OO4Y0czWjet4f_025rrfNmgg",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/WmiDBJI0T9CCEoiTjtCgH6xfxfe0u__B-HkvEBfJGHg",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mike Williams",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/5zxxIXt9-B65qnB8CgHCy9G-wsiLTkSfIOt9drNl4Ho",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Db0EQuT5aJJcaerAYx3AWychjYMaW9RSmE5TRKbk438",
+   "subjects": [
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dan Taberski",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/8z5L5yIT3AMJvgnqiVtKC-mNVjvU-5w--LMB7rK2ch8",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicholas Rossi",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

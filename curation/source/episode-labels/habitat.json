@@ -1,0 +1,186 @@
+{
+ "slug": "habitat",
+ "title": "The Habitat",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "space-exploration",
+   "count": 9
+  },
+  {
+   "slug": "climate-change",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "ae12b3d8-3e8f-11e8-a50f-f35a64d2f68a",
+   "subjects": [
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "HI-SEAS",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c155c982-f7b6-11e7-87eb-c766d809abe6",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NASA",
+     "kind": "company",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "b4cf4724-f7b6-11e7-a78f-63319aa07d12",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "HI-SEAS",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c604cfa0-f7b6-11e7-943c-bb50193d60e8",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "82e0bb4e-f7b6-11e7-a5b5-fb035eaa0a4a",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "fabcea2a-f7b6-11e7-b63a-27e70e7685e5",
+   "subjects": [
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "HI-SEAS",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5e2dcb2e-4190-11e8-9338-4fbea8344a0a",
+   "subjects": [
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NASA",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ba68e3ac-f7b6-11e7-9d38-bfa3ec066cea",
+   "subjects": [
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "ce365126-f7b6-11e7-baee-a768c7a1499c",
+   "subjects": [
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6a899ef4-08ce-11eb-ae96-bbbc4dc08fc8",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

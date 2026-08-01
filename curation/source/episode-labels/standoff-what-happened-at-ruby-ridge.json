@@ -1,0 +1,136 @@
+{
+ "slug": "standoff-what-happened-at-ruby-ridge",
+ "title": "Standoff: What Happened at Ruby Ridge?",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "extremist-movement",
+   "count": 4
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "5b768c04-dcf6-11f0-9691-c3e5f0f18072",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ruby Ridge siege",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5b76b698-dcf6-11f0-9691-2f7a4cbcd061",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Randy Weaver",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruby Ridge siege",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5b76ce94-dcf6-11f0-9691-87da7edc588e",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Randy Weaver",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5b76c4ee-dcf6-11f0-9691-a334ba6c7b84",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ruby Ridge",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5b76a2b6-dcf6-11f0-9691-5b332b1fe217",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Randy Weaver",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2529 @@
+{
+ "slug": "someone-knows-something",
+ "title": "Someone Knows Something",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "missing-person",
+   "count": 47
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 17
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 11
+  },
+  {
+   "slug": "racial-violence",
+   "count": 8
+  },
+  {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 7
+  },
+  {
+   "slug": "terrorism-and-aftermath",
+   "count": 5
+  },
+  {
+   "slug": "child-victim",
+   "count": 2
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 2
+  },
+  {
+   "slug": "intimate-partner-homicide",
+   "count": 2
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 2
+  },
+  {
+   "slug": "body-never-found",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "serial-offender",
+   "count": 1
+  },
+  {
+   "slug": "stranger-homicide",
+   "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160301_91379.mp3",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160301_94905.mp3",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160307_17938.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Eastern Ontario",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160314_45034.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160321_93290.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160327_36456.mp3",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160403_13694.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160410_55922.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Holmes Lake",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160417_14667.mp3",
+   "subjects": [
+    {
+     "subject": "paranormal-investigation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160424_83438.mp3",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160502_61258.mp3",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20160512_85214.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20161114_16493.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20161121_21282.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20161128_55941.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Lavoie",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20161205_97350.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20161207_64692.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20161212_67058.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20161219_39083.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20170102_32347.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Lavoie",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20170109_89960.mp3",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Lavoie",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20170116_32089.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Lavoie",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20170123_57909.mp3",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20170130_94388.mp3",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Lavoie",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20170206_93221.mp3",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20170213_11477.mp3",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Lavoie",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Sheryl Sheppard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20170918_84289.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20171024_84971.mp3",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20171108_34551.mp3",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20171109_39091.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles Moore and Henry Dee",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Jerry Mitchell",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Mississippi",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20171110_43948.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles Moore",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Henry Dee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20171107_62679.mp3",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20171106_20376.mp3",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles Marcus Edwards",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/sks_20171111_57616.mp3",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles Marcus Edwards",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "James Ford Seale",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-3eb011a7-50df-4f6c-8dc9-4602517065d3",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles Moore and Henry Dee",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "James Ford Seale",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-75718bcf-9e85-4138-9559-a0035ba74014",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Greavette",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-925bf09e-da4c-45d0-aa2f-2b0a3f04cd33",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Greavette",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-59baaeee-c0d1-43a1-bba2-a594eb9b8fae",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Greavette",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-6e107bb3-bbcc-43c8-8bc5-68dced6dd371",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Greavette",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-f1249b54-ba35-4c9a-b05f-6b398c92541c",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Greavette",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-e526a603-7ab1-4c08-8825-9ede4a0871b7",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "sks-1aae4e61-786d-42c8-b876-45f6559a5ad8",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien McNaughton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-362055d5-88ef-49b5-b448-71d5192a2917",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "sks-817073bc-49f6-4705-89f4-9221290961b5",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-f89fe4c3-b1c4-4d55-a369-4f7264fa1782",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-ba4c857b-f844-4fea-af89-2d2837bbed37",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-d168da25-dcab-4f72-a24f-293874a5e185",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Helen Betty Osborne",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-4fdcd626-712e-4a5d-acd2-031c4d5aa0ff",
+   "subjects": [
+    {
+     "subject": "stranger-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-1a05f6ea-b4e0-4f3a-9047-d6b9be3426f1",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-c7ee98df-cc09-41d8-a4a6-2f15e60b5558",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-a73351ab-59e2-4fb1-9c79-53a6809fca41",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-189a524e-a646-4704-9f23-c2af7895fa63",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "sks-f660e0fb-fdef-4c5f-90be-4d7302b17a04",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-876112a5-d9d6-4922-b46d-a92b3a4d00e0",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-867f571e-3687-46cb-941e-24fb638829a6",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Patrick Sumner",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-252db74c-afd2-42cb-96ed-d15e98f9681f",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Trevor Brown",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-51e49891-c281-4c24-a3e7-fe5f1f4f326a",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-bc154c5d-63d9-4af8-af88-9a963a16b900",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles Moore",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Henry Dee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-81825693-9b9d-4d98-a33e-1a207560611b",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Izzett Jr.",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-b67f9094-ecf7-45fd-90ee-ea05393cfa19",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Izzett Jr.",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-43daaf98-13a8-4253-8bc2-d124c07598ec",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Izzett Jr.",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-e49a8693-0105-4a59-9192-a6e3b8cd10ea",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Izzett Jr.",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-ff136106-fa6d-4574-973e-e0acf248455b",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "sks-a6f1d60a-c6a4-46b7-b84b-48998c36b85e",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Izzett Jr.",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-cfaf2f85-a342-422f-900f-ddf8b4031220",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kerrie Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-cd3d1518-94d1-43fe-bdaf-3cd5e4015ced",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Melanie Ethier",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-b24bcc5e-49da-46f4-b052-833130b5b172",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Melanie Ethier",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-22c05119-9b10-4f2e-adba-86e6aee80945",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Melanie Ethier",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-f93e971c-4017-43c6-9803-97e4e539e878",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Melanie Ethier",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-97213712-ea64-4af6-bc78-70aa851938d1",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Melanie Ethier",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-e82d69ac-929b-48c9-8be3-ce24182cda94",
+   "subjects": [
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barnett Slepian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-93974993-a168-4b47-8c8d-20e13fb39019",
+   "subjects": [
+    {
+     "subject": "reproductive-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "sks-d61eb08d-5856-4224-9171-9735cb256198",
+   "subjects": [
+    {
+     "subject": "reproductive-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barnett Slepian",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-9ff44638-9a9a-48c6-b1dc-a2309403491e",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barnett Slepian",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jack Steele",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-8132869c-a872-404b-9488-d4c7112f25ea",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hugh Short",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-13e26bff-1ccd-48b0-8e2e-2d815eef4040",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barnett Slepian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-d6b8dd79-2246-4ee4-8428-8aa598bf1a0d",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "sks-f1b332fb-b404-4c61-a380-4580af44179d",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barnett Slepian",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "James Kopp",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-6512d483-f33e-4d51-9c92-ebb4dfc2bb2d",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barnett Slepian",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Diane Derzis",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Roe v. Wade",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-bf32e198-94da-4cc0-844b-1e571d015132",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nadia Atwi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-d8af76ef-9dae-45ed-960e-c84a16168e02",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nadia Atwi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-bcc43c77-8efe-4803-86f9-07c36b17a240",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nadia Atwi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-3d4155a0-58e1-4704-be4a-ffedaa135063",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angel Carlick",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-74117c88-849d-4d7f-9606-837d0d39c14f",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angel Carlick",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-298ac221-aa4c-499e-85bf-a4ed143ef216",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angel Carlick",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Wendy Carlick",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-e57be360-1b75-4b53-935c-bae128e72ecc",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angel Carlick",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-f87412d1-764a-43a7-a40a-c44792bbefa0",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angel Carlick",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-80c74bc6-3eb7-40ac-980b-d57b6a68cab1",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angel Carlick",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Whitehorse, Yukon",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-aaad3b3d-b30f-4c11-807b-bb097fdd546d",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angel Carlick",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-be5852c9-bcdf-44c3-9aa9-d2d389f4c9f6",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angel Carlick",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-cd3dbbf1-7289-46d7-9dad-d8a412dd7d1a",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Terrie Dauphinais",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-9d2eec03-9608-44f2-9b76-91ab26fdeb53",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Terrie Dauphinais",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-a6dcba2d-978c-4ae5-bc46-b07b9a5704a9",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Terrie Dauphinais",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-b4a1ecbb-1eb1-4554-942e-6ae093e02c42",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ken Dauphinais",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Terrie Dauphinais",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-1794fe6b-65fa-464b-8322-29407c7c105f",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christine Harron",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-46dbe31b-f025-4826-b6cb-5ef77aa94f56",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chrissy Harron",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-9ef10ecc-8497-4333-b721-220d9a21e1cd",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christine Harron",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-a32c3806-e61e-4ea6-9209-f34b3d6198bf",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Ringel",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-52015e3f-e28f-4aad-b273-ef5f85713dbb",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christine Harron",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-fb5a63eb-f599-49f9-9482-b5f630174b16",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "body-never-found",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christine Harron",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-682f88af-6fe3-47f7-88db-92de07fbc6a0",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jaclyn Ferland-Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-94801b2e-982e-4555-b30c-29359d5ad350",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jaclyn Ferland-Smith",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-8bc8954d-96aa-4434-888f-6b7d58c717ff",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jaclyn Ferland-Smith",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Sebastien",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "sks-c0a580b7-2040-480b-96a5-a9eb2bcc1f9b",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jaclyn Ferland-Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-702333e9-fc0c-4fdf-8d3e-722fc6873470",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jaclyn Ferland-Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-3473cfe5-6cb9-4916-aec4-8f4d176a075a",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jaclyn Ferland-Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-355823bf-0f38-4071-b98e-654c1a689bc0",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jaclyn Ferland-Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "sks-250b6cd3-6f5a-4cef-a140-5643009fe90b",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kenneth Law",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

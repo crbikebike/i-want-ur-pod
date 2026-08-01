@@ -1,0 +1,1626 @@
+{
+ "slug": "blowback",
+ "title": "Blowback",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "war-and-its-conduct",
+   "count": 49
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 13
+  },
+  {
+   "slug": "foreign-political-crisis",
+   "count": 6
+  },
+  {
+   "slug": "history-retold",
+   "count": 3
+  },
+  {
+   "slug": "colonial-legacy",
+   "count": 2
+  },
+  {
+   "slug": "talking-about-film",
+   "count": 2
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "media-criticism",
+   "count": 1
+  },
+  {
+   "slug": "nuclear-age",
+   "count": 1
+  },
+  {
+   "slug": "war-crimes-accountability",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "d06bcc6f-18e2-4ff4-a582-ab7901791eb6",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "8249288e-be3e-4cac-9fde-ab7901791eb7",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George W. Bush",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Iraq War",
+     "kind": "era",
+     "confidence": "high"
+    },
+    {
+     "name": "Saddam Hussein",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b1d47895-1f0c-4c31-8e01-abda015c3a82",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Saddam Hussein",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "dd025cda-918b-4e31-a87d-abe200158223",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George H.W. Bush",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Gulf War",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "27f7cfad-41e8-4dbc-ac53-abe701102196",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Iraq War",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "baf7907c-7657-4ee3-bcfe-abef0145edd4",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Colin Powell",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Iraq War",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8180eb08-1781-4444-bb03-abf700109a25",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "55a3030d-f64b-4af5-9222-abfd016c5b0d",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Halliburton",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8d340c2a-538c-4936-8146-ac0401683eec",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Abu Ghraib",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "773e558e-cd29-4ef4-ad53-ac0c00098994",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Iraq War",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "73d68ca5-296c-40a5-a3b6-ac13001d39b2",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George W. Bush",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "47c8b14b-2a60-459c-af15-ac19017e36e9",
+   "subjects": [
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ISIS",
+     "kind": "company",
+     "confidence": "low"
+    },
+    {
+     "name": "Iraq War",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "975a27bb-b5dd-40da-8d04-abda01717aec",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dahr Jamail",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3ea8cc23-8dd8-4050-8cbf-abef01469224",
+   "subjects": [
+    {
+     "subject": "talking-about-film",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6dd61ee6-dbe2-43f5-aed1-abf70010e6d1",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Naomi Klein",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "61c14173-50b9-4c80-9503-ad07014784aa",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "9d0b47f1-ceef-43d1-9873-ad0e015ea02a",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cuban Missile Crisis",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bc6441c9-c36e-453d-b2d8-ad62015a63fd",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cuba",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Fulgencio Batista",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "870626b3-57fb-479c-afe9-ad69014d2725",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cuban Revolution",
+     "kind": "era",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f940ec92-af85-4309-b642-ad6f010b38c4",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John F. Kennedy",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "2d7a7837-35f9-422f-9a19-ad77014f2de0",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bay of Pigs Invasion",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "3c9a2028-81e6-4842-8747-ad7f0026a4d0",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bay of Pigs Invasion",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Operation Mongoose",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "2726ad91-9467-4482-8d90-ad86002621ed",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7ea1118b-2fda-4d12-918f-ad8d00081ad3",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cuban Missile Crisis",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "John F. Kennedy",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8ef998d7-8329-40fd-9868-ad930101a532",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fidel Castro",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0871d9d0-d894-44ba-8069-ad950186fc5e",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cuba",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "59e045a9-6787-40b7-8544-ada200c7e5f6",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Guatemala",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "0b8b7f24-d655-47cc-a007-ada2012cc63b",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7a5e4f66-3866-48dd-9188-adb0001af97a",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "b0d0525a-888d-4a09-8231-adb70109ff8e",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "1c9895e6-d143-48eb-9e74-adb7010d86e9",
+   "subjects": [
+    {
+     "subject": "nuclear-age",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "06993838-c660-4eab-b592-adc40102b128",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Operation Peter Pan",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "997020a4-087c-4d50-be6f-adcc011cb757",
+   "subjects": [
+    {
+     "subject": "talking-about-film",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "35d5b30d-a3b3-42c4-ae16-add30108c2fd",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "José Pertierra",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "27db81b9-c19a-4527-8c45-adda0112ab62",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cuba",
+     "kind": "place",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "e650eba9-96bf-45b9-b3d5-addf0161cceb",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "69e7d9b6-8e11-452f-af93-328936a1b2cc",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "0bdcdfb0-e96a-4b40-af74-7ba1ae81276d",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Korean War",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6f99345b-0280-4a08-8bd8-13a6640c1168",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "d940d7e1-cef6-447c-abc5-5c24b81fe2b7",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "74b49095-d150-404b-afed-0c855c5d8284",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Korean War",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "af59da19-8097-4658-aed2-21a707d00c0f",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Il Sung",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Korean War",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d3881815-f33c-44f7-9f09-eebcac3c5638",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Douglas MacArthur",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Korean War",
+     "kind": "era",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d8642d1e-2c17-44b7-9d35-e829019c8a14",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6451e0be-722a-48e8-9ca7-7de4ca193d77",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Douglas MacArthur",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Harry Truman",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "07845b57-79d5-4bbe-8ce5-f83946828b02",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Korean War",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6402c95a-2c41-4bab-8104-986696a32398",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "328a221f-a0ea-43e1-8240-ed8fb753b128",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "25256784-49b3-45f5-b4d9-187220c39c7f",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Soviet invasion of Afghanistan",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a9e095c5-db5b-47cf-a27f-724af84137f9",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Soviet-Afghan War",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "09027698-bb09-47bf-85bc-8e022a9e53fe",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Afghanistan",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Operation Cyclone",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "312fd74e-50e4-4fe1-a13e-c69197239432",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "fe60a8e1-388a-4615-8a8e-2c151ed054dc",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "3f4d55b5-b1b3-49ac-895d-19c2915b47b8",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "War in Afghanistan",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "88d93d1c-d89c-47f0-9253-7d66a1fa8681",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "ae75b839-2ad5-41c0-95a7-23ab5a55a173",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "1abe8625-fad8-4d9b-9b36-3493610b552e",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Taliban",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c5a5341f-0158-4d8f-8b79-114c801735bf",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cambodia",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c0f02b02-47f0-4934-bd30-6fe14dc4cd7a",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "colonial-legacy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Indochina",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c1c3746c-bad1-4849-99c9-a01c006b7ab8",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "81bf8582-6a57-4279-801d-c0c787072a73",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Henry Kissinger",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Richard Nixon",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c6485551-2177-4f85-9326-7529c6ae97ba",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cambodia",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "97b24747-0b54-45bd-9e74-ac716a91f849",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "f6187eb2-66e7-4b71-a9a7-191c546278fc",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Khmer Rouge",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a3e6b45-7c1a-40e7-9b9a-7c1a92a5bbcd",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Khmer Rouge",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "901e379d-9b6b-47fa-9838-1bcd23995bd1",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Khmer Rouge era",
+     "kind": "era",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d5bd2511-ca0a-43dc-94e5-f5e526768b51",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cambodia",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Khmer Rouge",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f6429f8c-0eee-4ca9-962d-e457affd0684",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "c8af937d-f4e1-43bc-b73f-ff7857330ffd",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "42ca6050-dee9-11f0-838f-c7e82745b7e4",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "colonial-legacy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angola",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e7e5f610-e46d-11f0-8a34-d338e7c1d9d5",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "ea79b6e0-e46e-11f0-a16a-37af7c54f59f",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "bcb36d14-e9af-11f0-98ef-b36634a1e7e0",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angola",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1076401a-e9b1-11f0-9dae-4fa45373876f",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jonas Savimbi",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5807d6d2-e9b1-11f0-8986-fba1141e40fa",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jimmy Carter",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jonas Savimbi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2064bca8-e9b2-11f0-b61c-bb4c2ece2b9b",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angola",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Jonas Savimbi",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "54bc8382-e9b2-11f0-903c-fb20908104fe",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "2cfef3ec-e9b3-11f0-a962-53c79a6343fa",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Battle of Cuito Cuanavale",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "61681000-e9b3-11f0-a309-af11e44b3702",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angola",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Jonas Savimbi",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a3036972-5b39-11f1-a44f-3373367fad13",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

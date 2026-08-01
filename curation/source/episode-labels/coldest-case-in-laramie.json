@@ -1,0 +1,61 @@
+{
+ "slug": "coldest-case-in-laramie",
+ "title": "The Coldest Case in Laramie",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "cold-case-reopened",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "25716a53-b4c1-4bd3-86b5-99888e8f8d66",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Shelli Wiley",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "50ca80dd-50c0-46f3-9ec6-fc497d2d2f7a",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Shelli Wiley",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

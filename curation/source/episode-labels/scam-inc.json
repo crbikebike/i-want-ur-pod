@@ -1,0 +1,117 @@
+{
+ "slug": "scam-inc",
+ "title": "Scam Inc",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "organised-scam-industry",
+   "count": 4
+  },
+  {
+   "slug": "management-and-leadership",
+   "count": 2
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "675c583d7e8c28e6aa2f25af",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "67a479a6340a5590cd3c44b4",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "67a4945d340a5590cd42b5ce",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "67a482959c6f7f7f286cfc9c",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "680f92ba53ed555148335df7",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6970f923a6c658f18331dfcc",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6a3152d2c26a46aaa55adde3",
+   "subjects": [
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alexis de Tocqueville",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

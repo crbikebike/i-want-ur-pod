@@ -1,0 +1,304 @@
+{
+ "slug": "welcome-to-your-fantasy",
+ "title": "Welcome to Your Fantasy",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "founder-biography",
+   "count": 9
+  },
+  {
+   "slug": "murder-for-hire",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "91c17d04-b412-11ea-b538-b70956d07a72",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4b7051e4-6a0c-11eb-9309-23b4826fa9d4",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "93c68d12-6676-11eb-a6c4-a7c961f8f104",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chippendales",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "93d9e6be-6676-11eb-a6c4-7b1f1ef58803",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nick De Noia",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "93e8b89c-6676-11eb-a6c4-534c3346fc54",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chippendales",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "93f7276a-6676-11eb-a6c4-e72c953da456",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chippendales",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "94032b46-6676-11eb-a6c4-6f34f0468b12",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chippendales",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "940f5902-6676-11eb-a6c4-07a4213fbb10",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chippendales",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "941ac21a-6676-11eb-a6c4-8ff6d7d2f396",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "94261084-6676-11eb-a6c4-abfec4827444",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9431652e-6676-11eb-a6c4-8742e3552d33",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chippendales",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Steve Banerjee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1139 @@
+{
+ "slug": "las-raras",
+ "title": "Las Raras",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "investigative-process",
+   "count": 4
+  },
+  {
+   "slug": "protest-movement",
+   "count": 4
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 3
+  },
+  {
+   "slug": "missing-person",
+   "count": 3
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 3
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 2
+  },
+  {
+   "slug": "everyday-mystery",
+   "count": 2
+  },
+  {
+   "slug": "family-secret",
+   "count": 2
+  },
+  {
+   "slug": "political-persecution",
+   "count": 2
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 2
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 2
+  },
+  {
+   "slug": "ageing-and-mortality",
+   "count": 1
+  },
+  {
+   "slug": "books-and-writing",
+   "count": 1
+  },
+  {
+   "slug": "disability-and-access",
+   "count": 1
+  },
+  {
+   "slug": "elections-and-voting",
+   "count": 1
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 1
+  },
+  {
+   "slug": "estrangement-and-reconciliation",
+   "count": 1
+  },
+  {
+   "slug": "food-and-drink",
+   "count": 1
+  },
+  {
+   "slug": "gentrification-and-housing",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "immigrant-experience",
+   "count": 1
+  },
+  {
+   "slug": "indigenous-history",
+   "count": 1
+  },
+  {
+   "slug": "mental-health",
+   "count": 1
+  },
+  {
+   "slug": "natural-disaster",
+   "count": 1
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 1
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 1
+  },
+  {
+   "slug": "relationship-remembered",
+   "count": 1
+  },
+  {
+   "slug": "survival-story",
+   "count": 1
+  },
+  {
+   "slug": "talking-about-love",
+   "count": 1
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "10b2eda7-76b6-4d58-8e94-b09e00e56e0c",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "edc8b11a-7292-48f7-abd3-b09e00e74907",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Benjamín León",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ecd8eeeb-1578-4e2d-a9b2-b09e00e811a5",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Francy Uribe",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "97e1c42d-1479-403b-ba82-b09e00e8d770",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Rezendes",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "31ba0afd-47ef-4426-8729-b09e00e963ae",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "food-and-drink",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Claudia Cossio",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "694359f2-1522-4d86-891b-b09e00e9eea3",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bellavista",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mauricio Montecinos",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "0567003f-0644-4882-9d57-b09e00ea725d",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6c104940-5d8c-4bc7-ad54-b09e00eb00cf",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alberto Fujimori",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "43598f2b-0e4b-48f0-8152-b09e010d2114",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "dc8b03dd-bbd9-4f30-bb4b-b09e010dd491",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gabriela Wiener",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6c9bea33-b0f0-4b32-83f3-b09e010e4f25",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "disability-and-access",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Patricia May",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "61579081-d97e-4ac0-8aee-b09e010fc44c",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "family-secret",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "María Luisa Portuondo",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6fbf851b-09c7-4229-ad99-b09e0111f6b3",
+   "subjects": [
+    {
+     "subject": "food-and-drink",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Francisco Vio",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "HidroAysén",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e2e6c7d2-1c4e-4e65-b8cb-b09e0112b45d",
+   "subjects": [
+    {
+     "subject": "parenting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "30c1a4b0-92a3-40f6-a4a8-b09e011338b3",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ageing-and-mortality",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tito Livio Caldas",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3967e592-0c67-430a-90b5-b09e01164d7a",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ana Baquedano",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a8aaf010-0ea3-4eea-aafe-b09e01158a72",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ana Baquedano",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1e187765-7e8d-4e7d-a6f9-b09e0116dc6c",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fernando Aceña",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f64bc032-f5ba-4a1e-a0c0-b09e011771c6",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "El Salvador",
+     "kind": "place",
+     "confidence": "low"
+    },
+    {
+     "name": "Estrella Pérez",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8c36df10-d846-4544-86ff-b09e011818c7",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "2019 Chilean protests",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8e6cd0df-d462-4b6b-9702-b09e0118bd76",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Álvaro Enciso",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4fee910f-8e25-40cf-a638-b09e0119840c",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chile",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6852960d-7d00-4500-bb26-b09e0119f6d6",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ana Teresa Fernández",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Friendship Park",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e7edf850-23d9-477b-83dd-b09e011a9d57",
+   "subjects": [
+    {
+     "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7e3b4a0d-f07f-4aea-b524-b09e011b19a2",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "family-secret",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicole Castillo",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4d905abc-5646-469e-8e26-b09f00e40e4b",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "84538221-1d74-4f63-9f6c-b09f00e5de29",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "16b90531-b6b2-402e-bbbc-b09f00fc00a4",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Daniela Sierra",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "13308631-9cbb-43f1-9687-b09f00fd8d0c",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "94362f6f-43b9-42a9-a70c-b09f00fe6bc5",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chile",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Jaime Guzmán",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f72639b5-43e7-4d20-830f-b09f00ff3837",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alex Nieto",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1ba1b1f3-e195-4094-87f1-b09f0100c45f",
+   "subjects": [
+    {
+     "subject": "talking-about-love",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "04d4ea4e-c045-448a-8cae-b09f010196d5",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bogota",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "44bb1ecf-034d-46a2-a3a6-b09f0103fa49",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "16aa25f9-2efc-4942-9c74-b09f0104d651",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christopher Gregory-Rivera",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "FBI",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Puerto Rico",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f2b9c894-d5fc-4509-a0a1-b09f0109dbd2",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "2022 Chilean constitutional referendum",
+     "kind": "case",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "af173366-ef4b-401d-9149-b110016ebeff",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carolina Calle",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6e54052c-6092-4de0-8882-b0ab00f1bc3b",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Catalina May",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "02926f95-f7e8-4d47-89df-b0b3011dcd3b",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Catalina May",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8ec8591b-5c91-4b62-8259-b0b30115638f",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Catalina May",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "352af4a6-0c44-4b51-bc04-b0ba01773b5d",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Catalina May",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "131f1dd4-7bbc-4e92-9e1d-b0ba017c28b0",
+   "subjects": [
+    {
+     "subject": "survival-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Catalina May",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a760d63a-cdcf-4b59-846a-b0c101561fb8",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "dc302711-843f-4a02-b9fa-b0c10156e4be",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "8f960580-fb5b-4126-8eec-b0c8014b2261",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "b2b96a20-82d1-4060-9dd7-b0d0000a239a",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "3524d56f-abc4-404b-841e-b23d0002ba50",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Catalina May",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "34ee8bd6-11c7-4fc6-9032-20111e7745ac",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "0daabb50-0ab4-4330-bd09-691c93e3789c",
+   "subjects": [
+    {
+     "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gaza",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Kayed Hammad",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "569796e7-98d5-4f4d-bd58-782dbcad3d7f",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pablo Neruda",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "SS Winnipeg",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

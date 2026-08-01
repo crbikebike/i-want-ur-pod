@@ -1,0 +1,61 @@
+{
+ "slug": "kids-of-rutherford-county",
+ "title": "The Kids of Rutherford County",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "juvenile-justice",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "2d74073c-f2dc-4f8d-9ac2-c980fdeee202",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rutherford County juvenile court",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b5a0fa5b-20ef-4081-9072-ece81814d971",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rutherford County",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

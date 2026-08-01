@@ -1,0 +1,295 @@
+{
+ "slug": "alabama-astronaut",
+ "title": "Alabama Astronaut",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "religious-community",
+   "count": 12
+  },
+  {
+   "slug": "religious-abuse",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "dcf9dd02-bd14-4699-9952-6c0afa74b1c0",
+   "subjects": [
+    {
+     "subject": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dennis Covington",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "178c006d-a2da-43d0-8100-62f8212d3e6e",
+   "subjects": [
+    {
+     "subject": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alan Lomax",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b377f53b-34ca-4978-95ea-5a78e231e1f7",
+   "subjects": [
+    {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Abe Partridge",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9b307cc9-ba79-459d-917c-e3b6a332e331",
+   "subjects": [
+    {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Abe Partridge",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4cb6a4cc-7b60-4f57-9358-dc289b5745c9",
+   "subjects": [
+    {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Abe Partridge",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Dennis Covington",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3d70faea-dce8-4358-a8b0-ed8c6da64543",
+   "subjects": [
+    {
+     "subject": "songwriting-craft",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cody Coots",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "127d6c74-3ab8-4bae-9a42-7023785c4d4c",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Wolford",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "20ccb500-7404-44a3-96d0-39293f749c62",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "3788c9af-a979-43ca-a568-6a446b6010c1",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jimmy Morrow",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "51df9d9e-41bb-4dcf-bfca-20708dce0048",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "fe06998e-fd36-4dd0-a0ec-5cbf919c1be7",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jamie Coots",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Jimmy Morrow",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f8ae05d2-4f7b-4f95-bb89-e0c49599cce5",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-abuse",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Glenn Summerford",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c17999b6-2dc4-42da-93ab-a53ef04477bd",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Glenn Summerford",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

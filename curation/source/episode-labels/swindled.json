@@ -1,0 +1,3613 @@
+{
+ "slug": "swindled",
+ "title": "Swindled",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "corporate-negligence",
+   "count": 27
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 16
+  },
+  {
+   "slug": "investment-fraud",
+   "count": 16
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 14
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 10
+  },
+  {
+   "slug": "environmental-contamination",
+   "count": 9
+  },
+  {
+   "slug": "bribery-and-kickbacks",
+   "count": 6
+  },
+  {
+   "slug": "engineering-failure",
+   "count": 5
+  },
+  {
+   "slug": "employee-embezzlement",
+   "count": 4
+  },
+  {
+   "slug": "political-scandal",
+   "count": 4
+  },
+  {
+   "slug": "medical-deception",
+   "count": 3
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 3
+  },
+  {
+   "slug": "religious-abuse",
+   "count": 3
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 2
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 2
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 2
+  },
+  {
+   "slug": "public-money-misused",
+   "count": 2
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 2
+  },
+  {
+   "slug": "advertising-and-persuasion",
+   "count": 1
+  },
+  {
+   "slug": "captivity-and-escape",
+   "count": 1
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
+   "slug": "community-in-conflict",
+   "count": 1
+  },
+  {
+   "slug": "cybercrime-for-profit",
+   "count": 1
+  },
+  {
+   "slug": "disaster-reconstruction",
+   "count": 1
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 1
+  },
+  {
+   "slug": "everyday-mystery",
+   "count": 1
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 1
+  },
+  {
+   "slug": "family-annihilation-and-parricide",
+   "count": 1
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 1
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 1
+  },
+  {
+   "slug": "kidnapping-and-captivity",
+   "count": 1
+  },
+  {
+   "slug": "management-and-leadership",
+   "count": 1
+  },
+  {
+   "slug": "missing-person",
+   "count": 1
+  },
+  {
+   "slug": "monopoly-and-market-power",
+   "count": 1
+  },
+  {
+   "slug": "natural-disaster",
+   "count": 1
+  },
+  {
+   "slug": "organised-crime",
+   "count": 1
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 1
+  },
+  {
+   "slug": "romance-and-catfishing",
+   "count": 1
+  },
+  {
+   "slug": "serial-offender",
+   "count": 1
+  },
+  {
+   "slug": "sex-work-and-exploitation",
+   "count": 1
+  },
+  {
+   "slug": "space-exploration",
+   "count": 1
+  },
+  {
+   "slug": "sports-scandal",
+   "count": 1
+  },
+  {
+   "slug": "surveillance-and-privacy",
+   "count": 1
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 1
+  },
+  {
+   "slug": "voluntary-disappearance",
+   "count": 1
+  },
+  {
+   "slug": "whistleblower",
+   "count": 1
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "ecb658023148d0f84bbd1dfe7f68264b",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tommy Thompson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bd6cd587a96f3ec82277543b08c9a5b9",
+   "subjects": [
+    {
+     "subject": "employee-embezzlement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dixon, Illinois",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Rita Crundwell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3a8dfc587dc741743420673c6b61e664",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eddie Tipton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f894342c9794bccfa80ada094fde86a8",
+   "subjects": [
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Love Canal",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "db52d7981f80927e84aeb62a3cdae895",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brian Wells",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6c7bbe893163af9906e193be2c093d60",
+   "subjects": [
+    {
+     "subject": "reproductive-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "dae48f12f0ecc03a5a16cbef2d1c968e",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Budd Dwyer",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "02322d0838c963355f060aaede34a2ee",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jimmy Sabatino",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9da8107507d8d1c881512e83221be42d",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bhopal",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Union Carbide",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "de1335858d66154332618a63e463435d",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Luzerne County",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1e2982084fec1e2ab8abfaafe3f353f4",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "employee-embezzlement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frank Howard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9f111082-959c-11e8-ba12-3bb912d95c7c",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-abuse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jim Bakker",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "56988b3a-959e-11e8-b657-c7def144f33e",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "monopoly-and-market-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Martin Shkreli",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "95a8a62c-95a1-11e8-a583-7345805347bb",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FIFA",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "78b25214-95a3-11e8-b583-a39e6af583d9",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Helen Brach",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Richard Bailey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d7e7a926-b23d-11e8-a106-8f774694d8e4",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "voluntary-disappearance",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Darwin",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ca9955e0-ba07-11e8-9f02-af78136daeee",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "McDonald's",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "fafb5b9e-c9ba-11e8-8b76-d360fc73c58c",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Allen Stanford",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "efc330ca-d483-11e8-a59d-db349525cbeb",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy McFarland",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Fyre Festival",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0b8ae1b6-e043-11e8-bfbb-03e6eae1bc3c",
+   "subjects": [
+    {
+     "subject": "captivity-and-escape",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tony Kiritsis",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "aded6870-e86d-11e8-84be-77bce6e73fd2",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles Ingram",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c3bc1104-f594-11e8-8e49-e3ca9184c034",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sylvia Browne",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "509a2c06-008e-11e9-b781-0fcc624826bd",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "9368992e-1113-11e9-a143-1359aac6db0d",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lou Pearlman",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0f98c2c6-1c3b-11e9-b8bc-177e421807e5",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nestlé",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6387081e-2723-11e9-b8b4-cf402a526687",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Mastromarino",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0c1182ae-3262-11e9-960f-e7b308f33bf4",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tamara Greene",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "448752d0-3d4d-11e9-a378-6bbe2f516397",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mel Weinberg",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f79c669a-4887-11e9-8be6-3b4345662e78",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Herbalife",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5084dd6e-542c-11e9-acd9-03f89c87869f",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joe Francis",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9d8483ac-9f96-11e9-9f60-8fdf67d508d8",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anna Delvey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "994cb68e-aaf8-11e9-8389-27d41dd6388c",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Simon Leviev",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5d30d6ea-b605-11e9-95b1-a71ed148917d",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Poly Implant Prothèse",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b0cda1fa-c106-11e9-8b92-1b4e8dbe8e48",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jered Threatin",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "25b2f0ec-cc01-11e9-82e6-03e94e7da3af",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "whistleblower",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Karen Silkwood",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b800e086-d713-11e9-bab2-c3324303f0c4",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Johnny Bobbitt Jr.",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f9793744-e234-11e9-a0fa-471012353d82",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tania Head",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "babb7fdc-ecfa-11e9-9ee7-eb6a3189782b",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Doug Pielsticker",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "346b2f54-f7f9-11e9-b43e-278a2b8f5b26",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Deborah Jeane Palfrey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f1b3794a-0311-11ea-9626-93002f7b5eae",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Crandall Canyon Mine",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b35b59ac-0e00-11ea-8361-4b3b0690be4c",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Samantha Azzopardi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ce7841f6-1930-11ea-a95a-db8fa2e07a18",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hunter Moore",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "de907ffe-2452-11ea-ac2e-630bccaec149",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Gignac",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9d4916aa-2f15-11ea-be24-4f75fa185437",
+   "subjects": [
+    {
+     "subject": "employee-embezzlement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jerome Jacobson",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "McDonald's",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "09b268b4-34ed-11ea-abc6-63f386a292b8",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Agriprocessors",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sholom Rubashkin",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4792476a-405c-11ea-b9fd-57d94bf9d256",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Flint water crisis",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e1665144-73c2-11ea-8f78-53f15179e4cd",
+   "subjects": [
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "df76809a-8e28-11ea-9a9d-ebfd5adc924d",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Belle Gibson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a5e6557a-9bc1-11ea-8656-d747e8e22521",
+   "subjects": [
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dan Johnson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d355c034-a889-11ea-9f3b-33ee39bfd724",
+   "subjects": [
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "public-money-misused",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "990abb80-b312-11ea-a474-bf381646aa5b",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Martin Frankel",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3841eac2-bf2d-11ea-8aa0-8fd05854f8c4",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "United Fruit Company",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9e749f20-c972-11ea-9642-bb7523dbd3ed",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7c273754-d541-11ea-8cf2-3b8483c44379",
+   "subjects": [
+    {
+     "subject": "sports-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tim Donaghy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4b251472-dea7-11ea-acfd-2fb54f57beee",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bayer",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4ef67458-ea44-11ea-925a-7be8bb017ca6",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Colton Harris-Moore",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9aa32326-f3ed-11ea-9dd0-0f8f015bc05a",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Peter Foster",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6f4c64ce-0029-11eb-b107-275413ea7906",
+   "subjects": [
+    {
+     "subject": "engineering-failure",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NASA",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Space Shuttle Challenger disaster",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "412ce52e-0b90-11eb-ba68-c3af4bfb5290",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mother Teresa",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "de1a251a-1570-11eb-86a2-9758b5ed15fc",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Don Lapre",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "aa246044-2179-11eb-852a-afa6ec7db918",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marcus Schrenker",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c9426240-2c29-11eb-86ab-87d32268f1d7",
+   "subjects": [
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "BP",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Deepwater Horizon",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c34ccb96-35e3-11eb-a06c-4f71808cae29",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pepsi",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "949cafbe-9943-11eb-940a-3bd9334eae1e",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madalyn Murray O'Hair",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bd67f782-a3cf-11eb-856f-6318d24460b5",
+   "subjects": [
+    {
+     "subject": "environmental-contamination",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "8ae78f18-aed6-11eb-bdea-673bd4e94997",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "3a52edf4-ba89-11eb-85a8-0b30708be34f",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Esther Reed",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "60ccbcc8-c586-11eb-9c0a-9b09f71ad4f9",
+   "subjects": [
+    {
+     "subject": "employee-embezzlement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sandy Jenkins",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4bfe6334-d0b5-11eb-ba36-4388830270d6",
+   "subjects": [
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Procter & Gamble",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e87c0538-db80-11eb-b418-c70455a91bb9",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Todt",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "50fc36fa-e73e-11eb-9655-9f7e4da3e96f",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "cd8fac72-f118-11eb-8d66-ff19eb8823d9",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "public-money-misused",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Todd Entrekin",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f8c2ef68-080f-11ec-8b93-1b34d54e62e7",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bernie Madoff",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "70f500b6-1323-11ec-b462-d3ce86ccdffc",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "d3561af0-1ff4-11ec-8b36-47b02cd03bb4",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "14f540a0-2b97-11ec-8ed4-5b8e24622102",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marvin Heemeyer",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f3f14a32-35ca-11ec-be39-5f29af10e893",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "William J. McCorkle",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ab69a566-433a-11ec-9adf-8b17942b1688",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Javaid Perwaiz",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f8e2cf0a-56c9-11ec-9618-67afe68f3450",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "2020 Beirut port explosion",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7bc32d30-6eac-11ec-b334-b3a9a4dd4ef1",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Candace Clark",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e7c35962-a0eb-11ec-ba84-23c813e79914",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sarma Melngailis",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d82373b4-b2d6-11ec-a833-6f7adf061125",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "uBiome",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "da3bd914-bdc8-11ec-a7d7-e3232c5b03c0",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "engineering-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Schlitterbahn",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9eaf5498-cdae-11ec-9501-dbbc3d4590a3",
+   "subjects": [
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christian Gerhartsreiter",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6d0d3d40-d9f4-11ec-a9f5-77148c75213c",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "cc1916f0-e49a-11ec-bbbf-cb1407da9775",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicholas Alahverdian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2c966a2e-f101-11ec-89aa-973b2e5bcd6e",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Remington Arms",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e075d52e-fc1a-11ec-921e-7371b3ece48f",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mark Leonard",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e2017e12-169a-11ed-acb7-53f506abb71a",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Megan Hess",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "772a01a4-223e-11ed-ab7e-ebb014632493",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blue Bell Creameries",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c07bfb88-36c4-11ed-b9cf-df9900dc90be",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "HealthSouth",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Richard Scrushy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "70cd2ca6-45b5-11ed-803d-2f3804df6d6b",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Johnson & Johnson",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8cf76bba-5219-11ed-a558-a318d73a40b3",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Johnson & Johnson",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "46fa9f7a-6078-11ed-a710-ab9747c093d5",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Heather Morgan",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Ilya Lichtenstein",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "79413588-75b9-11ed-87d8-cf8a0e704bf9",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Katrina",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1a2c6e1e-c4ce-11ed-8f24-1b56c9907dba",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Richard Heene",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "cf2e64d2-d08d-11ed-8d77-87d6b50dcc34",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "eeac8300-dc9c-11ed-b8e7-5ff6b3930d3f",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "e754a810-e7bb-11ed-944a-07e8eb39a2dc",
+   "subjects": [
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kevin Trudeau",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3d76057e-f7ff-11ed-8f75-b37380fefbf0",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "SeaWorld",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6b2e3852-0479-11ee-9b01-db9c2364e793",
+   "subjects": [
+    {
+     "subject": "sports-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Spano",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f61cf13a-12af-11ee-b468-0bc6cd7e0878",
+   "subjects": [
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "2018 Austin bombings",
+     "kind": "era",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4871dd8e-1f5c-11ee-b33d-ab8c7618bfc8",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "9ef99d2e-3157-11ee-8a36-bf423a65aeb3",
+   "subjects": [
+    {
+     "subject": "engineering-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hyatt Regency walkway collapse",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c2f101ee-4797-11ee-a5d0-0b2a98211032",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rick Singer",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "dcb3a6c2-58e5-11ee-99fe-1faf7a6b44b8",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Melissa Caddick",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8f49646c-63ee-11ee-b5e0-ef4f5168867d",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "bbd1e93a-6d32-11ee-b842-bf886290d160",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alfred Bloomingdale",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Vicki Morgan",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "188b3708-7aa3-11ee-9c87-0fab434774d4",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mark Weinberger",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4db4e534-8be5-11ee-9246-fbd9ac00dacb",
+   "subjects": [
+    {
+     "subject": "environmental-contamination",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hopewell, Virginia",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "27942e92-a309-11ee-b00a-0bd832c87187",
+   "subjects": [
+    {
+     "subject": "natural-disaster",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pacific Gas & Electric",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "73dbbccc-ab6d-11ee-bfcf-6b2ee091f5fd",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Godby Johnson",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1eececde-ab6f-11ee-aca2-b34d27183e89",
+   "subjects": [
+    {
+     "subject": "natural-disaster",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Neiman",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "3f40f85e-ab6f-11ee-8d3d-cf1c29e13aeb",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "45f06a40-ab6f-11ee-9cdb-8733fe699473",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobby C. Thompson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4d673358-ab6f-11ee-91d2-37a4ba7fc718",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tyson Foods",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "53a53aee-ab6f-11ee-b94e-03638b952202",
+   "subjects": [
+    {
+     "subject": "public-money-misused",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eric C. Conn",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5a295d32-ab6f-11ee-a6ca-13784db38b50",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jasiel Correia",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "600c4480-ab6f-11ee-a3e1-27e3d5f930d1",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "engineering-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "65d9fe2a-ab6f-11ee-87fc-ebf5c2186f7b",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-abuse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "0efb67f0-ab70-11ee-8756-fb8ebb461105",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carissa Carpenter",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "05cb0ac8-ab70-11ee-91f5-ef08e5a4d2bd",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nate Holzapfel",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "709d9a88-ab6f-11ee-b304-2b08707e1694",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "New England Compounding Center",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "76778afe-ab6f-11ee-ad2a-dfd3359d0fdf",
+   "subjects": [
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lamor Whitehead",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7db7aa1a-ab6f-11ee-9863-7baf34e62951",
+   "subjects": [
+    {
+     "subject": "music-scene-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "841779d0-ab6f-11ee-86e9-0b553ada44c0",
+   "subjects": [
+    {
+     "subject": "engineering-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ValuJet Flight 592",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8a2f0298-ab6f-11ee-97ae-bb2c64e5aa1f",
+   "subjects": [
+    {
+     "subject": "public-money-misused",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joel Morehu-Barlow",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "92a605a2-ab6f-11ee-86e2-ab17c3117754",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "98dd36d4-ab6f-11ee-a4a7-4bb1d8cd1da1",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "engineering-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OceanGate",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5ac0a3c6-bda8-11ef-be5f-5fa120b002bb",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Darren Berg",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8d03ceba-f626-11ef-bd78-a357a3fdec3a",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "097307dc-04d1-11f0-9453-3f180eaf8128",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joseph Kony",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c95c9aec-1244-11f0-9a0a-6b21f4b6a5c1",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charlie Javice",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "JPMorgan Chase",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c8fff8fa-1e24-11f0-933f-efd0554efb07",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ford Motor Company",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ae5408b8-1ebd-11f0-91d1-b78020e88378",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kevin Trudeau",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ae7e4fc4-1ebd-11f0-91d1-c72b7e8ec154",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeff German",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "aea963ee-1ebd-11f0-91d1-8b37cad3077e",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Camp Lejeune",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "aed3a230-1ebd-11f0-91d1-8fb410cd4547",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "eBay",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "aefd0800-1ebd-11f0-91d1-3379449409af",
+   "subjects": [
+    {
+     "subject": "engineering-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "disaster-reconstruction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Station",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "af50ef24-1ebd-11f0-91d1-3b5d8a900656",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Scott Rothstein",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "af7cb384-1ebd-11f0-91d1-67efb49d12df",
+   "subjects": [
+    {
+     "subject": "engineering-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "afa84f30-1ebd-11f0-91d1-bbb2935dd9a9",
+   "subjects": [
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ephren Taylor II",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "afd1301c-1ebd-11f0-91d1-ffcecadd45d4",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicholas Alahverdian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "affcf62a-1ebd-11f0-91d1-f7dab64797e5",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "b0281c60-1ebd-11f0-91d1-e73af908734e",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Velsicol Chemical Company",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b086828c-1ebd-11f0-91d1-dfb18975bc9d",
+   "subjects": [
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "b0593fe8-1ebd-11f0-91d1-7bdf501a5aaf",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Santos",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b0da7310-1ebd-11f0-91d1-c314242b9d4c",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bre-X",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b0afb04e-1ebd-11f0-91d1-b30f32695dbe",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bob McDonnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b10316e4-1ebd-11f0-91d1-37390cadf124",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Daphne Caruana Galizia",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Mossack Fonseca",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b12dfb8e-1ebd-11f0-91d1-af5ffcf98ca8",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "engineering-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Schlitterbahn",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "af272df6-1ebd-11f0-91d1-ff04e718c618",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris George",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Jeff George",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "fdd9c4a0-1eee-11f0-ac4c-53ebf67aca2e",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "religious-abuse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David E. Taylor",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b15a0e86-1ebd-11f0-91d1-77e9285b1286",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tim Durham",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0ac6b2e0-1eef-11f0-83e5-2bed518dbc2e",
+   "subjects": [
+    {
+     "subject": "disaster-reconstruction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Trinidad and Tobago",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "audioboom-019e869e-b45f-7de0-bbb7-ac09118d43ad",
+   "subjects": [
+    {
+     "subject": "natural-disaster",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Times Beach, Missouri",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "audioboom-019ecc44-6c7f-7123-9c59-a9ad848a7f56",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Peanut Corporation of America",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "audioboom-019f36a7-c902-7a6a-9010-873c3ae6377f",
+   "subjects": [
+    {
+     "subject": "startup-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nikola Motor Company",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "audioboom-019f68e3-c67a-7b7a-82fb-b08f32a583c9",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

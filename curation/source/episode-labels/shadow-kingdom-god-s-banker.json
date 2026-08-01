@@ -1,0 +1,521 @@
+{
+ "slug": "shadow-kingdom-god-s-banker",
+ "title": "Shadow Kingdom: God's Banker",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "murder-for-hire",
+   "count": 7
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 7
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 1
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 1
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 1
+  },
+  {
+   "slug": "labour-history",
+   "count": 1
+  },
+  {
+   "slug": "organised-crime",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "0733c218-f874-11ef-b3f8-13511647c244",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Shadow Kingdom: God's Banker",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b7450db0-f874-11ef-9a11-23cd5066e7a9",
+   "subjects": [
+    {
+     "subject": "offshore-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roberto Calvi",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Vatican Bank",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "eb4375de-00fd-11f0-8800-674d6be3313a",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roberto Calvi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4746bbb8-0101-11f0-9a24-0f0864b3a8ae",
+   "subjects": [
+    {
+     "subject": "offshore-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roberto Calvi",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Vatican Bank",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c1a35cd6-05ac-11f0-9f9f-ab1cb3e76d92",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Propaganda Due (P2)",
+     "kind": "case",
+     "confidence": "medium"
+    },
+    {
+     "name": "Roberto Calvi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f9527c5c-05ac-11f0-adbe-23ef82705ee7",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roberto Calvi",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Vatican Bank",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "30c38eba-05ad-11f0-af41-6b6c11fcded2",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roberto Calvi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "108e8a7c-05ae-11f0-a09a-cb9e400932d2",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roberto Calvi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7b7812a4-05ae-11f0-a071-177464359535",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roberto Calvi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "fc114534-05ae-11f0-b533-1fd9a76d26df",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicolo Majnoni",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Roberto Calvi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a9e4236-61b2-11f0-8f58-efe3335410d7",
+   "subjects": [
+    {
+     "subject": "labour-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jock Yablonski",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3d94b4c8-61b2-11f0-bc7d-8352bf872d97",
+   "subjects": [
+    {
+     "subject": "labour-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jock Yablonski",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tony Boyle",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "aefd9798-61b1-11f0-94a1-e7cce875394f",
+   "subjects": [
+    {
+     "subject": "labour-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jock Yablonski",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e12e6b10-61b2-11f0-a691-8fecf08113ce",
+   "subjects": [
+    {
+     "subject": "labour-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jock Yablonski",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2fe9ce02-61b3-11f0-bfa6-33a7c52c4117",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jock Yablonski",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "658df81c-61b3-11f0-be62-bf10c905d69c",
+   "subjects": [
+    {
+     "subject": "labour-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jock Yablonski",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "83133190-61b3-11f0-8288-5fd470e8cffd",
+   "subjects": [
+    {
+     "subject": "labour-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jock Yablonski",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b602118e-61b3-11f0-b042-7bafc1ecde63",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "labour-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jock Yablonski",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "United Mine Workers",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d5fbc282-61b3-11f0-8aba-e3c5ca9e3a36",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jock Yablonski",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Tony Boyle",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

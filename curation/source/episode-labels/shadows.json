@@ -1,0 +1,113 @@
+{
+ "slug": "shadows",
+ "title": "The Shadows",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "relationship-remembered",
+   "count": 6
+  },
+  {
+   "slug": "romance-and-heartbreak",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "theshadows-33d5cc10-0ae3-4ad3-9471-b556c573dc13",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kaitlin Prest",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "theshadows-8e916deb-352c-4d2e-9c96-b8750e01d963",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "theshadows-582166e7-939c-411c-9c0e-bc5c1f4261a6",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "theshadows-2730f556-6406-4d86-9772-51f924033698",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "theshadows-259a1b18-bf4b-4085-9482-7fe2a6a40b36",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "theshadows-cfe0be74-c273-49be-9d76-e72892de4fc1",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "theshadows-95ae79c7-a6c8-42c3-a7bd-895c157deac6",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

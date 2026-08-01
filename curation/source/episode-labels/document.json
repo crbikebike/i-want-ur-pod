@@ -1,0 +1,533 @@
+{
+ "slug": "document",
+ "title": "The Document",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "making-of-a-work",
+   "count": 10
+  },
+  {
+   "slug": "food-and-drink",
+   "count": 2
+  },
+  {
+   "slug": "animal-behaviour",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  },
+  {
+   "slug": "death-penalty",
+   "count": 1
+  },
+  {
+   "slug": "environmental-contamination",
+   "count": 1
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 1
+  },
+  {
+   "slug": "family-secret",
+   "count": 1
+  },
+  {
+   "slug": "grief-and-loss",
+   "count": 1
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 1
+  },
+  {
+   "slug": "mental-health",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  },
+  {
+   "slug": "prison-life",
+   "count": 1
+  },
+  {
+   "slug": "racial-violence",
+   "count": 1
+  },
+  {
+   "slug": "reentry-after-prison",
+   "count": 1
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 1
+  },
+  {
+   "slug": "scientific-discovery",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  },
+  {
+   "slug": "sports-history",
+   "count": 1
+  },
+  {
+   "slug": "wilderness-expedition-survival",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "1fa4fe77000f44738fa9436ff6d28d44",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "d72d9db96b954935950eabea9fa5a4de",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "8ca6492d8bfe4a8faed5d83b6df63473",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "008e38972de9442b94adb8e9467f99b8",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "27037c14b9be4caebf78f377bfb8b028",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Endless Summer",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "de627439b6c14a3ca4708b948770ebe7",
+   "subjects": [
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "5600a32e61044d079dc8d59f9d0a2d52",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "f2efb099d59441fe9b739e240b1c16c8",
+   "subjects": [
+    {
+     "subject": "food-and-drink",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "f94f154e747e4ae18a77600f90d652c6",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "2981c691aae441c2bd3ea3886869e2f9",
+   "subjects": [
+    {
+     "subject": "animal-behaviour",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "8d50d0eb319a43f0a2280c0369409df4",
+   "subjects": [
+    {
+     "subject": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Princess Diana",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "bb6d931cf17343b189dcd249e908fa82",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "c162500c96ce4f9f8985e9376ce4a184",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brimstone and Glory",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a73913610d7e48f2860281c6e0e625ff",
+   "subjects": [
+    {
+     "subject": "death-penalty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6430d07e7f4448c28ff6de05ddc743eb",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6df5be2a7ebd4c6c980a74755d2009d6",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "564498abeb4e4f57af0730a83d936eb0",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "150a14b4d35244068e12131066bb7dfc",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "4b3ee73807e24367a6d8ec010db636d3",
+   "subjects": [
+    {
+     "subject": "parenting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "1924a5f6c03d4100a04a038743250099",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nick Bollettieri",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "cfae57a8cad1454eb99d9d35427d7faf",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "97a4747010ca4e0b979cc13522f13767",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "69e5d696fb6a41b6a1b98d7e1fcb56c1",
+   "subjects": [
+    {
+     "subject": "wilderness-expedition-survival",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alex Honnold",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c5f62c07768c4ac494d501266251ff9b",
+   "subjects": [
+    {
+     "subject": "food-and-drink",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "35b5d2df2a2544838626c86b3607e13b",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "e47881ab2ceb42d797cb329bf63779da",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "cf1c80bcd4aa4d3a98d164655c7815ae",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "22ae1046c1e04d1ea01930b5862f7fae",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "e22f96c6092b456cafb78165950fe37e",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Satanic Panic",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2c35b794576a4f8eb44e979fb2877bc5",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

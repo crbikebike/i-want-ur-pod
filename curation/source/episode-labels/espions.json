@@ -1,0 +1,1322 @@
+{
+ "slug": "espions",
+ "title": "Espions",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "informant-and-undercover",
+   "count": 10
+  },
+  {
+   "slug": "ai-and-society",
+   "count": 8
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 8
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 7
+  },
+  {
+   "slug": "foreign-political-crisis",
+   "count": 5
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 5
+  },
+  {
+   "slug": "tech-industry-power",
+   "count": 3
+  },
+  {
+   "slug": "presidential-power",
+   "count": 2
+  },
+  {
+   "slug": "surveillance-and-privacy",
+   "count": 2
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 2
+  },
+  {
+   "slug": "business-rivalry",
+   "count": 1
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
+   "slug": "climate-change",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "internet-culture",
+   "count": 1
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 1
+  },
+  {
+   "slug": "management-and-leadership",
+   "count": 1
+  },
+  {
+   "slug": "mental-health",
+   "count": 1
+  },
+  {
+   "slug": "nuclear-age",
+   "count": 1
+  },
+  {
+   "slug": "space-exploration",
+   "count": 1
+  },
+  {
+   "slug": "war-crimes-accountability",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "647a0b8fb771bd001166790c",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6480a4072b317a001187afa8",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "648984bead74c40011e742de",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6492cce647cd880011645241",
+   "subjects": [
+    {
+     "subject": "business-rivalry",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elon Musk",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tesla",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "649c3a51b97fba0011584691",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eric Salobir",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "64a528a6ba953600100d3a3a",
+   "subjects": [
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "64ae6e8a032a91001157e677",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "tech-industry-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "64b555b9c81f3b00119fd07a",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "650979ab6e095f0011ca96af",
+   "subjects": [
+    {
+     "subject": "education-system-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "650d61fab149dc00113cb52d",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "651c3e80315af9001102c56b",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "tech-industry-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Microsoft",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Satya Nadella",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "652ead6b0dec9b0012de1cfd",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6525401516a4770011cc6270",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6537e306ebdabd0012ff678b",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6541297730d67500125ff1a0",
+   "subjects": [
+    {
+     "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "654a4ff284df860012d2cfbf",
+   "subjects": [
+    {
+     "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "655372fd633f520012becd52",
+   "subjects": [
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "655ceb4dbacc090012363627",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "677ff570e83bfb002dfd6b61",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "67852a10ab54a26ea77850e0",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tulsi Gabbard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "67978ae2ae8b037c91a90c4b",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Russia",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Ukraine",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "67aa20b89c6f7f7f28a59785",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "67bc72c819249d0c1a675bf0",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "67cf0b24d64d9d8e86e8bc65",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "67e142e565ed64b24f1fca93",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "67f3cf04f20dfdb29bfe43ae",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "67ffb6d5edf0112e5cd479a3",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6818c490eb737caf8caf7924",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pete Hegseth",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "682b3c60bc0e758152174362",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "China",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Taiwan",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "683d750a0d2b3bac3ef623d1",
+   "subjects": [
+    {
+     "subject": "nuclear-age",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "684adf207ffb4452ec2f823c",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "68625180081ac1df5d35990e",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pierre Schill",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "68c3f2438b1c6a4828232de5",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "68c42b05ac97a487df01bfe7",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Vladimir Putin",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "68da7113099369ce42190228",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "694537c3e2b7985fa211866b",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "69667687d56ec26637a0ae85",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "DGSE",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "TotalEnergies",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "69455e8ae13e237fdea13827",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cristiana Barsony-Arcidiacono",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "69774f0adeabc5ae92932a39",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alexandre Orlov",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6981b262d77e5e94dcb8940f",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "DGSE",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Vincent Crouzet",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6989de2361be18927062fbb0",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mohamed Mediène",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6993173d86ac45e7f80ea3ea",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles de Gaulle",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Pierre Maillard",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "699828caf8a4f13cff3ea8c8",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "DGSE",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Emmanuel Macron",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "69a179f6e4e1627e8cf6d3a2",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "69a95e6e97f00280f0c9b269",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "CIA",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mary-Ann Baumgartner",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "69b925bd9246d31db411bd4e",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Olivier Mas",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "69bd20c2007cdcf83fba9b7d",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Matthieu Ghadiri",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "69ca7c57cb79a114e29eeebd",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Omer Güney",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "PKK",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "69ce6591f44b357ce9158162",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "69de5bd87beb0a173598f9b5",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hotel Lutetia",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mossad",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "69e0df7bd2febdbec924b563",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "DGSE",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "69eb3ae8aa3f81e2b9bd863a",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cuba",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Victor Manuel Rocha",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "69f9a75b3a143563edc27089",
+   "subjects": [
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "KGB",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Paul-Marie de La Gorce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Philippe Grumbach",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a02f9cc53be193dbda6d409",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mohammed VI",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Morocco",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a06d8b43fd6979bfc547624",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Éric Denécé",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a15b56083dd9b6e11b6ee51",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6a1da536626f8869c39cec14",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6a219480e25fe33c7c51d391",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nord Stream pipeline sabotage",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a2be02a4ea0f563ff7ee4a3",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6a394b6e054cf438c4ffefa0",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "tech-industry-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Palantir",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a4267205a160c9d643a302a",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "CIA",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Pope John Paul II",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a462a9c3734a82b35e51d3e",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6a54a4e57987e974eac36e90",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Patrick Pesnot",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a5df348e3a16a6488abbcb4",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Victor Manuel Rocha",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6a5df54419fcc7b0d00fa413",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Omer Güney",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "PKK",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Paris",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

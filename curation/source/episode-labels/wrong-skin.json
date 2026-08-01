@@ -1,0 +1,349 @@
+{
+ "slug": "wrong-skin",
+ "title": "Wrong Skin",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 6
+  },
+  {
+   "slug": "missing-person",
+   "count": 2
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 2
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 1
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "96bdaff6-34b9-46c5-a154-a90a017fcd7a",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Clinton Speedy-Duroux",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Colleen Walker",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "df702f6c-8216-4c5d-b042-a91d0052f13f",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Clinton Speedy-Duroux",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Colleen Walker",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ef82f9d9-2331-4c92-90a2-a91f0014c85b",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Clinton Speedy-Duroux",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Colleen Walker",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bd545fcd-6eab-40d2-94fd-a92200018273",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Clinton Speedy-Duroux",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Colleen Walker",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "3baa29f5-a071-452c-934f-a9260023e8bf",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Julie Buck",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Richard Milgin",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "0b74663c-e26c-4e84-82ec-a92a002487d9",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Clinton Speedy-Duroux",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Colleen Walker",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "3af301dd-be94-4257-a6f4-a93100175bef",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Clinton Speedy-Duroux",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Colleen Walker",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "0a5c590d-d374-4414-814d-a9ab0032c1aa",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Watson",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "43ea0116-2546-4c65-b981-aa7000996144",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Julie Buck",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Richard Milgin",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1d7d616a-f334-4e0a-be4c-b17a003737f4",
+   "subjects": [
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robert Farquharson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "83dc1774-fef8-46bb-a28d-b36800498c27",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "ba129ba0-5880-4e9b-968c-b496005c27e1",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeffrey Epstein",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Virginia Giuffre",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

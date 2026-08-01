@@ -1,0 +1,100 @@
+{
+ "slug": "personally",
+ "title": "Personally",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "addiction-and-recovery",
+   "count": 1
+  },
+  {
+   "slug": "homelessness-and-poverty",
+   "count": 1
+  },
+  {
+   "slug": "relationship-remembered",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "6a0ab9ba-1301-489b-a6e1-51a047182cfa",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carson, California",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "79d3fa3b-5865-419a-8660-0b2b3ec1c09e",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "f37723b2-3bbe-4448-8944-c8e71f005c2d",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "3d4c16ee-6b2d-483a-b9ea-702dbfc39802",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

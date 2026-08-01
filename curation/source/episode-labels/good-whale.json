@@ -1,0 +1,35 @@
+{
+ "slug": "good-whale",
+ "title": "The Good Whale",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "animal-behaviour",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "1df64c40-2f7c-4bcc-b0d8-64ab0fda6ea9",
+   "subjects": [
+    {
+     "subject": "animal-behaviour",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "9eb15dca-3ffa-4fbd-8cc4-4335f3c9433e",
+   "subjects": [
+    {
+     "subject": "animal-behaviour",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,232 @@
+{
+ "slug": "boss-class",
+ "title": "Boss Class",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "management-and-leadership",
+   "count": 7
+  },
+  {
+   "slug": "ai-and-society",
+   "count": 3
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "64f899884b29d80011383ec6",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6535a26748cdf000129c33dc",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jamie Dimon",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "65359e9a1304700012cb034d",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "680f58e392c5c49bd1b7cb3a",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6821d2cb27cd622638c1cead",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Google",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Liz Reid",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6821d1b7986466935db29dbe",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Google",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "LEGO",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "685570c80bed216db74809d2",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Corning",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "696e27dd4796fcbb57091125",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Andrew Palmer",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "697a39d398c18d8bdb8b0867",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bret Taylor",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6978c837207e028ee4edae14",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Andrew Palmer",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6a315813780d0f7579afb892",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alexis de Tocqueville",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  }
+ ]
+}

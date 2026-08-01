@@ -1,0 +1,181 @@
+{
+ "slug": "prince",
+ "title": "The Prince",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "political-figure-biography",
+   "count": 4
+  },
+  {
+   "slug": "management-and-leadership",
+   "count": 2
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 1
+  },
+  {
+   "slug": "presidential-power",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "63109fd658fcaa0013d53155",
+   "subjects": [
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Xi Jinping",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "63336b82ec027e0014b21a47",
+   "subjects": [
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Xi Jinping",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "63336987363b44001270c488",
+   "subjects": [
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Xi Jinping",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6655cee1c101cc00126d28ab",
+   "subjects": [
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Narendra Modi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6682dd7fda59509cbac05aa1",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "679237f46468d3dae322147e",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "681208c99704d99f8452ceac",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "69736ae3283ec80e15def113",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6a314f3d101389aa3d3e3574",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alexis de Tocqueville",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

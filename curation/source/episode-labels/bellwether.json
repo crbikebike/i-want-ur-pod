@@ -1,0 +1,102 @@
+{
+ "slug": "bellwether",
+ "title": "Bellwether",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "mockumentary-investigation-fiction",
+   "count": 5
+  },
+  {
+   "slug": "audio-drama-mystery",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "88447659-198b-43a8-b502-da5e9acf061a",
+   "subjects": [
+    {
+     "subject": "mockumentary-investigation-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "9dbf90f7-5c11-437c-a594-dd77ac753578",
+   "subjects": [
+    {
+     "subject": "audio-drama-scifi",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "mockumentary-investigation-fiction",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "92badb9b-f30a-4ae8-9eac-cf67426e8a9f",
+   "subjects": [
+    {
+     "subject": "audio-drama-mystery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "68a75ed8-0451-41b1-b7c6-9acf5e3a37a3",
+   "subjects": [
+    {
+     "subject": "mockumentary-investigation-fiction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "74aa2bca-e6ae-415d-afc3-6b5250cba3be",
+   "subjects": [
+    {
+     "subject": "mockumentary-investigation-fiction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bellwether",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2760e854-5900-4dd1-8243-940463fb2369",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "mockumentary-investigation-fiction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

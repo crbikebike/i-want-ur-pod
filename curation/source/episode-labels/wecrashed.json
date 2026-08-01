@@ -1,0 +1,154 @@
+{
+ "slug": "wecrashed",
+ "title": "WeCrashed",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "startup-collapse",
+   "count": 4
+  },
+  {
+   "slug": "media-criticism",
+   "count": 1
+  },
+  {
+   "slug": "voluntary-disappearance",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/pPQn128wzgDviGXRaOKrnIW66h9Bn4eQF6r_ooeV960",
+   "subjects": [
+    {
+     "subject": "startup-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam Neumann",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "WeWork",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7dhif7rOQsMOoXBCnGWp80Y7NoCLm7pdUHEd3l2oKAk",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "startup-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam Neumann",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "WeWork",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/EhlmxBpgwAm9rXpYlaWapdEtZQhM5Nyvlpy9JPYyR40",
+   "subjects": [
+    {
+     "subject": "startup-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam Neumann",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "WeWork",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/LT6vLXcQUI3lN7Qoyea_X3POFeWxWgk1R3KEdET5U0Q",
+   "subjects": [
+    {
+     "subject": "startup-collapse",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam Neumann",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "WeWork",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7jN6x55Cuw2ETdk-1B-K7jJzfJ2FD-FXmJ1qEgQrjLs",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/aNoJtJ4FgDNn06GQvC1ecGDItz2uDM3FhcbfBGX5wJw",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "voluntary-disappearance",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicholas Rossi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

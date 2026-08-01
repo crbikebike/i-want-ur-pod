@@ -1,0 +1,2406 @@
+{
+ "slug": "against-the-rules",
+ "title": "Against the Rules",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "courtroom-trial",
+   "count": 21
+  },
+  {
+   "slug": "crypto-collapse",
+   "count": 8
+  },
+  {
+   "slug": "economic-policy",
+   "count": 8
+  },
+  {
+   "slug": "books-and-writing",
+   "count": 6
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 6
+  },
+  {
+   "slug": "psychology-of-belief",
+   "count": 6
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 5
+  },
+  {
+   "slug": "addiction-and-recovery",
+   "count": 4
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 4
+  },
+  {
+   "slug": "management-and-leadership",
+   "count": 4
+  },
+  {
+   "slug": "systems-and-infrastructure-design",
+   "count": 4
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 3
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 3
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 3
+  },
+  {
+   "slug": "sports-scandal",
+   "count": 3
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "investment-fraud",
+   "count": 2
+  },
+  {
+   "slug": "media-criticism",
+   "count": 2
+  },
+  {
+   "slug": "scientific-discovery",
+   "count": 2
+  },
+  {
+   "slug": "advertising-and-persuasion",
+   "count": 1
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 1
+  },
+  {
+   "slug": "bribery-and-kickbacks",
+   "count": 1
+  },
+  {
+   "slug": "corporate-negligence",
+   "count": 1
+  },
+  {
+   "slug": "education-system-failure",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 1
+  },
+  {
+   "slug": "sport-and-politics",
+   "count": 1
+  },
+  {
+   "slug": "sports-history",
+   "count": 1
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 1
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "35120bb4-4bef-11e9-a916-931b6d1b5104",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "85e40654-4f1a-11e9-b762-034a46ce856a",
+   "subjects": [
+    {
+     "subject": "systems-and-infrastructure-design",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "85e9fb54-4f1a-11e9-b762-ab1aef38147d",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "85eebaae-4f1a-11e9-b762-e3fd49b6d0c6",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alex Kogan",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "85f36ac2-4f1a-11e9-b762-57ad1f0454e0",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "85f7c216-4f1a-11e9-b762-3320a8393de9",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "85fc5fc4-4f1a-11e9-b762-e782a1b26000",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "86018742-4f1a-11e9-b762-af302c8a7b9b",
+   "subjects": [
+    {
+     "subject": "systems-and-infrastructure-design",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "New York Stock Exchange",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e3276c42-7031-11e9-9622-8fffd38ef96f",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Malcolm Gladwell",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Michael Lewis",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "235dd0f8-0722-11ea-9e92-23c5a7eeb721",
+   "subjects": [
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "d79092b2-6e16-11ea-a5e3-2bec1d84f195",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "dc95c348-8006-11ea-9243-9b1e86e954a1",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "63e66b48-7feb-11ea-9dae-cf4da15d3fdd",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "659db82e-864e-11ea-850e-bfa9f55f18fa",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Weisberg",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Malcolm Gladwell",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Pushkin Industries",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "63ec815e-7feb-11ea-9dae-67848b35a5f7",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy Fitzgerald",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "63f0f428-7feb-11ea-9dae-a7bae1ef9ad3",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Timothy Gallwey",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "63f5717e-7feb-11ea-9dae-b7892e0babe7",
+   "subjects": [
+    {
+     "subject": "education-system-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dave Eggers",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "ScholarMatch",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "63f9fc26-7feb-11ea-9dae-2b92b4e57b4a",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "management-and-leadership",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "63fda844-7feb-11ea-9dae-7b6e99745e89",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6400ede2-7feb-11ea-9dae-3312df12a58b",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7c786eca-ac24-11eb-b649-6b4ff2a31a6b",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charity Dean",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Premonition",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "23d669b4-cd41-11eb-928a-a74e4859ca13",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Lewis",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Premonition",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e1f91d40-7d42-11ec-a1f0-478d74653fd6",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Liar's Poker",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "54ef21da-83bc-11ec-87b1-3bc0c0496a5e",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Goldstein",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Liar's Poker",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Michael Lewis",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "549c33ce-89c7-11ec-a5b1-1b95a14639f4",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Liar's Poker",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "180a35e0-8f6d-11ec-810c-af117927d128",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anne Clarke Wolff",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "caed3e7a-9457-11ec-9a94-3767650cb3a4",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ira Glass",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "This American Life",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "2440552e-99db-11ec-bfe9-c33ac5fc89bc",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Saunders",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Michael Lewis",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1388a822-a961-11ec-b4a9-f7e2d88d7a67",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "f1d631ae-b117-11ec-ba72-a3f839d18d52",
+   "subjects": [
+    {
+     "subject": "systems-and-infrastructure-design",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Athenahealth",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "eb4b421e-b11e-11ec-bcf5-dfdbe5aa4aec",
+   "subjects": [
+    {
+     "subject": "systems-and-infrastructure-design",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "2468d488-b6bc-11ec-afd0-877490c9456e",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "scientific-discovery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bill James",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e419b982-bce8-11ec-8dd5-e3f95fe31cde",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "969fde26-e645-45d4-9fc3-ae89016f9706",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "1b80fad9-3c68-4bf1-ab14-ae940163ca38",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Maria Konnikova",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "90c7b31b-662d-4a59-ad3a-ae9f001b11b2",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Premonition",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "be758a1c-7c49-47b5-8148-af9b0014013a",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f237f7c3-ab01-46bb-9bf0-afa90002dd15",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Andy Greenberg",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "29fd8080-5d52-4074-8cbd-afc4014db2b9",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eugene Soltes",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Michael Lewis",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "948ac131-ce91-42e8-b149-afdd01611b7f",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Skeel",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a5c84c8d-eeba-4b02-b222-affe0160ee5a",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Molly White",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "54e31010-b805-4570-ab9f-b01f014b530e",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "234c456c-ac24-4882-804d-b03b015dce6c",
+   "subjects": [
+    {
+     "subject": "startup-collapse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Andy Mitchell",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "618630be-c02f-498b-a274-b04d011dd22e",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bc20c2f6-f421-47cf-a1be-b06e014c7e48",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sir John Knight",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "32166c98-fb2b-41f7-88d1-b07a0107f52c",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "44bbdb23-2cdd-46c9-9432-b08501623026",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "dcb67584-ff73-4300-9258-b08c015686fa",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "dde310b2-7259-407c-a977-b09000139e5e",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lewis A. Kaplan",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "43928ba6-7e24-4f7f-ac97-b09100b46e5b",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "65616735-dd20-4c32-9267-b09300b47297",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b612d452-7582-4c50-b0da-b09600b8c185",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "35663ca0-eac2-4810-bd4c-b09800b3c4f7",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Caroline Ellison",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "93ef6706-4bf3-46c3-8571-b09a00b45179",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Caroline Ellison",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a52c8c5d-a31a-4f54-a8a6-b09d00b0e200",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Caroline Ellison",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "61c7c69c-fa43-4ce7-83b3-b09e0030b8df",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nishad Singh",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1b519b63-7fcc-46fb-a017-b09f00b22c6a",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Matt Levine",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Michael Lewis",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b158b314-568f-4aa1-b5b1-b09f00efd171",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ca7652fe-9728-41ca-9b11-b0a100b71b87",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "09971aaa-9003-4362-9a40-b0a500b2ea88",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "16347ffa-2f0f-447a-9d04-b0a60014c69d",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f62431de-74b5-4085-b057-b0a800bf1971",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ebb00234-3ca1-4a63-b5e2-b0a900d21d26",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a0015428-2246-4856-a533-b0ac00b2712b",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1cd9028d-08fb-4c13-9a82-b0ad00b1c830",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e4dea643-c0b2-4e5a-b524-b0ae0026b64a",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "0801e473-dab2-4ab9-9007-b0af00b94683",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6228fbd1-c40f-4cde-a156-b0b500c65ed8",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2752c211-033a-462c-8bca-b0bd003151dd",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b86d8d12-7113-4d85-a8fc-b0d50167eec2",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e73ad68c-a8a2-47b0-9e6a-b118017798f4",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Going Infinite",
+     "kind": "work",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f4e7f6bb-b6a8-49e7-b9b5-b13b01543bf8",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6688e3bc-b164-40af-a161-b140000c3cfa",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FTX",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "19362a02-70b6-43db-ae7c-b1420024a7ba",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bankman-Fried",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c244b9f3-106d-441f-9efd-b1db011ffc6d",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "381401e9-034c-4171-b626-b1f1015bfb7d",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "e32b6e3f-1add-4c6c-a607-b1fb01069dbe",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bill Bradley",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4aa0918a-c81e-4177-bce8-b1ff0112414e",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Christie",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Murphy v. NCAA",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Ted Olson",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c2e0c2a2-efda-4314-b0c7-b203015e8b91",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "42199df1-d74c-43fb-ad5a-b20d0159eacd",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pittsburgh Steelers",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9958d37e-8cc8-4991-a2ca-b2170187a612",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nate Silver",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "983aa535-7496-46fc-9a8a-b20d014fab7e",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "f1d5ae62-8ad5-4c00-b900-b2290155a4a4",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ted Olson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ebda2d51-8543-4e61-b332-b21f0102766f",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "74c29ddf-5ec9-43b3-a4a8-b22e01283c23",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "e73e2a1e-1dab-4584-adac-b23a0119dda4",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7f4b0090-63f8-4456-a18a-b23001849e87",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy Walters",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8cc4196a-24eb-4eb5-a898-b248013ff500",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "40ac95b4-2927-43f0-b738-b24f017315f7",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Going Infinite",
+     "kind": "work",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "bc86acaf-aeb8-489a-8d7f-b24a0115b9e6",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "a9dbfb1a-4044-4e3d-897f-b26001593ca6",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "4a11f658-e40d-490c-9589-b26c002bb8d1",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "d0b4dcd3-adfd-46ad-ad05-b2720133d508",
+   "subjects": [
+    {
+     "subject": "everyday-object-design",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Natasha Schüll",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0d4db027-d196-4b87-aff6-b279017a60ae",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Laurie Santos",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "7c7e6697-5f4f-4034-86bc-b281002c6b11",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-scandal",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Richard Blumenthal",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1a92a9cd-1e66-4707-8192-b36e01023695",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "66f561fd-c95a-49f1-a075-b372014d2c67",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam McKay",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Big Short",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5223ee47-22e0-4389-bb4b-b37901077865",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lidia Jean Kott",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a0ab9987-fc7b-46e6-b7f5-b379013d5c07",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Greg Lippmann",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Steve Eisman",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Big Short",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "41ab045a-b356-477d-89fe-b3830122e086",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FrontPoint Partners",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Michael Lewis",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "The Big Short",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ed6d4d89-432d-41a7-a721-b38600eeb29a",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Emi Nakamura",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Federal Reserve",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b7950d38-e4d7-41b9-a7af-b38e016bfa0a",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Andrew Ross Sorkin",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Great Depression",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "cc86ce09-08fb-492f-a2af-b3950109cc74",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Matt Levine",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5459484a-03f8-4093-8ca1-b395017397ba",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Warren",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Steve Bannon",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2086bbbc-fc68-4bda-af2a-b3a60167db56",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Burry",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Michael Lewis",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1d7f280a-9675-4a5d-aef3-b3b001645c45",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicolle Wallace",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "The Big Short",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "270507cd-16bd-4e91-8ab7-b456000e425e",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Fleming",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Vietnam War",
+     "kind": "era",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f38a23ff-c87f-4eb2-ad92-b45e015976ec",
+   "subjects": [
+    {
+     "subject": "whistleblower",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Lewis",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

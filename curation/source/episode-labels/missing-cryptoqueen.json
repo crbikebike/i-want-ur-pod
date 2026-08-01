@@ -1,0 +1,527 @@
+{
+ "slug": "missing-cryptoqueen",
+ "title": "The Missing Cryptoqueen",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "crypto-collapse",
+   "count": 5
+  },
+  {
+   "slug": "investment-fraud",
+   "count": 5
+  },
+  {
+   "slug": "missing-person",
+   "count": 4
+  },
+  {
+   "slug": "voluntary-disappearance",
+   "count": 4
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "urn:bbc:podcast:p07nklnm",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p07npm4g",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p07npk7p",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p07pdnw9",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p07pxyg3",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p07qlj1z",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p07r6t3t",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p07s72yl",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investment-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p07sz990",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p08mqtnj",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0d30qz3",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "voluntary-disappearance",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0d80c0w",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "voluntary-disappearance",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0j1pdvd",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0mtq63m",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "voluntary-disappearance",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0mw7m5f",
+   "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "voluntary-disappearance",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0mw7m5m",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0mw7m6n",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0mw7m7t",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OneCoin",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Ruja Ignatova",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

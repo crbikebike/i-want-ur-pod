@@ -1,0 +1,2655 @@
+{
+ "slug": "scene-on-radio",
+ "title": "Scene on Radio",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "climate-change",
+   "count": 15
+  },
+  {
+   "slug": "history-retold",
+   "count": 15
+  },
+  {
+   "slug": "media-criticism",
+   "count": 12
+  },
+  {
+   "slug": "racial-violence",
+   "count": 11
+  },
+  {
+   "slug": "economic-policy",
+   "count": 10
+  },
+  {
+   "slug": "invented-category",
+   "count": 9
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 7
+  },
+  {
+   "slug": "sport-and-politics",
+   "count": 5
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 4
+  },
+  {
+   "slug": "colonial-legacy",
+   "count": 3
+  },
+  {
+   "slug": "community-in-conflict",
+   "count": 3
+  },
+  {
+   "slug": "elections-and-voting",
+   "count": 3
+  },
+  {
+   "slug": "nuclear-age",
+   "count": 3
+  },
+  {
+   "slug": "parenting",
+   "count": 3
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 3
+  },
+  {
+   "slug": "slavery-and-its-legacy",
+   "count": 3
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 2
+  },
+  {
+   "slug": "gender-identity",
+   "count": 2
+  },
+  {
+   "slug": "gendered-constraint",
+   "count": 2
+  },
+  {
+   "slug": "immigrant-experience",
+   "count": 2
+  },
+  {
+   "slug": "indigenous-history",
+   "count": 2
+  },
+  {
+   "slug": "ageing-and-mortality",
+   "count": 1
+  },
+  {
+   "slug": "chronic-illness",
+   "count": 1
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 1
+  },
+  {
+   "slug": "family-secret",
+   "count": 1
+  },
+  {
+   "slug": "food-and-drink",
+   "count": 1
+  },
+  {
+   "slug": "forgotten-episode",
+   "count": 1
+  },
+  {
+   "slug": "gentrification-and-housing",
+   "count": 1
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 1
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 1
+  },
+  {
+   "slug": "mass-shooting",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  },
+  {
+   "slug": "queer-life",
+   "count": 1
+  },
+  {
+   "slug": "relationship-remembered",
+   "count": 1
+  },
+  {
+   "slug": "schooling-and-policy",
+   "count": 1
+  },
+  {
+   "slug": "scientific-discovery",
+   "count": 1
+  },
+  {
+   "slug": "screen-representation",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "e57826170df07d9929cca8fc033654f0",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7608064e73e4c1b40b88b4a13046de9a",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "2d3eae1f33414e98581a59f2dcce1726",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "community-in-conflict",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "1afb79cf95839d010b898602ab8b849d",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tal Ben-Artzi",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b45dc82f2e90f15e6108edb10f982c3d",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "9702721868eb26f47829097a5acca70c",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "d3db3632d3235da7c1479159d0cf9ad2",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "bbfa5543d94fb7d0001258ba42296d2e",
+   "subjects": [
+    {
+     "subject": "parenting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "49461deef38ff09d08108b0ef3529d17",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Emmett Till",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Trayvon Martin",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d325439e44c5a022646d8b7d49605589",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "b5df2081ed4b30d2a37578e45efa8f91",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "3774a109b6470e47ebf20869dcb5fbf6",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "2c41638d784b734304ed949c9a9795d9",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Thelonious Monk",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "302f0d697f53fad13ce9138bed1d312e",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "community-in-conflict",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alaska",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "221b0661daf84b14fe50cd69ff740c26",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "queer-life",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "cb9b625586a57b1907f84d0fdbf5133a",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "food-and-drink",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Durham, North Carolina",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "71a5bf38c76ee339e56b90346b76aeaa",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7d6d988e192831817b0e7ef84a1cdf76",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "99edf28f8d03edde700de5439f7fa346",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ruxandra Guidi",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b23f33564b5392f482a9e0bfa5c1c5a2",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "nuclear-age",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hiroshima",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "885df08bd3acf9643034be5dcab98359",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Durham, N.C.",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "770cda18451754cf1a0e0b5035089143",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Durham",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b1cd753e407892125043b5a136f33924",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Durham, North Carolina",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5a5b0d42d876fe7ee1bf392ed391cc08",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Durham, North Carolina",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2698c71a012f79f366c7f6795c20b5c9",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Philando Castile",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Prince",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d1759d19c103127f9b3d1389ad23c533",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "community-in-conflict",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Siler City",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a5562ac2577fc38934414f72bad9602f",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Steinbeck",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Travels with Charley",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "262982ff6cafda171d095b8c584bad5b",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "23f67d8969869c87336a6b6d46a50dff",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Steinbeck",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2caa520b967f7385d19c378a9f526637",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Emmett Till",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Mike Wiley",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Trayvon Martin",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "796d60b4113b9438951b4f0921c86fb8",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carolyn Bryant",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Emmett Till",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "66cfa31747ac5777800a5d2fce995aa3",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chenjerai Kumanyika",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "John Biewen",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "402cac7b0ae389e287ebd376d8c5fb51",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "f7edd69a69ce3cf97c497e2ca8acfeb0",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "120fbbba48d9f7b58964af5b7bdd9c5f",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Declaration of Independence",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Thomas Jefferson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "031347608f8dbdcfc76a14eb2fa52639",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dakota War of 1862",
+     "kind": "era",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mankato",
+     "kind": "place",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "20537c115b1412dde7add20ff770f96e",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "fdaf9bf62365a0bd348eef8ca7cda5a9",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "f7e72562111324f25d083f3214922d7e",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "68302959038a5f92df8fcf6e5a130b36",
+   "subjects": [
+    {
+     "subject": "forgotten-episode",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Corbin, Kentucky",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8b9659520a552ae17d017c9adfbaf4ae",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bhagat Singh Thind",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Takao Ozawa",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6de05b0315304821fc92652045a03da4",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "78d1eb9a9163c9925a3fa43d54fc49ee",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Myra Greene",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d0bc80feadca19bd22c3ceafce779c7c",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eddie Wise",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "097866c89ac05c027ac4b8580fcb3dbc",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "e56ed58e03788f168d8396e9d42ea587",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "30d7fa7f0c3ae6f52d8cc88695f450ba",
+   "subjects": [
+    {
+     "subject": "parenting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_fa2abb2b-e40b-4240-8d99-2a35ff1467e7",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Biewen",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_fa45d728-6918-48b2-9cbd-dac7bcbcfaa7",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_95dbf405-e953-4265-b875-664aeae7b677",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_efe04b27-13d2-447a-98a7-ba57e5d80c74",
+   "subjects": [
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_aa8d112f-ccdf-48b3-a65b-3ac598e183bc",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_6353996b-7dff-4b85-9faf-78ee50f07776",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "#MeToo",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_6b534aa7-dcbe-4dfe-8a97-ad0045f038ed",
+   "subjects": [
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_56372d9d-1a6f-4d40-9215-fb294d94108d",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Down Girl: The Logic of Misogyny",
+     "kind": "work",
+     "confidence": "medium"
+    },
+    {
+     "name": "Kate Manne",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_d8adc446-6fe1-4474-ad4d-6f4fe0bbca30",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "screen-representation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_b67cd1f4-4c43-4288-9c25-f4118a4fc057",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lewis Wallace",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_951d5fbb-b772-466a-99b1-f44ffcda437f",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "parenting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben James",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_03b92908-e718-4244-ba4d-b6cae6b10774",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_dcc167f4-e034-4f0e-9c36-e39c9f3b708b",
+   "subjects": [
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_e2769347-70ef-4306-990f-153ef1cd5af6",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_ca9846ce-84b3-4b92-9d16-37fd18722c5a",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "American Revolution",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_47446fdd-86d7-4945-949d-fd683ddb58f5",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "United States Constitution",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_d678cce8-897a-4990-a4db-73736e8cb6c8",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_08bc6e96-e095-4ab8-935c-ddae77fa1b99",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Reconstruction",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_a8d64060-ae68-4866-8604-f23d4a8d0151",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_7c2c3928-0f50-408c-86f3-0c5f5c362a7a",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Franklin Roosevelt",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Great Depression",
+     "kind": "era",
+     "confidence": "high"
+    },
+    {
+     "name": "The New Deal",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_8586757b-346c-4c19-b3a8-51710b0c86c6",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_72fa420f-b511-4df5-be63-672a2a53150a",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Freedom Summer",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "John Lewis",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_1b16611c-5e5e-4503-80ae-697fa12312fa",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Margaret Thatcher",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Ronald Reagan",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_e04e5f98-ee77-4e78-ad40-ae5b9331500b",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "colonial-legacy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_d493fc71-c493-4054-a37b-fdea6c547b22",
+   "subjects": [
+    {
+     "subject": "schooling-and-policy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nikole Hannah-Jones",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_5f090591-124f-466a-a5ab-8eecba4a0ed2",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nikole Hannah-Jones",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_b20aecf1-0051-42e0-9db6-8f1e22d11112",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_5fac1248-1fe2-47bf-94dc-3159e62dce99",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "nuclear-age",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hiroshima",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_9ba0ded6-704d-4a90-8ceb-ce2cfd8999e6",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_d3b94014-f96a-475a-94d1-35f34532dfbd",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_58d86522-d933-48c3-b7a0-7a1e7fe0641c",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_92316576-3d16-4852-a327-14b1deb472e6",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_6ce12249-6bb4-495d-b6a2-a7686483cc0e",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_81bed697-35c9-4f5d-a674-0f6ed27f0c68",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_5bf01d9c-5582-401f-be86-98ac09bca1a2",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_a869e8d2-4a4e-49d8-82b3-9a3dac9a3fa8",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jakarta",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_29dbd2e9-f995-40b6-b9e8-95e8f703fb62",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Drilled",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Joe Manchin",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_7bc42e87-f18c-4a5d-bc94-b7cef73a095f",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_c1c91933-5fd5-416d-95c5-251fdd31e92f",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bangladesh",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_f55cd30b-4924-4210-a0fb-f148f9daa4a6",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Scotland",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_f8fe1792-077a-41a4-9f5c-4e8a3b404ef1",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_66eeb4b9-2f30-427e-947e-3871f71c313f",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Naomi Klein",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_5147288c-025c-49a2-b6a2-ac38bc562013",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_c05b33b2-7d7a-4579-bbf4-59c147ea5a20",
+   "subjects": [
+    {
+     "subject": "parenting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Philando Castile",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Prince",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_312faa3f-0b83-4cc3-a1ce-5386a2a9ac07",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Laila Nur",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_90307c1f-dd79-450d-959d-41eccca4e38a",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kate Manne",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_6b25a68f-9ba4-420e-ba00-f93ad6f83bd5",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_7f2cf161-7de9-4a11-a809-a981d044162a",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eddie Wise",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "USDA",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_c7cc8028-c89d-4efd-8180-c90a2f383b87",
+   "subjects": [
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_53ba5baf-a478-4504-a31c-8e907a04b280",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_a07bb550-0d77-41b6-b75a-f736ad313bb3",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_df316fb6-52a7-4e4f-8d16-9b1668c29ef4",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wilmington, North Carolina",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_a3a19c2f-ebbc-48a4-8e5b-77848f60839d",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "forgotten-episode",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jim Crow",
+     "kind": "era",
+     "confidence": "high"
+    },
+    {
+     "name": "Wilmington, North Carolina",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_f4eeba7c-b6e3-4b4b-a8d7-1cbbdbce31a2",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wilmington",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_270cf6e4-0546-4e91-9f56-b663659bdb53",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "forgotten-episode",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wilmington massacre of 1898",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_89522d70-a2be-4336-ae80-b46ce84e25dc",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wilmington massacre of 1898",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Wilmington, North Carolina",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_ef82a86a-b29b-4eff-966c-809b24f51268",
+   "subjects": [
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Columbine High School shooting",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_63192d5e-5b5f-406b-a282-067db6d62c9c",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_04ff6bfe-8f97-4a58-b271-6acc58b63356",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_fc3407d3-e77b-4743-880f-e6313e8b276b",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_40e4b6ac-2603-4c5d-b51e-87e6dbace68c",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "colonial-legacy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_0e5c69d0-1fc1-4d00-8b2d-88456318de62",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam Smith",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Baruch Spinoza",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_dab3657a-c348-44eb-8c54-5e5dab1ae15e",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_7dc77a49-5f2d-4863-83f4-390b5eeee54e",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_84ca8f1c-af96-440c-9b6d-583233724644",
+   "subjects": [
+    {
+     "subject": "monopoly-and-market-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_85c01270-0cdf-449f-aedf-ae97ae8a53ed",
+   "subjects": [
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_ad5f4fe8-7c58-4c8b-af00-9203608e5f4a",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "scientific-discovery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donella Meadows",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_ca4a91a8-c66b-448b-a720-b5ab0dc064c5",
+   "subjects": [
+    {
+     "subject": "food-and-drink",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "colonial-legacy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_da3cac3f-9145-4fe7-939c-c03d8788dcdb",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_fb415912-9a50-47d3-8dc8-c0999df31637",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_a38dd0cb-f4c6-4f42-87d3-b7e4b86996f1",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_2521bccb-d96d-414b-a131-90de29db5ce6",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_c7d5f890-c6e7-4a43-ac73-920e2847d864",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Kliën",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_05621d7a-428d-40a0-b2dd-c3642d3362ee",
+   "subjects": [
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_ef4e4038-7d10-4d11-9559-44b51fcb8484",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_f0f8bd6d-2424-4221-bb4a-7a22ac31eb5d",
+   "subjects": [
+    {
+     "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "nuclear-age",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hiroshima",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_c17e2108-0eb2-4b23-b0c5-ef30f026cb33",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mankato, Minnesota",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_214942e9-42d7-4276-a13b-b9dc3e7368a4",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bruce Rastetter",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Drilled",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_bbe4fbc0-c61b-408b-b4d9-babd29c7e531",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Scene on Radio",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_7d952056-416f-4cd5-aff7-24f94ae8e415",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_da0e5670-9250-467f-9f20-ab9c7fe005c7",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_f8739f35-daaf-4fda-b58f-4f8982627cc9",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_6b1c793e-2095-43c8-b744-d76f53812f62",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_cf1055c8-e8c8-4aed-a722-6b839ef0f10c",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Victor Pickard",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_f69de646-b9e2-4265-8b72-a42244301048",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_0ce29bd3-1bde-41db-9c3a-505c0a8aefaa",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_ac84107d-4751-407f-be77-d80dd3c526f6",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Victor Pickard",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_4e113a19-e2b8-43ad-a301-78a2fd2a8971",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rebecca Nagle",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "prx_153_c932f3f3-0b65-4c29-a6f4-9a2bafb0f7f4",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

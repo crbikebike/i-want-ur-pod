@@ -1,0 +1,439 @@
+{
+ "slug": "rumble-ali-foreman-and-the-soul-of-74",
+ "title": "Rumble: Ali/Foreman and The Soul of '74",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "sports-history",
+   "count": 10
+  },
+  {
+   "slug": "music-scene-movement",
+   "count": 2
+  },
+  {
+   "slug": "foreign-political-crisis",
+   "count": 1
+  },
+  {
+   "slug": "prison-life",
+   "count": 1
+  },
+  {
+   "slug": "sport-and-politics",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "3474c6cc-7469-447e-b9dc-b1f40132b61e",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Foreman",
+     "kind": "person",
+     "confidence": "low"
+    },
+    {
+     "name": "Muhammad Ali",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "32b02c86-9055-4a9e-bca3-b203014db8dc",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Foreman",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Muhammad Ali",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "536f4359-3426-46b1-bc59-b20a01435f4e",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Brown",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Muhammad Ali",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3eb7ac4d-1fa6-4190-9b26-b211015df8f0",
+   "subjects": [
+    {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joe Frazier",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Muhammad Ali",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "db7b6f01-dcb0-4631-89d9-b21f01635408",
+   "subjects": [
+    {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joe Frazier",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Muhammad Ali",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8668f316-986e-45f7-9fbc-b22601782abd",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Foreman",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Muhammad Ali",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5685232d-cf2a-4e48-b2d4-b22d017fa1d0",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Don King",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "George Foreman",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Muhammad Ali",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "59938ca9-4cc0-4267-ac59-b234016a75eb",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Don King",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Hugh Masekela",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mobutu Sese Seko",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "3aebc953-7df2-4100-bbf6-b23b01541e96",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Foreman",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Muhammad Ali",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5fe7dd58-54d9-4a90-88d0-b2420160b47d",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b7841bdf-7674-41d6-ba57-b24a001e7f41",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mobutu Sese Seko",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Patrice Lumumba",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "27e5a05b-9f6f-437e-88b1-b25e0171e0f3",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Brown",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Zaire '74",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b369857f-846d-40b8-a3a2-b2660015b070",
+   "subjects": [
+    {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Foreman",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Muhammad Ali",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d25719e6-6dca-4e3f-8e37-b26d0003517c",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Foreman",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Muhammad Ali",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "51859219-90cb-4352-b375-b2ba018b07d1",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

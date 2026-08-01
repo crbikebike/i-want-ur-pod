@@ -1,0 +1,1735 @@
+{
+ "slug": "question-everything",
+ "title": "Question Everything",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "media-criticism",
+   "count": 19
+  },
+  {
+   "slug": "political-persecution",
+   "count": 7
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 5
+  },
+  {
+   "slug": "ai-and-society",
+   "count": 4
+  },
+  {
+   "slug": "journalist-under-scrutiny",
+   "count": 4
+  },
+  {
+   "slug": "corporate-negligence",
+   "count": 3
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 3
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 3
+  },
+  {
+   "slug": "undercover-and-embedded-reporting",
+   "count": 3
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 2
+  },
+  {
+   "slug": "internet-culture",
+   "count": 2
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 2
+  },
+  {
+   "slug": "betting-and-gambling",
+   "count": 1
+  },
+  {
+   "slug": "bribery-and-kickbacks",
+   "count": 1
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 1
+  },
+  {
+   "slug": "foreign-political-crisis",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "law-explained",
+   "count": 1
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 1
+  },
+  {
+   "slug": "natural-disaster",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 1
+  },
+  {
+   "slug": "relationship-remembered",
+   "count": 1
+  },
+  {
+   "slug": "sex-work-and-exploitation",
+   "count": 1
+  },
+  {
+   "slug": "war-crimes-accountability",
+   "count": 1
+  },
+  {
+   "slug": "whistleblower",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "769b8512-1ed2-46ff-82f4-43156ca36449",
+   "subjects": [
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brian Reed",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f81926d7-db26-4ac4-a72b-4990bfa22392",
+   "subjects": [
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "S-Town",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9a677678-6488-4771-9045-5bbb51b82d39",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "cc2aed64-4fcd-467a-befc-970eb8577ed9",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barton Gellman",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "634875aa-5e36-4b41-83f9-a2f476ef217d",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "61bed777-b4b8-4022-8c2c-0ebf1be70361",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "d2b29118-a04d-48fb-af67-b1e8e6f6032b",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "acc1c249-e2a4-47a7-8d11-b4e17375ef4a",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "5cc427b7-635e-4e65-87d6-a925bac76ca9",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "f0e3e3e5-d296-4a1f-9de9-b76061b55374",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "e88767ad-2f10-4b04-a0af-1c8b620d35e3",
+   "subjects": [
+    {
+     "subject": "undercover-and-embedded-reporting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeremy Loffredo",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c192a2a1-3cc3-41d3-8f40-45d172fb4300",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeremy Loffredo",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "fcea16e2-cd5f-4bc7-90d7-7fe334fc7c24",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "18d0d3a3-902a-4342-8258-f681030dc5b2",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeffrey Epstein",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "2fcbf4c1-cd91-4ba6-9df4-a3fe2b093577",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "V Spehar",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "71ca3d9a-36c1-4956-9726-2de4dcdfe838",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "3e862ed3-c340-49a0-8979-e4dd8afe682d",
+   "subjects": [
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hassan Diab",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "358f450a-2212-4ec3-8312-f5a1fa54c40c",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barton Gellman",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d7c80d38-d1e7-4138-aad8-d26aff38365a",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ezra Edelman",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Prince",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "247a1202-787a-4898-92ca-8eddbefeede6",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Enrich",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "829a530e-8288-4f40-a470-85ed5729e4e9",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Enrich",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d090fb88-1aa1-4c21-88b3-1180978b1cf8",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rümeysa Öztürk",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tufts University",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e4bb6c18-9718-4df6-bada-afbb1f5adaa2",
+   "subjects": [
+    {
+     "subject": "online-radicalisation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pyrra Technologies",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Welton Chang",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9cb94ef3-1b97-49a2-b036-1301e6248fa0",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Shireen Abu Akleh",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "616862ad-9df5-400f-b565-62cec4fe5b5e",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Hayes",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d4667b1e-5af2-41fd-a996-664b53584a33",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marion County Record",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a82a4c43-73a6-4484-857a-eccf58d7b5e1",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marion County Record raid",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "805b05cb-c659-45d5-9b52-5bd90c9fa5ae",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "1130a8bb-bf4e-464a-827f-865b0cb690fa",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "fa633f67-ba4b-4858-8d03-dab0bbe59a97",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "825370cd-4e6d-4a6d-a953-46a99b605c60",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "c773cf83-e16e-4057-88f5-bb276a3b6b27",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "a91e77f5-6a9e-4241-92a5-304667d5409e",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Jeffrey Epstein",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8278fe60-ae38-416a-b2a3-3297517ba5cd",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "d35ca46d-603b-4a7b-ad22-60b8ff9ab551",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "AJ Daulerio",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Brett Favre",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Jenn Sterger",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ef597bed-c54b-4185-a7b9-54412e05eeb0",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sandy Hook Elementary School shooting",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "18e9ef54-f5bd-43b8-90af-4df08ac41da2",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7cc25fc2-8810-4dc0-97cb-8445399d0298",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Natalia Antelava",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e73099c6-d605-43ba-8031-8c4f7aa44d6f",
+   "subjects": [
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "whistleblower",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Reality Winner",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Intercept",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "feb1d165-5579-49dd-b573-0a1f4ccfaf99",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Javier Milei",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Julia Mengolini",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8b2098ec-0ca7-458a-99fe-ea2aa6af30b2",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Meta",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "14260fa8-3f6a-4cfb-aa07-3aa376272cc0",
+   "subjects": [
+    {
+     "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "88f91d89-15fb-4c30-b25a-7e53649f8a67",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Collins",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Onion",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c62bad3d-b2b0-4cee-9034-6ff0b9245ee1",
+   "subjects": [
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeffrey Epstein",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Michael Wolff",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4bbfdd3e-2cde-4a1f-a7bc-8743d69c1bcc",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Leopold",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Jeffrey Epstein",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "4eb4f798-ac64-4036-b4d0-6b6f1aed3e1c",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "f5f37d12-7ef6-4b4e-a503-aaf33436e128",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "31d5aa0d-5769-4007-a947-827117de0fe0",
+   "subjects": [
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gay Alcorn",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "S-Town",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a23b0e4d-df68-4a3c-840c-fcd28db360c1",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Altadena",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1a060e8f-1169-478c-93a4-15789f7c453c",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Davin Strong",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f1cf71cd-ae07-43fb-8e03-0cb9f43573f6",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Drew Harwell",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "ICE",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "43392706-0e79-490d-ae95-4457d688a43a",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "JB Pritzker",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "U.S. Immigration and Customs Enforcement",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "51fca35e-d229-4986-9efe-373471500ade",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Corey",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8fb358be-9637-469e-9bd2-32224c50e178",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "efa33f60-28b1-40b4-9351-23398a7e5c3e",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mario Guevara",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3453566d-4644-433e-b249-d7b035d8a89e",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mario Guevara",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e5133ecc-4202-4fe0-8198-78ce9aa52aec",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "e3d16140-17b5-4be2-a228-7f5cdc61b574",
+   "subjects": [
+    {
+     "subject": "monopoly-and-market-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ellison family",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Paramount",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "97ec306e-8ded-4c90-a934-50ab1c311e63",
+   "subjects": [
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "undercover-and-embedded-reporting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Israel",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Jeremy Loffredo",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a03dd303-57a9-43db-b320-646185db7b4b",
+   "subjects": [
+    {
+     "subject": "undercover-and-embedded-reporting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeremy Loffredo",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d73a75a7-7926-43f6-ac44-56317879b112",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Benjamin Netanyahu",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9e05dc4a-7892-48fe-be43-b6189f1806da",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Google",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Meta",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e530d990-f06a-45e9-a5ee-722c4f364e16",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "66cafca1-23c1-4a9a-b1b8-fe2a203ee5c4",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dana Ballout",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Copernic Affair",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f683ebb1-5b09-4464-898b-0949f1ae4743",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "betting-and-gambling",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gannon Ken Van Dyke",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Polymarket",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "90bd31a2-7d79-41dd-9e24-b2e37d8dcaf9",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rümeysa Öztürk",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "95e489f0-de18-498c-887f-d81751db00af",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FEMA",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ecb17931-b541-476c-9b34-326296769726",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Claude",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2f2929a5-4925-4bca-a5a6-d7c6bc74c9fb",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gordon Pennycook",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "524082c3-b404-457c-a3c4-3ea6c249c98a",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Jeffrey Kuntz",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ea5f6e53-72ae-4b09-b693-873f5272f061",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bruce Rastetter",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "53b56870-8da6-4af4-a7a4-6b7cb57963a0",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Direkt36",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Viktor Orbán",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "063aa859-3d3d-476e-9ae1-9209be03eae0",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ashley St. Clair",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Elon Musk",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "xAI",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "fbd33e99-5245-4e6b-9d69-3f490b012234",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-negligence",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Meta",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "29560e88-e6f3-414f-98ef-6010661ec684",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Matt Gaetz",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "NewsGuard",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

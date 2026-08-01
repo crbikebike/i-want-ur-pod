@@ -1,0 +1,401 @@
+{
+ "slug": "dr-death",
+ "title": "Dr. Death",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "medical-system-harm",
+   "count": 7
+  },
+  {
+   "slug": "medical-deception",
+   "count": 6
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 2
+  },
+  {
+   "slug": "books-and-writing",
+   "count": 1
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/CJgUInoyon952oPLmGaxaPA4p9bliGVKDkhtbTkISGM",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christopher Duntsch",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Dallas",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Robert Henderson",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ieY9G-ZtCovS353ix_oRzKTO7J7riKybosM4AIAqLDw",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dr. Fata",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Patty Hester",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/uVxb1AwztVjOxAbkoG027ymIduEpQogYO1V2jaatDi8",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Benita Alexander",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/LNGK2fgJkDv7PG-C_7OYn6iwFCGVn4vMkrrzLKLy4IU",
+   "subjects": [
+    {
+     "subject": "medical-research",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/xjITU5Rgth6-ubMLZ-vWDigJR3L60JVOBP-MO7S2f3k",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Serhat",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/vtTdDOd9eH_3pXk47xT2MsqDfk30nu6HTmTWc6_V14Q",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Serhat",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/DXRijJUOMryb7fnXRgAKGu4cqEvQsmwVO8Ooh-uR8gc",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Serhat",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/dH9lysKIX8OkU6xWNv3dTKBTiCSXWwsz51MiaKxJaLE",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hindenburg Research",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/5_2Y8V97AYq7QhkrvOf4RqBO88qYjblTYJy1B4e6BEA",
+   "subjects": [
+    {
+     "subject": "startup-collapse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Enochian",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/fMPYe1LE5ZQ7FdVOhdZQ2ylW0TCHmSFWfYIxZk68Trs",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Schneider",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/YYJpzqD9F_6RWJ_w51NvKDpvw0y9UoG3B6VRmK1LMAw",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/DRk9y0tTw54QKFDr0I3nwPkpmOEBDQY9Q8ZMBLePJEY",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Schneider",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/RvicpwfTSXMDJUo94TY5QhlcpOS4BFhBc_kpxqSIOQM",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/9RTonOKs8_0PchnT-8ZbHtJUn2BQmOH2-ewmIBShYj4",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Schneider",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/KUTbqqZ8Q3p5KgLFBW2og0TP4D89RGBlPY3xe2VzvRE",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dr. Schneider",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7qk1Y3YMxEq83Px-YLmBsgD7AvS2NPs1W2cbkW1jONs",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dr. Schneider",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/iQ2DZULWyOMp-_qH_pK5qs4w9PdWBqf1Jn2dw-_QwxA",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dan Taberski",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

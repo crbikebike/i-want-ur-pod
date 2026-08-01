@@ -1,0 +1,109 @@
+{
+ "slug": "loop",
+ "title": "The Loop",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "juvenile-justice",
+   "count": 7
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "prx_59_404db3b3-59fc-42af-932f-e7e9471a4a85",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_59_7dcfc6d3-9b3f-46ca-a4f3-4e41ce96ace1",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_59_151599e8-90f7-42b2-9f57-25fea70e7b6a",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_59_7ccf8570-08a9-486e-8d41-4e32d244016f",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_59_f90f7fc2-eff1-495f-8864-359cc26da812",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "prx_59_e4d2eaf0-d191-4e9a-825a-e2813a38e996",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kaysha",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "prx_59_2799e2de-03ce-4745-b9d3-feeaf5f20da2",
+   "subjects": [
+    {
+     "subject": "parenting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

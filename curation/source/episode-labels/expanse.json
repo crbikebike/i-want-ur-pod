@@ -1,0 +1,943 @@
+{
+ "slug": "expanse",
+ "title": "Expanse",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "missing-person",
+   "count": 9
+  },
+  {
+   "slug": "disaster-and-accident-survival",
+   "count": 6
+  },
+  {
+   "slug": "heist-and-robbery",
+   "count": 6
+  },
+  {
+   "slug": "wilderness-expedition-survival",
+   "count": 5
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 4
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 3
+  },
+  {
+   "slug": "paranormal-investigation",
+   "count": 3
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 2
+  },
+  {
+   "slug": "supernatural-encounter",
+   "count": 2
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "protest-movement",
+   "count": 1
+  },
+  {
+   "slug": "voluntary-disappearance",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/introducing-expanse-pink-diamond-heist/13977616",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Argyle diamond mine",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/the-argyle-intrigue/13978036",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kimberley, Western Australia",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/a-heist-is-born/13997832",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Argyle Pink Diamond Heist",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/lynette/101310948",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Argyle diamond mine",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/how-to-catch-a-thief/101335284",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Argyle Pink Diamond Heist",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.abc.net.au/listen/programs/expanse/roddans-diamonds/101358708",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Argyle Pink Diamond",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/introducing-expanse-from-the-dead/102957660",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blythe Star",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-blythe-star/102985540",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blythe Star",
+     "kind": "work",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mick Doleman",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/lost-at-sea/103013158",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blythe Star disaster",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/expanse-podcast-s2-03-from-the-dead-blythe-star/103043560",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blythe Star",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/04-from-the-dead-missing-presumed-dead-expanse-podcast/103072598",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blythe Star",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/05-from-the-dead-back-from-the-dead/103100320",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blythe Star",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/introducing-expanse-spies-in-the-outback/103692522",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pine Gap",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/selling-a-space-base/103729416",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pine Gap",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/politics-pressure-and-protest/103760610",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pine Gap",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-women-get-wild/103781654",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pine Gap",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-spy-who-loved-alice/103813630",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pine Gap",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-secrets-of-pine-gap/103843966",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pine Gap",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/introducing-expanse-uncropped/104587728",
+   "subjects": [
+    {
+     "subject": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/who-is-visiting/104616622",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "supernatural-encounter",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tully, Queensland",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-sighting/104616620",
+   "subjects": [
+    {
+     "subject": "supernatural-encounter",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tully UFO sighting",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/uap-in-the-usa/104645762",
+   "subjects": [
+    {
+     "subject": "paranormal-investigation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tully UFO sighting",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-ufo-files/104645758",
+   "subjects": [
+    {
+     "subject": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tully UFO sighting",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/the-legacy/104645764",
+   "subjects": [
+    {
+     "subject": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Danielle O'Neal",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/introducing-expanse-s5-nowhere-man/105318148",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/01-expanse-nowhere-man-ghost-in-the-desert-/105318166",
+   "subjects": [
+    {
+     "subject": "wilderness-expedition-survival",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robert Bogucki",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/02-expanse-nowhere-man-trackers-/105448890",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "wilderness-expedition-survival",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robert Bogucki",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/03-expanse-nowhere-man-the-green-berets-/105448904",
+   "subjects": [
+    {
+     "subject": "wilderness-expedition-survival",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robert Bogucki",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/04-expanse-nowhere-man-alaska-/105448908",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "wilderness-expedition-survival",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robert Bogucki",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/05-expanse-nowhere-man-miracle-in-the-desert/105448910",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "wilderness-expedition-survival",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robert Bogucki",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/06-expanse-nowhere-man-lost-and-found/105448912",
+   "subjects": [
+    {
+     "subject": "wilderness-expedition-survival",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robert Bogucki",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/bonus-expanse-nowhere-man-gunslinger/105670938",
+   "subjects": [
+    {
+     "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robert Bogucki",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/introducing-expanse-the-nannup-four/106378480",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nannup",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/01-expanse-the-nannup-four-the-people-in-the-blue-house-/106396544",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chantelle McDougall",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Truth Fellowship",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/02-expanse-the-nannup-four-selling-snake-oil-/106425444",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chantelle McDougall",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Simon Kadwill",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/03-expanse-the-nannup-four-down-the-rabbit-hole-/106452146",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/04-expanse-the-nannup-four-a-question-of-belief/106477560",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/05-expanse-the-nannup-four-simon-says-/106495302",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Simon Kadwill",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/06-expanse-the-nannup-four-northcliffe-/106535904",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chantelle McDougall",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/bonus-who-was-tony-popic-/106560688",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tony Popic",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/bonus-inside-the-nannup-four-police-investigation/106582984",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nannup Four",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/behind-the-scenes-dominique-bayens-in-conversation/106612212",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "https://www.abc.net.au/listen/programs/expanse/update-hope-on-the-horizon/106816066",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chantelle McDougall",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

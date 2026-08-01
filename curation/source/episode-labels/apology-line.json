@@ -1,0 +1,136 @@
+{
+ "slug": "apology-line",
+ "title": "The Apology Line",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "archives-and-objects",
+   "count": 2
+  },
+  {
+   "slug": "everyday-mystery",
+   "count": 1
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/2E7Nce-ZiX0Rmo017w7js5BvvKiOIMjWELujxOvJync",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "archives-and-objects",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Allan Bridge",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Marissa Bridge",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/eZqOUfJOCHVNII-XMFC9_A_GMTUUWYvZz_n_vPNiVK4",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "archives-and-objects",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Allan Bridge",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Marissa Bridge",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/FZOLMXrfpw3yiFJUGu3jywchXoCWaRbhRJRCo3KN7iI",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Allan Bridge",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/hHWTPWZ_fEKlIF1BwgwI-Ru3CI8hb9NPAn13jwq702w",
+   "subjects": [
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/VtIFrso4No37hB2PPIbM1Hc5AWHcnEqE7S9AZuPk6Vk",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicholas Rossi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8812 @@
+{
+ "slug": "even-the-rich",
+ "title": "Even the Rich",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "celebrity-life",
+   "count": 158
+  },
+  {
+   "slug": "artist-band-biography",
+   "count": 66
+  },
+  {
+   "slug": "gossip-and-tabloid-press",
+   "count": 18
+  },
+  {
+   "slug": "history-retold",
+   "count": 11
+  },
+  {
+   "slug": "cost-of-fame",
+   "count": 9
+  },
+  {
+   "slug": "fashion-and-clothing",
+   "count": 7
+  },
+  {
+   "slug": "kidnapping-and-captivity",
+   "count": 6
+  },
+  {
+   "slug": "media-criticism",
+   "count": 4
+  },
+  {
+   "slug": "musician-downfall",
+   "count": 4
+  },
+  {
+   "slug": "hollywood-history",
+   "count": 3
+  },
+  {
+   "slug": "monopoly-and-market-power",
+   "count": 3
+  },
+  {
+   "slug": "political-scandal",
+   "count": 3
+  },
+  {
+   "slug": "reality-television",
+   "count": 3
+  },
+  {
+   "slug": "addiction-and-recovery",
+   "count": 2
+  },
+  {
+   "slug": "employee-embezzlement",
+   "count": 2
+  },
+  {
+   "slug": "journalist-under-scrutiny",
+   "count": 2
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 2
+  },
+  {
+   "slug": "queer-life",
+   "count": 2
+  },
+  {
+   "slug": "romance-and-heartbreak",
+   "count": 2
+  },
+  {
+   "slug": "advertising-and-persuasion",
+   "count": 1
+  },
+  {
+   "slug": "ageing-and-mortality",
+   "count": 1
+  },
+  {
+   "slug": "ai-and-society",
+   "count": 1
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 1
+  },
+  {
+   "slug": "chronic-illness",
+   "count": 1
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 1
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 1
+  },
+  {
+   "slug": "disability-and-access",
+   "count": 1
+  },
+  {
+   "slug": "gender-identity",
+   "count": 1
+  },
+  {
+   "slug": "intimate-partner-homicide",
+   "count": 1
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 1
+  },
+  {
+   "slug": "murder-for-hire",
+   "count": 1
+  },
+  {
+   "slug": "music-scene-movement",
+   "count": 1
+  },
+  {
+   "slug": "musician-death",
+   "count": 1
+  },
+  {
+   "slug": "presidential-power",
+   "count": 1
+  },
+  {
+   "slug": "religious-abuse",
+   "count": 1
+  },
+  {
+   "slug": "religious-community",
+   "count": 1
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 1
+  },
+  {
+   "slug": "romance-and-catfishing",
+   "count": 1
+  },
+  {
+   "slug": "tech-industry-power",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/J0dsgMV5Ok2AB8xyqAXavvpwgtDvVcl9WyN2PVyiz_s",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Even the Rich",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/d8oI3u9ElMNSZXlEKENKYUhbLHQtzkI8lhT2Id1sYRE",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Meghan Markle",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Prince Harry",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/SLLWTLZN90f3s9AOKVaghXIdMElPs2O6AbWcjNxegfc",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Meghan Markle",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Prince Harry",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/b_HvBiV4qxi4LQ8iD9kS9Y1IeBBaOjr4rhZ1n5VIrZw",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Prince Charles",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Princess Diana",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/l5Qd-C_QV4ib5kHPA7g6OUlZLi7WCkEY2pc1JkDrrUY",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Meghan Markle",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Prince Harry",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Princess Diana",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/zqbk9lFoEdjQ9SJ9BUmekWyy1rJczAsFat5pnasFJas",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "British royal family",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Buckingham Palace",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/y0prZaaWlJo4S3ehOg3AqLlD7uxmawJcG5yAiCk_ilE",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "monopoly-and-market-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "News Corp",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/LMfMPFQ_pdF8Jgx31-lYMNIX6GU073QnHLRHkhBq34o",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Wendi Deng",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/MaBGOBmQ6AmBjiXp4s3eWXLwhwBpmDHcGADwGk7Sw3g",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Wendi Deng",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Bm-Xye4qp4MiJMKV9-FZpYVdPiVb8lbX-tYC4Iw1M-8",
+   "subjects": [
+    {
+     "subject": "monopoly-and-market-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fox",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/vRHZYb_9FMREDmElle27uFQ2KIgDoz9ntxFqxaHvyxw",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ken Auletta",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The New Yorker",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/iU42bU6p1VnJI7qQ0zwEsZAr6CiXNb1Mcglg89-0ZLQ",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Poniewozik",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Succession",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/x6ZNacNCohVUYjYgFAupwr7q0fPZ-iZwf5tgkPv0ICE",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/XciepDTV6zgaziV5YXJUT_tT6pYC2MXqMN1Y8xcdpsE",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0vJ8s02M1CWuyoLKbb6vO63Y2nJ2nKXS9igfflcYZM4",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "employee-embezzlement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/NrHGQ9lN457umJsIW53bCPo_OO2meRqqZmKzAKzV0-0",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/z4npCRiwKcmH-Y80P4cXZcxx-hG7AbqorjRfFzuv7yw",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/d2HKF24mK0xkvdimxZT5oFWUf4VJuMXvmF363QIP8rQ",
+   "subjects": [
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "J. Paul Getty III",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/pJMOqIXq9BBXeXHHYnOeYanesJllp6NsKuyCzucVT0U",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "J. Paul Getty",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John Paul Getty III",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Rome",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/z0KrbpEYwckJGl8_Un3z_hvpZsF2W09uPWbfT16dstM",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "J. Paul Getty",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John Paul Getty III",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/9zQ-qGPed_E7Pf24XZoRsXcUd2ohemOjiyIbydAtIiA",
+   "subjects": [
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Getty family",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Vvpkzp8A-NozmQSuogvrk8KFnzC8rcX0YO9dUqutnjw",
+   "subjects": [
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "All the Money in the World",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "David Scarpa",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "J. Paul Getty",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/DyHdeO8Df94DcfGcajtHRxkFuKu_lpo0LqkNjTdfjTc",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "tech-industry-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sarah Ellison",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Silicon Valley",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/jD1bruW1FjXXSgQxBQ0kLU1pE08unem0woscTMncTk4",
+   "subjects": [
+    {
+     "subject": "fashion-and-clothing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donatella Versace",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Gianni Versace",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7oJGpGRwhX0dvJnMUSpOOYBHUUF56KEoXoe7kJfpw0o",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "fashion-and-clothing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donatella Versace",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Gianni Versace",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/rU0SD-QW5oZClxzozCoSlF-hzyhIwj3KjIkDgJCMxG4",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donatella Versace",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Gianni Versace",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/-GwHrMAUM5cPkatRHJOmkhg6fQjbEEmayz-arD3bInY",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "fashion-and-clothing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donatella Versace",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Versace",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/gsF2gwvrxv572L94Z8JgP3uXraBRzJXhX1KjM60Vh0c",
+   "subjects": [
+    {
+     "subject": "fashion-and-clothing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donatella Versace",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Molly Young",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Versace",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/9JPZWDT1hzQEewdCG_YIbmGD6UFGcyCeXJFYtToKJ30",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chappaquiddick incident",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Ted Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/P707O2CG0u-X5M-EUyX2yJWuH738anlZiuCu_ZB4zyk",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chappaquiddick incident",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Ted Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ONAM_TI65sOILqzhhlLWU6aNrhObIZpBlWTGFSwSz_E",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chappaquiddick",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Ted Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/5zOY-qQYPXk62DyqWUFNj9xnl7X_CCovfRf1SpvVNsQ",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carolyn Bessette",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John F. Kennedy Jr.",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/UHVDl9zUJ48A2I1FXUga0qoWlR5SJGj49Xy9yeAa0rM",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carolyn Bessette",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John F. Kennedy Jr.",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/H2mrHTiqIh4Ho69P9TJsoqnvrS5X8J6ag-xolOIj64E",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John F. Kennedy Jr.",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/zuWSDPEsq_ZV4mUJ2Tf7Uy3mtDPhgg9SiJRFVQioSUw",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/WHJF9gL7u8UhxjinsMWbf6Yo9e60KZoDrbXQE-trMTc",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Kevin Federline",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/i5hq1eJ0Ici8OIVYUJwhoIRHGlkAxa5C7PHcF7t7hG8",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jamie Spears",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Q7yuhovq8Ga2aHA7O78sXrLw-iv_oOWNBTcGL_AmdBo",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/BtUIPzKBWPHrEK5eiUQNNNV0OY3svHALvm8uyn6XMAY",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Meghan Markle",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Prince Harry",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Princess Diana",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/SqQyjf2uDP3x5SEq9a_CV692RQ6mJ69VB_bzkBZm8U4",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Meghan Markle",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Princess Diana",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ZuK0tOz0joJscSGe4ZRTbvAMipDMc62BeJQm2Yuo-7c",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "King Charles III",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Princess Diana",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/YHZdAM_TbCQu67scnwdFQB7HRpsTFSati_tlMxq94bc",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Meghan Markle",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Princess Diana",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/vg92gpChEl0tAB60myd0WmXXp14OBPNShxX_knzSkEc",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Hobbes",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Princess Diana",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "You're Wrong About",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/tG7vt2xxjQmCi5N4TOBUiZkfDKmRWuUNkLul0dOemLE",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobby Finger",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/B6N_tsRw_z8-5YJ0tEkm4cuEWDXuvJRggQwnQoh3Xo4",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Paris Hilton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/46m6Owsc0JgsKHZWotccgBF75X3vKpLxrr5mOlVZFew",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Paris Hilton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/mTgTbQA0Uf0u2BHl1UhK-2hXG1bowKaaKn1Mb5gxWvg",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Paris Hilton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Ozl-sp4HcooRYYgfYOvbOFemzN9DMFxXQvvKsrnrl5E",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Paris Hilton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/P_gUHTOlqEmJNylo3Z9PFd2Oeq_mAKboGjpj-gdZq50",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Paris Hilton",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "This Is Paris",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/zLoVADGspiKUEjVPu_NvXSq06Rr3TXqg9VM90jh0irU",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Kris Jenner",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/PAprBKfp7uyCLihQ3M6ohM-Udw_cfFfl6TgyPVO-yXo",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/RXVHdHQ8CFh3heYyfPCcY6-SvUFAb5OHavuZqyzZ0WA",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/-wev2dlPiRaxcrkHqAMUSvZXzAXKzsRme3hMNdLqpGk",
+   "subjects": [
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Y6MFj-O6zHsv2NbtJb01k8lbCK_1pTZv48olXcm3PyM",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kanye West",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ma-MF-kMSI2bVQ5_izgmYhCMG6mjD3SAtA70rILjz-I",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Meghan Markle",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Oprah Winfrey",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Prince Harry",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/qq4pKYYcOa8qk1TdcXzI3_wLOL2_zexWpUkv7Qe7g9w",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacqueline Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John F. Kennedy",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/WrkMZsgSyp-me0bCM4hXUaHrRTztHTWUIP3v0Bgfq9E",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacqueline Kennedy Onassis",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John F. Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/fliRhAsej2_NrtUHU6_LRaKcdm7DwLhQ5X7ILKS6kKE",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jackie Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John F. Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/yz9MrQ5WvITpMouXmMi9O3WZwaXkzPhEJUSr4Ts-USI",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "fashion-and-clothing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jackie Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Michelle Obama",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/5Ue1Of38wHfpBZfg16cb5gaqCta8FCpEKfJJTSzggD0",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/_SJCXGYflVHYKYcgutDlcJubK8thKRVAriWx4C722RE",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/2JEniYcFCG0DkDignozyswwjqymJGmCHlhjbNEbsL58",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "employee-embezzlement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/QnN8macQW6Ljv2b24xXouApJ245DUiEUoCFPDO-sa4o",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Lemonade",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/OgQ0F87scG6GXbZMRkLareS34MsfkbERJfv3HiEuKLo",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bsw50FYiA6v5Xa53t2pD5R0n_Zk_Lbne0wdVtgM6w-k",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/GTeb4HRKvXlyl5Ra0F94Dmt3vhpcQqe9yMmF3D8DQzw",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/tjQlBnK351v4WcPtMbbtLQ2z_hd-5VvirMzBidkCUWE",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0a8dqUu-3jOKn0ffchljdvoMXHTcuwCTZ-JtPuoTRZQ",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/UuLfYeQINAKFq5rUim9q--wOK4zQUmlXkR-XWNvIUis",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Roxane Gay",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/J3QOtSlO1SCRrU9uN1mZDJzHmupgxkLR66l6l5pMKrg",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "disability-and-access",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ACLU",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/lqNiJ10NZVfzlK_oF4wgWxgJ-Xofpy3DzeRFOFolOiA",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Taylor",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/cI-krwemuzgGSVFqDcofg1ofJgOk_CmE6TEPnruTi-w",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eddie Fisher",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Elizabeth Taylor",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/e3mE1bJr9YDeVOl5vGWHJ3GJEorBD7Kt3NjCDNMO0Xg",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleopatra",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Elizabeth Taylor",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Richard Burton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/gk094K686Tklj45d4XRHjxzU6J52e36w6R22HjdifPg",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Taylor",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Richard Burton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/p2SR1K-GYiTTr3X3M5kNDAAYCWpOaioiLcjH2y2vo3Q",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "hollywood-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Taylor",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "M.G. Lord",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/esEmmmHAy82qFNs6bdo70Kd49sjsJy4q0xllELxxvL4",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Affleck",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jennifer Lopez",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bbxYBBsP0HJKM8sjHrm8kFusUOS0rBEaCxsJ98PcRfM",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Affleck",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jennifer Lopez",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/xXA88kBBDiYJWU7sGN8VCQn9hsC6nVdP6SQLysQidSk",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Affleck",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jennifer Lopez",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/KsaOgG26twZ6lPT_LP7fPRbbWKmWX4coGrJcYjUp-A8",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/9n9wKMChD6Vu68wYLGrNEVlHnyIZJ7qyheT9fUD6JO0",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tommy Mottola",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0KrcqS6rzAbQ901phaK4h5AYx8yZZQ7DrCVuWWUbvzA",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bAMS_oODE5s6OuF0ns_O6A46E827UAyQ8fx7hOw3cSw",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/IoPdJAvXMamRICdrIDTEBrRxfm7MZMeLPkwJVqcL3o8",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Glitter",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Nzg6XrpK0K8CFvszJrv0qjaEih7IDqGMQ6McwIb6M8M",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "monopoly-and-market-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "News Corp",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bRf9qI0U2zU9_1Gxb7GjogkEqHOzwGVm3zINSIF5vyE",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Wendi Deng",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/AT4hq0-O-ymIezmIXcK-Bm4LlzKYtyrtBY-SfNg2O-w",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "News of the World",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "phone-hacking scandal",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/crWQZAkYAnxtkguf6__p1eajHa7sOG9WwH0QEcEMMhk",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "monopoly-and-market-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Murdoch",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Lachlan Murdoch",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/FNt8I8CbxYSch3lvBA-TDff2SAhD-CuRq7-nlIA7H-A",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Murdoch",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Rupert Murdoch",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/gjZu_ZC4COvtb-XGfY3963DdTjMpAkvUQDsLYHtRsfg",
+   "subjects": [
+    {
+     "subject": "fashion-and-clothing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gucci",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Maurizio Gucci",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/5VMjAuVfrs5kwZEmVFd9n6LydjxPAuxoNoLMQnmDKno",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Maurizio Gucci",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Patrizia Reggiani",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/6Q0XXSvhcnzWBcyOp7gsCDQC71ywnxxTN9VmNplOLRE",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gucci",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Maurizio Gucci",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Patrizia Reggiani",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/rJFYBnF84iaFOCPh6w8IdBSnhbVdGwepdA1_EQBHd_Y",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "fashion-and-clothing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gucci",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Maurizio Gucci",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Sara Gay Forden",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/yg1wmdajjzfd8bIp3CIy_hWkQhYiw_mZe6Sd3t-V5dM",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Simpson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/gX1smldl3AU8bAJHHVL6YfqK3MuapQfhzgJ30kyDtqM",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Simpson",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Newlyweds: Nick and Jessica",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Nick Lachey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/vQ3moavcb_oYWT_FzeYRxA-JjI-G61QCcXMRKVHQ9Ps",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Simpson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/o33Nzrn6X-DLB-s0EvhnIAFO9JDarWlHjP_UkqF3xPg",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Simpson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/3qHVWzaaao9sZe3Rk58GO1M9BvCP6QBZtNe01VUEeiY",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Simpson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/CFgXYqtjzVs2npSjRPLN_4EEjbTztgeoPXHkmAb2Zck",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Patty Hearst",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Symbionese Liberation Army",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/crof9UhvU0Cz5Gx04IgL8Pw77Q-92kwt-k_FafBuHyw",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Patty Hearst",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Symbionese Liberation Army",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/GYh0UNxnpxlT3pYDXn4FcrUbd_lG3D_QPxc6y3AE0cE",
+   "subjects": [
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "F. Lee Bailey",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Patty Hearst",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/9mvKXrCHj3Lzq-W0Nk2kMr-TVwHSTplpHoDcqzJSi5U",
+   "subjects": [
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alexandra Stein",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Patty Hearst",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Symbionese Liberation Army",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/-h9G8FAbka2yHFSKimkhkaeuLQdAb5wGczXgu-OKntQ",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/6Ldcr0vKdzYPcumikw9E9CGEA8cOzd3yePR-LWHiEug",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janet Jackson",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Super Bowl XXXVIII halftime show",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/nHRiXa6EYZn8OP5WQQVHq_X1A9l6lqreGles_C1xY9g",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janet Jackson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/HaVmD7JaAJoX85J2MWcjyxapTyw4bLPXOgZAi8oY9O4",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janet Jackson",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Super Bowl XXXVIII halftime show",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/9xrP7j5su1rlqpDMJd8uMORzQIP11155bhcouxdUSCU",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Kris Jenner",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/H1_ZqjDgSeWYzhQAjsPtf5TGYdcHF-zsydkPFpKzJKE",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/D1Lcz31NgUmFaDjfme6F5R_3P-aBZya1IsW9p6OOdDw",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/zi56F0PouwRa2A313hcb025quX_I2GieRpxtJLw62kw",
+   "subjects": [
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/LM0ODS38JLe74cXio_2uGFatIat3kom1JOOD4ynp9ok",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Page Six",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/30WI8-cjjIPIBE2eiB3Q_EQOe5hELjJLqjAPgwGJL0k",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marilyn Monroe",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7Cnkxr3gCsA9JxxnWMeOCPwKupT2icZuPOGZVXut-u0",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joe DiMaggio",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Marilyn Monroe",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/pqbJ5LDEXPPgvyWcUQPg-B_UXKjX4shSoCMEfSlA8iE",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marilyn Monroe",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/NBN1uQ7BaxkgdBBYidVBfRs2W7GUmRCXdZQFtQ2JL9g",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marilyn Monroe",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/o-aCVqrkA_CCuQixHfV3Nli71fkZ51Ue4X0vHpu2Ang",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "hollywood-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marilyn Monroe",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/DWSumerDrx8sa_dgI_PL3KSXup1obmoFv9Mt7MQteAI",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tennessee",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/8tpZjJtxZpYI1srz3nLOoCg2UIUnU2hSXncqqvuIsu0",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Porter Wagoner",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/F6EWGkRmtNK4XbWY1AHqMG1LhyEMfSgh1dth2pDOF9A",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Porter Wagoner",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/cg7u4ATdSYmnhvyo5amjb8qamZBmDDJIS6oMh2u-gpM",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/v_Cg4cmRF9iZ1QFLSLkeFXcxhJnk75yuD3h1i0KoRD0",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elton John",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/QqxUcQvRGWWvMRvjrlakXgBe30XZ0oks10ZDDE-MRFg",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elton John",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/43Q7gYvnYm04AvNetZm7QAU0XjbVV3U5P791Zgam7XY",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "musician-downfall",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elton John",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/riXIxcb_AkHRWlxFu4F4Bb1IqUaYmLsEcNzM_-Dhpfw",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elton John",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/_1lMz-l3r4epodAnamcWsGp_HIvIVfOZzFLnF4rqu7A",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "queer-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elton John",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jujubee",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/I7pH-BOmP2N6KyrV2Hx64RoDKvn0SYBrNTY5q4ZGz6A",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Affleck",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jennifer Lopez",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/2HGkruVniOUbAyKGkO6uwPDKgaKpWmnW46zsyCKj6Bg",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Affleck",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/oswcS5lkQLaGlCg5g8_CEXYljht1AGJWD1NDpnLjiu0",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Will Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/kfXs5Wx4gRhwai-OO_ReX75CCECl_A5EHyTBPi_6Eeg",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Will Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/EDggKjSHWIkPtr7YMOjta60lsb_86NcGOAAx_g6nST8",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jada Pinkett Smith",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Will Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/hrksz8fZi8zYiYUJLkxgI-JbkjX3QDXfEvDRfGLFDmg",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Will Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Lg1jL362UYpR7afaOUb-iztC8FdbOBVWekV8ckJyVjY",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Will Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/n5N7NOsslpdlH-fpJS0RDMJHIQ9fwu0Tjyq9SkV-1eo",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jackie Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John F. Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/o5zpiWKX22cHVziuuY7Oippxgr1hOxdNTHoGxyWL1bo",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jackie Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John F. Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/uMg6dxAmRJwP82V5sAjszIrt9unxt59zCyW3VdFEaZQ",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacqueline Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John F. Kennedy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/PY7i7OPQaIaiiZ05P_AychgEaBOj5xY411p3z8Z2I0w",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Drew Barrymore",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/p1dQ0sq1ml05blsemoNwdnhMcXloojRwqB5h85iHtuQ",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Drew Barrymore",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/HRu382NL5gXJ93_XTetqQXigGglO5osVC-nXDZFtlbw",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Drew Barrymore",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/siGShpscaqnP-_Skafh7c8d_MZMiibPFB5bbZSQXAS8",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Drew Barrymore",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ZddbTm4allue-camdkzRd3Np-OyK5giN0dr5G7ozC20",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chelsea Devantez",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Drew Barrymore",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/yEqkAblferVX3B5Mxrp0ZuUkNK1aLmucbY7wDYTTOhc",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "religious-abuse",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jerry Falwell Jr.",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Miami Beach",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/pR86k6luS8KRh0v51HLZlUAlsLecNAlOm5ttLEPlVuY",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jerry Falwell Jr.",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Liberty University",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/9qTIUvyeKJVfoGcsCmEpGMbID7y-1zwHI5I6POMZ3Sg",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bsnuQl487qfiZIGVYg-HRkhmIGDn8V2uVIctPeJYOTM",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Columbia Records",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tommy Mottola",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/MDBXnSOoXOULnPsxei4w20h_dTSNRa6URIWgR4228yc",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/aIW8zl3bOQSLstt_DU7iy0a73rxnjrbIfDFEiXfN__o",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/GzsBBYAYSd4xLrf_sYFBb8PGpC8cboplue-8dBTY1PE",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/neUW_1HAg4RrvYVlLMLggv4VYcORFpf7j32Z9flSlcw",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Newark",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Whitney Houston",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ov88EsZrozUNBTTXxn5fpKK0DcAtdsVK_QzjfsMh_EA",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "musician-downfall",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobby Brown",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Robyn Crawford",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Whitney Houston",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/e6-tiY2tKz_XkHsQkHx9Py2HkL_C_8YZtoM7StJBptw",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobby Brown",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Whitney Houston",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/5L3vgJRDX6fS9QRvOywuBzI-s9ZLoBC1_8mRMNRXXH8",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "musician-downfall",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobby Brown",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Whitney Houston",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/tKWUKUT4dJbqPp8ThFB_E9n4CUyEFnrmIJOk6NgL4YE",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gerrick Kennedy",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Whitney Houston",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/fI6ysNQpU4_hRZXWYKcQwJNHZdGovx0Qt-wG1d_lVZY",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Camilla Parker Bowles",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Wallis Simpson",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Yz2N22rx_DnsuYNBt3HU2FMxF9ks3s-WPPzhXSAu24k",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frozen Head",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Laurence Pilgeram",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/EaSHfC91O-VzoSDYSCpKZj5qkkiIshVllgGYckR5j4Q",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Camilla Parker Bowles",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "King Charles III",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/rTBvZnrRs8lS5pr0C3jYp96L2wxrzlQr9pLXwwxXfpM",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tenille Clarke",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Siyw8dq1K3_nRBOhm6Hn5Xqv2e78cBHrEisy5YcGASo",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dean",
+     "kind": "person",
+     "confidence": "low"
+    },
+    {
+     "name": "Jill Evans",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/olgy_EIhSS3wdjLVIdQMUuutRQBzHdNjRYOdYRat8JE",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Affleck",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jennifer Lopez",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/JJE49ElBNVcHVdkC-tYiw9VvZUaVmOP5dSKFFr2JQsY",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lucille Ball",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/NoWXj79PmRM7pS6nhIBJ0JJLP7pMxl1GnKD32x7_edY",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Desi Arnaz",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Lucille Ball",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0kyHxXtpjvD4i6ljt8jbKsZy0rH-Aevj50d4TURahXQ",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Desi Arnaz",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "I Love Lucy",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Lucille Ball",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/zA0AvErZCcUiJchR_XsbV94drxCWRz_sCdRI8FVwQ4o",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Desi Arnaz",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Lucille Ball",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/yHTRe3WRFaiJ5SV5Q2DrC5rmPxm2xv8etRe465FvN3Y",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lucille Ball",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/gTqzwb08sXBVYyagQaKHD1Xb28M5EYJj-HvEvYxQ9zE",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/aupMUuXUjIShT1hRKiBpAdNyUYX81JefRJUxN6EEdAw",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/HEtZv_kD_-a3UIWd2YOscGgVndsB3HlCjUGGFHFEi28",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bTc9OvQpP8YsWqVDdYzDMul0HyEGUzssxppyO6QCJ1U",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/g-AJChgPVmYoIx7xcCoHNOHzFU5lwTBstsExQ1TMNlI",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/9MkLfWrNbSQ-4n_HmuuganpuzUkdTTIFFH2wKV-Cu9g",
+   "subjects": [
+    {
+     "subject": "fashion-and-clothing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/EfSHK31DBDXKfvMRHDo8fP8XKEv2l1ntdKdptitIs0Y",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "A League of Their Own",
+     "kind": "work",
+     "confidence": "medium"
+    },
+    {
+     "name": "Desperately Seeking Susan",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/xtcTWY2V5NGwiB8ppV4croHXnc6gROe7n1_45aLjRm8",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gabrielle Union",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/-l8ZW_P_2wQEqfp0InHt73Dycl3SJfsKZcVUntYR8cc",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gabrielle Union",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/6u9cp_s8lXVz2fyc2gWZTXEpVMJyw_p0TMA5vVcevMo",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dwyane Wade",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Gabrielle Union",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/aRkVC-l6MSFweh60ZvtkYGcF7D7znxm5CWUkZfZ4QRQ",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dwyane Wade",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Gabrielle Union",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/jClrXEvJLm6qXV9NTo21szX0lB-qq94JmoSjznX3rWM",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aisha Harris",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Bring It On",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Gabrielle Union",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/1g-GneEweYh6DiLiNBG9eov09NHPgmyp1NbAqchePU8",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "RuPaul",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/_sngPJbtwUJl9twuRbAXxTPzlDpGVuD3zBgPmEZ3xio",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "RuPaul",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/V5NPZcEcBimJdxLPP0iVOAZnptd1g5LC6Bxs17AhOb8",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "queer-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "RuPaul",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "RuPaul's Drag Race",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/agrk9Z99droPjhPF4CzKk-VX3exDTDPOiqbFRz7cxhU",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "RuPaul",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/nmUKL0vDZYWcUkJU60bHIFD8JhEFsvWGbNzakfdxIvo",
+   "subjects": [
+    {
+     "subject": "fashion-and-clothing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anna Wintour",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Vogue",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0SsqtO36L52TMq97je1Uf917oXYyebWBBSumBxixY-4",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anna Wintour",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/S7wBlfAHsNKck2Qk0DBtw0xiabdrnZ9NmH0mh31441s",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "fashion-and-clothing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anna Wintour",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tina Brown",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Vogue",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ExQrIREA3yeU8rdbRf4Sux-m91HddkO0s1WZVVf6eIs",
+   "subjects": [
+    {
+     "subject": "fashion-and-clothing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anna Wintour",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Vogue",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/xRVjfw5XGm_PsjPfD8lt8PCzutqZpk56Q1xurLCtfYs",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "fashion-and-clothing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anna Wintour",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/z40wQ8-Lo4tx79szHsLeOQ9Q5G3cUK3EBxkmpZhI6Fg",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Will Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/WCJ6OANm8YFvJ_5STp2VC4kByZ7Uc4CzgZpXg5ALU6k",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Terribly Famous",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/td6vKvCNa7rZPchR0gZ9iyKRVMEzJ6y2ov1QfLc4Jic",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Will Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/wtGH_zKuZP0NUPBs-F0qkfentkVI3foHTyOxbnBloHk",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jada Pinkett Smith",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Will Smith",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/DE3GgQQzgdA25SlDGMIDXQkieysahabfMqfmyYqftRc",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Will Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/uurN-AGQhxDwaSAmuot3H1LX14U134dHvr1JcnRYkNw",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Will Smith",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Qhj2iSrwL0xbVvePz2VOphnqZwxfM3MZmK8myg51UWQ",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Selena Quintanilla",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/o_bSFYHMMgS75ty3JVwHeTJmdfih2kVHTS1b9atmt0c",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Selena Quintanilla",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/5kBf5FMwumHzQHzrC_t2OKSl7LmO3xrtnoeQpSBRd0M",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Selena Quintanilla",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Yolanda Saldívar",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ocMySDoDH2Tzobsd598PmSMKSDa-5qA3swZW9o1so1g",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Selena Quintanilla",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/-5mO3ItZIxecQHG7lg7HOCpNwBK_E8aGNS_KvByuLCc",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pamela Anderson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/OtjWknCEqn64Knd09jN5__WnS7GNOxVRA5g4qPYZr1A",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pamela Anderson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/H1r_oV1-t6vUTlSjrNjX8LcyP4cIF2JBMADHmwhVV3Y",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Courtney Love",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Kurt Cobain",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/EFJVUG_T0pEroUXliWIJdUUYOtLobSKCK-Zv44h75mA",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "musician-downfall",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Courtney Love",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/evK5RK1Yxp9hST7z9lNQBmvM47yqeXCPypra6Wfq4z8",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Courtney Love",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Pamela Anderson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/P8Ok3MeYWJn6K6lxh9w7x8VI8UJngD3_xeyqjc35sVQ",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Louisiana",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/jJvrOWxC5XCS0wOAg8ESjcqc0r_9tOvpR4Z16da-NIc",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Kevin Federline",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/eEo2gm_dTKhFWyIdRJrhV4eUXCaKYYtAEWQdFZP4a-c",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jamie Spears",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/PadNLKCHSDUZnAfSAHyhu_Rruk35WDjRiC1STCtHfTc",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "British royal family",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Prince Harry",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/WIsu5u2F-OdEid6rwz1Xdmt5KKw1qWEMKbdAe4ypEDo",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Prince Harry",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Princess Diana",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/NyL10pYcRH8QifM8mxS7cYMGhBQH2l6VmWqc92O0Omk",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Meghan Markle",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Prince Harry",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/DGsqLjxoFhOebXONOjdSOZZElCaNmNPbu3Uw6VxL4cc",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/JAmDai0OCDbJK6_FXAApR198FDUW0IyB_mDh1AB15M0",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alyssa Milano",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Shannen Doherty",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7Rk_8MRBqdoSn5uGLxTVE1CyeqCAykWsgG5zoaTAxwo",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Nashville",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Porter Wagoner",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/izBSM0RfQAVTxCCp88FtBWH23rDgweQ6Tb6q8hKcCR0",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Porter Wagoner",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/4iAiEMFVzI7jaNUzARfHr7B48NmeyP7P2M0hSSc9DGY",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ariana Madix",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Vanderpump Rules",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ZoR5ILd1PvX-TaTO7jJtOTcGO-lBWzDsQx5tjwm-qgg",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Long Beach",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Snoop Dogg",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bfvXZN2iCzbv5R1ICDbLzcl0dYFXQh_i9u_bst5WZ_w",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dr. Dre",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Martha Stewart",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Snoop Dogg",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/dVg_uSE-hJ4v8uUwgtGuSVINjBzj9qwsD7_aaijeUAQ",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Martha Stewart",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/fxMfbI2nrrPnCYHMlJNLh1dmaMQnbrAJNna7bSflsUI",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/SX_usajvHv2DY3zwgL3b6uubvSDprfF1L_l0iuB682A",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Taylor Swift",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/MNKOSfhtbdAeL0yEcL_R-pb3qqYgLtyEcJYmeONOz-M",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Taylor Swift",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/fvVhx2-IS_PfrZWFGwD7Yn7C44O7W3-bvVOwvhvOs8E",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Taylor Swift",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/R0FO8fZb1J1i4rtX3rwRyXYjHuEGAoPQmZUrE9MPjME",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Taylor Swift",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/BDUhBVp5OxjPyoPePa5O7eeDdLdrgfHGNooVHDvl99U",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Taylor Swift",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7Z7kaZ2-5dWThK388As60Dvt8flnJQv4QlZpB9AHoQI",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Vanessa Williams",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/C9XRmX2-b57BqiT8EAz4I1BnioDvxFW50F_lZkS6g88",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Penthouse",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Vanessa Williams",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/kjUb-BYQL7FF2rgz-zs57TrAvkw0yBun-dQURg0jH1s",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marie Antoinette",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Wtnr2fbSkLxopmDognN6oTrs4HfSwNF-b_8DTwpAVIQ",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "France",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Marie Antoinette",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/KNJbRCiKBcVys7s-OKalJQGo3056_mtkMPvDIwjPqto",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "fashion-and-clothing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Naomi Campbell",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tyra Banks",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bAdAAm6_1VioYbQLIb0rdjhY0AuYjTksI_8C7XgQvDI",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lindsay Lohan",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Paris Hilton",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/PZZWBO9MfUxXxWOv39vCiJ0vI5x81B1wHvHgyMjEeJs",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Lennon",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Beatles",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Ii1fWiofv_OvqaRcf9K3XBGomodng958-M5FPlMfAWI",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Lennon",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Beatles",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Yoko Ono",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/cueHgyZkiSPi7I8JE5CTDscpsOtvm6Hc3TlbL2Ua2kw",
+   "subjects": [
+    {
+     "subject": "musician-death",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Lennon",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/cLe8q2HxI10FYJ99M6BzJo2XDGNNpQoiLwA2LnzB_3I",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Paul McCartney",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Beatles",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ZNcrxLnXyBgOrb1G6mvPLD9SMAg8QPcxyDSaZpaAFFA",
+   "subjects": [
+    {
+     "subject": "parenting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angelina Jolie",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/V_1v4OXqn3XCJi55b2w4HlpRfMUUI23wHlU2eYNhmDw",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Affleck",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jennifer Lopez",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/A7y3iSPP7-lKCeIhl7TajVhZ4blWnLVesBIuWE4pEf8",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angelina Jolie",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Brad Pitt",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/p5fdXOgdB9NIRCq4mC9m5pATSuQlRy4vI8DrXV9rTIo",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angelina Jolie",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/a97-CMzAziFmveZlOjNymp08qmmIw8xOE1gNZkThx_U",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Khloé Kardashian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/yL7gOrbbgJdr4HX_hDLPnOLv-SqMwz_lz4vUM6qbCCo",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Geri Halliwell",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Spice Girls",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/whqGLWLwgJ9ETgtHYc4mExtjlnQtze1rHHQh_rat9IU",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Geri Halliwell",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Spice Girls",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bKotIkO6JfTvqjrkRqOIia5Vk4V01_z7IwA2s2kv9hs",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "chronic-illness",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Céline Dion",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/M1TiqLJE35fesz4IaKVT-3zqdx8gAhJUnNuRfFRFW4I",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Geri Halliwell",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Spice Girls",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/QG4vYCmYbAGF0IxzU9tvdN2FJE2BL5yVYPtBNgyYXB4",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ella Vaday",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Spice Girls",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/pk-hY27QAB1H_IdZkBN-1wd0DQ1QskzJ-51bsd0ODiU",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ariana Grande",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jeffrey Dahmer",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/rJycER6oQ9Mt212B9qiW6d1F1BdPK1PscNWcrzcKCB8",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "hollywood-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Grace Kelly",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/9mvPPyuHypBvpoLGzhciAqRgsT1fy1nJ_bn8f4Sbpxk",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Grace Kelly",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Monaco",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Prince Rainier III",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/k5XbUxruJS_9LplnBlDJK-mxZG_ziDj5KyH7AhiFjn0",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dr. Luke",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Katy Perry",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Kesha",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/UT4cbOtIbS18PRGcqj6tpclveHZh21YFyW0K7N9L-DQ",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Grace Kelly",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Princess Stephanie of Monaco",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/BeOc6CwiZW-BEJJfr9EZLpvCc9BcVKPGvAlxEBTjto4",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Ozzy Osbourne",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/UYgOGb7yB7C6YWbM407ILDEhMelXASovh0Xm6kp6UKs",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Catherine of Aragon",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Henry VIII",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/BCbx7IW8TXte-BwP-YUFxYAQ8nOkjfhPBYMZf_iBZMc",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Catherine of Aragon",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Henry VIII",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/HVk7Zp2ZYh5MLPTmglNzM6i0N2824VhQPRZzp1K-pCM",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anne Boleyn",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Henry VIII",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/uJpCpiPuQkffHFXrLUH2iGK1AaaoZXV_6SI2V1DjMBM",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anne Boleyn",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Henry VIII",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Jane Seymour",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/iisuqkWGYqClixW27fc1ql2NY8a7qCYvRGEu3HXyV7Q",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Simpson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/wG4lKXj6kGjsae6P8XpZtpSR2iJUOtLUzY1GxAUbzgY",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Simpson",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Newlyweds",
+     "kind": "work",
+     "confidence": "medium"
+    },
+    {
+     "name": "Nick Lachey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/B_mi3DRhyWwGAtcgunhlmwDKibWwizAKcAq5qcESS0w",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Simpson",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "John Mayer",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0weKWkUgresqWhOsLK31OcONm17rew07zB22IRMY1oI",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Simpson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/eaLf2k0Z3e7XJ9mZSjdGFOHaFLbfJcjlJP2ruxEtXGM",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Simpson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/x3oEbv4BXmfEhgjkBpc5jttQ3wUWVow7DuCy6ZxUaUg",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/HS1t-F0dejIGOSAJXNu1VLbxm8LKomYr_PnXfVq8NPc",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George III",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Queen Charlotte",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Jv2KQFdILu0dMphLNsmxi0PLcg7-V2r5Qazz-z9A-u8",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George III",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Queen Charlotte",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/lLeGbXMMOsG5ps-PxMa-1F70ABdGAMcu7YY7_grsGKs",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George IV",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Queen Caroline",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/waao26A3TAPfF8uSfSt483STf2hpU9UQ4OPY92waeH0",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Caroline of Brunswick",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "George IV",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/64XIL7u6K4G9XPK65xI4qNZ3WsZDHaUYQwXySC9EiHY",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Caroline of Brunswick",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "George IV",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/u105gIJ7Hu7fYlPwKoIGwP7P9pAYfUnT7KKYlFB1r00",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kanye West",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Liam Payne",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/1oqPxghq6IkzDp-B0rziyRQxUTsIWfrz7vtXVM2TZ60",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cher",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Sonny Bono",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/zbuKX4IwxdR-1kN26OAgzC6Ag0sR8A2ZSvvgZrVtXQc",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jamie Lee Curtis",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/JIIXS_boP_QGWZz7ZUgYn1uU33ny1vv8WChcGcH6q9k",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/n5HgkFB7DpDqxJ957qYKCy89jPL1Dzy5jwnpNgvcgI4",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rob Lowe",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/DQlb_C6Wdk4-KKM43XO9m9UgQplJRfxPk70Re-1vvLQ",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Céline Dion",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Vu-nONakqrJNv9Y9T8EqhIMryMsde-ozy9WffYkAnzM",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Megan Fox",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/kHwYgnTm02TVT_kADzQ6BpBrNzGrodQIIcH48ybubzk",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ike Turner",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Tina Turner",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/F6UfFgwOIxAVp0LCZiEfEWQlfgIOhZPYO4zzNhjcciE",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pamela Anderson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/xi_2pa-6_K8lM-yWwOBfeS94hf6kupXJPoeusBYMY60",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Abbott Elementary",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Quinta Brunson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/VshycKf8kXPJI-rIoDHX2k4nLN4RATdZsgw5kaZgeME",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pedro Pascal",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/tn4i_mdPUtBEOx9zBGBsfcatMxG7RHMXPAIzgQMr3vw",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Sean Combs",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/KReSD4toPDRnXNO4jq5QBdHaPJi4v0KjvE9NaAWkd5A",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Snoop Dogg",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/dZXjdT9kaIc007ptkvkzwJlI59pHrI-a61RqUH16Igc",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "American Idol",
+     "kind": "work",
+     "confidence": "medium"
+    },
+    {
+     "name": "Kelly Clarkson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Fd_xGT0foJnvtU7_L4vm8kVtvRI8F_9C21pZsXz6QEs",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dr. Dre",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Long Beach",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Snoop Dogg",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/qZ0gmf2xaWPoV6i0HWBKZsPZ9QxpBrrCmu0z5LHiSXE",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Martha Stewart",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/lo1R1I-BKBHd5k8LiiIIJ_mDli7z57vU92dlgF26pf0",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blake Lively",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Justin Baldoni",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/YUldF9ltdrn9z8ii3gfgo3HH_cruz5-t205-XIs53lo",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jane Fonda",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/uAY8yyj9VEOVQSaajorUuSeC9DzXKdKNjuBDLIezzpc",
+   "subjects": [
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Viola Davis",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ISxPgMwCg9J6j7z1AlxVxZfYRk3PU3LnRsGDEkcynR0",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blake Lively",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Chappell Roan",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Justin Baldoni",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/xjQdUHwy9qlkHjqVteUgx0G1b-rMdUpy2BSBwJQcLVM",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Everything Everywhere All at Once",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Michelle Yeoh",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/1akGknqcO9isffvErNv-wm6CptEy_aXAbj3egiKxtxk",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chadwick Boseman",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Dsvp88fgbPV7BMRupqtQWcIdsrZ0gWeeUv2zIHuQieQ",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Grammy Awards",
+     "kind": "work",
+     "confidence": "medium"
+    },
+    {
+     "name": "Kanye West",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/6bHFb3-wtl-G8vsTg34X9wk2akJicZ3cc_dj0ZKECw0",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Amal Clooney",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "George Clooney",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/knGB2_rNWKKEfdCshPzOwZiUKvHzxqEFU8VLBK6HtPI",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sidney Poitier",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/hTYzUqzSH1QP2fvuy-lloZWwiUwpsIWHcFcKMq5jSmU",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "A$AP Rocky",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Blake Lively",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Justin Baldoni",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Hj6B8DGsbY_QZdV92W4ed3eMaoFqBH5lasvoxq5ZJvk",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lupita Nyong'o",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/RSwqM-4j0rBcyWe4JP2mhxXOnriRjDXEVt5l_cwzXqc",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angela Bassett",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/l_LBZ46Pfm-7eUPWu34cfPMtrl6ibdm-xeluCJsyLis",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adrien Brody",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Justin Bieber",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Millie Bobby Brown",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/LjCu2qmVgTYY6JshN1eGJDPtYLRA-6iXyDPkWb2fibo",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lindsey Buckingham",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Stevie Nicks",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/EE2y-r4B3bcZlPbs3Nq0qCaudzCWAa1bSHveNqq8SO8",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Saturday Night Live",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Tina Fey",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Lm-z2qqi4mWDjtEEXMqg6Lie3U1xnEgxD1g6bEz1jHw",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kanye West",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Wendy Williams",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/79qzD5AdKpi_EEyJF5URaJD1sLHohikxhxdz0LwKqgM",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Harvey Weinstein",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Salma Hayek",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/8ZQ1InmU-_ZYgsOx7mFVTq0siiSA3Cy67xSmwKkApyE",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barbie",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Margot Robbie",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/NSQcM2RF8px3A_FidJyfofIWf5mKFBqXaxwxHQUFLfg",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/AQPzBHLnrtRDmCfb1XhtJF0BO5cxVPwbFUoLF936Cuw",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christina Applegate",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/V6bRdu5EBUadJwBmqRlViciwc9N0bXZPzlQ1oW-PiOQ",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mike Nichols",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Whoopi Goldberg",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Q5IT6OaPY8vYoO44khPMHwMpQ6BCYHdwnqPZyvVRTSk",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blake Lively",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Katy Perry",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/YyonzSUDVJjFIRpQexdy1gfqVzWaSu7iiKZus97B6sc",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "New Orleans",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Tyler Perry",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/I-QuoMtthHU5fIeDNSBJWwxmJ29ifmhn_Q5f9NZoVFw",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Judy Garland",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Louis B. Mayer",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "MGM",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/6i49MfEVW-eYzKy1S68cHfkxNKbQIr_rrXNz5D9tS8o",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "JoJo Siwa",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/_1bA87tYdv90OZWUu39YmnIoB8X3HxU7RQM2H4mljfk",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Martin Short",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/fPcOwa34a_O1AdvMVBV_poP6OjTg4itAYSRK4TS9g0E",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carrie Fisher",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Debbie Reynolds",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/WfMTx84HAi7GN9-5r2cu5KEcpqyo8lftAES9-uO5-LY",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/cyQrut2R44gFha6nFnUWBejRenR_EiqbI_vJr85-qME",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Everything Everywhere All at Once",
+     "kind": "work",
+     "confidence": "high"
+    },
+    {
+     "name": "Ke Huy Quan",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/44jPYXo21EdC3przpfXlDseezK7LXzgo55H5DBaOE3I",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Scientology",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Tom Cruise",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/zx1RaHB5KQ0xPn97NIv4_IwZnYpvWZUm-UvJaFHRnzQ",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jennifer Lopez",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Miley Cyrus",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/YHMvwr-beNNAkb-sB9HuTB4CQP-5QyX_a-gGWrly11o",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Baltimore",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "John Waters",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Pink Flamingos",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/8bx0CYZAbL4yM_C-7GRviQYpFgcU8Xya0sJwuiO9kso",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "RuPaul",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/4RDMwmPVoZjuVexfK8YSeURRMbYK0czB1xUbbe4_-8Q",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blake Lively",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Justin Baldoni",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/NWQoFqu43AaUkt3sEdHjB05qksEssD8HofbqvQalwhM",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gender-identity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elliot Page",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/OIUCjr-nL1f8fmIY47j4cYYpI9Ryk9vyChpFCJptnqA",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rosie O'Donnell",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Rosie O'Donnell Show",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/le0tMrYyfdf9K2eeg5MOvpWgNNIctDsvM3aAkh4kmhE",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anne Burrell",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Katy Perry",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Orlando Bloom",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/fpJj1NRM3PICrOUzS3Q7ToL2cesmtzEpW99QCCT4iAE",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cyndi Lauper",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/E5OQsOWFzpJgv0uPOADkOpDSKb--pU-JY0x_JwYBN6s",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Scarlett Johansson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/5u6eVoZiTfDXnvhn0FJbMLMv6R7hTwrB2u3FceX_FY8",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kelly Clarkson",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Sean Combs",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/8LPKrAfAX7dVp9wx7Je1Nsc_2iRjbtNvQ02hvlt1TAA",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Liam Neeson",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Natasha Richardson",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/3xDAjZz1Hd_3-RKfUh_dQaZHqGzhldMC-u3BViEV9I0",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "cost-of-fame",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lindsay Lohan",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/2-ZXAeLUgm7Mv4en6rdIBKHLWOccRnQwz4bqR_DrF4Y",
+   "subjects": [
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/zSUC7_FwC0iVYZFvOFgpYMRkun6VOQYn-qT_1rgFHyA",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Leonardo DiCaprio",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Titanic",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/UfusDj0XZd4QKHW-KPA1Py6yCkM4rG_yQc8FyXjkfi0",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Oscar Isaac",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/nYwWClFiirJ3tJ3k3cLXeLgfsBm6bTSEWUKvwakqArc",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gossip-and-tabloid-press",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blake Lively",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Justin Baldoni",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Bzl0aOy2AkR-8AjOQefQUG1BphZF_Vm7oGDSAH7eCWI",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eddie Murphy",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/STp4IWnQ63TKL9DoHYQlpk-YSWLRSgDsa04m1lkarCw",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Demi Moore",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/yOiqJBZ4sz7u7l39gX5_XRhqpvjTwJCZ1WX8GgjWCBg",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robin Williams",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7ay813CFGr3dL1C9Etebf5VmOvxjQxZULOcplZj3YSg",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Goldie Hawn",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Kate Hudson",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/pjpq08TzKlYlR-bHaTIdgpL0Iv47VuQ4uoQveqzn_sw",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/-pbzF9JHZArV5xgqulP9ne4OxI1CXM-3lL2BcIAtL5w",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ]
+  }
+ ]
+}

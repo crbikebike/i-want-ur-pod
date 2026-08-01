@@ -1,0 +1,65 @@
+{
+ "slug": "caliphate",
+ "title": "Caliphate",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "extremist-movement",
+   "count": 1
+  },
+  {
+   "slug": "terrorism-and-aftermath",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/WLV9g6Wodtze56IcEWZG8ChxdvpeY5riJUF_ulRQpUg",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rukmini Callimachi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/rNZ8--4KoaooWBy4BhzD-lwTV9G16yjceF2UyqPpVP4",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ISIS",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  }
+ ]
+}

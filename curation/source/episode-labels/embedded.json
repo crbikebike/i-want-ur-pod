@@ -1,0 +1,4505 @@
+{
+ "slug": "embedded",
+ "title": "Embedded",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "police-misconduct",
+   "count": 17
+  },
+  {
+   "slug": "political-persecution",
+   "count": 12
+  },
+  {
+   "slug": "mass-shooting",
+   "count": 9
+  },
+  {
+   "slug": "elections-and-voting",
+   "count": 7
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 7
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 7
+  },
+  {
+   "slug": "political-figure-biography",
+   "count": 7
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 6
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 6
+  },
+  {
+   "slug": "presidential-power",
+   "count": 6
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 6
+  },
+  {
+   "slug": "athlete-profile",
+   "count": 5
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 5
+  },
+  {
+   "slug": "investigative-process",
+   "count": 5
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 5
+  },
+  {
+   "slug": "sport-and-politics",
+   "count": 5
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 5
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 5
+  },
+  {
+   "slug": "gender-identity",
+   "count": 4
+  },
+  {
+   "slug": "protest-movement",
+   "count": 4
+  },
+  {
+   "slug": "romance-and-heartbreak",
+   "count": 4
+  },
+  {
+   "slug": "sports-history",
+   "count": 4
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 4
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 3
+  },
+  {
+   "slug": "political-scandal",
+   "count": 3
+  },
+  {
+   "slug": "climate-change",
+   "count": 2
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 2
+  },
+  {
+   "slug": "economic-policy",
+   "count": 2
+  },
+  {
+   "slug": "labour-history",
+   "count": 2
+  },
+  {
+   "slug": "organised-crime",
+   "count": 2
+  },
+  {
+   "slug": "reality-television",
+   "count": 2
+  },
+  {
+   "slug": "addiction-and-recovery",
+   "count": 1
+  },
+  {
+   "slug": "adoption-and-origins",
+   "count": 1
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 1
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 1
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 1
+  },
+  {
+   "slug": "education-system-failure",
+   "count": 1
+  },
+  {
+   "slug": "everyday-mystery",
+   "count": 1
+  },
+  {
+   "slug": "forgotten-episode",
+   "count": 1
+  },
+  {
+   "slug": "founder-biography",
+   "count": 1
+  },
+  {
+   "slug": "homelessness-and-poverty",
+   "count": 1
+  },
+  {
+   "slug": "media-criticism",
+   "count": 1
+  },
+  {
+   "slug": "mental-health",
+   "count": 1
+  },
+  {
+   "slug": "missing-person",
+   "count": 1
+  },
+  {
+   "slug": "online-radicalisation",
+   "count": 1
+  },
+  {
+   "slug": "private-equity-and-debt",
+   "count": 1
+  },
+  {
+   "slug": "racial-violence",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  },
+  {
+   "slug": "songwriting-craft",
+   "count": 1
+  },
+  {
+   "slug": "systems-and-infrastructure-design",
+   "count": 1
+  },
+  {
+   "slug": "terrorism-and-aftermath",
+   "count": 1
+  },
+  {
+   "slug": "undercover-and-embedded-reporting",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "48cdb79d-20da-402d-9778-1840ee80fdc6",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "cd2ba90d-da7a-4828-b40d-ef4ce257f209",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Austin, Indiana",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "dd71b696-6c5d-4b6b-a125-b0675e2d1159",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bandidos",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Cossacks",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Waco, Texas",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ffaacb1c-148a-4eab-b7d5-dfc8e4051ac2",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "San Salvador",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0eaaec83-fbb4-43b7-a9b3-f1ce777418e0",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Skid Row",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6c0cb885-8ac0-4cf5-ae93-7878ffcdc766",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "4cb1aaf6-309b-4557-bb36-6841346422a1",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Austin, Indiana",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f6d1a3fd-75af-4031-ad45-b3747b74c720",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "1e967bb3-d27f-4e86-9d39-357dbd51be0b",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Médecins Sans Frontières",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "baa263d4-755e-4334-9ab8-cc75196ec150",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Greenland",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "86c47ace-c791-4db5-89ef-eba404e0dfb2",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "education-system-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wilkinsburg, Pennsylvania",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c2205da1-aa3f-4e26-b1e0-ea461124a507",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "20ed4c07-b13a-417a-9bea-b7c338c3cfaf",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "09cf4eef-4814-43b2-94c6-892019ca9538",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charlotte",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Jonathan Ferrell",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Randall Kerrick",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "cd6fa96d-d23d-4b99-9b1f-1fdc86e8486c",
+   "subjects": [
+    {
+     "subject": "stranger-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Flagstaff, Arizona",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Tyler Stewart",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "235267ba-dddb-421d-a286-4d7b6dfb984d",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Wilcox",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "61fae801-8209-4266-87c9-9eae8119f8f1",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b46d78d3-975c-42f1-bee0-9d74b65df9f7",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Apprentice",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ea405a83-c334-4ec9-9b9b-af72c073602b",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Steve Bannon",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "eae1c40d-3627-4957-a763-c2aaa5d655d4",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Jared Kushner",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "92c2d7a6-dfc8-4e0a-9e9d-804d8964de2b",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "55294565-52c0-409d-b368-f79c652f8709",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "29e4bff7-4a96-4388-bed5-8e3a1dd6d97f",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Robert Mueller",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "abcd8070-c1a0-4591-9944-a684a966079b",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Robert Mueller",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7ad74b02-9456-45bd-9506-14f4cf456a80",
+   "subjects": [
+    {
+     "subject": "labour-history",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "99eddc93-5fef-42ea-acea-ce6fc5ac400f",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Appalachia",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d6390a2d-1d16-412b-9041-eab76ef7d124",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "7c0f14a8-aebf-46fe-ac9f-f260b4131fec",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "1826c547-4f0b-43bf-9506-c394dccd05b3",
+   "subjects": [
+    {
+     "subject": "labour-history",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "50d20d92-8413-43a3-91dd-aefbf3b497ea",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "178dc0ff-329b-4064-aff9-821ee69f9ce7",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "765c00f7-e79f-45a7-b8fb-8eb5d1f5c3b5",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "North Miami",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "0994e780-58b4-4ed7-a453-bc64d32f7ce5",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bashar al-Assad",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Syria",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a77fb7e2-dae1-401a-b583-e58f237f196b",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Supreme Court",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Yemen",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "55a25d76-b3b9-41ea-bf06-53b296b45184",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Omarosa Manigault Newman",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "The Apprentice",
+     "kind": "work",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3b2e91bd-786a-40c4-b21b-0119e5508b0d",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Florida",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "80e2c5d8-23a7-49fd-9592-2286bc002753",
+   "subjects": [
+    {
+     "subject": "natural-disaster",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Maria",
+     "kind": "era",
+     "confidence": "medium"
+    },
+    {
+     "name": "Puerto Rico",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3b4ec149-4594-42b9-bb00-579e297ab371",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ISIS",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "f79d6ec3-b438-4103-ae24-9701830b1f32",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ISIS",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9fcef706-96cd-4a4a-be25-d547fb356227",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "70a65f67-5135-426d-b0cd-139391f50050",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bashir Shikder",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Islamic State",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4c9efab7-e71d-4c0c-8108-7858e55c2889",
+   "subjects": [
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "2e621b68-16ae-4663-bce3-c22f03f1c886",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d0043eca-5446-432e-95e1-e906b8c0abe5",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b1ea8457-cde7-480f-816c-3f0a0e9ad2d5",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John McCain",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "78ab80b0-d725-41c5-9ab8-36dea87b8b66",
+   "subjects": [
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3ff8da8e-8f2e-4398-ba06-7db1295c2f7c",
+   "subjects": [
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1e657264-076a-493a-9947-dac7b2c768d2",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "U.S. Supreme Court",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c3c581db-0fe0-4212-b98c-343b776cd888",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "ecf7f155-904f-4917-ab79-8ee2c5eba9fe",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "fe7df199-cede-46f5-8ab0-9e136e8f960b",
+   "subjects": [
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frazier Glenn Miller",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Ku Klux Klan",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "53706c58-0f52-432f-aa7f-c092c803b435",
+   "subjects": [
+    {
+     "subject": "education-system-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "online-radicalisation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "b61b15bf-481c-4b57-811b-66ff69ddd167",
+   "subjects": [
+    {
+     "subject": "natural-disaster",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ellicott City, Maryland",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0ad172ce-c6a6-4193-ab10-1e2c29557f59",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "38ff54bb-e8fb-4d88-bc3d-97901fb52602",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "ae32834d-7166-4d0e-8fab-478071dcad09",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "09dcc405-b4df-4b6d-881f-6392fc462d84",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "COVID-19 pandemic",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3c9c6968-713d-4cba-be7e-2b3b43431a3e",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "5e482b93-d38b-4133-8375-c9746e19ef85",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "cc658d96-5b7b-4f47-950f-ea65ba23103c",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NRA",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e0d305d7-3dad-4055-b7e7-e65da9cdac70",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joe Biden",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bf98eee3-b390-4d3e-a530-53657b58540e",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "29fb18e5-c3a6-4c5f-ad1b-5e870778027c",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e7ce1fae-e9b5-46da-a124-ab93b614e9f2",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7ec098b6-843c-45c2-81bd-5e2de313be7b",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "1a9744a6-56a8-476b-91af-1836b5e50527",
+   "subjects": [
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6b111d09-1320-42b3-8e3a-d6b3cb506922",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitch McConnell",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e6185fa4-e7b1-472b-ae40-31dbda31e22d",
+   "subjects": [
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Capital Gazette",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "64035a7c-695b-433c-bb8b-f44e829c34f1",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Annapolis",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Capital Gazette",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "14cc0c36-d59c-4edf-9d38-53fe5f850c8c",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Annapolis",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Capital Gazette",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "dbb557a6-524b-47bd-9763-648880588bff",
+   "subjects": [
+    {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "private-equity-and-debt",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Capital Gazette",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "76c1e753-e4c5-42fe-93b8-e33a7f9447d4",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Katheryn Jenks",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "766c298e-fd39-491a-86f5-0da97f68fee9",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "California Highway Patrol",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4f17404c-5d5e-48fe-ae5c-1e1e58c49a51",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Richmond, California",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "166794fb-9f5a-44d7-bbae-46e8ccbabdac",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Stockton, California",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8b36982c-fb8c-44ed-8011-7776b65595ad",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6d3347d5-6774-4809-b8b4-de8bcf6f78c6",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Antioch, California",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "8322f10f-5afd-4ca3-94a4-ec50e782656c",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "BART",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Johannes Mehserle",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Oscar Grant",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "82e8f170-926f-46a4-a8f5-3e2a84c4b0f8",
+   "subjects": [
+    {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Capital Gazette",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6dd471c9-8040-452f-818a-562394142d40",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Yonkers Police Department",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "16cab740-fbbd-415e-be40-fe5102279ebd",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Yonkers",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "80509b3d-d01d-42ad-bee5-91e2b1dc27a3",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Yonkers Police Department",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "31b91664-592e-419d-b788-7571cb945027",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Yonkers Police Department",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "e12ad940-cd01-426a-a124-a026ae81479f",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "systems-and-infrastructure-design",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Yonkers, New York",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a4ec5b88-aaaf-4e1c-b0cb-993a27294dd3",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Mueller",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Yonkers Police Department",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "375bd5ad-5bd8-4908-9eeb-002c803f8a07",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Argentina",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "FC Barcelona",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Lionel Messi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0d41fbf7-205c-4d29-9bca-4c226ee2ce62",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Argentina",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Lionel Messi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "89defa35-ba9f-4249-b9ec-35348fb89f42",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Argentina",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Diego Maradona",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Lionel Messi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0dbeaa10-54c7-4fc2-af2c-929bf053a5fb",
+   "subjects": [
+    {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lionel Messi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9df00ef3-a6da-4b64-bae6-1dc4444efcce",
+   "subjects": [
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lionel Messi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "94c0cd0f-7e9a-41d8-b02f-65ca8966dad5",
+   "subjects": [
+    {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "2022 World Cup",
+     "kind": "case",
+     "confidence": "medium"
+    },
+    {
+     "name": "Lionel Messi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6dcba00f-a06c-41a0-86ca-7edf2d7334b4",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "2022 FIFA World Cup",
+     "kind": "era",
+     "confidence": "medium"
+    },
+    {
+     "name": "Lionel Messi",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7a7e158a-1de4-4f81-9f1c-42fc074ee30a",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cuba",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mariel Boatlift",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "43a21ab4-c7e9-4ec1-a579-4e47b3908852",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "forgotten-episode",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "1bfe8079-67f4-47af-8364-7b4a59de2ddd",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariel Boatlift",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "5bf68a36-1f17-4378-88dc-2639aca8ae1b",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fidel Castro",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Mariel Boatlift",
+     "kind": "era",
+     "confidence": "high"
+    },
+    {
+     "name": "Miami",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "377d1973-cfde-48c2-9136-8873b305c9d0",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fort Chaffee",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Jimmy Carter",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Mariel Boatlift",
+     "kind": "era",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "fcd19c21-f43e-4924-8798-eddd2e276d31",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Genaro Soroa-Gonzalez",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a0e8f47b-7213-4857-82f1-79986b06843a",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jose Hernandez-Mesa",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "cf6b425d-aa77-4d68-bc24-104829e5ae07",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariel boatlift",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b7c4f0f0-8456-480f-a6d4-b6478fe97690",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "bc6ef0c2-2aa4-4cde-8bc2-1275eac3e3c3",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cuba",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "1ade0dfc-1ea1-41a1-a963-197e5b1a016d",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "First Battle of Fallujah",
+     "kind": "case",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b57e57d4-8547-4840-9bd3-f932d8550aed",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "United States Marine Corps",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b16f7eda-341a-4bf6-a436-f34548981fe8",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tucson",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "United States Marine Corps",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "461cdb11-dde0-4795-bd43-b5bdcffb8424",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "United States Marine Corps",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "2b7962e8-193a-4f2a-bdf6-b15afa22fee8",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Duncan Hunter",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8fb98ae8-907d-4eca-93d1-082db306c40f",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pat Tillman",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d04508b9-541d-4ef6-a7b5-73a2b9520140",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Camp Pendleton",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Fallujah",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "138a2555-a61a-4bc5-82cd-ca9fd1770ea1",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buffalo, New York",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0575a3f6-46e3-414f-aaa2-619470f76157",
+   "subjects": [
+    {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "2022 Buffalo shooting",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Buffalo, New York",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a06b4899-403e-4fdf-a87a-aa5d653cda9c",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buffalo",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Tops supermarket shooting",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "843f6385-42bf-4b22-85da-e0cbe64911f3",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buffalo",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Tops supermarket shooting",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "31b8242c-aad8-4779-8def-de1a30f70935",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lauren Chooljian",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "New Hampshire Public Radio",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "fe0285c9-1910-4197-a739-0d4d924a572a",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eric Spofford",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3cc82db6-f75b-40a6-bc02-6ec8076f9db6",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "undercover-and-embedded-reporting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eric Spofford",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Lauren Chooljian",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "cce59ed6-b21a-435e-8b7e-7af8b37b7a6a",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Love Commandos",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e49c6910-cffb-4ac9-8f71-a0522968b7c8",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "India",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Love Commandos",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a6a5e97d-0ef8-4c45-879b-97ea33521f18",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Love Commandos",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "5cdb5dbc-9240-40ce-be67-786f67bbdd34",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Love Commandos",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "50217d00-b511-49ea-acac-78f1460a8685",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "India",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Love Commandos",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0cff13da-e337-4646-9748-fb046237c37a",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "songwriting-craft",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Love Commandos",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "6640dffa-54cb-4bcb-88ab-6bea72d2f9b6",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hart Island",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Riverside Park",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "56c0f8ed-507c-4c75-91b7-b0e4a43e7df3",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "adoption-and-origins",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Annette Vega",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Hart Island",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "88a47b68-b144-4eeb-acca-62f1c147f786",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "gender-identity",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "486e7380-6e25-4775-a070-1b915f85621a",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "gender-identity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "a54ba732-7b38-4578-ac6c-16f6948e94e5",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "gender-identity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "790e1698-ffde-4cbf-84e2-6525b50cc9c8",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "gender-identity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Johns Hopkins Gender Clinic",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "87e4f9bf-6e0a-4342-9e1c-27cbcd50df38",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Balochistan",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Karima Baloch",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "27e02232-1525-45aa-a34c-d5d33f51cff8",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Karima Baloch",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a31bc003-bf9f-4e97-a2bc-d411887e21aa",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Karima Baloch",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Pakistan",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "291e1330-10ea-44b0-b3eb-93b7d324e0db",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Balochistan",
+     "kind": "place",
+     "confidence": "medium"
+    },
+    {
+     "name": "Karima Baloch",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9d0908cc-9a58-4b2c-8cc6-70c4419b95c2",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Balochistan",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Karima Baloch",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Pakistan",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "305b20ea-4c65-480c-b9d4-50780baed550",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Karima Baloch",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "23714789-4100-44bd-b1e1-eca365555401",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "948190b7-b0ea-48ac-b386-d58b5f2f0026",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gaza",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b19be021-72d6-4580-8c56-65deded0630d",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gaza",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "bcee5737-97f8-4d9f-8954-622d2c12f4d6",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tennessee",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "646c24c7-e2e0-4e5d-a480-855638acb8e8",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Covenant School shooting",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "909ff97e-4eab-4da2-950a-bf6aabc9079b",
+   "subjects": [
+    {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tennessee",
+     "kind": "place",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "b18b49bf-e7ef-4095-97c0-917b2ae2ee9b",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Covenant School shooting",
+     "kind": "case",
+     "confidence": "medium"
+    },
+    {
+     "name": "Tennessee",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b0daeddb-8a11-4032-9b79-51615aa411cb",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Covenant School shooting",
+     "kind": "case",
+     "confidence": "medium"
+    },
+    {
+     "name": "Tennessee",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c83a677c-d562-431c-80d1-b197df9bcfe6",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Olympics",
+     "kind": "work",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "fba87e48-a81f-478b-b49d-008eaf87bdf3",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sport-and-politics",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christine Mboma",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "766c732a-f370-4669-a368-fff5012cabb8",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7ef9c772-c40d-4982-9f03-a7b9aeddc046",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Maximila Imali",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "c415386f-9e37-4210-8795-32da5b85e50e",
+   "subjects": [
+    {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Caster Semenya",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "3d24548e-aa65-4154-8314-93bd32a41ff8",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Caster Semenya",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "World Athletics",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "b727d3bd-bd28-4109-9a77-4658ff98137f",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "6552ca64-7155-43db-852c-0fb24920a35c",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "January 6 Capitol attack",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Joshua Abate",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "United States Marine Corps",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ac5aaf47-74c0-465d-9457-b57b33259b6b",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "January 6 Capitol attack",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Joshua Abate",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "9d73c301-a79c-4502-be8d-2d071ea11be0",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "January 6 Capitol attack",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Joshua Abate",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "United States Marine Corps",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7edd2935-8ef5-41b8-a005-62c5f0db9b03",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Xinjiang",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "b7a5902e-1166-4bd1-8eab-f207f12c8884",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Abdullatif Kucar",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Xinjiang",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "58787664-8d42-4c5d-a287-867c1ad8d2c1",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Abdullatif Kucar",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "59f1acb6-754b-4b90-a641-a1e238381ca0",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "China",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "4040f74e-223a-41c4-9534-a8de5fbd647b",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "China",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "2b580eda-088b-4695-bd98-aa58a2154753",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Zach Mack",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c6527ac2-9b3d-48bf-b04a-e6783fc96a94",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Zach Mack",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f235ab71-9a1d-471b-8a61-9a193538e67d",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Zach Mack",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "bb7d8ace-dc5b-4633-aadf-060ec9e732f0",
+   "subjects": [
+    {
+     "subject": "online-radicalisation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "46de3ffd-7143-44d2-8c3f-786808674762",
+   "subjects": [
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brazil",
+     "kind": "place",
+     "confidence": "low"
+    }
+   ]
+  },
+  {
+   "guid": "ec8e93d6-61db-4d17-9eb8-1154b7d5053d",
+   "subjects": [
+    {
+     "subject": "medical-research",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brazil",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "7da91c2e-a27a-4a3f-9895-7118c5fd5f74",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Latin America",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "9ad44487-d9d4-4e61-9981-37e45ac38b0d",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roe v. Wade",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "eb703f15-a476-440b-88db-ca9ecfcd9ce3",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "ae6ef3d2-c9a6-42f7-a9c0-7afacbdfd33b",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "2b2441b9-4ea2-4a71-b2c1-4eb3c1f2c80b",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Harvard University",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "70162e2b-03a9-4a85-9c41-6d3842972949",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alan Garber",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Harvard University",
+     "kind": "company",
+     "confidence": "high"
+    },
+    {
+     "name": "Jay Bhattacharya",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "8175d303-3077-4916-9212-19c60acd3c82",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Vannevar Bush",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "6ce13ca0-9374-4315-9eb9-b74705d53969",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Zach Mack",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "f899e735-0d75-4b0d-8983-79b725b9cae2",
+   "subjects": [
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "55e9965f-bd9f-4637-b029-aa9c41391cdc",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donnie Stoner",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Louisville",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "a03daed0-605c-4291-925f-ed6481782276",
+   "subjects": [
+    {
+     "subject": "education-system-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ronnie Stoner",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ccb101e7-5799-49dd-b226-e3aa20c84272",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aryalle Stoner",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ff5ccec4-34fe-474d-a120-daea123ef241",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "83fbbca2-fe75-424e-88e2-498b6cdc1c68",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Antonio Mays Jr.",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Capitol Hill Occupied Protest",
+     "kind": "case",
+     "confidence": "high"
+    },
+    {
+     "name": "Seattle",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "21b08d57-5d41-4c41-89c5-07a413345509",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Antonio Mays Jr.",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "CHOP, Seattle",
+     "kind": "place",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "67aef68b-71b3-4583-a728-77db25bb25bc",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Antonio Mays Jr.",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Capitol Hill Occupied Protest",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "d8808908-5386-4b9e-8a86-a894c1eefd60",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Antonio Mays Jr.",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Seattle",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "45351744-a99a-498b-b1b7-36a3aad5583d",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Antonio Mays Jr.",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Capitol Hill Occupied Protest",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "0a707817-7822-4926-818c-b071da340032",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Antonio Mays Jr.",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "CHOP",
+     "kind": "place",
+     "confidence": "high"
+    },
+    {
+     "name": "Seattle",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "e24b60af-0d5e-4476-94aa-4d708feac212",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5"
+    }
+   ]
+  },
+  {
+   "guid": "05214c44-84be-4c41-b3ee-8a802d93dcb0",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Antonio Mays Jr.",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Capitol Hill Occupied Protest",
+     "kind": "case",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

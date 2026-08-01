@@ -1,0 +1,58 @@
+{
+ "slug": "rabbit-hole",
+ "title": "Rabbit Hole",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "online-radicalisation",
+   "count": 3
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/SjpJ9uEbZqbIBJeVKzD-uzloU1jNGtD7HjPJZgphrMs",
+   "subjects": [
+    {
+     "subject": "online-radicalisation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/P36DzbeywoQyTxJIZezPG7jsPKU2-kBIVpn66gNzuE8",
+   "subjects": [
+    {
+     "subject": "online-radicalisation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/c5ctOVf7lIncAmSCS3u2_RFeo-X6xclYwmCBGvt9Ycg",
+   "subjects": [
+    {
+     "subject": "online-radicalisation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Caleb",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "YouTube",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

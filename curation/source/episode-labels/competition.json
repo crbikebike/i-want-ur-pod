@@ -1,0 +1,50 @@
+{
+ "slug": "competition",
+ "title": "The Competition",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "missing-person",
+   "count": 2
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/LdfXRWB7ChQgOwP6ys8M67J25VxIjMG2dXeL2P2p20E",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/8szUNWJH4SbbZZ2pz4j_euz11ogur4r0WRe7DORYDK0",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/nmum4QYly1MQndAy22s-PywfGYtGTgf7K9Yy2hCdojg",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  }
+ ]
+}

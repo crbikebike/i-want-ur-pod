@@ -1,0 +1,372 @@
+{
+ "slug": "missing-america",
+ "title": "Missing America",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "presidential-power",
+   "count": 3
+  },
+  {
+   "slug": "political-persecution",
+   "count": 2
+  },
+  {
+   "slug": "protest-movement",
+   "count": 2
+  },
+  {
+   "slug": "climate-change",
+   "count": 1
+  },
+  {
+   "slug": "elections-and-voting",
+   "count": 1
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 1
+  },
+  {
+   "slug": "foreign-political-crisis",
+   "count": 1
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 1
+  },
+  {
+   "slug": "internet-culture",
+   "count": 1
+  },
+  {
+   "slug": "sport-and-politics",
+   "count": 1
+  },
+  {
+   "slug": "undercover-and-embedded-reporting",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "6638d836-ce06-11ea-a009-03e22ddad739",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Rhodes",
+     "kind": "person",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "735e88fc-d5cd-11ea-965f-1793f2007293",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "9e1d632e-d5cd-11ea-b69c-d768b446870f",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "b3f4f252-d5cd-11ea-ac0c-b3b5c592917c",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hong Kong",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "ba3a67c8-d5cd-11ea-9613-638e75462e65",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Facebook",
+     "kind": "company",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "bfc7aa66-d5cd-11ea-81e9-cbf58c5b8a88",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "undercover-and-embedded-reporting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Narendra Modi",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Rana Ayyub",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c46150d6-d5cd-11ea-9671-c3f1cd14dfc6",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mohamed Soltan",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "c7a5e298-d5cd-11ea-94f1-6381e56834cc",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Rhodes",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "cb8a9ffc-d5cd-11ea-993b-5f5fa33c57e8",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ben Rhodes",
+     "kind": "person",
+     "confidence": "medium"
+    },
+    {
+     "name": "Kevin Rudd",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "d49639e4-d5cd-11ea-9613-639787eff047",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "40893c0c-e5d4-4737-a276-66e79bc7fe63",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Weather Underground",
+     "kind": "company",
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "guid": "ae1d547a-a03a-4782-906f-8b43f0724ed6",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Boris Nemtsov",
+     "kind": "person",
+     "confidence": "high"
+    },
+    {
+     "name": "Vladimir Putin",
+     "kind": "person",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "a4c6a1d3-f836-481c-80c7-b83894c07000",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FIFA",
+     "kind": "company",
+     "confidence": "medium"
+    },
+    {
+     "name": "Qatar",
+     "kind": "place",
+     "confidence": "medium"
+    }
+   ]
+  },
+  {
+   "guid": "484c9ea7-8e3c-410f-900a-f8c36433427f",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "7dcb18f6-1a54-4542-b94c-5e389ababec8",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5"
+    }
+   ]
+  },
+  {
+   "guid": "3d117737-07fc-401f-8d23-97738f27f237",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-sonnet-5"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alex Wagner",
+     "kind": "person",
+     "confidence": "low"
+    }
+   ]
+  }
+ ]
+}
