@@ -111,6 +111,26 @@ uses for hours.
 
 ---
 
+## One thing left half-done, and it is load-bearing
+
+The relabel is now exported to `curation/source/episode-labels/<slug>.json` — 275 files,
+46,625 label rows, round-trip verified. Before that commit (`65ec3e0`) the only copy lived
+in `catalog.db`, which is gitignored, and `decisions.jsonl` could not replay it because
+`label_episodes()` logs one line per *batch* with counts rather than per label. Two days of
+work sat on one machine while `git status` said clean.
+
+**The export is written. Reading it back is not.** `catalog/build/load_source.py` loads
+`episode-themes/` into `episode_subjects` — the July run — and nothing loads
+`episode-labels/` into `episode_labels`. So a rebuild from a clean checkout still produces a
+catalog with the *old* labels.
+
+That is the last thing standing between this repo and CLAUDE.md's actual promise: *"always
+be able to rebuild it from `curation/source/`."* It is a loader plus a line in the migrate
+pipeline. Do it before you trust a rebuild.
+
+Test it the way PROGRAM.md says: delete the `.db`, rebuild, confirm the content hash
+matches.
+
 ## Decisions waiting on the human
 
 1. **The `group` entity kind.** Four agents filed a band, the Provisional IRA, the CIA and
