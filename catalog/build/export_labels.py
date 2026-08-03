@@ -50,8 +50,9 @@ def export(conn: sqlite3.Connection, out_dir: Path, run_id: str = CURRENT_RUN) -
     out_dir.mkdir(parents=True, exist_ok=True)
 
     labels: dict[str, dict[str, list]] = defaultdict(lambda: defaultdict(list))
-    for slug, guid, sub, role, conf, agree, votes, model in conn.execute(
-        """SELECT sh.slug, e.guid, s.slug, l.role, l.confidence, l.agreement, l.votes, l.model
+    for slug, guid, sub, role, conf, agree, votes, model, at in conn.execute(
+        """SELECT sh.slug, e.guid, s.slug, l.role, l.confidence, l.agreement, l.votes,
+                  l.model, l.at
            FROM episode_labels l
            JOIN episodes e ON e.id = l.episode_id
            JOIN shows sh ON sh.id = e.show_id
@@ -65,18 +66,26 @@ def export(conn: sqlite3.Connection, out_dir: Path, run_id: str = CURRENT_RUN) -
             row["votes"] = votes
         if model:
             row["model"] = model
+        # `at` is exported because it is inside the content hash. Without it a rebuild
+        # would stamp a fresh wall-clock time per row and the fingerprint could never
+        # match, which would make "rebuildable from source" unprovable rather than false.
+        if at:
+            row["at"] = at
         labels[slug][guid].append(row)
 
     ents: dict[str, dict[str, list]] = defaultdict(lambda: defaultdict(list))
-    for slug, guid, name, kind, conf in conn.execute(
-        """SELECT sh.slug, e.guid, en.name, en.kind, ee.confidence
+    for slug, guid, name, kind, conf, at in conn.execute(
+        """SELECT sh.slug, e.guid, en.name, en.kind, ee.confidence, ee.at
            FROM episode_entities ee
            JOIN episodes e ON e.id = ee.episode_id
            JOIN shows sh ON sh.id = e.show_id
            JOIN entities en ON en.id = ee.entity_id
            WHERE ee.run_id = ? AND e.deleted_at IS NULL
            ORDER BY sh.slug, e.published_at, en.name""", (run_id,)):
-        ents[slug][guid].append({"name": name, "kind": kind, "confidence": conf})
+        row = {"name": name, "kind": kind, "confidence": conf}
+        if at:
+            row["at"] = at
+        ents[slug][guid].append(row)
 
     titles = dict(conn.execute("SELECT slug, title FROM shows"))
     written, episodes, rows = 0, 0, 0

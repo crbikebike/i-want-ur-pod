@@ -18,12 +18,14 @@ to subjects, and edges are derived last from everything else.
 from __future__ import annotations
 
 import argparse
+import json
 import sqlite3
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from catalog.build import arcs, edges, fingerprint, fts, load_source, migrations, replay, vocabulary
+from catalog.build import (arcs, depth, edges, fingerprint, fts, load_arcs,
+                           load_labels, load_source, migrations, replay, vocabulary)
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SOURCE = ROOT / "curation/source"
@@ -91,7 +93,7 @@ def build(
     for line in migrations.apply_all(conn).lines():
         say(line)
 
-    carried = _carry_edits(conn, carry_edits_from)
+    carried = _carry_edits(conn, carry_edits_from, source / "decisions.jsonl")
     if carried:
         say(f"carried {carried} edits forward from {carry_edits_from}")
 
@@ -106,6 +108,8 @@ def build(
     say("-- arcs")
     for line in arcs.seed(conn, source).lines():
         say(line)
+    for line in load_arcs.load(conn, source).lines():
+        say(line)
 
     say("-- edges")
     for line in edges.build(conn).lines():
@@ -118,8 +122,18 @@ def build(
     for line in replay.apply_all(conn).lines():
         say(line)
 
-    # Edges are derived from the tables, so a replayed correction can change them.
-    # Rebuilding here is cheap and keeps the graph honest.
+    # After replay: labels are guid-keyed so replayed episode corrections cannot move
+    # them, but keeping the one-directional order (sources, then corrections, then the
+    # current run's labels) means nothing loaded here is ever overwritten by an older
+    # record of itself.
+    say("-- labels")
+    for line in load_labels.load(conn, source).lines():
+        say(line)
+
+    # Depth is derived from labels, arcs and verdicts, all of which have now reached
+    # their final state -- arcs.seed computed it before labels existed, which left every
+    # show at 1. Then edges: derived from everything, rebuilt last, kept honest.
+    depth.rebuild(conn)
     edges.build(conn)
     fts.build(conn)
 
@@ -150,19 +164,41 @@ def build(
     return digest
 
 
-def _carry_edits(conn: sqlite3.Connection, previous: Path | None) -> int:
-    if not previous or not previous.exists():
+def _carry_edits(conn: sqlite3.Connection, previous: Path | None,
+                 decisions: Path | None = None) -> int:
+    """Bring the audit log into the new database, so replay has something to replay.
+
+    Preferred source is a previous database's edits table. On a clean checkout there is
+    no previous database -- but `decisions.jsonl` is the tracked mirror of that table,
+    written line-for-line by `edits.apply`, so it serves as the fallback. Without this,
+    replay reads an empty table, no fit verdict or human correction survives a rebuild,
+    and every show comes back `unreviewed` at depth 1.
+    """
+    rows: list[tuple] = []
+    if previous and previous.exists():
+        old = sqlite3.connect(previous)
+        try:
+            rows = old.execute(
+                "SELECT at, actor, entity_type, entity_key, field, before, after, note "
+                "FROM edits ORDER BY id"
+            ).fetchall()
+        except sqlite3.OperationalError:
+            rows = []
+        finally:
+            old.close()
+    if not rows and decisions and decisions.exists():
+        for line in decisions.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            # Batch records (field "label", "refresh", ...) carry counts rather than an
+            # entity to touch; replay skips their fields, but they stay in the table
+            # because they are audit, and audit that survives a rebuild is the point.
+            rows.append((r.get("at"), r.get("actor"), r.get("entity"), r.get("key"),
+                         r.get("field"), _as_text(r.get("before")),
+                         _as_text(r.get("after")), r.get("note")))
+    if not rows:
         return 0
-    old = sqlite3.connect(previous)
-    try:
-        rows = old.execute(
-            "SELECT at, actor, entity_type, entity_key, field, before, after, note "
-            "FROM edits ORDER BY id"
-        ).fetchall()
-    except sqlite3.OperationalError:
-        return 0
-    finally:
-        old.close()
     conn.executemany(
         "INSERT INTO edits (at, actor, entity_type, entity_key, field, before, after, note) "
         "VALUES (?,?,?,?,?,?,?,?)",
@@ -170,6 +206,13 @@ def _carry_edits(conn: sqlite3.Connection, previous: Path | None) -> int:
     )
     conn.commit()
     return len(rows)
+
+
+def _as_text(value):
+    """JSONL before/after may hold structured values; the edits table stores text."""
+    if value is None or isinstance(value, str):
+        return value
+    return json.dumps(value, ensure_ascii=False)
 
 
 def main(argv: list[str] | None = None) -> int:
