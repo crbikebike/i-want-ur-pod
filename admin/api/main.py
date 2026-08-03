@@ -19,7 +19,7 @@ from fastapi import Body, FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from admin.api import auto, edits, feedqueue, feeds, queues, repair
+from admin.api import auto, edits, feedqueue, feeds, labelqueue, queues, repair
 from catalog.build import migrations
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -140,6 +140,34 @@ def decide_feed(proposal_id: int, body: dict = Body(...)) -> dict:
 
         feedqueue.record(conn, proposal_id, decision)
         return {"applied": applied, "counts": feedqueue.counts(conn)}
+
+
+@app.get("/api/queues/labels")
+def label_queue(skip: str = "") -> dict:
+    """One doubtful label, sampled lowest-agreement-first. No total on purpose."""
+    skipped = [int(s) for s in skip.split(",") if s.strip().isdigit()]
+    with db() as conn:
+        return {
+            "counts": labelqueue.counts(conn),
+            "item": labelqueue.next_card(conn, skipped),
+        }
+
+
+@app.post("/api/queues/labels/{episode_id}")
+def decide_label(episode_id: int, body: dict = Body(...)) -> dict:
+    """Confirm keeps the primary and marks it human-verified; change replaces it. Both
+    go through edits.label_episodes (audited, undoable) and append to
+    docs/briefs/corrections.md -- the feedback half of the Phase 3 gate."""
+    action = body.get("action")
+    if action not in ("confirm", "change"):
+        raise HTTPException(400, "action must be 'confirm' or 'change'")
+    with db() as conn:
+        try:
+            got = labelqueue.decide(conn, episode_id, action,
+                                    subject_slug=body.get("subject"))
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+        return {**got, "counts": labelqueue.counts(conn)}
 
 
 @app.post("/api/edits/{edit_id}/undo")
