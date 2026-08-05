@@ -760,9 +760,15 @@ function SubjectSheet({ item, vocab, query, setQuery, flashSlug, onPick }) {
   const q = query.trim().toLowerCase();
   const themes = vocab?.themes ?? [];
   const total = themes.reduce((n, t) => n + t.subjects.length, 0);
+  // While searching, the phone keyboard owns the bottom half of the screen, so the
+  // sheet grows full-height and the quick picks fold away -- otherwise results render
+  // straight into the keyboard. Blur with an empty query folds it back; blur with a
+  // query keeps the tall layout, because the person is reading results.
+  const [searching, setSearching] = useState(false);
 
   return (
-    <section className="sheet picker" role="dialog" aria-label="Pick the right subject">
+    <section className={`sheet picker${searching || q ? " searching" : ""}`}
+             role="dialog" aria-label="Pick the right subject">
       <span className="grab" aria-hidden="true" />
       <div className="sheet-head">
         <p className="k">Most likely — the voters' scatter, then this show's shelves</p>
@@ -779,7 +785,9 @@ function SubjectSheet({ item, vocab, query, setQuery, flashSlug, onPick }) {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder={`search all ${total || 148} — name, slug or definition`}
+            onFocus={() => setSearching(true)}
+            onBlur={() => { if (!query.trim()) setSearching(false); }}
+            placeholder={`search all ${total || 199} — name, slug or definition`}
           />
         </div>
       </div>

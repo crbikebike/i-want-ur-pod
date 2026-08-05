@@ -738,7 +738,17 @@ button.go { width: 100%; text-align: left; font-family: inherit; }
  * stopping above the toast. The mock calls for the verdict buttons to be covered while
  * you're mid-correction, not left reachable underneath.
  */
-.sheet.picker { bottom: 0; height: min(70vh, 560px); }
+.sheet.picker { bottom: 0; height: min(70vh, 560px); display: flex; flex-direction: column; }
+.sheet.picker .subjects { flex: 1; min-height: 0; }
+
+/* While the search field has focus, a phone keyboard owns the bottom half of the
+   screen and a bottom-anchored sheet renders its results straight into it. So
+   searching flips the geometry: the sheet grows to the full screen and the quick
+   picks fold away, which puts the results in the strip the keyboard leaves visible.
+   Blur with an empty query folds it back. */
+.sheet.picker.searching { top: max(10px, env(safe-area-inset-top)); height: auto; }
+.sheet.picker.searching .k,
+.sheet.picker.searching .likely { display: none; }
 
 .sheet-head { padding: 14px 16px 10px; border-bottom: 1px solid var(--rule-soft); position: relative; }
 .sheet-head .k {
@@ -777,7 +787,9 @@ button.go { width: 100%; text-align: left; font-family: inherit; }
 .search input {
   width: 100%;
   font-family: var(--sans);
-  font-size: 14px;
+  /* 16px exactly: iOS zooms the whole page into any focused input under 16px, and the
+     zoom is what wrecked the sheet the first time. Never below this on an input. */
+  font-size: 16px;
   padding: 10px 12px;
   border-radius: var(--r-sm);
   border: 1px solid var(--rule);
