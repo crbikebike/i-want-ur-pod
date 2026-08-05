@@ -111,11 +111,17 @@ def page(manifest: dict, slice_no: int, page_no: int) -> dict:
     confirmation. The tally knows the incumbent; the voters must not."""
     ids = manifest["slices"][str(slice_no)][page_no * PAGE_SIZE:(page_no + 1) * PAGE_SIZE]
     hidden = {"currentPrimary", "secondaries"}
-    return {"slice": slice_no, "page": page_no,
-            "episodes": [{"episodeId": eid,
-                          **{k: v for k, v in manifest["episodes"][str(eid)].items()
-                             if k not in hidden}}
-                         for eid in ids]}
+    out = []
+    for eid in ids:
+        ep = {k: v for k, v in manifest["episodes"][str(eid)].items()
+              if k not in hidden}
+        # 1,000 chars, down from the manifest's 1,400. Descriptions are ~70% of what a
+        # voter reads; 1,000 keeps the story visible while cutting the bill. The floor
+        # this must never approach is 299 -- the truncation the whole relabel existed
+        # to undo.
+        ep["description"] = (ep.get("description") or "")[:1000]
+        out.append({"episodeId": eid, **ep})
+    return {"slice": slice_no, "page": page_no, "episodes": out}
 
 
 def collect_votes(votes_dir: Path, slice_no: int) -> dict[int, list[str]]:
@@ -148,6 +154,22 @@ def decide(current: str | None, votes: list[str]) -> dict | None:
             "confidence": confidence, "demoted": demoted}
 
 
+def thirds_manifest(manifest: dict, votes_dir: Path, known: set[str]) -> dict:
+    """A manifest-shaped file holding only the episodes whose two votes disagree --
+    what the tie-break wave reads. Same slicing, same page(), same blindness."""
+    slices: dict[str, list[int]] = {str(i): [] for i in range(8)}
+    episodes = {}
+    for slice_no in range(8):
+        votes_by_ep = collect_votes(votes_dir, slice_no)
+        for eid in manifest["slices"][str(slice_no)]:
+            votes = [v for v in votes_by_ep.get(eid, []) if v in known]
+            if len(votes) == 2 and votes[0] != votes[1]:
+                slices[str(eid % 8)].append(eid)
+                episodes[str(eid)] = manifest["episodes"][str(eid)]
+    return {"run": manifest["run"], "voters": VOTERS, "pageSize": PAGE_SIZE,
+            "slices": slices, "episodes": episodes}
+
+
 def tally(conn: sqlite3.Connection, manifest: dict, votes_dir: Path,
           run_id: str = RUN_ID, decisions_path: Path | None = None) -> dict:
     """Count every fully-voted episode and write the result through the one door."""
@@ -166,7 +188,13 @@ def tally(conn: sqlite3.Connection, manifest: dict, votes_dir: Path,
                 continue
             votes = [v for v in votes_by_ep.get(eid, []) if v in known]
             bad_votes += len(votes_by_ep.get(eid, [])) - len(votes)
-            if len(votes) < VOTERS:
+            # Adaptive third vote (the "gold" scheme, 2026-08-04): two independent
+            # readers agreeing is a verdict -- recorded as agreement 2 of votes 2, so
+            # the provenance says exactly what happened. Two readers disagreeing is
+            # precisely the case the third read exists for, so those wait for it.
+            decidable = (len(votes) >= VOTERS
+                         or (len(votes) == 2 and votes[0] == votes[1]))
+            if not decidable:
                 skipped_short += 1
                 continue
             current = manifest["episodes"][str(eid)]["currentPrimary"]
@@ -197,14 +225,16 @@ def tally(conn: sqlite3.Connection, manifest: dict, votes_dir: Path,
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest="cmd", required=True)
-    for name in ("manifest", "status", "page", "tally"):
+    for name in ("manifest", "status", "page", "tally", "thirds"):
         p = sub.add_parser(name)
         p.add_argument("manifest_path", type=Path)
         if name == "page":
             p.add_argument("--slice", type=int, required=True)
             p.add_argument("--page", type=int, required=True)
-        if name in ("status", "tally"):
+        if name in ("status", "tally", "thirds"):
             p.add_argument("--votes", type=Path, required=True)
+        if name == "thirds":
+            p.add_argument("--out", type=Path, required=True)
     args = ap.parse_args(argv)
 
     conn = sqlite3.connect(DB, timeout=30)
@@ -230,6 +260,14 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(per, indent=1))
     elif args.cmd == "tally":
         print(json.dumps(tally(conn, manifest, args.votes), indent=1))
+    elif args.cmd == "thirds":
+        known = {r[0] for r in conn.execute(
+            "SELECT slug FROM subjects WHERE deleted_at IS NULL")}
+        third = thirds_manifest(manifest, args.votes, known)
+        args.out.write_text(json.dumps(third, ensure_ascii=False), encoding="utf-8")
+        print(json.dumps({"episodes": len(third["episodes"]),
+                          "perSlice": {k: len(v) for k, v in third["slices"].items()}},
+                         indent=1))
     conn.close()
     return 0
 

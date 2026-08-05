@@ -41,3 +41,14 @@ def test_a_tie_between_two_challengers_keeps_the_incumbent_if_it_is_one_of_them(
 
 def test_no_votes_is_none_not_a_crash():
     assert decide("anything", []) is None
+
+
+def test_an_agreeing_pair_is_a_verdict_of_two():
+    got = decide("anything", ["heist-and-robbery", "heist-and-robbery"])
+    assert got == {"winner": "heist-and-robbery", "agreement": 2, "votes": 2,
+                   "confidence": "medium", "demoted": "anything"}
+
+
+def test_a_disagreeing_pair_would_score_one_which_is_why_tally_waits_for_the_third():
+    got = decide("alpha", ["alpha", "beta"])
+    assert got["agreement"] == 1
