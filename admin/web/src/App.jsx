@@ -744,22 +744,67 @@ function htmlToText(html) {
   return new DOMParser().parseFromString(html, "text/html").body.textContent || "";
 }
 
+/* The description used to be truncated server-side; it now arrives in full, so the
+ * 6-line clamp is a starting state rather than the whole story. Tapping toggles it --
+ * a quiet text hint carries the affordance rather than a button, matching the design
+ * note that this is context you can open, not a control. */
 function LabelCard({ item, leaving }) {
   const p = item.primary;
   const agreement = p?.agreement ?? 0;
   const votes = p?.votes ?? 0;
+  const [descOpen, setDescOpen] = useState(false);
+  const minutes = typeof item.durationS === "number" ? Math.round(item.durationS / 60) : null;
+  const neighbours = item.neighbours ?? [];
+  const before = neighbours.filter((n) => n.position === "before");
+  const after = neighbours.filter((n) => n.position === "after");
+
   return (
     <article className={`card arriving ${leaving ? `leaving ${leaving}` : ""}`}>
       <p className="show">{item.show}</p>
+      {item.showAbout && <p className="show-about">{item.showAbout}</p>}
       <h2 className="title">{item.title}</h2>
       <p className="when">
         {item.published}{item.arc ? ` · arc: ${item.arc}` : ""}
+        {minutes !== null ? ` · ${minutes} min` : ""}
+        {item.episodeType && item.episodeType !== "full" && (
+          <span className="chip type-chip">{item.episodeType}</span>
+        )}
         {/* Research link: the server resolves guid -> Apple episode page and 307s,
             degrading to the show page or an Apple search. Horizon: navigation. */}
         <a className="apple" href={`/api/apple-link/${item.episodeId}`}
            target="_blank" rel="noreferrer">Apple Podcasts ↗</a>
       </p>
-      <p className="desc">{htmlToText(item.description)}</p>
+      <p
+        className={`desc${descOpen ? " open" : ""}`}
+        role="button"
+        tabIndex={0}
+        onClick={() => setDescOpen((v) => !v)}
+        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setDescOpen((v) => !v); } }}
+      >
+        {htmlToText(item.description)}
+        <span className="desc-hint">{descOpen ? " less" : " more"}</span>
+      </p>
+
+      {neighbours.length > 0 && (
+        <div className="neighbours">
+          <p className="k">Beside it in the feed</p>
+          {before.length > 0 && (
+            <ul>
+              {before.map((n, i) => (
+                <li key={i}>{n.title}<span className="nb-date">{n.published}</span></li>
+              ))}
+            </ul>
+          )}
+          <p className="nb-here">{item.title}</p>
+          {after.length > 0 && (
+            <ul>
+              {after.map((n, i) => (
+                <li key={i}>{n.title}<span className="nb-date">{n.published}</span></li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
 
       <div className="read">
         <p className="k">The machine's read</p>
@@ -776,6 +821,21 @@ function LabelCard({ item, leaving }) {
         </div>
         {item.secondaries?.length > 0 && (
           <p className="scatter">also suggested: {item.secondaries.join(" · ")}</p>
+        )}
+        {item.scatter?.length > 1 && (
+          <p className="reached">
+            the readers reached for
+            {item.scatter.map((s) => (
+              <span key={s.slug} className="chip vote-chip">{s.name} ×{s.votes}</span>
+            ))}
+          </p>
+        )}
+        {item.entities?.length > 0 && (
+          <p className="entities">
+            {item.entities
+              .map((e) => (e.kind && e.kind.toLowerCase() !== "person" ? `${e.name} (${e.kind})` : e.name))
+              .join(" · ")}
+          </p>
         )}
       </div>
     </article>

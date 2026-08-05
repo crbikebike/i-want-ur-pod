@@ -212,3 +212,92 @@ def test_likely_never_repeats_a_slug(db_likely):
     card = labelqueue.next_card(db_likely)
     slugs = [p["slug"] for p in card["likely"]]
     assert len(slugs) == len(set(slugs))
+
+
+# --- the six research fields ------------------------------------------------------
+
+
+def test_scatter_leads_with_the_primary_then_vote_carrying_secondaries(db_likely):
+    """db_likely's episode 1 carries a primary (grief, agreement 1), a secondary that
+    escalation demoted (heist-and-robbery, agreement 1 -- a real vote), and a secondary
+    with no agreement at all (organised-crime -- never escalation evidence). scatter is
+    the readers' actual reach, so it takes the first two and drops the third."""
+    card = labelqueue.next_card(db_likely)
+    assert card["scatter"] == [
+        {"slug": "grief", "name": "Grief", "votes": 1},
+        {"slug": "heist-and-robbery", "name": "The Job", "votes": 1},
+    ]
+
+
+@pytest.fixture
+def db_card():
+    """A show of 7 episodes in publication order, one of them deleted, with the card
+    under review in the middle -- enough room either side to prove the 2+2 cap and the
+    deleted skip in the same fixture. Also carries entities across two runs, to prove
+    `entities` filters by RUN_ID like everything else, and a description long enough
+    that a lingering [:1600] clip would be caught."""
+    conn = sqlite3.connect(":memory:")
+    conn.executescript(SCHEMA.read_text())
+    migrations.apply_all(conn)
+    conn.execute("PRAGMA foreign_keys = ON")
+    conn.execute("INSERT INTO themes (id, slug, name) VALUES (1,'true-crime','True Crime')")
+    conn.execute("INSERT INTO subjects (id, slug, name, description, theme_id) "
+                 "VALUES (1,'grief','Grief','def',1)")
+    conn.execute("INSERT INTO shows (id, slug, title, feed_url, include_verdict, why, "
+                 "description) VALUES (1,'s-town','S-Town','http://f','keep','x','about')")
+    long_desc = "x" * 2000
+    for i in range(1, 8):
+        conn.execute(
+            "INSERT INTO episodes (id, show_id, guid, title, description, published_at, "
+            "duration_s, episode_type, deleted_at) VALUES (?,1,?,?,?,?,?,?,?)",
+            (i, f"g{i}", f"Chapter {i}",
+             long_desc if i == 4 else "desc", f"2017-03-0{i}",
+             3600 if i == 4 else None, "full" if i == 4 else None,
+             "2026-08-01" if i == 3 else None))
+    conn.execute(
+        "INSERT INTO episode_labels (episode_id, subject_id, run_id, role, confidence, "
+        "agreement, votes, model, at) VALUES "
+        "(4,1,?,'primary','low',1,3,'claude-sonnet-5','2026-08-01T00:00:00+00:00')", (RUN,))
+    conn.execute("INSERT INTO entities (id, slug, name, kind) VALUES "
+                 "(1,'zeta','Zeta','person'), (2,'alpha','Alpha','place')")
+    # This run's reads -- the two that belong on the card.
+    conn.execute("INSERT INTO episode_entities (episode_id, entity_id, run_id, confidence) "
+                 "VALUES (4,1,?,'high'), (4,2,?,'high')", (RUN, RUN))
+    # A different run's read on the same episode -- must not leak onto this card.
+    conn.execute("INSERT INTO episode_entities (episode_id, entity_id, run_id, confidence) "
+                 "VALUES (4,1,'2026-06-relabel-v100','high')")
+    conn.commit()
+    yield conn
+    conn.close()
+
+
+def test_description_is_not_truncated(db_card):
+    card = labelqueue.next_card(db_card)
+    assert len(card["description"]) == 2000
+
+
+def test_show_about_and_episode_fields_are_carried(db_card):
+    card = labelqueue.next_card(db_card)
+    assert card["showAbout"] == "about"
+    assert card["durationS"] == 3600
+    assert card["episodeType"] == "full"
+
+
+def test_neighbours_are_chronological_capped_and_skip_deleted(db_card):
+    """Episode 3 is deleted, so the two "before" slots skip it and reach back to 1 and 2;
+    episode 7 exists but is outside the 2-after cap."""
+    card = labelqueue.next_card(db_card)
+    assert card["neighbours"] == [
+        {"title": "Chapter 1", "published": "2017-03-01", "position": "before"},
+        {"title": "Chapter 2", "published": "2017-03-02", "position": "before"},
+        {"title": "Chapter 5", "published": "2017-03-05", "position": "after"},
+        {"title": "Chapter 6", "published": "2017-03-06", "position": "after"},
+    ]
+
+
+def test_entities_are_filtered_to_this_run_and_name_ordered(db_card):
+    card = labelqueue.next_card(db_card)
+    assert card["entities"] == [
+        {"name": "Alpha", "kind": "place"},
+        {"name": "Zeta", "kind": "person"},
+    ]

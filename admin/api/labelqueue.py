@@ -70,12 +70,7 @@ def _likely(conn: sqlite3.Connection, episode_id: int, show_slug: str,
               "note": f"{_votes(agreement)} · the current label"}]
     seen = {current_slug}
 
-    for slug, name, sec_agreement in conn.execute(
-        """SELECT sub.slug, sub.name, l.agreement
-           FROM episode_labels l JOIN subjects sub ON sub.id = l.subject_id
-           WHERE l.episode_id = ? AND l.run_id = ? AND l.role = 'secondary'
-             AND l.agreement IS NOT NULL
-           ORDER BY l.agreement DESC, sub.slug""", (episode_id, RUN_ID)):
+    for slug, name, sec_agreement in _voting_secondaries(conn, episode_id):
         if slug in seen:
             continue
         picks.append({"slug": slug, "name": name, "note": _votes(sec_agreement)})
@@ -103,6 +98,42 @@ def _likely(conn: sqlite3.Connection, episode_id: int, show_slug: str,
     return picks[:5]
 
 
+def _voting_secondaries(conn: sqlite3.Connection, episode_id: int) -> list[tuple]:
+    """Secondaries this run gave a non-NULL `agreement` -- escalation's *other* votes, a
+    reader who reached for that shelf and lost the tally. Shared by `_likely` (which pads
+    them with show habits) and `scatter` (which is only ever these, nothing padded)."""
+    return list(conn.execute(
+        """SELECT sub.slug, sub.name, l.agreement
+           FROM episode_labels l JOIN subjects sub ON sub.id = l.subject_id
+           WHERE l.episode_id = ? AND l.run_id = ? AND l.role = 'secondary'
+             AND l.agreement IS NOT NULL
+           ORDER BY l.agreement DESC, sub.slug""", (episode_id, RUN_ID)))
+
+
+def _neighbours(conn: sqlite3.Connection, episode_id: int, show_slug: str) -> list[dict]:
+    """Up to 2 episodes either side, by publication order within the show.
+
+    label.py's `pending()` carries the prior art: a numbered part is obvious in context
+    ("Chapter 3" sitting after "Chapter 2") and ambiguous alone. The review card needs the
+    same context the labeller had. Deleted episodes are excluded -- they were never a real
+    neighbour to begin with, just a gap in the run.
+    """
+    rows = conn.execute(
+        """SELECT e.id, e.title, e.published_at FROM episodes e
+           JOIN shows s ON s.id = e.show_id
+           WHERE s.slug = ? AND e.deleted_at IS NULL
+           ORDER BY e.published_at, e.id""", (show_slug,)).fetchall()
+    idx = next((i for i, r in enumerate(rows) if r[0] == episode_id), None)
+    if idx is None:
+        return []
+    before = rows[max(0, idx - 2):idx]
+    after = rows[idx + 1:idx + 3]
+    return (
+        [{"title": t, "published": p, "position": "before"} for _, t, p in before]
+        + [{"title": t, "published": p, "position": "after"} for _, t, p in after]
+    )
+
+
 def next_card(conn: sqlite3.Connection, skipped: list[int] | None = None) -> dict | None:
     """One doubtful episode: lowest agreement first, random within a band so two
     sessions do not grind the same corner of the same show."""
@@ -110,8 +141,8 @@ def next_card(conn: sqlite3.Connection, skipped: list[int] | None = None) -> dic
     skip = f"AND e.id NOT IN ({','.join('?' * len(skipped))})" if skipped else ""
     row = conn.execute(
         f"""
-        SELECT e.id, e.title, e.published_at, e.description,
-               s.slug, s.title, a.name,
+        SELECT e.id, e.title, e.published_at, e.description, e.duration_s, e.episode_type,
+               s.slug, s.title, s.description, a.name,
                sub.slug, sub.name, l.confidence, l.agreement, l.votes
         FROM episode_labels l
         JOIN episodes e ON e.id = l.episode_id AND e.deleted_at IS NULL
@@ -129,20 +160,48 @@ def next_card(conn: sqlite3.Connection, skipped: list[int] | None = None) -> dic
         """, (RUN_ID, *skipped)).fetchone()
     if not row:
         return None
-    (eid, ep_title, published, desc, show_slug, show_title, arc,
+    (eid, ep_title, published, desc, duration_s, episode_type,
+     show_slug, show_title, show_about, arc,
      subj_slug, subj_name, confidence, agreement, votes) = row
     secondaries = [s for (s,) in conn.execute(
         """SELECT sub.slug FROM episode_labels l JOIN subjects sub ON sub.id=l.subject_id
            WHERE l.episode_id = ? AND l.run_id = ? AND l.role = 'secondary'
            ORDER BY sub.slug""", (eid, RUN_ID))]
+
+    # scatter: what the three readers actually reached for. The primary leads even though
+    # it is under-agreed -- it is still the model's best single read -- then every
+    # secondary that carried a vote in this run, votes descending. Distinct from `likely`,
+    # which pads the list with the show's habits; this is only ever real reads.
+    scatter = [{"slug": subj_slug, "name": subj_name, "votes": agreement}]
+    scatter += [{"slug": s, "name": n, "votes": v}
+                for s, n, v in _voting_secondaries(conn, eid)]
+
+    # entities: real-world things (case, company, person, place, era, work) this run tied
+    # to the episode. Filtered to RUN_ID like everything else here -- three runs coexist in
+    # episode_entities and only this run's reads belong on this run's review card.
+    entities = [{"name": n, "kind": k} for n, k in conn.execute(
+        """SELECT en.name, en.kind FROM episode_entities ee
+           JOIN entities en ON en.id = ee.entity_id
+           WHERE ee.episode_id = ? AND ee.run_id = ?
+           ORDER BY en.name""", (eid, RUN_ID))]
+
     return {
         "episodeId": eid, "title": ep_title, "published": published,
-        "description": (desc or "")[:1600],
+        # Full text, not the old [:1600] clip -- the reviewer said the card doesn't carry
+        # enough to judge, and a clipped description mid-sentence is exactly that. The
+        # client clamps and offers "expand"; truncation policy belongs at the edge that
+        # renders it, not baked into what the API hands back.
+        "description": desc or "",
         "show": show_title, "showSlug": show_slug, "arc": arc,
+        "showAbout": show_about or "",
+        "durationS": duration_s, "episodeType": episode_type,
         "primary": {"slug": subj_slug, "name": subj_name,
                     "confidence": confidence, "agreement": agreement, "votes": votes},
         "secondaries": secondaries,
         "likely": _likely(conn, eid, show_slug, subj_slug, subj_name, agreement),
+        "neighbours": _neighbours(conn, eid, show_slug),
+        "scatter": scatter,
+        "entities": entities,
     }
 
 
