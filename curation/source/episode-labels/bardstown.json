@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "unsolved-murder",
-   "count": 27
+   "count": 29
   },
   {
    "slug": "missing-person",
@@ -14,14 +14,6 @@
   {
    "slug": "forensic-evidence",
    "count": 2
-  },
-  {
-   "slug": "cold-case-reopened",
-   "count": 1
-  },
-  {
-   "slug": "investigative-process",
-   "count": 1
   }
  ],
  "episodes": [
@@ -197,9 +189,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -294,10 +288,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:22+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -385,9 +390,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:44+00:00"
+     "at": "2026-08-05T04:42:42+00:00"
     }
    ]
   },
@@ -578,9 +585,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -590,9 +599,42 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "14f4846a-b18e-11ee-a0ea-07305e2a2b05",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Crystal Rogers",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:57:44+00:00"
     }
    ]
   },
@@ -620,26 +662,6 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-07-30T15:24:28+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "14f4846a-b18e-11ee-a0ea-07305e2a2b05",
-   "subjects": [
-    {
-     "subject": "cold-case-reopened",
-     "role": "primary",
-     "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:44+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Crystal Rogers",
-     "kind": "person",
-     "confidence": "medium",
-     "at": "2026-07-30T14:57:44+00:00"
     }
    ]
   },
@@ -782,9 +804,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:31:45+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

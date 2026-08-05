@@ -5,19 +5,19 @@
  "subjectsUsed": [
   {
    "slug": "regulatory-failure",
-   "count": 86
+   "count": 87
   },
   {
    "slug": "medical-system-harm",
-   "count": 29
+   "count": 30
   },
   {
    "slug": "organised-crime",
-   "count": 21
+   "count": 22
   },
   {
    "slug": "sexual-abuse-accountability",
-   "count": 21
+   "count": 22
   },
   {
    "slug": "economic-policy",
@@ -28,15 +28,15 @@
    "count": 17
   },
   {
-   "slug": "public-money-misused",
-   "count": 15
-  },
-  {
    "slug": "work-and-labour-conditions",
    "count": 14
   },
   {
    "slug": "police-misconduct",
+   "count": 13
+  },
+  {
+   "slug": "public-money-misused",
    "count": 13
   },
   {
@@ -104,7 +104,15 @@
    "count": 6
   },
   {
+   "slug": "charismatic-con",
+   "count": 5
+  },
+  {
    "slug": "forensic-evidence",
+   "count": 5
+  },
+  {
+   "slug": "juvenile-justice",
    "count": 5
   },
   {
@@ -128,10 +136,6 @@
    "count": 4
   },
   {
-   "slug": "charismatic-con",
-   "count": 4
-  },
-  {
    "slug": "child-victim",
    "count": 4
   },
@@ -141,10 +145,6 @@
   },
   {
    "slug": "gentrification-and-housing",
-   "count": 4
-  },
-  {
-   "slug": "juvenile-justice",
    "count": 4
   },
   {
@@ -172,7 +172,7 @@
    "count": 3
   },
   {
-   "slug": "sex-work-and-exploitation",
+   "slug": "offshore-secrecy",
    "count": 3
   },
   {
@@ -240,15 +240,15 @@
    "count": 2
   },
   {
+   "slug": "sex-work-and-exploitation",
+   "count": 2
+  },
+  {
    "slug": "war-crimes-accountability",
    "count": 2
   },
   {
    "slug": "advertising-and-persuasion",
-   "count": 1
-  },
-  {
-   "slug": "ageing-and-mortality",
    "count": 1
   },
   {
@@ -272,15 +272,7 @@
    "count": 1
   },
   {
-   "slug": "courtroom-trial",
-   "count": 1
-  },
-  {
    "slug": "cult-and-control",
-   "count": 1
-  },
-  {
-   "slug": "disaster-reconstruction",
    "count": 1
   },
   {
@@ -304,19 +296,11 @@
    "count": 1
   },
   {
-   "slug": "investment-fraud",
-   "count": 1
-  },
-  {
    "slug": "legal-precedent",
    "count": 1
   },
   {
    "slug": "medical-deception",
-   "count": 1
-  },
-  {
-   "slug": "online-radicalisation",
    "count": 1
   },
   {
@@ -329,10 +313,6 @@
   },
   {
    "slug": "reentry-after-prison",
-   "count": 1
-  },
-  {
-   "slug": "religious-community",
    "count": 1
   },
   {
@@ -713,18 +693,22 @@
    "guid": "http://downloads.bbc.co.uk/podcasts/radio4/fileon4/fileon4_20110329-2140.mp3",
    "subjects": [
     {
-     "subject": "sexual-abuse-accountability",
+     "subject": "courtroom-trial",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:08+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "courtroom-trial",
+     "subject": "sexual-abuse-accountability",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:08+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -782,6 +766,15 @@
    "guid": "http://downloads.bbc.co.uk/podcasts/radio4/fileon4/fileon4_20110621-2040.mp3",
    "subjects": [
     {
+     "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "regulatory-failure",
      "role": "secondary",
      "confidence": "medium",
@@ -789,11 +782,13 @@
      "at": "2026-07-28T01:01:49+00:00"
     },
     {
-     "subject": "ageing-and-mortality",
+     "subject": "medical-system-harm",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:01:49+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -945,9 +940,11 @@
     {
      "subject": "state-sponsored-cyber-espionage",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:01:49+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1038,9 +1035,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:03+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1128,9 +1127,11 @@
     {
      "subject": "government-secrecy",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:02:04+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1203,9 +1204,11 @@
     {
      "subject": "family-annihilation-and-parricide",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:16+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1313,10 +1316,21 @@
    "subjects": [
     {
      "subject": "public-money-misused",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:16+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "offshore-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1386,9 +1400,11 @@
     {
      "subject": "war-and-its-conduct",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:02:08+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1540,9 +1556,11 @@
     {
      "subject": "management-and-leadership",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:02:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2352,9 +2370,11 @@
     {
      "subject": "elections-and-voting",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2928,9 +2948,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3128,9 +3150,11 @@
     {
      "subject": "prosecutorial-power",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -3672,10 +3696,21 @@
    "subjects": [
     {
      "subject": "institutional-coverup",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:04+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4453,10 +4488,21 @@
    "subjects": [
     {
      "subject": "public-money-misused",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:04+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "offshore-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -4742,10 +4788,21 @@
    "subjects": [
     {
      "subject": "online-radicalisation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4832,9 +4889,11 @@
     {
      "subject": "economic-policy",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:41+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -5625,6 +5684,15 @@
    "guid": "urn:bbc:podcast:m000b5lb",
    "subjects": [
     {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "regulatory-failure",
      "role": "secondary",
      "confidence": "medium",
@@ -5632,11 +5700,13 @@
      "at": "2026-07-28T01:04:53+00:00"
     },
     {
-     "subject": "investment-fraud",
+     "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -5673,9 +5743,11 @@
     {
      "subject": "gender-identity",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5811,9 +5883,11 @@
     {
      "subject": "terrorism-and-aftermath",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6188,9 +6262,11 @@
     {
      "subject": "serial-offender",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6234,9 +6310,11 @@
     {
      "subject": "advertising-and-persuasion",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6335,8 +6413,10 @@
      "subject": "romance-and-catfishing",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6373,8 +6453,10 @@
      "subject": "internet-culture",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:53+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -6582,9 +6664,11 @@
     {
      "subject": "corporate-breach-response",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6637,8 +6721,10 @@
      "subject": "hacker-life-story",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6663,9 +6749,11 @@
     {
      "subject": "medical-deception",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6813,9 +6901,11 @@
     {
      "subject": "cult-and-control",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -7418,10 +7508,21 @@
    "subjects": [
     {
      "subject": "disaster-reconstruction",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -7697,9 +7798,11 @@
     {
      "subject": "legal-precedent",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -7781,10 +7884,21 @@
    "subjects": [
     {
      "subject": "sex-work-and-exploitation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -7891,8 +8005,10 @@
      "subject": "buildings-and-public-space",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:03:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -8060,9 +8176,11 @@
     {
      "subject": "ai-and-society",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:49+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -8170,9 +8288,11 @@
     {
      "subject": "identity-impostor",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:18+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -8479,9 +8599,11 @@
     {
      "subject": "sport-and-politics",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:18+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -8506,9 +8628,11 @@
     {
      "subject": "chronic-illness",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:07+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -8582,9 +8706,11 @@
     {
      "subject": "protest-movement",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:26+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -8914,10 +9040,21 @@
    "subjects": [
     {
      "subject": "regulatory-failure",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "offshore-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -9160,9 +9297,11 @@
     {
      "subject": "betting-and-gambling",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -9338,9 +9477,11 @@
     {
      "subject": "reentry-after-prison",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -9533,18 +9674,22 @@
    "guid": "urn:bbc:podcast:m002n7qw",
    "subjects": [
     {
-     "subject": "institutional-coverup",
+     "subject": "religious-community",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "religious-community",
+     "subject": "institutional-coverup",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -9970,9 +10115,11 @@
     {
      "subject": "slavery-and-its-legacy",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:26+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

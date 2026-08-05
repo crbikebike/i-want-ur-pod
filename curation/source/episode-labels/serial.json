@@ -12,15 +12,15 @@
    "count": 5
   },
   {
+   "slug": "conspiracy-theory",
+   "count": 3
+  },
+  {
    "slug": "animal-behaviour",
    "count": 2
   },
   {
    "slug": "cold-case-reopened",
-   "count": 2
-  },
-  {
-   "slug": "conspiracy-theory",
    "count": 2
   },
   {
@@ -32,15 +32,15 @@
    "count": 2
   },
   {
-   "slug": "epidemic-and-public-health",
+   "slug": "charismatic-con",
    "count": 1
   },
   {
-   "slug": "everyday-mystery",
+   "slug": "education-system-failure",
    "count": 1
   },
   {
-   "slug": "family-secret",
+   "slug": "government-secrecy",
    "count": 1
   },
   {
@@ -60,15 +60,11 @@
    "count": 1
   },
   {
-   "slug": "schooling-and-policy",
+   "slug": "sense-of-place",
    "count": 1
   },
   {
    "slug": "war-and-its-conduct",
-   "count": 1
-  },
-  {
-   "slug": "war-crimes-accountability",
    "count": 1
   },
   {
@@ -95,8 +91,10 @@
      "subject": "wrongful-conviction",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:06+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -128,8 +126,10 @@
      "subject": "war-and-its-conduct",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:01+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -155,8 +155,10 @@
      "subject": "prosecutorial-power",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ]
   },
@@ -164,18 +166,22 @@
    "guid": "4a4eafd4-59fc-4e8c-a290-a6270797e206",
    "subjects": [
     {
-     "subject": "sense-of-place",
+     "subject": "everyday-mystery",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:31:45+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "everyday-mystery",
+     "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:31:45+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -199,10 +205,21 @@
     },
     {
      "subject": "schooling-and-policy",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "education-system-failure",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:40+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -298,6 +315,44 @@
    ]
   },
   {
+   "guid": "24e439ec-65f9-46bd-95ee-c3b64a34dad0",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:28+00:00"
+    },
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rachel McKibbens",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:24:28+00:00"
+    }
+   ]
+  },
+  {
    "guid": "25bc8a0c-5be4-4977-85a4-65754f3fe2ec",
    "subjects": [
     {
@@ -309,37 +364,21 @@
     },
     {
      "subject": "grief-and-loss",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:42+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "24e439ec-65f9-46bd-95ee-c3b64a34dad0",
-   "subjects": [
-    {
-     "subject": "family-secret",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:24:28+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "epidemic-and-public-health",
+     "subject": "conspiracy-theory",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:24:28+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Rachel McKibbens",
-     "kind": "person",
      "confidence": "medium",
-     "at": "2026-07-30T15:24:28+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -498,18 +537,22 @@
    "guid": "2a5d8b09-30f0-43e2-bc9c-d111b295c87f",
    "subjects": [
     {
-     "subject": "government-secrecy",
+     "subject": "war-crimes-accountability",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     },
     {
-     "subject": "war-crimes-accountability",
+     "subject": "government-secrecy",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -534,9 +577,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:32:46+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -644,9 +689,11 @@
     {
      "subject": "whistleblower",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:24:28+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -664,8 +711,10 @@
      "subject": "murder-for-hire",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:24:28+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -673,18 +722,22 @@
    "guid": "bc72e444-723f-463e-aa3b-87e2ede00dd9",
    "subjects": [
     {
-     "subject": "charismatic-con",
+     "subject": "family-secret",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:42+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "family-secret",
+     "subject": "charismatic-con",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:42+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "song-and-album-origin",
-   "count": 14
+   "count": 15
   },
   {
    "slug": "songwriting-craft",
-   "count": 11
+   "count": 10
   },
   {
    "slug": "artist-band-biography",
@@ -376,10 +376,21 @@
    "subjects": [
     {
      "subject": "songwriting-craft",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:54:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -430,8 +441,10 @@
      "subject": "artist-band-biography",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:52+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [

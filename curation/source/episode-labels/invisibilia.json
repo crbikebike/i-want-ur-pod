@@ -5,15 +5,15 @@
  "subjectsUsed": [
   {
    "slug": "scientific-discovery",
-   "count": 18
+   "count": 15
   },
   {
    "slug": "personal-transformation",
-   "count": 11
+   "count": 10
   },
   {
    "slug": "psychology-of-belief",
-   "count": 8
+   "count": 10
   },
   {
    "slug": "friendship",
@@ -25,7 +25,7 @@
   },
   {
    "slug": "grief-and-loss",
-   "count": 4
+   "count": 5
   },
   {
    "slug": "internet-culture",
@@ -44,7 +44,7 @@
    "count": 2
   },
   {
-   "slug": "relationship-remembered",
+   "slug": "gendered-constraint",
    "count": 2
   },
   {
@@ -52,12 +52,8 @@
    "count": 2
   },
   {
-   "slug": "athlete-profile",
-   "count": 1
-  },
-  {
-   "slug": "chronic-illness",
-   "count": 1
+   "slug": "sense-of-place",
+   "count": 2
   },
   {
    "slug": "conspiracy-theory",
@@ -84,15 +80,15 @@
    "count": 1
   },
   {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
    "slug": "informant-and-undercover",
    "count": 1
   },
   {
-   "slug": "invented-category",
-   "count": 1
-  },
-  {
-   "slug": "making-of-a-work",
+   "slug": "language-and-words",
    "count": 1
   },
   {
@@ -100,7 +96,15 @@
    "count": 1
   },
   {
+   "slug": "medical-system-harm",
+   "count": 1
+  },
+  {
    "slug": "reality-television",
+   "count": 1
+  },
+  {
+   "slug": "relationship-remembered",
    "count": 1
   },
   {
@@ -108,15 +112,11 @@
    "count": 1
   },
   {
-   "slug": "sense-of-place",
+   "slug": "romance-and-heartbreak",
    "count": 1
   },
   {
    "slug": "slavery-and-its-legacy",
-   "count": 1
-  },
-  {
-   "slug": "sport-and-politics",
    "count": 1
   },
   {
@@ -147,9 +147,11 @@
     {
      "subject": "psychology-of-belief",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -218,8 +220,10 @@
      "subject": "disability-and-access",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:22+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -276,9 +280,11 @@
     {
      "subject": "ai-and-society",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:13+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -287,10 +293,21 @@
    "subjects": [
     {
      "subject": "scientific-discovery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:43:22+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "language-and-words",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -299,10 +316,21 @@
    "subjects": [
     {
      "subject": "scientific-discovery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:06+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -410,9 +438,11 @@
     {
      "subject": "psychology-of-belief",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:25+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -449,8 +479,10 @@
      "subject": "fashion-and-clothing",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:12+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -478,10 +510,21 @@
    "subjects": [
     {
      "subject": "scientific-discovery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:30+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -491,9 +534,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:43:40+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -510,9 +555,11 @@
     {
      "subject": "education-system-failure",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -646,9 +693,11 @@
     {
      "subject": "talking-about-love",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -686,9 +735,11 @@
     {
      "subject": "psychology-of-belief",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:12+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -725,8 +776,10 @@
      "subject": "reality-television",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:13+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -745,8 +798,10 @@
      "subject": "family-secret",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -814,9 +869,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:04+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -844,10 +901,21 @@
    "subjects": [
     {
      "subject": "relationship-remembered",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -886,8 +954,10 @@
      "subject": "everyday-mystery",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:43:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -897,15 +967,26 @@
     {
      "subject": "psychology-of-belief",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
   {
    "guid": "ca257814-2dd8-4b71-8ba7-d5b057517a4f",
    "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
     {
      "subject": "medical-research",
      "role": "secondary",
@@ -914,11 +995,13 @@
      "at": "2026-07-30T15:16:22+00:00"
     },
     {
-     "subject": "chronic-illness",
+     "subject": "medical-system-harm",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:22+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -940,9 +1023,11 @@
     {
      "subject": "psychology-of-belief",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:04+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -960,8 +1045,10 @@
      "subject": "medical-research",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:13+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1030,8 +1117,10 @@
      "subject": "romance-and-catfishing",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1042,8 +1131,10 @@
      "subject": "supernatural-encounter",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:22+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1093,8 +1184,10 @@
      "subject": "scientific-discovery",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:22+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1158,9 +1251,11 @@
     {
      "subject": "community-in-conflict",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:30+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1195,18 +1290,22 @@
    "guid": "10b1be00-5362-4b08-bc6e-547b915df91a",
    "subjects": [
     {
-     "subject": "identity-impostor",
+     "subject": "invented-category",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "invented-category",
+     "subject": "identity-impostor",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1243,8 +1342,10 @@
      "subject": "surveillance-and-privacy",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:12+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1254,9 +1355,11 @@
     {
      "subject": "psychology-of-belief",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:12+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1266,9 +1369,11 @@
     {
      "subject": "slavery-and-its-legacy",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:04+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1370,10 +1475,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:04+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1440,9 +1556,11 @@
     {
      "subject": "informant-and-undercover",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:12+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1511,8 +1629,10 @@
      "subject": "personal-transformation",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:17+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1522,9 +1642,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:30+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1585,9 +1707,11 @@
     {
      "subject": "work-and-labour-conditions",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:12+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1616,29 +1740,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:12+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "0380162e-efed-4bfb-aad8-ed55b89eb481",
-   "subjects": [
-    {
-     "subject": "gendered-constraint",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:30+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "sport-and-politics",
+     "subject": "grief-and-loss",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:30+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1646,6 +1762,15 @@
    "guid": "38428461-a93f-4e6c-a3ba-88e608b0a474",
    "subjects": [
     {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "sport-and-politics",
      "role": "secondary",
      "confidence": "medium",
@@ -1653,11 +1778,13 @@
      "at": "2026-07-30T14:40:17+00:00"
     },
     {
-     "subject": "athlete-profile",
+     "subject": "gendered-constraint",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:17+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1666,6 +1793,29 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-07-30T14:40:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0380162e-efed-4bfb-aad8-ed55b89eb481",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1682,9 +1832,11 @@
     {
      "subject": "conspiracy-theory",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:43:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1721,9 +1873,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:30+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

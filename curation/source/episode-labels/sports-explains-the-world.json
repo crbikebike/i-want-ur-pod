@@ -5,15 +5,15 @@
  "subjectsUsed": [
   {
    "slug": "sport-and-politics",
-   "count": 10
+   "count": 12
   },
   {
    "slug": "sports-history",
-   "count": 10
+   "count": 9
   },
   {
    "slug": "athlete-profile",
-   "count": 6
+   "count": 8
   },
   {
    "slug": "cold-war-espionage",
@@ -36,11 +36,11 @@
    "count": 2
   },
   {
-   "slug": "corporate-fraud",
+   "slug": "cold-case-reopened",
    "count": 1
   },
   {
-   "slug": "education-system-failure",
+   "slug": "corporate-fraud",
    "count": 1
   },
   {
@@ -60,23 +60,11 @@
    "count": 1
   },
   {
-   "slug": "personal-transformation",
-   "count": 1
-  },
-  {
-   "slug": "reentry-after-prison",
+   "slug": "music-scene-movement",
    "count": 1
   },
   {
    "slug": "relationship-remembered",
-   "count": 1
-  },
-  {
-   "slug": "unsolved-murder",
-   "count": 1
-  },
-  {
-   "slug": "war-and-its-conduct",
    "count": 1
   }
  ],
@@ -86,10 +74,21 @@
    "subjects": [
     {
      "subject": "sports-history",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:48+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -132,9 +131,11 @@
     {
      "subject": "media-criticism",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:32+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -184,9 +185,11 @@
     {
      "subject": "relationship-remembered",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -315,6 +318,15 @@
    "guid": "gid://art19-episode-locator/V0/-A_CMUw7SedjO_h1c4s9QoJCUeCo-zQMY3wXN9PJvMQ",
    "subjects": [
     {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
      "subject": "wilderness-expedition-survival",
      "role": "secondary",
      "confidence": "low",
@@ -322,11 +334,13 @@
      "at": "2026-07-30T15:21:32+00:00"
     },
     {
-     "subject": "personal-transformation",
+     "subject": "athlete-profile",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:32+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -412,8 +426,10 @@
      "subject": "management-and-leadership",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -464,10 +480,21 @@
     },
     {
      "subject": "war-and-its-conduct",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:28:39+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -609,9 +636,11 @@
     {
      "subject": "legal-precedent",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -751,8 +780,10 @@
      "subject": "investment-fraud",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:01+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -783,9 +814,11 @@
     {
      "subject": "corporate-fraud",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -889,9 +922,11 @@
     {
      "subject": "stranger-homicide",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:48+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -933,10 +968,21 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:50+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -973,9 +1019,11 @@
     {
      "subject": "sports-history",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1188,18 +1236,22 @@
    "guid": "gid://art19-episode-locator/V0/mje2Qg-shTyNFluRn_m9BUPO82JbOc8PEsx0p2ODq9E",
    "subjects": [
     {
-     "subject": "athlete-profile",
+     "subject": "reentry-after-prison",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "reentry-after-prison",
+     "subject": "athlete-profile",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1215,6 +1267,15 @@
    "guid": "gid://art19-episode-locator/V0/7O0G25_G-trs7gLpdJphez1Ao5ZYpKemIAtnTXmj3kg",
    "subjects": [
     {
+     "subject": "education-system-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
+    },
+    {
      "subject": "sports-history",
      "role": "secondary",
      "confidence": "low",
@@ -1222,11 +1283,13 @@
      "at": "2026-07-30T15:23:33+00:00"
     },
     {
-     "subject": "education-system-failure",
+     "subject": "music-scene-movement",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:33+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ]
   },

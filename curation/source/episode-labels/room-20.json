@@ -8,11 +8,15 @@
    "count": 5
   },
   {
-   "slug": "forensic-evidence",
-   "count": 2
+   "slug": "art-and-artists",
+   "count": 1
   },
   {
-   "slug": "celebrity-life",
+   "slug": "forensic-evidence",
+   "count": 1
+  },
+  {
+   "slug": "missing-person",
    "count": 1
   }
  ],
@@ -116,6 +120,15 @@
    "guid": "gid://art19-episode-locator/V0/CGF6N46GixnkCaF8pHerYmmHYba3WlLGalXW14eFsvM",
    "subjects": [
     {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "unsolved-murder",
      "role": "secondary",
      "confidence": "low",
@@ -123,11 +136,13 @@
      "at": "2026-08-01T20:23:22+00:00"
     },
     {
-     "subject": "forensic-evidence",
+     "subject": "missing-person",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:23:22+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -155,10 +170,21 @@
    "subjects": [
     {
      "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "art-and-artists",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:23+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   }

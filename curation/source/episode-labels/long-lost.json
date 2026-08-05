@@ -5,11 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "missing-person",
-   "count": 7
-  },
-  {
-   "slug": "family-secret",
-   "count": 1
+   "count": 8
   }
  ],
  "episodes": [
@@ -137,18 +133,22 @@
    "guid": "d192889e-d7fc-6e0e-1980-37f090d52e7e",
    "subjects": [
     {
-     "subject": "missing-person",
+     "subject": "family-secret",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:40+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     },
     {
-     "subject": "family-secret",
+     "subject": "missing-person",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:40+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [

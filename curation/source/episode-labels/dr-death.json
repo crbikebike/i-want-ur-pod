@@ -16,11 +16,11 @@
    "count": 2
   },
   {
-   "slug": "books-and-writing",
+   "slug": "corporate-fraud",
    "count": 1
   },
   {
-   "slug": "corporate-fraud",
+   "slug": "ideas-and-argument",
    "count": 1
   }
  ],
@@ -251,8 +251,10 @@
      "subject": "corporate-fraud",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:55:27+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -428,10 +430,21 @@
    "subjects": [
     {
      "subject": "books-and-writing",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:54:41+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [

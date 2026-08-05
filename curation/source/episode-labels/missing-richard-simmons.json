@@ -5,22 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "missing-person",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "celebrity-life",
-   "count": 2
+   "count": 3
   },
   {
-   "slug": "voluntary-disappearance",
-   "count": 2
-  },
-  {
-   "slug": "cost-of-fame",
-   "count": 1
-  },
-  {
-   "slug": "psychology-of-belief",
+   "slug": "epidemic-and-public-health",
    "count": 1
   },
   {
@@ -29,6 +21,10 @@
   },
   {
    "slug": "terrorism-and-aftermath",
+   "count": 1
+  },
+  {
+   "slug": "voluntary-disappearance",
    "count": 1
   },
   {
@@ -251,10 +247,21 @@
    "subjects": [
     {
      "subject": "voluntary-disappearance",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:20+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -272,9 +279,11 @@
     {
      "subject": "reality-television",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -285,8 +294,10 @@
      "subject": "war-crimes-accountability",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -311,9 +322,11 @@
     {
      "subject": "terrorism-and-aftermath",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:11+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -321,18 +334,22 @@
    "guid": "gid://art19-episode-locator/V0/Rcagj1CudluvbZ0ONRDCanJps1efwP-mX4tCOHFZPJM",
    "subjects": [
     {
-     "subject": "celebrity-life",
+     "subject": "cost-of-fame",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "cost-of-fame",
+     "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -349,10 +366,21 @@
    "subjects": [
     {
      "subject": "psychology-of-belief",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:26:58+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [

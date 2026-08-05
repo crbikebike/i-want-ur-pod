@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "organised-crime",
-   "count": 19
+   "count": 20
   },
   {
    "slug": "war-crimes-accountability",
@@ -21,15 +21,15 @@
   },
   {
    "slug": "cold-war-espionage",
-   "count": 10
+   "count": 11
+  },
+  {
+   "slug": "medical-research",
+   "count": 8
   },
   {
    "slug": "sexual-abuse-accountability",
    "count": 7
-  },
-  {
-   "slug": "medical-research",
-   "count": 6
   },
   {
    "slug": "political-scandal",
@@ -48,6 +48,10 @@
    "count": 3
   },
   {
+   "slug": "hacking-and-cybercrime",
+   "count": 3
+  },
+  {
    "slug": "terrorism-and-aftermath",
    "count": 3
   },
@@ -60,10 +64,6 @@
    "count": 2
   },
   {
-   "slug": "hacking-and-cybercrime",
-   "count": 2
-  },
-  {
    "slug": "ideas-and-argument",
    "count": 2
   },
@@ -72,31 +72,11 @@
    "count": 2
   },
   {
-   "slug": "ageing-and-mortality",
-   "count": 1
-  },
-  {
-   "slug": "captivity-and-escape",
-   "count": 1
-  },
-  {
-   "slug": "corporate-fraud",
-   "count": 1
-  },
-  {
-   "slug": "courtroom-trial",
-   "count": 1
-  },
-  {
-   "slug": "founder-biography",
+   "slug": "cult-and-control",
    "count": 1
   },
   {
    "slug": "medical-deception",
-   "count": 1
-  },
-  {
-   "slug": "psychology-of-belief",
    "count": 1
   },
   {
@@ -275,9 +255,11 @@
     {
      "subject": "war-crimes-accountability",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:48+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -602,6 +584,43 @@
    ]
   },
   {
+   "guid": "urn:bbc:podcast:m0009jk9",
+   "subjects": [
+    {
+     "subject": "captivity-and-escape",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Berlin Wall",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:48+00:00"
+    },
+    {
+     "name": "Stasi",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:28:48+00:00"
+    }
+   ]
+  },
+  {
    "guid": "urn:bbc:podcast:m0009lq8",
    "subjects": [
     {
@@ -631,39 +650,6 @@
      "kind": "company",
      "confidence": "high",
      "at": "2026-07-29T23:25:18+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "urn:bbc:podcast:m0009jk9",
-   "subjects": [
-    {
-     "subject": "cold-war-espionage",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:48+00:00"
-    },
-    {
-     "subject": "captivity-and-escape",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:48+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Berlin Wall",
-     "kind": "place",
-     "confidence": "high",
-     "at": "2026-07-29T23:28:48+00:00"
-    },
-    {
-     "name": "Stasi",
-     "kind": "company",
-     "confidence": "medium",
-     "at": "2026-07-29T23:28:48+00:00"
     }
    ]
   },
@@ -1461,18 +1447,22 @@
    "guid": "urn:bbc:podcast:m001q630",
    "subjects": [
     {
-     "subject": "medical-research",
+     "subject": "ageing-and-mortality",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:48+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "ageing-and-mortality",
+     "subject": "medical-research",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:48+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1551,9 +1541,11 @@
     {
      "subject": "medical-deception",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1635,18 +1627,22 @@
    "guid": "urn:bbc:podcast:m001qdq3",
    "subjects": [
     {
-     "subject": "medical-research",
+     "subject": "founder-biography",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "founder-biography",
+     "subject": "medical-research",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1690,10 +1686,21 @@
     },
     {
      "subject": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "cult-and-control",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:48+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2590,9 +2597,11 @@
     {
      "subject": "undercover-and-embedded-reporting",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:49+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2641,6 +2650,15 @@
    "guid": "urn:bbc:podcast:m0028kz9",
    "subjects": [
     {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "investigative-process",
      "role": "secondary",
      "confidence": "medium",
@@ -2648,11 +2666,13 @@
      "at": "2026-07-30T14:45:11+00:00"
     },
     {
-     "subject": "corporate-fraud",
+     "subject": "organised-crime",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:11+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2722,9 +2742,11 @@
     {
      "subject": "institutional-coverup",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2873,10 +2895,21 @@
     },
     {
      "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:41+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [

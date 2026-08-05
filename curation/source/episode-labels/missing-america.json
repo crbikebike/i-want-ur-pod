@@ -8,6 +8,10 @@
    "count": 3
   },
   {
+   "slug": "extremist-movement",
+   "count": 2
+  },
+  {
    "slug": "political-persecution",
    "count": 2
   },
@@ -24,15 +28,7 @@
    "count": 1
   },
   {
-   "slug": "extremist-movement",
-   "count": 1
-  },
-  {
    "slug": "foreign-political-crisis",
-   "count": 1
-  },
-  {
-   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -104,10 +100,21 @@
     },
     {
      "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "extremist-movement",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:24+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -125,8 +132,10 @@
      "subject": "foreign-political-crisis",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:33+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -151,9 +160,11 @@
     {
      "subject": "internet-culture",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:26:58+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -179,8 +190,10 @@
      "subject": "undercover-and-embedded-reporting",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:57+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -231,9 +244,11 @@
     {
      "subject": "immigration-and-borders",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -251,9 +266,11 @@
     {
      "subject": "climate-change",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:47+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -289,9 +306,11 @@
     {
      "subject": "extremist-movement",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:24+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -342,9 +361,11 @@
     {
      "subject": "sport-and-politics",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:26:58+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -368,9 +389,11 @@
     {
      "subject": "protest-movement",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -381,8 +404,10 @@
      "subject": "elections-and-voting",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:58+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -393,8 +418,10 @@
      "subject": "protest-movement",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [

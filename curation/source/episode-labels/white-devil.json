@@ -9,7 +9,7 @@
   },
   {
    "slug": "murder-close-to-home",
-   "count": 4
+   "count": 5
   },
   {
    "slug": "corruption-in-local-power",
@@ -28,15 +28,11 @@
    "count": 1
   },
   {
-   "slug": "founder-biography",
-   "count": 1
-  },
-  {
-   "slug": "investigative-process",
-   "count": 1
-  },
-  {
    "slug": "making-of-a-work",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
    "count": 1
   },
   {
@@ -44,7 +40,7 @@
    "count": 1
   },
   {
-   "slug": "true-crime-as-genre",
+   "slug": "unsolved-murder",
    "count": 1
   }
  ],
@@ -270,6 +266,15 @@
    "guid": "d1d26ad4-1877-11ef-be21-1b6a2a383c12",
    "subjects": [
     {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "stranger-homicide",
      "role": "secondary",
      "confidence": "low",
@@ -277,11 +282,13 @@
      "at": "2026-08-01T20:22:00+00:00"
     },
     {
-     "subject": "founder-biography",
+     "subject": "murder-close-to-home",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -464,9 +471,11 @@
     {
      "subject": "courtroom-trial",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:50+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -483,10 +492,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:16+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -504,8 +524,10 @@
      "subject": "protest-movement",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:50+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -530,9 +552,11 @@
     {
      "subject": "intimate-partner-homicide",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:35+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -557,9 +581,11 @@
     {
      "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:33+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -577,9 +603,11 @@
     {
      "subject": "making-of-a-work",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -597,9 +625,11 @@
     {
      "subject": "ageing-and-mortality",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -608,10 +638,21 @@
    "subjects": [
     {
      "subject": "true-crime-as-genre",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:42+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

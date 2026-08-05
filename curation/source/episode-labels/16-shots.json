@@ -9,15 +9,11 @@
   },
   {
    "slug": "police-misconduct",
-   "count": 8
+   "count": 9
   },
   {
    "slug": "institutional-coverup",
    "count": 2
-  },
-  {
-   "slug": "racial-violence",
-   "count": 1
   }
  ],
  "episodes": [
@@ -794,18 +790,22 @@
    "guid": "fbb9d1cc-2911-40ab-af57-93e74b064723",
    "subjects": [
     {
-     "subject": "police-misconduct",
+     "subject": "racial-violence",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "racial-violence",
+     "subject": "police-misconduct",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

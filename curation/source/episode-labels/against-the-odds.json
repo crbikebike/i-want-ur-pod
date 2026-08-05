@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "disaster-and-accident-survival",
-   "count": 80
+   "count": 81
   },
   {
    "slug": "wilderness-expedition-survival",
-   "count": 76
+   "count": 77
   },
   {
    "slug": "natural-disaster",
@@ -17,7 +17,7 @@
   },
   {
    "slug": "captivity-and-escape",
-   "count": 25
+   "count": 26
   },
   {
    "slug": "kidnapping-and-captivity",
@@ -56,7 +56,7 @@
    "count": 2
   },
   {
-   "slug": "books-and-writing",
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -68,15 +68,7 @@
    "count": 1
   },
   {
-   "slug": "investigative-process",
-   "count": 1
-  },
-  {
    "slug": "making-of-a-work",
-   "count": 1
-  },
-  {
-   "slug": "management-and-leadership",
    "count": 1
   },
   {
@@ -84,11 +76,7 @@
    "count": 1
   },
   {
-   "slug": "sports-history",
-   "count": 1
-  },
-  {
-   "slug": "war-and-its-conduct",
+   "slug": "startup-collapse",
    "count": 1
   }
  ],
@@ -99,9 +87,11 @@
     {
      "subject": "survival-story",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:16+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -248,9 +238,11 @@
     {
      "subject": "survival-story",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:45:10+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1958,6 +1950,15 @@
    "guid": "gid://art19-episode-locator/V0/PhOHZHKbIyPJvz2UIBAPBdBY7zzSabL9RJkRQMWkNzw",
    "subjects": [
     {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
      "subject": "natural-disaster",
      "role": "secondary",
      "confidence": "high",
@@ -1965,11 +1966,13 @@
      "at": "2026-07-29T08:48:16+00:00"
     },
     {
-     "subject": "investigative-process",
+     "subject": "disaster-and-accident-survival",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:48:16+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -2457,9 +2460,11 @@
     {
      "subject": "making-of-a-work",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:45:10+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -3138,9 +3143,11 @@
     {
      "subject": "indigenous-history",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:43+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -3476,9 +3483,11 @@
     {
      "subject": "missing-person",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:09:27+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -5532,18 +5541,22 @@
    "guid": "gid://art19-episode-locator/V0/H2mEQlsrrzN3B0TOedePiTH2OOpH7FhBOWTdZIWq-is",
    "subjects": [
     {
-     "subject": "wilderness-expedition-survival",
+     "subject": "sports-history",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:08:16+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "sports-history",
+     "subject": "wilderness-expedition-survival",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:08:16+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -6822,9 +6835,11 @@
     {
      "subject": "survival-story",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:44:22+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -7088,10 +7103,21 @@
     },
     {
      "subject": "management-and-leadership",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:44:43+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "startup-collapse",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -8232,18 +8258,22 @@
    "guid": "gid://art19-episode-locator/V0/Ow5EP9R-8Sx_aMTndNRuWFM7_p9ToA1wkNvqlUovLrM",
    "subjects": [
     {
-     "subject": "captivity-and-escape",
+     "subject": "war-and-its-conduct",
      "role": "secondary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:45:24+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "war-and-its-conduct",
+     "subject": "captivity-and-escape",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:45:24+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -8671,10 +8701,21 @@
    "subjects": [
     {
      "subject": "books-and-writing",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:18+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -8758,9 +8799,11 @@
     {
      "subject": "identity-impostor",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:45:24+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [

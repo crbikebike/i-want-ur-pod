@@ -5,34 +5,34 @@
  "subjectsUsed": [
   {
    "slug": "organised-crime",
-   "count": 10
+   "count": 11
   },
   {
    "slug": "corporate-fraud",
    "count": 4
   },
   {
-   "slug": "monopoly-and-market-power",
+   "slug": "sex-work-and-exploitation",
    "count": 3
   },
   {
-   "slug": "sex-work-and-exploitation",
-   "count": 3
+   "slug": "cold-war-espionage",
+   "count": 2
   },
   {
    "slug": "founder-biography",
    "count": 2
   },
   {
-   "slug": "cold-war-espionage",
+   "slug": "monopoly-and-market-power",
+   "count": 2
+  },
+  {
+   "slug": "foreign-political-crisis",
    "count": 1
   },
   {
-   "slug": "courtroom-trial",
-   "count": 1
-  },
-  {
-   "slug": "investigative-process",
+   "slug": "identity-impostor",
    "count": 1
   },
   {
@@ -41,10 +41,6 @@
   },
   {
    "slug": "offshore-secrecy",
-   "count": 1
-  },
-  {
-   "slug": "political-scandal",
    "count": 1
   }
  ],
@@ -61,10 +57,21 @@
     },
     {
      "subject": "monopoly-and-market-power",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:47+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "offshore-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -119,18 +126,22 @@
    "guid": "c053f422-e540-4121-8ec9-aeb3013b96d3",
    "subjects": [
     {
-     "subject": "identity-impostor",
+     "subject": "offshore-secrecy",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:05+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "offshore-secrecy",
+     "subject": "identity-impostor",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:05+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -148,9 +159,11 @@
     {
      "subject": "legal-precedent",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -267,9 +280,11 @@
     {
      "subject": "organised-crime",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -464,21 +479,48 @@
    ]
   },
   {
+   "guid": "2548c678-babf-48e2-a02a-b2f7015db8e7",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
    "guid": "30619d1b-93c5-4bab-a453-b2f701666dc4",
    "subjects": [
     {
-     "subject": "foreign-political-crisis",
+     "subject": "political-scandal",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:28+00:00"
+     "at": "2026-08-05T04:42:42+00:00"
     },
     {
-     "subject": "political-scandal",
+     "subject": "foreign-political-crisis",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:28+00:00"
+     "at": "2026-08-05T04:42:42+00:00"
     }
    ],
    "entities": [
@@ -493,18 +535,6 @@
      "kind": "place",
      "confidence": "medium",
      "at": "2026-07-30T15:00:28+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "2548c678-babf-48e2-a02a-b2f7015db8e7",
-   "subjects": [
-    {
-     "subject": "investigative-process",
-     "role": "primary",
-     "confidence": "low",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:04+00:00"
     }
    ]
   },
@@ -574,9 +604,11 @@
     {
      "subject": "cold-war-espionage",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:47+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -633,10 +665,21 @@
     },
     {
      "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:01:40+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [

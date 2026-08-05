@@ -8,7 +8,7 @@
    "count": 2
   },
   {
-   "slug": "personal-transformation",
+   "slug": "reality-television",
    "count": 1
   }
  ],
@@ -30,10 +30,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:10:20+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -43,9 +54,11 @@
     {
      "subject": "missing-person",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:26+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   }

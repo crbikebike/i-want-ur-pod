@@ -9,11 +9,11 @@
   },
   {
    "slug": "founder-biography",
-   "count": 28
+   "count": 30
   },
   {
    "slug": "economic-policy",
-   "count": 14
+   "count": 15
   },
   {
    "slug": "elections-and-voting",
@@ -60,14 +60,6 @@
    "count": 1
   },
   {
-   "slug": "immigration-and-borders",
-   "count": 1
-  },
-  {
-   "slug": "investigative-process",
-   "count": 1
-  },
-  {
    "slug": "labour-history",
    "count": 1
   },
@@ -80,19 +72,15 @@
    "count": 1
   },
   {
-   "slug": "sense-of-place",
-   "count": 1
-  },
-  {
    "slug": "space-exploration",
    "count": 1
   },
   {
-   "slug": "surveillance-and-privacy",
+   "slug": "startup-collapse",
    "count": 1
   },
   {
-   "slug": "transport-and-infrastructure",
+   "slug": "surveillance-and-privacy",
    "count": 1
   },
   {
@@ -107,9 +95,11 @@
     {
      "subject": "founder-biography",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -378,8 +368,10 @@
      "subject": "labour-history",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -555,8 +547,10 @@
      "subject": "conspiracy-theory",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:20+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ],
    "entities": [
@@ -801,6 +795,15 @@
    "guid": "de38f404-7ba0-45ed-a7df-b12301611b9e",
    "subjects": [
     {
+     "subject": "transport-and-infrastructure",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
+    },
+    {
      "subject": "work-and-labour-conditions",
      "role": "secondary",
      "confidence": "medium",
@@ -808,11 +811,13 @@
      "at": "2026-07-29T23:28:20+00:00"
     },
     {
-     "subject": "transport-and-infrastructure",
+     "subject": "startup-collapse",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:20+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ],
    "entities": [
@@ -842,9 +847,11 @@
     {
      "subject": "management-and-leadership",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:42+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -925,6 +932,15 @@
    "guid": "320f3bc1-af75-4060-aa4c-b133013a59fd",
    "subjects": [
     {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
      "subject": "tech-industry-power",
      "role": "secondary",
      "confidence": "medium",
@@ -932,11 +948,13 @@
      "at": "2026-07-29T23:19:35+00:00"
     },
     {
-     "subject": "sense-of-place",
+     "subject": "founder-biography",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:35+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -1025,10 +1043,21 @@
    "subjects": [
     {
      "subject": "tech-industry-power",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:41+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1143,9 +1172,11 @@
     {
      "subject": "founder-biography",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1295,9 +1326,11 @@
     {
      "subject": "economic-policy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:20+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ]
   },
@@ -1380,9 +1413,11 @@
     {
      "subject": "founder-biography",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1505,9 +1540,11 @@
     {
      "subject": "space-exploration",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:40+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:42+00:00"
     }
    ],
    "entities": [
@@ -1886,8 +1923,10 @@
      "subject": "reproductive-health",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2063,8 +2102,10 @@
      "subject": "online-radicalisation",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:20+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ],
    "entities": [
@@ -2192,9 +2233,11 @@
     {
      "subject": "management-and-leadership",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:35+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2395,9 +2438,11 @@
     {
      "subject": "elections-and-voting",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2799,6 +2844,15 @@
    "guid": "37901de8-bddc-4078-8a97-b25901587110",
    "subjects": [
     {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
+    },
+    {
      "subject": "tech-industry-power",
      "role": "secondary",
      "confidence": "low",
@@ -2806,11 +2860,13 @@
      "at": "2026-07-29T23:28:20+00:00"
     },
     {
-     "subject": "immigration-and-borders",
+     "subject": "founder-biography",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:20+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ],
    "entities": [
@@ -2938,9 +2994,11 @@
     {
      "subject": "economic-policy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:35+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3136,8 +3194,10 @@
      "subject": "surveillance-and-privacy",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3284,18 +3344,22 @@
    "guid": "f1844e20-77d6-4e71-9234-b2a5014ea86d",
    "subjects": [
     {
-     "subject": "tech-industry-power",
+     "subject": "investigative-process",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:40+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:42+00:00"
     },
     {
-     "subject": "investigative-process",
+     "subject": "tech-industry-power",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:40+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:42+00:00"
     }
    ],
    "entities": [
@@ -3729,8 +3793,10 @@
      "subject": "whistleblower",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:12+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -3886,9 +3952,11 @@
     {
      "subject": "economic-policy",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -4325,9 +4393,11 @@
     {
      "subject": "corporate-negligence",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:29:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ],
    "entities": [
@@ -4622,9 +4692,11 @@
     {
      "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:19+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   }

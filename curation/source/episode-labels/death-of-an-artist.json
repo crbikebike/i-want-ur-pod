@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "art-and-artists",
-   "count": 10
+   "count": 11
   },
   {
    "slug": "intimate-partner-homicide",
@@ -14,10 +14,6 @@
   {
    "slug": "institutional-coverup",
    "count": 2
-  },
-  {
-   "slug": "artist-band-biography",
-   "count": 1
   },
   {
    "slug": "courtroom-trial",
@@ -170,9 +166,11 @@
     {
      "subject": "courtroom-trial",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:25:45+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -312,6 +310,15 @@
    "guid": "098ad034-9503-4cf1-aff1-b170013e55a1",
    "subjects": [
     {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
      "subject": "grief-and-loss",
      "role": "secondary",
      "confidence": "low",
@@ -319,11 +326,13 @@
      "at": "2026-08-01T20:22:08+00:00"
     },
     {
-     "subject": "artist-band-biography",
+     "subject": "art-and-artists",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:08+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [

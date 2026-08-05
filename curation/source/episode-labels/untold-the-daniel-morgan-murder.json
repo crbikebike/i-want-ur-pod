@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "institutional-coverup",
-   "count": 8
+   "count": 9
   },
   {
    "slug": "unsolved-murder",
@@ -18,10 +18,6 @@
   {
    "slug": "journalist-under-scrutiny",
    "count": 2
-  },
-  {
-   "slug": "organised-crime",
-   "count": 1
   },
   {
    "slug": "racial-violence",
@@ -337,10 +333,21 @@
    "subjects": [
     {
      "subject": "police-misconduct",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -524,9 +531,11 @@
     {
      "subject": "racial-violence",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:44+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -583,10 +592,21 @@
     },
     {
      "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "police-misconduct",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

@@ -5,22 +5,10 @@
  "subjectsUsed": [
   {
    "slug": "folklore-and-legend",
-   "count": 420
+   "count": 443
   },
   {
    "slug": "history-retold",
-   "count": 6
-  },
-  {
-   "slug": "sense-of-place",
-   "count": 6
-  },
-  {
-   "slug": "serial-offender",
-   "count": 6
-  },
-  {
-   "slug": "everyday-mystery",
    "count": 5
   },
   {
@@ -28,27 +16,23 @@
    "count": 5
   },
   {
-   "slug": "archives-and-objects",
-   "count": 4
-  },
-  {
-   "slug": "charismatic-con",
-   "count": 4
-  },
-  {
    "slug": "epidemic-and-public-health",
    "count": 4
   },
   {
-   "slug": "identity-impostor",
+   "slug": "serial-offender",
    "count": 4
   },
   {
-   "slug": "psychology-of-belief",
+   "slug": "supernatural-encounter",
    "count": 4
   },
   {
-   "slug": "cult-and-control",
+   "slug": "charismatic-con",
+   "count": 3
+  },
+  {
+   "slug": "everyday-mystery",
    "count": 3
   },
   {
@@ -56,12 +40,24 @@
    "count": 3
   },
   {
-   "slug": "supernatural-encounter",
+   "slug": "psychology-of-belief",
+   "count": 3
+  },
+  {
+   "slug": "sense-of-place",
    "count": 3
   },
   {
    "slug": "unsolved-murder",
    "count": 3
+  },
+  {
+   "slug": "archives-and-objects",
+   "count": 2
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 2
   },
   {
    "slug": "disaster-reconstruction",
@@ -76,35 +72,11 @@
    "count": 2
   },
   {
-   "slug": "missing-person",
-   "count": 2
-  },
-  {
    "slug": "survival-story",
    "count": 2
   },
   {
-   "slug": "ageing-and-mortality",
-   "count": 1
-  },
-  {
-   "slug": "art-and-artists",
-   "count": 1
-  },
-  {
-   "slug": "community-in-conflict",
-   "count": 1
-  },
-  {
-   "slug": "courtroom-trial",
-   "count": 1
-  },
-  {
    "slug": "death-penalty",
-   "count": 1
-  },
-  {
-   "slug": "environmental-contamination",
    "count": 1
   },
   {
@@ -112,7 +84,7 @@
    "count": 1
   },
   {
-   "slug": "medical-research",
+   "slug": "identity-impostor",
    "count": 1
   },
   {
@@ -120,7 +92,7 @@
    "count": 1
   },
   {
-   "slug": "systems-and-infrastructure-design",
+   "slug": "missing-person",
    "count": 1
   },
   {
@@ -135,9 +107,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -189,10 +163,21 @@
    "subjects": [
     {
      "subject": "everyday-mystery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:29:24+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -252,10 +237,21 @@
    "subjects": [
     {
      "subject": "cult-and-control",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:04+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -296,9 +292,11 @@
     {
      "subject": "wilderness-expedition-survival",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -307,10 +305,21 @@
    "subjects": [
     {
      "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:29:24+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -355,10 +364,21 @@
    "subjects": [
     {
      "subject": "serial-offender",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:04+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -368,9 +388,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:12+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -392,9 +414,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -404,9 +428,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:29:24+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -426,6 +452,15 @@
    "guid": "229e44b39b9b737e2a262994ea2d9076",
    "subjects": [
     {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "paranormal-investigation",
      "role": "secondary",
      "confidence": "low",
@@ -433,11 +468,13 @@
      "at": "2026-07-29T03:52:05+00:00"
     },
     {
-     "subject": "folklore-and-legend",
+     "subject": "supernatural-encounter",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:05+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -458,10 +495,21 @@
    "subjects": [
     {
      "subject": "identity-impostor",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:04+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -483,9 +531,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:51:47+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -495,9 +545,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -613,8 +665,10 @@
      "subject": "mental-health",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:04+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -623,10 +677,21 @@
    "subjects": [
     {
      "subject": "archives-and-objects",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:29:24+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -706,9 +771,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:12+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -914,9 +981,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:05+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -973,10 +1042,21 @@
    "subjects": [
     {
      "subject": "charismatic-con",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:04+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1047,10 +1127,21 @@
     },
     {
      "subject": "sense-of-place",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:04+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -1090,10 +1181,21 @@
    "subjects": [
     {
      "subject": "everyday-mystery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:04+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1102,10 +1204,21 @@
    "subjects": [
     {
      "subject": "serial-offender",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:29:24+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1145,10 +1258,21 @@
    "subjects": [
     {
      "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:35+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -1157,10 +1281,21 @@
    "subjects": [
     {
      "subject": "psychology-of-belief",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:04+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -1182,9 +1317,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1213,9 +1350,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1267,10 +1406,21 @@
    "subjects": [
     {
      "subject": "identity-impostor",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:04+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -1292,9 +1442,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1316,9 +1468,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1354,9 +1508,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:05+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1384,10 +1540,21 @@
    "subjects": [
     {
      "subject": "medical-research",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:04+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -1433,9 +1600,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1480,10 +1649,21 @@
    "subjects": [
     {
      "subject": "everyday-mystery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:04+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -1583,10 +1763,21 @@
    "subjects": [
     {
      "subject": "sense-of-place",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -1608,9 +1799,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1620,9 +1813,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:23+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1699,9 +1894,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:12+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -1711,9 +1908,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1722,10 +1921,21 @@
    "subjects": [
     {
      "subject": "history-retold",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:23+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1735,9 +1945,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1789,10 +2001,21 @@
    "subjects": [
     {
      "subject": "identity-impostor",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -1814,9 +2037,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1826,9 +2051,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:23+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1838,9 +2065,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1886,9 +2115,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -1934,9 +2165,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2027,9 +2260,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2051,9 +2286,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2106,9 +2343,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -2169,9 +2408,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2435,9 +2676,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2541,9 +2784,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:23+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2615,10 +2860,21 @@
    "subjects": [
     {
      "subject": "environmental-contamination",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -2648,9 +2904,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2729,8 +2987,10 @@
      "subject": "hollywood-history",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -2752,9 +3012,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2776,9 +3038,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2831,10 +3095,21 @@
    "subjects": [
     {
      "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -2895,9 +3170,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2957,10 +3234,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -3021,9 +3309,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -3075,10 +3365,21 @@
    "subjects": [
     {
      "subject": "systems-and-infrastructure-design",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -3100,9 +3401,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -3209,10 +3512,21 @@
    "subjects": [
     {
      "subject": "sense-of-place",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -3273,9 +3587,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -3327,10 +3643,21 @@
    "subjects": [
     {
      "subject": "archives-and-objects",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:48+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -3510,9 +3837,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -3629,9 +3958,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -3751,9 +4082,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:14+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -3947,10 +4280,21 @@
    "subjects": [
     {
      "subject": "folklore-and-legend",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:53+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -4063,9 +4407,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -4126,9 +4472,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4263,9 +4611,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4306,9 +4656,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:07+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4330,9 +4682,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -4342,9 +4696,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:45+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4386,9 +4742,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:33:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -4410,9 +4768,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4422,9 +4782,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -4466,9 +4828,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:50+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -4502,9 +4866,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:14+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -4545,9 +4911,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:53+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4581,9 +4949,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4624,9 +4994,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:07+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4648,9 +5020,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -4660,9 +5034,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:25+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4710,9 +5086,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:33:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -4746,9 +5124,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -4782,9 +5162,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:30:50+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -4818,9 +5200,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:14+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -4830,9 +5214,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:21+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -4861,9 +5247,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:53+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4904,9 +5292,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4947,9 +5337,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:07+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4990,9 +5382,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:25+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5014,9 +5408,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:14+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5026,9 +5422,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:33:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -5069,9 +5467,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -5112,9 +5512,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:21+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -5155,9 +5557,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:14+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -5191,9 +5595,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:53+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5235,9 +5641,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5271,9 +5679,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:07+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5321,9 +5731,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:25+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5345,9 +5757,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:14+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5357,9 +5771,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:33:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -5381,9 +5797,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5393,9 +5811,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -5429,9 +5849,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:21+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -5472,9 +5894,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:14+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -5515,9 +5939,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:53+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5551,9 +5977,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5575,9 +6003,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:07+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5599,9 +6029,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:25+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5630,9 +6062,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -5642,9 +6076,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:33:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -5678,9 +6114,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -5721,9 +6159,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:21+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -5757,9 +6197,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:50+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5793,9 +6235,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:53+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5836,9 +6280,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5860,9 +6306,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5872,9 +6320,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:07+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5908,9 +6358,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:25+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5939,9 +6391,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -5951,9 +6405,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:33:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -5994,9 +6450,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:35:04+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -6018,9 +6476,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6030,9 +6490,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:21+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -6066,9 +6528,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:50+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6109,9 +6573,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:01:28+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6157,9 +6623,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:54:48+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6219,9 +6687,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6231,9 +6701,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:36:08+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -6298,9 +6770,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:01:28+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6334,9 +6808,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6370,9 +6846,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:54:48+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6406,9 +6884,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:25+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6449,9 +6929,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:33:54+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -6493,9 +6975,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:36:08+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -6505,9 +6989,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:21+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -6548,9 +7034,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:50+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6599,9 +7087,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:01:28+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6635,9 +7125,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6671,9 +7163,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:54:48+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6714,9 +7208,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:54:15+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6738,9 +7234,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6750,9 +7248,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:33:54+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -6793,9 +7293,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:36:08+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:44:03+00:00"
     }
    ]
   },
@@ -6818,8 +7320,10 @@
      "subject": "death-penalty",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:36:08+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -6829,9 +7333,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:31:21+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -6873,9 +7379,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:50+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6909,9 +7417,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:01:28+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6951,10 +7461,21 @@
    "subjects": [
     {
      "subject": "missing-person",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:32:00+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -6976,9 +7497,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:36:08+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -6988,9 +7511,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:54:48+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -7012,9 +7537,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:54:15+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -7036,9 +7563,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:33:54+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },

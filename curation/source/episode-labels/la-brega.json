@@ -4,11 +4,11 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "colonial-legacy",
-   "count": 11
+   "slug": "sense-of-place",
+   "count": 15
   },
   {
-   "slug": "sense-of-place",
+   "slug": "colonial-legacy",
    "count": 10
   },
   {
@@ -17,7 +17,7 @@
   },
   {
    "slug": "song-and-album-origin",
-   "count": 8
+   "count": 9
   },
   {
    "slug": "sport-and-politics",
@@ -36,12 +36,12 @@
    "count": 2
   },
   {
-   "slug": "regulatory-failure",
+   "slug": "political-persecution",
    "count": 2
   },
   {
-   "slug": "animal-behaviour",
-   "count": 1
+   "slug": "regulatory-failure",
+   "count": 2
   },
   {
    "slug": "archives-and-objects",
@@ -49,10 +49,6 @@
   },
   {
    "slug": "athlete-profile",
-   "count": 1
-  },
-  {
-   "slug": "buildings-and-public-space",
    "count": 1
   },
   {
@@ -68,31 +64,11 @@
    "count": 1
   },
   {
-   "slug": "history-retold",
-   "count": 1
-  },
-  {
-   "slug": "language-and-words",
-   "count": 1
-  },
-  {
    "slug": "making-of-a-work",
    "count": 1
   },
   {
-   "slug": "political-persecution",
-   "count": 1
-  },
-  {
-   "slug": "songwriting-craft",
-   "count": 1
-  },
-  {
    "slug": "sports-history",
-   "count": 1
-  },
-  {
-   "slug": "surveillance-and-privacy",
    "count": 1
   }
  ],
@@ -209,9 +185,11 @@
     {
      "subject": "political-persecution",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -235,10 +213,21 @@
     },
     {
      "subject": "surveillance-and-privacy",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:31+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -247,6 +236,37 @@
      "kind": "place",
      "confidence": "medium",
      "at": "2026-07-30T15:21:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "62dd1a95-5615-4541-9e0c-9ba2c260386e",
+   "subjects": [
+    {
+     "subject": "language-and-words",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Arcadio Díaz Quiñones",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:55:41+00:00"
     }
    ]
   },
@@ -413,26 +433,6 @@
      "kind": "place",
      "confidence": "high",
      "at": "2026-07-30T15:16:51+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "62dd1a95-5615-4541-9e0c-9ba2c260386e",
-   "subjects": [
-    {
-     "subject": "language-and-words",
-     "role": "primary",
-     "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:41+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Arcadio Díaz Quiñones",
-     "kind": "person",
-     "confidence": "medium",
-     "at": "2026-07-30T14:55:41+00:00"
     }
    ]
   },
@@ -927,18 +927,22 @@
    "guid": "9ba16195-9983-46d4-9b34-61c9ff105535",
    "subjects": [
     {
-     "subject": "sense-of-place",
+     "subject": "buildings-and-public-space",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "buildings-and-public-space",
+     "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -962,16 +966,36 @@
     },
     {
      "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "gentrification-and-housing",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:33+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
   {
    "guid": "500593d3-2c3b-41ad-9b56-e867ee1d5ad2",
    "subjects": [
+    {
+     "subject": "gentrification-and-housing",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
     {
      "subject": "sense-of-place",
      "role": "secondary",
@@ -980,11 +1004,13 @@
      "at": "2026-07-30T15:13:00+00:00"
     },
     {
-     "subject": "gentrification-and-housing",
+     "subject": "community-in-conflict",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1001,10 +1027,21 @@
    "subjects": [
     {
      "subject": "songwriting-craft",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:31+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1013,10 +1050,21 @@
    "subjects": [
     {
      "subject": "colonial-legacy",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:33+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1026,9 +1074,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1039,8 +1089,10 @@
      "subject": "making-of-a-work",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:41+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1050,29 +1102,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:18+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "6914f5c5c1ed8717c5661867",
-   "subjects": [
-    {
-     "subject": "sense-of-place",
-     "role": "primary",
-     "confidence": "low",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:51+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Puerto Rico",
-     "kind": "place",
-     "confidence": "high",
-     "at": "2026-07-30T15:16:51+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1082,9 +1116,33 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:28+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6914f5c5c1ed8717c5661867",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Puerto Rico",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T15:16:51+00:00"
     }
    ]
   },
@@ -1175,8 +1233,10 @@
      "subject": "archives-and-objects",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:51+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1477,9 +1537,11 @@
     {
      "subject": "athlete-profile",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1497,9 +1559,11 @@
     {
      "subject": "folklore-and-legend",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:41+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1515,6 +1579,15 @@
    "guid": "69d5682def4d72420693ced7",
    "subjects": [
     {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "labour-history",
      "role": "secondary",
      "confidence": "medium",
@@ -1522,11 +1595,13 @@
      "at": "2026-07-30T14:48:00+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "colonial-legacy",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:48:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1543,10 +1618,21 @@
    "subjects": [
     {
      "subject": "animal-behaviour",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:31+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1582,10 +1668,21 @@
    "subjects": [
     {
      "subject": "colonial-legacy",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:33+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1603,8 +1700,10 @@
      "subject": "sports-history",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:51+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

@@ -9,15 +9,15 @@
   },
   {
    "slug": "investigative-process",
-   "count": 5
+   "count": 4
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 3
   },
   {
    "slug": "intimate-partner-homicide",
    "count": 3
-  },
-  {
-   "slug": "cold-case-reopened",
-   "count": 2
   },
   {
    "slug": "courtroom-trial",
@@ -312,9 +312,11 @@
     {
      "subject": "gendered-constraint",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:47+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -603,10 +605,21 @@
    "subjects": [
     {
      "subject": "missing-person",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:02+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -742,9 +755,11 @@
     {
      "subject": "missing-person",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -761,10 +776,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:14:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -848,9 +874,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:47+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -868,9 +896,11 @@
     {
      "subject": "medical-system-harm",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

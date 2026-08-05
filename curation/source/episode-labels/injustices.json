@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "sexual-abuse-accountability",
-   "count": 11
+   "count": 12
   },
   {
    "slug": "gendered-constraint",
@@ -32,15 +32,11 @@
    "count": 4
   },
   {
-   "slug": "work-and-labour-conditions",
-   "count": 3
-  },
-  {
-   "slug": "ideas-and-argument",
+   "slug": "courtroom-trial",
    "count": 2
   },
   {
-   "slug": "invented-category",
+   "slug": "ideas-and-argument",
    "count": 2
   },
   {
@@ -48,7 +44,11 @@
    "count": 2
   },
   {
-   "slug": "everyday-mystery",
+   "slug": "work-and-labour-conditions",
+   "count": 2
+  },
+  {
+   "slug": "animal-behaviour",
    "count": 1
   },
   {
@@ -60,11 +60,7 @@
    "count": 1
   },
   {
-   "slug": "institutional-coverup",
-   "count": 1
-  },
-  {
-   "slug": "investigative-process",
+   "slug": "invented-category",
    "count": 1
   },
   {
@@ -82,6 +78,10 @@
   {
    "slug": "talking-about-love",
    "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 1
   }
  ],
  "episodes": [
@@ -89,18 +89,22 @@
    "guid": "0df34c9b-16a2-4826-af86-3a820226cfce",
    "subjects": [
     {
-     "subject": "sexual-abuse-accountability",
+     "subject": "institutional-coverup",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:19+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "institutional-coverup",
+     "subject": "sexual-abuse-accountability",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:19+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -194,9 +198,11 @@
     {
      "subject": "media-criticism",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:24:30+00:00"
+     "at": "2026-08-05T04:42:55+00:00"
     }
    ]
   },
@@ -348,10 +354,21 @@
    "subjects": [
     {
      "subject": "everyday-mystery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:24:30+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -367,18 +384,22 @@
    "guid": "46d399e7-4a95-4156-bc18-04bb626c33ef",
    "subjects": [
     {
-     "subject": "courtroom-trial",
+     "subject": "investigative-process",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:24:30+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "investigative-process",
+     "subject": "courtroom-trial",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:24:30+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -395,10 +416,21 @@
    "subjects": [
     {
      "subject": "work-and-labour-conditions",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:39+00:00"
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "animal-behaviour",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ]
   },
@@ -427,9 +459,11 @@
     {
      "subject": "climate-change",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:19+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -440,8 +474,10 @@
      "subject": "climate-change",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:49:15+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -459,9 +495,11 @@
     {
      "subject": "sexual-abuse-accountability",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:39+00:00"
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ],
    "entities": [
@@ -707,9 +745,11 @@
     {
      "subject": "talking-about-love",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:27+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -817,9 +857,11 @@
     {
      "subject": "family-secret",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:27+00:00"
+     "at": "2026-08-05T04:54:38+00:00"
     }
    ],
    "entities": [
@@ -910,9 +952,11 @@
     {
      "subject": "protest-movement",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:27+00:00"
+     "at": "2026-08-05T04:55:09+00:00"
     }
    ]
   },
@@ -941,9 +985,11 @@
     {
      "subject": "protest-movement",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:39+00:00"
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ]
   },
@@ -1144,10 +1190,21 @@
    "subjects": [
     {
      "subject": "invented-category",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:53+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -1164,9 +1221,11 @@
     {
      "subject": "friendship",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:36+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1184,9 +1243,11 @@
     {
      "subject": "online-radicalisation",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:39+00:00"
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ]
   },
@@ -1203,9 +1264,11 @@
     {
      "subject": "relationship-remembered",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:54+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   }

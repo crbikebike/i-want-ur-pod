@@ -5,15 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "audio-drama-mystery",
-   "count": 21
+   "count": 22
   },
   {
    "slug": "mockumentary-investigation-fiction",
    "count": 3
-  },
-  {
-   "slug": "audio-drama-horror",
-   "count": 1
   }
  ],
  "episodes": [
@@ -203,10 +199,21 @@
    "subjects": [
     {
      "subject": "audio-drama-horror",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "mockumentary-investigation-fiction",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -215,10 +222,21 @@
    "subjects": [
     {
      "subject": "mockumentary-investigation-fiction",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:01:28+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "audio-drama-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -449,9 +467,11 @@
     {
      "subject": "audio-drama-mystery",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:45+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   }

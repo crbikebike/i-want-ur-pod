@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "prison-life",
-   "count": 117
+   "count": 122
   },
   {
    "slug": "reentry-after-prison",
-   "count": 14
+   "count": 15
   },
   {
    "slug": "juvenile-justice",
@@ -20,11 +20,11 @@
    "count": 5
   },
   {
-   "slug": "parenting",
-   "count": 4
+   "slug": "estrangement-and-reconciliation",
+   "count": 3
   },
   {
-   "slug": "estrangement-and-reconciliation",
+   "slug": "parenting",
    "count": 3
   },
   {
@@ -64,31 +64,11 @@
    "count": 1
   },
   {
+   "slug": "death-in-custody",
+   "count": 1
+  },
+  {
    "slug": "design-and-architecture",
-   "count": 1
-  },
-  {
-   "slug": "elections-and-voting",
-   "count": 1
-  },
-  {
-   "slug": "everyday-mystery",
-   "count": 1
-  },
-  {
-   "slug": "fashion-and-clothing",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
-   "count": 1
-  },
-  {
-   "slug": "immigrant-experience",
-   "count": 1
-  },
-  {
-   "slug": "media-criticism",
    "count": 1
   },
   {
@@ -97,10 +77,6 @@
   },
   {
    "slug": "racial-violence",
-   "count": 1
-  },
-  {
-   "slug": "romance-and-heartbreak",
    "count": 1
   },
   {
@@ -120,6 +96,10 @@
    "count": 1
   },
   {
+   "slug": "true-crime-as-genre",
+   "count": 1
+  },
+  {
    "slug": "voluntary-disappearance",
    "count": 1
   }
@@ -131,9 +111,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:08+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ]
   },
@@ -374,9 +356,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:49+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -413,9 +397,11 @@
     {
      "subject": "sex-work-and-exploitation",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:56+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -558,9 +544,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:17+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -714,10 +702,21 @@
    "subjects": [
     {
      "subject": "prison-life",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:53+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -762,9 +761,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:43+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -807,9 +808,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:21+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -1026,9 +1029,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:23+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1147,18 +1152,22 @@
    "guid": "prx_59_a6bd0764-a54b-459c-8559-d3410b7e6abe",
    "subjects": [
     {
-     "subject": "prison-life",
+     "subject": "romance-and-heartbreak",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:23+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "romance-and-heartbreak",
+     "subject": "prison-life",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:23+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1196,8 +1205,10 @@
      "subject": "voluntary-disappearance",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:17+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1322,9 +1333,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:01+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1362,8 +1375,10 @@
      "subject": "sexual-abuse-accountability",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:17+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1640,18 +1655,22 @@
      "at": "2026-07-29T23:06:21+00:00"
     },
     {
-     "subject": "death-in-custody",
+     "subject": "history-retold",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:21+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "death-in-custody",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:21+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -1922,8 +1941,10 @@
      "subject": "art-and-artists",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:48:06+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1948,9 +1969,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:53+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2043,10 +2066,21 @@
    "subjects": [
     {
      "subject": "parenting",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:01+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -2196,9 +2230,11 @@
     {
      "subject": "design-and-architecture",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:21+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -2455,18 +2491,22 @@
    "guid": "prx_59_8c55a8a7-7635-431a-af35-daecd912f727",
    "subjects": [
     {
-     "subject": "prison-life",
+     "subject": "fashion-and-clothing",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:05+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "fashion-and-clothing",
+     "subject": "prison-life",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:05+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -2622,8 +2662,10 @@
      "subject": "paranormal-investigation",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:48:06+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -2661,8 +2703,10 @@
      "subject": "survival-story",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:43+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2915,9 +2959,11 @@
     {
      "subject": "racial-violence",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:15:44+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3000,9 +3046,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:21+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -3048,18 +3096,22 @@
    "guid": "prx_59_abc82cfa-b29d-4f92-8a77-a934f53cdd09",
    "subjects": [
     {
-     "subject": "prison-life",
+     "subject": "elections-and-voting",
      "role": "secondary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:43+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "elections-and-voting",
+     "subject": "prison-life",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:43+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3287,9 +3339,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:57+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ]
   },
@@ -3390,10 +3444,21 @@
     },
     {
      "subject": "media-criticism",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:48:06+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -3459,18 +3524,22 @@
    "guid": "prx_59_5f794d4c-a337-40b8-927e-138b12e5be67",
    "subjects": [
     {
-     "subject": "prison-life",
+     "subject": "everyday-mystery",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:07:30+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     },
     {
-     "subject": "everyday-mystery",
+     "subject": "prison-life",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:07:30+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -3537,18 +3606,22 @@
    "guid": "prx_59_4d1234d1-71ef-4a2f-b733-508ff6e3ae49",
    "subjects": [
     {
-     "subject": "prison-life",
+     "subject": "immigrant-experience",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:48:06+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "immigrant-experience",
+     "subject": "prison-life",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:48:06+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -3558,9 +3631,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:05+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -3805,9 +3880,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:07:30+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },

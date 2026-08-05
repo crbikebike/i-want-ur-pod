@@ -5,22 +5,26 @@
  "subjectsUsed": [
   {
    "slug": "addiction-and-recovery",
-   "count": 15
+   "count": 14
   },
   {
    "slug": "medical-research",
-   "count": 6
+   "count": 7
   },
   {
    "slug": "history-retold",
-   "count": 4
+   "count": 5
   },
   {
    "slug": "economic-policy",
-   "count": 2
+   "count": 3
   },
   {
    "slug": "epidemic-and-public-health",
+   "count": 2
+  },
+  {
+   "slug": "gendered-constraint",
    "count": 2
   },
   {
@@ -28,15 +32,11 @@
    "count": 2
   },
   {
-   "slug": "invented-category",
-   "count": 2
-  },
-  {
-   "slug": "art-and-artists",
+   "slug": "cybercrime-for-profit",
    "count": 1
   },
   {
-   "slug": "conspiracy-theory",
+   "slug": "extremist-movement",
    "count": 1
   },
   {
@@ -48,19 +48,11 @@
    "count": 1
   },
   {
-   "slug": "internet-culture",
-   "count": 1
-  },
-  {
-   "slug": "investigative-process",
+   "slug": "invented-category",
    "count": 1
   },
   {
    "slug": "law-explained",
-   "count": 1
-  },
-  {
-   "slug": "media-criticism",
    "count": 1
   },
   {
@@ -91,9 +83,11 @@
     {
      "subject": "addiction-and-recovery",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:33+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -122,9 +116,11 @@
     {
      "subject": "addiction-and-recovery",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:33+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -142,8 +138,10 @@
      "subject": "music-scene-movement",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -165,9 +163,11 @@
     {
      "subject": "history-retold",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:32+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -280,9 +280,11 @@
     {
      "subject": "addiction-and-recovery",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:55+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -291,10 +293,21 @@
    "subjects": [
     {
      "subject": "invented-category",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:44+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -304,9 +317,11 @@
     {
      "subject": "ideas-and-argument",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:26+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -315,10 +330,21 @@
    "subjects": [
     {
      "subject": "addiction-and-recovery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:50+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -354,10 +380,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -468,10 +505,21 @@
    "subjects": [
     {
      "subject": "internet-culture",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -480,10 +528,21 @@
    "subjects": [
     {
      "subject": "addiction-and-recovery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -499,10 +558,21 @@
     },
     {
      "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "history-retold",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:26+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -551,9 +621,11 @@
     {
      "subject": "law-explained",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:44+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -578,9 +650,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:26+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -590,9 +664,11 @@
     {
      "subject": "forgotten-episode",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:50+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -629,8 +705,10 @@
      "subject": "terrorism-and-aftermath",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:50+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -647,10 +725,21 @@
    "subjects": [
     {
      "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "extremist-movement",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -706,10 +795,21 @@
     },
     {
      "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:29:43+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -778,8 +878,10 @@
      "subject": "scientific-discovery",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:50+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -861,9 +963,11 @@
     {
      "subject": "gender-identity",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:29:43+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -880,10 +984,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:59+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [

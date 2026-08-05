@@ -5,26 +5,22 @@
  "subjectsUsed": [
   {
    "slug": "serial-offender",
-   "count": 13
+   "count": 12
   },
   {
    "slug": "wrongful-conviction",
-   "count": 3
+   "count": 4
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
   },
   {
    "slug": "cold-case-reopened",
    "count": 1
   },
   {
-   "slug": "courtroom-trial",
-   "count": 1
-  },
-  {
-   "slug": "investigative-process",
-   "count": 1
-  },
-  {
-   "slug": "making-of-a-work",
+   "slug": "forensic-evidence",
    "count": 1
   },
   {
@@ -84,8 +80,10 @@
      "subject": "missing-person",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -303,9 +301,11 @@
     {
      "subject": "wrongful-conviction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -355,9 +355,11 @@
     {
      "subject": "serial-offender",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:41+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -373,18 +375,22 @@
    "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-03-15-atlm-epiosde-nine.mp3",
    "subjects": [
     {
-     "subject": "forensic-evidence",
+     "subject": "courtroom-trial",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:50+00:00"
+     "at": "2026-08-05T04:42:00+00:00"
     },
     {
-     "subject": "courtroom-trial",
+     "subject": "forensic-evidence",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:50+00:00"
+     "at": "2026-08-05T04:42:00+00:00"
     }
    ],
    "entities": [
@@ -422,9 +428,11 @@
     {
      "subject": "serial-offender",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:50+00:00"
+     "at": "2026-08-05T04:42:00+00:00"
     }
    ]
   },
@@ -433,10 +441,21 @@
    "subjects": [
     {
      "subject": "serial-offender",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:32+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -446,9 +465,11 @@
     {
      "subject": "investigative-process",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:30+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -458,9 +479,11 @@
     {
      "subject": "true-crime-as-genre",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:50+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -531,9 +554,11 @@
     {
      "subject": "cold-case-reopened",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -555,6 +580,15 @@
    "guid": "d4397b51-cdae-4082-9577-b2e4012a38a7",
    "subjects": [
     {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
      "subject": "true-crime-as-genre",
      "role": "secondary",
      "confidence": "medium",
@@ -562,11 +596,13 @@
      "at": "2026-07-30T15:04:41+00:00"
     },
     {
-     "subject": "making-of-a-work",
+     "subject": "investigative-process",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:41+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [

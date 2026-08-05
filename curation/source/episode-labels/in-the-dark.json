@@ -8,16 +8,12 @@
    "count": 5
   },
   {
+   "slug": "captivity-and-escape",
+   "count": 3
+  },
+  {
    "slug": "epidemic-and-public-health",
    "count": 3
-  },
-  {
-   "slug": "war-crimes-accountability",
-   "count": 3
-  },
-  {
-   "slug": "captivity-and-escape",
-   "count": 2
   },
   {
    "slug": "family-annihilation-and-parricide",
@@ -28,15 +24,15 @@
    "count": 2
   },
   {
-   "slug": "gendered-constraint",
-   "count": 1
+   "slug": "unsolved-murder",
+   "count": 2
+  },
+  {
+   "slug": "war-crimes-accountability",
+   "count": 2
   },
   {
    "slug": "government-secrecy",
-   "count": 1
-  },
-  {
-   "slug": "unsolved-murder",
    "count": 1
   },
   {
@@ -112,9 +108,11 @@
     {
      "subject": "vanishing-and-institutional-failure",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:35+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -279,9 +277,11 @@
     {
      "subject": "wrongful-conviction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -289,18 +289,22 @@
    "guid": "prx_5770_5afd3713-796f-4c2c-a2e2-80b2ccdfa3aa",
    "subjects": [
     {
-     "subject": "captivity-and-escape",
+     "subject": "gendered-constraint",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "gendered-constraint",
+     "subject": "captivity-and-escape",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -383,10 +387,21 @@
    "subjects": [
     {
      "subject": "war-crimes-accountability",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:42+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -424,8 +439,10 @@
      "subject": "government-secrecy",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:35+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -521,9 +538,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

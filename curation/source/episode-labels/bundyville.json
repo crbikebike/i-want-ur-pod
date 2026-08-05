@@ -8,11 +8,11 @@
    "count": 17
   },
   {
-   "slug": "protest-movement",
+   "slug": "animal-behaviour",
    "count": 1
   },
   {
-   "slug": "regulatory-failure",
+   "slug": "protest-movement",
    "count": 1
   },
   {
@@ -408,18 +408,22 @@
    "guid": "https://api.spreaker.com/episode/22275196",
    "subjects": [
     {
-     "subject": "animal-behaviour",
+     "subject": "regulatory-failure",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:16+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "regulatory-failure",
+     "subject": "animal-behaviour",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:16+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -430,8 +434,10 @@
      "subject": "protest-movement",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:37+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -456,9 +462,11 @@
     {
      "subject": "wrongful-conviction",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:15:37+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

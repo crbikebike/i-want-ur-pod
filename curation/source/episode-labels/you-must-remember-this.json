@@ -5,15 +5,19 @@
  "subjectsUsed": [
   {
    "slug": "hollywood-history",
-   "count": 62
+   "count": 69
   },
   {
    "slug": "celebrity-life",
-   "count": 60
+   "count": 58
   },
   {
    "slug": "film-career-biography",
    "count": 55
+  },
+  {
+   "slug": "political-persecution",
+   "count": 14
   },
   {
    "slug": "gossip-and-tabloid-press",
@@ -21,15 +25,11 @@
   },
   {
    "slug": "making-of-a-work",
-   "count": 12
-  },
-  {
-   "slug": "political-persecution",
-   "count": 12
+   "count": 11
   },
   {
    "slug": "screen-representation",
-   "count": 10
+   "count": 11
   },
   {
    "slug": "studio-system",
@@ -37,7 +37,7 @@
   },
   {
    "slug": "artist-band-biography",
-   "count": 8
+   "count": 7
   },
   {
    "slug": "cost-of-fame",
@@ -60,23 +60,7 @@
    "count": 1
   },
   {
-   "slug": "conspiracy-theory",
-   "count": 1
-  },
-  {
-   "slug": "elections-and-voting",
-   "count": 1
-  },
-  {
    "slug": "fashion-and-clothing",
-   "count": 1
-  },
-  {
-   "slug": "government-secrecy",
-   "count": 1
-  },
-  {
-   "slug": "graphic-and-symbol-design",
    "count": 1
   },
   {
@@ -88,19 +72,7 @@
    "count": 1
   },
   {
-   "slug": "media-criticism",
-   "count": 1
-  },
-  {
-   "slug": "music-industry-business",
-   "count": 1
-  },
-  {
    "slug": "musician-death",
-   "count": 1
-  },
-  {
-   "slug": "organised-crime",
    "count": 1
   },
   {
@@ -108,7 +80,11 @@
    "count": 1
   },
   {
-   "slug": "unsolved-murder",
+   "slug": "talking-about-film",
+   "count": 1
+  },
+  {
+   "slug": "talking-about-music",
    "count": 1
   }
  ],
@@ -126,9 +102,11 @@
     {
      "subject": "song-and-album-origin",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:58+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -813,8 +791,10 @@
      "subject": "fashion-and-clothing",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:51:04+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -950,9 +930,11 @@
     {
      "subject": "hollywood-history",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:58+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1373,9 +1355,11 @@
     {
      "subject": "hollywood-history",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:00+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1627,6 +1611,15 @@
    "guid": "http://www.infiniteguest.org/?p=8740",
    "subjects": [
     {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "serial-offender",
      "role": "secondary",
      "confidence": "medium",
@@ -1634,11 +1627,13 @@
      "at": "2026-07-29T23:14:00+00:00"
     },
     {
-     "subject": "music-industry-business",
+     "subject": "hollywood-history",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:00+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2884,6 +2879,15 @@
    "guid": "bdd0f2ca-b536-11e9-8451-53c028b98e62",
    "subjects": [
     {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "hollywood-history",
      "role": "secondary",
      "confidence": "medium",
@@ -2891,11 +2895,13 @@
      "at": "2026-07-29T08:53:19+00:00"
     },
     {
-     "subject": "elections-and-voting",
+     "subject": "political-persecution",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:19+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3922,9 +3928,11 @@
     {
      "subject": "intimate-partner-homicide",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:09+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -4214,6 +4222,15 @@
      "at": "2026-07-29T08:59:15+00:00"
     },
     {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:33+00:00"
+    },
+    {
      "subject": "surveillance-and-privacy",
      "role": "secondary",
      "confidence": "medium",
@@ -4221,11 +4238,13 @@
      "at": "2026-07-29T08:59:15+00:00"
     },
     {
-     "subject": "government-secrecy",
+     "subject": "political-persecution",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:15+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:33+00:00"
     }
    ],
    "entities": [
@@ -4665,13 +4684,6 @@
    "guid": "bd0599d6-b536-11e9-8451-2f8ca63f279b",
    "subjects": [
     {
-     "subject": "hollywood-history",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:19+00:00"
-    },
-    {
      "subject": "media-criticism",
      "role": "secondary",
      "confidence": "medium",
@@ -4680,10 +4692,21 @@
     },
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "hollywood-history",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:19+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -4863,18 +4886,22 @@
    "guid": "bc7e5502-b536-11e9-8451-63caaf8c8cdd",
    "subjects": [
     {
-     "subject": "hollywood-history",
+     "subject": "conspiracy-theory",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:09+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     },
     {
-     "subject": "conspiracy-theory",
+     "subject": "hollywood-history",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:09+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -5333,10 +5360,21 @@
     },
     {
      "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "hollywood-history",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:51+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -5702,10 +5740,21 @@
     },
     {
      "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:33+00:00"
+    },
+    {
+     "subject": "screen-representation",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:15+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:33+00:00"
     }
    ],
    "entities": [
@@ -5742,9 +5791,11 @@
     {
      "subject": "hollywood-history",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:09+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -5935,9 +5986,11 @@
     {
      "subject": "musician-death",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:51:31+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6445,10 +6498,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:09:42+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "hollywood-history",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6730,8 +6794,10 @@
      "subject": "heist-and-robbery",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:20+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6831,6 +6897,15 @@
    "guid": "d5dcde9c-fc5b-11eb-b347-2f75e489f57e",
    "subjects": [
     {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "cost-of-fame",
      "role": "secondary",
      "confidence": "low",
@@ -6838,11 +6913,13 @@
      "at": "2026-07-29T23:15:38+00:00"
     },
     {
-     "subject": "celebrity-life",
+     "subject": "hollywood-history",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:15:38+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -7098,8 +7175,10 @@
      "subject": "books-and-writing",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:03+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -7778,10 +7857,21 @@
    "subjects": [
     {
      "subject": "artist-band-biography",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:19+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -8551,8 +8641,48 @@
    ]
   },
   {
+   "guid": "12f0e790-a35e-11ef-a3b2-cb640e7596ab",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "talking-about-film",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carol Burnett",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:54:12+00:00"
+    }
+   ]
+  },
+  {
    "guid": "8c7b8b7c-b283-11ef-a361-873697e042ca",
    "subjects": [
+    {
+     "subject": "graphic-and-symbol-design",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
     {
      "subject": "studio-system",
      "role": "secondary",
@@ -8561,11 +8691,13 @@
      "at": "2026-07-29T23:16:03+00:00"
     },
     {
-     "subject": "graphic-and-symbol-design",
+     "subject": "hollywood-history",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:03+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -8580,26 +8712,6 @@
      "kind": "work",
      "confidence": "medium",
      "at": "2026-07-29T23:16:03+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "12f0e790-a35e-11ef-a3b2-cb640e7596ab",
-   "subjects": [
-    {
-     "subject": "celebrity-life",
-     "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:12+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Carol Burnett",
-     "kind": "person",
-     "confidence": "high",
-     "at": "2026-07-29T08:54:12+00:00"
     }
    ]
   },

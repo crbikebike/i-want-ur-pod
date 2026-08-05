@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "archives-and-objects",
-   "count": 49
+   "count": 50
   },
   {
    "slug": "food-and-drink",
-   "count": 46
+   "count": 47
   },
   {
    "slug": "art-and-artists",
@@ -20,15 +20,15 @@
    "count": 14
   },
   {
-   "slug": "books-and-writing",
+   "slug": "sense-of-place",
    "count": 12
   },
   {
-   "slug": "music-scene-movement",
+   "slug": "books-and-writing",
    "count": 11
   },
   {
-   "slug": "sense-of-place",
+   "slug": "music-scene-movement",
    "count": 11
   },
   {
@@ -52,8 +52,8 @@
    "count": 7
   },
   {
-   "slug": "protest-movement",
-   "count": 7
+   "slug": "civil-rights-struggle",
+   "count": 6
   },
   {
    "slug": "forgotten-episode",
@@ -64,11 +64,11 @@
    "count": 6
   },
   {
-   "slug": "buildings-and-public-space",
-   "count": 5
+   "slug": "protest-movement",
+   "count": 6
   },
   {
-   "slug": "civil-rights-struggle",
+   "slug": "buildings-and-public-space",
    "count": 5
   },
   {
@@ -76,11 +76,15 @@
    "count": 5
   },
   {
+   "slug": "film-career-biography",
+   "count": 4
+  },
+  {
    "slug": "everyday-object-design",
    "count": 3
   },
   {
-   "slug": "film-career-biography",
+   "slug": "gendered-constraint",
    "count": 3
   },
   {
@@ -100,10 +104,6 @@
    "count": 3
   },
   {
-   "slug": "animal-behaviour",
-   "count": 2
-  },
-  {
    "slug": "celebrity-life",
    "count": 2
   },
@@ -112,7 +112,11 @@
    "count": 2
   },
   {
-   "slug": "fashion-and-clothing",
+   "slug": "elections-and-voting",
+   "count": 2
+  },
+  {
+   "slug": "founder-biography",
    "count": 2
   },
   {
@@ -140,7 +144,7 @@
    "count": 2
   },
   {
-   "slug": "advertising-and-persuasion",
+   "slug": "animal-behaviour",
    "count": 1
   },
   {
@@ -152,10 +156,6 @@
    "count": 1
   },
   {
-   "slug": "elections-and-voting",
-   "count": 1
-  },
-  {
    "slug": "epidemic-and-public-health",
    "count": 1
   },
@@ -164,7 +164,7 @@
    "count": 1
   },
   {
-   "slug": "folklore-and-legend",
+   "slug": "fashion-and-clothing",
    "count": 1
   },
   {
@@ -176,14 +176,6 @@
    "count": 1
   },
   {
-   "slug": "gentrification-and-housing",
-   "count": 1
-  },
-  {
-   "slug": "hollywood-history",
-   "count": 1
-  },
-  {
    "slug": "homelessness-and-poverty",
    "count": 1
   },
@@ -192,11 +184,7 @@
    "count": 1
   },
   {
-   "slug": "management-and-leadership",
-   "count": 1
-  },
-  {
-   "slug": "media-criticism",
+   "slug": "investigative-process",
    "count": 1
   },
   {
@@ -204,7 +192,7 @@
    "count": 1
   },
   {
-   "slug": "personal-transformation",
+   "slug": "pioneer-biography",
    "count": 1
   },
   {
@@ -220,15 +208,7 @@
    "count": 1
   },
   {
-   "slug": "space-exploration",
-   "count": 1
-  },
-  {
    "slug": "sports-history",
-   "count": 1
-  },
-  {
-   "slug": "work-and-labour-conditions",
    "count": 1
   }
  ],
@@ -373,8 +353,10 @@
      "subject": "queer-life",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:01:20+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -768,8 +750,10 @@
      "subject": "sports-history",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:39:42+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -933,8 +917,10 @@
      "subject": "gender-identity",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:23+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1506,8 +1492,10 @@
      "subject": "family-secret",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:02:54+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -1641,6 +1629,15 @@
    "guid": "https://fugitivewaves.prx.org/?p=380",
    "subjects": [
     {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
      "subject": "sense-of-place",
      "role": "secondary",
      "confidence": "medium",
@@ -1648,11 +1645,13 @@
      "at": "2026-07-29T09:04:51+00:00"
     },
     {
-     "subject": "folklore-and-legend",
+     "subject": "gendered-constraint",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:51+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2458,6 +2457,15 @@
    "guid": "https://fugitivewaves.prx.org/?p=558",
    "subjects": [
     {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
      "subject": "reproductive-health",
      "role": "secondary",
      "confidence": "medium",
@@ -2465,11 +2473,13 @@
      "at": "2026-07-29T09:04:51+00:00"
     },
     {
-     "subject": "personal-transformation",
+     "subject": "gendered-constraint",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:51+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2997,6 +3007,15 @@
    "guid": "prx_98_9656c16c-8eca-4b81-8a2b-68dc0fc48534",
    "subjects": [
     {
+     "subject": "fashion-and-clothing",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
      "subject": "sense-of-place",
      "role": "secondary",
      "confidence": "low",
@@ -3004,11 +3023,13 @@
      "at": "2026-07-29T08:41:52+00:00"
     },
     {
-     "subject": "fashion-and-clothing",
+     "subject": "gendered-constraint",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:41:52+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -3264,9 +3285,11 @@
     {
      "subject": "sex-work-and-exploitation",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:43+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -3393,18 +3416,22 @@
    "guid": "prx_98_d67d66de-960c-43f4-8543-a97f20247b96",
    "subjects": [
     {
-     "subject": "food-and-drink",
+     "subject": "space-exploration",
      "role": "secondary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:40:47+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "space-exploration",
+     "subject": "food-and-drink",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:40:47+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -4521,10 +4548,21 @@
     },
     {
      "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "investigative-process",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:44:36+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -4614,9 +4652,11 @@
     {
      "subject": "fashion-and-clothing",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:43+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -4635,8 +4675,10 @@
      "subject": "art-and-artists",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:41:52+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -5801,8 +5843,10 @@
      "subject": "homelessness-and-poverty",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:02:31+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -5838,10 +5882,21 @@
     },
     {
      "subject": "management-and-leadership",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T22:59:22+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -5892,8 +5947,10 @@
      "subject": "scientific-discovery",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:44:36+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6394,8 +6451,10 @@
      "subject": "epidemic-and-public-health",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T22:59:22+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -6509,10 +6568,21 @@
     },
     {
      "subject": "work-and-labour-conditions",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:19+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -7684,10 +7754,21 @@
     },
     {
      "subject": "protest-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:19+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -7895,9 +7976,11 @@
     {
      "subject": "education-system-failure",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:46:03+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -8356,9 +8439,11 @@
     {
      "subject": "music-industry-business",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:03:44+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -8742,6 +8827,15 @@
    "guid": "prx_98_19d35a29-f8ea-44dd-9d40-9093cb6cc47e",
    "subjects": [
     {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "everyday-object-design",
      "role": "secondary",
      "confidence": "medium",
@@ -8756,11 +8850,13 @@
      "at": "2026-07-29T08:46:03+00:00"
     },
     {
-     "subject": "advertising-and-persuasion",
+     "subject": "archives-and-objects",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:46:03+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -8785,9 +8881,11 @@
     {
      "subject": "elections-and-voting",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:41:19+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -8809,18 +8907,22 @@
    "guid": "prx_98_f313dc35-5922-42f8-b65a-7e0380a44ef6",
    "subjects": [
     {
-     "subject": "elections-and-voting",
+     "subject": "books-and-writing",
      "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:19+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     },
     {
-     "subject": "books-and-writing",
+     "subject": "elections-and-voting",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:19+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -8884,10 +8986,21 @@
     },
     {
      "subject": "gentrification-and-housing",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "pioneer-biography",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:43:01+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -9028,6 +9141,15 @@
    "guid": "prx_98_90148aec-d939-4558-93f0-120244a86051",
    "subjects": [
     {
+     "subject": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "work-and-labour-conditions",
      "role": "secondary",
      "confidence": "low",
@@ -9035,11 +9157,13 @@
      "at": "2026-07-29T08:41:58+00:00"
     },
     {
-     "subject": "animal-behaviour",
+     "subject": "founder-biography",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:41:58+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -9095,10 +9219,21 @@
     },
     {
      "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "film-career-biography",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:41:19+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -9182,8 +9317,10 @@
      "subject": "athlete-profile",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:57+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -9287,8 +9424,10 @@
      "subject": "immigration-and-borders",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:00:47+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -9319,9 +9458,11 @@
     {
      "subject": "games-and-play",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:41:58+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

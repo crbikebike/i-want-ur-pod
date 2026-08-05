@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "vanishing-and-institutional-failure",
-   "count": 15
+   "count": 16
   },
   {
    "slug": "missing-person",
@@ -13,10 +13,6 @@
   },
   {
    "slug": "indigenous-history",
-   "count": 1
-  },
-  {
-   "slug": "unsolved-murder",
    "count": 1
   }
  ],
@@ -85,18 +81,22 @@
    "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161101_48356.mp3",
    "subjects": [
     {
-     "subject": "vanishing-and-institutional-failure",
+     "subject": "unsolved-murder",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:16+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "unsolved-murder",
+     "subject": "vanishing-and-institutional-failure",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:16+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -476,9 +476,11 @@
     {
      "subject": "indigenous-history",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:37+00:00"
+     "at": "2026-08-05T04:41:31+00:00"
     }
    ],
    "entities": [

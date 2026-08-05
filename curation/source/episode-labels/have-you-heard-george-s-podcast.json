@@ -4,23 +4,27 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "art-and-artists",
-   "count": 9
-  },
-  {
    "slug": "colonial-legacy",
    "count": 8
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 6
   },
   {
    "slug": "music-scene-movement",
    "count": 5
   },
   {
+   "slug": "civil-rights-struggle",
+   "count": 4
+  },
+  {
    "slug": "personal-transformation",
    "count": 4
   },
   {
-   "slug": "civil-rights-struggle",
+   "slug": "regulatory-failure",
    "count": 2
   },
   {
@@ -36,11 +40,15 @@
    "count": 1
   },
   {
+   "slug": "cold-war-espionage",
+   "count": 1
+  },
+  {
    "slug": "community-in-conflict",
    "count": 1
   },
   {
-   "slug": "disaster-reconstruction",
+   "slug": "economic-policy",
    "count": 1
   },
   {
@@ -48,19 +56,7 @@
    "count": 1
   },
   {
-   "slug": "engineering-failure",
-   "count": 1
-  },
-  {
-   "slug": "foreign-political-crisis",
-   "count": 1
-  },
-  {
    "slug": "mental-health",
-   "count": 1
-  },
-  {
-   "slug": "political-figure-biography",
    "count": 1
   },
   {
@@ -73,6 +69,10 @@
   },
   {
    "slug": "slavery-and-its-legacy",
+   "count": 1
+  },
+  {
+   "slug": "surreal-narrator-fiction",
    "count": 1
   }
  ],
@@ -96,14 +96,25 @@
      "subject": "education-system-failure",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:08+00:00"
+     "at": "2026-08-05T05:03:11+00:00"
     }
    ]
   },
   {
    "guid": "urn:bbc:podcast:p07qtmfs",
    "subjects": [
+    {
+     "subject": "disaster-reconstruction",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
     {
      "subject": "gentrification-and-housing",
      "role": "secondary",
@@ -112,11 +123,13 @@
      "at": "2026-07-30T14:58:57+00:00"
     },
     {
-     "subject": "disaster-reconstruction",
+     "subject": "regulatory-failure",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:57+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -132,18 +145,22 @@
    "guid": "urn:bbc:podcast:p07mkb1n",
    "subjects": [
     {
-     "subject": "regulatory-failure",
+     "subject": "engineering-failure",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:06+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "engineering-failure",
+     "subject": "regulatory-failure",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:06+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -188,8 +205,10 @@
      "subject": "slavery-and-its-legacy",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:33+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ],
    "entities": [
@@ -213,9 +232,11 @@
     {
      "subject": "art-and-artists",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:48+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -232,10 +253,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:46+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "surreal-narrator-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -275,6 +307,29 @@
    ]
   },
   {
+   "guid": "urn:bbc:podcast:p07sq556",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
    "guid": "urn:bbc:podcast:m000b18m",
    "subjects": [
     {
@@ -288,20 +343,10 @@
      "subject": "screen-representation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:08+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "urn:bbc:podcast:p07sq556",
-   "subjects": [
-    {
-     "subject": "art-and-artists",
-     "role": "primary",
-     "confidence": "low",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:30:41+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -335,9 +380,11 @@
     {
      "subject": "art-and-artists",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:48+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -356,8 +403,10 @@
      "subject": "community-in-conflict",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:28+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -407,8 +456,10 @@
      "subject": "mental-health",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:30:41+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -419,8 +470,10 @@
      "subject": "music-scene-movement",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:08+00:00"
+     "at": "2026-08-05T05:03:11+00:00"
     }
    ]
   },
@@ -430,9 +483,11 @@
     {
      "subject": "colonial-legacy",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:57+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ]
   },
@@ -441,10 +496,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "civil-rights-struggle",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:30:41+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -473,9 +539,11 @@
     {
      "subject": "artist-band-biography",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:44+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -494,8 +562,10 @@
      "subject": "celebrity-life",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:28+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -744,10 +814,21 @@
     },
     {
      "subject": "foreign-political-crisis",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:40+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -814,18 +895,22 @@
    "guid": "urn:bbc:podcast:p0gt320j",
    "subjects": [
     {
-     "subject": "economic-policy",
+     "subject": "political-figure-biography",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:06+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     },
     {
-     "subject": "political-figure-biography",
+     "subject": "economic-policy",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:06+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -902,8 +987,10 @@
      "subject": "sex-work-and-exploitation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:33+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ],
    "entities": [

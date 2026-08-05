@@ -5,11 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "serial-offender",
-   "count": 8
-  },
-  {
-   "slug": "terrorism-and-aftermath",
-   "count": 1
+   "count": 9
   }
  ],
  "episodes": [
@@ -219,10 +215,21 @@
     },
     {
      "subject": "terrorism-and-aftermath",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:27:45+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

@@ -13,18 +13,18 @@
   },
   {
    "slug": "charismatic-con",
-   "count": 10
-  },
-  {
-   "slug": "courtroom-trial",
-   "count": 5
+   "count": 9
   },
   {
    "slug": "organised-crime",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "wrongful-conviction",
+   "count": 6
+  },
+  {
+   "slug": "courtroom-trial",
    "count": 5
   },
   {
@@ -40,11 +40,15 @@
    "count": 3
   },
   {
-   "slug": "unsolved-murder",
-   "count": 3
+   "slug": "cold-case-reopened",
+   "count": 2
   },
   {
-   "slug": "cold-case-reopened",
+   "slug": "heist-and-robbery",
+   "count": 2
+  },
+  {
+   "slug": "investigative-process",
    "count": 2
   },
   {
@@ -52,27 +56,19 @@
    "count": 2
   },
   {
-   "slug": "books-and-writing",
-   "count": 1
-  },
-  {
-   "slug": "bribery-and-kickbacks",
-   "count": 1
+   "slug": "unsolved-murder",
+   "count": 2
   },
   {
    "slug": "corruption-in-local-power",
    "count": 1
   },
   {
-   "slug": "investigative-process",
+   "slug": "making-of-a-work",
    "count": 1
   },
   {
    "slug": "medical-deception",
-   "count": 1
-  },
-  {
-   "slug": "personal-transformation",
    "count": 1
   },
   {
@@ -81,10 +77,6 @@
   },
   {
    "slug": "true-crime-as-genre",
-   "count": 1
-  },
-  {
-   "slug": "voluntary-disappearance",
    "count": 1
   }
  ],
@@ -387,10 +379,21 @@
    "subjects": [
     {
      "subject": "books-and-writing",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:54+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -400,9 +403,11 @@
     {
      "subject": "informant-and-undercover",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:33+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -462,6 +467,43 @@
    ]
   },
   {
+   "guid": "adc4c31c-6feb-11ec-8d5b-53722888817b",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bob Cooley",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "name": "Harry Aleman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ]
+  },
+  {
    "guid": "a879b1d8-6feb-11ec-b230-0ff629004444",
    "subjects": [
     {
@@ -489,39 +531,6 @@
    ]
   },
   {
-   "guid": "adc4c31c-6feb-11ec-8d5b-53722888817b",
-   "subjects": [
-    {
-     "subject": "organised-crime",
-     "role": "secondary",
-     "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:19+00:00"
-    },
-    {
-     "subject": "bribery-and-kickbacks",
-     "role": "primary",
-     "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:19+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Bob Cooley",
-     "kind": "person",
-     "confidence": "high",
-     "at": "2026-07-28T00:52:19+00:00"
-    },
-    {
-     "name": "Harry Aleman",
-     "kind": "person",
-     "confidence": "high",
-     "at": "2026-07-28T00:52:19+00:00"
-    }
-   ]
-  },
-  {
    "guid": "b7276b08-6feb-11ec-b1b7-f399bae6fc0c",
    "subjects": [
     {
@@ -534,9 +543,11 @@
     {
      "subject": "corruption-in-local-power",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:56+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -973,8 +984,10 @@
      "subject": "true-crime-as-genre",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:25+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1105,9 +1118,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:56+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1250,10 +1265,21 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
+     "subject": "investigative-process",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:02+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -1435,10 +1461,21 @@
    "subjects": [
     {
      "subject": "charismatic-con",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:45+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1579,8 +1616,10 @@
      "subject": "medical-deception",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:02+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -1604,9 +1643,11 @@
     {
      "subject": "investigative-process",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1893,26 +1934,25 @@
    ]
   },
   {
-   "guid": "46a30dca-73af-44c2-b1e9-b44d01134552",
-   "subjects": [
-    {
-     "subject": "family-secret",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:25+00:00"
-    }
-   ]
-  },
-  {
    "guid": "f84a4294-c90f-4bf3-9bc0-b44d0119a3bc",
    "subjects": [
     {
      "subject": "voluntary-disappearance",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1921,6 +1961,18 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-07-28T00:52:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "46a30dca-73af-44c2-b1e9-b44d01134552",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:25+00:00"
     }
    ]
   },
@@ -1981,8 +2033,10 @@
      "subject": "reentry-after-prison",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:02+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -2066,10 +2120,21 @@
     },
     {
      "subject": "personal-transformation",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:45+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   }

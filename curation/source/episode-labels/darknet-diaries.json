@@ -9,7 +9,7 @@
   },
   {
    "slug": "hacker-life-story",
-   "count": 33
+   "count": 34
   },
   {
    "slug": "cybercrime-for-profit",
@@ -25,7 +25,7 @@
   },
   {
    "slug": "authorised-intrusion",
-   "count": 12
+   "count": 13
   },
   {
    "slug": "surveillance-and-privacy",
@@ -40,15 +40,15 @@
    "count": 3
   },
   {
+   "slug": "informant-and-undercover",
+   "count": 3
+  },
+  {
    "slug": "organised-crime",
    "count": 3
   },
   {
    "slug": "games-and-play",
-   "count": 2
-  },
-  {
-   "slug": "informant-and-undercover",
    "count": 2
   },
   {
@@ -60,23 +60,11 @@
    "count": 2
   },
   {
-   "slug": "cold-war-espionage",
-   "count": 1
-  },
-  {
    "slug": "crypto-collapse",
    "count": 1
   },
   {
-   "slug": "forensic-evidence",
-   "count": 1
-  },
-  {
    "slug": "identity-impostor",
-   "count": 1
-  },
-  {
-   "slug": "investigative-process",
    "count": 1
   },
   {
@@ -311,9 +299,11 @@
     {
      "subject": "crypto-collapse",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:11:27+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -650,8 +640,10 @@
      "subject": "wrongful-conviction",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:11:27+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1552,8 +1544,10 @@
      "subject": "war-and-its-conduct",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:11:27+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1885,9 +1879,11 @@
     {
      "subject": "music-scene-movement",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:08:38+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1923,10 +1919,21 @@
    "subjects": [
     {
      "subject": "cybercrime-for-profit",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:47+00:00"
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ]
   },
@@ -1968,9 +1975,11 @@
     {
      "subject": "hacker-life-story",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:31+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -2522,9 +2531,11 @@
     {
      "subject": "surveillance-and-privacy",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:56+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2644,9 +2655,11 @@
     {
      "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:11:27+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -2692,18 +2705,22 @@
    "guid": "9f381608-85fa-11ec-ae4d-6343990ea21f",
    "subjects": [
     {
-     "subject": "informant-and-undercover",
+     "subject": "cold-war-espionage",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:07:40+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     },
     {
-     "subject": "cold-war-espionage",
+     "subject": "informant-and-undercover",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:07:40+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -3060,10 +3077,21 @@
     },
     {
      "subject": "forensic-evidence",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:31+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -3116,8 +3144,10 @@
      "subject": "identity-impostor",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:02+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -3524,10 +3554,21 @@
     },
     {
      "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:09:55+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [

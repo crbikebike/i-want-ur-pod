@@ -13,11 +13,7 @@
   },
   {
    "slug": "religious-abuse",
-   "count": 1
-  },
-  {
-   "slug": "sexual-abuse-accountability",
-   "count": 1
+   "count": 2
   }
  ],
  "episodes": [
@@ -152,9 +148,11 @@
     {
      "subject": "religious-abuse",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -257,18 +255,22 @@
    "guid": "4dc978fc-d844-11eb-b449-ffee1cd178c4",
    "subjects": [
     {
-     "subject": "religious-abuse",
+     "subject": "sexual-abuse-accountability",
      "role": "secondary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "sexual-abuse-accountability",
+     "subject": "religious-abuse",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

@@ -8,15 +8,15 @@
    "count": 2
   },
   {
-   "slug": "everyday-mystery",
-   "count": 1
-  },
-  {
    "slug": "ideas-and-argument",
    "count": 1
   },
   {
    "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
    "count": 1
   }
  ],
@@ -92,10 +92,21 @@
    "subjects": [
     {
      "subject": "everyday-mystery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:28:42+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -113,9 +124,11 @@
     {
      "subject": "ideas-and-argument",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:53+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -133,8 +146,10 @@
      "subject": "identity-impostor",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:57+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [

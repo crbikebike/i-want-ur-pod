@@ -5,35 +5,31 @@
  "subjectsUsed": [
   {
    "slug": "mental-health",
-   "count": 48
+   "count": 50
   },
   {
    "slug": "survival-story",
-   "count": 32
-  },
-  {
-   "slug": "personal-transformation",
-   "count": 26
+   "count": 31
   },
   {
    "slug": "grief-and-loss",
-   "count": 22
+   "count": 26
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 25
   },
   {
    "slug": "addiction-and-recovery",
-   "count": 16
+   "count": 18
   },
   {
    "slug": "relationship-remembered",
-   "count": 15
+   "count": 16
   },
   {
    "slug": "captivity-and-escape",
    "count": 10
-  },
-  {
-   "slug": "cult-and-control",
-   "count": 9
   },
   {
    "slug": "disability-and-access",
@@ -44,20 +40,20 @@
    "count": 8
   },
   {
+   "slug": "cult-and-control",
+   "count": 8
+  },
+  {
+   "slug": "wilderness-expedition-survival",
+   "count": 8
+  },
+  {
    "slug": "chronic-illness",
    "count": 7
   },
   {
-   "slug": "family-secret",
-   "count": 7
-  },
-  {
-   "slug": "wilderness-expedition-survival",
-   "count": 7
-  },
-  {
    "slug": "sexual-abuse-accountability",
-   "count": 6
+   "count": 7
   },
   {
    "slug": "terrorism-and-aftermath",
@@ -68,7 +64,7 @@
    "count": 5
   },
   {
-   "slug": "missing-person",
+   "slug": "family-secret",
    "count": 5
   },
   {
@@ -77,6 +73,14 @@
   },
   {
    "slug": "disaster-and-accident-survival",
+   "count": 4
+  },
+  {
+   "slug": "missing-person",
+   "count": 4
+  },
+  {
+   "slug": "natural-disaster",
    "count": 4
   },
   {
@@ -92,6 +96,10 @@
    "count": 4
   },
   {
+   "slug": "talking-about-love",
+   "count": 4
+  },
+  {
    "slug": "ai-and-society",
    "count": 3
   },
@@ -104,7 +112,7 @@
    "count": 3
   },
   {
-   "slug": "natural-disaster",
+   "slug": "murder-close-to-home",
    "count": 3
   },
   {
@@ -128,10 +136,6 @@
    "count": 3
   },
   {
-   "slug": "talking-about-love",
-   "count": 3
-  },
-  {
    "slug": "war-and-its-conduct",
    "count": 3
   },
@@ -148,11 +152,11 @@
    "count": 2
   },
   {
-   "slug": "estrangement-and-reconciliation",
+   "slug": "faith-and-doubt",
    "count": 2
   },
   {
-   "slug": "faith-and-doubt",
+   "slug": "gendered-constraint",
    "count": 2
   },
   {
@@ -160,23 +164,11 @@
    "count": 2
   },
   {
-   "slug": "making-of-a-work",
+   "slug": "law-explained",
    "count": 2
   },
   {
    "slug": "medical-system-harm",
-   "count": 2
-  },
-  {
-   "slug": "murder-close-to-home",
-   "count": 2
-  },
-  {
-   "slug": "parenting",
-   "count": 2
-  },
-  {
-   "slug": "romance-and-heartbreak",
    "count": 2
   },
   {
@@ -192,15 +184,11 @@
    "count": 2
   },
   {
-   "slug": "athlete-profile",
-   "count": 1
-  },
-  {
    "slug": "death-penalty",
    "count": 1
   },
   {
-   "slug": "friendship",
+   "slug": "estrangement-and-reconciliation",
    "count": 1
   },
   {
@@ -208,7 +196,7 @@
    "count": 1
   },
   {
-   "slug": "immigrant-experience",
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -228,19 +216,11 @@
    "count": 1
   },
   {
-   "slug": "media-criticism",
+   "slug": "making-of-a-work",
    "count": 1
   },
   {
-   "slug": "prosecutorial-power",
-   "count": 1
-  },
-  {
-   "slug": "protest-movement",
-   "count": 1
-  },
-  {
-   "slug": "reentry-after-prison",
+   "slug": "parenting",
    "count": 1
   },
   {
@@ -248,11 +228,7 @@
    "count": 1
   },
   {
-   "slug": "religious-community",
-   "count": 1
-  },
-  {
-   "slug": "romance-and-catfishing",
+   "slug": "romance-and-heartbreak",
    "count": 1
   },
   {
@@ -309,10 +285,21 @@
    "subjects": [
     {
      "subject": "romance-and-heartbreak",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:22+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -321,10 +308,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:04+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -352,10 +350,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:32+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -425,10 +434,21 @@
     },
     {
      "subject": "relationship-remembered",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:24+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -478,9 +498,11 @@
     {
      "subject": "missing-person",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:46+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -509,9 +531,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:04+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -521,9 +545,11 @@
     {
      "subject": "survival-story",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:05+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ]
   },
@@ -627,8 +653,10 @@
      "subject": "religious-abuse",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:04+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -669,9 +697,11 @@
     {
      "subject": "survival-story",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:02:46+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -700,9 +730,11 @@
     {
      "subject": "kidnapping-and-captivity",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:46+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -792,10 +824,21 @@
    "subjects": [
     {
      "subject": "friendship",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:56:31+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -824,10 +867,21 @@
    "subjects": [
     {
      "subject": "survival-story",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:22+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "wilderness-expedition-survival",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -893,10 +947,21 @@
    "subjects": [
     {
      "subject": "survival-story",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:04+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -978,18 +1043,22 @@
    "guid": "gid://art19-episode-locator/V0/mrUag0WE3r0fMAJuAcZj-QML1r04HBmTiPVS-dbrTDU",
    "subjects": [
     {
-     "subject": "personal-transformation",
+     "subject": "mental-health",
      "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:24+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "mental-health",
+     "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:24+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1062,10 +1131,21 @@
    "subjects": [
     {
      "subject": "sexual-abuse-accountability",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:56:11+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
+    },
+    {
+     "subject": "survival-story",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ]
   },
@@ -1179,10 +1259,21 @@
    "subjects": [
     {
      "subject": "parenting",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:56:11+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1246,10 +1337,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:38+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1270,10 +1372,21 @@
    "subjects": [
     {
      "subject": "mental-health",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:04+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1346,8 +1459,10 @@
      "subject": "mental-health",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:32+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1368,10 +1483,21 @@
    "subjects": [
     {
      "subject": "missing-person",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:35+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "survival-story",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -1505,9 +1631,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:38+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1655,9 +1783,11 @@
     {
      "subject": "family-secret",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:24+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1679,9 +1809,11 @@
     {
      "subject": "mental-health",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:38+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -1702,10 +1834,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:04+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1760,10 +1903,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:03:33+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1799,10 +1953,21 @@
    "subjects": [
     {
      "subject": "family-secret",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:32+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1811,10 +1976,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:38+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -1823,10 +1999,21 @@
    "subjects": [
     {
      "subject": "family-secret",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:35+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -2043,9 +2230,11 @@
     {
      "subject": "racial-violence",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:32+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -2054,10 +2243,21 @@
    "subjects": [
     {
      "subject": "survival-story",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:38+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -2066,10 +2266,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:35+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -2092,8 +2303,10 @@
      "subject": "survival-story",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:56:11+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -2141,10 +2354,21 @@
    "subjects": [
     {
      "subject": "mental-health",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:24+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -2200,9 +2424,11 @@
     {
      "subject": "mental-health",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:35+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -2308,6 +2534,15 @@
    "guid": "gid://art19-episode-locator/V0/B53k3M_G7wOGIOiuMEX_0HOHoJE7_-a_iIHZWOj1594",
    "subjects": [
     {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
      "subject": "friendship",
      "role": "secondary",
      "confidence": "medium",
@@ -2315,11 +2550,13 @@
      "at": "2026-07-29T08:55:24+00:00"
     },
     {
-     "subject": "cult-and-control",
+     "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:24+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -2335,10 +2572,21 @@
     },
     {
      "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:32+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -2639,8 +2887,10 @@
      "subject": "government-secrecy",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:24+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -2676,10 +2926,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:38+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -2982,8 +3243,10 @@
      "subject": "investigative-process",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:03:33+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -3273,9 +3536,11 @@
     {
      "subject": "family-annihilation-and-parricide",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:38+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -3432,9 +3697,11 @@
     {
      "subject": "intimate-partner-homicide",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:40+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -3457,10 +3724,21 @@
    "subjects": [
     {
      "subject": "estrangement-and-reconciliation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:38+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -3625,10 +3903,21 @@
    "subjects": [
     {
      "subject": "family-annihilation-and-parricide",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:38+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -3753,9 +4042,11 @@
     {
      "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:40+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -3877,8 +4168,10 @@
      "subject": "indigenous-history",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:04:23+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -4435,10 +4728,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:35+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "talking-about-love",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -4763,8 +5067,10 @@
      "subject": "internet-culture",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:24+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -4809,9 +5115,11 @@
     {
      "subject": "grief-and-loss",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:07:26+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -5049,10 +5357,21 @@
     },
     {
      "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "personal-transformation",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:15+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -5202,10 +5521,21 @@
    "subjects": [
     {
      "subject": "reentry-after-prison",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:06:15+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -5226,10 +5556,21 @@
    "subjects": [
     {
      "subject": "prosecutorial-power",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:57:24+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -5787,10 +6128,21 @@
     },
     {
      "subject": "romance-and-catfishing",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "relationship-remembered",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:04:23+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -6145,8 +6497,10 @@
      "subject": "death-penalty",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:58:25+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -6954,9 +7308,11 @@
     {
      "subject": "undercover-and-embedded-reporting",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:04:23+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -7077,18 +7433,22 @@
    "guid": "gid://art19-episode-locator/V0/qOK3FI3-565ifUGGbQoaWrPm2065YoL2tUDyMP8-rrE",
    "subjects": [
     {
-     "subject": "personal-transformation",
+     "subject": "immigrant-experience",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:07:27+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "immigrant-experience",
+     "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:07:27+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -7137,6 +7497,15 @@
    "guid": "gid://art19-episode-locator/V0/lCFAujFtbnrHG2X5O_v0WBSDTuhkV1ukdVNNXNHtmF0",
    "subjects": [
     {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
      "subject": "cost-of-fame",
      "role": "secondary",
      "confidence": "high",
@@ -7144,11 +7513,13 @@
      "at": "2026-07-29T08:58:25+00:00"
     },
     {
-     "subject": "athlete-profile",
+     "subject": "personal-transformation",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:58:25+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -7165,10 +7536,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:04:23+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [

@@ -8,11 +8,11 @@
    "count": 3
   },
   {
-   "slug": "charismatic-con",
+   "slug": "books-and-writing",
    "count": 1
   },
   {
-   "slug": "media-criticism",
+   "slug": "charismatic-con",
    "count": 1
   }
  ],
@@ -23,9 +23,11 @@
     {
      "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:41+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ],
    "entities": [
@@ -88,10 +90,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:57+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },

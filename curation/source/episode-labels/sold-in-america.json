@@ -8,7 +8,7 @@
    "count": 10
   },
   {
-   "slug": "celebrity-life",
+   "slug": "cost-of-fame",
    "count": 1
   },
   {
@@ -199,9 +199,11 @@
     {
      "subject": "sexual-abuse-accountability",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:25:47+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -221,6 +223,15 @@
    "guid": "97b4d0dc-2776-4d79-a211-ad5e00070b55",
    "subjects": [
     {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
      "subject": "law-explained",
      "role": "secondary",
      "confidence": "medium",
@@ -228,11 +239,13 @@
      "at": "2026-08-01T20:20:01+00:00"
     },
     {
-     "subject": "celebrity-life",
+     "subject": "cost-of-fame",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:01+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [

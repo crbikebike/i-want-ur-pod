@@ -12,16 +12,12 @@
    "count": 3
   },
   {
-   "slug": "sense-of-place",
+   "slug": "indigenous-history",
    "count": 2
   },
   {
-   "slug": "family-secret",
-   "count": 1
-  },
-  {
-   "slug": "indigenous-history",
-   "count": 1
+   "slug": "sense-of-place",
+   "count": 2
   }
  ],
  "episodes": [
@@ -31,9 +27,11 @@
     {
      "subject": "relationship-remembered",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:25:47+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -43,9 +41,11 @@
     {
      "subject": "relationship-remembered",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:01+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -55,9 +55,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:51+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -66,10 +68,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:28:53+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -85,18 +98,22 @@
    "guid": "6a03b943a257c57500eb69d6",
    "subjects": [
     {
-     "subject": "sense-of-place",
+     "subject": "indigenous-history",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:40+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "indigenous-history",
+     "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:40+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -105,10 +122,21 @@
    "subjects": [
     {
      "subject": "sense-of-place",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:10+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -186,9 +214,11 @@
     {
      "subject": "relationship-remembered",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:25:47+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -196,18 +226,22 @@
    "guid": "6a582c296f1292268676352e",
    "subjects": [
     {
-     "subject": "personal-transformation",
+     "subject": "family-secret",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:01+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "family-secret",
+     "subject": "personal-transformation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:01+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },

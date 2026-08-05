@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "surreal-narrator-fiction",
-   "count": 55
+   "count": 56
   },
   {
    "slug": "audio-drama-horror",
-   "count": 8
+   "count": 7
   },
   {
    "slug": "art-and-artists",
@@ -20,7 +20,7 @@
    "count": 1
   },
   {
-   "slug": "personal-transformation",
+   "slug": "books-and-writing",
    "count": 1
   },
   {
@@ -204,9 +204,11 @@
     {
      "subject": "surreal-narrator-fiction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:48:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -491,9 +493,11 @@
     {
      "subject": "surreal-narrator-fiction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:48+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -504,8 +508,10 @@
      "subject": "art-and-artists",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:28+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -769,10 +775,21 @@
    "subjects": [
     {
      "subject": "audio-drama-horror",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:28+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "surreal-narrator-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -803,8 +820,10 @@
      "subject": "surreal-narrator-fiction",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:31+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -814,9 +833,11 @@
     {
      "subject": "surreal-narrator-fiction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -825,10 +846,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:33+00:00"
+     "at": "2026-08-05T04:43:18+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -888,9 +920,11 @@
     {
      "subject": "audio-drama-mystery",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:28+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -908,9 +942,11 @@
     {
      "subject": "surreal-narrator-fiction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -919,10 +955,21 @@
    "subjects": [
     {
      "subject": "surreal-narrator-fiction",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:31+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "audio-drama-horror",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -932,9 +979,11 @@
     {
      "subject": "surreal-narrator-fiction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -944,9 +993,11 @@
     {
      "subject": "surreal-narrator-fiction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:33+00:00"
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -957,8 +1008,10 @@
      "subject": "talking-about-film",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:32+00:00"
+     "at": "2026-08-05T04:42:00+00:00"
     }
    ]
   },
@@ -967,10 +1020,21 @@
    "subjects": [
     {
      "subject": "audio-drama-horror",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:28+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "surreal-narrator-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

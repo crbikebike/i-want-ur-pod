@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "political-figure-biography",
-   "count": 11
+   "count": 10
   },
   {
    "slug": "celebrity-life",
-   "count": 9
+   "count": 8
   },
   {
    "slug": "artist-band-biography",
@@ -48,7 +48,15 @@
    "count": 1
   },
   {
-   "slug": "investigative-process",
+   "slug": "fashion-and-clothing",
+   "count": 1
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
+   "slug": "immigration-and-borders",
    "count": 1
   },
   {
@@ -163,18 +171,22 @@
    "guid": "49f580a3-54c5-4685-b7f5-640f928b4aa1",
    "subjects": [
     {
-     "subject": "fashion-and-clothing",
+     "subject": "celebrity-life",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "celebrity-life",
+     "subject": "fashion-and-clothing",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -399,9 +411,11 @@
     {
      "subject": "artist-band-biography",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:27+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -511,10 +525,21 @@
    "subjects": [
     {
      "subject": "political-figure-biography",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:56+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -748,8 +773,10 @@
      "subject": "personal-transformation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -779,9 +806,11 @@
     {
      "subject": "musician-downfall",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -913,9 +942,11 @@
     {
      "subject": "music-scene-movement",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:56+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1060,9 +1091,11 @@
     {
      "subject": "books-and-writing",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:11+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1241,18 +1274,22 @@
    "guid": "35307560-df96-11f0-a820-d7407174556a",
    "subjects": [
     {
-     "subject": "immigration-and-borders",
+     "subject": "investigative-process",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "investigative-process",
+     "subject": "immigration-and-borders",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

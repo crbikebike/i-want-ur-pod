@@ -4,12 +4,16 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "media-criticism",
+   "slug": "history-retold",
    "count": 9
   },
   {
    "slug": "tech-industry-power",
    "count": 9
+  },
+  {
+   "slug": "media-criticism",
+   "count": 6
   },
   {
    "slug": "conspiracy-theory",
@@ -20,12 +24,8 @@
    "count": 4
   },
   {
-   "slug": "history-retold",
-   "count": 4
-  },
-  {
    "slug": "ai-and-society",
-   "count": 3
+   "count": 2
   },
   {
    "slug": "animal-behaviour",
@@ -44,15 +44,7 @@
    "count": 2
   },
   {
-   "slug": "internet-culture",
-   "count": 2
-  },
-  {
    "slug": "psychology-of-belief",
-   "count": 2
-  },
-  {
-   "slug": "scientific-discovery",
    "count": 2
   },
   {
@@ -64,11 +56,11 @@
    "count": 2
   },
   {
-   "slug": "celebrity-life",
+   "slug": "archives-and-objects",
    "count": 1
   },
   {
-   "slug": "climate-change",
+   "slug": "civil-rights-struggle",
    "count": 1
   },
   {
@@ -77,10 +69,6 @@
   },
   {
    "slug": "courtroom-trial",
-   "count": 1
-  },
-  {
-   "slug": "economic-policy",
    "count": 1
   },
   {
@@ -100,11 +88,31 @@
    "count": 1
   },
   {
+   "slug": "forgotten-episode",
+   "count": 1
+  },
+  {
+   "slug": "founder-biography",
+   "count": 1
+  },
+  {
+   "slug": "games-and-play",
+   "count": 1
+  },
+  {
    "slug": "homelessness-and-poverty",
    "count": 1
   },
   {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
    "slug": "indigenous-history",
+   "count": 1
+  },
+  {
+   "slug": "internet-culture",
    "count": 1
   },
   {
@@ -116,11 +124,7 @@
    "count": 1
   },
   {
-   "slug": "protest-movement",
-   "count": 1
-  },
-  {
-   "slug": "sense-of-place",
+   "slug": "scientific-discovery",
    "count": 1
   },
   {
@@ -138,10 +142,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -167,8 +182,10 @@
      "subject": "cold-case-reopened",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:02+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ]
   },
@@ -179,8 +196,10 @@
      "subject": "forensic-evidence",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:45+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -277,8 +296,10 @@
      "subject": "epidemic-and-public-health",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:25+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -313,6 +334,15 @@
    "guid": "f169ecf8-946b-11ea-a527-3b67ce660ad5",
    "subjects": [
     {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
      "subject": "reproductive-health",
      "role": "secondary",
      "confidence": "medium",
@@ -320,11 +350,13 @@
      "at": "2026-07-28T00:51:56+00:00"
     },
     {
-     "subject": "protest-movement",
+     "subject": "civil-rights-struggle",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:56+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -342,8 +374,10 @@
      "subject": "environmental-contamination",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:02+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -360,10 +394,21 @@
    "subjects": [
     {
      "subject": "internet-culture",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:45+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ]
   },
@@ -399,10 +444,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:29+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -420,8 +476,10 @@
      "subject": "courtroom-trial",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:33+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
      "subject": "history-retold",
@@ -486,9 +544,11 @@
     {
      "subject": "war-and-its-conduct",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -720,9 +780,11 @@
     {
      "subject": "space-exploration",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -840,9 +902,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:02+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -865,10 +929,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:45+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ]
   },
@@ -934,16 +1009,36 @@
    "subjects": [
     {
      "subject": "climate-change",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:25+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
   {
    "guid": "28f15078-82f3-442f-856e-af480139947c",
    "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
     {
      "subject": "everyday-object-design",
      "role": "secondary",
@@ -952,11 +1047,13 @@
      "at": "2026-07-28T00:52:51+00:00"
     },
     {
-     "subject": "economic-policy",
+     "subject": "games-and-play",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1024,18 +1121,22 @@
    "guid": "ee057f69-27c6-4180-bf47-af5d015d7783",
    "subjects": [
     {
-     "subject": "archives-and-objects",
+     "subject": "sense-of-place",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:56+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "sense-of-place",
+     "subject": "archives-and-objects",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:56+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1091,10 +1192,21 @@
    "subjects": [
     {
      "subject": "ai-and-society",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "forgotten-episode",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1132,8 +1244,10 @@
      "subject": "indigenous-history",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:45+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -1223,10 +1337,21 @@
    "subjects": [
     {
      "subject": "scientific-discovery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:25+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1243,9 +1368,11 @@
     {
      "subject": "homelessness-and-poverty",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:25+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1373,8 +1500,10 @@
      "subject": "legal-precedent",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:33+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1452,8 +1581,48 @@
      "subject": "extremist-movement",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:56+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b1f86388-0463-4085-92a1-b2ac01612646",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
+    },
+    {
+     "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:51:45+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elon Musk",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:51:45+00:00"
     }
    ]
   },
@@ -1481,33 +1650,6 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-07-28T00:52:02+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "b1f86388-0463-4085-92a1-b2ac01612646",
-   "subjects": [
-    {
-     "subject": "tech-industry-power",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:45+00:00"
-    },
-    {
-     "subject": "celebrity-life",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:45+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Elon Musk",
-     "kind": "person",
-     "confidence": "high",
-     "at": "2026-07-28T00:51:45+00:00"
     }
    ]
   },

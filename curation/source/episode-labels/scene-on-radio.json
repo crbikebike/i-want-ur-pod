@@ -9,7 +9,11 @@
   },
   {
    "slug": "history-retold",
-   "count": 15
+   "count": 14
+  },
+  {
+   "slug": "invented-category",
+   "count": 14
   },
   {
    "slug": "media-criticism",
@@ -17,27 +21,31 @@
   },
   {
    "slug": "racial-violence",
-   "count": 11
+   "count": 12
   },
   {
    "slug": "economic-policy",
-   "count": 10
-  },
-  {
-   "slug": "invented-category",
-   "count": 9
+   "count": 11
   },
   {
    "slug": "sense-of-place",
-   "count": 7
-  },
-  {
-   "slug": "sport-and-politics",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "civil-rights-struggle",
    "count": 4
+  },
+  {
+   "slug": "slavery-and-its-legacy",
+   "count": 4
+  },
+  {
+   "slug": "sport-and-politics",
+   "count": 4
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 3
   },
   {
    "slug": "colonial-legacy",
@@ -49,6 +57,10 @@
   },
   {
    "slug": "elections-and-voting",
+   "count": 3
+  },
+  {
+   "slug": "immigrant-experience",
    "count": 3
   },
   {
@@ -64,23 +76,7 @@
    "count": 3
   },
   {
-   "slug": "slavery-and-its-legacy",
-   "count": 3
-  },
-  {
-   "slug": "art-and-artists",
-   "count": 2
-  },
-  {
-   "slug": "gender-identity",
-   "count": 2
-  },
-  {
    "slug": "gendered-constraint",
-   "count": 2
-  },
-  {
-   "slug": "immigrant-experience",
    "count": 2
   },
   {
@@ -108,7 +104,7 @@
    "count": 1
   },
   {
-   "slug": "forgotten-episode",
+   "slug": "gender-identity",
    "count": 1
   },
   {
@@ -116,27 +112,11 @@
    "count": 1
   },
   {
-   "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
-   "slug": "institutional-coverup",
-   "count": 1
-  },
-  {
-   "slug": "legal-precedent",
+   "slug": "grief-and-loss",
    "count": 1
   },
   {
    "slug": "mass-shooting",
-   "count": 1
-  },
-  {
-   "slug": "personal-transformation",
-   "count": 1
-  },
-  {
-   "slug": "queer-life",
    "count": 1
   },
   {
@@ -149,10 +129,6 @@
   },
   {
    "slug": "scientific-discovery",
-   "count": 1
-  },
-  {
-   "slug": "screen-representation",
    "count": 1
   }
  ],
@@ -320,10 +296,21 @@
    "subjects": [
     {
      "subject": "sense-of-place",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:46+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -333,9 +320,11 @@
     {
      "subject": "ageing-and-mortality",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:23:07+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -345,9 +334,11 @@
     {
      "subject": "chronic-illness",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:21+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -409,18 +400,22 @@
    "guid": "221b0661daf84b14fe50cd69ff740c26",
    "subjects": [
     {
-     "subject": "immigrant-experience",
+     "subject": "queer-life",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:41+00:00"
+     "at": "2026-08-05T04:43:18+00:00"
     },
     {
-     "subject": "queer-life",
+     "subject": "immigrant-experience",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:41+00:00"
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -437,9 +432,11 @@
     {
      "subject": "food-and-drink",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:21:33+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ],
    "entities": [
@@ -456,10 +453,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:51+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -470,8 +478,10 @@
      "subject": "family-secret",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:46+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -488,9 +498,11 @@
     {
      "subject": "relationship-remembered",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:23:07+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -562,9 +574,11 @@
     {
      "subject": "gentrification-and-housing",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:27+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1046,10 +1060,21 @@
     },
     {
      "subject": "legal-precedent",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:51+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1174,10 +1199,21 @@
    "subjects": [
     {
      "subject": "gender-identity",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:41+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1194,10 +1230,21 @@
    "subjects": [
     {
      "subject": "history-retold",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:21:33+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1206,10 +1253,21 @@
    "subjects": [
     {
      "subject": "gendered-constraint",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:51+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1328,10 +1386,21 @@
     },
     {
      "subject": "screen-representation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "invented-category",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:20+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -1387,10 +1456,21 @@
    "subjects": [
     {
      "subject": "sport-and-politics",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:51+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1412,9 +1492,11 @@
     {
      "subject": "history-retold",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1562,8 +1644,10 @@
      "subject": "epidemic-and-public-health",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:51+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1651,9 +1735,11 @@
     {
      "subject": "schooling-and-policy",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2116,18 +2202,22 @@
    "guid": "prx_153_7f2cf161-7de9-4a11-a809-a981d044162a",
    "subjects": [
     {
-     "subject": "slavery-and-its-legacy",
+     "subject": "institutional-coverup",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:41+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "institutional-coverup",
+     "subject": "slavery-and-its-legacy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:41+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2286,18 +2376,22 @@
    "guid": "prx_153_270cf6e4-0546-4e91-9f56-b663659bdb53",
    "subjects": [
     {
-     "subject": "racial-violence",
+     "subject": "forgotten-episode",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "forgotten-episode",
+     "subject": "racial-violence",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2349,8 +2443,10 @@
      "subject": "mass-shooting",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2368,9 +2464,11 @@
     {
      "subject": "economic-policy",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:41+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -2512,10 +2610,21 @@
    "subjects": [
     {
      "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "economic-policy",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:17+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2532,9 +2641,11 @@
     {
      "subject": "scientific-discovery",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:35+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2647,9 +2758,11 @@
     {
      "subject": "invented-category",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2706,9 +2819,11 @@
     {
      "subject": "history-retold",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:41+00:00"
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ],
    "entities": [

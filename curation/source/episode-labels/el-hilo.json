@@ -17,19 +17,19 @@
   },
   {
    "slug": "epidemic-and-public-health",
-   "count": 21
+   "count": 22
   },
   {
    "slug": "organised-crime",
-   "count": 17
+   "count": 18
   },
   {
    "slug": "climate-change",
-   "count": 14
+   "count": 15
   },
   {
    "slug": "economic-policy",
-   "count": 14
+   "count": 13
   },
   {
    "slug": "presidential-power",
@@ -52,16 +52,12 @@
    "count": 6
   },
   {
-   "slug": "regulatory-failure",
+   "slug": "investigative-process",
    "count": 6
   },
   {
    "slug": "sport-and-politics",
    "count": 6
-  },
-  {
-   "slug": "education-system-failure",
-   "count": 5
   },
   {
    "slug": "natural-disaster",
@@ -72,23 +68,19 @@
    "count": 5
   },
   {
+   "slug": "regulatory-failure",
+   "count": 5
+  },
+  {
    "slug": "ai-and-society",
    "count": 4
   },
   {
-   "slug": "extremist-movement",
+   "slug": "education-system-failure",
    "count": 4
   },
   {
    "slug": "immigrant-experience",
-   "count": 4
-  },
-  {
-   "slug": "investigative-process",
-   "count": 4
-  },
-  {
-   "slug": "media-criticism",
    "count": 4
   },
   {
@@ -124,7 +116,23 @@
    "count": 3
   },
   {
+   "slug": "extremist-movement",
+   "count": 3
+  },
+  {
+   "slug": "history-retold",
+   "count": 3
+  },
+  {
+   "slug": "media-criticism",
+   "count": 3
+  },
+  {
    "slug": "mental-health",
+   "count": 3
+  },
+  {
+   "slug": "political-persecution",
    "count": 3
   },
   {
@@ -184,7 +192,7 @@
    "count": 2
   },
   {
-   "slug": "history-retold",
+   "slug": "indigenous-history",
    "count": 2
   },
   {
@@ -212,11 +220,19 @@
    "count": 1
   },
   {
+   "slug": "charismatic-con",
+   "count": 1
+  },
+  {
    "slug": "civil-rights-struggle",
    "count": 1
   },
   {
    "slug": "conspiracy-theory",
+   "count": 1
+  },
+  {
+   "slug": "corporate-negligence",
    "count": 1
   },
   {
@@ -228,11 +244,7 @@
    "count": 1
   },
   {
-   "slug": "identity-impostor",
-   "count": 1
-  },
-  {
-   "slug": "indigenous-history",
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -240,27 +252,11 @@
    "count": 1
   },
   {
-   "slug": "internet-culture",
-   "count": 1
-  },
-  {
    "slug": "intimate-partner-homicide",
    "count": 1
   },
   {
-   "slug": "juvenile-justice",
-   "count": 1
-  },
-  {
-   "slug": "legal-precedent",
-   "count": 1
-  },
-  {
-   "slug": "making-of-a-work",
-   "count": 1
-  },
-  {
-   "slug": "online-radicalisation",
+   "slug": "mass-shooting",
    "count": 1
   },
   {
@@ -280,19 +276,7 @@
    "count": 1
   },
   {
-   "slug": "state-sponsored-cyber-espionage",
-   "count": 1
-  },
-  {
-   "slug": "systems-and-infrastructure-design",
-   "count": 1
-  },
-  {
    "slug": "terrorism-and-aftermath",
-   "count": 1
-  },
-  {
-   "slug": "undercover-and-embedded-reporting",
    "count": 1
   }
  ],
@@ -302,10 +286,21 @@
    "subjects": [
     {
      "subject": "foreign-political-crisis",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:04:23+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -671,10 +666,21 @@
    "subjects": [
     {
      "subject": "education-system-failure",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:07:09+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1449,9 +1455,11 @@
     {
      "subject": "gender-identity",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:10:30+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1594,9 +1602,11 @@
     {
      "subject": "intimate-partner-homicide",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:56:27+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1646,9 +1656,11 @@
     {
      "subject": "economic-policy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:18+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1692,10 +1704,21 @@
    "subjects": [
     {
      "subject": "extremist-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:07:27+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
     }
    ]
   },
@@ -1895,9 +1918,11 @@
     {
      "subject": "regulatory-failure",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:07:27+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -2147,18 +2172,22 @@
    "guid": "4cff6792-53b9-440f-bdf5-151a6d64f8dd",
    "subjects": [
     {
-     "subject": "surveillance-and-privacy",
+     "subject": "state-sponsored-cyber-espionage",
      "role": "secondary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:01:36+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
     },
     {
-     "subject": "state-sponsored-cyber-espionage",
+     "subject": "surveillance-and-privacy",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:01:36+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
     }
    ],
    "entities": [
@@ -2286,10 +2315,21 @@
    "subjects": [
     {
      "subject": "regulatory-failure",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:18+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -2334,9 +2374,11 @@
     {
      "subject": "terrorism-and-aftermath",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:07:27+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
     }
    ],
    "entities": [
@@ -2498,9 +2540,11 @@
     {
      "subject": "conspiracy-theory",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:39+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3060,10 +3104,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:07:09+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3396,10 +3451,21 @@
    "subjects": [
     {
      "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "investigative-process",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:11:37+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -3561,9 +3627,11 @@
     {
      "subject": "scientific-discovery",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:39+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3604,10 +3672,21 @@
    "subjects": [
     {
      "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "political-persecution",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:11:37+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -3687,9 +3766,11 @@
     {
      "subject": "economic-policy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:07:09+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -4145,10 +4226,21 @@
     },
     {
      "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:57:27+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -4187,8 +4279,10 @@
      "subject": "civil-rights-struggle",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:44+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -4270,10 +4364,21 @@
    "subjects": [
     {
      "subject": "surveillance-and-privacy",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:23+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
     }
    ],
    "entities": [
@@ -4677,10 +4782,21 @@
     },
     {
      "subject": "online-radicalisation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "mass-shooting",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:18+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -4864,9 +4980,11 @@
     {
      "subject": "religious-abuse",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:57:27+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -5076,9 +5194,11 @@
     {
      "subject": "organised-scam-industry",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:35+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5161,8 +5281,10 @@
      "subject": "advertising-and-persuasion",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:18+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -5505,18 +5627,22 @@
    "guid": "6556c179b9f31f00115200bb",
    "subjects": [
     {
-     "subject": "institutional-coverup",
+     "subject": "juvenile-justice",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:35+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "juvenile-justice",
+     "subject": "institutional-coverup",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:35+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -5927,18 +6053,22 @@
    "guid": "65e0d916cedd730017971f61",
    "subjects": [
     {
-     "subject": "climate-change",
+     "subject": "systems-and-infrastructure-design",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:44+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "systems-and-infrastructure-design",
+     "subject": "climate-change",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:44+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -6368,18 +6498,22 @@
    "guid": "f90adecc-2f3a-11ef-8369-f7f40f236478",
    "subjects": [
     {
-     "subject": "corporate-negligence",
+     "subject": "legal-precedent",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:44+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "legal-precedent",
+     "subject": "corporate-negligence",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:44+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -6536,9 +6670,11 @@
     {
      "subject": "family-secret",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:25+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -6582,9 +6718,11 @@
     {
      "subject": "archives-and-objects",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:23+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -6810,10 +6948,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:44+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6917,9 +7066,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:03:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -7202,9 +7353,11 @@
     {
      "subject": "animal-behaviour",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:35+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -7565,9 +7718,11 @@
     {
      "subject": "adoption-and-origins",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:12:46+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -7754,18 +7909,22 @@
    "guid": "c690e64c-48e6-4e88-9f14-b2b2007e72a3",
    "subjects": [
     {
-     "subject": "indigenous-history",
+     "subject": "undercover-and-embedded-reporting",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:25+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     },
     {
-     "subject": "undercover-and-embedded-reporting",
+     "subject": "indigenous-history",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:25+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -8359,10 +8518,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:03:10+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
     }
    ],
    "entities": [
@@ -8596,9 +8766,11 @@
     {
      "subject": "indigenous-history",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:44+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -9279,10 +9451,21 @@
    "subjects": [
     {
      "subject": "economic-policy",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:32+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
     }
    ]
   },
@@ -9550,9 +9733,11 @@
     {
      "subject": "sport-and-politics",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:03:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
     }
    ],
    "entities": [

@@ -20,28 +20,12 @@
    "count": 4
   },
   {
+   "slug": "medical-system-harm",
+   "count": 4
+  },
+  {
    "slug": "identity-impostor",
    "count": 3
-  },
-  {
-   "slug": "medical-system-harm",
-   "count": 2
-  },
-  {
-   "slug": "corporate-negligence",
-   "count": 1
-  },
-  {
-   "slug": "extremist-movement",
-   "count": 1
-  },
-  {
-   "slug": "medical-research",
-   "count": 1
-  },
-  {
-   "slug": "missing-person",
-   "count": 1
   },
   {
    "slug": "religious-abuse",
@@ -49,6 +33,14 @@
   },
   {
    "slug": "unsolved-murder",
+   "count": 1
+  },
+  {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 1
+  },
+  {
+   "slug": "war-crimes-accountability",
    "count": 1
   },
   {
@@ -265,10 +257,21 @@
     },
     {
      "subject": "medical-research",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:34+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -295,6 +298,15 @@
    "guid": "gid://art19-episode-locator/V0/eBbJMhcpEX9_p2Zjh0052nVNuJP1k46RnCcOiqyfJVQ",
    "subjects": [
     {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "institutional-coverup",
      "role": "secondary",
      "confidence": "medium",
@@ -302,11 +314,13 @@
      "at": "2026-07-30T15:25:32+00:00"
     },
     {
-     "subject": "corporate-negligence",
+     "subject": "medical-system-harm",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:32+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -331,9 +345,11 @@
     {
      "subject": "whistleblower",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:42+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -388,9 +404,11 @@
     {
      "subject": "religious-abuse",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:34+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -517,6 +535,44 @@
    ]
   },
   {
+   "guid": "679b7f1d2ca2b62f9790314c",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "IRA",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ]
+  },
+  {
    "guid": "679b7f475ab37be0dfa0dd63",
    "subjects": [
     {
@@ -532,33 +588,6 @@
      "confidence": "high",
      "model": "claude-sonnet-5",
      "at": "2026-07-30T15:32:46+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "679b7f1d2ca2b62f9790314c",
-   "subjects": [
-    {
-     "subject": "institutional-coverup",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
-    },
-    {
-     "subject": "extremist-movement",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "IRA",
-     "kind": "company",
-     "confidence": "medium",
-     "at": "2026-08-01T20:17:03+00:00"
     }
    ]
   },
@@ -753,10 +782,21 @@
     },
     {
      "subject": "unsolved-murder",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -772,18 +812,22 @@
    "guid": "69299e5d635c16d6406b0b5b",
    "subjects": [
     {
-     "subject": "unsolved-murder",
+     "subject": "missing-person",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "missing-person",
+     "subject": "unsolved-murder",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

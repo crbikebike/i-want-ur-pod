@@ -4,12 +4,16 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "murder-close-to-home",
-   "count": 24
+   "slug": "stranger-homicide",
+   "count": 25
   },
   {
-   "slug": "stranger-homicide",
-   "count": 23
+   "slug": "murder-close-to-home",
+   "count": 20
+  },
+  {
+   "slug": "intimate-partner-homicide",
+   "count": 12
   },
   {
    "slug": "child-victim",
@@ -20,12 +24,8 @@
    "count": 10
   },
   {
-   "slug": "intimate-partner-homicide",
-   "count": 10
-  },
-  {
    "slug": "missing-person",
-   "count": 9
+   "count": 10
   },
   {
    "slug": "cold-case-reopened",
@@ -33,15 +33,23 @@
   },
   {
    "slug": "serial-offender",
-   "count": 3
+   "count": 4
   },
   {
    "slug": "conspiracy-theory",
    "count": 2
   },
   {
-   "slug": "unsolved-murder",
-   "count": 2
+   "slug": "audio-drama-horror",
+   "count": 1
+  },
+  {
+   "slug": "captivity-and-escape",
+   "count": 1
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 1
   },
   {
    "slug": "institutional-coverup",
@@ -56,23 +64,11 @@
    "count": 1
   },
   {
-   "slug": "mental-health",
-   "count": 1
-  },
-  {
-   "slug": "relationship-remembered",
-   "count": 1
-  },
-  {
-   "slug": "sex-work-and-exploitation",
-   "count": 1
-  },
-  {
-   "slug": "sexual-abuse-accountability",
-   "count": 1
-  },
-  {
    "slug": "survival-story",
+   "count": 1
+  },
+  {
+   "slug": "unsolved-murder",
    "count": 1
   },
   {
@@ -159,8 +155,10 @@
      "subject": "institutional-coverup",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:17+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -184,9 +182,11 @@
     {
      "subject": "family-annihilation-and-parricide",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:11+00:00"
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -204,8 +204,10 @@
      "subject": "stranger-homicide",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:41+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -222,10 +224,21 @@
    "subjects": [
     {
      "subject": "stranger-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "audio-drama-horror",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:10+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -256,8 +269,10 @@
      "subject": "mass-shooting",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -267,9 +282,11 @@
     {
      "subject": "survival-story",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:10+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -293,9 +310,11 @@
     {
      "subject": "stranger-homicide",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:09+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -330,18 +349,22 @@
    "guid": "gid://art19-episode-locator/V0/4yhTM0bdzPz5IW3ARf5ZJ8JHAIdeJughMN4yP5kpGk8",
    "subjects": [
     {
-     "subject": "forensic-evidence",
+     "subject": "murder-close-to-home",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:17+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     },
     {
-     "subject": "murder-close-to-home",
+     "subject": "forensic-evidence",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:17+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -410,9 +433,11 @@
     {
      "subject": "stranger-homicide",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:49+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -457,9 +482,11 @@
     {
      "subject": "wrongful-conviction",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -497,9 +524,11 @@
     {
      "subject": "murder-close-to-home",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -667,9 +696,11 @@
     {
      "subject": "stranger-homicide",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -810,9 +841,11 @@
     {
      "subject": "murder-close-to-home",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -887,10 +920,21 @@
    "subjects": [
     {
      "subject": "murder-close-to-home",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:49+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -952,10 +996,21 @@
    "subjects": [
     {
      "subject": "murder-close-to-home",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -990,18 +1045,22 @@
    "guid": "https://api.spreaker.com/episode/61075023",
    "subjects": [
     {
-     "subject": "missing-person",
+     "subject": "murder-close-to-home",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:17+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     },
     {
-     "subject": "murder-close-to-home",
+     "subject": "missing-person",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:17+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1174,10 +1233,21 @@
    "subjects": [
     {
      "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:17+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -1226,9 +1296,11 @@
     {
      "subject": "murder-close-to-home",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:49+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1326,10 +1398,21 @@
     },
     {
      "subject": "murder-close-to-home",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:57+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1492,9 +1575,11 @@
     {
      "subject": "murder-close-to-home",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1511,9 +1596,11 @@
     {
      "subject": "juvenile-justice",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:57+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1537,10 +1624,21 @@
     },
     {
      "subject": "sexual-abuse-accountability",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:17+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "captivity-and-escape",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1557,10 +1655,21 @@
    "subjects": [
     {
      "subject": "relationship-remembered",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:11+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -1675,10 +1784,21 @@
     },
     {
      "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1722,9 +1842,11 @@
     {
      "subject": "stranger-homicide",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:17+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1775,8 +1897,10 @@
      "subject": "stranger-homicide",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:41+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1952,9 +2076,11 @@
     {
      "subject": "murder-close-to-home",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:41+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -1964,9 +2090,11 @@
     {
      "subject": "vanishing-and-institutional-failure",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:49+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2213,10 +2341,21 @@
    "subjects": [
     {
      "subject": "murder-close-to-home",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:10+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -2319,9 +2458,11 @@
     {
      "subject": "murder-close-to-home",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:41+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ],
    "entities": [
@@ -2418,10 +2559,21 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

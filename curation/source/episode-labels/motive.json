@@ -16,23 +16,23 @@
    "count": 4
   },
   {
-   "slug": "investigative-process",
+   "slug": "mass-shooting",
    "count": 3
   },
   {
-   "slug": "juvenile-justice",
+   "slug": "prison-life",
    "count": 3
-  },
-  {
-   "slug": "economic-policy",
-   "count": 2
   },
   {
    "slug": "institutional-coverup",
    "count": 2
   },
   {
-   "slug": "mass-shooting",
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "juvenile-justice",
    "count": 2
   },
   {
@@ -44,15 +44,15 @@
    "count": 2
   },
   {
-   "slug": "prison-life",
-   "count": 2
-  },
-  {
    "slug": "prosecutorial-power",
    "count": 2
   },
   {
    "slug": "child-victim",
+   "count": 1
+  },
+  {
+   "slug": "cold-case-reopened",
    "count": 1
   },
   {
@@ -68,11 +68,15 @@
    "count": 1
   },
   {
+   "slug": "economic-policy",
+   "count": 1
+  },
+  {
    "slug": "racial-violence",
    "count": 1
   },
   {
-   "slug": "unsolved-murder",
+   "slug": "stranger-homicide",
    "count": 1
   },
   {
@@ -292,10 +296,21 @@
    "subjects": [
     {
      "subject": "juvenile-justice",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:47+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -323,18 +338,22 @@
    "guid": "fdda9531-1ff8-460f-8306-89ba402faf68",
    "subjects": [
     {
-     "subject": "cold-case-reopened",
+     "subject": "unsolved-murder",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:41+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "unsolved-murder",
+     "subject": "cold-case-reopened",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:41+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -423,9 +442,11 @@
     {
      "subject": "investigative-process",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:47+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -674,9 +695,11 @@
     {
      "subject": "institutional-coverup",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:27:42+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -713,8 +736,10 @@
      "subject": "whistleblower",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:27:42+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -769,9 +794,11 @@
     {
      "subject": "courtroom-trial",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:17+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -789,8 +816,10 @@
      "subject": "death-in-custody",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:27+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -819,10 +848,21 @@
    "subjects": [
     {
      "subject": "economic-policy",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -854,9 +894,11 @@
     {
      "subject": "vanishing-and-institutional-failure",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:47+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -893,10 +935,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "mass-shooting",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:27+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -905,10 +958,21 @@
    "subjects": [
     {
      "subject": "community-in-conflict",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:33+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -917,10 +981,21 @@
    "subjects": [
     {
      "subject": "mass-shooting",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:27:42+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "community-in-conflict",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -930,9 +1005,11 @@
     {
      "subject": "work-and-labour-conditions",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:17+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -950,8 +1027,10 @@
      "subject": "child-victim",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:14:53+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -969,9 +1048,11 @@
     {
      "subject": "prosecutorial-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:27+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -981,9 +1062,11 @@
     {
      "subject": "mass-shooting",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:44+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1001,8 +1084,10 @@
      "subject": "racial-violence",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:42+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

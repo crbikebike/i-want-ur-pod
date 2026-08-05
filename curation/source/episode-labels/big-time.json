@@ -9,7 +9,7 @@
   },
   {
    "slug": "heist-and-robbery",
-   "count": 4
+   "count": 5
   },
   {
    "slug": "sports-scandal",
@@ -20,15 +20,11 @@
    "count": 1
   },
   {
-   "slug": "kidnapping-and-captivity",
-   "count": 1
-  },
-  {
    "slug": "medical-deception",
    "count": 1
   },
   {
-   "slug": "organised-scam-industry",
+   "slug": "organised-crime",
    "count": 1
   }
  ],
@@ -38,10 +34,21 @@
    "subjects": [
     {
      "subject": "charismatic-con",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:59+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -52,8 +59,10 @@
      "subject": "hacking-and-cybercrime",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:24+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -109,8 +118,10 @@
      "subject": "medical-deception",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -128,9 +139,11 @@
     {
      "subject": "heist-and-robbery",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:07+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -235,9 +248,11 @@
     {
      "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -246,10 +261,21 @@
    "subjects": [
     {
      "subject": "organised-scam-industry",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:07+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -258,10 +284,21 @@
    "subjects": [
     {
      "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "charismatic-con",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:20+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [

@@ -16,11 +16,11 @@
    "count": 1
   },
   {
-   "slug": "language-and-words",
+   "slug": "history-retold",
    "count": 1
   },
   {
-   "slug": "media-criticism",
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -68,18 +68,22 @@
    "guid": "gid://art19-episode-locator/V0/074MqVF2w5R771zGbKkcB6ygb2GV5iKUW4M_vlKTqbg",
    "subjects": [
     {
-     "subject": "history-retold",
+     "subject": "media-criticism",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:52+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "media-criticism",
+     "subject": "history-retold",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:52+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -97,8 +101,10 @@
      "subject": "slavery-and-its-legacy",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:55:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -143,8 +149,10 @@
      "subject": "racial-violence",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:19+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -251,8 +259,10 @@
      "subject": "civil-rights-struggle",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:28+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -311,8 +321,10 @@
      "subject": "political-scandal",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:52+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -329,10 +341,21 @@
    "subjects": [
     {
      "subject": "language-and-words",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:28+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   }

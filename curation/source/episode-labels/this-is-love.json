@@ -5,26 +5,26 @@
  "subjectsUsed": [
   {
    "slug": "relationship-remembered",
-   "count": 20
+   "count": 21
   },
   {
    "slug": "animal-behaviour",
    "count": 13
   },
   {
-   "slug": "art-and-artists",
+   "slug": "personal-transformation",
+   "count": 12
+  },
+  {
+   "slug": "romance-and-heartbreak",
    "count": 10
   },
   {
    "slug": "everyday-mystery",
-   "count": 10
-  },
-  {
-   "slug": "personal-transformation",
    "count": 9
   },
   {
-   "slug": "romance-and-heartbreak",
+   "slug": "art-and-artists",
    "count": 8
   },
   {
@@ -36,15 +36,19 @@
    "count": 7
   },
   {
-   "slug": "sense-of-place",
-   "count": 6
+   "slug": "grief-and-loss",
+   "count": 5
   },
   {
-   "slug": "grief-and-loss",
-   "count": 4
+   "slug": "sense-of-place",
+   "count": 5
   },
   {
    "slug": "wilderness-expedition-survival",
+   "count": 5
+  },
+  {
+   "slug": "true-crime-as-genre",
    "count": 4
   },
   {
@@ -56,11 +60,15 @@
    "count": 3
   },
   {
-   "slug": "folklore-and-legend",
+   "slug": "internet-culture",
+   "count": 3
+  },
+  {
+   "slug": "celebrity-life",
    "count": 2
   },
   {
-   "slug": "friendship",
+   "slug": "folklore-and-legend",
    "count": 2
   },
   {
@@ -69,14 +77,6 @@
   },
   {
    "slug": "history-retold",
-   "count": 2
-  },
-  {
-   "slug": "internet-culture",
-   "count": 2
-  },
-  {
-   "slug": "media-criticism",
    "count": 2
   },
   {
@@ -92,19 +92,7 @@
    "count": 2
   },
   {
-   "slug": "talking-about-love",
-   "count": 2
-  },
-  {
-   "slug": "true-crime-as-genre",
-   "count": 2
-  },
-  {
    "slug": "ageing-and-mortality",
-   "count": 1
-  },
-  {
-   "slug": "anthology-framing-fiction",
    "count": 1
   },
   {
@@ -116,15 +104,11 @@
    "count": 1
   },
   {
-   "slug": "celebrity-life",
-   "count": 1
-  },
-  {
-   "slug": "child-victim",
-   "count": 1
-  },
-  {
    "slug": "chronic-illness",
+   "count": 1
+  },
+  {
+   "slug": "climate-change",
    "count": 1
   },
   {
@@ -140,15 +124,19 @@
    "count": 1
   },
   {
+   "slug": "everyday-object-design",
+   "count": 1
+  },
+  {
    "slug": "family-secret",
    "count": 1
   },
   {
-   "slug": "founder-biography",
+   "slug": "friendship",
    "count": 1
   },
   {
-   "slug": "games-and-play",
+   "slug": "graphic-and-symbol-design",
    "count": 1
   },
   {
@@ -164,23 +152,11 @@
    "count": 1
   },
   {
-   "slug": "mental-health",
-   "count": 1
-  },
-  {
    "slug": "parenting",
    "count": 1
   },
   {
-   "slug": "pioneer-biography",
-   "count": 1
-  },
-  {
    "slug": "political-persecution",
-   "count": 1
-  },
-  {
-   "slug": "religious-community",
    "count": 1
   },
   {
@@ -189,6 +165,10 @@
   },
   {
    "slug": "supernatural-encounter",
+   "count": 1
+  },
+  {
+   "slug": "talking-about-love",
    "count": 1
   },
   {
@@ -206,10 +186,21 @@
    "subjects": [
     {
      "subject": "romance-and-heartbreak",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -305,9 +296,11 @@
     {
      "subject": "immigrant-experience",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:22+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -369,10 +362,21 @@
    "subjects": [
     {
      "subject": "talking-about-love",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:37+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -381,10 +385,21 @@
    "subjects": [
     {
      "subject": "relationship-remembered",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:51+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ]
   },
@@ -405,10 +420,21 @@
    "subjects": [
     {
      "subject": "relationship-remembered",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -417,10 +443,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:51+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
+     "subject": "graphic-and-symbol-design",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ]
   },
@@ -481,10 +518,21 @@
    "subjects": [
     {
      "subject": "relationship-remembered",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:22+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -493,10 +541,21 @@
    "subjects": [
     {
      "subject": "friendship",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -626,9 +685,11 @@
     {
      "subject": "animal-behaviour",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:36+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -830,10 +891,21 @@
    "subjects": [
     {
      "subject": "everyday-mystery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:40+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -970,9 +1042,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:58+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -989,9 +1063,11 @@
     {
      "subject": "epidemic-and-public-health",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:37+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1078,18 +1154,22 @@
    "guid": "1000527318208",
    "subjects": [
     {
-     "subject": "everyday-mystery",
+     "subject": "mental-health",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:37+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "mental-health",
+     "subject": "everyday-mystery",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:37+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1107,9 +1187,11 @@
     {
      "subject": "political-persecution",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:51+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -1158,6 +1240,15 @@
    "guid": "prx_119_53adb5e9-c579-4227-b2b2-4dbce14e00cd",
    "subjects": [
     {
+     "subject": "anthology-framing-fiction",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
      "subject": "talking-about-love",
      "role": "secondary",
      "confidence": "medium",
@@ -1165,11 +1256,13 @@
      "at": "2026-07-29T23:17:36+00:00"
     },
     {
-     "subject": "anthology-framing-fiction",
+     "subject": "romance-and-heartbreak",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:36+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1198,10 +1291,21 @@
    "subjects": [
     {
      "subject": "sense-of-place",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "climate-change",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1218,9 +1322,11 @@
     {
      "subject": "chronic-illness",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:58+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1372,9 +1478,11 @@
     {
      "subject": "parenting",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:22+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1591,8 +1699,10 @@
      "subject": "disaster-and-accident-survival",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:22+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1704,9 +1814,11 @@
     {
      "subject": "athlete-profile",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:29+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1736,9 +1848,11 @@
     {
      "subject": "relationship-remembered",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:41+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -1755,9 +1869,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:51+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -1781,9 +1897,11 @@
     {
      "subject": "war-and-its-conduct",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1829,8 +1947,10 @@
      "subject": "artist-band-biography",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:22+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1854,9 +1974,11 @@
     {
      "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1978,6 +2100,15 @@
    "guid": "298c0992-773e-11ed-b8da-77480074f187",
    "subjects": [
     {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
      "subject": "parenting",
      "role": "secondary",
      "confidence": "medium",
@@ -1985,11 +2116,13 @@
      "at": "2026-07-30T14:53:51+00:00"
     },
     {
-     "subject": "founder-biography",
+     "subject": "everyday-object-design",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:51+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -2020,8 +2153,10 @@
      "subject": "true-crime-as-genre",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:36+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2098,9 +2233,11 @@
     {
      "subject": "true-crime-as-genre",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:29+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2116,18 +2253,22 @@
    "guid": "2a038b98-773e-11ed-b8da-47a38c2770dc",
    "subjects": [
     {
-     "subject": "ageing-and-mortality",
+     "subject": "religious-community",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:41+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     },
     {
-     "subject": "religious-community",
+     "subject": "ageing-and-mortality",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:41+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -2144,10 +2285,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:51+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ]
   },
@@ -2156,10 +2308,21 @@
    "subjects": [
     {
      "subject": "games-and-play",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2256,10 +2419,21 @@
    "subjects": [
     {
      "subject": "ageing-and-mortality",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:58+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2341,9 +2515,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:51+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -2359,18 +2535,22 @@
    "guid": "589f6716-5667-11ee-bdc1-53fada04f3c4",
    "subjects": [
     {
-     "subject": "grief-and-loss",
+     "subject": "child-victim",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "child-victim",
+     "subject": "grief-and-loss",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2450,8 +2630,10 @@
      "subject": "family-secret",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2614,9 +2796,11 @@
     {
      "subject": "song-and-album-origin",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:36+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2648,8 +2832,10 @@
      "subject": "work-and-labour-conditions",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:22+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2667,9 +2853,11 @@
     {
      "subject": "making-of-a-work",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2760,9 +2948,11 @@
     {
      "subject": "disability-and-access",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:41+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -2839,9 +3029,11 @@
     {
      "subject": "supernatural-encounter",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:34+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2968,10 +3160,21 @@
    "subjects": [
     {
      "subject": "relationship-remembered",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:32+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ]
   },
@@ -3074,9 +3277,11 @@
     {
      "subject": "romance-and-heartbreak",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -3159,10 +3364,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:32+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ]
   },
@@ -3171,10 +3387,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -3314,18 +3541,22 @@
    "guid": "896f4a20-d2c4-11ef-8fc0-576f8f45a60e",
    "subjects": [
     {
-     "subject": "celebrity-life",
+     "subject": "sense-of-place",
      "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:29+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "sense-of-place",
+     "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:29+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -3351,8 +3582,10 @@
      "subject": "everyday-mystery",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:41+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -3424,8 +3657,10 @@
      "subject": "indigenous-history",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:34+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -3507,18 +3742,22 @@
    "guid": "8a8e2656-d2c4-11ef-8fc0-e7c357c70d28",
    "subjects": [
     {
-     "subject": "wilderness-expedition-survival",
+     "subject": "pioneer-biography",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:29+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "pioneer-biography",
+     "subject": "wilderness-expedition-survival",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:29+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3647,10 +3886,21 @@
    "subjects": [
     {
      "subject": "everyday-mystery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:09+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },

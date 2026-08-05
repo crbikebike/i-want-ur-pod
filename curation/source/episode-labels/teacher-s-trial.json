@@ -5,18 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "courtroom-trial",
-   "count": 27
+   "count": 28
   },
   {
    "slug": "sexual-abuse-accountability",
    "count": 8
   },
   {
-   "slug": "intimate-partner-homicide",
-   "count": 3
+   "slug": "books-and-writing",
+   "count": 2
   },
   {
-   "slug": "books-and-writing",
+   "slug": "intimate-partner-homicide",
    "count": 2
   },
   {
@@ -24,7 +24,7 @@
    "count": 2
   },
   {
-   "slug": "institutional-coverup",
+   "slug": "forensic-evidence",
    "count": 1
   },
   {
@@ -759,10 +759,21 @@
    "subjects": [
     {
      "subject": "institutional-coverup",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:04+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -980,9 +991,11 @@
     {
      "subject": "sexual-abuse-accountability",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:13+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1026,10 +1039,21 @@
    "subjects": [
     {
      "subject": "intimate-partner-homicide",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:30:41+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1048,8 +1072,10 @@
      "subject": "investigative-process",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1207,9 +1233,11 @@
     {
      "subject": "missing-person",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:56+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

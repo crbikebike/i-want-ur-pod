@@ -8,11 +8,11 @@
    "count": 4
   },
   {
-   "slug": "media-criticism",
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
-   "slug": "voluntary-disappearance",
+   "slug": "identity-impostor",
    "count": 1
   }
  ],
@@ -133,10 +133,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:26+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -144,18 +155,22 @@
    "guid": "gid://art19-episode-locator/V0/aNoJtJ4FgDNn06GQvC1ecGDItz2uDM3FhcbfBGX5wJw",
    "subjects": [
     {
-     "subject": "identity-impostor",
+     "subject": "voluntary-disappearance",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:10:20+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "voluntary-disappearance",
+     "subject": "identity-impostor",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:10:20+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [

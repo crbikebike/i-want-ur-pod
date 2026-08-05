@@ -12,7 +12,7 @@
    "count": 4
   },
   {
-   "slug": "body-never-found",
+   "slug": "child-victim",
    "count": 1
   }
  ],
@@ -153,6 +153,44 @@
    ]
   },
   {
+   "guid": "urn:bbc:podcast:p0bk5p6w",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:13+00:00"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl Grimmer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:13+00:00"
+    }
+   ]
+  },
+  {
    "guid": "urn:bbc:podcast:p0bk5s2b",
    "subjects": [
     {
@@ -176,33 +214,6 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-08-01T20:21:40+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "urn:bbc:podcast:p0bk5p6w",
-   "subjects": [
-    {
-     "subject": "courtroom-trial",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:13+00:00"
-    },
-    {
-     "subject": "body-never-found",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:13+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Cheryl Grimmer",
-     "kind": "person",
-     "confidence": "high",
-     "at": "2026-07-30T15:10:13+00:00"
     }
    ]
   },

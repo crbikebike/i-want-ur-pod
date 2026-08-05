@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "organised-crime",
-   "count": 17
+   "count": 16
   },
   {
    "slug": "corruption-in-local-power",
-   "count": 13
+   "count": 14
   },
   {
    "slug": "political-scandal",
@@ -24,6 +24,10 @@
    "count": 3
   },
   {
+   "slug": "murder-close-to-home",
+   "count": 2
+  },
+  {
    "slug": "addiction-and-recovery",
    "count": 1
   },
@@ -33,14 +37,6 @@
   },
   {
    "slug": "making-of-a-work",
-   "count": 1
-  },
-  {
-   "slug": "murder-close-to-home",
-   "count": 1
-  },
-  {
-   "slug": "musician-death",
    "count": 1
   },
   {
@@ -78,10 +74,21 @@
    "subjects": [
     {
      "subject": "organised-crime",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -557,8 +564,10 @@
      "subject": "making-of-a-work",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -568,9 +577,11 @@
     {
      "subject": "organised-crime",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:49:15+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -587,9 +598,11 @@
     {
      "subject": "cold-case-reopened",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:27+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -641,9 +654,11 @@
     {
      "subject": "sexual-abuse-accountability",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -661,9 +676,11 @@
     {
      "subject": "corruption-in-local-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -832,9 +849,11 @@
     {
      "subject": "wrongful-conviction",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:27+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -899,9 +918,11 @@
     {
      "subject": "addiction-and-recovery",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -985,9 +1006,11 @@
     {
      "subject": "serial-offender",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1012,9 +1035,11 @@
     {
      "subject": "whistleblower",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1064,10 +1089,21 @@
     },
     {
      "subject": "musician-death",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:23+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1092,9 +1128,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:27+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1233,8 +1271,10 @@
      "subject": "personal-transformation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1259,9 +1299,11 @@
     {
      "subject": "terrorism-and-aftermath",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:49:15+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1286,9 +1328,11 @@
     {
      "subject": "murder-close-to-home",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

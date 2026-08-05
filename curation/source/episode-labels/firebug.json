@@ -8,7 +8,7 @@
    "count": 2
   },
   {
-   "slug": "true-crime-as-genre",
+   "slug": "cold-case-reopened",
    "count": 1
   }
  ],
@@ -56,10 +56,21 @@
    "subjects": [
     {
      "subject": "true-crime-as-genre",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   }

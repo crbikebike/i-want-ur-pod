@@ -12,7 +12,7 @@
    "count": 3
   },
   {
-   "slug": "sense-of-place",
+   "slug": "history-retold",
    "count": 1
   }
  ],
@@ -238,10 +238,21 @@
    "subjects": [
     {
      "subject": "sense-of-place",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:26:51+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

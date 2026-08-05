@@ -5,11 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "religious-community",
-   "count": 12
-  },
-  {
-   "slug": "religious-abuse",
-   "count": 1
+   "count": 13
   }
  ],
  "episodes": [
@@ -275,18 +271,22 @@
    "guid": "f8ae05d2-4f7b-4f95-bb89-e0c49599cce5",
    "subjects": [
     {
-     "subject": "religious-community",
+     "subject": "religious-abuse",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:20+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "religious-abuse",
+     "subject": "religious-community",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:20+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

@@ -5,14 +5,10 @@
  "subjectsUsed": [
   {
    "slug": "serial-offender",
-   "count": 6
+   "count": 7
   },
   {
-   "slug": "investigative-process",
-   "count": 1
-  },
-  {
-   "slug": "unsolved-murder",
+   "slug": "making-of-a-work",
    "count": 1
   }
  ],
@@ -137,10 +133,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "making-of-a-work",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:23:22+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -148,18 +155,22 @@
    "guid": "0f887a4e-51ae-443f-93cd-006c9fe77455",
    "subjects": [
     {
-     "subject": "serial-offender",
+     "subject": "unsolved-murder",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:14+00:00"
+     "at": "2026-08-05T04:42:42+00:00"
     },
     {
-     "subject": "unsolved-murder",
+     "subject": "serial-offender",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:14+00:00"
+     "at": "2026-08-05T04:42:42+00:00"
     }
    ],
    "entities": [

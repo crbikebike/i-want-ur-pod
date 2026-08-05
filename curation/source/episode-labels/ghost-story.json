@@ -4,19 +4,15 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "identity-impostor",
-   "count": 1
-  },
-  {
-   "slug": "language-and-words",
-   "count": 1
-  },
-  {
-   "slug": "paranormal-investigation",
-   "count": 1
-  },
-  {
    "slug": "unsolved-murder",
+   "count": 2
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
    "count": 1
   }
  ],
@@ -26,10 +22,21 @@
    "subjects": [
     {
      "subject": "paranormal-investigation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:08:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -46,9 +53,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:10:20+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -57,10 +66,21 @@
    "subjects": [
     {
      "subject": "language-and-words",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -71,8 +91,10 @@
      "subject": "identity-impostor",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:26+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   }

@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "state-sponsored-cyber-espionage",
-   "count": 51
+   "count": 53
   },
   {
    "slug": "hacking-and-cybercrime",
-   "count": 39
+   "count": 48
   },
   {
    "slug": "cybercrime-for-profit",
@@ -20,12 +20,12 @@
    "count": 24
   },
   {
-   "slug": "hacker-life-story",
-   "count": 18
-  },
-  {
    "slug": "corporate-breach-response",
    "count": 17
+  },
+  {
+   "slug": "hacker-life-story",
+   "count": 15
   },
   {
    "slug": "surveillance-and-privacy",
@@ -33,14 +33,14 @@
   },
   {
    "slug": "systems-and-infrastructure-design",
-   "count": 13
-  },
-  {
-   "slug": "cold-war-espionage",
-   "count": 7
+   "count": 11
   },
   {
    "slug": "ai-and-society",
+   "count": 6
+  },
+  {
+   "slug": "cold-war-espionage",
    "count": 6
   },
   {
@@ -52,7 +52,7 @@
    "count": 3
   },
   {
-   "slug": "games-and-play",
+   "slug": "founder-biography",
    "count": 3
   },
   {
@@ -68,7 +68,11 @@
    "count": 3
   },
   {
-   "slug": "advertising-and-persuasion",
+   "slug": "archives-and-objects",
+   "count": 2
+  },
+  {
+   "slug": "charismatic-con",
    "count": 2
   },
   {
@@ -76,7 +80,7 @@
    "count": 2
   },
   {
-   "slug": "management-and-leadership",
+   "slug": "games-and-play",
    "count": 2
   },
   {
@@ -84,11 +88,7 @@
    "count": 2
   },
   {
-   "slug": "archives-and-objects",
-   "count": 1
-  },
-  {
-   "slug": "charismatic-con",
+   "slug": "advertising-and-persuasion",
    "count": 1
   },
   {
@@ -97,14 +97,6 @@
   },
   {
    "slug": "engineering-failure",
-   "count": 1
-  },
-  {
-   "slug": "everyday-mystery",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
    "count": 1
   },
   {
@@ -124,14 +116,6 @@
    "count": 1
   },
   {
-   "slug": "legal-precedent",
-   "count": 1
-  },
-  {
-   "slug": "media-criticism",
-   "count": 1
-  },
-  {
    "slug": "mental-health",
    "count": 1
   },
@@ -145,14 +129,6 @@
   },
   {
    "slug": "startup-collapse",
-   "count": 1
-  },
-  {
-   "slug": "transport-and-infrastructure",
-   "count": 1
-  },
-  {
-   "slug": "war-and-its-conduct",
    "count": 1
   },
   {
@@ -1098,10 +1074,21 @@
     },
     {
      "subject": "hacker-life-story",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:12+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -1918,10 +1905,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:05+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -2089,9 +2087,11 @@
     {
      "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:12:41+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2101,9 +2101,11 @@
     {
      "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:05+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -2113,9 +2115,11 @@
     {
      "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:01:31+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -2192,10 +2196,21 @@
    "subjects": [
     {
      "subject": "cold-war-espionage",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:20:25+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2272,8 +2287,10 @@
      "subject": "corporate-breach-response",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:05+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ]
   },
@@ -2502,9 +2519,11 @@
     {
      "subject": "early-hacker-history",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:05+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -2545,18 +2564,22 @@
    "guid": "2e909e6b-f298-483f-b218-ece147e999ee",
    "subjects": [
     {
-     "subject": "hacking-and-cybercrime",
+     "subject": "management-and-leadership",
      "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:24+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     },
     {
-     "subject": "management-and-leadership",
+     "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:24+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -2574,9 +2597,11 @@
     {
      "subject": "cybercrime-for-profit",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:13+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -2647,9 +2672,11 @@
     {
      "subject": "crypto-collapse",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:49+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2750,10 +2777,21 @@
    "subjects": [
     {
      "subject": "hacking-and-cybercrime",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:13+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -2993,6 +3031,15 @@
    "guid": "2eb0c6bd-b79b-44cb-867e-d46f4341e039",
    "subjects": [
     {
+     "subject": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "scientific-discovery",
      "role": "secondary",
      "confidence": "low",
@@ -3000,11 +3047,13 @@
      "at": "2026-07-29T23:20:25+00:00"
     },
     {
-     "subject": "everyday-mystery",
+     "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:20:25+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -3022,9 +3071,11 @@
     {
      "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:12+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -3349,10 +3400,21 @@
    "subjects": [
     {
      "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
+    },
+    {
+     "subject": "founder-biography",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:13+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
     }
    ],
    "entities": [
@@ -3501,18 +3563,22 @@
    "guid": "ce9f29e4-ee22-40c3-8014-7dfe64b36dbd",
    "subjects": [
     {
-     "subject": "hacking-and-cybercrime",
+     "subject": "internet-culture",
      "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:01:31+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "internet-culture",
+     "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:01:31+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -3616,10 +3682,21 @@
    "subjects": [
     {
      "subject": "hacker-life-story",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:06+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -3732,6 +3809,15 @@
    "guid": "7b37a220-d905-40a1-a382-326105535f51",
    "subjects": [
     {
+     "subject": "hacker-life-story",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
+    },
+    {
      "subject": "tech-industry-power",
      "role": "secondary",
      "confidence": "low",
@@ -3739,11 +3825,13 @@
      "at": "2026-07-29T23:17:13+00:00"
     },
     {
-     "subject": "hacker-life-story",
+     "subject": "founder-biography",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:13+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
     }
    ],
    "entities": [
@@ -3767,9 +3855,11 @@
     {
      "subject": "state-sponsored-cyber-espionage",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:21:28+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ],
    "entities": [
@@ -3857,18 +3947,22 @@
    "guid": "a488b1de-29c9-4d96-a1bf-7d72da756983",
    "subjects": [
     {
-     "subject": "hacking-and-cybercrime",
+     "subject": "systems-and-infrastructure-design",
      "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:01+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     },
     {
-     "subject": "systems-and-infrastructure-design",
+     "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:01+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -3965,9 +4059,11 @@
     {
      "subject": "surveillance-and-privacy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:21:28+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ],
    "entities": [
@@ -4064,9 +4160,11 @@
     {
      "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:01+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -4179,6 +4277,15 @@
    "guid": "b63bd816-47d6-4b37-a61b-9cd1afa684eb",
    "subjects": [
     {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
      "subject": "surveillance-and-privacy",
      "role": "secondary",
      "confidence": "medium",
@@ -4186,11 +4293,13 @@
      "at": "2026-07-29T08:55:06+00:00"
     },
     {
-     "subject": "legal-precedent",
+     "subject": "law-explained",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:06+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -4254,9 +4363,11 @@
     {
      "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:01+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -4299,18 +4410,22 @@
    "guid": "10f8e394-829e-4557-a4aa-ab0ca4fdddf1",
    "subjects": [
     {
-     "subject": "hacking-and-cybercrime",
+     "subject": "management-and-leadership",
      "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:24+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     },
     {
-     "subject": "management-and-leadership",
+     "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:24+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ]
   },
@@ -4411,10 +4526,21 @@
     },
     {
      "subject": "systems-and-infrastructure-design",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:05+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4463,10 +4589,21 @@
     },
     {
      "subject": "systems-and-infrastructure-design",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:01+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ]
   },
@@ -4503,8 +4640,10 @@
      "subject": "mental-health",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:24+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -4732,9 +4871,11 @@
     {
      "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:21:28+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ]
   },
@@ -4864,9 +5005,11 @@
     {
      "subject": "crypto-collapse",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:01:31+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -4976,9 +5119,11 @@
     {
      "subject": "hacking-and-cybercrime",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:06+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -5004,8 +5149,10 @@
      "subject": "informant-and-undercover",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:05+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -5035,10 +5182,21 @@
     },
     {
      "subject": "transport-and-infrastructure",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "systems-and-infrastructure-design",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:13:46+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -5286,8 +5444,10 @@
      "subject": "regulatory-failure",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:24+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -5310,10 +5470,21 @@
    "subjects": [
     {
      "subject": "games-and-play",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:13+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -5377,9 +5548,11 @@
     {
      "subject": "startup-collapse",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:05+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -5676,6 +5849,15 @@
    "guid": "d986d2b7-6339-451e-97dc-3e92b8d89666",
    "subjects": [
     {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
      "subject": "war-and-its-conduct",
      "role": "secondary",
      "confidence": "medium",
@@ -5683,11 +5865,13 @@
      "at": "2026-07-29T23:17:13+00:00"
     },
     {
-     "subject": "advertising-and-persuasion",
+     "subject": "state-sponsored-cyber-espionage",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:13+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -5967,9 +6151,11 @@
     {
      "subject": "corporate-negligence",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:21:28+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -6028,9 +6214,11 @@
     {
      "subject": "archives-and-objects",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:05+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6146,8 +6334,10 @@
      "subject": "work-and-labour-conditions",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:13+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
     }
    ]
   },
@@ -6479,18 +6669,22 @@
    "guid": "ce80fc60-3726-4427-82f5-9c9d46fd0eb9",
    "subjects": [
     {
-     "subject": "state-sponsored-cyber-espionage",
+     "subject": "war-and-its-conduct",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:13:46+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "war-and-its-conduct",
+     "subject": "state-sponsored-cyber-espionage",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:13:46+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6522,8 +6716,10 @@
      "subject": "engineering-failure",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:01+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -6620,9 +6816,11 @@
     {
      "subject": "investigative-process",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:16+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -6653,9 +6851,11 @@
     {
      "subject": "organised-scam-industry",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:21:28+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ],
    "entities": [
@@ -6704,11 +6904,13 @@
    "guid": "c28cf3a7-7202-4e1d-9bf4-e7d69c60cdcb",
    "subjects": [
     {
-     "subject": "internet-culture",
+     "subject": "law-explained",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:05+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
      "subject": "legal-precedent",
@@ -6718,11 +6920,13 @@
      "at": "2026-07-29T23:18:05+00:00"
     },
     {
-     "subject": "law-explained",
+     "subject": "internet-culture",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:05+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6750,18 +6954,22 @@
    "guid": "8dd78988-0c66-4cdc-8202-d3e961116be4",
    "subjects": [
     {
-     "subject": "archives-and-objects",
+     "subject": "history-retold",
      "role": "secondary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:01+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "archives-and-objects",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:01+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -6792,9 +7000,11 @@
     {
      "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:02:39+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -6832,9 +7042,11 @@
     {
      "subject": "identity-impostor",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:26+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [

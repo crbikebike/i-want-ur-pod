@@ -5,22 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "murder-for-hire",
-   "count": 7
+   "count": 8
   },
   {
    "slug": "unsolved-murder",
-   "count": 7
+   "count": 8
   },
   {
    "slug": "cold-case-reopened",
-   "count": 1
-  },
-  {
-   "slug": "courtroom-trial",
-   "count": 1
-  },
-  {
-   "slug": "institutional-coverup",
    "count": 1
   },
   {
@@ -38,10 +30,21 @@
    "subjects": [
     {
      "subject": "institutional-coverup",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:42+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -126,9 +129,11 @@
     {
      "subject": "organised-crime",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:35+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -279,9 +284,11 @@
     {
      "subject": "cold-case-reopened",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:15:37+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -528,8 +535,10 @@
      "subject": "labour-history",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:15:37+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -551,18 +560,22 @@
    "guid": "d5fbc282-61b3-11f0-8aba-e3c5ca9e3a36",
    "subjects": [
     {
-     "subject": "murder-for-hire",
+     "subject": "courtroom-trial",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:37+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "courtroom-trial",
+     "subject": "murder-for-hire",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:37+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

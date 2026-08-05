@@ -5,14 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "reproductive-health",
-   "count": 13
-  },
-  {
-   "slug": "chronic-illness",
-   "count": 7
+   "count": 11
   },
   {
    "slug": "medical-system-harm",
+   "count": 9
+  },
+  {
+   "slug": "chronic-illness",
    "count": 4
   },
   {
@@ -54,10 +54,21 @@
    "subjects": [
     {
      "subject": "chronic-illness",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -129,9 +140,11 @@
     {
      "subject": "making-of-a-work",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -171,10 +184,21 @@
    "subjects": [
     {
      "subject": "reproductive-health",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:08:21+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -183,10 +207,21 @@
    "subjects": [
     {
      "subject": "reproductive-health",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -241,9 +276,11 @@
     {
      "subject": "corporate-negligence",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -292,9 +329,11 @@
     {
      "subject": "everyday-mystery",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -328,9 +367,11 @@
     {
      "subject": "immigrant-experience",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -339,10 +380,21 @@
    "subjects": [
     {
      "subject": "chronic-illness",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -351,10 +403,21 @@
    "subjects": [
     {
      "subject": "chronic-illness",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -390,9 +453,11 @@
     {
      "subject": "addiction-and-recovery",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -402,9 +467,11 @@
     {
      "subject": "mental-health",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -421,9 +488,11 @@
     {
      "subject": "environmental-contamination",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -483,9 +552,11 @@
     {
      "subject": "medical-system-harm",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:07+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -496,8 +567,10 @@
      "subject": "everyday-mystery",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:10+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -553,9 +626,11 @@
     {
      "subject": "reproductive-health",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

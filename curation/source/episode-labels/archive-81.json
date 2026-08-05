@@ -5,22 +5,22 @@
  "subjectsUsed": [
   {
    "slug": "audio-drama-horror",
-   "count": 44
+   "count": 42
   },
   {
    "slug": "making-of-a-work",
-   "count": 3
+   "count": 4
   },
   {
    "slug": "audio-drama-scifi",
    "count": 2
   },
   {
-   "slug": "anthology-framing-fiction",
-   "count": 1
+   "slug": "mockumentary-investigation-fiction",
+   "count": 2
   },
   {
-   "slug": "art-and-artists",
+   "slug": "anthology-framing-fiction",
    "count": 1
   }
  ],
@@ -31,9 +31,11 @@
     {
      "subject": "audio-drama-horror",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:23+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -194,8 +196,10 @@
      "subject": "audio-drama-horror",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:11+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -205,9 +209,11 @@
     {
      "subject": "audio-drama-horror",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -241,9 +247,11 @@
     {
      "subject": "audio-drama-horror",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -283,10 +291,21 @@
    "subjects": [
     {
      "subject": "audio-drama-horror",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:41+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "mockumentary-investigation-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -372,9 +391,11 @@
     {
      "subject": "audio-drama-horror",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:26:32+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -384,9 +405,11 @@
     {
      "subject": "audio-drama-horror",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -527,9 +550,11 @@
     {
      "subject": "audio-drama-horror",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:44+00:00"
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -559,9 +584,11 @@
     {
      "subject": "audio-drama-horror",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -601,10 +628,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:36+00:00"
+     "at": "2026-08-05T04:42:00+00:00"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
     }
    ]
   },
@@ -669,10 +707,21 @@
    "subjects": [
     {
      "subject": "audio-drama-horror",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:41+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "mockumentary-investigation-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -682,9 +731,11 @@
     {
      "subject": "audio-drama-horror",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:44+00:00"
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -694,9 +745,11 @@
     {
      "subject": "audio-drama-scifi",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:26:32+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -714,9 +767,11 @@
     {
      "subject": "audio-drama-scifi",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:36+00:00"
+     "at": "2026-08-05T04:42:00+00:00"
     }
    ],
    "entities": [
@@ -734,9 +789,11 @@
     {
      "subject": "audio-drama-horror",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -754,9 +811,11 @@
     {
      "subject": "anthology-framing-fiction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:21+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

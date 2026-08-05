@@ -9,11 +9,11 @@
   },
   {
    "slug": "cold-war-espionage",
-   "count": 13
+   "count": 12
   },
   {
    "slug": "foreign-political-crisis",
-   "count": 6
+   "count": 8
   },
   {
    "slug": "history-retold",
@@ -28,11 +28,7 @@
    "count": 2
   },
   {
-   "slug": "government-secrecy",
-   "count": 1
-  },
-  {
-   "slug": "investigative-process",
+   "slug": "extremist-movement",
    "count": 1
   },
   {
@@ -44,7 +40,7 @@
    "count": 1
   },
   {
-   "slug": "war-crimes-accountability",
+   "slug": "undercover-and-embedded-reporting",
    "count": 1
   }
  ],
@@ -55,9 +51,11 @@
     {
      "subject": "war-and-its-conduct",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -150,18 +148,22 @@
    "guid": "27f7cfad-41e8-4dbc-ac53-abe701102196",
    "subjects": [
     {
-     "subject": "war-and-its-conduct",
+     "subject": "government-secrecy",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:12+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "government-secrecy",
+     "subject": "war-and-its-conduct",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:12+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -212,9 +214,11 @@
     {
      "subject": "media-criticism",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:35+00:00"
+     "at": "2026-08-05T04:42:33+00:00"
     }
    ]
   },
@@ -356,6 +360,15 @@
    "guid": "975a27bb-b5dd-40da-8d04-abda01717aec",
    "subjects": [
     {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "war-and-its-conduct",
      "role": "secondary",
      "confidence": "low",
@@ -363,11 +376,13 @@
      "at": "2026-07-30T15:19:03+00:00"
     },
     {
-     "subject": "investigative-process",
+     "subject": "undercover-and-embedded-reporting",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:03+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -417,9 +432,11 @@
     {
      "subject": "cold-war-espionage",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:35+00:00"
+     "at": "2026-08-05T04:42:33+00:00"
     }
    ]
   },
@@ -700,10 +717,21 @@
    "subjects": [
     {
      "subject": "cold-war-espionage",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:36+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -751,9 +779,11 @@
     {
      "subject": "nuclear-age",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -794,10 +824,21 @@
    "subjects": [
     {
      "subject": "foreign-political-crisis",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:39+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1073,9 +1114,11 @@
     {
      "subject": "war-and-its-conduct",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:03+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1505,10 +1548,21 @@
    "subjects": [
     {
      "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:33+00:00"
+    },
+    {
+     "subject": "war-and-its-conduct",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:35+00:00"
+     "at": "2026-08-05T04:42:33+00:00"
     }
    ],
    "entities": [
@@ -1615,10 +1669,21 @@
    "subjects": [
     {
      "subject": "war-and-its-conduct",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1805,10 +1870,21 @@
    "subjects": [
     {
      "subject": "war-and-its-conduct",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:30+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   }

@@ -5,14 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "cold-war-espionage",
-   "count": 8
-  },
-  {
-   "slug": "captivity-and-escape",
-   "count": 1
+   "count": 9
   },
   {
    "slug": "conspiracy-theory",
+   "count": 2
+  },
+  {
+   "slug": "captivity-and-escape",
    "count": 1
   },
   {
@@ -24,15 +24,7 @@
    "count": 1
   },
   {
-   "slug": "music-scene-movement",
-   "count": 1
-  },
-  {
    "slug": "organised-crime",
-   "count": 1
-  },
-  {
-   "slug": "song-and-album-origin",
    "count": 1
   }
  ],
@@ -101,18 +93,22 @@
    "guid": "9800e1ec-91a7-11ea-b677-df6787d45e50",
    "subjects": [
     {
-     "subject": "cold-war-espionage",
+     "subject": "conspiracy-theory",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:26:58+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "conspiracy-theory",
+     "subject": "cold-war-espionage",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:26:58+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -187,18 +183,22 @@
    "guid": "e9fd7c52-9ba3-11ea-b22b-4f066ae3c2b9",
    "subjects": [
     {
-     "subject": "cold-war-espionage",
+     "subject": "music-scene-movement",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:20+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "music-scene-movement",
+     "subject": "cold-war-espionage",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:20+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -288,10 +288,21 @@
     },
     {
      "subject": "song-and-album-origin",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:24+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -321,9 +332,11 @@
     {
      "subject": "cold-war-espionage",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:20+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -340,9 +353,11 @@
     {
      "subject": "captivity-and-escape",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -366,15 +381,26 @@
     {
      "subject": "organised-crime",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:01+00:00"
+     "at": "2026-08-05T05:07:42+00:00"
     }
    ]
   },
   {
    "guid": "63eb83e4-464f-11ed-8580-6b74373eda39",
    "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
     {
      "subject": "war-and-its-conduct",
      "role": "secondary",
@@ -383,11 +409,13 @@
      "at": "2026-08-01T20:22:59+00:00"
     },
     {
-     "subject": "cold-war-espionage",
+     "subject": "conspiracy-theory",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:59+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -397,9 +425,11 @@
     {
      "subject": "corruption-in-local-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:26:58+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -425,8 +455,10 @@
      "subject": "identity-impostor",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:11+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

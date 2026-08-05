@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "cult-and-control",
-   "count": 33
+   "count": 34
   },
   {
    "slug": "religious-abuse",
@@ -25,10 +25,6 @@
   },
   {
    "slug": "forgotten-episode",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
    "count": 1
   },
   {
@@ -334,8 +330,10 @@
      "subject": "religious-community",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:28+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -360,18 +358,6 @@
    ]
   },
   {
-   "guid": "53111aa1-64c1-4fb2-aad5-af93016fbc0c",
-   "subjects": [
-    {
-     "subject": "cult-and-control",
-     "role": "primary",
-     "confidence": "low",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:04+00:00"
-    }
-   ]
-  },
-  {
    "guid": "b0547061-1e92-4231-a47a-af93018aa24c",
    "subjects": [
     {
@@ -380,6 +366,20 @@
      "confidence": "medium",
      "model": "claude-sonnet-5",
      "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "53111aa1-64c1-4fb2-aad5-af93016fbc0c",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -469,9 +469,11 @@
     {
      "subject": "cult-and-control",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:04+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -481,9 +483,11 @@
     {
      "subject": "cult-and-control",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -492,10 +496,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "cult-and-control",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:04+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -505,9 +520,11 @@
     {
      "subject": "cult-and-control",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -523,10 +540,21 @@
     },
     {
      "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "forgotten-episode",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:13+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -549,10 +577,21 @@
    "subjects": [
     {
      "subject": "forgotten-episode",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:30:41+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -626,9 +665,11 @@
     {
      "subject": "cult-and-control",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:13+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -740,9 +781,11 @@
     {
      "subject": "cult-and-control",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -811,8 +854,10 @@
      "subject": "conspiracy-theory",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:33+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [

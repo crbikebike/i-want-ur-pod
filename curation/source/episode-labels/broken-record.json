@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "artist-band-biography",
-   "count": 259
+   "count": 262
   },
   {
    "slug": "making-of-a-work",
-   "count": 30
+   "count": 29
   },
   {
    "slug": "songwriting-craft",
@@ -17,11 +17,7 @@
   },
   {
    "slug": "song-and-album-origin",
-   "count": 21
-  },
-  {
-   "slug": "art-and-artists",
-   "count": 10
+   "count": 22
   },
   {
    "slug": "music-industry-business",
@@ -32,12 +28,20 @@
    "count": 9
   },
   {
+   "slug": "art-and-artists",
+   "count": 8
+  },
+  {
    "slug": "music-scene-movement",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "books-and-writing",
    "count": 3
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 2
   },
   {
    "slug": "musician-death",
@@ -48,11 +52,11 @@
    "count": 2
   },
   {
-   "slug": "addiction-and-recovery",
-   "count": 1
+   "slug": "talking-about-music",
+   "count": 2
   },
   {
-   "slug": "celebrity-life",
+   "slug": "charismatic-con",
    "count": 1
   },
   {
@@ -72,15 +76,7 @@
    "count": 1
   },
   {
-   "slug": "folklore-and-legend",
-   "count": 1
-  },
-  {
-   "slug": "identity-impostor",
-   "count": 1
-  },
-  {
-   "slug": "immigrant-experience",
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -88,19 +84,15 @@
    "count": 1
   },
   {
-   "slug": "medical-research",
-   "count": 1
-  },
-  {
    "slug": "natural-disaster",
    "count": 1
   },
   {
-   "slug": "police-misconduct",
+   "slug": "systems-and-infrastructure-design",
    "count": 1
   },
   {
-   "slug": "systems-and-infrastructure-design",
+   "slug": "talking-about-film",
    "count": 1
   },
   {
@@ -134,10 +126,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:00+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -274,6 +277,15 @@
      "confidence": "low",
      "model": "claude-sonnet-5",
      "at": "2026-07-28T00:49:52+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -316,10 +328,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:00+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -507,18 +530,22 @@
    "guid": "01935ff2-4bec-11e9-9cea-531315ade8f1",
    "subjects": [
     {
-     "subject": "artist-band-biography",
+     "subject": "immigrant-experience",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:20+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "immigrant-experience",
+     "subject": "artist-band-biography",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:20+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -539,6 +566,15 @@
   {
    "guid": "7098196a-d8c3-11e9-9ee6-bffa35e49885",
    "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
     {
      "subject": "music-scene-history",
      "role": "primary",
@@ -1240,9 +1276,11 @@
     {
      "subject": "faith-and-doubt",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:18+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -1306,10 +1344,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:55+00:00"
+     "at": "2026-08-05T04:55:09+00:00"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
     }
    ],
    "entities": [
@@ -1400,9 +1449,11 @@
     {
      "subject": "management-and-leadership",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:26+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1457,6 +1508,15 @@
    "guid": "5acc565e-2d88-11ea-b42f-df6e1bb47b1d",
    "subjects": [
     {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
      "subject": "racial-violence",
      "role": "secondary",
      "confidence": "medium",
@@ -1464,11 +1524,13 @@
      "at": "2026-07-28T00:49:52+00:00"
     },
     {
-     "subject": "police-misconduct",
+     "subject": "ideas-and-argument",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:52+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -2471,9 +2533,11 @@
     {
      "subject": "systems-and-infrastructure-design",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:18+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -2947,9 +3011,11 @@
     {
      "subject": "war-and-its-conduct",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:46+00:00"
+     "at": "2026-08-05T04:55:09+00:00"
     }
    ]
   },
@@ -3092,9 +3158,11 @@
     {
      "subject": "civil-rights-struggle",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:06+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -3288,10 +3356,21 @@
    "subjects": [
     {
      "subject": "folklore-and-legend",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:12+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-film",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -3698,6 +3777,15 @@
    "guid": "a3c45c7c-9181-11eb-909b-cf88e96f3039",
    "subjects": [
     {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
      "subject": "songwriting-craft",
      "role": "secondary",
      "confidence": "medium",
@@ -3705,11 +3793,13 @@
      "at": "2026-07-28T00:50:12+00:00"
     },
     {
-     "subject": "addiction-and-recovery",
+     "subject": "artist-band-biography",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:12+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -3860,9 +3950,11 @@
     {
      "subject": "cost-of-fame",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:55+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -4957,10 +5049,21 @@
    "subjects": [
     {
      "subject": "medical-research",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:12+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -5205,8 +5308,10 @@
      "subject": "everyday-mystery",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:45+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ]
   },
@@ -5678,9 +5783,11 @@
     {
      "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:46+00:00"
+     "at": "2026-08-05T04:55:09+00:00"
     }
    ],
    "entities": [
@@ -8295,9 +8402,11 @@
     {
      "subject": "natural-disaster",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:39+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -9455,10 +9564,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:45+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -9560,10 +9680,21 @@
    "subjects": [
     {
      "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "charismatic-con",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:07+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },

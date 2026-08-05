@@ -4,12 +4,8 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "conspiracy-theory",
-   "count": 1
-  },
-  {
    "slug": "investigative-process",
-   "count": 1
+   "count": 2
   },
   {
    "slug": "sense-of-place",
@@ -30,9 +26,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:26+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -48,6 +46,15 @@
    "guid": "9fddc5f9-6acb-45fd-89ec-fda4a61f7c2e",
    "subjects": [
     {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
      "subject": "education-system-failure",
      "role": "secondary",
      "confidence": "low",
@@ -55,11 +62,13 @@
      "at": "2026-07-28T01:08:51+00:00"
     },
     {
-     "subject": "conspiracy-theory",
+     "subject": "investigative-process",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:08:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -69,9 +78,11 @@
     {
      "subject": "investigative-process",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ]
   }

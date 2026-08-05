@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "informant-and-undercover",
-   "count": 22
+   "count": 23
   },
   {
    "slug": "mass-shooting",
@@ -17,10 +17,6 @@
   },
   {
    "slug": "heist-and-robbery",
-   "count": 1
-  },
-  {
-   "slug": "political-persecution",
    "count": 1
   }
  ],
@@ -87,18 +83,22 @@
    "guid": "7616a62b-6838-45b7-9484-af9b01699b7c",
    "subjects": [
     {
-     "subject": "informant-and-undercover",
+     "subject": "political-persecution",
      "role": "secondary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "political-persecution",
+     "subject": "informant-and-undercover",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -236,8 +236,10 @@
      "subject": "charismatic-con",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -490,9 +492,11 @@
     {
      "subject": "informant-and-undercover",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -578,8 +582,10 @@
      "subject": "heist-and-robbery",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:32+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

@@ -5,11 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "extremist-movement",
-   "count": 4
-  },
-  {
-   "slug": "police-misconduct",
-   "count": 1
+   "count": 5
   }
  ],
  "episodes": [
@@ -70,18 +66,22 @@
    "guid": "5b76ce94-dcf6-11f0-9691-87da7edc588e",
    "subjects": [
     {
-     "subject": "extremist-movement",
+     "subject": "police-misconduct",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:19+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "police-misconduct",
+     "subject": "extremist-movement",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:19+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

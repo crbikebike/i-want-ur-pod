@@ -5,15 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "missing-person",
-   "count": 7
+   "count": 9
   },
   {
    "slug": "vanishing-and-institutional-failure",
    "count": 7
-  },
-  {
-   "slug": "serial-offender",
-   "count": 6
   },
   {
    "slug": "charismatic-con",
@@ -21,6 +17,10 @@
   },
   {
    "slug": "intimate-partner-homicide",
+   "count": 5
+  },
+  {
+   "slug": "serial-offender",
    "count": 5
   },
   {
@@ -33,7 +33,7 @@
   },
   {
    "slug": "murder-close-to-home",
-   "count": 3
+   "count": 4
   },
   {
    "slug": "sense-of-place",
@@ -42,6 +42,10 @@
   {
    "slug": "unsolved-murder",
    "count": 3
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 2
   },
   {
    "slug": "courtroom-trial",
@@ -60,11 +64,7 @@
    "count": 1
   },
   {
-   "slug": "celebrity-life",
-   "count": 1
-  },
-  {
-   "slug": "community-in-conflict",
+   "slug": "civil-rights-struggle",
    "count": 1
   },
   {
@@ -76,15 +76,7 @@
    "count": 1
   },
   {
-   "slug": "investigative-process",
-   "count": 1
-  },
-  {
    "slug": "making-of-a-work",
-   "count": 1
-  },
-  {
-   "slug": "organised-crime",
    "count": 1
   },
   {
@@ -92,11 +84,7 @@
    "count": 1
   },
   {
-   "slug": "sports-history",
-   "count": 1
-  },
-  {
-   "slug": "survival-story",
+   "slug": "stranger-homicide",
    "count": 1
   },
   {
@@ -115,9 +103,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:28+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -366,10 +356,21 @@
     },
     {
      "subject": "survival-story",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:19+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -499,8 +500,10 @@
      "subject": "cult-and-control",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:55:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -583,10 +586,21 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -615,9 +629,11 @@
     {
      "subject": "wrongful-conviction",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:40+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -694,8 +710,10 @@
      "subject": "true-crime-as-genre",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:54:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -800,8 +818,10 @@
      "subject": "making-of-a-work",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:19+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -823,6 +843,15 @@
    "guid": "016aec94-a66b-4b01-909c-b00c0153f15a",
    "subjects": [
     {
+     "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
      "subject": "immigrant-experience",
      "role": "secondary",
      "confidence": "medium",
@@ -830,11 +859,13 @@
      "at": "2026-07-28T00:52:59+00:00"
     },
     {
-     "subject": "community-in-conflict",
+     "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -859,8 +890,10 @@
      "subject": "sense-of-place",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:11+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -1064,9 +1097,11 @@
     {
      "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1109,18 +1144,22 @@
    "guid": "6b598b8f-9c98-4318-a65a-b04501502b5b",
    "subjects": [
     {
-     "subject": "civil-rights-struggle",
+     "subject": "sports-history",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:11+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     },
     {
-     "subject": "sports-history",
+     "subject": "civil-rights-struggle",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:11+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -1139,8 +1178,10 @@
      "subject": "environmental-contamination",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:40+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -1166,8 +1207,10 @@
      "subject": "art-and-artists",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:28+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1346,9 +1389,11 @@
     {
      "subject": "police-misconduct",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:52+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1403,18 +1448,22 @@
    "guid": "48c3df37-7baa-4aa3-8918-b18b01565e8b",
    "subjects": [
     {
-     "subject": "unsolved-murder",
+     "subject": "investigative-process",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:19+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "investigative-process",
+     "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:19+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1423,10 +1472,21 @@
    "subjects": [
     {
      "subject": "serial-offender",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1634,18 +1694,22 @@
    "guid": "9794f1a6-1d38-4e6d-926b-b3d1015c3573",
    "subjects": [
     {
-     "subject": "missing-person",
+     "subject": "organised-crime",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "organised-crime",
+     "subject": "missing-person",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [

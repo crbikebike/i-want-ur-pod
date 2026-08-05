@@ -8,16 +8,12 @@
    "count": 13
   },
   {
-   "slug": "prosecutorial-power",
+   "slug": "law-explained",
    "count": 7
   },
   {
-   "slug": "law-explained",
-   "count": 6
-  },
-  {
-   "slug": "elections-and-voting",
-   "count": 4
+   "slug": "prosecutorial-power",
+   "count": 7
   },
   {
    "slug": "prison-life",
@@ -28,7 +24,7 @@
    "count": 3
   },
   {
-   "slug": "civil-rights-struggle",
+   "slug": "elections-and-voting",
    "count": 3
   },
   {
@@ -38,6 +34,10 @@
   {
    "slug": "protest-movement",
    "count": 3
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 2
   },
   {
    "slug": "epidemic-and-public-health",
@@ -53,6 +53,10 @@
   },
   {
    "slug": "reentry-after-prison",
+   "count": 2
+  },
+  {
+   "slug": "regulatory-failure",
    "count": 2
   },
   {
@@ -76,19 +80,11 @@
    "count": 1
   },
   {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
    "slug": "immigrant-experience",
-   "count": 1
-  },
-  {
-   "slug": "indigenous-history",
-   "count": 1
-  },
-  {
-   "slug": "investigative-process",
-   "count": 1
-  },
-  {
-   "slug": "legal-precedent",
    "count": 1
   },
   {
@@ -105,6 +101,10 @@
   },
   {
    "slug": "racial-violence",
+   "count": 1
+  },
+  {
+   "slug": "reproductive-health",
    "count": 1
   },
   {
@@ -127,9 +127,11 @@
     {
      "subject": "prosecutorial-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:47+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -301,8 +303,10 @@
      "subject": "mental-health",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -366,9 +370,11 @@
     {
      "subject": "wrongful-conviction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -413,8 +419,10 @@
      "subject": "disability-and-access",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:53+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -529,18 +537,22 @@
    "guid": "efeeb78e-4f57-4bc9-bc8c-260432fea72b",
    "subjects": [
     {
-     "subject": "reproductive-health",
+     "subject": "legal-precedent",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:40+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "legal-precedent",
+     "subject": "reproductive-health",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:40+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -585,9 +597,11 @@
     {
      "subject": "systems-and-infrastructure-design",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:48+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -624,9 +638,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -636,9 +652,11 @@
     {
      "subject": "history-retold",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:27+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -710,8 +728,10 @@
      "subject": "surveillance-and-privacy",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:56+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -768,9 +788,11 @@
     {
      "subject": "racial-violence",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:48+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -807,8 +829,10 @@
      "subject": "medical-system-harm",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:48+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -832,10 +856,21 @@
     },
     {
      "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "law-explained",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:53+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -863,10 +898,21 @@
    "subjects": [
     {
      "subject": "elections-and-voting",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:53+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -895,9 +941,11 @@
     {
      "subject": "prosecutorial-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:43+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -918,10 +966,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "regulatory-failure",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -968,6 +1027,15 @@
    "guid": "bc764b5d-faf6-4462-b589-eeadc33f1f3c",
    "subjects": [
     {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
      "subject": "surveillance-and-privacy",
      "role": "secondary",
      "confidence": "medium",
@@ -975,11 +1043,13 @@
      "at": "2026-07-30T15:14:48+00:00"
     },
     {
-     "subject": "civil-rights-struggle",
+     "subject": "regulatory-failure",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:48+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -1094,9 +1164,11 @@
     {
      "subject": "prosecutorial-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:47+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1166,8 +1238,10 @@
      "subject": "corruption-in-local-power",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:48+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -1261,9 +1335,11 @@
     {
      "subject": "education-system-failure",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1289,8 +1365,10 @@
      "subject": "private-equity-and-debt",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:39+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1313,8 +1391,10 @@
      "subject": "slavery-and-its-legacy",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:56+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -1497,8 +1577,10 @@
      "subject": "immigrant-experience",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:43+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },

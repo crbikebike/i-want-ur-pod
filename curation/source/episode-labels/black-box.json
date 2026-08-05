@@ -5,15 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "audio-drama-scifi",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "audio-drama-mystery",
    "count": 3
-  },
-  {
-   "slug": "engineering-failure",
-   "count": 1
   }
  ],
  "episodes": [
@@ -23,9 +19,11 @@
     {
      "subject": "audio-drama-scifi",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:23:22+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -109,10 +107,21 @@
    "subjects": [
     {
      "subject": "engineering-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "audio-drama-scifi",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -122,9 +131,11 @@
     {
      "subject": "audio-drama-scifi",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:30:37+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

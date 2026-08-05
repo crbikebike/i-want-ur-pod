@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "fashion-and-clothing",
-   "count": 55
+   "count": 56
   },
   {
    "slug": "everyday-object-design",
@@ -24,11 +24,7 @@
    "count": 1
   },
   {
-   "slug": "making-of-a-work",
-   "count": 1
-  },
-  {
-   "slug": "songwriting-craft",
+   "slug": "song-and-album-origin",
    "count": 1
   },
   {
@@ -129,10 +125,21 @@
    "subjects": [
     {
      "subject": "songwriting-craft",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:00+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -416,9 +423,11 @@
     {
      "subject": "work-and-labour-conditions",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:00+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -714,8 +723,10 @@
      "subject": "books-and-writing",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:32+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -782,9 +793,11 @@
     {
      "subject": "fashion-and-clothing",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:32+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1010,10 +1023,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "fashion-and-clothing",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:07+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1080,9 +1104,11 @@
     {
      "subject": "ideas-and-argument",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:13+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [

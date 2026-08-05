@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "identity-impostor",
-   "count": 11
+   "count": 12
   },
   {
    "slug": "charismatic-con",
@@ -22,10 +22,6 @@
   {
    "slug": "heist-and-robbery",
    "count": 2
-  },
-  {
-   "slug": "ai-and-society",
-   "count": 1
   },
   {
    "slug": "conspiracy-theory",
@@ -91,9 +87,11 @@
     {
      "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -399,18 +397,22 @@
    "guid": "2e2b522d-5ba1-4935-adf5-38e31d96f296",
    "subjects": [
     {
-     "subject": "identity-impostor",
+     "subject": "ai-and-society",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "ai-and-society",
+     "subject": "identity-impostor",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -499,8 +501,10 @@
      "subject": "investment-fraud",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:28+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -537,9 +541,11 @@
     {
      "subject": "medical-deception",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:06+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -575,9 +581,11 @@
     {
      "subject": "corporate-fraud",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -635,8 +643,10 @@
      "subject": "journalist-under-scrutiny",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:40+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -662,8 +672,10 @@
      "subject": "cult-and-control",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:22+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -689,8 +701,10 @@
      "subject": "organised-crime",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:24:28+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -747,9 +761,11 @@
     {
      "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:31:45+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -820,9 +836,11 @@
     {
      "subject": "sports-scandal",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:31:45+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -881,8 +899,10 @@
      "subject": "conspiracy-theory",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:22+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -951,9 +971,11 @@
     {
      "subject": "media-criticism",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:31:45+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   }

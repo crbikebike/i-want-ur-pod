@@ -5,11 +5,15 @@
  "subjectsUsed": [
   {
    "slug": "sports-history",
-   "count": 10
+   "count": 9
   },
   {
    "slug": "music-scene-movement",
-   "count": 2
+   "count": 3
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 1
   },
   {
    "slug": "foreign-political-crisis",
@@ -17,10 +21,6 @@
   },
   {
    "slug": "prison-life",
-   "count": 1
-  },
-  {
-   "slug": "sport-and-politics",
    "count": 1
   }
  ],
@@ -31,9 +31,11 @@
     {
      "subject": "sports-history",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -88,18 +90,22 @@
    "guid": "536f4359-3426-46b1-bc59-b20a01435f4e",
    "subjects": [
     {
-     "subject": "civil-rights-struggle",
+     "subject": "sport-and-politics",
      "role": "secondary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:33+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     },
     {
-     "subject": "sport-and-politics",
+     "subject": "civil-rights-struggle",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:33+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -197,8 +203,10 @@
      "subject": "prison-life",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:58+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -361,8 +369,10 @@
      "subject": "foreign-political-crisis",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:33+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -484,10 +494,21 @@
    "subjects": [
     {
      "subject": "sports-history",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:59+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   }

@@ -8,19 +8,15 @@
    "count": 3
   },
   {
-   "slug": "ageing-and-mortality",
-   "count": 1
+   "slug": "personal-transformation",
+   "count": 2
   },
   {
    "slug": "ai-and-society",
    "count": 1
   },
   {
-   "slug": "books-and-writing",
-   "count": 1
-  },
-  {
-   "slug": "personal-transformation",
+   "slug": "ideas-and-argument",
    "count": 1
   }
  ],
@@ -29,6 +25,15 @@
    "guid": "gid://art19-episode-locator/V0/o--Q_o-z-lO1PGcAmYcPUj2CzoZfzP11WzxieIstK-w",
    "subjects": [
     {
+     "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "romance-and-heartbreak",
      "role": "secondary",
      "confidence": "medium",
@@ -36,11 +41,13 @@
      "at": "2026-08-01T20:30:37+00:00"
     },
     {
-     "subject": "ageing-and-mortality",
+     "subject": "personal-transformation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:30:37+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -65,9 +72,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:31+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -156,10 +165,21 @@
    "subjects": [
     {
      "subject": "books-and-writing",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:29:18+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -178,8 +198,10 @@
      "subject": "ai-and-society",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:51+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   }

@@ -5,6 +5,10 @@
  "subjectsUsed": [
   {
    "slug": "prosecutorial-power",
+   "count": 6
+  },
+  {
+   "slug": "gendered-constraint",
    "count": 5
   },
   {
@@ -14,14 +18,6 @@
   {
    "slug": "wrongful-conviction",
    "count": 3
-  },
-  {
-   "slug": "gendered-constraint",
-   "count": 2
-  },
-  {
-   "slug": "music-scene-movement",
-   "count": 2
   },
   {
    "slug": "police-misconduct",
@@ -40,23 +36,15 @@
    "count": 1
   },
   {
-   "slug": "courtroom-trial",
+   "slug": "government-secrecy",
    "count": 1
   },
   {
-   "slug": "history-retold",
+   "slug": "music-scene-movement",
    "count": 1
   },
   {
-   "slug": "invented-category",
-   "count": 1
-  },
-  {
-   "slug": "musician-downfall",
-   "count": 1
-  },
-  {
-   "slug": "prison-life",
+   "slug": "organised-crime",
    "count": 1
   },
   {
@@ -77,10 +65,21 @@
     },
     {
      "subject": "prison-life",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:33:38+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -97,9 +96,11 @@
     {
      "subject": "prosecutorial-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:43+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -108,6 +109,44 @@
      "kind": "person",
      "confidence": "medium",
      "at": "2026-07-30T15:00:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a897d3fb-e107-41b7-832c-d7a6fd1e329a",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Killer Mike",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:10:05+00:00"
     }
    ]
   },
@@ -135,33 +174,6 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-07-30T15:04:23+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "a897d3fb-e107-41b7-832c-d7a6fd1e329a",
-   "subjects": [
-    {
-     "subject": "surveillance-and-privacy",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:05+00:00"
-    },
-    {
-     "subject": "history-retold",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:05+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Killer Mike",
-     "kind": "person",
-     "confidence": "medium",
-     "at": "2026-07-30T15:10:05+00:00"
     }
    ]
   },
@@ -283,18 +295,22 @@
    "guid": "0b84c9fe-0ec7-40f6-ac13-d4db5aab5143",
    "subjects": [
     {
-     "subject": "organised-crime",
+     "subject": "musician-downfall",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:14:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "musician-downfall",
+     "subject": "organised-crime",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:14:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -407,8 +423,10 @@
      "subject": "civil-rights-struggle",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:47+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -504,16 +522,36 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:14:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
   {
    "guid": "9093618c-af51-45b4-96ff-d95a6549b9cb",
    "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
     {
      "subject": "invented-category",
      "role": "secondary",
@@ -522,11 +560,13 @@
      "at": "2026-08-01T20:19:53+00:00"
     },
     {
-     "subject": "courtroom-trial",
+     "subject": "gendered-constraint",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:53+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -623,9 +663,11 @@
     {
      "subject": "sexual-abuse-accountability",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:28+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -703,8 +745,10 @@
      "subject": "queer-life",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:33:38+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -722,9 +766,11 @@
     {
      "subject": "cost-of-fame",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:01:40+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -740,6 +786,15 @@
    "guid": "4990f829-32ed-46fe-b726-a10b781348e6",
    "subjects": [
     {
+     "subject": "invented-category",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
      "subject": "parenting",
      "role": "secondary",
      "confidence": "medium",
@@ -747,11 +802,13 @@
      "at": "2026-08-01T20:19:53+00:00"
     },
     {
-     "subject": "invented-category",
+     "subject": "gendered-constraint",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:53+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [

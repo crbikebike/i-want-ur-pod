@@ -8,15 +8,15 @@
    "count": 8
   },
   {
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
    "slug": "engineering-failure",
    "count": 1
   },
   {
    "slug": "police-misconduct",
-   "count": 1
-  },
-  {
-   "slug": "racial-violence",
    "count": 1
   }
  ],
@@ -27,9 +27,11 @@
     {
      "subject": "natural-disaster",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:29:43+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -82,8 +84,10 @@
      "subject": "police-misconduct",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:26:51+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -108,9 +112,11 @@
     {
      "subject": "engineering-failure",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:45+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -253,18 +259,22 @@
    "guid": "17f019e0-b6da-11ed-b463-27485ee63d66",
    "subjects": [
     {
-     "subject": "civil-rights-struggle",
+     "subject": "racial-violence",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:34+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "racial-violence",
+     "subject": "civil-rights-struggle",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:34+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [

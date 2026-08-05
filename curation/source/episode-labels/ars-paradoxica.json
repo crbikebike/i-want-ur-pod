@@ -5,11 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "audio-drama-scifi",
-   "count": 48
-  },
-  {
-   "slug": "making-of-a-work",
-   "count": 1
+   "count": 49
   }
  ],
  "episodes": [
@@ -115,9 +111,11 @@
     {
      "subject": "audio-drama-scifi",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:47+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -675,9 +673,11 @@
     {
      "subject": "audio-drama-scifi",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:42+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -718,10 +718,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:46+00:00"
+     "at": "2026-08-05T04:42:00+00:00"
+    },
+    {
+     "subject": "audio-drama-scifi",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
     }
    ],
    "entities": [

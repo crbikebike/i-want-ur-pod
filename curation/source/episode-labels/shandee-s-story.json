@@ -13,22 +13,22 @@
   },
   {
    "slug": "courtroom-trial",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "regulatory-failure",
    "count": 5
   },
   {
-   "slug": "intimate-partner-homicide",
-   "count": 4
-  },
-  {
    "slug": "unsolved-murder",
    "count": 4
   },
   {
-   "slug": "media-criticism",
+   "slug": "intimate-partner-homicide",
+   "count": 3
+  },
+  {
+   "slug": "journalist-under-scrutiny",
    "count": 1
   },
   {
@@ -642,10 +642,21 @@
    "subjects": [
     {
      "subject": "intimate-partner-homicide",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:28:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1013,9 +1024,11 @@
     {
      "subject": "missing-person",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:48+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1203,10 +1216,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "journalist-under-scrutiny",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:01+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1291,8 +1315,10 @@
      "subject": "medical-system-harm",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:33+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

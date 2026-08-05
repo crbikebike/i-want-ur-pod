@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "tech-industry-power",
-   "count": 45
+   "count": 47
   },
   {
    "slug": "monopoly-and-market-power",
-   "count": 10
+   "count": 11
   },
   {
    "slug": "business-rivalry",
@@ -28,19 +28,7 @@
    "count": 1
   },
   {
-   "slug": "art-and-artists",
-   "count": 1
-  },
-  {
    "slug": "corporate-fraud",
-   "count": 1
-  },
-  {
-   "slug": "elections-and-voting",
-   "count": 1
-  },
-  {
-   "slug": "founder-biography",
    "count": 1
   },
   {
@@ -119,9 +107,11 @@
     {
      "subject": "surveillance-and-privacy",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:47+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1068,18 +1058,22 @@
    "guid": "67512172-e1b1-11ec-afce-fbc61b046d2b",
    "subjects": [
     {
-     "subject": "tech-industry-power",
+     "subject": "elections-and-voting",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:56+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "elections-and-voting",
+     "subject": "tech-industry-power",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:56+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1256,8 +1250,10 @@
      "subject": "systems-and-infrastructure-design",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:39+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -1313,9 +1309,11 @@
     {
      "subject": "ai-and-society",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:11+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -1325,9 +1323,11 @@
     {
      "subject": "tech-industry-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:39+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -1363,18 +1363,22 @@
    "guid": "25aaf9ea-092a-11ee-8918-5bd48dd74e1d",
    "subjects": [
     {
-     "subject": "tech-industry-power",
+     "subject": "founder-biography",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:27+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     },
     {
-     "subject": "founder-biography",
+     "subject": "tech-industry-power",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:27+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -1459,8 +1463,10 @@
      "subject": "corporate-fraud",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:39+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1715,10 +1721,21 @@
    "subjects": [
     {
      "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "monopoly-and-market-power",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:39+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [

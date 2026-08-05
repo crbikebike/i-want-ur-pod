@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "history-retold",
-   "count": 143
+   "count": 144
   },
   {
    "slug": "colonial-legacy",
-   "count": 80
+   "count": 81
   },
   {
    "slug": "war-and-its-conduct",
@@ -29,7 +29,7 @@
   },
   {
    "slug": "extremist-movement",
-   "count": 7
+   "count": 9
   },
   {
    "slug": "indigenous-history",
@@ -42,6 +42,10 @@
   {
    "slug": "art-and-artists",
    "count": 5
+  },
+  {
+   "slug": "captivity-and-escape",
+   "count": 3
   },
   {
    "slug": "folklore-and-legend",
@@ -65,10 +69,6 @@
   },
   {
    "slug": "buildings-and-public-space",
-   "count": 2
-  },
-  {
-   "slug": "captivity-and-escape",
    "count": 2
   },
   {
@@ -100,31 +100,19 @@
    "count": 1
   },
   {
-   "slug": "design-and-architecture",
-   "count": 1
-  },
-  {
-   "slug": "faith-and-doubt",
-   "count": 1
-  },
-  {
-   "slug": "forgotten-episode",
-   "count": 1
-  },
-  {
    "slug": "immigrant-experience",
    "count": 1
   },
   {
-   "slug": "kidnapping-and-captivity",
+   "slug": "pioneer-biography",
    "count": 1
   },
   {
-   "slug": "presidential-power",
+   "slug": "political-figure-biography",
    "count": 1
   },
   {
-   "slug": "protest-movement",
+   "slug": "political-persecution",
    "count": 1
   },
   {
@@ -140,15 +128,7 @@
    "count": 1
   },
   {
-   "slug": "survival-story",
-   "count": 1
-  },
-  {
    "slug": "tech-industry-power",
-   "count": 1
-  },
-  {
-   "slug": "terrorism-and-aftermath",
    "count": 1
   }
  ],
@@ -159,9 +139,11 @@
     {
      "subject": "colonial-legacy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:37:57+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -2716,9 +2698,11 @@
     {
      "subject": "history-retold",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:40:17+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -3073,9 +3057,11 @@
     {
      "subject": "scientific-discovery",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:43:40+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -3324,8 +3310,10 @@
      "subject": "sense-of-place",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:43:40+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -3678,18 +3666,22 @@
    "guid": "fe1795ec-da5b-11ee-9542-3fa03e518bc0",
    "subjects": [
     {
-     "subject": "history-retold",
+     "subject": "faith-and-doubt",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:20+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "faith-and-doubt",
+     "subject": "history-retold",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:52:20+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -4457,6 +4449,15 @@
    "guid": "69c5934c-1c4d-11ef-9056-7794c46baf3e",
    "subjects": [
     {
+     "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
      "subject": "slavery-and-its-legacy",
      "role": "secondary",
      "confidence": "medium",
@@ -4464,11 +4465,13 @@
      "at": "2026-07-29T03:51:15+00:00"
     },
     {
-     "subject": "presidential-power",
+     "subject": "political-figure-biography",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:51:15+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ],
    "entities": [
@@ -4710,10 +4713,21 @@
     },
     {
      "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "captivity-and-escape",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:41:23+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -5068,9 +5082,11 @@
     {
      "subject": "cold-war-espionage",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:39:03+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -6604,10 +6620,21 @@
     },
     {
      "subject": "design-and-architecture",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "pioneer-biography",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:44:41+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -6909,9 +6936,11 @@
     {
      "subject": "immigrant-experience",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:41:13+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ],
    "entities": [
@@ -6980,10 +7009,21 @@
     },
     {
      "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "extremist-movement",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:02+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -7104,18 +7144,22 @@
    "guid": "d92f721e-0a88-11f0-b837-9378edf7c310",
    "subjects": [
     {
-     "subject": "extremist-movement",
+     "subject": "terrorism-and-aftermath",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:44:41+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "terrorism-and-aftermath",
+     "subject": "extremist-movement",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:44:41+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -9275,9 +9319,11 @@
     {
      "subject": "sports-history",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:56:55+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -10457,10 +10503,21 @@
     },
     {
      "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "political-persecution",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:02+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -10980,9 +11037,11 @@
     {
      "subject": "business-rivalry",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:58:10+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ],
    "entities": [
@@ -11406,18 +11465,22 @@
    "guid": "f462b3f4-7169-11f1-8d51-03be4c4ac500",
    "subjects": [
     {
-     "subject": "colonial-legacy",
+     "subject": "forgotten-episode",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:40:09+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "forgotten-episode",
+     "subject": "colonial-legacy",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:40:09+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -11709,9 +11772,11 @@
     {
      "subject": "tech-industry-power",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:53:43+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [

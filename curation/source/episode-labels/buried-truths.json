@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "racial-violence",
-   "count": 45
+   "count": 43
   },
   {
    "slug": "death-in-custody",
@@ -16,16 +16,16 @@
    "count": 5
   },
   {
-   "slug": "history-retold",
-   "count": 2
-  },
-  {
    "slug": "investigative-process",
-   "count": 2
+   "count": 3
   },
   {
    "slug": "civil-rights-struggle",
-   "count": 1
+   "count": 2
+  },
+  {
+   "slug": "history-retold",
+   "count": 2
   },
   {
    "slug": "elections-and-voting",
@@ -36,11 +36,11 @@
    "count": 1
   },
   {
-   "slug": "songwriting-craft",
+   "slug": "police-misconduct",
    "count": 1
   },
   {
-   "slug": "stranger-homicide",
+   "slug": "song-and-album-origin",
    "count": 1
   }
  ],
@@ -50,10 +50,21 @@
    "subjects": [
     {
      "subject": "racial-violence",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:43+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -96,9 +107,11 @@
     {
      "subject": "elections-and-voting",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:32+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -241,10 +254,21 @@
    "subjects": [
     {
      "subject": "racial-violence",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:48:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -262,9 +286,11 @@
     {
      "subject": "racial-violence",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:48+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -313,10 +339,21 @@
    "subjects": [
     {
      "subject": "racial-violence",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:13+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -739,18 +776,22 @@
    "guid": "gid://art19-episode-locator/V0/1LJuRspyVxkHJa401GSt8u63FPCnnYLJRUFJbcpag2g",
    "subjects": [
     {
-     "subject": "racial-violence",
+     "subject": "stranger-homicide",
      "role": "secondary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:43+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "stranger-homicide",
+     "subject": "racial-violence",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:43+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1134,9 +1175,11 @@
     {
      "subject": "racial-violence",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:13+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1255,8 +1298,10 @@
      "subject": "civil-rights-struggle",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:13+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1345,10 +1390,21 @@
    "subjects": [
     {
      "subject": "songwriting-craft",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:43+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1466,8 +1522,10 @@
      "subject": "medical-system-harm",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:13+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },

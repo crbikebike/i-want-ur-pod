@@ -5,14 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "courtroom-trial",
-   "count": 21
+   "count": 20
+  },
+  {
+   "slug": "betting-and-gambling",
+   "count": 9
   },
   {
    "slug": "crypto-collapse",
-   "count": 8
-  },
-  {
-   "slug": "economic-policy",
    "count": 8
   },
   {
@@ -24,16 +24,12 @@
    "count": 6
   },
   {
-   "slug": "psychology-of-belief",
-   "count": 6
-  },
-  {
-   "slug": "regulatory-failure",
+   "slug": "economic-policy",
    "count": 5
   },
   {
-   "slug": "addiction-and-recovery",
-   "count": 4
+   "slug": "psychology-of-belief",
+   "count": 5
   },
   {
    "slug": "legal-precedent",
@@ -46,6 +42,10 @@
   {
    "slug": "systems-and-infrastructure-design",
    "count": 4
+  },
+  {
+   "slug": "addiction-and-recovery",
+   "count": 3
   },
   {
    "slug": "epidemic-and-public-health",
@@ -64,15 +64,11 @@
    "count": 3
   },
   {
-   "slug": "investigative-process",
-   "count": 2
-  },
-  {
    "slug": "investment-fraud",
    "count": 2
   },
   {
-   "slug": "media-criticism",
+   "slug": "regulatory-failure",
    "count": 2
   },
   {
@@ -80,19 +76,7 @@
    "count": 2
   },
   {
-   "slug": "advertising-and-persuasion",
-   "count": 1
-  },
-  {
    "slug": "art-and-artists",
-   "count": 1
-  },
-  {
-   "slug": "bribery-and-kickbacks",
-   "count": 1
-  },
-  {
-   "slug": "corporate-negligence",
    "count": 1
   },
   {
@@ -100,15 +84,43 @@
    "count": 1
   },
   {
+   "slug": "elections-and-voting",
+   "count": 1
+  },
+  {
+   "slug": "founder-biography",
+   "count": 1
+  },
+  {
+   "slug": "gendered-constraint",
+   "count": 1
+  },
+  {
+   "slug": "heist-and-robbery",
+   "count": 1
+  },
+  {
    "slug": "history-retold",
    "count": 1
   },
   {
-   "slug": "organised-scam-industry",
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
-   "slug": "sport-and-politics",
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "law-explained",
+   "count": 1
+  },
+  {
+   "slug": "media-criticism",
+   "count": 1
+  },
+  {
+   "slug": "organised-crime",
    "count": 1
   },
   {
@@ -116,11 +128,11 @@
    "count": 1
   },
   {
-   "slug": "war-and-its-conduct",
+   "slug": "surveillance-and-privacy",
    "count": 1
   },
   {
-   "slug": "work-and-labour-conditions",
+   "slug": "war-and-its-conduct",
    "count": 1
   },
   {
@@ -135,9 +147,11 @@
     {
      "subject": "regulatory-failure",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:57+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -170,10 +184,21 @@
    "subjects": [
     {
      "subject": "regulatory-failure",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:20+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -191,9 +216,11 @@
     {
      "subject": "art-and-artists",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:57+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -203,9 +230,11 @@
     {
      "subject": "sports-history",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:57+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -214,10 +243,21 @@
    "subjects": [
     {
      "subject": "courtroom-trial",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:06+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -248,8 +288,10 @@
      "subject": "media-criticism",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:57+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -272,10 +314,21 @@
    "subjects": [
     {
      "subject": "advertising-and-persuasion",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:06+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -285,9 +338,11 @@
     {
      "subject": "epidemic-and-public-health",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:20+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -297,9 +352,11 @@
     {
      "subject": "management-and-leadership",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:27+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -328,9 +385,11 @@
     {
      "subject": "management-and-leadership",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:25+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -387,9 +446,11 @@
     {
      "subject": "management-and-leadership",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:40+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -408,8 +469,10 @@
      "subject": "education-system-failure",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:20+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -535,9 +598,11 @@
     {
      "subject": "books-and-writing",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:40+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -613,10 +678,21 @@
    "subjects": [
     {
      "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:20+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -685,10 +761,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:20+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -757,9 +844,11 @@
     {
      "subject": "psychology-of-belief",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:25+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -777,8 +866,10 @@
      "subject": "wrongful-conviction",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:48:40+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ]
   },
@@ -1051,6 +1142,15 @@
    "guid": "618630be-c02f-498b-a274-b04d011dd22e",
    "subjects": [
     {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
      "subject": "investment-fraud",
      "role": "secondary",
      "confidence": "medium",
@@ -1058,11 +1158,13 @@
      "at": "2026-07-28T00:49:18+00:00"
     },
     {
-     "subject": "bribery-and-kickbacks",
+     "subject": "elections-and-voting",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:18+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1959,10 +2061,21 @@
    "subjects": [
     {
      "subject": "regulatory-failure",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:28+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
+     "subject": "betting-and-gambling",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ]
   },
@@ -1983,10 +2096,21 @@
    "subjects": [
     {
      "subject": "sport-and-politics",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:00+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "betting-and-gambling",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2067,10 +2191,21 @@
    "subjects": [
     {
      "subject": "psychology-of-belief",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:55+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "betting-and-gambling",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2087,10 +2222,21 @@
    "subjects": [
     {
      "subject": "economic-policy",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:12+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "betting-and-gambling",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -2119,10 +2265,21 @@
    "subjects": [
     {
      "subject": "organised-scam-industry",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:26+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "betting-and-gambling",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -2150,10 +2307,21 @@
    "subjects": [
     {
      "subject": "regulatory-failure",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:18+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "betting-and-gambling",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -2182,16 +2350,36 @@
    "subjects": [
     {
      "subject": "economic-policy",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:12+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "betting-and-gambling",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
   {
    "guid": "40ac95b4-2927-43f0-b738-b24f017315f7",
    "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
     {
      "subject": "crypto-collapse",
      "role": "secondary",
@@ -2200,11 +2388,13 @@
      "at": "2026-07-28T00:49:26+00:00"
     },
     {
-     "subject": "addiction-and-recovery",
+     "subject": "betting-and-gambling",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:26+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2239,6 +2429,15 @@
    "guid": "a9dbfb1a-4044-4e3d-897f-b26001593ca6",
    "subjects": [
     {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
      "subject": "regulatory-failure",
      "role": "secondary",
      "confidence": "medium",
@@ -2246,11 +2445,13 @@
      "at": "2026-07-28T00:49:55+00:00"
     },
     {
-     "subject": "corporate-negligence",
+     "subject": "betting-and-gambling",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:55+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -2300,8 +2501,10 @@
      "subject": "scientific-discovery",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:18+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2347,8 +2550,10 @@
      "subject": "economic-policy",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:55+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -2383,10 +2588,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:00+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2509,8 +2725,10 @@
      "subject": "history-retold",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:18+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2586,10 +2804,21 @@
    "subjects": [
     {
      "subject": "economic-policy",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:00+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2640,8 +2869,10 @@
      "subject": "war-and-its-conduct",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:20+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [

@@ -5,14 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "internet-culture",
-   "count": 5
-  },
-  {
-   "slug": "sex-work-and-exploitation",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "cost-of-fame",
+   "count": 4
+  },
+  {
+   "slug": "sex-work-and-exploitation",
    "count": 4
   },
   {
@@ -41,6 +41,37 @@
      "confidence": "medium",
      "model": "claude-sonnet-5",
      "at": "2026-08-01T20:19:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7cc651cd014345d8fa6178f20b5110b6",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "PornHub",
+     "kind": "company",
+     "confidence": "low",
+     "at": "2026-07-30T15:18:20+00:00"
     }
    ]
   },
@@ -90,9 +121,11 @@
     {
      "subject": "founder-biography",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:24+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -111,8 +144,10 @@
      "subject": "hacking-and-cybercrime",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:58+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -121,26 +156,6 @@
      "kind": "company",
      "confidence": "medium",
      "at": "2026-07-30T15:06:58+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "7cc651cd014345d8fa6178f20b5110b6",
-   "subjects": [
-    {
-     "subject": "sex-work-and-exploitation",
-     "role": "primary",
-     "confidence": "low",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:20+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "PornHub",
-     "kind": "company",
-     "confidence": "low",
-     "at": "2026-07-30T15:18:20+00:00"
     }
    ]
   },
@@ -174,9 +189,11 @@
     {
      "subject": "sex-work-and-exploitation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:01+00:00"
+     "at": "2026-08-05T04:54:44+00:00"
     }
    ]
   },

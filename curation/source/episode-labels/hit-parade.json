@@ -4,20 +4,24 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "music-scene-movement",
-   "count": 73
-  },
-  {
    "slug": "artist-band-biography",
    "count": 68
   },
   {
+   "slug": "music-scene-movement",
+   "count": 60
+  },
+  {
    "slug": "music-industry-business",
-   "count": 42
+   "count": 31
+  },
+  {
+   "slug": "talking-about-music",
+   "count": 26
   },
   {
    "slug": "song-and-album-origin",
-   "count": 22
+   "count": 24
   },
   {
    "slug": "advertising-and-persuasion",
@@ -40,15 +44,7 @@
    "count": 1
   },
   {
-   "slug": "games-and-play",
-   "count": 1
-  },
-  {
    "slug": "sexual-abuse-accountability",
-   "count": 1
-  },
-  {
-   "slug": "songwriting-craft",
    "count": 1
   }
  ],
@@ -372,10 +368,21 @@
    "subjects": [
     {
      "subject": "games-and-play",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:22:35+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -423,6 +430,15 @@
      "confidence": "low",
      "model": "claude-opus-5",
      "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ],
    "entities": [
@@ -478,10 +494,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:32+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
     }
    ],
    "entities": [
@@ -635,10 +662,21 @@
    "subjects": [
     {
      "subject": "artist-band-biography",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:00+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -682,10 +720,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:03:46+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ]
   },
@@ -727,10 +776,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:08+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -772,10 +832,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:58+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
     }
    ]
   },
@@ -803,10 +874,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:00+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -864,9 +946,11 @@
     {
      "subject": "sexual-abuse-accountability",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:03:46+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ],
    "entities": [
@@ -967,10 +1051,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:38:51+00:00"
+     "at": "2026-08-05T04:42:55+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
     }
    ]
   },
@@ -998,10 +1093,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:00+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -1043,10 +1149,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:03:46+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ]
   },
@@ -1088,10 +1205,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:09+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -1127,10 +1255,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:38:51+00:00"
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ],
    "entities": [
@@ -1174,10 +1313,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:00+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1352,10 +1502,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:38:51+00:00"
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ],
    "entities": [
@@ -1571,10 +1732,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:38:51+00:00"
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ]
   },
@@ -1583,10 +1755,21 @@
    "subjects": [
     {
      "subject": "artist-band-biography",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:23:43+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1603,10 +1786,21 @@
    "subjects": [
     {
      "subject": "artist-band-biography",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:00+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -1627,6 +1821,15 @@
      "confidence": "low",
      "model": "claude-opus-5",
      "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ]
   },
@@ -1669,9 +1872,11 @@
     {
      "subject": "music-scene-movement",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:32+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
     }
    ]
   },
@@ -1701,9 +1906,11 @@
     {
      "subject": "music-scene-movement",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T22:58:55+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -1712,10 +1919,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:38:51+00:00"
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ]
   },
@@ -1724,10 +1942,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:23:43+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -1736,10 +1965,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:00+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -1748,10 +1988,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:23+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ]
   },
@@ -1760,10 +2011,21 @@
    "subjects": [
     {
      "subject": "song-and-album-origin",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:03:46+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ]
   },
@@ -1772,10 +2034,21 @@
    "subjects": [
     {
      "subject": "song-and-album-origin",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:32+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ]
   },
@@ -1804,10 +2077,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T22:58:55+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1836,10 +2120,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:23:43+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -1848,10 +2143,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:00+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -1861,9 +2167,11 @@
     {
      "subject": "artist-band-biography",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:23+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ]
   },
@@ -2562,10 +2870,21 @@
    "subjects": [
     {
      "subject": "songwriting-craft",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:09+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -2625,10 +2944,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:23:43+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -2645,10 +2975,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:00+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -3606,10 +3947,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:09+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -4958,9 +5310,11 @@
     {
      "subject": "advertising-and-persuasion",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:31+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ]
   },
@@ -5198,10 +5552,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:43:14+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -5219,8 +5584,10 @@
      "subject": "celebrity-life",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:00:11+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -5298,8 +5665,10 @@
      "subject": "music-industry-business",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:50+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -5368,10 +5737,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:43:14+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },

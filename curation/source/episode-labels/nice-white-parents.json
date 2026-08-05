@@ -8,7 +8,7 @@
    "count": 2
   },
   {
-   "slug": "conspiracy-theory",
+   "slug": "investigative-process",
    "count": 1
   }
  ],
@@ -55,18 +55,22 @@
    "guid": "2b348fbb-7e80-4dee-824f-9cd54c7c66cd",
    "subjects": [
     {
-     "subject": "investigative-process",
+     "subject": "conspiracy-theory",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:58+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     },
     {
-     "subject": "conspiracy-theory",
+     "subject": "investigative-process",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:58+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   }

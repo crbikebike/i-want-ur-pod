@@ -8,7 +8,7 @@
    "count": 3
   },
   {
-   "slug": "extremist-movement",
+   "slug": "books-and-writing",
    "count": 1
   },
   {
@@ -76,9 +76,11 @@
     {
      "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:10+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -87,10 +89,21 @@
    "subjects": [
     {
      "subject": "extremist-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:45+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -101,8 +114,10 @@
      "subject": "identity-impostor",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:57+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [

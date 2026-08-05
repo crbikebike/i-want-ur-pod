@@ -4,31 +4,31 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "informant-and-undercover",
+   "slug": "war-and-its-conduct",
    "count": 10
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 9
+  },
+  {
+   "slug": "informant-and-undercover",
+   "count": 9
   },
   {
    "slug": "ai-and-society",
    "count": 8
   },
   {
-   "slug": "war-and-its-conduct",
-   "count": 8
-  },
-  {
-   "slug": "cold-war-espionage",
-   "count": 7
-  },
-  {
-   "slug": "foreign-political-crisis",
-   "count": 5
-  },
-  {
    "slug": "government-secrecy",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "tech-industry-power",
+   "count": 4
+  },
+  {
+   "slug": "foreign-political-crisis",
    "count": 3
   },
   {
@@ -44,10 +44,6 @@
    "count": 2
   },
   {
-   "slug": "business-rivalry",
-   "count": 1
-  },
-  {
    "slug": "civil-rights-struggle",
    "count": 1
   },
@@ -57,14 +53,6 @@
   },
   {
    "slug": "conspiracy-theory",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
-   "count": 1
-  },
-  {
-   "slug": "identity-impostor",
    "count": 1
   },
   {
@@ -103,9 +91,11 @@
     {
      "subject": "internet-culture",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -116,8 +106,10 @@
      "subject": "making-of-a-work",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -138,10 +130,21 @@
    "subjects": [
     {
      "subject": "business-rivalry",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    },
+    {
+     "subject": "tech-industry-power",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:19+00:00"
+     "at": "2026-08-05T04:55:09+00:00"
     }
    ],
    "entities": [
@@ -325,9 +328,11 @@
     {
      "subject": "management-and-leadership",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:00+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -356,9 +361,11 @@
     {
      "subject": "space-exploration",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:53+00:00"
+     "at": "2026-08-05T04:42:55+00:00"
     }
    ]
   },
@@ -375,9 +382,11 @@
     {
      "subject": "mental-health",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:08:12+00:00"
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ]
   },
@@ -406,9 +415,11 @@
     {
      "subject": "surveillance-and-privacy",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -418,9 +429,11 @@
     {
      "subject": "war-and-its-conduct",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:04:53+00:00"
+     "at": "2026-08-05T04:42:55+00:00"
     }
    ]
   },
@@ -489,9 +502,11 @@
     {
      "subject": "war-crimes-accountability",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:00+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -558,10 +573,21 @@
    "subjects": [
     {
      "subject": "foreign-political-crisis",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:53+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -583,9 +609,11 @@
     {
      "subject": "civil-rights-struggle",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:23+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -629,9 +657,11 @@
     {
      "subject": "nuclear-age",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:00+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -679,10 +709,21 @@
    "subjects": [
     {
      "subject": "foreign-political-crisis",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:08:12+00:00"
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
     }
    ]
   },
@@ -727,8 +768,10 @@
      "subject": "climate-change",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -738,9 +781,11 @@
     {
      "subject": "cold-war-espionage",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -927,10 +972,21 @@
    "subjects": [
     {
      "subject": "informant-and-undercover",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -967,8 +1023,10 @@
      "subject": "informant-and-undercover",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:19+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -1210,8 +1268,10 @@
      "subject": "conspiracy-theory",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:53+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1365,16 +1425,36 @@
    "subjects": [
     {
      "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "government-secrecy",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:10+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
   {
    "guid": "6a54a4e57987e974eac36e90",
    "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
     {
      "subject": "media-criticism",
      "role": "secondary",
@@ -1383,11 +1463,13 @@
      "at": "2026-07-28T01:07:53+00:00"
     },
     {
-     "subject": "identity-impostor",
+     "subject": "cold-war-espionage",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:53+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [

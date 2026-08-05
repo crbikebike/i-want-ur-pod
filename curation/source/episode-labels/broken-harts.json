@@ -8,11 +8,11 @@
    "count": 10
   },
   {
-   "slug": "celebrity-life",
+   "slug": "grief-and-loss",
    "count": 1
   },
   {
-   "slug": "grief-and-loss",
+   "slug": "political-figure-biography",
    "count": 1
   }
  ],
@@ -297,9 +297,11 @@
     {
      "subject": "grief-and-loss",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:28:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -308,10 +310,21 @@
    "subjects": [
     {
      "subject": "celebrity-life",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:40+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   }

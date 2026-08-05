@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "anthology-framing-fiction",
-   "count": 120
+   "count": 124
   },
   {
    "slug": "mockumentary-investigation-fiction",
-   "count": 17
+   "count": 14
   },
   {
    "slug": "making-of-a-work",
@@ -29,10 +29,6 @@
   },
   {
    "slug": "songwriting-craft",
-   "count": 1
-  },
-  {
-   "slug": "surreal-narrator-fiction",
    "count": 1
   }
  ],
@@ -63,9 +59,11 @@
     {
      "subject": "anthology-framing-fiction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:32+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -88,8 +86,10 @@
      "subject": "anthology-framing-fiction",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:10+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -170,10 +170,21 @@
    "subjects": [
     {
      "subject": "mockumentary-investigation-fiction",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:21+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "anthology-framing-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -297,9 +308,11 @@
     {
      "subject": "anthology-framing-fiction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:32+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -322,8 +335,10 @@
      "subject": "anthology-framing-fiction",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:10+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -404,9 +419,11 @@
     {
      "subject": "anthology-framing-fiction",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:15:44+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -849,9 +866,11 @@
     {
      "subject": "songwriting-craft",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -869,9 +888,11 @@
     {
      "subject": "anthology-framing-fiction",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:34+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1213,8 +1234,10 @@
      "subject": "anthology-framing-fiction",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:59:09+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1223,10 +1246,21 @@
    "subjects": [
     {
      "subject": "mockumentary-investigation-fiction",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:21+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "anthology-framing-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1344,9 +1378,11 @@
     {
      "subject": "anthology-framing-fiction",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:15:44+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ]
   },
@@ -1854,10 +1890,21 @@
    "subjects": [
     {
      "subject": "surreal-narrator-fiction",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "anthology-framing-fiction",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:21+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2204,9 +2251,11 @@
     {
      "subject": "audio-drama-horror",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2217,8 +2266,10 @@
      "subject": "anthology-framing-fiction",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:10+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2228,9 +2279,11 @@
     {
      "subject": "audio-drama-mystery",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:35+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2259,10 +2312,21 @@
    "subjects": [
     {
      "subject": "mockumentary-investigation-fiction",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:21+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "anthology-framing-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2296,9 +2360,11 @@
     {
      "subject": "anthology-framing-fiction",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:42+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2316,9 +2382,11 @@
     {
      "subject": "making-of-a-work",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:25+00:00"
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ],
    "entities": [

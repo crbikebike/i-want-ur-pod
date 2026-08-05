@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "prison-life",
-   "count": 41
+   "count": 44
   },
   {
    "slug": "reentry-after-prison",
@@ -13,7 +13,7 @@
   },
   {
    "slug": "estrangement-and-reconciliation",
-   "count": 4
+   "count": 3
   },
   {
    "slug": "personal-transformation",
@@ -32,11 +32,7 @@
    "count": 1
   },
   {
-   "slug": "faith-and-doubt",
-   "count": 1
-  },
-  {
-   "slug": "family-secret",
+   "slug": "folklore-and-legend",
    "count": 1
   },
   {
@@ -44,15 +40,11 @@
    "count": 1
   },
   {
-   "slug": "history-retold",
-   "count": 1
-  },
-  {
    "slug": "parenting",
    "count": 1
   },
   {
-   "slug": "relationship-remembered",
+   "slug": "religious-community",
    "count": 1
   }
  ],
@@ -431,8 +423,10 @@
      "subject": "epidemic-and-public-health",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:43+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -462,8 +456,10 @@
      "subject": "parenting",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:04+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -600,15 +596,26 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:43+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
   {
    "guid": "00000184-e3f3-d864-af9f-f7f39d180000",
    "subjects": [
+    {
+     "subject": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
     {
      "subject": "prison-life",
      "role": "secondary",
@@ -617,11 +624,13 @@
      "at": "2026-07-30T15:19:47+00:00"
     },
     {
-     "subject": "faith-and-doubt",
+     "subject": "religious-community",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:47+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -671,9 +680,11 @@
     {
      "subject": "reentry-after-prison",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -695,9 +706,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:48+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -752,18 +765,22 @@
    "guid": "0000018b-a5ba-daf9-a1bf-edfb00aa0000",
    "subjects": [
     {
-     "subject": "prison-life",
+     "subject": "relationship-remembered",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:47+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "relationship-remembered",
+     "subject": "prison-life",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:47+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -804,9 +821,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -835,9 +854,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:48+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -863,8 +884,10 @@
      "subject": "grief-and-loss",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:08+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -945,9 +968,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -984,9 +1009,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:48+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -1133,9 +1160,11 @@
     {
      "subject": "elections-and-voting",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:35+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -1165,9 +1194,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:08+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -1215,18 +1246,22 @@
    "guid": "prx_9928_c29b071d-af68-41ce-8fc5-360caaf1bc5e",
    "subjects": [
     {
-     "subject": "prison-life",
+     "subject": "history-retold",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:56+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "prison-life",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:56+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1288,18 +1323,22 @@
    "guid": "prx_9928_5a94efb4-da28-44a8-8a62-a98f1c0ef469",
    "subjects": [
     {
-     "subject": "prison-life",
+     "subject": "family-secret",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:35+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     },
     {
-     "subject": "family-secret",
+     "subject": "prison-life",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:35+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -1411,10 +1450,21 @@
    "subjects": [
     {
      "subject": "estrangement-and-reconciliation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:59+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1438,9 +1488,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1511,9 +1563,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:53+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },

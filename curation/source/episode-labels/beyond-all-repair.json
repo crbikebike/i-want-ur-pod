@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "cold-case-reopened",
-   "count": 6
+   "count": 7
   },
   {
    "slug": "murder-close-to-home",
@@ -32,16 +32,8 @@
    "count": 2
   },
   {
-   "slug": "investigative-process",
-   "count": 1
-  },
-  {
-   "slug": "unsolved-murder",
-   "count": 1
-  },
-  {
    "slug": "wrongful-conviction",
-   "count": 1
+   "count": 2
   }
  ],
  "episodes": [
@@ -324,10 +316,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -356,10 +359,21 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:01:28+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -659,8 +673,10 @@
      "subject": "wrongful-conviction",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:45+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

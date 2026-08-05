@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "making-of-a-work",
-   "count": 10
+   "count": 11
   },
   {
    "slug": "food-and-drink",
@@ -13,6 +13,10 @@
   },
   {
    "slug": "animal-behaviour",
+   "count": 1
+  },
+  {
+   "slug": "athlete-profile",
    "count": 1
   },
   {
@@ -28,11 +32,11 @@
    "count": 1
   },
   {
-   "slug": "extremist-movement",
+   "slug": "family-secret",
    "count": 1
   },
   {
-   "slug": "family-secret",
+   "slug": "gender-identity",
    "count": 1
   },
   {
@@ -41,10 +45,6 @@
   },
   {
    "slug": "immigration-and-borders",
-   "count": 1
-  },
-  {
-   "slug": "mental-health",
    "count": 1
   },
   {
@@ -76,10 +76,6 @@
    "count": 1
   },
   {
-   "slug": "sports-history",
-   "count": 1
-  },
-  {
    "slug": "wilderness-expedition-survival",
    "count": 1
   }
@@ -91,9 +87,11 @@
     {
      "subject": "making-of-a-work",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:39+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -122,9 +120,11 @@
     {
      "subject": "immigration-and-borders",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -135,8 +135,10 @@
      "subject": "grief-and-loss",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -166,9 +168,11 @@
     {
      "subject": "reproductive-health",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -177,10 +181,21 @@
    "subjects": [
     {
      "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "personal-transformation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:53+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -201,10 +216,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:39+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "gender-identity",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -215,8 +241,10 @@
      "subject": "animal-behaviour",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -254,8 +282,10 @@
      "subject": "racial-violence",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -292,9 +322,11 @@
     {
      "subject": "death-penalty",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -305,8 +337,10 @@
      "subject": "scientific-discovery",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -323,9 +357,11 @@
     {
      "subject": "reentry-after-prison",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:08:21+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -377,10 +413,21 @@
    "subjects": [
     {
      "subject": "sports-history",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "athlete-profile",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -405,9 +452,11 @@
     {
      "subject": "environmental-contamination",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:07+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -418,8 +467,10 @@
      "subject": "family-secret",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -429,9 +480,11 @@
     {
      "subject": "wilderness-expedition-survival",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -488,8 +541,10 @@
      "subject": "sense-of-place",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -506,9 +561,11 @@
     {
      "subject": "prison-life",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -516,18 +573,22 @@
    "guid": "22ae1046c1e04d1ea01930b5862f7fae",
    "subjects": [
     {
-     "subject": "making-of-a-work",
+     "subject": "extremist-movement",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "extremist-movement",
+     "subject": "making-of-a-work",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -544,9 +605,11 @@
     {
      "subject": "conspiracy-theory",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:07+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

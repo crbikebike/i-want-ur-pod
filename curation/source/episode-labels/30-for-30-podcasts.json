@@ -4,12 +4,12 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "sports-scandal",
+   "slug": "athlete-profile",
    "count": 19
   },
   {
-   "slug": "athlete-profile",
-   "count": 17
+   "slug": "sports-scandal",
+   "count": 19
   },
   {
    "slug": "sports-history",
@@ -24,6 +24,10 @@
    "count": 6
   },
   {
+   "slug": "sexual-abuse-accountability",
+   "count": 5
+  },
+  {
    "slug": "artist-band-biography",
    "count": 4
   },
@@ -32,12 +36,12 @@
    "count": 4
   },
   {
-   "slug": "sexual-abuse-accountability",
+   "slug": "unsolved-murder",
    "count": 4
   },
   {
-   "slug": "unsolved-murder",
-   "count": 4
+   "slug": "founder-biography",
+   "count": 3
   },
   {
    "slug": "betting-and-gambling",
@@ -45,6 +49,10 @@
   },
   {
    "slug": "bribery-and-kickbacks",
+   "count": 2
+  },
+  {
+   "slug": "cold-case-reopened",
    "count": 2
   },
   {
@@ -60,7 +68,7 @@
    "count": 2
   },
   {
-   "slug": "founder-biography",
+   "slug": "musician-death",
    "count": 2
   },
   {
@@ -72,19 +80,7 @@
    "count": 1
   },
   {
-   "slug": "celebrity-life",
-   "count": 1
-  },
-  {
    "slug": "civil-rights-struggle",
-   "count": 1
-  },
-  {
-   "slug": "cold-case-reopened",
-   "count": 1
-  },
-  {
-   "slug": "cold-war-espionage",
    "count": 1
   },
   {
@@ -92,27 +88,7 @@
    "count": 1
   },
   {
-   "slug": "games-and-play",
-   "count": 1
-  },
-  {
-   "slug": "institutional-coverup",
-   "count": 1
-  },
-  {
    "slug": "kidnapping-and-captivity",
-   "count": 1
-  },
-  {
-   "slug": "mental-health",
-   "count": 1
-  },
-  {
-   "slug": "murder-close-to-home",
-   "count": 1
-  },
-  {
-   "slug": "musician-death",
    "count": 1
   },
   {
@@ -208,9 +184,11 @@
     {
      "subject": "wilderness-expedition-survival",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:09+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -272,9 +250,11 @@
     {
      "subject": "sports-history",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:15+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -337,9 +317,11 @@
     {
      "subject": "community-in-conflict",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:15+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ],
    "entities": [
@@ -355,6 +337,15 @@
    "guid": "http://www.espn.com/espnradio/podcast?id=21673003",
    "subjects": [
     {
+     "subject": "games-and-play",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "making-of-a-work",
      "role": "secondary",
      "confidence": "medium",
@@ -362,11 +353,13 @@
      "at": "2026-07-30T15:06:00+00:00"
     },
     {
-     "subject": "games-and-play",
+     "subject": "founder-biography",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -544,9 +537,11 @@
     {
      "subject": "sports-history",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:15+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -617,9 +612,11 @@
     {
      "subject": "civil-rights-struggle",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:00+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -875,8 +872,10 @@
      "subject": "sports-history",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:45+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ]
   },
@@ -884,18 +883,22 @@
    "guid": "http://www.espn.com/espnradio/podcast?id=28060657",
    "subjects": [
     {
-     "subject": "athlete-profile",
+     "subject": "cold-war-espionage",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:15+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     },
     {
-     "subject": "cold-war-espionage",
+     "subject": "athlete-profile",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:15+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -925,9 +928,11 @@
     {
      "subject": "kidnapping-and-captivity",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:09+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -980,8 +985,10 @@
      "subject": "buildings-and-public-space",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:58+00:00"
+     "at": "2026-08-05T05:03:11+00:00"
     }
    ],
    "entities": [
@@ -1105,6 +1112,37 @@
    ]
   },
   {
+   "guid": "b40d9c9a-b187-11ea-8bf6-d3bf4873b16f",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Martha Karolyi",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:46:09+00:00"
+    }
+   ]
+  },
+  {
    "guid": "bd151b38-b187-11ea-ba59-73ce2a83e2f9",
    "subjects": [
     {
@@ -1134,33 +1172,6 @@
      "kind": "company",
      "confidence": "high",
      "at": "2026-07-29T23:27:15+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "b40d9c9a-b187-11ea-8bf6-d3bf4873b16f",
-   "subjects": [
-    {
-     "subject": "sexual-abuse-accountability",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:09+00:00"
-    },
-    {
-     "subject": "institutional-coverup",
-     "role": "primary",
-     "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:09+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Martha Karolyi",
-     "kind": "person",
-     "confidence": "high",
-     "at": "2026-07-30T14:46:09+00:00"
     }
    ]
   },
@@ -1264,9 +1275,11 @@
     {
      "subject": "sports-history",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:37+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1289,8 +1302,10 @@
      "subject": "musician-death",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:37+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1299,6 +1314,44 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-07-30T15:14:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2a7ef32a-1938-11eb-b332-b79f62ccbbcb",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:41:20+00:00"
+    },
+    {
+     "subject": "musician-death",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nipsey Hussle",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:41:20+00:00"
     }
    ]
   },
@@ -1332,33 +1385,6 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-07-29T23:27:15+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "2a7ef32a-1938-11eb-b332-b79f62ccbbcb",
-   "subjects": [
-    {
-     "subject": "stranger-homicide",
-     "role": "secondary",
-     "confidence": "low",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:20+00:00"
-    },
-    {
-     "subject": "celebrity-life",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:20+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Nipsey Hussle",
-     "kind": "person",
-     "confidence": "high",
-     "at": "2026-07-30T14:41:20+00:00"
     }
    ]
   },
@@ -1435,9 +1461,11 @@
     {
      "subject": "sports-history",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:45+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -2309,8 +2337,10 @@
      "subject": "voluntary-disappearance",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:45+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ]
   },
@@ -2334,26 +2364,39 @@
    ]
   },
   {
+   "guid": "5f1bcf8c-6676-11f0-b269-ef6febdd29d6",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ]
+  },
+  {
    "guid": "3d773362-6671-11f0-b278-77a606893647",
    "subjects": [
     {
      "subject": "athlete-profile",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:45+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "5f1bcf8c-6676-11f0-b269-ef6febdd29d6",
-   "subjects": [
-    {
-     "subject": "mental-health",
-     "role": "primary",
-     "confidence": "low",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:37+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -2363,9 +2406,11 @@
     {
      "subject": "pioneer-biography",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:10+00:00"
+     "at": "2026-08-05T05:03:11+00:00"
     }
    ]
   },
@@ -2442,9 +2487,11 @@
     {
      "subject": "cold-case-reopened",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2513,10 +2560,21 @@
     },
     {
      "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:45+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -2634,9 +2692,11 @@
     {
      "subject": "courtroom-trial",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:20+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [

@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "missing-person",
-   "count": 47
+   "count": 50
   },
   {
    "slug": "unsolved-murder",
@@ -13,11 +13,11 @@
   },
   {
    "slug": "cold-case-reopened",
-   "count": 11
+   "count": 10
   },
   {
    "slug": "racial-violence",
-   "count": 8
+   "count": 7
   },
   {
    "slug": "vanishing-and-institutional-failure",
@@ -48,15 +48,11 @@
    "count": 1
   },
   {
-   "slug": "investigative-process",
+   "slug": "extremist-movement",
    "count": 1
   },
   {
    "slug": "serial-offender",
-   "count": 1
-  },
-  {
-   "slug": "stranger-homicide",
    "count": 1
   },
   {
@@ -97,10 +93,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "missing-person",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -756,9 +763,11 @@
     {
      "subject": "missing-person",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:45+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -767,10 +776,21 @@
    "subjects": [
     {
      "subject": "racial-violence",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:58+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -976,9 +996,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:29+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1142,10 +1164,21 @@
    "subjects": [
     {
      "subject": "cold-case-reopened",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1856,10 +1889,21 @@
     },
     {
      "subject": "stranger-homicide",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:09+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2558,8 +2602,10 @@
      "subject": "wrongful-conviction",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:09+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -2611,9 +2657,11 @@
     {
      "subject": "body-never-found",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:58+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2820,8 +2868,10 @@
      "subject": "serial-offender",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:45+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [

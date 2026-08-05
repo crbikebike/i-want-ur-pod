@@ -5,14 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "tech-industry-power",
-   "count": 41
+   "count": 37
   },
   {
    "slug": "startup-collapse",
-   "count": 10
+   "count": 12
   },
   {
    "slug": "founder-biography",
+   "count": 11
+  },
+  {
+   "slug": "internet-culture",
    "count": 8
   },
   {
@@ -21,10 +25,6 @@
   },
   {
    "slug": "ai-and-society",
-   "count": 7
-  },
-  {
-   "slug": "internet-culture",
    "count": 7
   },
   {
@@ -40,10 +40,6 @@
    "count": 4
   },
   {
-   "slug": "everyday-object-design",
-   "count": 4
-  },
-  {
    "slug": "media-criticism",
    "count": 4
   },
@@ -56,7 +52,15 @@
    "count": 4
   },
   {
+   "slug": "murder-close-to-home",
+   "count": 4
+  },
+  {
    "slug": "corporate-negligence",
+   "count": 3
+  },
+  {
+   "slug": "everyday-object-design",
    "count": 3
   },
   {
@@ -64,11 +68,11 @@
    "count": 3
   },
   {
-   "slug": "hacker-life-story",
+   "slug": "gentrification-and-housing",
    "count": 3
   },
   {
-   "slug": "murder-close-to-home",
+   "slug": "hacker-life-story",
    "count": 3
   },
   {
@@ -108,10 +112,6 @@
    "count": 2
   },
   {
-   "slug": "gentrification-and-housing",
-   "count": 2
-  },
-  {
    "slug": "investigative-process",
    "count": 2
   },
@@ -148,11 +148,19 @@
    "count": 1
   },
   {
+   "slug": "archives-and-objects",
+   "count": 1
+  },
+  {
    "slug": "business-rivalry",
    "count": 1
   },
   {
-   "slug": "celebrity-life",
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
    "count": 1
   },
   {
@@ -164,15 +172,7 @@
    "count": 1
   },
   {
-   "slug": "education-system-failure",
-   "count": 1
-  },
-  {
    "slug": "elections-and-voting",
-   "count": 1
-  },
-  {
-   "slug": "engineering-failure",
    "count": 1
   },
   {
@@ -181,10 +181,6 @@
   },
   {
    "slug": "food-and-drink",
-   "count": 1
-  },
-  {
-   "slug": "homelessness-and-poverty",
    "count": 1
   },
   {
@@ -208,15 +204,7 @@
    "count": 1
   },
   {
-   "slug": "paranormal-investigation",
-   "count": 1
-  },
-  {
    "slug": "parenting",
-   "count": 1
-  },
-  {
-   "slug": "personal-transformation",
    "count": 1
   },
   {
@@ -232,7 +220,7 @@
    "count": 1
   },
   {
-   "slug": "stranger-homicide",
+   "slug": "schooling-and-policy",
    "count": 1
   }
  ],
@@ -289,9 +277,11 @@
     {
      "subject": "business-rivalry",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:43:20+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -448,8 +438,10 @@
      "subject": "organised-scam-industry",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:13:40+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ],
    "entities": [
@@ -465,6 +457,15 @@
    "guid": "https://assets.bwbx.io/av/users/iqjWHBFdfxIU/v1l1tc6JMgiI/v2.mp3",
    "subjects": [
     {
+     "subject": "education-system-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "tech-industry-power",
      "role": "secondary",
      "confidence": "low",
@@ -472,11 +473,13 @@
      "at": "2026-07-29T23:04:16+00:00"
     },
     {
-     "subject": "education-system-failure",
+     "subject": "schooling-and-policy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:16+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -690,9 +693,11 @@
     {
      "subject": "immigration-and-borders",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:16+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1238,9 +1243,11 @@
     {
      "subject": "kidnapping-and-captivity",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:42+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1526,9 +1533,11 @@
     {
      "subject": "corporate-breach-response",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1545,10 +1554,21 @@
    "subjects": [
     {
      "subject": "tech-industry-power",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:24+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "startup-collapse",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1681,8 +1701,10 @@
      "subject": "elections-and-voting",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:40+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ],
    "entities": [
@@ -1842,9 +1864,11 @@
     {
      "subject": "tech-industry-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:42+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1854,9 +1878,11 @@
     {
      "subject": "tech-industry-power",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:56+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:42+00:00"
     }
    ]
   },
@@ -2004,9 +2030,11 @@
     {
      "subject": "surveillance-and-privacy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:49+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2050,10 +2078,21 @@
    "subjects": [
     {
      "subject": "tech-industry-power",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:42+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2138,8 +2177,10 @@
      "subject": "food-and-drink",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:23+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2236,9 +2277,11 @@
     {
      "subject": "police-misconduct",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:18+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2249,8 +2292,10 @@
      "subject": "everyday-mystery",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:42+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2355,8 +2400,10 @@
      "subject": "addiction-and-recovery",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:23+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2373,26 +2420,39 @@
    ]
   },
   {
+   "guid": "fc26fbea-aac0-11e8-adc8-ab24b14a9648",
+   "subjects": [
+    {
+     "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "startup-collapse",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
    "guid": "094b7584-aac2-11e8-8d54-13daff1148e8",
    "subjects": [
     {
      "subject": "tech-industry-power",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:49+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "fc26fbea-aac0-11e8-adc8-ab24b14a9648",
-   "subjects": [
-    {
-     "subject": "tech-industry-power",
-     "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2421,10 +2481,21 @@
    "subjects": [
     {
      "subject": "engineering-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "archives-and-objects",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:42+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2440,10 +2511,21 @@
     },
     {
      "subject": "paranormal-investigation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:42+00:00"
+    },
+    {
+     "subject": "conspiracy-theory",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:56+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:42+00:00"
     }
    ]
   },
@@ -2638,9 +2720,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:56+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2657,9 +2741,11 @@
     {
      "subject": "advertising-and-persuasion",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:40+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -2696,9 +2782,11 @@
     {
      "subject": "tech-industry-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2760,9 +2848,11 @@
     {
      "subject": "work-and-labour-conditions",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:42+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2779,9 +2869,11 @@
     {
      "subject": "parenting",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:56+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2792,8 +2884,10 @@
      "subject": "tech-industry-power",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:40+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2811,8 +2905,10 @@
      "subject": "regulatory-failure",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:23+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2836,9 +2932,11 @@
     {
      "subject": "work-and-labour-conditions",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:08+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2882,9 +2980,11 @@
     {
      "subject": "queer-life",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:49+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2908,9 +3008,11 @@
     {
      "subject": "economic-policy",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -3003,18 +3105,22 @@
    "guid": "b5e57f3a-7b3f-11e9-8bda-d77813f855c9",
    "subjects": [
     {
-     "subject": "gentrification-and-housing",
+     "subject": "homelessness-and-poverty",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:08+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "homelessness-and-poverty",
+     "subject": "gentrification-and-housing",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:08+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -3110,9 +3216,11 @@
     {
      "subject": "labour-history",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:42+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -3144,8 +3252,10 @@
      "subject": "animal-behaviour",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:56+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -3209,9 +3319,11 @@
     {
      "subject": "tech-industry-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3353,10 +3465,21 @@
     },
     {
      "subject": "everyday-object-design",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:40+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ],
    "entities": [
@@ -3407,9 +3530,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:08+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -3535,10 +3660,21 @@
    "subjects": [
     {
      "subject": "tech-industry-power",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:40+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
+    },
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ]
   },
@@ -3548,9 +3684,11 @@
     {
      "subject": "startup-collapse",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:56+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:42+00:00"
     }
    ],
    "entities": [
@@ -3740,9 +3878,11 @@
     {
      "subject": "murder-for-hire",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -4089,9 +4229,11 @@
     {
      "subject": "tech-industry-power",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -4352,15 +4494,26 @@
     {
      "subject": "management-and-leadership",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
   {
    "guid": "c2a16b1d-3e43-45fd-93b9-afa2011e4dfa",
    "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
     {
      "subject": "crypto-collapse",
      "role": "secondary",
@@ -4369,11 +4522,13 @@
      "at": "2026-07-29T23:06:49+00:00"
     },
     {
-     "subject": "celebrity-life",
+     "subject": "founder-biography",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:49+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -4436,10 +4591,21 @@
     },
     {
      "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "founder-biography",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:23+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -4865,10 +5031,21 @@
     },
     {
      "subject": "stranger-homicide",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -4958,9 +5135,11 @@
     {
      "subject": "courtroom-trial",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:15:44+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:24+00:00"
     }
    ],
    "entities": [

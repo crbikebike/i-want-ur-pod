@@ -5,7 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "mockumentary-investigation-fiction",
-   "count": 65
+   "count": 64
+  },
+  {
+   "slug": "folklore-and-legend",
+   "count": 1
   }
  ],
  "episodes": [
@@ -378,10 +382,21 @@
    "subjects": [
     {
      "subject": "mockumentary-investigation-fiction",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:44+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -894,9 +909,11 @@
     {
      "subject": "mockumentary-investigation-fiction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:43+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -919,8 +936,10 @@
      "subject": "mockumentary-investigation-fiction",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:07+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   }

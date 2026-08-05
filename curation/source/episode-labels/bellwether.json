@@ -8,7 +8,7 @@
    "count": 5
   },
   {
-   "slug": "audio-drama-mystery",
+   "slug": "audio-drama-scifi",
    "count": 1
   }
  ],
@@ -29,18 +29,22 @@
    "guid": "9dbf90f7-5c11-437c-a594-dd77ac753578",
    "subjects": [
     {
-     "subject": "audio-drama-scifi",
+     "subject": "mockumentary-investigation-fiction",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "mockumentary-investigation-fiction",
+     "subject": "audio-drama-scifi",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -49,10 +53,21 @@
    "subjects": [
     {
      "subject": "audio-drama-mystery",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:29:18+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "mockumentary-investigation-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },

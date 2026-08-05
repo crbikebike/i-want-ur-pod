@@ -4,11 +4,11 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "cult-and-control",
-   "count": 2
+   "slug": "paranormal-investigation",
+   "count": 5
   },
   {
-   "slug": "paranormal-investigation",
+   "slug": "cult-and-control",
    "count": 2
   },
   {
@@ -16,19 +16,7 @@
    "count": 2
   },
   {
-   "slug": "folklore-and-legend",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
-   "count": 1
-  },
-  {
    "slug": "indigenous-history",
-   "count": 1
-  },
-  {
-   "slug": "religious-abuse",
    "count": 1
   }
  ],
@@ -68,6 +56,15 @@
    "guid": "3f20eaf6-0590-452f-8996-ae88016fad41",
    "subjects": [
     {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "religious-community",
      "role": "secondary",
      "confidence": "medium",
@@ -75,11 +72,13 @@
      "at": "2026-07-30T15:08:45+00:00"
     },
     {
-     "subject": "religious-abuse",
+     "subject": "paranormal-investigation",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:45+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -95,10 +94,21 @@
     },
     {
      "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "paranormal-investigation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:29:43+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -162,8 +172,10 @@
      "subject": "indigenous-history",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:40+00:00"
+     "at": "2026-08-05T04:43:18+00:00"
     }
    ],
    "entities": [
@@ -212,18 +224,22 @@
    "guid": "6c83842c-a527-47ed-828c-aeba002fb2cf",
    "subjects": [
     {
-     "subject": "paranormal-investigation",
+     "subject": "history-retold",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:27:45+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "paranormal-investigation",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:27:45+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

@@ -12,11 +12,11 @@
    "count": 1
   },
   {
-   "slug": "law-explained",
+   "slug": "medical-system-harm",
    "count": 1
   },
   {
-   "slug": "police-misconduct",
+   "slug": "prosecutorial-power",
    "count": 1
   }
  ],
@@ -226,10 +226,21 @@
     },
     {
      "subject": "police-misconduct",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:25:47+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -245,18 +256,22 @@
    "guid": "ad60b4e1-a660-420a-beb9-c7524c8e2150",
    "subjects": [
     {
-     "subject": "prosecutorial-power",
+     "subject": "law-explained",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:11+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "law-explained",
+     "subject": "prosecutorial-power",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:11+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -273,9 +288,11 @@
     {
      "subject": "gender-identity",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:46+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   }

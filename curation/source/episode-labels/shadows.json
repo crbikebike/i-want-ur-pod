@@ -5,11 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "relationship-remembered",
-   "count": 6
-  },
-  {
-   "slug": "romance-and-heartbreak",
-   "count": 1
+   "count": 7
   }
  ],
  "episodes": [
@@ -37,6 +33,29 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-07-30T15:22:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "theshadows-95ae79c7-a6c8-42c3-a7bd-895c157deac6",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -104,18 +123,6 @@
      "confidence": "medium",
      "model": "claude-sonnet-5",
      "at": "2026-08-01T20:30:37+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "theshadows-95ae79c7-a6c8-42c3-a7bd-895c157deac6",
-   "subjects": [
-    {
-     "subject": "romance-and-heartbreak",
-     "role": "primary",
-     "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:39+00:00"
     }
    ]
   }

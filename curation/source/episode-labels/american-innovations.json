@@ -5,14 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "everyday-object-design",
-   "count": 7
+   "count": 9
+  },
+  {
+   "slug": "scientific-discovery",
+   "count": 8
   },
   {
    "slug": "medical-research",
    "count": 7
   },
   {
-   "slug": "scientific-discovery",
+   "slug": "founder-biography",
    "count": 6
   },
   {
@@ -28,23 +32,7 @@
    "count": 2
   },
   {
-   "slug": "making-of-a-work",
-   "count": 2
-  },
-  {
-   "slug": "ageing-and-mortality",
-   "count": 1
-  },
-  {
    "slug": "books-and-writing",
-   "count": 1
-  },
-  {
-   "slug": "buildings-and-public-space",
-   "count": 1
-  },
-  {
-   "slug": "business-rivalry",
    "count": 1
   },
   {
@@ -60,31 +48,15 @@
    "count": 1
   },
   {
-   "slug": "environmental-contamination",
-   "count": 1
-  },
-  {
-   "slug": "food-and-drink",
-   "count": 1
-  },
-  {
-   "slug": "forgotten-episode",
-   "count": 1
-  },
-  {
    "slug": "games-and-play",
    "count": 1
   },
   {
-   "slug": "internet-culture",
+   "slug": "making-of-a-work",
    "count": 1
   },
   {
-   "slug": "music-industry-business",
-   "count": 1
-  },
-  {
-   "slug": "natural-disaster",
+   "slug": "medical-deception",
    "count": 1
   },
   {
@@ -92,11 +64,11 @@
    "count": 1
   },
   {
-   "slug": "reproductive-health",
+   "slug": "pioneer-biography",
    "count": 1
   },
   {
-   "slug": "startup-collapse",
+   "slug": "reproductive-health",
    "count": 1
   },
   {
@@ -105,10 +77,6 @@
   },
   {
    "slug": "systems-and-infrastructure-design",
-   "count": 1
-  },
-  {
-   "slug": "war-and-its-conduct",
    "count": 1
   }
  ],
@@ -119,9 +87,11 @@
     {
      "subject": "scientific-discovery",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:08:21+00:00"
+     "at": "2026-08-05T05:03:11+00:00"
     }
    ]
   },
@@ -130,10 +100,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:39+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -155,9 +136,11 @@
     {
      "subject": "nuclear-age",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -302,10 +285,21 @@
    "subjects": [
     {
      "subject": "forgotten-episode",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "pioneer-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -349,9 +343,11 @@
     {
      "subject": "reproductive-health",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:10+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -375,10 +371,21 @@
     },
     {
      "subject": "startup-collapse",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:53+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -427,6 +434,15 @@
    "guid": "gid://art19-episode-locator/V0/YmNUc3urbmOYDICb5eogzh5m6WU30XsSx7c9l9Vqg1Y",
    "subjects": [
     {
+     "subject": "business-rivalry",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
      "subject": "food-and-drink",
      "role": "secondary",
      "confidence": "medium",
@@ -434,11 +450,13 @@
      "at": "2026-07-28T01:05:39+00:00"
     },
     {
-     "subject": "business-rivalry",
+     "subject": "founder-biography",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:39+00:00"
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ],
    "entities": [
@@ -521,9 +539,11 @@
     {
      "subject": "systems-and-infrastructure-design",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -656,10 +676,21 @@
    "subjects": [
     {
      "subject": "food-and-drink",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
+    },
+    {
+     "subject": "founder-biography",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:46+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -688,10 +719,21 @@
    "subjects": [
     {
      "subject": "buildings-and-public-space",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:07+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "design-and-architecture",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -714,10 +756,21 @@
    "subjects": [
     {
      "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "scientific-discovery",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:10+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -727,9 +780,11 @@
     {
      "subject": "games-and-play",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:53+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -738,10 +793,21 @@
    "subjects": [
     {
      "subject": "design-and-architecture",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "everyday-object-design",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:08:21+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -768,18 +834,22 @@
    "guid": "gid://art19-episode-locator/V0/NJTrRJ_BmPzPrSgXUOxT9VpNaCGdsyeZ7naxBAIOZEA",
    "subjects": [
     {
-     "subject": "everyday-object-design",
+     "subject": "music-industry-business",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     },
     {
-     "subject": "music-industry-business",
+     "subject": "everyday-object-design",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -887,9 +957,11 @@
     {
      "subject": "early-hacker-history",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:08:21+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -897,18 +969,22 @@
    "guid": "gid://art19-episode-locator/V0/Yuw-DZPjd7xYg2-alB0znURIGKQnaCqjbiSPPZRY5t8",
    "subjects": [
     {
-     "subject": "scientific-discovery",
+     "subject": "natural-disaster",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:39+00:00"
+     "at": "2026-08-05T04:52:47+00:00"
     },
     {
-     "subject": "natural-disaster",
+     "subject": "scientific-discovery",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:05:39+00:00"
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ]
   },
@@ -916,6 +992,15 @@
    "guid": "gid://art19-episode-locator/V0/V-6RjQEcLim8Iyysw2X8YLiOO7ZsI6SRFw4llGp_e8Q",
    "subjects": [
     {
+     "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
      "subject": "scientific-discovery",
      "role": "secondary",
      "confidence": "medium",
@@ -923,11 +1008,13 @@
      "at": "2026-07-28T01:09:19+00:00"
     },
     {
-     "subject": "ageing-and-mortality",
+     "subject": "medical-deception",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -943,6 +1030,15 @@
    "guid": "gid://art19-episode-locator/V0/mgZEK7oXlpFM2XVkFsHJ-mU28lN_apwHXhb9u1MjS3s",
    "subjects": [
     {
+     "subject": "environmental-contamination",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "scientific-discovery",
      "role": "secondary",
      "confidence": "low",
@@ -950,11 +1046,13 @@
      "at": "2026-07-28T01:06:46+00:00"
     },
     {
-     "subject": "environmental-contamination",
+     "subject": "founder-biography",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:46+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -970,6 +1068,15 @@
    "guid": "gid://art19-episode-locator/V0/26EXW7AWSmzRzD-gckB1jysN8blHsdq6u0ZO7BMDdKU",
    "subjects": [
     {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "tech-industry-power",
      "role": "secondary",
      "confidence": "medium",
@@ -977,11 +1084,13 @@
      "at": "2026-07-28T01:06:55+00:00"
     },
     {
-     "subject": "internet-culture",
+     "subject": "founder-biography",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:55+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1012,9 +1121,11 @@
     {
      "subject": "corporate-negligence",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:07+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1093,9 +1204,11 @@
     {
      "subject": "state-sponsored-cyber-espionage",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:08:21+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1114,8 +1227,10 @@
      "subject": "books-and-writing",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:19+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   }

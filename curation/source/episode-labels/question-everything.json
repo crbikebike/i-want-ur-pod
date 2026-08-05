@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "media-criticism",
-   "count": 19
+   "count": 21
   },
   {
    "slug": "political-persecution",
@@ -32,6 +32,14 @@
    "count": 3
   },
   {
+   "slug": "internet-culture",
+   "count": 3
+  },
+  {
+   "slug": "investigative-process",
+   "count": 3
+  },
+  {
    "slug": "making-of-a-work",
    "count": 3
   },
@@ -44,15 +52,11 @@
    "count": 2
   },
   {
-   "slug": "internet-culture",
-   "count": 2
-  },
-  {
-   "slug": "investigative-process",
-   "count": 2
-  },
-  {
    "slug": "police-misconduct",
+   "count": 2
+  },
+  {
+   "slug": "regulatory-failure",
    "count": 2
   },
   {
@@ -60,31 +64,11 @@
    "count": 1
   },
   {
-   "slug": "bribery-and-kickbacks",
-   "count": 1
-  },
-  {
-   "slug": "corporate-fraud",
-   "count": 1
-  },
-  {
-   "slug": "foreign-political-crisis",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
-   "count": 1
-  },
-  {
-   "slug": "ideas-and-argument",
+   "slug": "climate-change",
    "count": 1
   },
   {
    "slug": "identity-impostor",
-   "count": 1
-  },
-  {
-   "slug": "law-explained",
    "count": 1
   },
   {
@@ -96,11 +80,11 @@
    "count": 1
   },
   {
-   "slug": "personal-transformation",
+   "slug": "political-scandal",
    "count": 1
   },
   {
-   "slug": "regulatory-failure",
+   "slug": "presidential-power",
    "count": 1
   },
   {
@@ -109,10 +93,6 @@
   },
   {
    "slug": "sex-work-and-exploitation",
-   "count": 1
-  },
-  {
-   "slug": "war-crimes-accountability",
    "count": 1
   },
   {
@@ -127,9 +107,11 @@
     {
      "subject": "journalist-under-scrutiny",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -229,10 +211,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:39+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -428,18 +421,22 @@
    "guid": "358f450a-2212-4ec3-8312-f5a1fa54c40c",
    "subjects": [
     {
-     "subject": "presidential-power",
+     "subject": "personal-transformation",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:30+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "personal-transformation",
+     "subject": "presidential-power",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:30+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -497,9 +494,11 @@
     {
      "subject": "legal-precedent",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -608,18 +607,22 @@
    "guid": "9cb94ef3-1b97-49a2-b036-1301e6248fa0",
    "subjects": [
     {
-     "subject": "investigative-process",
+     "subject": "war-crimes-accountability",
      "role": "secondary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:35+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "war-crimes-accountability",
+     "subject": "investigative-process",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:35+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -737,9 +740,11 @@
     {
      "subject": "relationship-remembered",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:03+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -761,15 +766,26 @@
     {
      "subject": "media-criticism",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:35+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
   {
    "guid": "c773cf83-e16e-4057-88f5-bb276a3b6b27",
    "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
     {
      "subject": "media-criticism",
      "role": "secondary",
@@ -778,11 +794,13 @@
      "at": "2026-07-30T14:41:39+00:00"
     },
     {
-     "subject": "law-explained",
+     "subject": "regulatory-failure",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:39+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -949,9 +967,11 @@
     {
      "subject": "whistleblower",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:04+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1036,8 +1056,10 @@
      "subject": "regulatory-failure",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:35+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1045,18 +1067,22 @@
    "guid": "88f91d89-15fb-4c30-b25a-7e53649f8a67",
    "subjects": [
     {
-     "subject": "media-criticism",
+     "subject": "ideas-and-argument",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:30+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "ideas-and-argument",
+     "subject": "media-criticism",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:30+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1137,18 +1163,22 @@
    "guid": "4eb4f798-ac64-4036-b4d0-6b6f1aed3e1c",
    "subjects": [
     {
-     "subject": "internet-culture",
+     "subject": "history-retold",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:03+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "internet-culture",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:03+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1211,8 +1241,10 @@
      "subject": "natural-disaster",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1238,8 +1270,10 @@
      "subject": "sex-work-and-exploitation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:35+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1416,9 +1450,11 @@
     {
      "subject": "identity-impostor",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1619,9 +1655,11 @@
     {
      "subject": "betting-and-gambling",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:40+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1752,10 +1790,21 @@
    "subjects": [
     {
      "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "political-scandal",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:03+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1777,18 +1826,22 @@
    "guid": "ea5f6e53-72ae-4b09-b693-873f5272f061",
    "subjects": [
     {
-     "subject": "climate-change",
+     "subject": "corporate-fraud",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:04+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "corporate-fraud",
+     "subject": "climate-change",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:04+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1804,18 +1857,22 @@
    "guid": "53b56870-8da6-4af4-a7a4-6b7cb57963a0",
    "subjects": [
     {
-     "subject": "investigative-process",
+     "subject": "foreign-political-crisis",
      "role": "secondary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "foreign-political-crisis",
+     "subject": "investigative-process",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

@@ -12,11 +12,11 @@
    "count": 1
   },
   {
-   "slug": "identity-impostor",
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
-   "slug": "language-and-words",
+   "slug": "identity-impostor",
    "count": 1
   },
   {
@@ -93,8 +93,10 @@
      "subject": "cold-case-reopened",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:47+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -120,8 +122,10 @@
      "subject": "missing-person",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:00+00:00"
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -399,9 +403,11 @@
     {
      "subject": "wrongful-conviction",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:33+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -418,10 +424,21 @@
    "subjects": [
     {
      "subject": "language-and-words",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:25:45+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -431,9 +448,11 @@
     {
      "subject": "identity-impostor",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:57+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [

@@ -8,11 +8,11 @@
    "count": 8
   },
   {
-   "slug": "song-and-album-origin",
-   "count": 2
+   "slug": "celebrity-life",
+   "count": 1
   },
   {
-   "slug": "celebrity-life",
+   "slug": "music-scene-movement",
    "count": 1
   },
   {
@@ -21,6 +21,10 @@
   },
   {
    "slug": "slavery-and-its-legacy",
+   "count": 1
+  },
+  {
+   "slug": "song-and-album-origin",
    "count": 1
   },
   {
@@ -162,9 +166,11 @@
     {
      "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:01+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ],
    "entities": [
@@ -202,9 +208,11 @@
     {
      "subject": "talking-about-music",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:01+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -249,8 +257,10 @@
      "subject": "slavery-and-its-legacy",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -273,10 +283,21 @@
    "subjects": [
     {
      "subject": "song-and-album-origin",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:59+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -333,9 +354,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

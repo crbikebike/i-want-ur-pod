@@ -9,7 +9,7 @@
   },
   {
    "slug": "music-industry-business",
-   "count": 6
+   "count": 5
   },
   {
    "slug": "song-and-album-origin",
@@ -20,15 +20,15 @@
    "count": 3
   },
   {
+   "slug": "books-and-writing",
+   "count": 2
+  },
+  {
+   "slug": "gendered-constraint",
+   "count": 1
+  },
+  {
    "slug": "history-retold",
-   "count": 1
-  },
-  {
-   "slug": "invented-category",
-   "count": 1
-  },
-  {
-   "slug": "making-of-a-work",
    "count": 1
   },
   {
@@ -36,7 +36,7 @@
    "count": 1
   },
   {
-   "slug": "musician-death",
+   "slug": "talking-about-music",
    "count": 1
   }
  ],
@@ -72,6 +72,15 @@
    "guid": "http://cocaineandrhinestones.com/?p=26",
    "subjects": [
     {
+     "subject": "invented-category",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
+    },
+    {
      "subject": "reproductive-health",
      "role": "secondary",
      "confidence": "low",
@@ -79,11 +88,13 @@
      "at": "2026-08-01T20:18:22+00:00"
     },
     {
-     "subject": "invented-category",
+     "subject": "gendered-constraint",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:22+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ],
    "entities": [
@@ -439,10 +450,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "talking-about-music",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:01+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ]
   },
@@ -479,9 +501,11 @@
     {
      "subject": "history-retold",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:31:45+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -499,9 +523,11 @@
     {
      "subject": "music-scene-movement",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:40+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -830,6 +856,15 @@
    "guid": "929bd973-bb98-4b07-b11b-932e9b7f03bc",
    "subjects": [
     {
+     "subject": "musician-death",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
      "subject": "relationship-remembered",
      "role": "secondary",
      "confidence": "medium",
@@ -837,11 +872,13 @@
      "at": "2026-07-30T15:00:01+00:00"
     },
     {
-     "subject": "musician-death",
+     "subject": "artist-band-biography",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:01+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -903,10 +940,21 @@
    "subjects": [
     {
      "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
+    },
+    {
+     "subject": "books-and-writing",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
+     "at": "2026-08-05T05:03:11+00:00"
     }
    ]
   },
@@ -915,10 +963,21 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:31:45+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   }

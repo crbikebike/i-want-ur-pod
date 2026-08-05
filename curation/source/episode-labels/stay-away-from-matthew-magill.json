@@ -5,14 +5,10 @@
  "subjectsUsed": [
   {
    "slug": "charismatic-con",
-   "count": 7
+   "count": 8
   },
   {
-   "slug": "books-and-writing",
-   "count": 1
-  },
-  {
-   "slug": "estrangement-and-reconciliation",
+   "slug": "investigative-process",
    "count": 1
   }
  ],
@@ -183,10 +179,21 @@
    "subjects": [
     {
      "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "charismatic-con",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -203,10 +210,21 @@
    "subjects": [
     {
      "subject": "books-and-writing",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:27:45+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   }

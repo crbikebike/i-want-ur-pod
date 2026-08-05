@@ -9,7 +9,7 @@
   },
   {
    "slug": "cold-case-reopened",
-   "count": 8
+   "count": 9
   },
   {
    "slug": "missing-person",
@@ -17,7 +17,7 @@
   },
   {
    "slug": "serial-offender",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "child-victim",
@@ -44,19 +44,11 @@
    "count": 1
   },
   {
-   "slug": "courtroom-trial",
+   "slug": "family-annihilation-and-parricide",
    "count": 1
   },
   {
    "slug": "forensic-evidence",
-   "count": 1
-  },
-  {
-   "slug": "mass-shooting",
-   "count": 1
-  },
-  {
-   "slug": "medical-system-harm",
    "count": 1
   },
   {
@@ -76,8 +68,10 @@
      "subject": "cold-case-reopened",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:54+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -245,10 +239,21 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -399,8 +404,10 @@
      "subject": "unsolved-murder",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:36+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -409,10 +416,21 @@
    "subjects": [
     {
      "subject": "stranger-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:54+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -430,8 +448,10 @@
      "subject": "forensic-evidence",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:41+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -447,18 +467,22 @@
    "guid": "https://api.spreaker.com/episode/52293468",
    "subjects": [
     {
-     "subject": "unsolved-murder",
+     "subject": "mass-shooting",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:26:32+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "mass-shooting",
+     "subject": "unsolved-murder",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:26:32+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -569,9 +593,11 @@
     {
      "subject": "captivity-and-escape",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -641,9 +667,11 @@
     {
      "subject": "survival-story",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:26:32+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -759,10 +787,21 @@
     },
     {
      "subject": "courtroom-trial",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:02:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -846,9 +885,11 @@
     {
      "subject": "serial-offender",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:27:42+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -885,9 +926,11 @@
     {
      "subject": "stranger-homicide",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:14:53+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1031,9 +1074,11 @@
     {
      "subject": "wrongful-conviction",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:54+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1111,10 +1156,21 @@
     },
     {
      "subject": "medical-system-harm",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:17+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [

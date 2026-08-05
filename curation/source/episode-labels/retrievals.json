@@ -5,11 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "medical-system-harm",
-   "count": 3
-  },
-  {
-   "slug": "reproductive-health",
-   "count": 1
+   "count": 4
   }
  ],
  "episodes": [
@@ -55,18 +51,22 @@
    "guid": "5adc3bb7-3604-4084-8cf7-efbc1e283cf3",
    "subjects": [
     {
-     "subject": "medical-system-harm",
+     "subject": "reproductive-health",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:41+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "reproductive-health",
+     "subject": "medical-system-harm",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:41+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },

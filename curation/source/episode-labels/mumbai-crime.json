@@ -5,22 +5,22 @@
  "subjectsUsed": [
   {
    "slug": "audio-drama-mystery",
-   "count": 48
+   "count": 45
   },
   {
    "slug": "literary-drama-fiction",
-   "count": 18
-  },
-  {
-   "slug": "audio-drama-scifi",
-   "count": 1
+   "count": 21
   },
   {
    "slug": "informant-and-undercover",
    "count": 1
   },
   {
-   "slug": "investigative-process",
+   "slug": "mockumentary-investigation-fiction",
+   "count": 1
+  },
+  {
+   "slug": "organised-crime",
    "count": 1
   }
  ],
@@ -30,10 +30,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:48+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -115,8 +126,10 @@
      "subject": "informant-and-undercover",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -351,10 +364,21 @@
     },
     {
      "subject": "audio-drama-scifi",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "mockumentary-investigation-fiction",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:08+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1003,10 +1027,21 @@
    "subjects": [
     {
      "subject": "audio-drama-mystery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:41+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "literary-drama-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1023,10 +1058,21 @@
    "subjects": [
     {
      "subject": "audio-drama-mystery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:18+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "literary-drama-fiction",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -1255,10 +1301,21 @@
    "subjects": [
     {
      "subject": "audio-drama-mystery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:33+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "literary-drama-fiction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

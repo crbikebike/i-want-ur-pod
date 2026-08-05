@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "personal-transformation",
-   "count": 22
+   "count": 28
   },
   {
    "slug": "survival-story",
@@ -20,27 +20,23 @@
    "count": 6
   },
   {
+   "slug": "everyday-mystery",
+   "count": 5
+  },
+  {
    "slug": "parenting",
    "count": 5
   },
   {
-   "slug": "relationship-remembered",
-   "count": 5
+   "slug": "adoption-and-origins",
+   "count": 4
   },
   {
    "slug": "disability-and-access",
    "count": 4
   },
   {
-   "slug": "everyday-mystery",
-   "count": 4
-  },
-  {
-   "slug": "making-of-a-work",
-   "count": 4
-  },
-  {
-   "slug": "music-scene-movement",
+   "slug": "grief-and-loss",
    "count": 4
   },
   {
@@ -48,11 +44,11 @@
    "count": 4
   },
   {
-   "slug": "addiction-and-recovery",
-   "count": 3
+   "slug": "relationship-remembered",
+   "count": 4
   },
   {
-   "slug": "adoption-and-origins",
+   "slug": "addiction-and-recovery",
    "count": 3
   },
   {
@@ -60,11 +56,11 @@
    "count": 3
   },
   {
-   "slug": "grief-and-loss",
+   "slug": "mental-health",
    "count": 3
   },
   {
-   "slug": "mental-health",
+   "slug": "music-scene-movement",
    "count": 3
   },
   {
@@ -116,7 +112,15 @@
    "count": 2
   },
   {
-   "slug": "celebrity-life",
+   "slug": "buildings-and-public-space",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  },
+  {
+   "slug": "cost-of-fame",
    "count": 1
   },
   {
@@ -136,15 +140,11 @@
    "count": 1
   },
   {
-   "slug": "gender-identity",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
-   "count": 1
-  },
-  {
    "slug": "indigenous-history",
+   "count": 1
+  },
+  {
+   "slug": "informant-and-undercover",
    "count": 1
   },
   {
@@ -152,15 +152,7 @@
    "count": 1
   },
   {
-   "slug": "online-radicalisation",
-   "count": 1
-  },
-  {
-   "slug": "political-figure-biography",
-   "count": 1
-  },
-  {
-   "slug": "reality-television",
+   "slug": "queer-life",
    "count": 1
   },
   {
@@ -172,15 +164,7 @@
    "count": 1
   },
   {
-   "slug": "sex-work-and-exploitation",
-   "count": 1
-  },
-  {
    "slug": "supernatural-encounter",
-   "count": 1
-  },
-  {
-   "slug": "surveillance-and-privacy",
    "count": 1
   }
  ],
@@ -191,9 +175,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -292,13 +278,6 @@
    "guid": "http://www.abc.net.au/listen/programs/days-like-these/mum-thinks-the-earth-is-flat/12867344",
    "subjects": [
     {
-     "subject": "conspiracy-theory",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:41+00:00"
-    },
-    {
      "subject": "estrangement-and-reconciliation",
      "role": "secondary",
      "confidence": "medium",
@@ -307,10 +286,21 @@
     },
     {
      "subject": "online-radicalisation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "conspiracy-theory",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:41+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -348,9 +338,11 @@
     {
      "subject": "disaster-and-accident-survival",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:35+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -449,8 +441,10 @@
      "subject": "family-secret",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:51+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -654,10 +648,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:41+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -667,9 +672,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -677,18 +684,22 @@
    "guid": "http://www.abc.net.au/listen/programs/days-like-these/the-quiz-masters-retirement-plan/13319526",
    "subjects": [
     {
-     "subject": "personal-transformation",
+     "subject": "reality-television",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:35+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "reality-television",
+     "subject": "personal-transformation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:35+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -864,8 +875,10 @@
      "subject": "supernatural-encounter",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:17+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -901,10 +914,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:20+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
+    },
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
     }
    ]
   },
@@ -1147,10 +1171,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "adoption-and-origins",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1277,10 +1312,21 @@
    "subjects": [
     {
      "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "buildings-and-public-space",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:36+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1288,18 +1334,22 @@
    "guid": "http://www.abc.net.au/listen/programs/days-like-these/bonus-easy-love/13683934",
    "subjects": [
     {
-     "subject": "grief-and-loss",
+     "subject": "sex-work-and-exploitation",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:22:33+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "sex-work-and-exploitation",
+     "subject": "grief-and-loss",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:22:33+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1309,9 +1359,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1320,10 +1372,21 @@
    "subjects": [
     {
      "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:46+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1466,9 +1529,11 @@
     {
      "subject": "romance-and-catfishing",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1489,10 +1554,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:25:44+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1632,10 +1708,21 @@
    "subjects": [
     {
      "subject": "political-figure-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "personal-transformation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1672,9 +1759,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1758,9 +1847,11 @@
     {
      "subject": "indigenous-history",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:22:33+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1801,10 +1892,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:25:44+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1844,18 +1946,22 @@
    "guid": "https://www.abc.net.au/listen/programs/days-like-these/wag-the-dog-jason-gann-wilfred-v1/101916430",
    "subjects": [
     {
-     "subject": "cost-of-fame",
+     "subject": "celebrity-life",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:21:53+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
     },
     {
-     "subject": "celebrity-life",
+     "subject": "cost-of-fame",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:21:53+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
     }
    ],
    "entities": [
@@ -1879,9 +1985,11 @@
     {
      "subject": "cult-and-control",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -1925,8 +2033,10 @@
      "subject": "internet-culture",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:39+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1936,9 +2046,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2053,9 +2165,11 @@
     {
      "subject": "parenting",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:22:33+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -2106,9 +2220,11 @@
     {
      "subject": "friendship",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2116,18 +2232,22 @@
    "guid": "https://www.abc.net.au/listen/programs/days-like-these/how-do-you-solve-a-problem-like-joey/102828510",
    "subjects": [
     {
-     "subject": "queer-life",
+     "subject": "gender-identity",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:34+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "gender-identity",
+     "subject": "queer-life",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:34+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2229,9 +2349,11 @@
     {
      "subject": "survival-story",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:36+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2294,9 +2416,11 @@
     {
      "subject": "romance-and-heartbreak",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:34+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2358,10 +2482,21 @@
    "subjects": [
     {
      "subject": "relationship-remembered",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:34+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2417,9 +2552,11 @@
     {
      "subject": "parenting",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:22:33+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -2441,9 +2578,11 @@
     {
      "subject": "parenting",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:34+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2452,10 +2591,21 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:25:44+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2465,9 +2615,11 @@
     {
      "subject": "protest-movement",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2549,9 +2701,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:22:33+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2562,8 +2716,10 @@
      "subject": "screen-representation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2594,8 +2750,10 @@
      "subject": "survival-story",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:25:44+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -2614,8 +2772,10 @@
      "subject": "estrangement-and-reconciliation",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:10+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2658,9 +2818,11 @@
     {
      "subject": "survival-story",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:21:53+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
     }
    ],
    "entities": [
@@ -2749,9 +2911,11 @@
     {
      "subject": "personal-transformation",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:34+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },

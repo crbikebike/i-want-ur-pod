@@ -5,14 +5,10 @@
  "subjectsUsed": [
   {
    "slug": "heist-and-robbery",
-   "count": 10
+   "count": 9
   },
   {
    "slug": "courtroom-trial",
-   "count": 1
-  },
-  {
-   "slug": "extremist-movement",
    "count": 1
   },
   {
@@ -20,7 +16,15 @@
    "count": 1
   },
   {
-   "slug": "work-and-labour-conditions",
+   "slug": "police-misconduct",
+   "count": 1
+  },
+  {
+   "slug": "psychology-of-belief",
+   "count": 1
+  },
+  {
+   "slug": "survival-story",
    "count": 1
   }
  ],
@@ -140,9 +144,11 @@
     {
      "subject": "courtroom-trial",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:11+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -198,10 +204,21 @@
    "subjects": [
     {
      "subject": "extremist-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:52+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -210,10 +227,21 @@
    "subjects": [
     {
      "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "police-misconduct",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:07+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -230,10 +258,21 @@
    "subjects": [
     {
      "subject": "heist-and-robbery",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:46+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "survival-story",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -243,9 +282,11 @@
     {
      "subject": "heist-and-robbery",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:27:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -255,9 +296,11 @@
     {
      "subject": "immigration-and-borders",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:11+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   }

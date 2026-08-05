@@ -5,18 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "addiction-and-recovery",
+   "count": 2
+  },
+  {
+   "slug": "grief-and-loss",
    "count": 1
   },
   {
    "slug": "homelessness-and-poverty",
-   "count": 1
-  },
-  {
-   "slug": "relationship-remembered",
-   "count": 1
-  },
-  {
-   "slug": "sense-of-place",
    "count": 1
   }
  ],
@@ -25,18 +21,22 @@
    "guid": "6a0ab9ba-1301-489b-a6e1-51a047182cfa",
    "subjects": [
     {
-     "subject": "grief-and-loss",
+     "subject": "sense-of-place",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "sense-of-place",
+     "subject": "grief-and-loss",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:57+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -61,9 +61,11 @@
     {
      "subject": "homelessness-and-poverty",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:31:06+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -80,9 +82,11 @@
     {
      "subject": "addiction-and-recovery",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:29:18+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -90,18 +94,22 @@
    "guid": "3d4c16ee-6b2d-483a-b9ea-702dbfc39802",
    "subjects": [
     {
-     "subject": "addiction-and-recovery",
+     "subject": "relationship-remembered",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:51+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "relationship-remembered",
+     "subject": "addiction-and-recovery",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:51+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   }

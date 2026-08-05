@@ -5,18 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "celebrity-life",
-   "count": 19
+   "count": 21
   },
   {
    "slug": "founder-biography",
-   "count": 13
+   "count": 14
   },
   {
    "slug": "cult-and-control",
-   "count": 11
+   "count": 12
   },
   {
-   "slug": "sexual-abuse-accountability",
+   "slug": "charismatic-con",
    "count": 9
   },
   {
@@ -24,8 +24,8 @@
    "count": 8
   },
   {
-   "slug": "charismatic-con",
-   "count": 7
+   "slug": "sexual-abuse-accountability",
+   "count": 8
   },
   {
    "slug": "courtroom-trial",
@@ -36,23 +36,27 @@
    "count": 5
   },
   {
-   "slug": "sex-work-and-exploitation",
+   "slug": "child-victim",
    "count": 5
   },
   {
-   "slug": "child-victim",
-   "count": 4
+   "slug": "investigative-process",
+   "count": 5
   },
   {
-   "slug": "investigative-process",
-   "count": 4
+   "slug": "organised-scam-industry",
+   "count": 5
+  },
+  {
+   "slug": "sex-work-and-exploitation",
+   "count": 5
   },
   {
    "slug": "murder-close-to-home",
    "count": 4
   },
   {
-   "slug": "organised-scam-industry",
+   "slug": "wrongful-conviction",
    "count": 4
   },
   {
@@ -84,10 +88,6 @@
    "count": 3
   },
   {
-   "slug": "wrongful-conviction",
-   "count": 3
-  },
-  {
    "slug": "advertising-and-persuasion",
    "count": 2
   },
@@ -104,15 +104,11 @@
    "count": 2
   },
   {
-   "slug": "media-criticism",
+   "slug": "ideas-and-argument",
    "count": 2
   },
   {
    "slug": "medical-deception",
-   "count": 2
-  },
-  {
-   "slug": "mental-health",
    "count": 2
   },
   {
@@ -144,7 +140,7 @@
    "count": 1
   },
   {
-   "slug": "conspiracy-theory",
+   "slug": "community-in-conflict",
    "count": 1
   },
   {
@@ -160,10 +156,6 @@
    "count": 1
   },
   {
-   "slug": "everyday-object-design",
-   "count": 1
-  },
-  {
    "slug": "family-annihilation-and-parricide",
    "count": 1
   },
@@ -172,15 +164,7 @@
    "count": 1
   },
   {
-   "slug": "government-secrecy",
-   "count": 1
-  },
-  {
    "slug": "heist-and-robbery",
-   "count": 1
-  },
-  {
-   "slug": "identity-impostor",
    "count": 1
   },
   {
@@ -196,7 +180,15 @@
    "count": 1
   },
   {
+   "slug": "media-criticism",
+   "count": 1
+  },
+  {
    "slug": "medical-research",
+   "count": 1
+  },
+  {
+   "slug": "mental-health",
    "count": 1
   },
   {
@@ -204,31 +196,7 @@
    "count": 1
   },
   {
-   "slug": "parenting",
-   "count": 1
-  },
-  {
    "slug": "political-scandal",
-   "count": 1
-  },
-  {
-   "slug": "presidential-power",
-   "count": 1
-  },
-  {
-   "slug": "reentry-after-prison",
-   "count": 1
-  },
-  {
-   "slug": "regulatory-failure",
-   "count": 1
-  },
-  {
-   "slug": "religious-abuse",
-   "count": 1
-  },
-  {
-   "slug": "romance-and-catfishing",
    "count": 1
   },
   {
@@ -348,10 +316,21 @@
     },
     {
      "subject": "sexual-abuse-accountability",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:13:56+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -797,8 +776,10 @@
      "subject": "music-scene-movement",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:50:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -857,8 +838,10 @@
      "subject": "informant-and-undercover",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:13:56+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -940,10 +923,21 @@
     },
     {
      "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "celebrity-life",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:11:49+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1111,10 +1105,21 @@
     },
     {
      "subject": "everyday-object-design",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "community-in-conflict",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:13:56+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -1166,8 +1171,10 @@
      "subject": "political-scandal",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1192,9 +1199,11 @@
     {
      "subject": "medical-research",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:11:49+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1349,8 +1358,10 @@
      "subject": "institutional-coverup",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:13+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1575,9 +1586,11 @@
     {
      "subject": "heist-and-robbery",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:13+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1843,8 +1856,10 @@
      "subject": "gossip-and-tabloid-press",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1908,9 +1923,11 @@
     {
      "subject": "bribery-and-kickbacks",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:23:02+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2044,18 +2061,22 @@
    "guid": "b9df67e0-7033-45dd-9570-e13d5f1603a5",
    "subjects": [
     {
-     "subject": "charismatic-con",
+     "subject": "identity-impostor",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:13+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "identity-impostor",
+     "subject": "charismatic-con",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:13+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2211,18 +2232,22 @@
    "guid": "f688ead5-953a-4ee9-ac5b-67b4e1d474fe",
    "subjects": [
     {
-     "subject": "child-victim",
+     "subject": "religious-abuse",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:38+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "religious-abuse",
+     "subject": "child-victim",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:38+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2315,8 +2340,10 @@
      "subject": "engineering-failure",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2434,6 +2461,37 @@
    ]
   },
   {
+   "guid": "9c579e21-e52d-4aa7-840c-c180e0638b52",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wee Care Nursery School",
+     "kind": "company",
+     "confidence": "low",
+     "at": "2026-07-30T14:56:38+00:00"
+    }
+   ]
+  },
+  {
    "guid": "26b64aee-6e9a-4a05-868a-98818b0526e1",
    "subjects": [
     {
@@ -2509,33 +2567,6 @@
      "confidence": "high",
      "model": "claude-sonnet-5",
      "at": "2026-07-30T14:55:13+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "9c579e21-e52d-4aa7-840c-c180e0638b52",
-   "subjects": [
-    {
-     "subject": "wrongful-conviction",
-     "role": "secondary",
-     "confidence": "low",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:38+00:00"
-    },
-    {
-     "subject": "conspiracy-theory",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:38+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Wee Care Nursery School",
-     "kind": "company",
-     "confidence": "low",
-     "at": "2026-07-30T14:56:38+00:00"
     }
    ]
   },
@@ -2783,8 +2814,10 @@
      "subject": "talking-about-love",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2808,10 +2841,21 @@
     },
     {
      "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "organised-scam-industry",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:11:49+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -3030,8 +3074,10 @@
      "subject": "true-crime-as-genre",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:11:49+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -3048,9 +3094,11 @@
     {
      "subject": "family-annihilation-and-parricide",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:24+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3099,18 +3147,22 @@
    "guid": "35c19a6c-f754-42d1-8d1b-2fd4b0222344",
    "subjects": [
     {
-     "subject": "celebrity-life",
+     "subject": "media-criticism",
      "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:50:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "media-criticism",
+     "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:50:53+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3133,10 +3185,21 @@
    "subjects": [
     {
      "subject": "mental-health",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:38+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -3345,8 +3408,10 @@
      "subject": "cost-of-fame",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:17+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3369,10 +3434,21 @@
    "subjects": [
     {
      "subject": "romance-and-catfishing",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3527,8 +3603,10 @@
      "subject": "corporate-fraud",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:17+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -4008,9 +4086,11 @@
     {
      "subject": "ageing-and-mortality",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:25+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4097,18 +4177,22 @@
    "guid": "474d41f6-9263-11f0-aed3-538935d03c79",
    "subjects": [
     {
-     "subject": "cult-and-control",
+     "subject": "reentry-after-prison",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:38+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "reentry-after-prison",
+     "subject": "cult-and-control",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:38+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -4165,10 +4249,21 @@
    "subjects": [
     {
      "subject": "government-secrecy",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:13+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -4337,10 +4432,21 @@
    "subjects": [
     {
      "subject": "parenting",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:38+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4412,8 +4518,10 @@
      "subject": "estrangement-and-reconciliation",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:25+00:00"
+     "at": "2026-08-05T04:18:46+00:00"
     }
    ]
   },
@@ -4469,9 +4577,11 @@
     {
      "subject": "kidnapping-and-captivity",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:24+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -4687,8 +4797,10 @@
      "subject": "true-crime-as-genre",
      "role": "primary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:12:59+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -4993,8 +5105,10 @@
      "subject": "addiction-and-recovery",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:24+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -5026,8 +5140,10 @@
      "subject": "books-and-writing",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:17+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -5084,9 +5200,11 @@
     {
      "subject": "artist-band-biography",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:35+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

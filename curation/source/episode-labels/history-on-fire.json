@@ -17,11 +17,15 @@
   },
   {
    "slug": "political-figure-biography",
-   "count": 9
+   "count": 10
   },
   {
    "slug": "slavery-and-its-legacy",
    "count": 6
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 4
   },
   {
    "slug": "organised-crime",
@@ -40,11 +44,11 @@
    "count": 3
   },
   {
-   "slug": "athlete-profile",
-   "count": 2
+   "slug": "folklore-and-legend",
+   "count": 3
   },
   {
-   "slug": "folklore-and-legend",
+   "slug": "athlete-profile",
    "count": 2
   },
   {
@@ -56,10 +60,6 @@
    "count": 2
   },
   {
-   "slug": "books-and-writing",
-   "count": 1
-  },
-  {
    "slug": "celebrity-life",
    "count": 1
   },
@@ -68,15 +68,7 @@
    "count": 1
   },
   {
-   "slug": "faith-and-doubt",
-   "count": 1
-  },
-  {
    "slug": "film-career-biography",
-   "count": 1
-  },
-  {
-   "slug": "foreign-political-crisis",
    "count": 1
   },
   {
@@ -85,18 +77,6 @@
   },
   {
    "slug": "games-and-play",
-   "count": 1
-  },
-  {
-   "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
-   "slug": "parenting",
-   "count": 1
-  },
-  {
-   "slug": "presidential-power",
    "count": 1
   },
   {
@@ -146,9 +126,11 @@
     {
      "subject": "history-retold",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:20:44+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -504,10 +486,21 @@
     },
     {
      "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "political-figure-biography",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:48+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -949,9 +942,11 @@
     {
      "subject": "sport-and-politics",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:58+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1296,9 +1291,11 @@
     {
      "subject": "serial-offender",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1482,10 +1479,21 @@
    "subjects": [
     {
      "subject": "history-retold",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:48+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1825,6 +1833,43 @@
    ]
   },
   {
+   "guid": "5578b4f8e4b0c66a0f23675e:558068f6e4b06fdef68b1c8e:5df9d8e42db4124abc62a67f",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dan Carlin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:48+00:00"
+    },
+    {
+     "name": "The End Is Always Near",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:48+00:00"
+    }
+   ]
+  },
+  {
    "guid": "5578b4f8e4b0c66a0f23675e:558068f6e4b06fdef68b1c8e:5e8a439b8c5a9226d7e7d9cf",
    "subjects": [
     {
@@ -1887,32 +1932,6 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-07-29T23:17:58+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "5578b4f8e4b0c66a0f23675e:558068f6e4b06fdef68b1c8e:5df9d8e42db4124abc62a67f",
-   "subjects": [
-    {
-     "subject": "books-and-writing",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:48+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Dan Carlin",
-     "kind": "person",
-     "confidence": "high",
-     "at": "2026-07-30T14:54:48+00:00"
-    },
-    {
-     "name": "The End Is Always Near",
-     "kind": "work",
-     "confidence": "medium",
-     "at": "2026-07-30T14:54:48+00:00"
     }
    ]
   },
@@ -2313,10 +2332,21 @@
     },
     {
      "subject": "film-career-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "celebrity-life",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:29:30+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -2332,18 +2362,22 @@
    "guid": "5578b4f8e4b0c66a0f23675e:558068f6e4b06fdef68b1c8e:61e5de4be8f08e6ac35f2588",
    "subjects": [
     {
-     "subject": "film-career-biography",
+     "subject": "celebrity-life",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:58+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     },
     {
-     "subject": "celebrity-life",
+     "subject": "film-career-biography",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:17:58+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -2414,9 +2448,11 @@
     {
      "subject": "civil-rights-struggle",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:19+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2620,9 +2656,11 @@
     {
      "subject": "forgotten-episode",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:48+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -2680,8 +2718,10 @@
      "subject": "ideas-and-argument",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -2745,9 +2785,11 @@
     {
      "subject": "indigenous-history",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:48+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3215,6 +3257,15 @@
    "guid": "5578b4f8e4b0c66a0f23675e:558068f6e4b06fdef68b1c8e:65cb058b52225c3ecaff7c42",
    "subjects": [
     {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "war-crimes-accountability",
      "role": "secondary",
      "confidence": "medium",
@@ -3222,11 +3273,13 @@
      "at": "2026-07-30T14:54:48+00:00"
     },
     {
-     "subject": "foreign-political-crisis",
+     "subject": "history-retold",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:48+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -3616,6 +3669,15 @@
    "guid": "833e7206-9af3-11ef-8d5e-67eff887aeca",
    "subjects": [
     {
+     "subject": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
      "subject": "history-retold",
      "role": "secondary",
      "confidence": "medium",
@@ -3623,11 +3685,13 @@
      "at": "2026-07-29T23:20:44+00:00"
     },
     {
-     "subject": "faith-and-doubt",
+     "subject": "folklore-and-legend",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:20:44+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -3774,10 +3838,21 @@
     },
     {
      "subject": "parenting",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:20:40+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -3848,9 +3923,11 @@
     {
      "subject": "terrorism-and-aftermath",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:20:44+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -3928,9 +4005,11 @@
     {
      "subject": "history-retold",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:01+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -4032,9 +4111,11 @@
     {
      "subject": "games-and-play",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:19+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

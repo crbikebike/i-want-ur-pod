@@ -13,7 +13,7 @@
   },
   {
    "slug": "terrorism-and-aftermath",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "informant-and-undercover",
@@ -25,10 +25,6 @@
   },
   {
    "slug": "civil-rights-struggle",
-   "count": 1
-  },
-  {
-   "slug": "disaster-reconstruction",
    "count": 1
   },
   {
@@ -292,18 +288,22 @@
    "guid": "90a64b2e-f219-428a-9271-262ff5dd82bb",
    "subjects": [
     {
-     "subject": "terrorism-and-aftermath",
+     "subject": "disaster-reconstruction",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "disaster-reconstruction",
+     "subject": "terrorism-and-aftermath",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -526,9 +526,11 @@
     {
      "subject": "unsolved-murder",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:23+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -727,8 +729,10 @@
      "subject": "civil-rights-struggle",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:05+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [

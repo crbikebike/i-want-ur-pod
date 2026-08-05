@@ -5,15 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "charismatic-con",
-   "count": 11
+   "count": 12
   },
   {
    "slug": "missing-person",
-   "count": 3
-  },
-  {
-   "slug": "cold-case-reopened",
-   "count": 1
+   "count": 2
   },
   {
    "slug": "sexual-abuse-accountability",
@@ -21,6 +17,10 @@
   },
   {
    "slug": "sports-scandal",
+   "count": 1
+  },
+  {
+   "slug": "unsolved-murder",
    "count": 1
   }
  ],
@@ -312,9 +312,11 @@
     {
      "subject": "sports-scandal",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:58+00:00"
+     "at": "2026-08-05T04:41:15+00:00"
     }
    ]
   },
@@ -332,8 +334,10 @@
      "subject": "sexual-abuse-accountability",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:00+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -350,10 +354,21 @@
    "subjects": [
     {
      "subject": "missing-person",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:47+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -371,9 +386,11 @@
     {
      "subject": "missing-person",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:08+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -390,10 +407,21 @@
    "subjects": [
     {
      "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:24+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   }

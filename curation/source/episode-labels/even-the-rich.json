@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "celebrity-life",
-   "count": 158
+   "count": 159
   },
   {
    "slug": "artist-band-biography",
@@ -32,10 +32,6 @@
    "count": 6
   },
   {
-   "slug": "media-criticism",
-   "count": 4
-  },
-  {
    "slug": "musician-downfall",
    "count": 4
   },
@@ -44,7 +40,15 @@
    "count": 3
   },
   {
+   "slug": "media-criticism",
+   "count": 3
+  },
+  {
    "slug": "monopoly-and-market-power",
+   "count": 3
+  },
+  {
+   "slug": "musician-death",
    "count": 3
   },
   {
@@ -56,11 +60,23 @@
    "count": 3
   },
   {
+   "slug": "romance-and-heartbreak",
+   "count": 3
+  },
+  {
    "slug": "addiction-and-recovery",
    "count": 2
   },
   {
+   "slug": "charismatic-con",
+   "count": 2
+  },
+  {
    "slug": "employee-embezzlement",
+   "count": 2
+  },
+  {
+   "slug": "intimate-partner-homicide",
    "count": 2
   },
   {
@@ -76,23 +92,7 @@
    "count": 2
   },
   {
-   "slug": "romance-and-heartbreak",
-   "count": 2
-  },
-  {
-   "slug": "advertising-and-persuasion",
-   "count": 1
-  },
-  {
-   "slug": "ageing-and-mortality",
-   "count": 1
-  },
-  {
    "slug": "ai-and-society",
-   "count": 1
-  },
-  {
-   "slug": "art-and-artists",
    "count": 1
   },
   {
@@ -112,31 +112,19 @@
    "count": 1
   },
   {
+   "slug": "family-secret",
+   "count": 1
+  },
+  {
+   "slug": "film-career-biography",
+   "count": 1
+  },
+  {
    "slug": "gender-identity",
    "count": 1
   },
   {
-   "slug": "intimate-partner-homicide",
-   "count": 1
-  },
-  {
-   "slug": "murder-close-to-home",
-   "count": 1
-  },
-  {
-   "slug": "murder-for-hire",
-   "count": 1
-  },
-  {
-   "slug": "music-scene-movement",
-   "count": 1
-  },
-  {
-   "slug": "musician-death",
-   "count": 1
-  },
-  {
-   "slug": "presidential-power",
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -144,15 +132,7 @@
    "count": 1
   },
   {
-   "slug": "religious-community",
-   "count": 1
-  },
-  {
    "slug": "reproductive-health",
-   "count": 1
-  },
-  {
-   "slug": "romance-and-catfishing",
    "count": 1
   },
   {
@@ -167,9 +147,11 @@
     {
      "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:00:45+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -885,8 +867,10 @@
      "subject": "tech-industry-power",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:56:50+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2326,9 +2310,11 @@
     {
      "subject": "disability-and-access",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:28+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2954,9 +2940,11 @@
     {
      "subject": "intimate-partner-homicide",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:38:01+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -3004,18 +2992,22 @@
    "guid": "gid://art19-episode-locator/V0/6Q0XXSvhcnzWBcyOp7gsCDQC71ywnxxTN9VmNplOLRE",
    "subjects": [
     {
-     "subject": "intimate-partner-homicide",
+     "subject": "murder-for-hire",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:00:45+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "murder-for-hire",
+     "subject": "intimate-partner-homicide",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:00:45+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -3305,8 +3297,10 @@
      "subject": "courtroom-trial",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:24+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -3338,8 +3332,10 @@
      "subject": "cult-and-control",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:41+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -3369,9 +3365,11 @@
     {
      "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:28+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -4247,18 +4245,22 @@
    "guid": "gid://art19-episode-locator/V0/o5zpiWKX22cHVziuuY7Oippxgr1hOxdNTHoGxyWL1bo",
    "subjects": [
     {
-     "subject": "romance-and-heartbreak",
+     "subject": "presidential-power",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:41+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "presidential-power",
+     "subject": "romance-and-heartbreak",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:41+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -4469,10 +4471,21 @@
     },
     {
      "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "charismatic-con",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:24+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -4495,10 +4508,21 @@
    "subjects": [
     {
      "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "religious-abuse",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:41+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -4635,9 +4659,11 @@
     {
      "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:09:32+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -4850,10 +4876,21 @@
    "subjects": [
     {
      "subject": "ageing-and-mortality",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:24+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "family-secret",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -4908,6 +4945,15 @@
    "guid": "gid://art19-episode-locator/V0/rTBvZnrRs8lS5pr0C3jYp96L2wxrzlQr9pLXwwxXfpM",
    "subjects": [
     {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
      "subject": "celebrity-life",
      "role": "secondary",
      "confidence": "medium",
@@ -4915,11 +4961,13 @@
      "at": "2026-07-29T04:10:21+00:00"
     },
     {
-     "subject": "advertising-and-persuasion",
+     "subject": "gossip-and-tabloid-press",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:10:21+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -4936,10 +4984,21 @@
    "subjects": [
     {
      "subject": "romance-and-catfishing",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:10:46+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -5162,9 +5221,11 @@
     {
      "subject": "celebrity-life",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:38:01+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ]
   },
@@ -5415,8 +5476,10 @@
      "subject": "reproductive-health",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:01:44+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -5772,9 +5835,11 @@
     {
      "subject": "gossip-and-tabloid-press",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:28+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -5966,10 +6031,21 @@
     },
     {
      "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "musician-death",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:10:46+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -6622,9 +6698,11 @@
     {
      "subject": "reality-television",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:10:21+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -7021,8 +7099,10 @@
      "subject": "musician-death",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:11:19+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -7046,10 +7126,21 @@
     },
     {
      "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
+    },
+    {
+     "subject": "musician-death",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:39:05+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -7280,8 +7371,10 @@
      "subject": "chronic-illness",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:39:05+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [
@@ -9283,10 +9376,21 @@
    "subjects": [
     {
      "subject": "gossip-and-tabloid-press",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:01:44+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -9393,6 +9497,15 @@
    "guid": "gid://art19-episode-locator/V0/YHMvwr-beNNAkb-sB9HuTB4CQP-5QyX_a-gGWrly11o",
    "subjects": [
     {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
      "subject": "queer-life",
      "role": "secondary",
      "confidence": "high",
@@ -9400,11 +9513,13 @@
      "at": "2026-07-29T08:58:48+00:00"
     },
     {
-     "subject": "art-and-artists",
+     "subject": "film-career-biography",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:58:48+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -9502,8 +9617,10 @@
      "subject": "gender-identity",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:10:21+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -9944,10 +10061,21 @@
    "subjects": [
     {
      "subject": "media-criticism",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:11:19+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -9957,9 +10085,11 @@
     {
      "subject": "ai-and-society",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:39:05+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ]
   }

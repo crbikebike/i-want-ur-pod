@@ -9,11 +9,11 @@
   },
   {
    "slug": "engineering-failure",
-   "count": 15
+   "count": 16
   },
   {
    "slug": "corporate-fraud",
-   "count": 8
+   "count": 11
   },
   {
    "slug": "sports-scandal",
@@ -24,11 +24,11 @@
    "count": 7
   },
   {
-   "slug": "corporate-negligence",
-   "count": 6
+   "slug": "whistleblower",
+   "count": 7
   },
   {
-   "slug": "whistleblower",
+   "slug": "corporate-negligence",
    "count": 6
   },
   {
@@ -80,6 +80,10 @@
    "count": 3
   },
   {
+   "slug": "political-persecution",
+   "count": 3
+  },
+  {
    "slug": "athlete-profile",
    "count": 2
   },
@@ -100,6 +104,10 @@
    "count": 2
   },
   {
+   "slug": "founder-biography",
+   "count": 2
+  },
+  {
    "slug": "indigenous-history",
    "count": 2
   },
@@ -108,7 +116,11 @@
    "count": 2
   },
   {
-   "slug": "political-persecution",
+   "slug": "medical-system-harm",
+   "count": 2
+  },
+  {
+   "slug": "organised-crime",
    "count": 2
   },
   {
@@ -120,7 +132,7 @@
    "count": 2
   },
   {
-   "slug": "books-and-writing",
+   "slug": "corruption-in-local-power",
    "count": 1
   },
   {
@@ -136,23 +148,11 @@
    "count": 1
   },
   {
-   "slug": "founder-biography",
-   "count": 1
-  },
-  {
-   "slug": "government-secrecy",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
    "slug": "identity-impostor",
-   "count": 1
-  },
-  {
-   "slug": "institutional-coverup",
    "count": 1
   },
   {
@@ -164,35 +164,7 @@
    "count": 1
   },
   {
-   "slug": "management-and-leadership",
-   "count": 1
-  },
-  {
-   "slug": "media-criticism",
-   "count": 1
-  },
-  {
-   "slug": "medical-research",
-   "count": 1
-  },
-  {
-   "slug": "medical-system-harm",
-   "count": 1
-  },
-  {
-   "slug": "murder-for-hire",
-   "count": 1
-  },
-  {
    "slug": "natural-disaster",
-   "count": 1
-  },
-  {
-   "slug": "organised-crime",
-   "count": 1
-  },
-  {
-   "slug": "political-figure-biography",
    "count": 1
   },
   {
@@ -204,19 +176,11 @@
    "count": 1
   },
   {
-   "slug": "reality-television",
-   "count": 1
-  },
-  {
    "slug": "regulatory-failure",
    "count": 1
   },
   {
    "slug": "sport-and-politics",
-   "count": 1
-  },
-  {
-   "slug": "startup-collapse",
    "count": 1
   }
  ],
@@ -426,8 +390,10 @@
      "subject": "medical-system-harm",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:17+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -722,8 +688,10 @@
      "subject": "founder-biography",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:00+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -838,18 +806,22 @@
    "guid": "gid://art19-episode-locator/V0/hL0snLnsC_oXSGNX020OJZBLLkvHWgs1ntVhXp6EEsg",
    "subjects": [
     {
-     "subject": "political-persecution",
+     "subject": "political-figure-biography",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:32+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "political-figure-biography",
+     "subject": "political-persecution",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:32+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -892,18 +864,22 @@
    "guid": "gid://art19-episode-locator/V0/pgp2LK8XTsFHW8nn3ExNqv9CQ4F9QA0NYTyEPMCRR-w",
    "subjects": [
     {
-     "subject": "medical-system-harm",
+     "subject": "medical-research",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:24+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     },
     {
-     "subject": "medical-research",
+     "subject": "medical-system-harm",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:24:24+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
     }
    ],
    "entities": [
@@ -962,8 +938,10 @@
      "subject": "prison-life",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:00+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -979,18 +957,22 @@
    "guid": "gid://art19-episode-locator/V0/hP7dUnMEJVMS70z6UKq26BCrt1Mr34ndGgDqNfYaK2Y",
    "subjects": [
     {
-     "subject": "corruption-in-local-power",
+     "subject": "history-retold",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:35+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "corruption-in-local-power",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:35+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -1081,8 +1063,10 @@
      "subject": "forensic-evidence",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:32+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1100,9 +1084,11 @@
     {
      "subject": "investment-fraud",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:12:59+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -1334,8 +1320,10 @@
      "subject": "foreign-political-crisis",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:32+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1367,8 +1355,10 @@
      "subject": "protest-movement",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:12:59+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -1539,8 +1529,10 @@
      "subject": "natural-disaster",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:06+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -1928,9 +1920,11 @@
     {
      "subject": "investigative-process",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:17+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2655,8 +2649,10 @@
      "subject": "legal-precedent",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:15:09+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2688,8 +2684,10 @@
      "subject": "sport-and-politics",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:06+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -2725,10 +2723,21 @@
     },
     {
      "subject": "reality-television",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:12:59+00:00"
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -2795,6 +2804,15 @@
    "guid": "gid://art19-episode-locator/V0/SOARkzrMeikoXHa0QWkivXP83k8J04xiae9vCo-gX20",
    "subjects": [
     {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
      "subject": "whistleblower",
      "role": "secondary",
      "confidence": "medium",
@@ -2802,11 +2820,13 @@
      "at": "2026-07-29T23:15:32+00:00"
     },
     {
-     "subject": "institutional-coverup",
+     "subject": "corporate-fraud",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:15:32+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2834,18 +2854,22 @@
    "guid": "gid://art19-episode-locator/V0/hhJ16YDbpntvuAgQ80MLSHaHuThwi9mQPorHBGTgJVQ",
    "subjects": [
     {
-     "subject": "corporate-fraud",
+     "subject": "media-criticism",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:00+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "media-criticism",
+     "subject": "corporate-fraud",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:00+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -2888,6 +2912,15 @@
    "guid": "gid://art19-episode-locator/V0/aDWLylh0AVBFg5yT2Ak6IizkymR4RWuYAnBCJaCaMrE",
    "subjects": [
     {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
      "subject": "surveillance-and-privacy",
      "role": "secondary",
      "confidence": "high",
@@ -2896,17 +2929,12 @@
     },
     {
      "subject": "whistleblower",
-     "role": "secondary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:15:09+00:00"
-    },
-    {
-     "subject": "government-secrecy",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:15:09+00:00"
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -4237,10 +4265,21 @@
    "subjects": [
     {
      "subject": "management-and-leadership",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:32+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -4376,9 +4415,11 @@
     {
      "subject": "regulatory-failure",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -4409,9 +4450,11 @@
     {
      "subject": "film-career-biography",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:35+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -4703,18 +4746,22 @@
    "guid": "gid://art19-episode-locator/V0/NYFf4YwZ1x06Sw-njYIb6lAk4vk_jsedsWrNoxfFSfE",
    "subjects": [
     {
-     "subject": "engineering-failure",
+     "subject": "startup-collapse",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:27+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "startup-collapse",
+     "subject": "engineering-failure",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:27+00:00"
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -4939,6 +4986,15 @@
    "guid": "gid://art19-episode-locator/V0/YYz8I_amdBgh3D_oLboO6ufFf4PWgJBJqo6wAGIvL4k",
    "subjects": [
     {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
      "subject": "police-misconduct",
      "role": "secondary",
      "confidence": "medium",
@@ -4946,11 +5002,13 @@
      "at": "2026-07-30T14:58:26+00:00"
     },
     {
-     "subject": "murder-for-hire",
+     "subject": "organised-crime",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:26+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -5035,8 +5093,10 @@
      "subject": "organised-crime",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:32+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -5086,10 +5146,21 @@
    "subjects": [
     {
      "subject": "books-and-writing",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:13:58+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -5191,9 +5262,11 @@
     {
      "subject": "identity-impostor",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:51+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [

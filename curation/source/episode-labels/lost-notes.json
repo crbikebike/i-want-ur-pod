@@ -4,12 +4,12 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "artist-band-biography",
-   "count": 22
+   "slug": "music-scene-movement",
+   "count": 23
   },
   {
-   "slug": "music-scene-movement",
-   "count": 21
+   "slug": "artist-band-biography",
+   "count": 22
   },
   {
    "slug": "song-and-album-origin",
@@ -36,19 +36,15 @@
    "count": 1
   },
   {
+   "slug": "forgotten-episode",
+   "count": 1
+  },
+  {
    "slug": "founder-biography",
    "count": 1
   },
   {
-   "slug": "friendship",
-   "count": 1
-  },
-  {
    "slug": "gender-identity",
-   "count": 1
-  },
-  {
-   "slug": "gossip-and-tabloid-press",
    "count": 1
   },
   {
@@ -64,11 +60,7 @@
    "count": 1
   },
   {
-   "slug": "personal-transformation",
-   "count": 1
-  },
-  {
-   "slug": "political-persecution",
+   "slug": "talking-about-music",
    "count": 1
   }
  ],
@@ -78,10 +70,21 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "forgotten-episode",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:08+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -171,9 +174,11 @@
     {
      "subject": "musician-downfall",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:15:47+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -224,9 +229,11 @@
     {
      "subject": "archives-and-objects",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -256,9 +263,11 @@
     {
      "subject": "music-scene-movement",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:11+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -267,10 +276,21 @@
    "subjects": [
     {
      "subject": "artist-band-biography",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:39+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -279,10 +299,21 @@
    "subjects": [
     {
      "subject": "song-and-album-origin",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:27+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -327,8 +358,10 @@
      "subject": "artist-band-biography",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:48+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -357,10 +390,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:11+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -498,9 +542,11 @@
     {
      "subject": "gender-identity",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:48+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -602,9 +648,11 @@
     {
      "subject": "music-scene-movement",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:11+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -642,39 +690,6 @@
    ]
   },
   {
-   "guid": "367c1a48feac47afbb2fc66950e1c678",
-   "subjects": [
-    {
-     "subject": "artist-band-biography",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:15:47+00:00"
-    },
-    {
-     "subject": "political-persecution",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:15:47+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Hugh Masekela",
-     "kind": "person",
-     "confidence": "high",
-     "at": "2026-07-30T15:15:47+00:00"
-    },
-    {
-     "name": "Miriam Makeba",
-     "kind": "person",
-     "confidence": "high",
-     "at": "2026-07-30T15:15:47+00:00"
-    }
-   ]
-  },
-  {
    "guid": "0650ed049bce4525863afa0e15ef8863",
    "subjects": [
     {
@@ -698,6 +713,43 @@
      "kind": "person",
      "confidence": "high",
      "at": "2026-07-30T15:12:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "367c1a48feac47afbb2fc66950e1c678",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hugh Masekela",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:47+00:00"
+    },
+    {
+     "name": "Miriam Makeba",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:47+00:00"
     }
    ]
   },
@@ -917,10 +969,21 @@
     },
     {
      "subject": "friendship",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:27+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1116,9 +1179,11 @@
     {
      "subject": "making-of-a-work",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1168,8 +1233,10 @@
      "subject": "music-industry-business",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:18+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1326,9 +1393,11 @@
     {
      "subject": "founder-biography",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:12:08+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1473,8 +1542,10 @@
      "subject": "folklore-and-legend",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:19:48+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
@@ -1608,10 +1679,21 @@
    "subjects": [
     {
      "subject": "gossip-and-tabloid-press",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:39+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -1656,9 +1738,11 @@
     {
      "subject": "fashion-and-clothing",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:44+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

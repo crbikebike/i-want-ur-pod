@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "organised-crime",
-   "count": 6
+   "count": 7
   },
   {
    "slug": "courtroom-trial",
@@ -13,10 +13,6 @@
   },
   {
    "slug": "immigrant-experience",
-   "count": 1
-  },
-  {
-   "slug": "informant-and-undercover",
    "count": 1
   }
  ],
@@ -64,18 +60,22 @@
    "guid": "246cdf05-6f17-4ab0-ab56-b35601555185",
    "subjects": [
     {
-     "subject": "organised-crime",
+     "subject": "informant-and-undercover",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:55:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "informant-and-undercover",
+     "subject": "organised-crime",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:55:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -194,8 +194,10 @@
      "subject": "courtroom-trial",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -248,8 +250,10 @@
      "subject": "immigrant-experience",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:40+00:00"
+     "at": "2026-08-03T05:32:36+00:00"
     }
    ],
    "entities": [

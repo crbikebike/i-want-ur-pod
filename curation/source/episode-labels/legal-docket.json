@@ -5,7 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "legal-precedent",
-   "count": 26
+   "count": 28
+  },
+  {
+   "slug": "law-explained",
+   "count": 2
   },
   {
    "slug": "art-and-artists",
@@ -16,23 +20,7 @@
    "count": 1
   },
   {
-   "slug": "faith-and-doubt",
-   "count": 1
-  },
-  {
-   "slug": "juvenile-justice",
-   "count": 1
-  },
-  {
-   "slug": "police-misconduct",
-   "count": 1
-  },
-  {
-   "slug": "reproductive-health",
-   "count": 1
-  },
-  {
-   "slug": "work-and-labour-conditions",
+   "slug": "political-persecution",
    "count": 1
   }
  ],
@@ -43,9 +31,11 @@
     {
      "subject": "legal-precedent",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:11+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -290,18 +280,22 @@
    "guid": "http://www.blubrry.com/legaldocket/episode/79933193/",
    "subjects": [
     {
-     "subject": "legal-precedent",
+     "subject": "police-misconduct",
      "role": "secondary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:52+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "police-misconduct",
+     "subject": "legal-precedent",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:52+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -317,18 +311,22 @@
    "guid": "http://www.blubrry.com/legaldocket/episode/80166998/",
    "subjects": [
     {
-     "subject": "legal-precedent",
+     "subject": "juvenile-justice",
      "role": "secondary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:54:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "juvenile-justice",
+     "subject": "legal-precedent",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:54:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [
@@ -405,10 +403,21 @@
    "subjects": [
     {
      "subject": "legal-precedent",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:11+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ]
   },
@@ -483,10 +492,21 @@
    "subjects": [
     {
      "subject": "legal-precedent",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:52+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -516,9 +536,11 @@
     {
      "subject": "legal-precedent",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:19+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -536,8 +558,10 @@
      "subject": "death-penalty",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:59+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ]
   },
@@ -545,18 +569,22 @@
    "guid": "http://www.blubrry.com/legaldocket/episode/88585057/",
    "subjects": [
     {
-     "subject": "legal-precedent",
+     "subject": "work-and-labour-conditions",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:11+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     },
     {
-     "subject": "work-and-labour-conditions",
+     "subject": "legal-precedent",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:11+00:00"
+     "at": "2026-08-05T04:18:47+00:00"
     }
    ],
    "entities": [
@@ -621,8 +649,10 @@
      "subject": "art-and-artists",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:55:16+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ]
   },
@@ -631,10 +661,21 @@
    "subjects": [
     {
      "subject": "faith-and-doubt",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:52+00:00"
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
     }
    ],
    "entities": [
@@ -656,18 +697,22 @@
    "guid": "http://www.blubrry.com/legaldocket/episode/89652565/",
    "subjects": [
     {
-     "subject": "legal-precedent",
+     "subject": "reproductive-health",
      "role": "secondary",
-     "confidence": "high",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:54:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "reproductive-health",
+     "subject": "legal-precedent",
      "role": "primary",
      "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:54:33+00:00"
+     "at": "2026-08-03T05:32:11+00:00"
     }
    ],
    "entities": [

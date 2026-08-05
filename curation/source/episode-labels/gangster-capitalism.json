@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "institutional-coverup",
-   "count": 23
+   "count": 26
   },
   {
    "slug": "bribery-and-kickbacks",
@@ -13,7 +13,7 @@
   },
   {
    "slug": "education-system-failure",
-   "count": 6
+   "count": 7
   },
   {
    "slug": "sports-scandal",
@@ -29,6 +29,10 @@
   },
   {
    "slug": "charismatic-con",
+   "count": 2
+  },
+  {
+   "slug": "forgotten-episode",
    "count": 2
   },
   {
@@ -72,14 +76,6 @@
    "count": 1
   },
   {
-   "slug": "corporate-negligence",
-   "count": 1
-  },
-  {
-   "slug": "corruption-in-local-power",
-   "count": 1
-  },
-  {
    "slug": "cult-and-control",
    "count": 1
   },
@@ -96,19 +92,7 @@
    "count": 1
   },
   {
-   "slug": "forgotten-episode",
-   "count": 1
-  },
-  {
-   "slug": "founder-biography",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
-   "count": 1
-  },
-  {
-   "slug": "management-and-leadership",
+   "slug": "folklore-and-legend",
    "count": 1
   },
   {
@@ -116,15 +100,11 @@
    "count": 1
   },
   {
-   "slug": "personal-transformation",
+   "slug": "political-scandal",
    "count": 1
   },
   {
    "slug": "private-equity-and-debt",
-   "count": 1
-  },
-  {
-   "slug": "sense-of-place",
    "count": 1
   },
   {
@@ -366,10 +346,21 @@
    "subjects": [
     {
      "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:12+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -723,10 +714,21 @@
    "subjects": [
     {
      "subject": "founder-biography",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:17+00:00"
+     "at": "2026-08-05T05:05:16+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:05:16+00:00"
     }
    ],
    "entities": [
@@ -908,9 +910,11 @@
     {
      "subject": "institutional-coverup",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:30+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -982,8 +986,10 @@
      "subject": "whistleblower",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:04+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1072,10 +1078,21 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:25+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [
@@ -1127,8 +1144,10 @@
      "subject": "organised-crime",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:30+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ]
   },
@@ -1264,9 +1283,11 @@
     {
      "subject": "medical-research",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:19+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -1341,18 +1362,22 @@
    "guid": "848632ec-da7d-11ef-9bed-3f8fada17b0f",
    "subjects": [
     {
-     "subject": "education-system-failure",
+     "subject": "corporate-negligence",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:30+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     },
     {
-     "subject": "corporate-negligence",
+     "subject": "education-system-failure",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:30+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1470,9 +1495,11 @@
     {
      "subject": "employee-embezzlement",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:19+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1491,8 +1518,10 @@
      "subject": "private-equity-and-debt",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:25+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1509,10 +1538,21 @@
    "subjects": [
     {
      "subject": "sense-of-place",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:36+00:00"
+     "at": "2026-08-05T05:05:16+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:05:16+00:00"
     }
    ]
   },
@@ -1614,9 +1654,11 @@
     {
      "subject": "cult-and-control",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:12+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1732,9 +1774,11 @@
     {
      "subject": "institutional-coverup",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:12+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -1785,9 +1829,11 @@
     {
      "subject": "institutional-coverup",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:12+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },
@@ -1798,8 +1844,10 @@
      "subject": "forgotten-episode",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:19+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -1842,9 +1890,11 @@
     {
      "subject": "advertising-and-persuasion",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:36+00:00"
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ]
   },
@@ -1861,9 +1911,11 @@
     {
      "subject": "community-in-conflict",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:35+00:00"
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -1992,9 +2044,11 @@
     {
      "subject": "cold-war-espionage",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:19+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -2039,9 +2093,11 @@
     {
      "subject": "environmental-contamination",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:36+00:00"
+     "at": "2026-08-05T04:52:47+00:00"
     }
    ],
    "entities": [
@@ -2085,10 +2141,21 @@
     },
     {
      "subject": "history-retold",
-     "role": "primary",
-     "confidence": "high",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:17+00:00"
+     "at": "2026-08-05T05:05:16+00:00"
+    },
+    {
+     "subject": "forgotten-episode",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:05:16+00:00"
     }
    ]
   },
@@ -2096,18 +2163,22 @@
    "guid": "54eebb48-8348-11f0-ba4d-4b00bbc20824",
    "subjects": [
     {
-     "subject": "institutional-coverup",
+     "subject": "corruption-in-local-power",
      "role": "secondary",
-     "confidence": "medium",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:12+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     },
     {
-     "subject": "corruption-in-local-power",
+     "subject": "institutional-coverup",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:12+00:00"
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -2153,8 +2224,10 @@
      "subject": "extremist-movement",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:12+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -2185,9 +2258,11 @@
     {
      "subject": "ai-and-society",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:19+00:00"
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ]
   },
@@ -2244,8 +2319,10 @@
      "subject": "sports-history",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:52:35+00:00"
+     "at": "2026-08-05T05:04:47+00:00"
     }
    ],
    "entities": [

@@ -16,15 +16,15 @@
    "count": 15
   },
   {
+   "slug": "regulatory-failure",
+   "count": 14
+  },
+  {
    "slug": "epidemic-and-public-health",
    "count": 13
   },
   {
    "slug": "police-misconduct",
-   "count": 13
-  },
-  {
-   "slug": "regulatory-failure",
    "count": 13
   },
   {
@@ -56,16 +56,16 @@
    "count": 9
   },
   {
+   "slug": "indigenous-history",
+   "count": 9
+  },
+  {
    "slug": "war-crimes-accountability",
    "count": 9
   },
   {
-   "slug": "indigenous-history",
+   "slug": "racial-violence",
    "count": 8
-  },
-  {
-   "slug": "investigative-process",
-   "count": 7
   },
   {
    "slug": "crypto-collapse",
@@ -76,11 +76,11 @@
    "count": 6
   },
   {
-   "slug": "presidential-power",
+   "slug": "investigative-process",
    "count": 6
   },
   {
-   "slug": "racial-violence",
+   "slug": "presidential-power",
    "count": 6
   },
   {
@@ -156,10 +156,6 @@
    "count": 3
   },
   {
-   "slug": "faith-and-doubt",
-   "count": 3
-  },
-  {
    "slug": "history-retold",
    "count": 3
   },
@@ -168,15 +164,15 @@
    "count": 3
   },
   {
+   "slug": "institutional-coverup",
+   "count": 3
+  },
+  {
    "slug": "intimate-partner-homicide",
    "count": 3
   },
   {
    "slug": "medical-research",
-   "count": 3
-  },
-  {
-   "slug": "personal-transformation",
    "count": 3
   },
   {
@@ -208,11 +204,15 @@
    "count": 2
   },
   {
+   "slug": "faith-and-doubt",
+   "count": 2
+  },
+  {
    "slug": "gender-identity",
    "count": 2
   },
   {
-   "slug": "institutional-coverup",
+   "slug": "gendered-constraint",
    "count": 2
   },
   {
@@ -244,23 +244,11 @@
    "count": 2
   },
   {
-   "slug": "addiction-and-recovery",
-   "count": 1
-  },
-  {
    "slug": "art-and-artists",
    "count": 1
   },
   {
    "slug": "artist-band-biography",
-   "count": 1
-  },
-  {
-   "slug": "chronic-illness",
-   "count": 1
-  },
-  {
-   "slug": "colonial-legacy",
    "count": 1
   },
   {
@@ -272,7 +260,11 @@
    "count": 1
   },
   {
-   "slug": "forensic-evidence",
+   "slug": "founder-biography",
+   "count": 1
+  },
+  {
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -280,11 +272,11 @@
    "count": 1
   },
   {
-   "slug": "language-and-words",
+   "slug": "organised-scam-industry",
    "count": 1
   },
   {
-   "slug": "monopoly-and-market-power",
+   "slug": "personal-transformation",
    "count": 1
   },
   {
@@ -293,6 +285,10 @@
   },
   {
    "slug": "prosecutorial-power",
+   "count": 1
+  },
+  {
+   "slug": "psychology-of-belief",
    "count": 1
   },
   {
@@ -305,10 +301,6 @@
   },
   {
    "slug": "sense-of-place",
-   "count": 1
-  },
-  {
-   "slug": "tech-industry-power",
    "count": 1
   },
   {
@@ -452,10 +444,21 @@
    "subjects": [
     {
      "subject": "monopoly-and-market-power",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "organised-scam-industry",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:00:43+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -584,9 +587,11 @@
     {
      "subject": "juvenile-justice",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:04:26+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -812,6 +817,15 @@
    "guid": "prx_149_23c891e2-0e9b-4b97-ba35-24b73017a788",
    "subjects": [
     {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "work-and-labour-conditions",
      "role": "secondary",
      "confidence": "medium",
@@ -819,11 +833,13 @@
      "at": "2026-07-29T08:54:19+00:00"
     },
     {
-     "subject": "colonial-legacy",
+     "subject": "institutional-coverup",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:19+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1281,9 +1297,11 @@
     {
      "subject": "engineering-failure",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:04:26+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -3217,9 +3235,11 @@
     {
      "subject": "prosecutorial-power",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:04:26+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -4084,10 +4104,21 @@
     },
     {
      "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "racial-violence",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:01:47+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -4549,9 +4580,11 @@
     {
      "subject": "government-secrecy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:01:47+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -5465,9 +5498,11 @@
     {
      "subject": "slavery-and-its-legacy",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:01:47+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -5508,18 +5543,22 @@
    "guid": "prx_149_e2de15d5-bc6a-43fa-ae50-584142932c64",
    "subjects": [
     {
-     "subject": "indigenous-history",
+     "subject": "language-and-words",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:01:47+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "language-and-words",
+     "subject": "indigenous-history",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:01:47+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6243,10 +6282,21 @@
     },
     {
      "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "founder-biography",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:27+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -6524,6 +6574,15 @@
    "guid": "prx_149_2684461c-c9c3-4ffb-b44a-40387276636c",
    "subjects": [
     {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "reproductive-health",
      "role": "secondary",
      "confidence": "low",
@@ -6531,11 +6590,13 @@
      "at": "2026-07-29T08:51:40+00:00"
     },
     {
-     "subject": "personal-transformation",
+     "subject": "gendered-constraint",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:51:40+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -6902,10 +6963,21 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:50+00:00"
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
     }
    ],
    "entities": [
@@ -7743,8 +7815,10 @@
      "subject": "sense-of-place",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:05+00:00"
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -7825,6 +7899,15 @@
    "guid": "prx_149_049adf4e-b11f-4852-993f-0e0a97159a60",
    "subjects": [
     {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
      "subject": "reproductive-health",
      "role": "secondary",
      "confidence": "medium",
@@ -7832,11 +7915,13 @@
      "at": "2026-07-29T08:53:20+00:00"
     },
     {
-     "subject": "personal-transformation",
+     "subject": "gendered-constraint",
      "role": "primary",
-     "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:20+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -8215,9 +8300,11 @@
     {
      "subject": "private-equity-and-debt",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:03:19+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -8556,6 +8643,15 @@
    "guid": "prx_149_704692d3-72f0-441a-a82e-87ff3712601d",
    "subjects": [
     {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
      "subject": "medical-system-harm",
      "role": "secondary",
      "confidence": "high",
@@ -8564,17 +8660,12 @@
     },
     {
      "subject": "regulatory-failure",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:51:40+00:00"
-    },
-    {
-     "subject": "addiction-and-recovery",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:51:40+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -8623,18 +8714,22 @@
    "guid": "prx_149_cfd87104-c09c-4724-9f90-adf15dc4b4a0",
    "subjects": [
     {
-     "subject": "racial-violence",
+     "subject": "chronic-illness",
      "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:24+00:00"
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     },
     {
-     "subject": "chronic-illness",
+     "subject": "racial-violence",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:24+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -8738,9 +8833,11 @@
     {
      "subject": "terrorism-and-aftermath",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:27+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -9276,9 +9373,11 @@
     {
      "subject": "death-penalty",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:53:20+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -9342,9 +9441,11 @@
     {
      "subject": "true-crime-as-genre",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:46+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
     }
    ],
    "entities": [
@@ -9449,9 +9550,11 @@
     {
      "subject": "religious-community",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:56:31+00:00"
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -9646,10 +9749,21 @@
    "subjects": [
     {
      "subject": "faith-and-doubt",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:46+00:00"
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
     }
    ],
    "entities": [
@@ -10475,9 +10589,11 @@
     {
      "subject": "art-and-artists",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:56:31+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -11060,9 +11176,11 @@
     {
      "subject": "artist-band-biography",
      "role": "primary",
-     "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:32+00:00"
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -11303,8 +11421,10 @@
      "subject": "scientific-discovery",
      "role": "primary",
      "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:52:32+00:00"
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [

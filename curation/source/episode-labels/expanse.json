@@ -28,7 +28,7 @@
    "count": 3
   },
   {
-   "slug": "paranormal-investigation",
+   "slug": "supernatural-encounter",
    "count": 3
   },
   {
@@ -36,7 +36,7 @@
    "count": 2
   },
   {
-   "slug": "supernatural-encounter",
+   "slug": "paranormal-investigation",
    "count": 2
   },
   {
@@ -407,9 +407,11 @@
     {
      "subject": "protest-movement",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:46+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -480,10 +482,21 @@
    "subjects": [
     {
      "subject": "paranormal-investigation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:33+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "supernatural-encounter",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -547,9 +560,11 @@
     {
      "subject": "government-secrecy",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:13+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ],
    "entities": [
@@ -607,9 +622,11 @@
     {
      "subject": "voluntary-disappearance",
      "role": "primary",
-     "confidence": "high",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:23:28+00:00"
+     "at": "2026-08-05T04:40:44+00:00"
     }
    ]
   },
@@ -966,8 +983,10 @@
      "subject": "missing-person",
      "role": "primary",
      "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:56+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ],
    "entities": [
@@ -1013,8 +1032,10 @@
      "subject": "investigative-process",
      "role": "primary",
      "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:30:41+00:00"
+     "at": "2026-08-05T05:01:57+00:00"
     }
    ]
   },
