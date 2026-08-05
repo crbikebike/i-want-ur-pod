@@ -65,6 +65,10 @@ export default function App() {
     setDone(false);
     setError(null);
     setPreview(null);
+    // The hash tracks the tab, so the reload iOS forces on a backgrounded tab (the OS
+    // evicts it; nothing this app can prevent) comes back to the same mode instead of
+    // falling to the default and auto-advancing somewhere else.
+    window.location.hash = next;
     setMode(next);
   }
 
@@ -597,12 +601,32 @@ function LabelsQueue({ vocab, onCounts }) {
       onCounts(data.counts);
       setItem(data.item);
       setError(null);
+      // The card in hand survives the reload iOS forces on evicted tabs. Sampling is
+      // random within an agreement band, so without this, stepping out to research an
+      // episode comes back to a different one -- which punishes exactly the person
+      // doing the job carefully.
+      if (data.item) {
+        localStorage.setItem("labelqueue.card",
+          JSON.stringify({ item: data.item, at: Date.now() }));
+      }
     } catch (e) {
       setError(e.message);
     }
   }, [onCounts]);
 
-  useEffect(() => { load(); }, [load]);
+  useEffect(() => {
+    // Restore the pre-eviction card if it is fresh enough that the person is plausibly
+    // mid-research (45 minutes). A card decided elsewhere in the meantime re-serves
+    // once, and re-deciding it is harmless -- same door, same value.
+    try {
+      const saved = JSON.parse(localStorage.getItem("labelqueue.card") || "null");
+      if (saved?.item && Date.now() - saved.at < 45 * 60 * 1000) {
+        setItem(saved.item);
+        return;
+      }
+    } catch { /* a corrupt saved card is just a cache miss */ }
+    load();
+  }, [load]);
 
   async function confirm() {
     if (!item || leaving) return;
