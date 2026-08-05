@@ -1,5 +1,8 @@
 Read /home/hf/claude/i-want-ur-pod/.claude/agents/episode-labeller.md first — it defines the task.
 
+**Before your first batch, read `docs/briefs/corrections.md` if it has entries.** Those are human verdicts on machine labels -- where a person overrode the machine, the override names a mistake your read should not repeat.
+
+
 **Whoever launches this must set the subagent model to Sonnet explicitly.** As of 2026-08-01 the `episode-labeller` agent type *is* registered and reachable, which was not true when this brief was first written. Do not rely on the `model: sonnet` line in its frontmatter anyway — set the model on the launch call itself. Get this wrong and the session model does the reading while `label.py record` stamps `claude-sonnet-5` regardless, which is exactly how 25,317 rows came to assert a provenance that was false.
 
 You are slice 3 of 8. Every command carries `--slice 3/8`:

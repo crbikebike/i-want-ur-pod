@@ -152,7 +152,7 @@ React + localhost write API. Four jobs, all day one: a worst-first review queue,
 ### Phase 3 — Deep labelling runs
 Batched relabel with escalation. LLM arc detection with confidence. Subject extraction everywhere, confidence-gated so a subject appearing once is dropped as noise. Reviewed through the phase-2 queue, lowest confidence first.
 
-**Gate:** every show reaches depth 3. Corrections from review are feeding back into run prompts.
+**Gate:** every show reaches depth 3. Corrections from review are feeding back into run prompts. ✅ **Closed 2026-08-05** — 275/275 at depth ≥ 3 (167 at 4); `agreement` filled on all 5,195 doubtful labels by 3-vote escalation; the label queue writes human verdicts to `docs/briefs/corrections.md`, which every labelling brief cites. See `docs/HANDOFF-phase3.md`.
 
 ### Phase 4 — hfab publisher
 Always-on agent: comb feeds, label new episodes, publish incremental releases to R2. Auto-publishes labels. Alerts on anomalies (new theme appearing, show going silent, confidence dropping). Holds arcs and vocabulary changes for approval.

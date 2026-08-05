@@ -1,5 +1,8 @@
 # Escalation Voter Brief
 
+**Before your first batch, read `docs/briefs/corrections.md` if it has entries.** Those are human verdicts on machine labels -- where a person overrode the machine, the override names a mistake your read should not repeat.
+
+
 You are one of three independent voters on a slice of the doubt set — episodes whose
 label was a low-confidence guess or a structural one-off. Your vote is one subject slug
 per episode. Two other voters are reading the same episodes; none of you sees the

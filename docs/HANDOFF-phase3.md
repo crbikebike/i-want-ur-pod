@@ -1,4 +1,21 @@
-# Phase 3 handoff — 2026-07-27, updated 2026-08-01
+# Phase 3 handoff — 2026-07-27, updated 2026-08-05
+
+**Phase 3 is closed. Both halves of the gate are met:**
+
+- *Every show reaches depth 3* — all 275 kept shows at depth ≥ 3; 167 at depth 4 after
+  escalation settled confidences (was 67).
+- *Corrections from review are feeding back into run prompts* — the label queue
+  (workbench third tab, `#labels`) writes every human verdict to
+  `docs/briefs/corrections.md`, and every labelling brief now cites that file before its
+  first batch.
+
+**Escalation (2026-08-04/05):** 3 independent Sonnet votes on all 5,195 doubtful labels
+under the gold scheme — two blind readers everywhere, a third only on disagreement
+(1,114 earned it). Distribution: 725 at 3/3, 2,824 at 2/2, 1,298 at 2/3, 348 at 1/3.
+2,233 outvoted primaries demoted to secondary, never erased. Confidence rebalanced to
+17,057 high / 11,813 medium / 358 low. `verify_rebuild`: all seven layers MATCH.
+
+The 348 scatter cases are the review queue's diet, worst-first, sampled, no counter.
 
 **The relabel is finished. `python3 -m admin.api.label status` reports `remaining: 0`.**
 
