@@ -12,14 +12,15 @@ from __future__ import annotations
 import os
 import sqlite3
 import subprocess
+import urllib.parse
 from contextlib import contextmanager
 from pathlib import Path
 
 from fastapi import Body, FastAPI, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
-from admin.api import auto, edits, feedqueue, feeds, labelqueue, queues, repair, vocab
+from admin.api import apple, auto, edits, feedqueue, feeds, labelqueue, queues, repair, vocab
 from catalog.build import migrations
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -168,6 +169,27 @@ def decide_label(episode_id: int, body: dict = Body(...)) -> dict:
         except ValueError as e:
             raise HTTPException(400, str(e))
         return {**got, "counts": labelqueue.counts(conn)}
+
+
+@app.get("/api/apple-link/{episode_id}")
+def apple_link(episode_id: int):
+    """Redirect to the episode on Apple Podcasts -- the label queue's research link.
+    Resolution degrades: episode page, else show page, else an Apple search."""
+    with db() as conn:
+        row = conn.execute(
+            "SELECT s.title, s.feed_url, e.title, e.guid FROM episodes e "
+            "JOIN shows s ON s.id = e.show_id WHERE e.id = ?",
+            (episode_id,)).fetchone()
+    if not row:
+        raise HTTPException(404, "no such episode")
+    try:
+        url = apple.episode_url(*row)
+    except Exception:
+        # The lookup is a third-party nicety; its outage should degrade to a search,
+        # never to a broken research flow.
+        url = ("https://podcasts.apple.com/search?"
+               + urllib.parse.urlencode({"term": row[0]}))
+    return RedirectResponse(url, status_code=307)
 
 
 @app.get("/api/vocabulary")

@@ -752,7 +752,13 @@ function LabelCard({ item, leaving }) {
     <article className={`card arriving ${leaving ? `leaving ${leaving}` : ""}`}>
       <p className="show">{item.show}</p>
       <h2 className="title">{item.title}</h2>
-      <p className="when">{item.published}{item.arc ? ` · arc: ${item.arc}` : ""}</p>
+      <p className="when">
+        {item.published}{item.arc ? ` · arc: ${item.arc}` : ""}
+        {/* Research link: the server resolves guid -> Apple episode page and 307s,
+            degrading to the show page or an Apple search. Horizon: navigation. */}
+        <a className="apple" href={`/api/apple-link/${item.episodeId}`}
+           target="_blank" rel="noreferrer">Apple Podcasts ↗</a>
+      </p>
       <p className="desc">{htmlToText(item.description)}</p>
 
       <div className="read">
