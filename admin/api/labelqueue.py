@@ -51,6 +51,58 @@ def counts(conn: sqlite3.Connection) -> dict:
     return {"reviewedToday": today, "sampled": True}
 
 
+def _votes(n: int) -> str:
+    return f"{n} vote" if n == 1 else f"{n} votes"
+
+
+def _likely(conn: sqlite3.Connection, episode_id: int, show_slug: str,
+            current_slug: str, current_name: str, agreement: int) -> list[dict]:
+    """Up to 5 quick picks for the change sheet, most-likely-first.
+
+    The current primary leads -- it is still probably right, just under-agreed. Next,
+    any secondary this episode carries in this run with a non-NULL `agreement`: those are
+    not the model's leftover guesses, they are escalation's *other* votes -- a reader
+    reached for that shelf and lost the tally, which makes them real contenders. Only
+    then does the list fall back to the show's own habits, because a shelf this show
+    reaches for often is a better guess than the alphabet.
+    """
+    picks = [{"slug": current_slug, "name": current_name,
+              "note": f"{_votes(agreement)} · the current label"}]
+    seen = {current_slug}
+
+    for slug, name, sec_agreement in conn.execute(
+        """SELECT sub.slug, sub.name, l.agreement
+           FROM episode_labels l JOIN subjects sub ON sub.id = l.subject_id
+           WHERE l.episode_id = ? AND l.run_id = ? AND l.role = 'secondary'
+             AND l.agreement IS NOT NULL
+           ORDER BY l.agreement DESC, sub.slug""", (episode_id, RUN_ID)):
+        if slug in seen:
+            continue
+        picks.append({"slug": slug, "name": name, "note": _votes(sec_agreement)})
+        seen.add(slug)
+
+    need = 5 - len(picks)
+    if need > 0:
+        exclude = f"AND sub.slug NOT IN ({','.join('?' * len(seen))})" if seen else ""
+        for slug, name, n in conn.execute(
+            f"""
+            SELECT sub.slug, sub.name, count(*) AS n
+            FROM episode_labels l
+            JOIN subjects sub ON sub.id = l.subject_id
+            JOIN episodes e ON e.id = l.episode_id
+            JOIN shows s ON s.id = e.show_id
+            WHERE s.slug = ? AND l.run_id = ? AND l.role = 'primary'
+              AND sub.deleted_at IS NULL
+              {exclude}
+            GROUP BY sub.id
+            ORDER BY n DESC, sub.slug
+            LIMIT ?
+            """, (show_slug, RUN_ID, *seen, need)):
+            picks.append({"slug": slug, "name": name, "note": f"this show ×{n}"})
+
+    return picks[:5]
+
+
 def next_card(conn: sqlite3.Connection, skipped: list[int] | None = None) -> dict | None:
     """One doubtful episode: lowest agreement first, random within a band so two
     sessions do not grind the same corner of the same show."""
@@ -90,6 +142,7 @@ def next_card(conn: sqlite3.Connection, skipped: list[int] | None = None) -> dic
         "primary": {"slug": subj_slug, "name": subj_name,
                     "confidence": confidence, "agreement": agreement, "votes": votes},
         "secondaries": secondaries,
+        "likely": _likely(conn, eid, show_slug, subj_slug, subj_name, agreement),
     }
 
 

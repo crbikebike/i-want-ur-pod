@@ -60,6 +60,50 @@ def relabel(conn, subject_id, run_id):
     conn.commit()
 
 
+# --- the live vocabulary, for the label queue's change sheet ---------------------
+
+
+def test_tree_groups_subjects_under_their_theme(db):
+    got = vocab.tree(db)
+    assert [t["slug"] for t in got["themes"]] == ["media"]
+    assert [s["slug"] for s in got["themes"][0]["subjects"]] == \
+        ["quiet-one", "design-and-architecture"]
+
+
+def test_tree_orders_themes_by_name(db):
+    db.execute("INSERT INTO themes (id, slug, name) VALUES (2,'arts','Arts')")
+    db.commit()
+    got = vocab.tree(db)
+    assert [t["name"] for t in got["themes"]] == ["Arts", "Media & Internet Culture"]
+
+
+def test_tree_orders_subjects_by_name_within_a_theme(db):
+    got = vocab.tree(db)
+    names = [s["name"] for s in got["themes"][0]["subjects"]]
+    assert names == sorted(names)
+    assert names == ["A Quiet Subject", "Why It Looks Like That"]
+
+
+def test_tree_excludes_a_deleted_theme(db):
+    db.execute("INSERT INTO themes (id, slug, name) VALUES (2,'gone','Gone')")
+    db.execute("UPDATE themes SET deleted_at='2026-08-01' WHERE id=2")
+    db.commit()
+    assert [t["slug"] for t in vocab.tree(db)["themes"]] == ["media"]
+
+
+def test_tree_excludes_a_deleted_subject(db):
+    db.execute("UPDATE subjects SET deleted_at='2026-08-01' WHERE slug='quiet-one'")
+    db.commit()
+    got = vocab.tree(db)
+    assert [s["slug"] for s in got["themes"][0]["subjects"]] == ["design-and-architecture"]
+
+
+def test_tree_carries_slug_name_and_description(db):
+    got = vocab.tree(db)
+    subj = got["themes"][0]["subjects"][0]
+    assert set(subj) == {"slug", "name", "description"}
+
+
 # --- finding the crowded ones ----------------------------------------------------
 
 

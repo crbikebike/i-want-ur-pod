@@ -33,6 +33,12 @@ export default function App() {
   const [session, setSession] = useState({ keep: 0, cut: 0, skip: 0 });
   const [preview, setPreview] = useState(null);   // the slid-up Apple player
 
+  // Labels is a third, independent mode -- not a step in the feeds-then-inclusion
+  // sequence, so its data lives apart from the state above rather than threaded through
+  // `decide`/`load`, which are shaped around the two-queue handoff.
+  const [labelCounts, setLabelCounts] = useState(null);
+  const [vocab, setVocab] = useState(null); // {themes:[...]} -- fetched once per session
+
   const skipped = useRef([]);
   const undoTimer = useRef(null);
 
@@ -42,7 +48,36 @@ export default function App() {
    * meaningless while the row might be describing a different podcast, and that is exactly
    * how nineteen cuts landed on shows nobody had looked at. Clear the identity question,
    * then the taste question. */
-  const [mode, setMode] = useState("feeds");
+  // #feeds / #inclusion / #labels in the URL picks the opening mode, so a phone can
+  // bookmark the tab it lives in. The hash is read once; switching after load is state.
+  const [mode, setMode] = useState(() => {
+    const h = window.location.hash.replace("#", "");
+    return ["feeds", "inclusion", "labels"].includes(h) ? h : "feeds";
+  });
+
+  // The switcher jumps modes directly rather than waiting for a queue to empty, so the
+  // transient state from wherever you were needs clearing up front -- otherwise the old
+  // card (or the old "all done" screen) flashes for one fetch cycle in the new mode.
+  function switchMode(next) {
+    if (next === mode) return;
+    skipped.current = [];
+    setItem(null);
+    setDone(false);
+    setError(null);
+    setPreview(null);
+    setMode(next);
+  }
+
+  // Fetched once per session, the first time the labels mode is opened, and kept here
+  // (not inside LabelsQueue) so switching away and back doesn't re-fetch it.
+  useEffect(() => {
+    if (mode === "labels" && !vocab) {
+      fetch("/api/vocabulary")
+        .then((r) => r.json())
+        .then(setVocab)
+        .catch(() => {});
+    }
+  }, [mode, vocab]);
 
   const load = useCallback(async () => {
     try {
@@ -195,6 +230,12 @@ export default function App() {
       const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(ev.target.tagName) || ev.target.isContentEditable;
       if (typing) return;
 
+      // Labels has its own verdict shapes (confirm/skip/change, not keep/cut/skip) and
+      // no keyboard affordance in the design -- this is a phone-over-the-tailnet queue.
+      // Bail rather than let Y/C/R/arrows fire the inclusion queue's `decide` against
+      // whatever `item` is left over from the last non-labels mode.
+      if (mode === "labels") return;
+
       if (ev.key === "Escape") { setPreview(null); return; }
       if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "z") {
         ev.preventDefault();
@@ -228,59 +269,83 @@ export default function App() {
   return (
     <div className="app">
       <header className="head">
-        <h1>{mode === "feeds" ? "Right Show?" : "Catalog Roster Queue"}</h1>
-        {counts && (
+        <h1>{mode === "feeds" ? "Right Show?" : mode === "inclusion" ? "Catalog Roster Queue" : "Labels"}</h1>
+        {mode !== "labels" && counts && (
           <div className="left">
             <b>{counts.waiting}</b> to go
           </div>
         )}
+        {mode === "labels" && (
+          <div className="left labels-note">
+            <p className="hint">sampled, lowest agreement first — there is no count and no bottom</p>
+            {/* Quiet on purpose: a running tally of today's work, never a total or a
+                remaining count -- see the design note above. */}
+            {labelCounts && <p className="quiet">{labelCounts.reviewedToday} reviewed today</p>}
+          </div>
+        )}
       </header>
 
-      <div className="track">
-        <span style={{ width: total ? `${(settled / total) * 100}%` : "0%" }} />
+      <nav className="modes" aria-label="Workbench mode">
+        {[["feeds", "Feeds"], ["inclusion", "Roster"], ["labels", "Labels"]].map(([m, label]) => (
+          <button key={m} className={mode === m ? "on" : ""} onClick={() => switchMode(m)}>
+            {label}
+          </button>
+        ))}
+      </nav>
+
+      <div className={`track${mode === "labels" ? " off" : ""}`}>
+        {mode !== "labels" && (
+          <span style={{ width: total ? `${(settled / total) * 100}%` : "0%" }} />
+        )}
       </div>
 
-      <main className="stage">
-        {error && <div className="err">{error}</div>}
-        {!error && done && <Finished session={session} counts={counts} />}
-        {!error && !done && !item && <Loading />}
-        {!error && item && mode === "feeds" && (
-          <FeedCard key={item.id} item={item} leaving={leaving} onPreview={setPreview} />
-        )}
-        {!error && item && mode !== "feeds" && (
-          <Card key={item.id} show={item} leaving={leaving} onPreview={setPreview} />
-        )}
-      </main>
+      {mode === "labels" ? (
+        <LabelsQueue vocab={vocab} onCounts={setLabelCounts} />
+      ) : (
+        <>
+          <main className="stage">
+            {error && <div className="err">{error}</div>}
+            {!error && done && <Finished session={session} counts={counts} />}
+            {!error && !done && !item && <Loading />}
+            {!error && item && mode === "feeds" && (
+              <FeedCard key={item.id} item={item} leaving={leaving} onPreview={setPreview} />
+            )}
+            {!error && item && mode !== "feeds" && (
+              <Card key={item.id} show={item} leaving={leaving} onPreview={setPreview} />
+            )}
+          </main>
 
-      {preview && <Preview link={preview} onClose={() => setPreview(null)} />}
+          {preview && <Preview link={preview} onClose={() => setPreview(null)} />}
 
-      <div className="toast">
-        <div className={`undo ${lastEdit ? "" : "gone"}`}>
-          <span className={`what ${lastEdit?.kind ?? ""}`}>
-            <b>{lastEdit?.kind === "skip" ? "Skipped" : lastEdit?.kind === "cut" ? "Cut" : "Kept"}</b>
-            {" "}{lastEdit?.title}
-          </span>
-          <button onClick={undo}>Undo</button>
-        </div>
-        <div className="verdicts">
-          {mode === "feeds" ? (
-            <>
-              <Verdict kind="cut" label="Not it" keys="R" onPick={() => decideFeed("rejected")}
-                       disabled={!item || !!leaving} />
-              <Verdict kind="skip" label="Skip" keys="S" onPick={() => decideFeed("skip")}
-                       disabled={!item || !!leaving} />
-              <Verdict kind="keep" label="That's it" keys="Y" onPick={() => decideFeed("confirmed")}
-                       disabled={!item || !!leaving} />
-            </>
-          ) : (
-            <>
-              <Verdict kind="cut" label="Cut" keys="C" onPick={decide} disabled={!item || !!leaving} />
-              <Verdict kind="skip" label="Skip" keys="S" onPick={decide} disabled={!item || !!leaving} />
-              <Verdict kind="keep" label="Keep" keys="K" onPick={decide} disabled={!item || !!leaving} />
-            </>
-          )}
-        </div>
-      </div>
+          <div className="toast">
+            <div className={`undo ${lastEdit ? "" : "gone"}`}>
+              <span className={`what ${lastEdit?.kind ?? ""}`}>
+                <b>{lastEdit?.kind === "skip" ? "Skipped" : lastEdit?.kind === "cut" ? "Cut" : "Kept"}</b>
+                {" "}{lastEdit?.title}
+              </span>
+              <button onClick={undo}>Undo</button>
+            </div>
+            <div className="verdicts">
+              {mode === "feeds" ? (
+                <>
+                  <Verdict kind="cut" label="Not it" keys="R" onPick={() => decideFeed("rejected")}
+                           disabled={!item || !!leaving} />
+                  <Verdict kind="skip" label="Skip" keys="S" onPick={() => decideFeed("skip")}
+                           disabled={!item || !!leaving} />
+                  <Verdict kind="keep" label="That's it" keys="Y" onPick={() => decideFeed("confirmed")}
+                           disabled={!item || !!leaving} />
+                </>
+              ) : (
+                <>
+                  <Verdict kind="cut" label="Cut" keys="C" onPick={decide} disabled={!item || !!leaving} />
+                  <Verdict kind="skip" label="Skip" keys="S" onPick={decide} disabled={!item || !!leaving} />
+                  <Verdict kind="keep" label="Keep" keys="K" onPick={decide} disabled={!item || !!leaving} />
+                </>
+              )}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -492,5 +557,257 @@ function Finished({ session, counts }) {
       )}
       {counts && <div className="tally">{counts.kept} kept and {counts.cut} cut in all</div>}
     </div>
+  );
+}
+
+/* The label queue: checking the arc-cascade's subject guess against what the episode is
+ * actually about, one episode at a time, sampled lowest-agreement-first.
+ *
+ * It is its own small state machine rather than a branch of `decide`/`load` above. Those
+ * two are shaped around a queue that gates the next one (feeds must clear before
+ * inclusion starts) and a verdict vocabulary (keep/cut/skip) that doesn't fit here --
+ * confirm and change both write through the edits door, but "change" first has to open a
+ * sheet and let you find the right subject out of 148, which the other queues never do.
+ * Keeping it separate meant the feeds/inclusion code above didn't have to grow a branch
+ * for a shape it doesn't share.
+ *
+ * Confirm is sent optimistically, same reasoning as `decide` above: the verdict already
+ * happened in your head, and the round trip is small. Skip writes nothing, same as
+ * everywhere else -- "not now" is a mood, not a fact about the label. Change waits for a
+ * subject to be picked in the sheet before it sends anything.
+ */
+function LabelsQueue({ vocab, onCounts }) {
+  const [counts, setCounts] = useState(null);
+  const [item, setItem] = useState(null);
+  const [error, setError] = useState(null);
+  const [leaving, setLeaving] = useState(null); // 'keep' (confirm) | 'cut' (change) | 'skip'
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const [flashSlug, setFlashSlug] = useState(null);
+
+  const skipped = useRef([]);
+
+  const load = useCallback(async () => {
+    try {
+      const q = skipped.current.length ? `?skip=${skipped.current.join(",")}` : "";
+      const r = await fetch(`/api/queues/labels${q}`);
+      if (!r.ok) throw new Error(`the server said ${r.status}`);
+      const data = await r.json();
+      setCounts(data.counts);
+      onCounts(data.counts);
+      setItem(data.item);
+      setError(null);
+    } catch (e) {
+      setError(e.message);
+    }
+  }, [onCounts]);
+
+  useEffect(() => { load(); }, [load]);
+
+  async function confirm() {
+    if (!item || leaving) return;
+    const card = item;
+    setLeaving("keep");
+    setTimeout(() => setLeaving(null), 340);
+    setTimeout(load, 300);
+    try {
+      const r = await fetch(`/api/queues/labels/${card.episodeId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "confirm" }),
+      });
+      if (!r.ok) throw new Error((await r.json()).detail || `the server said ${r.status}`);
+      const data = await r.json();
+      setCounts(data.counts);
+      onCounts(data.counts);
+    } catch (e) {
+      setError(`${card.title} was not confirmed — ${e.message}`);
+    }
+  }
+
+  function skip() {
+    if (!item || leaving) return;
+    skipped.current = [...skipped.current, item.episodeId];
+    setLeaving("skip");
+    setTimeout(() => setLeaving(null), 340);
+    setTimeout(load, 300);
+  }
+
+  function openSheet() {
+    if (!item || leaving) return;
+    setQuery("");
+    setSheetOpen(true);
+  }
+
+  async function change(subject) {
+    if (!item) return;
+    const card = item;
+    // Picking is the verdict, so it flashes green in the sheet for a beat before the
+    // sheet closes and the card carries the colour the rest of the way out.
+    setFlashSlug(subject);
+    setTimeout(async () => {
+      setFlashSlug(null);
+      setSheetOpen(false);
+      setLeaving("cut");
+      setTimeout(() => setLeaving(null), 340);
+      setTimeout(load, 300);
+      try {
+        const r = await fetch(`/api/queues/labels/${card.episodeId}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ action: "change", subject }),
+        });
+        if (!r.ok) throw new Error((await r.json()).detail || `the server said ${r.status}`);
+        const data = await r.json();
+        setCounts(data.counts);
+        onCounts(data.counts);
+      } catch (e) {
+        setError(`${card.title} was not changed — ${e.message}`);
+      }
+    }, 420);
+  }
+
+  return (
+    <>
+      <main className="stage">
+        {error && <div className="err">{error}</div>}
+        {!error && !item && (
+          <div className="state"><p>{counts ? "Nothing sampled right now" : "Finding the next one…"}</p></div>
+        )}
+        {!error && item && <LabelCard key={item.episodeId} item={item} leaving={leaving} />}
+      </main>
+
+      <div className="toast">
+        <div className="verdicts">
+          <button className="v keep" disabled={!item || !!leaving} onClick={confirm}>
+            <span>Confirm</span><small>the label stands</small>
+          </button>
+          <button className="v skip" disabled={!item || !!leaving} onClick={skip}>
+            <span>Skip</span><small>decide later</small>
+          </button>
+          <button className="v cut" disabled={!item || !!leaving} onClick={openSheet}>
+            <span>Change</span><small>pick the right subject</small>
+          </button>
+        </div>
+      </div>
+
+      {sheetOpen && item && (
+        <>
+          <button className="scrim" onClick={() => setSheetOpen(false)} aria-label="Close" />
+          <SubjectSheet
+            item={item}
+            vocab={vocab}
+            query={query}
+            setQuery={setQuery}
+            flashSlug={flashSlug}
+            onPick={change}
+          />
+        </>
+      )}
+    </>
+  );
+}
+
+/* Strips markup down to the text a listener would actually hear read aloud. Feed
+ * descriptions are HTML (Apple's own field is), and the workbench has no sanitiser
+ * dependency and no other mode that renders feed HTML as HTML -- Card and FeedCard above
+ * both print description fields straight into a <p>, i.e. as plain text. DOMParser here
+ * follows that same rule: it never attaches the parsed nodes to the live document, so
+ * nothing in the string executes: it's just the fastest correct way to un-escape entities
+ * and drop tags. */
+function htmlToText(html) {
+  if (!html) return "";
+  return new DOMParser().parseFromString(html, "text/html").body.textContent || "";
+}
+
+function LabelCard({ item, leaving }) {
+  const p = item.primary;
+  const agreement = p?.agreement ?? 0;
+  const votes = p?.votes ?? 0;
+  return (
+    <article className={`card arriving ${leaving ? `leaving ${leaving}` : ""}`}>
+      <p className="show">{item.show}</p>
+      <h2 className="title">{item.title}</h2>
+      <p className="when">{item.published}{item.arc ? ` · arc: ${item.arc}` : ""}</p>
+      <p className="desc">{htmlToText(item.description)}</p>
+
+      <div className="read">
+        <p className="k">The machine's read</p>
+        <div className="primary-line">
+          <span className="chip">{p?.slug}</span>
+          <span className="pips">
+            <b>{"●".repeat(agreement)}</b>
+            {"○".repeat(Math.max(votes - agreement, 0))}
+            {" "}{agreement} of {votes} agreed
+          </span>
+          {typeof p?.confidence === "number" && (
+            <span className="conf">{Math.round(p.confidence * 100)}% confidence</span>
+          )}
+        </div>
+        {item.secondaries?.length > 0 && (
+          <p className="scatter">also suggested: {item.secondaries.join(" · ")}</p>
+        )}
+      </div>
+    </article>
+  );
+}
+
+/* The change-subject sheet: quick-picks from the voters' own scatter and this show's
+ * usual shelves first (item.likely), then the full 148 underneath, searchable and grouped
+ * by theme. Filtering hides rather than disables -- a theme heading over zero matches
+ * reads as a bug, not as "nothing here yet". */
+function SubjectSheet({ item, vocab, query, setQuery, flashSlug, onPick }) {
+  const q = query.trim().toLowerCase();
+  const themes = vocab?.themes ?? [];
+  const total = themes.reduce((n, t) => n + t.subjects.length, 0);
+
+  return (
+    <section className="sheet picker" role="dialog" aria-label="Pick the right subject">
+      <span className="grab" aria-hidden="true" />
+      <div className="sheet-head">
+        <p className="k">Most likely — the voters' scatter, then this show's shelves</p>
+        <div className="likely">
+          {(item.likely ?? []).map((l) => (
+            <button key={l.slug} onClick={() => onPick(l.slug)}>
+              {l.name || l.slug}
+              {l.note && <small>{l.note}</small>}
+            </button>
+          ))}
+        </div>
+        <div className="search">
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder={`search all ${total || 148} — name, slug or definition`}
+          />
+        </div>
+      </div>
+      <div className="subjects">
+        {themes.map((theme) => {
+          const subjects = q
+            ? theme.subjects.filter((s) =>
+                `${s.name} ${s.slug} ${s.description}`.toLowerCase().includes(q))
+            : theme.subjects;
+          if (q && subjects.length === 0) return null;
+          return (
+            <div key={theme.slug}>
+              <p className="theme-label">{theme.name}</p>
+              {subjects.map((s) => (
+                <button
+                  key={s.slug}
+                  className={`subj${flashSlug === s.slug ? " picked" : ""}`}
+                  onClick={() => onPick(s.slug)}
+                >
+                  <span className="nm">{s.name}</span>
+                  <span className="sl">{s.slug}</span>
+                  <p className="df">{s.description}</p>
+                </button>
+              ))}
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }

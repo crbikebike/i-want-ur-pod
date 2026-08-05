@@ -19,7 +19,7 @@ from fastapi import Body, FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from admin.api import auto, edits, feedqueue, feeds, labelqueue, queues, repair
+from admin.api import auto, edits, feedqueue, feeds, labelqueue, queues, repair, vocab
 from catalog.build import migrations
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -168,6 +168,14 @@ def decide_label(episode_id: int, body: dict = Body(...)) -> dict:
         except ValueError as e:
             raise HTTPException(400, str(e))
         return {**got, "counts": labelqueue.counts(conn)}
+
+
+@app.get("/api/vocabulary")
+def vocabulary() -> dict:
+    """The full live vocabulary, grouped by theme -- what the label queue's change sheet
+    renders for search and browse. See vocab.tree()."""
+    with db() as conn:
+        return vocab.tree(conn)
 
 
 @app.post("/api/edits/{edit_id}/undo")

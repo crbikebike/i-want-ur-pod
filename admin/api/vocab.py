@@ -53,6 +53,27 @@ CURRENT_RUN = "2026-07-relabel-v176"
 CROWDED = 350
 
 
+def tree(conn: sqlite3.Connection) -> dict:
+    """The full live vocabulary, grouped by theme, for the label queue's change sheet.
+
+    Live only -- a deleted subject offered as a pick would need its own undelete story,
+    and there isn't one. Themes ordered by name because the sheet has no other browsing
+    order to offer; subjects ordered by name within a theme for the same reason.
+    """
+    themes = conn.execute(
+        "SELECT id, slug, name FROM themes WHERE deleted_at IS NULL ORDER BY name"
+    ).fetchall()
+    return {"themes": [
+        {"slug": tslug, "name": tname, "subjects": [
+            {"slug": sslug, "name": sname, "description": sdesc}
+            for sslug, sname, sdesc in conn.execute(
+                "SELECT slug, name, description FROM subjects "
+                "WHERE theme_id = ? AND deleted_at IS NULL ORDER BY name", (tid,))
+        ]}
+        for tid, tslug, tname in themes
+    ]}
+
+
 def crowded(conn: sqlite3.Connection, *, run_id: str = CURRENT_RUN) -> list[dict]:
     """Subjects carrying more episodes than anyone can browse.
 

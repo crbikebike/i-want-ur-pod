@@ -92,7 +92,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .app {
   height: 100%;
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
   max-width: 620px;
   margin: 0 auto;
 }
@@ -123,7 +123,42 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .left b { color: var(--ink); font-weight: 400; }
 
-/* Ruled line, like the margin rule on a worksheet. */
+/* The labels header's right side: an explanation of the sampling, not a count -- and
+   underneath it, in the quiet weight, today's tally. Never a total or a remaining. */
+.labels-note {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  max-width: 220px;
+}
+.labels-note .hint { margin: 0; font-size: 12px; line-height: 1.3; color: var(--ink-soft); }
+.labels-note .quiet {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The mode switcher. Horizon Blue marks where you are, same as the progress track below
+   it -- navigation, never a verdict. */
+.modes { display: flex; gap: 6px; padding: 0 20px; }
+.modes button {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: var(--pill);
+  color: var(--ink-faint);
+  border: 1px solid var(--rule);
+}
+.modes button.on { color: var(--horizon); border-color: var(--horizon); background: var(--horizon-wash); }
+
+/* Ruled line, like the margin rule on a worksheet. Collapses to nothing in labels mode --
+   there is no total to measure progress against, so a bar with nothing in it would be a
+   lie by implication. */
 .track {
   height: 3px;
   background: var(--rule-soft);
@@ -131,6 +166,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-radius: var(--pill);
   overflow: hidden;
 }
+.track.off { height: 0; margin: 0; background: none; }
 .track span {
   display: block;
   height: 100%;
@@ -432,6 +468,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .v.skip { background: var(--cement); }
 .v:disabled { opacity: 0.4; box-shadow: none; }
 
+/* The labels queue's verdict buttons reuse .v/.keep/.cut/.skip for colour -- confirm is
+   the green "stands as is", change is the brick "something's wrong here", skip is cement
+   -- but carry a plain-language line instead of a keyboard hint, since this queue has no
+   keyboard affordance. */
+.v small {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 0.85;
+}
+
 /* Fixed slot, so the buttons never jump under a thumb already moving. */
 .undo {
   height: 34px;
@@ -606,3 +655,156 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* The opener is a button, not a link, but should read the same as one. */
 button.go { width: 100%; text-align: left; font-family: inherit; }
+
+/* ---------- the label card ----------
+ *
+ * Same .card shell as the other two queues (arriving/leaving, the deal-and-fly
+ * animation), with its own header lines and a "machine's read" panel instead of .fit --
+ * cement, not a verdict colour, because this is the catalog describing itself and
+ * nothing has been decided yet.
+ */
+
+.show {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.when {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+/* Clamped so the card can't grow past the stage -- the description is context, not the
+   whole card. */
+.desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.read {
+  background: var(--sheet-warm);
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--r-sm);
+  padding: 12px 14px 13px;
+}
+.read .k {
+  margin: 0 0 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.primary-line { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.pips {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.pips b { color: var(--ink); font-weight: 400; }
+.conf {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+}
+.scatter {
+  margin: 9px 0 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* ---------- the change-subject sheet ----------
+ *
+ * Reuses .scrim/.sheet from the preview above -- same fixed positioning, same slide-up
+ * and dim -- but this one covers all the way to the bottom of the screen instead of
+ * stopping above the toast. The mock calls for the verdict buttons to be covered while
+ * you're mid-correction, not left reachable underneath.
+ */
+.sheet.picker { bottom: 0; height: min(70vh, 560px); }
+
+.sheet-head { padding: 14px 16px 10px; border-bottom: 1px solid var(--rule-soft); position: relative; }
+.sheet-head .k {
+  margin: 0 0 9px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* Quick-picks: the voters' own scatter, ranked, then this show's usual shelves. Horizon
+   border -- these are navigation to the right answer, not a verdict in themselves. */
+.likely { display: flex; flex-wrap: wrap; gap: 7px; }
+.likely button {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 11px;
+  border-radius: var(--pill);
+  background: var(--horizon-wash);
+  border: 1.5px solid var(--horizon);
+  color: var(--ink);
+}
+.likely button small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 9.5px;
+  color: var(--ink-soft);
+  margin-top: 3px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.search { margin: 10px 0 0; }
+.search input {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--rule);
+  background: var(--sheet-warm);
+  color: var(--ink);
+  outline: none;
+}
+
+.subjects { overflow-y: auto; padding: 6px 16px 20px; -webkit-overflow-scrolling: touch; }
+.theme-label {
+  margin: 14px 0 4px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.subj {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 2px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.subj .nm { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.subj .sl { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-left: 6px; }
+.subj .df { margin: 2px 0 0; font-size: 12px; line-height: 1.4; color: var(--ink-soft); }
+/* Picking is a verdict, so it may borrow green for its half-second flash. */
+.subj.picked { background: var(--green-wash); }

@@ -111,3 +111,104 @@ def test_decisions_go_through_the_edits_door(db, tmp_path):
     assert db.execute("SELECT count(*) FROM edits WHERE actor='human:labelqueue'"
                       ).fetchone()[0] == 1
     assert log.exists()
+
+
+# --- the change sheet's quick picks -----------------------------------------------
+
+
+@pytest.fixture
+def db_likely():
+    """A show with one doubtful episode, an escalation-demoted secondary, and a shelf
+    of other primaries on the same show to fill from -- including a dead one, which
+    must never be offered."""
+    conn = sqlite3.connect(":memory:")
+    conn.executescript(SCHEMA.read_text())
+    migrations.apply_all(conn)
+    conn.execute("PRAGMA foreign_keys = ON")
+    conn.execute("INSERT INTO themes (id, slug, name) VALUES (1,'true-crime','True Crime')")
+    subjects = [
+        (1, "grief", "Grief"), (2, "heist-and-robbery", "The Job"),
+        (3, "organised-crime", "Organised Crime"), (4, "subject-four", "Subject Four"),
+        (5, "subject-five", "Subject Five"), (6, "subject-six", "Subject Six"),
+        (7, "subject-seven", "Subject Seven"),
+    ]
+    for sid, slug, name in subjects:
+        conn.execute("INSERT INTO subjects (id, slug, name, description, theme_id) "
+                     "VALUES (?,?,?,'def',1)", (sid, slug, name))
+    conn.execute("UPDATE subjects SET deleted_at='2026-08-01' WHERE id=6")
+    conn.execute("INSERT INTO shows (id, slug, title, feed_url, include_verdict, why) "
+                 "VALUES (1,'s-town','S-Town','http://f','keep','x')")
+    for i in range(1, 9):
+        conn.execute("INSERT INTO episodes (id, show_id, guid, title, description, "
+                     "published_at) VALUES (?,1,?,?,?,?)",
+                     (i, f"g{i}", f"Chapter {i}", "desc", f"2017-03-0{i}"))
+
+    # Episode 1: the card under review. Primary is grief at 1 of 3 agreed.
+    conn.execute("INSERT INTO episode_labels (episode_id, subject_id, run_id, role, "
+                "confidence, agreement, votes, model, at) VALUES "
+                "(1,1,?,'primary','low',1,3,'claude-sonnet-5','2026-08-01T00:00:00+00:00')",
+                (RUN,))
+    # A secondary that escalation demoted -- a voter reached for it, so it is a real
+    # contender and must outrank the show shelf.
+    conn.execute("INSERT INTO episode_labels (episode_id, subject_id, run_id, role, "
+                "confidence, agreement, votes, model, at) VALUES "
+                "(1,2,?,'secondary','low',1,3,'claude-sonnet-5','2026-08-01T00:00:00+00:00')",
+                (RUN,))
+    # A secondary with no vote behind it -- never escalation evidence, must not appear.
+    conn.execute("INSERT INTO episode_labels (episode_id, subject_id, run_id, role, "
+                "confidence, agreement, votes, model, at) VALUES "
+                "(1,3,?,'secondary','low',NULL,NULL,'claude-sonnet-5',"
+                "'2026-08-01T00:00:00+00:00')", (RUN,))
+
+    # The show's shelf: subject-four used twice, subject-five once, the dead
+    # subject-six twice (must be excluded), subject-seven once.
+    shelf = [(2, 4), (3, 4), (4, 5), (5, 6), (6, 6), (7, 7)]
+    for eid, sid in shelf:
+        conn.execute("INSERT INTO episode_labels (episode_id, subject_id, run_id, role, "
+                     "confidence, model, at) VALUES (?,?,?,'primary','high',"
+                     "'claude-sonnet-5','2026-08-01T00:00:00+00:00')", (eid, sid, RUN))
+    conn.commit()
+    yield conn
+    conn.close()
+
+
+def test_likely_leads_with_the_current_primary(db_likely):
+    card = labelqueue.next_card(db_likely)
+    assert card["likely"][0] == {
+        "slug": "grief", "name": "Grief", "note": "1 vote · the current label"}
+
+
+def test_likely_ranks_the_escalation_demoted_secondary_next(db_likely):
+    card = labelqueue.next_card(db_likely)
+    assert card["likely"][1] == {
+        "slug": "heist-and-robbery", "name": "The Job", "note": "1 vote"}
+
+
+def test_likely_excludes_a_secondary_with_no_vote(db_likely):
+    card = labelqueue.next_card(db_likely)
+    slugs = [p["slug"] for p in card["likely"]]
+    assert "organised-crime" not in slugs
+
+
+def test_likely_fills_from_the_show_shelf_most_used_first(db_likely):
+    card = labelqueue.next_card(db_likely)
+    shelf = [p for p in card["likely"] if "this show" in p["note"]]
+    assert shelf[0] == {"slug": "subject-four", "name": "Subject Four",
+                        "note": "this show ×2"}
+
+
+def test_likely_excludes_a_dead_subject_from_the_shelf(db_likely):
+    card = labelqueue.next_card(db_likely)
+    slugs = [p["slug"] for p in card["likely"]]
+    assert "subject-six" not in slugs
+
+
+def test_likely_is_capped_at_five(db_likely):
+    card = labelqueue.next_card(db_likely)
+    assert len(card["likely"]) == 5
+
+
+def test_likely_never_repeats_a_slug(db_likely):
+    card = labelqueue.next_card(db_likely)
+    slugs = [p["slug"] for p in card["likely"]]
+    assert len(slugs) == len(set(slugs))
