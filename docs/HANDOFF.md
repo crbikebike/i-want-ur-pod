@@ -1,93 +1,89 @@
-# Handoff — step 2 of the design-kit → main reconciliation
+# Handoff — current state, written 2026-08-05
 
-Pick this up in a **macOS** Claude Code session (it needs Xcode to build). Paste
-the prompt below, or just read this file.
+The entry point for a fresh session. (This file previously held the July Swift-era kit
+reconciliation, superseded by the rewrite — see git history if that matters.)
+Everything below is committed and pushed; verify claims against the database, not this
+file.
 
-## Context
+## Where the program stands
 
-- Branch **`kit-on-main`** (on origin) = `main`'s full app (epics E0–E6) with the
-  design kit overlaid from branch `m1` as the winner. `main` itself is untouched.
-  Start: `git fetch && git switch kit-on-main`, then branch off it:
-  `git switch -c kit-reconcile kit-on-main`.
-- The design kit (`design/kit/**`) is now the **source of truth for design intent**.
-  main's Swift app is the source of truth for everything else — do **not** regress
-  app code.
-- Background: `docs/design/direction.md` §10/§11 and the last three commit messages
-  on `kit-on-main`.
-
-The kit renamed/added several screens vs what main's Swift references:
-
-| old (main Swift cites) | new (kit) |
+| phase | state |
 |---|---|
-| `screens/typing.html` | `screens/search-typing.html` |
-| `screens/no-results.html` | `screens/search-noresults.html` |
-| `screens/error.html` | `screens/search-error.html` |
-| `screens/loading.html` | `screens/search-loading.html` |
-| `screens/settings-sources.html` | `screens/settings.html` |
+| 1 — catalog + graph | closed |
+| 2 — admin workbench | closed |
+| 3 — deep labelling | **closed 2026-08-05, merged to `main` (`811422e`)** — record in `HANDOFF-phase3.md` |
+| 4 — hfab publisher | **deferred by decision** — stub at `specs/phase-4-hfab-publisher.md` |
+| 5 — the web app | **starting.** Spec not yet written. See *Phase 5, exactly where it stopped* below |
 
-`settings.html`: the Sources picker was removed — v1 is **Apple-only**, PodcastIndex
-deferred; Settings now hosts **Manage downloaded episodes** only.
+Branch: `feat/catalog-workbench`, in sync with origin, merged into `main`. Both pushed.
 
-New kit screens: `home.html`, `shows.html`, `up-next.html`, `search-start.html`,
-`search-results.html`, `podcast-detail-<slug>.html` (real-data detail + story arcs).
+## Phase 5, exactly where it stopped
 
-## Three tasks (get each green before the next)
+The user chose to jump Phase 4 and start the webapp. What is already settled:
 
-1. **`scripts/verify-design-manifest.sh` is RED.** Update every Swift
-   `// Translated from design/kit/*.html` header to the renamed screen, and
-   regenerate/refresh `design/kit/MANIFEST.md` (it was removed) so it registers
-   every current kit screen incl. the new ones. Run the script until `OK`.
-2. **`docs/design/direction.md` and `ROADMAP.md` are still main's versions** — they
-   changed on both branches. Do a careful **3-way merge**: KEEP main's app/spec
-   content AND fold in m1's design notes (new dock IA, the Apple-only sources
-   decision, the Podcast Detail + story-arcs entry). Don't blind-overwrite either
-   side.
-3. **Reconcile `IWantUrPod/Detail/PodcastDetailView.swift`** toward the new kit
-   design: compact icon controls for download / play / add-to-Up-Next (drop the
-   oversized buttons and the redundant "Downloaded" text), episode rows showing
-   season/episode + publish date + duration, and a horizontal **Story arcs** shelf
-   with **Add all** (queue a whole arc). Reference: `design/kit/screens/podcast-detail-*.html`.
-   The arc/season data model doesn't exist yet — see the Swift follow-ups in
-   `direction.md` §11 (parse `itunes:season` / `itunes:episode` / `itunes:episodeType`
-   in `FeedParser`, add `season` / `episodeNumber` + a derived-arc field to `Episode`).
+- **Locked decisions** (PROGRAM.md + memory): Expo, web target first; kit-first — the 18
+  signed-off screens in `design/kit/screens/` are the design source of truth;
+  `patterns-from-swift.md` informs; gate is the timed cold-start checklist under 3 min.
+- **Data dependency**: no R2 publisher exists (Phase 4 deferred), so the app reads a
+  **static release export** committed at build time — same shape a release would have, so
+  R2 later is a URL swap. Building that exporter is Phase 5's first backend task.
+- **Process** (memory: user stories + tight UI cycles): the spec goes in
+  `docs/specs/phase-5-web-app.md` as JTBD stories with human-in-the-loop stops; the
+  first UI slice is the big checkpoint.
 
-## Story arcs — how the kit derives them
+**The open question, mid-conversation when context cleared:** which slice is the first
+UI checkpoint. Options tabled: First-run + Explore themes (recommended — the discovery
+spine, and the cold-start gate lives there), Home feed, Search, Detail + playback. The
+user was about to clarify something about the question when they stopped to ask for this
+handoff. **Resume by asking what they wanted to clarify.**
 
-The Apple *search* API is show-level only (no episodes/seasons). Episodes come from
-the **RSS feed**. Arcs are derived from episode-title structure by
-`scripts/fetch-podcast-episodes.py`:
+## The catalog, in one paragraph
 
-- `Arc | Episode Title | N` → arc, title, part (art19 / American History Tellers)
-- `Arc - Part N - Subtitle` → arc, subtitle, part (The Explorers Podcast)
-- anything else → a "single" (no arc)
+275 kept shows, 29,215 live episodes, 201 subjects under 33 themes (the newest theme is
+**Formats**: `trailer` 924 episodes, `introducing` 171 — format is the label, decided by
+the user from inside the review queue). 1,733 arcs. Run `2026-07-relabel-v176` carries
+~50k label rows; `agreement` is filled on all 5,195 once-doubtful labels (3-vote
+escalation). Depth: 92 shows at 3, 183 at 4. The whole catalog provably rebuilds from
+`curation/source/` — `python3 -m catalog.build.verify_rebuild` must say "rebuild proven".
 
-`<itunes:season>` is optional: AHT sets it (→ season badges + S·E), Explorers doesn't
-(→ arc·Part, graceful degrade). Data lives in `design/kit/data/<slug>.json`.
+## The review loop (live, in use)
 
-## Verify
+The workbench's third tab (`http://hfab:5173/#labels`, phone over tailnet) serves
+doubtful labels worst-first — 285 scatter cases remain. Verdicts write through
+`edits.label_episodes` and append to `docs/briefs/corrections.md` (27 lines and growing);
+**every labelling brief cites that file** — it is the feedback half of the Phase 3 gate.
 
-- `scripts/verify-design-manifest.sh` passes.
-- `xcodegen generate && open IWantUrPod.xcodeproj`, build, run — Podcast Detail
-  renders with the new controls + arcs shelf; nothing else regressed.
+## Running services + their traps
 
-When it builds clean and verify is green, open a PR from your branch → `main`.
+- API: `python3 -m admin.api.main` — binds the **tailscale IP** (100.117.245.23:8828),
+  never loopback. **No auto-reload: restart it after touching admin/api/** or it serves
+  stale shapes (this bit twice).
+- Web: `cd admin/web && npm run dev` — vite on :5173, hot-reloads, `allowedHosts` covers
+  `hfab`. The `/api` proxy must target the tailscale IP — `hfab` resolves to 127.0.1.1
+  locally.
+- `pkill -f admin.api.main` kills your own shell too (the pattern matches it); run the
+  pkill and the restart as separate commands.
+- Headless screenshots: `google-chrome --headless --window-size=390,844 --screenshot=…`
+  — phone-size visual verification is the house rule for UI changes.
 
----
+## Parked, recorded, not lost
 
-## Paste-ready prompt
+Redo pass (5,881 under-read/pre-split episodes, fresh run_id) · arc/vocab/runs review
+surfaces · `group` entity kind (CHECK-constraint decision) · 661 re-air duplicates ·
+remaining vocabulary gap candidates (modern espionage ~8 reports, Kind World's kindness
+gap 5, Bear Grease's whole genre, stalking 4 — all in escalation voter reports and
+`HANDOFF-phase3.md`).
 
-```
-You're picking up "step 2" of a design-kit → main reconciliation on an iOS
-podcast app (SwiftUI). Read docs/HANDOFF.md on branch kit-on-main first — it has
-the full context, the renamed-screen table, and the three tasks. Then:
+## Traps that cost real time (short form; long form in HANDOFF-phase3.md)
 
-git fetch && git switch kit-on-main && git switch -c kit-reconcile kit-on-main
+Name the run_id in every label query — three runs coexist and an unfiltered query
+silently sums eras. Set the subagent model on the launch call. `remaining`/top-level
+counts span all slices. Depth is derived — after anything touches confidences, run
+`depth.rebuild(conn)` **and commit**, or verify_rebuild reports a phantom mismatch.
+pytest's default norecursedirs eats a directory literally named `build`.
 
-Work through the three tasks in docs/HANDOFF.md in order (verify-design-manifest
-green → 3-way merge direction.md + ROADMAP.md → reconcile PodcastDetailView to the
-new kit's compact controls + Story arcs shelf). Guardrails: design/kit is the
-source of truth for design; main's Swift is the source of truth for app code —
-don't regress it. Verify with scripts/verify-design-manifest.sh and an Xcode
-build/run. Discuss the approach before large refactors; commit only when I ask.
-When verify is green and it builds, open a PR to main.
-```
+## Doc map
+
+`PROGRAM.md` phases + gates · `HANDOFF-phase3.md` the Phase 3 record · `SESSIONS.md`
+the two-session protocol (dormant) · `briefs/` labelling briefs + `corrections.md` ·
+`specs/` per-phase specs · `patterns-from-swift.md` what the old app got right.
