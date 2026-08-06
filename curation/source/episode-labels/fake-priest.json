@@ -1,0 +1,325 @@
+{
+ "slug": "fake-priest",
+ "title": "Fake Priest",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "identity-impostor",
+   "count": 8
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "89129a1e-8e1b-42d0-a744-f7d8b0247ada",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Father Ryan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f03796c9-2569-401b-a6b3-10bd370f0a12",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:01+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Father Ryan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:20:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4f49905b-29ba-4996-8b65-4b6a3b6d8158",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Father Ryan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2851531a-7155-42e0-bf2a-3043791ec4bb",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:51+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Father Ryan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:07:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "93ae933b-9f18-4444-b4ce-4d4d5f793f90",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:10+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Father Ryan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:10+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "72639962-9b82-4413-a1e8-6b308d837433",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Father Ryan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c1c74b7f-3ec8-4686-ad62-608158fe6da7",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:40+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "22469663-a98c-4c5a-97cd-8743542b47e3",
+   "subjects": [
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:28+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Father Ryan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:19:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9c5e385d-bc95-4d61-a7b4-4f763d0c0032",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:10+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:10+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Father Ryan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:10+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c2200c16-5a21-4832-817f-f118373c54fc",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Father Ryan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:28:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f25cef0c-3523-11f1-8a4f-ff4a35dad795",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:28+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessica Currin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:28+00:00"
+    },
+    {
+     "name": "Quincy Cross",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:28+00:00"
+    }
+   ]
+  }
+ ]
+}

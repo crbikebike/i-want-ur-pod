@@ -1,0 +1,200 @@
+{
+ "slug": "sweet-bobby",
+ "title": "Sweet Bobby",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "romance-and-catfishing",
+   "count": 6
+  },
+  {
+   "slug": "trailer",
+   "count": 3
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "64e5c4be4f5f5000111909ba",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "64e5c78ca704e30011ef00c3",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:39+00:00"
+    },
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kirat Assi",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "64e5c64aa704e30011eed0fc",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kirat",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "64e5c5c9d3554a001132ada5",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kirat",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "64e5c7204f5f500011195eed",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "64e5c69202334c0011caf30b",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kirat Assi",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "64e5c843d3554a0011330b74",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:30:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "687e35cda2391fe432f80848",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:23:22+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kathleen Folbigg",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:23:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6a58f1994d4b991ebea4f791",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  }
+ ]
+}

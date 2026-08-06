@@ -105,6 +105,36 @@ def build(
 
     report.subjects = len(subject_rows)
 
+    # The database's vocabulary moved past the baseline -- Phase 3 created 52 subjects,
+    # retired one and rewrote descriptions -- and none of that replays on a clean build
+    # (replay reads the edits table, which is empty here, and creations are not
+    # replayable anyway). vocabulary-current.json is the export of where it ended up;
+    # applied last, as an override layer, so a rebuild lands on the vocabulary the
+    # catalog actually has rather than the one it started with.
+    current_file = source / "vocabulary-current.json"
+    if current_file.exists():
+        current = json.loads(current_file.read_text(encoding="utf-8"))
+        for row in current.get("subjects") or []:
+            theme_id = theme_ids.get(row["theme"])
+            if theme_id is None:
+                raise ValueError(
+                    f"vocabulary-current subject {row['slug']!r} names unknown theme "
+                    f"{row['theme']!r}")
+            updated = conn.execute(
+                "UPDATE subjects SET name = ?, description = ?, theme_id = ? "
+                "WHERE slug = ?",
+                (row["name"], row["description"], theme_id, row["slug"]))
+            if updated.rowcount == 0:
+                conn.execute(
+                    "INSERT INTO subjects (slug, name, description, theme_id) "
+                    "VALUES (?,?,?,?)",
+                    (row["slug"], row["name"], row["description"], theme_id))
+                report.subjects += 1
+        for row in current.get("retired") or []:
+            conn.execute(
+                "UPDATE subjects SET deleted_at = ?, deleted_reason = ? WHERE slug = ?",
+                (row["at"], row.get("reason"), row["slug"]))
+
     counts = dict(
         conn.execute(
             "SELECT t.slug, count(*) FROM subjects s JOIN themes t ON t.id = s.theme_id "

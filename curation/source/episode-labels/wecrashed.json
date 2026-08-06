@@ -1,0 +1,206 @@
+{
+ "slug": "wecrashed",
+ "title": "WeCrashed",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "trailer",
+   "count": 4
+  },
+  {
+   "slug": "startup-collapse",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/pPQn128wzgDviGXRaOKrnIW66h9Bn4eQF6r_ooeV960",
+   "subjects": [
+    {
+     "subject": "startup-collapse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam Neumann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T01:06:58+00:00"
+    },
+    {
+     "name": "WeWork",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-28T01:06:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7dhif7rOQsMOoXBCnGWp80Y7NoCLm7pdUHEd3l2oKAk",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:07:41+00:00"
+    },
+    {
+     "subject": "startup-collapse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:07:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam Neumann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T01:07:41+00:00"
+    },
+    {
+     "name": "WeWork",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-28T01:07:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/EhlmxBpgwAm9rXpYlaWapdEtZQhM5Nyvlpy9JPYyR40",
+   "subjects": [
+    {
+     "subject": "startup-collapse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam Neumann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:57:03+00:00"
+    },
+    {
+     "name": "WeWork",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-28T00:57:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/LT6vLXcQUI3lN7Qoyea_X3POFeWxWgk1R3KEdET5U0Q",
+   "subjects": [
+    {
+     "subject": "startup-collapse",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:09:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam Neumann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T01:09:19+00:00"
+    },
+    {
+     "name": "WeWork",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-28T01:09:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7jN6x55Cuw2ETdk-1B-K7jJzfJ2FD-FXmJ1qEgQrjLs",
+   "subjects": [
+    {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/aNoJtJ4FgDNn06GQvC1ecGDItz2uDM3FhcbfBGX5wJw",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicholas Rossi",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T01:10:20+00:00"
+    }
+   ]
+  }
+ ]
+}

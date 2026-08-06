@@ -1,0 +1,640 @@
+{
+ "slug": "alphabet-boys",
+ "title": "Alphabet Boys",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "informant-and-undercover",
+   "count": 20
+  },
+  {
+   "slug": "introducing",
+   "count": 4
+  },
+  {
+   "slug": "trailer",
+   "count": 3
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "bfd21256-593d-4728-bc47-af8e0155cef6",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ded84d74-e63a-4d07-90dd-af9b01543dd1",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Adam Windecker II",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c3e2d47e-f1b0-4840-b741-af9b01543dc5",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7616a62b-6838-45b7-9484-af9b01699b7c",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FBI",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "21004c89-c447-45e5-9dbf-af9b01699b86",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "14938702-5d9b-4899-8246-af9b01699b94",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:28+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "27747298-31d1-44a5-8d7f-af9c012ec453",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ed33a904-4aac-4efa-899a-afaa000b25b4",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "593d1bea-b4a3-453d-bad4-afaa000b6766",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "956f058e-27fa-42aa-9349-afaa000b6766",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3f2c5002-21ad-48c3-8ad5-afbd0132e358",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "20f567e3-dbcd-4c4c-a151-b01c0184d5bd",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Malibu",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:04:23+00:00"
+    },
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a5ec29dd-9610-4ab3-80f4-b01501702bac",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "be41051e-1133-40e9-ac69-b015016c3c86",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Flaviu Georgescu",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c06b5605-eecb-424d-bf40-b015017108c3",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:28+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Flaviu",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a8165711-ebe0-4027-8cf1-b01501721042",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "304885db-0bcf-4739-b58e-b0150173047b",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5728c758-1384-4d82-8030-b0150173ee1b",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FARC",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "420f75bb-acaa-4dd4-8e71-b0150177c06c",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9f7361ea-92ae-4495-bee3-b015017933bd",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5b63c762-2af4-4ec0-8788-b015017a1076",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Massimo Romagnoli",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "df529b3e-fdda-411d-8541-b01801695069",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Flaviu Georgescu",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "df25ac00-3f1e-42af-9d71-b020011fbf20",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Flaviu",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1ca36711-4959-4efc-9747-b110014b2033",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "FBI",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "23613af4-3e90-4769-b246-b1a800fa94c9",
+   "subjects": [
+    {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pulse nightclub shooting",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9d33bb69-a04d-4d1a-ad10-b289001699ad",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Highland Park",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:47+00:00"
+    },
+    {
+     "name": "Robert Crimo III",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a40cf157-617c-4bdb-b56e-b2d70180bceb",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:32+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joe Loya",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:32+00:00"
+    }
+   ]
+  }
+ ]
+}

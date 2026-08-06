@@ -1,0 +1,1870 @@
+{
+ "slug": "lost-hills",
+ "title": "Lost Hills",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "missing-person",
+   "count": 8
+  },
+  {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 6
+  },
+  {
+   "slug": "serial-offender",
+   "count": 5
+  },
+  {
+   "slug": "athlete-profile",
+   "count": 4
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 4
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 4
+  },
+  {
+   "slug": "intimate-partner-homicide",
+   "count": 4
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 4
+  },
+  {
+   "slug": "trailer",
+   "count": 4
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 3
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 2
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 2
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 2
+  },
+  {
+   "slug": "informant-and-undercover",
+   "count": 2
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 2
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 1
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 1
+  },
+  {
+   "slug": "environmental-contamination",
+   "count": 1
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 1
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 1
+  },
+  {
+   "slug": "stranger-homicide",
+   "count": 1
+  },
+  {
+   "slug": "true-crime-as-genre",
+   "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "5aaf0eb6-567f-11eb-a06a-4bed64d4ca73",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a20c67ec-828d-11eb-bea3-4baa49069a37",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:59+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Rauda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a7e19aa2-828d-11eb-8465-bbb7c61d8ce5",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Rauda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "name": "Tristan Beaudette",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a212cea2-828d-11eb-bea3-2fa0d0937049",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Rauda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:11+00:00"
+    },
+    {
+     "name": "Tristan Beaudette",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a217cbfa-828d-11eb-bea3-838619a822a7",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Rauda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a21c32a8-828d-11eb-bea3-3f744f98432c",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Rauda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a220578e-828d-11eb-bea3-b3b7b89ee62c",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alex Villanueva",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a2246676-828d-11eb-bea3-3be69456a67f",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Rauda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a228a326-828d-11eb-bea3-63bb0fe3b932",
+   "subjects": [
+    {
+     "subject": "whistleblower",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Rauda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "name": "Malibu",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "name": "Tristan Beaudette",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db5943de-bf38-11eb-ba82-9b3944bb706d",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Stacey Sebourn",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a3cd6284-cf27-11eb-b20e-2fe82b818f5d",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:59+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Rauda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c068a96c-4b28-11ec-b4e6-e3c6a6eb0455",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fred Roehler",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:55:16+00:00"
+    },
+    {
+     "name": "Verna Johnson-Roehler",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8f95455e-17c3-11ec-81bd-37104ee8776a",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "86ee57e2-17c3-11ec-8be4-8396ce760e04",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fred",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f6d7e6e2-46f1-11ec-8c30-fb0b70e1c86f",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f6f7fb1c-46f1-11ec-8c30-87ffb99d12df",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lifespring",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f7189de0-46f1-11ec-8c30-276b091597ae",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f739aab2-46f1-11ec-8c30-1baa2bde380d",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Malibu",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f75a1de2-46f1-11ec-8c30-8bc12fe629d6",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fred Roehler",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f77a9fa4-46f1-11ec-8c30-1ff3ce53dd34",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f79ad5e4-46f1-11ec-8c30-b33ac76b4d63",
+   "subjects": [
+    {
+     "subject": "death-penalty",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f7bb12f0-46f1-11ec-8c30-333519523e97",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fred",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d897c210-7fe0-11ec-98ce-e320a4aac9b5",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rob Lowe",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3e6d4ede-b862-4f02-a25a-ae85014e710f",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2b5bd07c-c018-47eb-bd18-af9701648850",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7a4bb029-c9bb-4a93-8a69-afc6014d5013",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1683dcc7-248c-4a5c-bef6-b007011edc8c",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "sports-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e6315581-af90-4c1f-b165-b00a00f413df",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "047dff9b-4b3d-423b-ace9-b00c01422029",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Malibu",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d80cab45-f00d-4c20-8dba-b00c014bde8c",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kathy Kohner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "016aec94-a66b-4b01-909c-b00c0153f15a",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:59+00:00"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kathy Kohner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:59+00:00"
+    },
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b38690a5-239b-447b-850b-b00d010dfdfd",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d678d7b3-b43c-4dbe-8f28-b00d011424e6",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:40+00:00"
+    },
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8cb9656f-3591-46d0-ab4b-b00d011c9ff4",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Linda Cuy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:53:28+00:00"
+    },
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3168a15e-bb70-4383-93f4-b00d015f243b",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c1038729-745b-4325-8b8b-b00e01011ab5",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Craig Peterson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "name": "Kevin Naughton",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "98b1fc79-6eb1-4460-aa0a-b00e010d4722",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dbc93912-ae27-4066-97bd-b00e01124810",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kelly Slater",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b848235f-d04f-4dc8-a2c3-b00e011b4b05",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Miki Dora",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0b027123-555b-4f30-a5cf-b0450119dae5",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:59+00:00"
+    },
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Vikki Flaxman Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6b598b8f-9c98-4318-a65a-b04501502b5b",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Textured Waves",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f4c31dbf-e5ef-4a49-824f-b0f301730579",
+   "subjects": [
+    {
+     "subject": "environmental-contamination",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "BP oil spill",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "75154552-6c30-4bdb-82c2-b178013a47b6",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    },
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jackson Pollock",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:28+00:00"
+    },
+    {
+     "name": "Lee Krasner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6c6e2450-b8f9-4f22-aa74-b17f015204e0",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4e7321f8-9e13-481a-ab4e-b18601193ae4",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:40+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c456b83b-3054-4684-8696-b186010c82f5",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "59537f5e-6e29-4d77-94e6-b18800ec4ca1",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4b07cac9-9f8c-47c7-935e-b18800f10850",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "09ddc902-f41d-4c4f-a8d7-b18800f7e7db",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3b54a038-a992-48f4-bb77-b188010a095c",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Mee",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "name": "Mel Gibson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "65cca7d6-309c-4b14-bbed-b18b014fe781",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dark Canyon",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48c3df37-7baa-4aa3-8918-b18b01565e8b",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f6508b12-5386-4492-9b4c-b18c00ec34e5",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c77baf8e-5f09-411c-8304-b18c00fe85fb",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "76311eab-9a14-498c-ad75-b18c0109d80f",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "af6cf8dd-fdf1-4429-9c76-b18c01143b42",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "65c434b8-08e4-4005-8f0e-b18c01291640",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "eb5a6268-5c10-489f-a86c-b225011d498f",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mitrice Richardson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6a953279-9e9c-4606-aa05-b3cf012de2e4",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Aujay",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d492d9ec-ca05-4914-a849-b3d0010aa092",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Aujay",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7472bf3f-3efd-41cf-9aab-b3d0010b6728",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Aujay",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "name": "Larry Brandenburg",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9794f1a6-1d38-4e6d-926b-b3d1015c3573",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Darren Hager",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:52:59+00:00"
+    },
+    {
+     "name": "Jon Aujay",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4628e731-a9ec-4ce8-895e-b3d1015ccbf0",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Aujay",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:11+00:00"
+    },
+    {
+     "name": "Rick Engels",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ccab2e77-3488-4354-b22e-b3d1015d3986",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:40+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4bf0060f-a1bb-462b-91b0-b3d1015e434b",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Los Angeles County Sheriff's Department",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "00fa1999-f433-4cc7-9380-b3d1015ead85",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ]
+  }
+ ]
+}

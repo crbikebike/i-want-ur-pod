@@ -1,0 +1,489 @@
+{
+ "slug": "suspect",
+ "title": "Suspect",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "wrongful-conviction",
+   "count": 11
+  },
+  {
+   "slug": "trailer",
+   "count": 5
+  },
+  {
+   "slug": "missing-person",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/nQt9rZNj4MroKaOYHHnF1pdM8hZsrZ3KzKChXA8xEoQ",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:00+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lukis Anderson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:17:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/lpJpMJwgvrXI5_8paT9uQmhjQsA3ugYt_wlxXSso7l8",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:58+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:58+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lukis Anderson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Ng_oVnGgfIPu3v-cNsKyASByhsKVDrjex88luBnJWqM",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jonelle Matthews",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/MSZ8lP2vrCHZKPsfffe7Kv9SFBcngQGJilyBVakTF3k",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:00+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jonelle Matthews",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:17:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/tjWRYJPmlDtxmyjcEvF-qkygmf_I3NpspDE1OMbv1Lg",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/sBHBO09_UXYqfaTlAklKnPXH6d5h1HNuAPrmgoHlpBk",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kasey Schoen",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:47+00:00"
+    },
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0VduwIsLMw8a0qhisQS6rfHM7PnOsSx18WZBLaBE5h0",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:08+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kasey Schoen",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:22:08+00:00"
+    },
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/IKjDQxD_TaHq-LQqx2d2JnPC8OsLSpli-7-CgPkAPZc",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/idnp0CYVrVt7_c64OibfK4m10mGXdovXZUP2WX3U0jc",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/RVi6L68W_PXxH5PcCqKTj8Cp9wFmWXi8Le8cAxTNgxM",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:25:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:25:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/dtwWqrEZ4O5z3Jgf6FGLYbbBtx_bKPei5FwAqLa8-mc",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lara Bazelon",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:19:57+00:00"
+    },
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/NMdvkOLLHo1lub15PfpQSI6qsZPo_EkyTnHIVAmyylY",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:58+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:58+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/mxqFWxLQhGUM7nVfpgL7NV-qZK6G72CLHOp4YzEigA0",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:00+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:17:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/uQSqlL0RB1XeHXWbvBdGPsjE7Osp9Semq3olqRyHRzM",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/V81pE5FZMu4WgUfS6Fj-hTYMZYhUj3axwmTm6irPVW0",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Leon Benson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/TovuOMUZGiALQSETjPf1g2UDE1cs_HoI3lvq9qRK_Xk",
+   "subjects": [
+    {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "language-and-words",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/h5hw61rsgaIAL8VcwFEzvNDMa4LfLW-cWVW_lE9tpXo",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicholas Rossi",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ]
+  }
+ ]
+}

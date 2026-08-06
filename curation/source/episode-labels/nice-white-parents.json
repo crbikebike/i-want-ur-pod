@@ -1,0 +1,90 @@
+{
+ "slug": "nice-white-parents",
+ "title": "Nice White Parents",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "education-system-failure",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/-lL0dgLwa3oPs_h85GGX6bAhGDF1XQN4F4yF2mBZS_0",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:07:57+00:00"
+    },
+    {
+     "subject": "education-system-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/yqO4uis0H0OY8aep8hPfBSezMP9ZfaLNyGGAKbh6ElU",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:08:51+00:00"
+    },
+    {
+     "subject": "education-system-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:08:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2b348fbb-7e80-4dee-824f-9cd54c7c66cd",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  }
+ ]
+}

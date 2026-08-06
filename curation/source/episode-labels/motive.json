@@ -1,0 +1,1149 @@
+{
+ "slug": "motive",
+ "title": "Motive",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "extremist-movement",
+   "count": 8
+  },
+  {
+   "slug": "trailer",
+   "count": 7
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 6
+  },
+  {
+   "slug": "prison-life",
+   "count": 3
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 3
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 2
+  },
+  {
+   "slug": "mass-shooting",
+   "count": 2
+  },
+  {
+   "slug": "organised-crime",
+   "count": 2
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 2
+  },
+  {
+   "slug": "prosecutorial-power",
+   "count": 2
+  },
+  {
+   "slug": "child-victim",
+   "count": 1
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 1
+  },
+  {
+   "slug": "community-in-conflict",
+   "count": 1
+  },
+  {
+   "slug": "death-in-custody",
+   "count": 1
+  },
+  {
+   "slug": "economic-policy",
+   "count": 1
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 1
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "stranger-homicide",
+   "count": 1
+  },
+  {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 1
+  },
+  {
+   "slug": "whistleblower",
+   "count": 1
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "2ad54b61-6186-47b5-b96b-50108b5c7d7d",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "aaffe0a1-e64f-45f4-b9de-a47984472046",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chicago",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:02:36+00:00"
+    },
+    {
+     "name": "T.J. Jimenez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8fe4219e-85f5-4b79-9631-822829c8a968",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "T.J.",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "57b85702-fcb1-4058-a6de-b08000d68b33",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dcffd465-1cb9-4e1d-b28a-2c77238af716",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d86cc33a-c3f4-4e7d-8593-a687da66eebb",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "626b2ea6-7422-41cc-b6b8-5d60df50587b",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brian Nelson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "name": "Simon City Royals",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fb44ff44-51af-4803-88e1-82dddb046163",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "afc078c1-24b8-423a-9d2e-ce89e37b7651",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db35bb20-4a36-42d6-a10a-39f7e0394656",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chicago",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:02:36+00:00"
+    },
+    {
+     "name": "T.J. Jimenez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "38147484-0a7a-4ac6-9572-ad167d6f7d36",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "T.J.",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d3fcba9d-fdb3-4fb3-ad40-31c4da06bc74",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fdda9531-1ff8-460f-8306-89ba402faf68",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lauren Bajorek",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6bfda500-53ff-4df4-bbd1-261788a64e7a",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gabrielle Vega",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "207003f4-4fa8-490f-8b01-f2b91c5dd668",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "60561a22-759c-4b33-991a-1c39cce22b68",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lauren Bajorek",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "66e41ae5-0a0a-433e-9bd9-cb74bf89cff2",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ef397831-9c1d-4c05-a3dd-bba7da657a3a",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e3b73196-3734-4913-a055-946d7195cdf3",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bcd4fe0c-570e-47ae-beb3-9c56ba8c9466",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "La Manada",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:46+00:00"
+    },
+    {
+     "name": "Spain",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e8bc8a0f-8985-4d71-ba9b-c5aea88fa8f6",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4286cb82-40c4-4610-a2e3-69b1afa5f2d1",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d9622b0d-4c02-4deb-ad3e-7d2b2973cc28",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "718b54f2-fe19-4dd6-96b7-7cc1706d04ad",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0e4b6a06-28b9-499c-aa74-bfe0a731d1ea",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chicago Area Skinheads",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7520ffc2-cc0a-4847-bef6-b6d08f42a76a",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d8674d71-31a9-46d8-90e5-dabbfed1f2bc",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christian Picciolini",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b2c39dd2-6dd0-4efd-8b1e-d50aa434ac7b",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a46a38bb-198d-420e-83c4-8410f5d09d31",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Atomwaffen Division",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d537e0f1-8eed-491a-8372-507e81b2a834",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Clark Martell",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7d9c7a80-a175-11ec-97d8-7b706eef078c",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e9a60f00-ac85-11ec-a785-c1c01f1a733e",
+   "subjects": [
+    {
+     "subject": "death-in-custody",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d588ed0-b209-11ec-bd56-95a11915b2df",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    },
+    {
+     "subject": "whistleblower",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damaria Bates",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:27:42+00:00"
+    },
+    {
+     "name": "Jimia Stokes",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "545015c0-b817-11ec-bbd9-2764bc488cce",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8e234540-be68-11ec-9e57-cf2b551248d1",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e94b3c80-c435-11ec-b870-554b287d2a20",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8c99cda0-cc7e-11ec-8032-515eb131b407",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    },
+    {
+     "subject": "death-in-custody",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Larry Earvin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2fb44c20-d201-11ec-bd3a-173795226154",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3d103e20-d7a8-11ec-ab2c-b360fdc5f64f",
+   "subjects": [
+    {
+     "subject": "economic-policy",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pontiac Correctional Center",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ea075640-e279-11ec-8cf3-6519126ed12b",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Relisha Rudd",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48cd0870-7bcd-11ed-bcad-c73dacb81504",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Stateville Correctional Center",
+     "kind": "place",
+     "confidence": "low",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d711ee80-938b-11ed-8ebf-3588061553f9",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2de5a950-9d0e-11ed-9314-b9ce474848bf",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "302a6950-a256-11ed-aa95-29601a38fc1d",
+   "subjects": [
+    {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "community-in-conflict",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4be3a6b0-a7c0-11ed-bc20-8ba0978119a3",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "70a04d60-ad85-11ed-a6c1-bd3466dd1c96",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jaslyn Adams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "81582f50-b349-11ed-8ea2-e3f8627d0f20",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "73174b90-b882-11ed-96ee-e1ba06858346",
+   "subjects": [
+    {
+     "subject": "mass-shooting",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6776e8c0-e094-11ed-9df4-19dba0fe6d0c",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:42+00:00"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lenard Clark",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:42+00:00"
+    }
+   ]
+  }
+ ]
+}

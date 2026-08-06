@@ -1,0 +1,375 @@
+{
+ "slug": "root-of-evil",
+ "title": "Root of Evil",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "unsolved-murder",
+   "count": 6
+  },
+  {
+   "slug": "family-secret",
+   "count": 2
+  },
+  {
+   "slug": "adoption-and-origins",
+   "count": 1
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "6bc643951d1f349d8bb251c7b0ae9b58.mp3",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Black Dahlia",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "name": "George Hodel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2a9175001e59331f087fea05fe0759f7.mp3",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:43+00:00"
+    },
+    {
+     "subject": "adoption-and-origins",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fauna Hodel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:29:43+00:00"
+    },
+    {
+     "name": "George Hodel",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bcf720562f3bf717fada05394c152d8c.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Black Dahlia",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7a76900dec42a371b707a8db98e94a17.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:34+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:34+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Black Dahlia murder",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:34+00:00"
+    },
+    {
+     "name": "George Hodel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b36a43f2f9e689208bc0550912fdc283.mp3",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:13+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Black Dahlia murder",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:13+00:00"
+    },
+    {
+     "name": "George Hodel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0797828861061615e7c599dabbbd9ba9.mp3",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Black Dahlia murder",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:34+00:00"
+    },
+    {
+     "name": "George Hodel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3af87a374232e84aeeb2f4b166f7255e.mp3",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    },
+    {
+     "subject": "family-secret",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Hodel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:12:15+00:00"
+    },
+    {
+     "name": "Tamar Hodel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9f415eedddd99e78eeb2f4b166f7255e.mp3",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Black Dahlia",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "name": "George Hodel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "kovioeedddd99e78eeb2f4b166f7255e.mp3",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    },
+    {
+     "subject": "family-secret",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Black Dahlia",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a439sh0w6d6e6ath7is8234cur19s3d912fdc283.mp3",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:45+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Black Dahlia murder",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:45+00:00"
+    },
+    {
+     "name": "George Hodel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c5f59772-2780-11f0-bdd0-2b1c2198ba1c",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  }
+ ]
+}

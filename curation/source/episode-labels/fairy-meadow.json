@@ -1,0 +1,325 @@
+{
+ "slug": "fairy-meadow",
+ "title": "Fairy Meadow",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "cold-case-reopened",
+   "count": 6
+  },
+  {
+   "slug": "missing-person",
+   "count": 3
+  },
+  {
+   "slug": "child-victim",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "urn:bbc:podcast:p0bff2v8",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl Grimmer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bfxc4d",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl Grimmer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bfxnmv",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl Grimmer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bhv6kl",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl Grimmer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bhv9kw",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl Grimmer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bk5p6w",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:13+00:00"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl Grimmer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bk5s2b",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:40+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl Grimmer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bk7kd9",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0bljvp1",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:51+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-30T15:07:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:m001sls0",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl Grimmer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "urn:bbc:podcast:p0m5ny9g",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cheryl Grimmer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ]
+  }
+ ]
+}

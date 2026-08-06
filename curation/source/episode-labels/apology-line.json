@@ -1,0 +1,178 @@
+{
+ "slug": "apology-line",
+ "title": "The Apology Line",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "trailer",
+   "count": 3
+  },
+  {
+   "slug": "archives-and-objects",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/2E7Nce-ZiX0Rmo017w7js5BvvKiOIMjWELujxOvJync",
+   "subjects": [
+    {
+     "subject": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:57:03+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Allan Bridge",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:57:03+00:00"
+    },
+    {
+     "name": "Marissa Bridge",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:57:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/eZqOUfJOCHVNII-XMFC9_A_GMTUUWYvZz_n_vPNiVK4",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:31:06+00:00"
+    },
+    {
+     "subject": "archives-and-objects",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:31:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Allan Bridge",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:31:06+00:00"
+    },
+    {
+     "name": "Marissa Bridge",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:31:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/FZOLMXrfpw3yiFJUGu3jywchXoCWaRbhRJRCo3KN7iI",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Allan Bridge",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:28:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/hHWTPWZ_fEKlIF1BwgwI-Ru3CI8hb9NPAn13jwq702w",
+   "subjects": [
+    {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/VtIFrso4No37hB2PPIbM1Hc5AWHcnEqE7S9AZuPk6Vk",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:57+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicholas Rossi",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:12:57+00:00"
+    }
+   ]
+  }
+ ]
+}

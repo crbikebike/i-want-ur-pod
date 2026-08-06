@@ -1,0 +1,232 @@
+{
+ "slug": "racket",
+ "title": "Racket",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "organised-crime",
+   "count": 5
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "d3ae34c2-c615-11ea-b1c2-37a618ac86ca",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gold Club",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e00e0828-e18b-11ea-9dfe-93940a684018",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gold Club",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e014cbf4-e18b-11ea-9dfe-130ed8730ec7",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:34+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e019ab06-e18b-11ea-9dfe-8782e3395372",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gold Club",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e01ef3ea-e18b-11ea-9dfe-2f1877134923",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:40+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gold Club",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:40+00:00"
+    },
+    {
+     "name": "Steve Kaplan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e023db9e-e18b-11ea-9dfe-4f5c20567e50",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e0285a48-e18b-11ea-9dfe-b32b6985474b",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:45+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gold Club",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e02d55b6-e18b-11ea-9dfe-e744de86d10e",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e032c6f4-e18b-11ea-9dfe-eb0c9062ad19",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:45+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gold Club",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:45+00:00"
+    }
+   ]
+  }
+ ]
+}

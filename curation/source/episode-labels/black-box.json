@@ -1,0 +1,164 @@
+{
+ "slug": "black-box",
+ "title": "Black Box",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "audio-drama-scifi",
+   "count": 5
+  },
+  {
+   "slug": "audio-drama-mystery",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "61821af11ca632001207bdf2",
+   "subjects": [
+    {
+     "subject": "audio-drama-scifi",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "618a0cbe024a690013a65396",
+   "subjects": [
+    {
+     "subject": "engineering-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    },
+    {
+     "subject": "audio-drama-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "618a10117def150014af0b95",
+   "subjects": [
+    {
+     "subject": "audio-drama-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Black Box",
+     "kind": "work",
+     "confidence": "low",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "61933c3ba08bf7001292be68",
+   "subjects": [
+    {
+     "subject": "audio-drama-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "619c6f59e4bb6e0013e89d6c",
+   "subjects": [
+    {
+     "subject": "audio-drama-scifi",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "61a5aec1d42261001233b6d8",
+   "subjects": [
+    {
+     "subject": "audio-drama-scifi",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "61aedc8605e6b60013df3a2e",
+   "subjects": [
+    {
+     "subject": "engineering-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "audio-drama-scifi",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "61b81d1ae1c4aa00147b7347",
+   "subjects": [
+    {
+     "subject": "audio-drama-scifi",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "61c15dd50fbba20012b09d53",
+   "subjects": [
+    {
+     "subject": "audio-drama-scifi",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:23:22+00:00"
+    }
+   ]
+  }
+ ]
+}

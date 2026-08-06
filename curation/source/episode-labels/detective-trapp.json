@@ -1,0 +1,212 @@
+{
+ "slug": "detective-trapp",
+ "title": "Detective Trapp",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "serial-offender",
+   "count": 5
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/mHS_5thMBa855S8tTOUIhDEYpFvhk2k1RMfa9_5LcrQ",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:40+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/CtzZwzFOJ9JV-tHoGxDilPiznjA9UiHZDtYfsVeLZ80",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:13:23+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Julissa Trapp",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/cpq0liVXjBFgAZiqgGRyBtCmaTJPfjXVMmM83PAHz_Y",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:45+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/HFR6CA0kn9z4v7I3rELnQuNSzFY9zhFCwvSTmg0krI0",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:23+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/WzUKDs6Vz4fxbHZ-ByeUqUVVRcR2sJyOZQ6eDJB20q4",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:39+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ttRHRe4QEEztYhCWBpnMNGGWck9BFZKxcZsTDgrk_Rg",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:30:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/rtc-e0ik3L65SbnmNAaCYSpbjGNGlzRT__LBylwu-sw",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0f887a4e-51ae-443f-93cd-006c9fe77455",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:42+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Black Dahlia murder",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:11:14+00:00"
+    },
+    {
+     "name": "Zodiac Killer case",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ]
+  }
+ ]
+}

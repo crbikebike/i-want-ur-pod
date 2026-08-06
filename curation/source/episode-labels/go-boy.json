@@ -1,0 +1,369 @@
+{
+ "slug": "go-boy",
+ "title": "Go-Boy!",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "heist-and-robbery",
+   "count": 4
+  },
+  {
+   "slug": "prison-life",
+   "count": 4
+  },
+  {
+   "slug": "books-and-writing",
+   "count": 1
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "reentry-after-prison",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "747ef09a-da7d-48e6-8c44-b2aa01023200",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:51+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roger \"Mad Dog\" Caron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "33aaada5-7f5d-4e84-ba23-b2b500e16226",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:01+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roger Caron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2e33853c-c635-4428-931c-b2b800f70f6e",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:25:47+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:25:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kingston Penitentiary",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-08-01T20:25:47+00:00"
+    },
+    {
+     "name": "Roger Caron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:25:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c02b9688-9a71-4b29-9625-b2b800f7b865",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roger Caron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0b1be647-464a-44e1-9b85-b2b800f8082e",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:28+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roger \"Mad Dog\" Caron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a5b84c35-07f3-4f01-8929-b2b800f80833",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:10+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:10+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roger \"Mad Dog\" Caron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:10+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9ddc4a05-a5ee-415a-b800-b2b800f80831",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:40+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roger Caron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f930c93a-2dad-48c9-bed5-b2b800f80833",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roger \"Mad Dog\" Caron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:28:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5e44bccd-56ae-468c-b96a-b2b800f853d1",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:51+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roger \"Mad Dog\" Caron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "54efc7bc-a4dd-4159-8003-b2b800f853d8",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Roger Caron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "187a14fd-7092-43f1-80f1-b2b800f853d0",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:25:47+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:25:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Catherine Fogarty",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:25:47+00:00"
+    },
+    {
+     "name": "Kingston Penitentiary",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-08-01T20:25:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a320ccd7-c176-4522-9a65-b33f01104d21",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  }
+ ]
+}

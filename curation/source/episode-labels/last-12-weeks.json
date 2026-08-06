@@ -1,0 +1,192 @@
+{
+ "slug": "last-12-weeks",
+ "title": "The Last 12 Weeks",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "death-penalty",
+   "count": 5
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "1be65c69-1973-4116-ba70-650dae4487bb",
+   "subjects": [
+    {
+     "subject": "death-penalty",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:19+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Wood",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:14:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ced9af33-0f76-4d23-bfe6-cab00c32e23b",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:57+00:00"
+    },
+    {
+     "subject": "death-penalty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Wood",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:12:57+00:00"
+    },
+    {
+     "name": "Desert Killer",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:12:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d1273a2a-eee0-44ec-9ee7-5887bc61d0c9",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:53+00:00"
+    },
+    {
+     "subject": "death-penalty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Wood",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a7c6116a-ef1d-4be1-b74f-5683a19e0741",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:31:06+00:00"
+    },
+    {
+     "subject": "death-penalty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:31:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Wood",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:31:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a0dbbabd-22e4-4bf1-ac10-e27e958a71ba",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:42+00:00"
+    },
+    {
+     "subject": "death-penalty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Wood",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:28:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b9fa20c5-9d8c-4223-86f1-8e2912805915",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:18+00:00"
+    },
+    {
+     "subject": "death-penalty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Wood",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:29:18+00:00"
+    }
+   ]
+  }
+ ]
+}

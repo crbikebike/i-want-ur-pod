@@ -1,0 +1,292 @@
+{
+ "slug": "sanctum-unmasked",
+ "title": "Sanctum Unmasked",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "sex-work-and-exploitation",
+   "count": 3
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 2
+  },
+  {
+   "slug": "founder-biography",
+   "count": 2
+  },
+  {
+   "slug": "addiction-and-recovery",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "bb623e49-7227-4d9c-a0f0-af8f0168fada",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damon Lawner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:45+00:00"
+    },
+    {
+     "name": "SNCTM",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dfa66f65-28db-4ae0-84f5-afe2012bb648",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:45+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damon Lawner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8960cdd4-5666-4f75-912f-afe9013511e6",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:43+00:00"
+    },
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damon Lawner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "47a1fdda-c962-41ea-a6d8-aff001113301",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:34+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:34+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damon Lawner",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:22:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dc8dfd3e-313e-42cf-b950-aff70156fa5f",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    },
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damon Lawner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8ed8ecbd-1c02-41a9-bfdb-affc0136f644",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:40+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damon Lawner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:40+00:00"
+    },
+    {
+     "name": "SNCTM",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "44c11818-05b4-4d3f-b755-b0050179e117",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damon Lawner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "68220288-b05b-4923-bf44-b00c01525f3c",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:45+00:00"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damon Lawner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:27:45+00:00"
+    },
+    {
+     "name": "SNCTM",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "69df37a7-b783-4a3a-bf09-b01301375859",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:23+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damon Lawner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:23+00:00"
+    }
+   ]
+  }
+ ]
+}

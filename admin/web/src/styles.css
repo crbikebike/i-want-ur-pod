@@ -1,0 +1,918 @@
+/* The workbench.
+ *
+ * Working on warm construction paper: a kraft-toned desk, a cream sheet laid on it, and
+ * dark ink. Colour comes from the palette new cars use -- Toyota's Cement and Lunar
+ * Rock, Subaru's Autumn Green and Horizon Blue. Deep pastels: chalky and desaturated,
+ * substantial rather than sweet.
+ *
+ * Deliberately one world. No dark variant, no prefers-color-scheme. Paper is the whole
+ * idea and an inverted paper is just a grey screen.
+ *
+ * The one rule the colour has to obey: Horizon Blue is navigation and progress, and the
+ * three verdict colours are only ever verdicts. If the accent borrowed green or red the
+ * feedback would stop reading as feedback.
+ */
+
+@font-face {
+  font-family: "Plex";
+  src: url("/plex-mono.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  /* paper */
+  --desk: #d9caac;          /* kraft construction paper, the work surface */
+  --sheet: #f4ecda;         /* the cream sheet you write on */
+  --sheet-warm: #ece1c9;    /* a second sheet, tucked behind */
+
+  /* ink */
+  --ink: #2b2721;
+  --ink-soft: #5f574b;
+  --ink-faint: #8a7f6e;
+  --rule: rgba(43, 39, 33, 0.16);
+  --rule-soft: rgba(43, 39, 33, 0.09);
+
+  /* The car park. Deepened from the showroom swatches so 13px uppercase mono clears
+     4.5:1 against both the cream sheet and the painted panels -- the first pass sat at
+     3.8:1, which is a nice colour you cannot read. */
+  --green: #4f7052;         /* Subaru Autumn Green */
+  --green-wash: rgba(79, 112, 82, 0.15);
+  --brick: #97493d;         /* muted Barcelona red */
+  --brick-wash: rgba(151, 73, 61, 0.13);
+  --cement: #6f665a;        /* Toyota Cement */
+  --cement-wash: rgba(111, 102, 90, 0.15);
+  --horizon: #41628a;       /* Subaru Horizon Blue -- navigation only */
+  --horizon-wash: rgba(65, 98, 138, 0.13);
+
+  --mono: "Plex", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+
+  --r: 6px;                 /* paper is cut, not rounded */
+  --r-sm: 4px;
+  --pill: 999px;
+
+  /* pencil-soft, warm, never black */
+  --lift: 0 1px 0 rgba(255, 250, 240, 0.5), 0 2px 3px rgba(94, 72, 40, 0.13),
+          0 12px 22px -14px rgba(94, 72, 40, 0.3);
+
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.45;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+
+  /* Construction paper: fibres, flecks, and an uneven tone. Three cheap layers rather
+     than an image, so it costs nothing and never pixelates. */
+  background-color: var(--desk);
+  background-image:
+    radial-gradient(rgba(255, 252, 245, 0.5) 0.6px, transparent 0.7px),
+    radial-gradient(rgba(120, 95, 60, 0.16) 0.5px, transparent 0.6px),
+    linear-gradient(102deg, rgba(255, 250, 238, 0.24) 0%, transparent 46%,
+                    rgba(150, 120, 78, 0.13) 100%);
+  background-size: 7px 7px, 11px 11px, 100% 100%;
+  background-position: 0 0, 3px 4px, 0 0;
+}
+
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--horizon); outline-offset: 3px; border-radius: 3px; }
+
+/* ---------- shell ---------- */
+
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.head {
+  padding: calc(var(--safe-t) + 15px) 20px 9px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.head h1 {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.left {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+.left b { color: var(--ink); font-weight: 400; }
+
+/* The labels header's right side: an explanation of the sampling, not a count -- and
+   underneath it, in the quiet weight, today's tally. Never a total or a remaining. */
+.labels-note {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  max-width: 220px;
+}
+.labels-note .hint { margin: 0; font-size: 12px; line-height: 1.3; color: var(--ink-soft); }
+.labels-note .quiet {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The mode switcher. Horizon Blue marks where you are, same as the progress track below
+   it -- navigation, never a verdict. */
+.modes { display: flex; gap: 6px; padding: 0 20px; }
+.modes button {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: var(--pill);
+  color: var(--ink-faint);
+  border: 1px solid var(--rule);
+}
+.modes button.on { color: var(--horizon); border-color: var(--horizon); background: var(--horizon-wash); }
+
+/* Ruled line, like the margin rule on a worksheet. Collapses to nothing in labels mode --
+   there is no total to measure progress against, so a bar with nothing in it would be a
+   lie by implication. */
+.track {
+  height: 3px;
+  background: var(--rule-soft);
+  margin: 0 20px;
+  border-radius: var(--pill);
+  overflow: hidden;
+}
+.track.off { height: 0; margin: 0; background: none; }
+.track span {
+  display: block;
+  height: 100%;
+  background: var(--horizon);
+  border-radius: var(--pill);
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---------- the sheet ---------- */
+
+/* Hidden, so a card can fly off the side. The card itself already carries
+   `max-height: 100%; overflow-y: auto`, so a tall one scrolls inside its own edge -- a
+   second scroll container here was redundant and only made `.state`'s height:100% harder
+   to reason about. */
+.stage { position: relative; overflow: hidden; padding: 15px 15px 0; }
+
+.card {
+  overflow-y: auto;
+  max-height: 100%;
+  -webkit-overflow-scrolling: touch;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  box-shadow: var(--lift);
+  padding: 20px 19px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Leaving: the sheet takes the colour of the decision with it. The motion is the
+   feedback -- no toast, no message. */
+.card.leaving { animation: fly 0.34s cubic-bezier(0.4, 0, 1, 1) forwards; pointer-events: none; }
+.card.keep { background: color-mix(in srgb, var(--green) 13%, var(--sheet)); border-color: var(--green); }
+.card.cut  { background: color-mix(in srgb, var(--brick) 13%, var(--sheet)); border-color: var(--brick); }
+.card.skip { background: color-mix(in srgb, var(--cement) 15%, var(--sheet)); border-color: var(--cement); }
+
+@keyframes fly {
+  to { transform: translateY(-13%) rotate(-1.2deg) scale(0.95); opacity: 0; }
+}
+
+/* Arriving: the next sheet is dealt onto the desk. */
+.card.arriving { animation: deal 0.32s cubic-bezier(0.22, 0.61, 0.36, 1); }
+@keyframes deal {
+  from { transform: translateY(13px) rotate(0.8deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card.leaving, .card.arriving { animation-duration: 0.01ms; }
+  .track span { transition: none; }
+}
+
+/* ---------- what is on the sheet ---------- */
+
+/* A margin note, in the tone the thing deserves. `warn` is a real problem needing a
+   decision; `info` is something worth knowing that is nobody's fault -- showing
+   cross-promotion in red sent Chris toward cutting a show that should be kept. */
+.note {
+  border-radius: var(--r-sm);
+  padding: 10px 13px 11px;
+  font-size: 14px;
+  color: var(--ink);
+}
+.note p { margin: 0; }
+.note.warn { background: var(--brick-wash); border-left: 3px solid var(--brick); }
+.note.info { background: var(--cement-wash); border-left: 3px solid var(--cement); }
+
+.note b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.note.warn b { color: var(--brick); }
+.note.info b { color: var(--cement); }
+
+.note .means { color: var(--ink-soft); font-size: 13px; margin-top: 3px; }
+
+/* Two claims, side by side, because the decision is a comparison and not a lookup.
+
+   Stacked on a phone -- catalog first, feed second, in the order you read them -- and
+   side by side once there is room. The feed panel is the second sheet colour so the eye
+   knows which half is evidence and which half is what we already believed. */
+.compare { display: grid; gap: 10px; min-width: 0; }
+@media (min-width: 620px) { .compare { grid-template-columns: 1fr 1fr; } }
+
+.side {
+  background: var(--sheet-warm);
+  border-radius: var(--r-sm);
+  border-left: 3px solid var(--rule);
+  padding: 10px 13px 12px;
+  font-size: 14px;
+  /* Grid children default to min-width:auto, so one long unbreakable episode title
+     widened the track past the phone and pushed the whole card off-screen. */
+  min-width: 0;
+}
+.side p { margin: 0; overflow-wrap: anywhere; }
+.side b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--ink-faint);
+  margin-bottom: 5px;
+}
+.side.cand { border-left-color: var(--horizon); background: var(--horizon-wash); }
+.side.cand b { color: var(--horizon); }
+
+.feedname { font-weight: 600; line-height: 1.25; }
+.author { color: var(--ink-soft); font-size: 12.5px; margin-top: 2px !important; }
+
+/* The episode titles. The whole reason this card exists -- publisher names argue with
+   each other and episode titles simply settle it. Monospaced and tight so a run of them
+   reads as a list of evidence rather than as prose. */
+.eps {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.eps li {
+  padding: 2px 0 2px 10px;
+  border-top: 1px solid var(--rule-soft);
+  overflow-wrap: anywhere;
+}
+.eps li::before { content: "·"; margin-left: -10px; padding-right: 5px; color: var(--ink-faint); }
+
+.card > .means { color: var(--ink-soft); font-size: 13px; margin: 0; }
+
+/* The fit read: a slip of paper clipped to the card rather than another painted panel.
+   Same left rule as .note so the two stack as one column of margin notes, but on the
+   second sheet colour and with a dashed edge -- it is somebody's opinion, not a fact the
+   catalog holds about itself. No verdict colours here on purpose; green and red are the
+   buttons' alone. */
+.fit {
+  background: var(--sheet-warm);
+  border-left: 3px solid var(--rule);
+  border-radius: var(--r-sm);
+  padding: 10px 13px 11px;
+  font-size: 14px;
+  color: var(--ink);
+}
+.fit p { margin: 0; }
+
+.fit b {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--ink-faint);
+  margin-bottom: 5px;
+}
+.fit b i {
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 11px;
+}
+
+.chip {
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  padding: 2px 7px 3px;
+  border-radius: var(--pill);
+  background: var(--cement-wash);
+  color: var(--cement);
+  box-shadow: inset 0 0 0 1px var(--rule-soft);
+}
+/* Only `talk` is tinted, and toward cement rather than the cut colour. It is the one
+   verdict that argues against a show being here at all, so it earns a little weight --
+   but tinting it brick would decide the card before the human touched it. */
+.chip.talk { background: var(--cement); color: var(--sheet); box-shadow: none; }
+
+/* The reasoning gets the room. It is quoted evidence, so it is set a notch larger than
+   the meaning line under it and left ragged rather than justified. */
+.fit .why { line-height: 1.42; text-wrap: pretty; }
+.fit .means { color: var(--ink-soft); font-size: 13px; margin-top: 5px; }
+
+.top { display: flex; gap: 14px; align-items: flex-start; }
+.art {
+  width: 76px; height: 76px; flex: none;
+  border-radius: var(--r-sm);
+  background: var(--sheet-warm);
+  border: 1px solid var(--rule);
+  object-fit: cover;
+}
+.title { margin: 0; font-size: 26px; line-height: 1.12; letter-spacing: -0.017em; text-wrap: balance; }
+.by { margin: 6px 0 0; font-size: 13.5px; color: var(--ink-faint); }
+
+/* Somewhere to actually go and look. The card frames the question; this settles it. */
+.links { display: flex; flex-direction: column; gap: 8px; }
+.go {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 13px 15px;
+  border-radius: var(--r-sm);
+  color: var(--horizon);
+  border: 1px solid var(--horizon);
+  background: var(--horizon-wash);
+}
+.go span { font-size: 13px; opacity: 0.7; }
+.go:active { filter: brightness(0.96); }
+
+.facts { display: flex; flex-wrap: wrap; gap: 6px; }
+.fact {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  padding: 4px 9px;
+  border-radius: var(--pill);
+  background: var(--cement-wash);
+  color: var(--ink-soft);
+}
+.fact.arcs { color: var(--green); background: var(--green-wash); }
+
+.sec > h2 {
+  margin: 0 0 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+/* An older `.eps` block lived here, left over from when the inclusion card listed episode
+   titles. Nothing rendered it any more, but it sat later in the file than the feed card's
+   `.eps` and quietly won the cascade -- its `white-space: nowrap` truncated the one piece
+   of evidence the feed card exists to show. Deleted rather than reordered: dead rules that
+   still take effect are worse than dead rules. */
+
+/* ---------- the toast ---------- */
+
+.toast {
+  padding: 12px 15px calc(var(--safe-b) + 15px);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.verdicts { display: grid; grid-template-columns: 1fr 0.68fr 1fr; gap: 9px; }
+
+/* Painted panels, not glass. Colour fill with ink-dark text, like a car in a lot. */
+.v {
+  height: 62px;
+  border-radius: var(--r);
+  font-family: var(--mono);
+  font-size: 13.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--sheet);
+  border: 1px solid rgba(43, 39, 33, 0.22);
+  box-shadow: 0 1px 0 rgba(255, 250, 240, 0.35) inset, 0 2px 4px rgba(94, 72, 40, 0.22);
+  transition: transform 0.11s ease, filter 0.11s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+/* Stamped into the panel rather than sitting on it. Hidden where there is no keyboard:
+   a shortcut hint on a phone is a lie. */
+.v kbd {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: rgba(255, 252, 244, 0.72);
+  background: rgba(43, 39, 33, 0.24);
+  box-shadow: 0 1px 0 rgba(255, 250, 240, 0.18);
+}
+@media (hover: none) and (pointer: coarse) {
+  .v kbd { display: none; }
+  .v { gap: 0; }
+}
+.v:active { transform: translateY(1.5px) scale(0.985); filter: brightness(0.93); }
+.v.keep { background: var(--green); }
+.v.cut { background: var(--brick); }
+.v.skip { background: var(--cement); }
+.v:disabled { opacity: 0.4; box-shadow: none; }
+
+/* The labels queue's verdict buttons reuse .v/.keep/.cut/.skip for colour -- confirm is
+   the green "stands as is", change is the brick "something's wrong here", skip is cement
+   -- but carry a plain-language line instead of a keyboard hint, since this queue has no
+   keyboard affordance. */
+.v small {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  opacity: 0.85;
+}
+
+/* Fixed slot, so the buttons never jump under a thumb already moving. */
+.undo {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+.undo button {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--horizon);
+  padding: 5px 13px;
+  border: 1px solid var(--horizon);
+  border-radius: var(--pill);
+  background: var(--horizon-wash);
+}
+.undo .what { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.undo .what b { font-weight: 600; }
+.undo .what.keep b { color: var(--green); }
+.undo .what.cut b { color: var(--brick); }
+.undo .what.skip b { color: var(--ink-faint); }
+.undo.gone { visibility: hidden; }
+
+/* ---------- states ---------- */
+
+.state {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 40px 26px;
+  color: var(--ink-soft);
+}
+.state .big { font-size: 46px; color: var(--green); line-height: 1; }
+.state h2 { margin: 0; font-size: 22px; color: var(--ink); }
+.state p { margin: 0; max-width: 34ch; font-size: 15px; }
+.state .tally {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.err {
+  margin: 15px;
+  padding: 13px 15px;
+  border-radius: var(--r-sm);
+  background: var(--brick-wash);
+  border-left: 3px solid var(--brick);
+  font-size: 14px;
+  color: var(--ink);
+}
+
+@media (min-width: 620px) {
+  .v { height: 56px; }
+  .title { font-size: 29px; }
+}
+
+
+/* ---------- the preview sheet ----------
+ *
+ * Apple's ordinary pages refuse to be framed; their embed player does not, and it
+ * carries the description, the episode list and playable previews -- which is the whole
+ * question. Leaving the queue to answer a question about the queue is a good way to not
+ * come back, so it slides up in place instead.
+ *
+ * It deliberately stops above the verdict buttons. Listen, decide, and the sheet closes
+ * itself as the card leaves -- no dismissing anything.
+ */
+
+.scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 39, 33, 0.34);
+  border: 0;
+  padding: 0;
+  z-index: 5;
+  animation: dim 0.22s ease;
+}
+@keyframes dim { from { opacity: 0; } }
+
+.sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  /* clears the toast: two rows of controls plus the home bar */
+  bottom: calc(96px + var(--safe-b));
+  max-width: 620px;
+  margin: 0 auto;
+  height: min(62vh, 560px);
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  border-radius: var(--r) var(--r) 0 0;
+  box-shadow: 0 -6px 30px -12px rgba(94, 72, 40, 0.45);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  z-index: 6;
+  animation: slide-up 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+@keyframes slide-up { from { transform: translateY(14%); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet, .scrim { animation-duration: 0.01ms; }
+}
+
+.sheet header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 14px 10px;
+  border-bottom: 1px solid var(--rule-soft);
+  position: relative;
+}
+.sheet .grab {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 3px;
+  border-radius: var(--pill);
+  background: var(--rule);
+}
+.sheet header a,
+.sheet header button {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--horizon);
+  padding: 5px 11px;
+  border-radius: var(--pill);
+  border: 1px solid var(--horizon);
+  background: var(--horizon-wash);
+  margin-top: 4px;
+}
+.sheet header button { margin-left: auto; color: var(--ink-soft); border-color: var(--rule); background: none; }
+
+.sheet .frame { position: relative; overflow: hidden; }
+.sheet iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: var(--sheet-warm);
+  display: block;
+}
+
+/* Shown only if the frame is still blank after a few seconds. Sits at the bottom so it
+   never covers a player that did load. */
+.sheet .stuck {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  margin: 0;
+  padding: 9px 14px calc(9px + var(--safe-b));
+  background: var(--sheet-warm);
+  border-top: 1px solid var(--rule-soft);
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.sheet .stuck a { color: var(--horizon); }
+
+/* The opener is a button, not a link, but should read the same as one. */
+button.go { width: 100%; text-align: left; font-family: inherit; }
+
+/* ---------- the label card ----------
+ *
+ * Same .card shell as the other two queues (arriving/leaving, the deal-and-fly
+ * animation), with its own header lines and a "machine's read" panel instead of .fit --
+ * cement, not a verdict colour, because this is the catalog describing itself and
+ * nothing has been decided yet.
+ */
+
+.show {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+/* The show's own one-line premise, sitting under its name -- soft and small so it
+   reads as a reminder, not as new information competing with the episode title below
+   it. */
+.show-about {
+  margin: 3px 0 0;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.when {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+/* The trailer/bonus marker: cement-wash like every other machine-talk chip, dropped
+   inline in the when-line rather than the header, since it changes how you read the
+   duration next to it more than it changes the show. */
+.when .chip.type-chip { margin: 0 2px 0 8px; vertical-align: 1px; }
+
+/* Clamped so the card can't grow past the stage -- the description is context, not the
+   whole card. Tapping trades the clamp for the full text; the hint is quiet type, not
+   a button, so the card doesn't grow a second control next to the toast below it. */
+.desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  cursor: pointer;
+}
+.desc.open { -webkit-line-clamp: unset; overflow: visible; }
+.desc-hint {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  margin-left: 4px;
+}
+
+/* Beside it in the feed: the two episodes either side in the raw feed order, so a
+   run of trailers or a re-cut doesn't read as this episode's own arc. Soft ink and a
+   thin rule where the current episode sits -- context for the read below, not
+   content competing with it. */
+.neighbours .k {
+  margin: 0 0 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.neighbours ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+}
+.neighbours li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 3px 0;
+  overflow-wrap: anywhere;
+}
+.nb-date { font-family: var(--mono); font-size: 11px; flex: none; }
+.nb-here {
+  margin: 4px 0;
+  padding: 4px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.read {
+  background: var(--sheet-warm);
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--r-sm);
+  padding: 12px 14px 13px;
+}
+.read .k {
+  margin: 0 0 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.primary-line { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.pips {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.pips b { color: var(--ink); font-weight: 400; }
+.conf {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+}
+.scatter {
+  margin: 9px 0 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* What the other voters landed on, under the pips -- machine talk (cement-wash chips,
+   same as every other reading the catalog reports about itself), never a verdict and
+   never a pick: those live in the change sheet, not here. */
+.reached {
+  margin: 9px 0 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+.reached .chip.vote-chip { margin: 0 5px 4px 5px; }
+
+/* The real-world things this episode is about, per the entity extractor. One soft
+   line, no chips -- these are names, not a verdict or a count to skim. */
+.entities {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* ---------- the change-subject sheet ----------
+ *
+ * Reuses .scrim/.sheet from the preview above -- same fixed positioning, same slide-up
+ * and dim -- but this one covers all the way to the bottom of the screen instead of
+ * stopping above the toast. The mock calls for the verdict buttons to be covered while
+ * you're mid-correction, not left reachable underneath.
+ */
+.sheet.picker { bottom: 0; height: min(70vh, 560px); display: flex; flex-direction: column; }
+.sheet.picker .subjects { flex: 1; min-height: 0; }
+
+/* While the search field has focus, a phone keyboard owns the bottom half of the
+   screen and a bottom-anchored sheet renders its results straight into it. So
+   searching flips the geometry: the sheet grows to the full screen and the quick
+   picks fold away, which puts the results in the strip the keyboard leaves visible.
+   Blur with an empty query folds it back. */
+.sheet.picker.searching { top: max(10px, env(safe-area-inset-top)); height: auto; }
+.sheet.picker.searching .k,
+.sheet.picker.searching .likely { display: none; }
+
+.sheet-head { padding: 14px 16px 10px; border-bottom: 1px solid var(--rule-soft); position: relative; }
+.sheet-head .k {
+  margin: 0 0 9px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* Quick-picks: the voters' own scatter, ranked, then this show's usual shelves. Horizon
+   border -- these are navigation to the right answer, not a verdict in themselves. */
+.likely { display: flex; flex-wrap: wrap; gap: 7px; }
+.likely button {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 11px;
+  border-radius: var(--pill);
+  background: var(--horizon-wash);
+  border: 1.5px solid var(--horizon);
+  color: var(--ink);
+}
+.likely button small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 9.5px;
+  color: var(--ink-soft);
+  margin-top: 3px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.search { margin: 10px 0 0; }
+.search input {
+  width: 100%;
+  font-family: var(--sans);
+  /* 16px exactly: iOS zooms the whole page into any focused input under 16px, and the
+     zoom is what wrecked the sheet the first time. Never below this on an input. */
+  font-size: 16px;
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--rule);
+  background: var(--sheet-warm);
+  color: var(--ink);
+  outline: none;
+}
+
+.subjects { overflow-y: auto; padding: 6px 16px 20px; -webkit-overflow-scrolling: touch; }
+.theme-label {
+  margin: 14px 0 4px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.subj {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 2px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.subj .nm { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.subj .sl { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-left: 6px; }
+.subj .df { margin: 2px 0 0; font-size: 12px; line-height: 1.4; color: var(--ink-soft); }
+/* Picking is a verdict, so it may borrow green for its half-second flash. */
+.subj.picked { background: var(--green-wash); }
+
+/* The research link out to Apple Podcasts. Horizon: it is navigation, never a verdict. */
+.when .apple {
+  margin-left: 10px;
+  color: var(--horizon);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid var(--horizon-wash);
+}

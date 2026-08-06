@@ -1,0 +1,178 @@
+{
+ "slug": "sympathy-pains",
+ "title": "Sympathy Pains",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "medical-deception",
+   "count": 6
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "b773fda3-339c-4ec9-a7b6-ae6e01557eb6",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sarah Delashmit",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:28:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "19ab4a0b-e067-41d2-b333-ae750128a87d",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sarah Delashmit",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "aee07c3e-6d50-4484-b5e8-ae7501259c91",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sarah Delashmit",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b25e3d54-966d-4094-88aa-ae75012c0ac7",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:30:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sarah Delashmit",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:30:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3c56f30b-50d2-4315-884c-ae7c0154de22",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:23:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sarah Delashmit",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:23:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bc157522-29e2-4761-8bf2-ae830118520d",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:51+00:00"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sarah Delashmit",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:11:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6970e12f-8f57-486b-b1ac-ae8a014e59b0",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:31+00:00"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sarah Delashmit",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:31+00:00"
+    }
+   ]
+  }
+ ]
+}

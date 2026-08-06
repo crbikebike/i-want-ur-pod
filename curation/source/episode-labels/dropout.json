@@ -1,0 +1,1057 @@
+{
+ "slug": "dropout",
+ "title": "The Dropout",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "courtroom-trial",
+   "count": 14
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 11
+  },
+  {
+   "slug": "founder-biography",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 1
+  },
+  {
+   "slug": "whistleblower",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "https://serve.castfire.com/audio/3584615/3584615_2019-01-10-174615.mp3",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:59+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:59+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3588431/3588431_2019-01-22-155031.mp3",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:59:30+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:59:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:59:30+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:59:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3590453/3590453_2019-01-28-185853.mp3",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:02+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:02+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3593202/3593202_2019-02-05-204502.mp3",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:57+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:57+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3595474/3595474_2019-02-12-210714.mp3",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:46+00:00"
+    },
+    {
+     "subject": "whistleblower",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:46+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3597729/3597729_2019-02-19-234529.mp3",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:33:38+00:00"
+    },
+    {
+     "name": "Sunny Balwani",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://serve.castfire.com/audio/3599996/3599996_2019-02-26-205036.mp3",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:43+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:43+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e17f202e-f531-11eb-b9d0-1734c7cbf4cd",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f1fd3972-f531-11eb-b514-dfb6da9e9fbb",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:59:30+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:59:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:59:30+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:59:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f1ebdcae-f531-11eb-b514-b7b1b570376e",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:59+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:59+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:14:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f20dec86-f531-11eb-b514-373b4edf2b8a",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:02+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f21e3b22-f531-11eb-b514-9f74f038d2c3",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:57+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:57+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "442c651c-1a7e-11ec-be5e-3baca8addec4",
+   "subjects": [
+    {
+     "subject": "whistleblower",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:46+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:46+00:00"
+    },
+    {
+     "name": "Erika Cheung",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:17:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f22f0970-f531-11eb-b514-037cc981282f",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:33:38+00:00"
+    },
+    {
+     "name": "James Mattis",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f23f5d3e-f531-11eb-b514-b739389d1b60",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:43+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:00:43+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f24ff9b4-f531-11eb-b514-c37e29fac411",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f26029a6-f531-11eb-b514-db879fe125e0",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:59+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:14:59+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f271765c-f531-11eb-b514-4312101ee71a",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:59:30+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:59:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:59:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d58fc6e4-38c3-11ec-a799-671962bd5e20",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:02+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:02+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d5b1fe9e-38c3-11ec-a799-f34582440023",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:57+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:57+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d5d5423c-38c3-11ec-a799-f76e01d9cf38",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:46+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:46+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d5f886c0-38c3-11ec-a799-d3b722230eee",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d61c23b4-38c3-11ec-a799-c3f2f23324ad",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:43+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:43+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d63e8436-38c3-11ec-a799-3f4fed1c22fa",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "name": "Sunny Balwani",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d660eb48-38c3-11ec-a799-8760f3995d20",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:59+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:59+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5d632d74-6216-11ec-8901-cb3cc408ce2f",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:59:30+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:59:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:59:30+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:59:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c9df79b8-6dfa-11ec-81bb-0736365518fc",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:02+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:02+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5810c864-9cee-11ec-8e81-7b127585f137",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:43+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:00:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "314355a0-fe67-11ec-b170-7f5a03b8c751",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:57+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ramesh \"Sunny\" Balwani",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:57+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ca280a08-18e4-11ed-9682-77fc9959a5da",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Amanda Seyfried",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "name": "Liz Meriwether",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "37dfd9f0-67a9-11ed-9e97-97535fa94bbc",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:46+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Holmes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:46+00:00"
+    },
+    {
+     "name": "Theranos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:46+00:00"
+    }
+   ]
+  }
+ ]
+}

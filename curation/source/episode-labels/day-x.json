@@ -1,0 +1,97 @@
+{
+ "slug": "day-x",
+ "title": "Day X",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "extremist-movement",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "a375142a-83e0-444d-956b-659cf3582f67",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:51+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Day X network",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:11:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4f1dfedc-a047-467d-8800-10cbfddafab3",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:31+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "04e72420-8215-4210-92c3-d938651cfe03",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:19+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Franco A.",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:14:19+00:00"
+    }
+   ]
+  }
+ ]
+}

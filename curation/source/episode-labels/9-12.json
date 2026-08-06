@@ -1,0 +1,90 @@
+{
+ "slug": "9-12",
+ "title": "9/12",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "terrorism-and-aftermath",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/UE3vJCJfaksGgQiFSVRxW6nBOMTR9bbVF3UJVnaBkJY",
+   "subjects": [
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/8mVDkaH91fC3S0wgEz6aY5HSjq2n3U_qadDqWiqSOl0",
+   "subjects": [
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:07:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/fVyHTOipyh091Et85t818fRFWnmgPQacL28B_PLoGVE",
+   "subjects": [
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/2N0FexpvJFtoECsBrLQWWCuXWoy2bw66k4-5WlKNBCs",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "language-and-words",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  }
+ ]
+}

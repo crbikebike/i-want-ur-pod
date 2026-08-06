@@ -1,0 +1,173 @@
+{
+ "slug": "scam-inc",
+ "title": "Scam Inc",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "organised-scam-industry",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 3
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "675c583d7e8c28e6aa2f25af",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:42+00:00"
+    },
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67a479a6340a5590cd3c44b4",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:30:37+00:00"
+    },
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:30:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67a4945d340a5590cd42b5ce",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67a482959c6f7f7f286cfc9c",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "680f92ba53ed555148335df7",
+   "subjects": [
+    {
+     "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6970f923a6c658f18331dfcc",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6a3152d2c26a46aaa55adde3",
+   "subjects": [
+    {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alexis de Tocqueville",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:39+00:00"
+    }
+   ]
+  }
+ ]
+}

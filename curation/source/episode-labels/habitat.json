@@ -1,0 +1,223 @@
+{
+ "slug": "habitat",
+ "title": "The Habitat",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "space-exploration",
+   "count": 8
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "ae12b3d8-3e8f-11e8-a50f-f35a64d2f68a",
+   "subjects": [
+    {
+     "subject": "space-exploration",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "HI-SEAS",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c155c982-f7b6-11e7-87eb-c766d809abe6",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    },
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NASA",
+     "kind": "company",
+     "confidence": "low",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b4cf4724-f7b6-11e7-a78f-63319aa07d12",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "HI-SEAS",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c604cfa0-f7b6-11e7-943c-bb50193d60e8",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:13+00:00"
+    },
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "82e0bb4e-f7b6-11e7-a5b5-fb035eaa0a4a",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    },
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fabcea2a-f7b6-11e7-b63a-27e70e7685e5",
+   "subjects": [
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "HI-SEAS",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5e2dcb2e-4190-11e8-9338-4fbea8344a0a",
+   "subjects": [
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NASA",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ba68e3ac-f7b6-11e7-9d38-bfa3ec066cea",
+   "subjects": [
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ce365126-f7b6-11e7-baee-a768c7a1499c",
+   "subjects": [
+    {
+     "subject": "space-exploration",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6a899ef4-08ce-11eb-ae96-bbbc4dc08fc8",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  }
+ ]
+}

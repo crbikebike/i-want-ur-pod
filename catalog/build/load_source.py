@@ -31,23 +31,9 @@ from catalog.build.normalize import normalize_feed_url, slugify
 
 RUN_ID = "2026-07-theming"
 
-# Shows whose feed demonstrably belongs to a different programme, where guid-overlap
-# detection cannot help because the parent show is not in the catalog at all. Flagged
-# for the Phase 2 inclusion queue rather than guessed at here.
-#
-# "Fake Diana: Case of the Missing Blue Diamond" is catalogued as a limited series but
-# its feed returns 722 episodes of an ongoing numbered true-crime show ("692 // ...").
-# "Serial (Season 1)" is not Serial. Its feed is an RSS-parser test fixture on an S3
-# bucket, with episodes titled "No Summary" and "Only Item Description with CDATA". All
-# seven were theme-labelled anyway.
-EXPLICIT_SUSPECTS = {
-    "Fake Diana: Case of the Missing Blue Diamond": "feed returns an unrelated ongoing show",
-    "Serial (Season 1)": "feed is an RSS-parser test fixture, not a podcast",
-    # Catalogued as Goalhanger's history series, but feeds.megaphone.fm/empire serves the
-    # crypto show of the same name -- 657 episodes of finance news, theme-labelled as
-    # narrative history. A title collision, not a duplicate feed.
-    "Empire": "feed serves a different show with the same name (crypto, not history)",
-}
+# Shows whose feed serves a different programme than the row claims. The list lives in
+# admin/api/suspects.py so the workbench can explain each one rather than just flag it.
+from admin.api.suspects import EXPLICIT_SUSPECTS  # noqa: E402
 
 # Language is detected from EPISODE TITLES, not from the show description: descriptions
 # in catalog.json were written by the curator in English, so they say nothing about the
@@ -91,6 +77,10 @@ class LoadReport:
     episode_subject_links: int = 0
     recovered_episodes: int = 0
     recovered_shows: int = 0
+    combed_episodes: int = 0
+    combed_shows: int = 0
+    tombstoned_shows: int = 0
+    tombstoned_episodes: int = 0
     depth1_shows: list[str] = field(default_factory=list)
     unjoined: list[str] = field(default_factory=list)
     feed_url_mismatches: list[str] = field(default_factory=list)
@@ -112,6 +102,10 @@ class LoadReport:
             f"  depth-1 shows (no episode labels): {len(self.depth1_shows)}",
             f"  recovered episodes: {self.recovered_episodes} across "
             f"{self.recovered_shows} shows (unlabelled; Phase 3 labels them)",
+            f"  combed episodes   : {self.combed_episodes} across "
+            f"{self.combed_shows} shows (the Phase 3 feed re-read)",
+            f"  tombstones applied: {self.tombstoned_shows} shows, "
+            f"{self.tombstoned_episodes} episodes",
         ]
         if self.optional_inputs_missing:
             out.append(f"  optional inputs absent: {', '.join(self.optional_inputs_missing)}")
@@ -166,6 +160,17 @@ def _read_recovered(source: Path) -> dict[str, list[dict]]:
     if not path.is_file():
         return {}
     return json.loads(path.read_text()).get("recovered") or {}
+
+
+def _read_combed(source: Path) -> dict[str, list[dict]]:
+    """Episodes the Phase 3 feed comb added, whose only other source is the gitignored
+    feeds/ corpus. Same contract as recovered-episodes.json -- additive, tracked in git
+    so a rebuild does not depend on raw feeds -- but these carry their description and
+    duration inline, because the comb is also the only thing that ever read those."""
+    path = source / "comb-episodes.json"
+    if not path.is_file():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8")).get("combed") or {}
 
 
 def _read_optional(source: Path, subdir: str, key: str) -> dict[str, dict]:
@@ -300,6 +305,7 @@ def load(conn: sqlite3.Connection, source: Path) -> LoadReport:
     catalog = json.loads((source / "catalog.json").read_text())
     episode_themes = _read_episode_themes(source)
     recovered = _read_recovered(source)
+    combed = _read_combed(source)
     feeds = _read_optional(source, "feeds", "slug")
     descriptions = _read_optional(source, "descriptions", "slug")
 
@@ -418,6 +424,8 @@ def load(conn: sqlite3.Connection, source: Path) -> LoadReport:
             _insert_recovered(
                 conn, report, show_id, recovered[slug], descriptions.get(slug)
             )
+        if slug in combed:
+            _insert_combed(conn, report, show_id, combed[slug])
 
     if note_dupes := [f"{a}~{b}" for a, b, _ in content_pairs] + [
         "+".join(g) for g in feed_groups
@@ -438,9 +446,38 @@ def load(conn: sqlite3.Connection, source: Path) -> LoadReport:
             ),
         )
 
+    _apply_tombstones(conn, report, source)
+
     report.networks = len(network_ids)
     conn.commit()
     return report
+
+
+def _apply_tombstones(conn, report: LoadReport, source: Path) -> None:
+    """Re-apply soft-deletions from tombstones.json, last, after every insert.
+
+    Bulk deletes were logged as wildcard-and-count ("empire/*", rows: 658), which audits
+    the decision but cannot replay it. Without this, a rebuild resurrects every merged
+    duplicate and wrong-feed episode Phase 2 removed."""
+    path = source / "tombstones.json"
+    if not path.is_file():
+        return
+    data = json.loads(path.read_text(encoding="utf-8"))
+    for row in data.get("shows") or []:
+        conn.execute(
+            "UPDATE shows SET deleted_at = ?, deleted_reason = ? WHERE slug = ?",
+            (row["at"], row.get("reason"), row["slug"]))
+        report.tombstoned_shows += 1
+    for slug, eps in (data.get("episodes") or {}).items():
+        show = conn.execute("SELECT id FROM shows WHERE slug = ?", (slug,)).fetchone()
+        if not show:
+            continue
+        for row in eps:
+            cur = conn.execute(
+                "UPDATE episodes SET deleted_at = ?, deleted_reason = ? "
+                "WHERE show_id = ? AND guid = ?",
+                (row["at"], row.get("reason"), show[0], row["guid"]))
+            report.tombstoned_episodes += cur.rowcount
 
 
 def _upsert_network(conn, cache: dict[str, int], name: str | None) -> int | None:
@@ -560,3 +597,36 @@ def _insert_recovered(
     report.recovered_episodes += added
     if added:
         report.recovered_shows += 1
+
+
+def _insert_combed(conn, report: LoadReport, show_id: int, episodes: list[dict]) -> None:
+    """Insert comb-added episodes. Additive only, like _insert_recovered, but the row is
+    complete in itself -- description and duration come from the file, not from the
+    optional gitignored directories."""
+    added = 0
+    for ep in episodes:
+        try:
+            conn.execute(
+                "INSERT INTO episodes (show_id, guid, title, season, episode_number, "
+                "episode_type, published_at, description, duration_s, available) "
+                "VALUES (?,?,?,?,?,?,?,?,?,?)",
+                (
+                    show_id,
+                    ep["guid"],
+                    ep.get("title") or "Untitled Episode",
+                    ep.get("season"),
+                    ep.get("episodeNumber"),
+                    ep.get("episodeType"),
+                    ep.get("iso"),
+                    ep.get("description"),
+                    ep.get("durationS"),
+                    ep.get("available", 1),
+                ),
+            )
+        except sqlite3.IntegrityError:
+            # Already present from the labelled corpus. Additive only.
+            continue
+        added += 1
+    report.combed_episodes += added
+    if added:
+        report.combed_shows += 1

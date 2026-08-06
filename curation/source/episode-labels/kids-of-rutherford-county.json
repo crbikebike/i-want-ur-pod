@@ -1,0 +1,78 @@
+{
+ "slug": "kids-of-rutherford-county",
+ "title": "The Kids of Rutherford County",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "juvenile-justice",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "2d74073c-f2dc-4f8d-9ac2-c980fdeee202",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:31+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rutherford County juvenile court",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b5a0fa5b-20ef-4081-9072-ece81814d971",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:19+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rutherford County",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:14:19+00:00"
+    }
+   ]
+  }
+ ]
+}

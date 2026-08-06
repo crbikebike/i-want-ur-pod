@@ -1,0 +1,1323 @@
+{
+ "slug": "teacher-s-trial",
+ "title": "The Teacher's Trial",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "courtroom-trial",
+   "count": 27
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 7
+  },
+  {
+   "slug": "books-and-writing",
+   "count": 2
+  },
+  {
+   "slug": "intimate-partner-homicide",
+   "count": 2
+  },
+  {
+   "slug": "missing-person",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "d8c65945-550a-4725-bed7-ae9301871156",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0cad4594-bc62-4087-b9f5-ae940090a142",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "71311777-1766-482c-ab80-ae9b005653a9",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2f5f75db-e76f-49e9-bf91-aea20098d39d",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a99b726c-8e18-414b-8267-aea80090b9db",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "13cb9ffd-45a0-4d8e-a0a0-aeb000dbf039",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a21b69c4-9335-4e81-860c-aeb700d6a0d6",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "51120df5-c878-42c3-9e4a-aebe00cd410f",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cb7da2c9-0936-4b03-a20e-aec0017db448",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "88aa1035-48aa-4708-92f1-aec50175b676",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "name": "Hedley Thomas",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b32f39ee-456c-43da-a298-aec700d9af5e",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:46+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "449f7344-8bb0-4b20-aac1-aecc00b6d2bd",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4051a09b-1d9b-4d06-8614-aed3005d876a",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bcd5d271-1f35-42fe-be9f-aeda005fe923",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "name": "Sue Strath",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e08e9ac1-ba5a-4d1d-b2f3-aee10052af03",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5fbc57c1-d6c6-408b-b479-aee80093181e",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "36de9846-134b-424d-aa22-aeef008528f1",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f5d4e968-7e6b-4efb-bca2-aef6007c713d",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "name": "Helena Simms",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "41937231-8ae2-4c90-ba14-aefd00694d12",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b1c40f78-5b2a-4cab-a1e0-af010055f428",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "95ee550b-0c58-4a69-acda-af04009293a2",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d0dd59f6-e75e-4165-9ed2-af0b006ebad6",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b69f8e4b-0fdd-484b-a585-af1200b19bf0",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "189c011b-0140-4672-95f8-af19007feb76",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "37a867ca-430f-4a37-b9af-af4a00ab26d8",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a3c3e95f-c6b1-499a-a752-af5f0090dbe5",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "edf2b08f-7fa2-4edb-9837-b010008b6a0f",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "059a64c3-c646-4085-897a-b0110078eacd",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7fca3eb8-c6d0-45fa-8a67-b0150014c6fe",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b5dcd6b4-326a-432b-b3c2-b01c00788154",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "25c0b597-5b2a-41a1-98b6-b023007bba4b",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:23:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0e7045a6-63a4-4f72-8750-b02e00bf3eb7",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db30cb1d-1d75-4380-849b-b0310072aabb",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2cc0c1e1-c30d-406f-b82d-b031002e0ce3",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:30:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1a52616d-5671-492e-ae4c-b077003eab45",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "aeeb8458-c90a-43a3-be7e-b07e00922221",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7fe2ee13-25a9-4ed2-967c-b085008ca781",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "890eae7e-63a4-4983-8e3b-b08c007639d8",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "62829df3-6e1a-43f3-9bb4-b0b6008741a4",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Teacher's Pet",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:23:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "446ad034-1923-41e1-a1d2-b16f00d1790b",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "73294608-42c5-497e-9a87-b17a002645e4",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "80c73828-5c29-4374-90e6-b18100488944",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fe00b79d-e72b-4a03-8503-b18e00bbd12f",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b19668c4-6148-41d2-9d43-b2b10083af1d",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:30:41+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:30:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:30:41+00:00"
+    }
+   ]
+  }
+ ]
+}

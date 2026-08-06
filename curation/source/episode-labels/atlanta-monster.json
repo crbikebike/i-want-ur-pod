@@ -1,0 +1,630 @@
+{
+ "slug": "atlanta-monster",
+ "title": "Atlanta Monster",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "serial-offender",
+   "count": 11
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 4
+  },
+  {
+   "slug": "investigative-process",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 1
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 1
+  },
+  {
+   "slug": "true-crime-as-genre",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2017-12-22-atlm-official-trailer.mp3",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Atlanta Child Murders",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2017-12-27-atlm-episode-zero.mp3",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Darron Glass",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-01-04-atlm-episode-one-03.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:50+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Atlanta",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:11:50+00:00"
+    },
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:11:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-01-11-atlm-episode-two-03.mp3",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Atlanta",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:06:32+00:00"
+    },
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:06:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-01-18-atlm-episode-three-04.mp3",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:30+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-01-25-atlm-epiosde-four-03.mp3",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Atlanta Child Murders",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:50+00:00"
+    },
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-02-01-atlm-episode-five.mp3",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-02-08-atlm-episode-six.mp3",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-02-15-atlm-episode-seven.mp3",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-02-22-atlm-vault-p1.mp3",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-03-02-atlm-epiosde-08.mp3",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Atlanta Child Murders",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-03-09-atlm-the-list.mp3",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Atlanta Child Murders",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-03-15-atlm-epiosde-nine.mp3",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:11:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2018-03-22-atlm-episode-ten.mp3",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:06:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "482bc882-44db-11e8-ba5f-97288c93ffb5",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2b16691e-4ee0-11e8-adb0-cbb311c0cb2a",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4e168350-5a0b-11e8-bc3c-3b5f5ec75fb3",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d4cc6c0-701e-11e8-b940-532b19be3a16",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4cd9b05a-91c6-11e8-b3ed-13d6ee79fb7c",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "360e0ac2-a640-11e8-ae52-fbb097efa315",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sidney Dorsey",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ba1d995c-b3a7-11e9-9477-1f46f366138d",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Douglas",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:00+00:00"
+    },
+    {
+     "name": "Wayne Williams",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d4397b51-cdae-4082-9577-b2e4012a38a7",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Atlanta Monster",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ]
+  }
+ ]
+}

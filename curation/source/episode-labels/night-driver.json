@@ -1,0 +1,475 @@
+{
+ "slug": "night-driver",
+ "title": "The Night Driver",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "missing-person",
+   "count": 12
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "body-never-found",
+   "count": 1
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "26243e9c-b9bc-4fb2-aa05-665853b23c8b",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d1a96e95-56cb-49b8-ac60-bf4d83f5f7a9",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janine Vaughan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:47+00:00"
+    },
+    {
+     "name": "Kylie Vaughan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "27795f67-beca-4ff0-8875-da2553811d34",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:08+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janine Vaughan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9327517d-65c0-4735-8c1f-df557f216282",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janine Vaughan",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9ad6bd88-a127-48a8-b309-1c1f59285174",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:33+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janine Vaughan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "29c73bad-0d30-47f3-836f-a325d11c8df8",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:58+00:00"
+    },
+    {
+     "subject": "body-never-found",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Denis Briggs",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:26:58+00:00"
+    },
+    {
+     "name": "Janine Vaughan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "515d10f5-1eb9-4293-8f65-f8928126413f",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:57+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janine Vaughan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d8a1302a-7d07-464a-aca6-a7249c75da24",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:58+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janine Vaughan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c6ed09e4-367e-48c8-9a93-43e25202382f",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:00+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janine Vaughan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:17:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e3135c25-86b3-40c0-8a2d-dc70e3323db7",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janine Vaughan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "500797f0-c4ce-47a1-88b4-ac98000123fd",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:08+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janine Vaughan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "17ed2e78-7c53-4f12-9c08-aca1017e85cf",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janine Vaughan",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "afdca1a8-fb63-4032-920c-ae9400bdf6b2",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:33+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Dawson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:33+00:00"
+    },
+    {
+     "name": "Lynette Dawson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e7dafb3b-720d-4350-8669-b031002d9762",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "33371903-882a-4c69-b5aa-b0b60082f3cc",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "22364ef4-80e5-4c66-aa6a-b17a00229f6d",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:58+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "941ecfb5-706c-494b-aed3-b18100451c1a",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  }
+ ]
+}

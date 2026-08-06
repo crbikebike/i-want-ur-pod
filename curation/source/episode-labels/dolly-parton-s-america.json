@@ -1,0 +1,385 @@
+{
+ "slug": "dolly-parton-s-america",
+ "title": "Dolly Parton's America",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "artist-band-biography",
+   "count": 7
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 1
+  },
+  {
+   "slug": "music-scene-movement",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  },
+  {
+   "slug": "slavery-and-its-legacy",
+   "count": 1
+  },
+  {
+   "slug": "song-and-album-origin",
+   "count": 1
+  },
+  {
+   "slug": "talking-about-music",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "328a798c-d0ff-4a09-a275-278cd3a1c678",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:18:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f95e7f13-9f71-4e44-9266-e8616ca1f2e1",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:57+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:27:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "140fd73e-eb56-4a85-9640-c29105885036",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:52+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:52+00:00"
+    },
+    {
+     "name": "Porter Wagoner",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9c998a3e-00f9-4bb9-be4b-42be988fd1f2",
+   "subjects": [
+    {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:07+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:07+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:07+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5fded31b-7502-49a1-a791-f2cd2b860ee8",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:20+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:20+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:18:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8441b93b-5c83-4e34-9c83-07f59455e6cb",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f0b86144-ce91-43ed-abbc-56b6dbf3328b",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1b954aba-df50-44e3-a739-7cf954a5ef36",
+   "subjects": [
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f197e306-6d9a-49fe-b2a5-08afcf078a0b",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:11+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1ef37b67-c42a-4341-8307-b47bce34afbf",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:46+00:00"
+    },
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:46+00:00"
+    },
+    {
+     "name": "Dolly Parton's Stampede",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:06:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0638613f-bedd-4475-a2a8-90be60d3733c",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "23164bc0-b690-4cf6-ac56-d7beb13b01f5",
+   "subjects": [
+    {
+     "subject": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:57+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dolly Parton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:27:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f63517ff-5582-40d9-b533-c1d86113ec98",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fela Kuti",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "eaf4ae5d-8655-4f90-b813-e914ba921d70",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Yo-Yo Ma",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:06:46+00:00"
+    }
+   ]
+  }
+ ]
+}

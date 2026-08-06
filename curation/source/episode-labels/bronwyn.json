@@ -1,0 +1,1381 @@
+{
+ "slug": "bronwyn",
+ "title": "Bronwyn",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "missing-person",
+   "count": 23
+  },
+  {
+   "slug": "body-never-found",
+   "count": 5
+  },
+  {
+   "slug": "intimate-partner-homicide",
+   "count": 5
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 3
+  },
+  {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 3
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 1
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 1
+  },
+  {
+   "slug": "murder-for-hire",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "45e72c99-c8ae-40b9-8fef-b16f003c8b08",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:33+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anne Hamilton-Byrne",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:23:33+00:00"
+    },
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:23:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2856c07f-5eed-4ac0-be9a-b180005d9236",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bb91e58b-68d1-4b08-8495-b180005f33f5",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "689aa69b-0367-4c63-8ebd-b18000955cf5",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7137aee9-7c52-4ed2-bc61-b18700638d7b",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:50+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5b786dad-531e-4ebc-899f-b19500865307",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:01+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anne Hamilton-Byrne",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:01+00:00"
+    },
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "52990f0a-8153-40e6-b529-b18d0064542a",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a3c289d0-657a-4310-8607-b18e00b72252",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6bb01291-6086-48de-837f-b19c007e2c55",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "subject": "body-never-found",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "name": "Judy Singh",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9830a0a0-8f5c-43a3-b439-b19c0082cf7a",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1778c200-f183-4006-b753-b1a400787f42",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "body-never-found",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "44cef1d4-f1d8-4dd2-801d-b1ad00ca99e1",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b47ccee5-a285-4136-b6a4-b1e100a4d6ab",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "80134efc-3c21-4a42-af33-b20500881728",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e3b86e0c-68c6-467f-acb7-b20d006f1d7d",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3f96c678-a634-42dd-b15e-b20500961bd8",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "name": "Sonia Lee",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c2cb2fb6-dd0c-4d14-81aa-b20600a407c4",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "subject": "body-never-found",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e34c85a6-b903-42c1-81ed-b20d0071e870",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5466d3eb-218f-4284-8655-b21400a70fc1",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b6f30478-f1da-438c-b445-b21b0094ef23",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "be90395c-1d71-465c-8d17-b221018021f8",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:50+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "526fd5fa-9341-406e-9619-b221018484a7",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "765dcc2f-8ba6-4573-84e0-b2300088baa2",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bb03eaea-d614-4e13-bfd6-b265017de39d",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7ef40e61-17c3-41f5-8e91-b26c00275c67",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a4c7c498-8c5a-43e1-94e7-b27c00a082bc",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ffd3fa13-16ab-401b-be22-b2830091887f",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "abaac0f0-9ae3-463e-b811-b28a006f88c0",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1c67f936-3f81-45d9-ac3d-b29200b1fbc9",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beverley Brooker",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d2f1b886-3205-4b35-a3bf-b298000c9610",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9499f175-fe4f-4b97-950f-b29f0063ca63",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fde14808-5e68-4e95-8297-b2a600a1eaeb",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "name": "Megan Read",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cb8b68db-318e-4696-80eb-b2ad00acff91",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "029f48eb-aa6b-4bf4-8f41-b2b400936eb3",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "be81f007-d427-4b90-8196-b2bb00a6c9f4",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "920de5f8-d9f3-41a9-b96e-b2c200716209",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0180db28-bbea-4285-96d0-b2ca00c74980",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d94c0880-4e3a-4f23-a47c-b2d60012c73a",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Johnny \"The Magician\" Regan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c1553cf0-810a-472d-96fd-b2ec006cdb56",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Stewart John Regan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b80ed0c3-dfd3-4b65-8b0d-b31d005a6a11",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "226019e4-1a39-4ee5-80ec-b32401823b93",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c068d33c-bde6-4266-8718-b332002ce964",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0fdb2a96-bfae-4422-930d-b33300e86811",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "body-never-found",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bronwyn Winfield",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "name": "Jon Winfield",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3072877d-bd25-4816-9133-b3980032b065",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  }
+ ]
+}

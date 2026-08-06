@@ -1,0 +1,1716 @@
+{
+ "slug": "experiment",
+ "title": "The Experiment",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "history-retold",
+   "count": 4
+  },
+  {
+   "slug": "law-explained",
+   "count": 4
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 4
+  },
+  {
+   "slug": "food-and-drink",
+   "count": 3
+  },
+  {
+   "slug": "immigrant-experience",
+   "count": 3
+  },
+  {
+   "slug": "indigenous-history",
+   "count": 3
+  },
+  {
+   "slug": "death-penalty",
+   "count": 2
+  },
+  {
+   "slug": "gendered-constraint",
+   "count": 2
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 2
+  },
+  {
+   "slug": "political-persecution",
+   "count": 2
+  },
+  {
+   "slug": "racial-violence",
+   "count": 2
+  },
+  {
+   "slug": "reality-television",
+   "count": 2
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 2
+  },
+  {
+   "slug": "screen-representation",
+   "count": 2
+  },
+  {
+   "slug": "ai-and-society",
+   "count": 1
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  },
+  {
+   "slug": "disability-and-access",
+   "count": 1
+  },
+  {
+   "slug": "elections-and-voting",
+   "count": 1
+  },
+  {
+   "slug": "fashion-and-clothing",
+   "count": 1
+  },
+  {
+   "slug": "grief-and-loss",
+   "count": 1
+  },
+  {
+   "slug": "invented-category",
+   "count": 1
+  },
+  {
+   "slug": "labour-history",
+   "count": 1
+  },
+  {
+   "slug": "media-criticism",
+   "count": 1
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  },
+  {
+   "slug": "prison-life",
+   "count": 1
+  },
+  {
+   "slug": "protest-movement",
+   "count": 1
+  },
+  {
+   "slug": "religious-community",
+   "count": 1
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 1
+  },
+  {
+   "slug": "slavery-and-its-legacy",
+   "count": 1
+  },
+  {
+   "slug": "sports-scandal",
+   "count": 1
+  },
+  {
+   "slug": "talking-about-love",
+   "count": 1
+  },
+  {
+   "slug": "terrorism-and-aftermath",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 1
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "d3a5df58-11fc-4c1a-8da7-c0916659dc23",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48797a58-d96b-47da-93cc-7adc89d75ecc",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Yellowstone National Park",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e4ad314e-2637-4b27-94f6-23ce3c4498cb",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Voting Rights Act",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8fd39022-97fa-4911-a033-c53f87c2440d",
+   "subjects": [
+    {
+     "subject": "fashion-and-clothing",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fcbd5d2d-154b-4c0c-bf70-fcc62c82c519",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rosary Castro-Olega",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:17:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e2fc96b7-9424-4b4e-b73f-235be9690d03",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robert E. Lee",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:47:44+00:00"
+    },
+    {
+     "name": "Ty Seidule",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:47:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "728cf51e-e47b-48a3-87cb-5fc562fa3675",
+   "subjects": [
+    {
+     "subject": "language-and-words",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "invented-category",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "G. Cristina Mora",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:57:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "622eed19-2c50-446a-87ea-4a7ab9460ceb",
+   "subjects": [
+    {
+     "subject": "death-penalty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Orlando Hall",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "14c4b4d0-f474-42c9-a0f3-7e0bc113fecb",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:43+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Henning Jacobson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:18:43+00:00"
+    },
+    {
+     "name": "Jacobson v. Massachusetts",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:18:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8ebbc12e-0caf-4ae9-a46f-65031ef24956",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:30+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeffrey Young",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6b8c3787-d613-42d6-81e1-741001f0dd02",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Treuer",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a882316e-627b-4bd5-831d-bebd24ba667b",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:03+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:03+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ruth Bader Ginsburg",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:23:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f0ecbba3-91e9-42b1-8baf-ad92c0c57b61",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anissa Jordan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:17:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b8427f44-c49f-4917-a523-23c43ed58c61",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:44+00:00"
+    },
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "90 Day Fiancé",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:47:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "859bcbb3-0e9d-41f8-b523-558f63277f66",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:23+00:00"
+    },
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:57:23+00:00"
+    },
+    {
+     "name": "Ralph Reed",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "36047df6-fa77-46a0-bd95-ae13ecdd737f",
+   "subjects": [
+    {
+     "subject": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lecrae",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6bb8b7c0-7af7-4bcf-a42e-3e257840435c",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Katharine Smyth",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c554ffe8-1f67-47b3-bb8c-286a69bdba3d",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "AIDS epidemic",
+     "kind": "era",
+     "confidence": "medium",
+     "at": "2026-07-30T15:24:30+00:00"
+    },
+    {
+     "name": "Anthony Fauci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0681f0fb-b288-4c7a-aca1-43cf8e011b0a",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carl Hart",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1bf1645d-e65a-4293-b865-dc9ba2bacada",
+   "subjects": [
+    {
+     "subject": "talking-about-love",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ruth Westheimer",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "58eb9a37-3658-4912-bc36-5ef4082e2e84",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    },
+    {
+     "subject": "food-and-drink",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3f5e829c-6808-456e-b70f-38923d116d15",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "53c5a4e5-fb7b-42b9-80a1-ec6272467b98",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:23+00:00"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bd836896-7de9-4800-99d9-4e63856e3747",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    },
+    {
+     "subject": "sports-scandal",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NCAA",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dda6bebd-d4b9-46b8-b6a2-13dc0b3c423b",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Battle of the Alamo",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "name": "Bryan Burrough",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ffdb5fde-0af2-4e75-9d37-602412c0bbcf",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:30+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Larry Nassar",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:24:30+00:00"
+    },
+    {
+     "name": "USA Gymnastics",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f97d3d65-915e-46b9-9651-45613fd7230c",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:46+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Xinjiang",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1f12d2f2-2bf5-4902-95c7-2fcb40c75682",
+   "subjects": [
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:03+00:00"
+    },
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobby McIlvaine",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0653ab31-570c-4d10-9aed-8baeb8179da9",
+   "subjects": [
+    {
+     "subject": "screen-representation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5c0619ef-664b-4271-8135-c3ef71233e45",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:44+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7d183b6e-3490-40b9-a617-6e5db383d923",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:23+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ashley C. Ford",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "de09daab-f185-4db8-b7f8-4023891fda69",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Babylon Bee",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "19f1d53c-1899-4c63-af99-988a619a3d85",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sonia Sotomayor",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "596c9ca9-6b77-49ad-93d9-cc97e0534d9a",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:30+00:00"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Navajo Nation",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9118d434-9638-40a5-a2a9-ae0ade991269",
+   "subjects": [
+    {
+     "subject": "death-penalty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Orlando Hall",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:50:46+00:00"
+    },
+    {
+     "name": "Yusuf Ahmed Nur",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8c62f458-a9e6-46ef-823a-1756e86641ae",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:03+00:00"
+    },
+    {
+     "subject": "screen-representation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:03+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Passing",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:03+00:00"
+    },
+    {
+     "name": "Rebecca Hall",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:23:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "84ba9784-945a-4d04-8829-2a74cfd6d549",
+   "subjects": [
+    {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3ce2874e-975c-4fff-95f1-93cbcb349ef2",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:44+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anissa Jordan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:47:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a63818a4-46a4-4648-b7fc-ec2944a44b2a",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "William J. Walker",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "61c94cbc-6563-4496-b9e3-7bfc068ba66c",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rebecca Shrader",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "29ded03d-c801-4a45-aa75-dfe5e0ccf78e",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "subject": "food-and-drink",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Austin, Minnesota",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "name": "SPAM",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c18d6f29-fafa-4e1a-88ef-20af50fdafdc",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:30+00:00"
+    },
+    {
+     "subject": "food-and-drink",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Philippines",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:24:30+00:00"
+    },
+    {
+     "name": "SPAM",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2f668576-47c8-42b1-91b9-9f3101b3ef64",
+   "subjects": [
+    {
+     "subject": "labour-history",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hormel Foods",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d738d552-cf3c-47c3-b06e-cd54334b324d",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:03+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6a02201e-1112-44e5-8664-44aa91e15279",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0fea1e2b-642f-4b5a-831d-8b5a044d5c03",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:44+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ethel Kaplan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:47:44+00:00"
+    },
+    {
+     "name": "Franklin Foer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:47:44+00:00"
+    },
+    {
+     "name": "Ukraine",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T14:47:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cdd0660f-b988-4523-b8a6-899075112c7d",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "subject": "disability-and-access",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Sulzer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d18ab39e-05bc-4782-b6e9-78dfbed60270",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    },
+    {
+     "subject": "disability-and-access",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Helen Keller",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "71c99e24-9a4e-4330-9cfb-153ec0c30b04",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cherokee Nation",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "name": "Marilyn Vann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "76451c10-1c75-40b1-8fba-b7d5db04ec49",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:30+00:00"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Treuer",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:24:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8c25e2c2-b93c-42e6-be3d-6ec1f100275d",
+   "subjects": [
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dd66c9bb-22c5-4d69-8603-08870a27bf2e",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:03+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John and Joyce Sheridan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d0a8d638-3712-45b5-8258-29d65a85b0c1",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:19+00:00"
+    },
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Judith Sheindlin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:17:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8e407af5-8ff5-4af7-8ceb-0e3dc96e13e6",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aséna Tahir Izgil",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:49:15+00:00"
+    },
+    {
+     "name": "Tahir Hamut Izgil",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:49:15+00:00"
+    },
+    {
+     "name": "Xinjiang",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "277c620e-04b0-4d2c-978e-19f84c2a987f",
+   "subjects": [
+    {
+     "subject": "forgotten-episode",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Philadelphia, Mississippi",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "07687d68-8468-47cc-86c1-977fb458a1db",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Yellowstone National Park",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0da0092e-9d5e-4893-9f5d-543d2f0685e2",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ca2f324c-c32b-44f9-b221-31cab6e56790",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b3cca01a-12d9-4d46-a26b-f91f64907045",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "More Perfect",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:50:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c590442c-4caf-4fce-bb56-3414c0cdd235",
+   "subjects": [
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,4307 @@
+{
+ "slug": "darknet-diaries",
+ "title": "Darknet Diaries",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "hacking-and-cybercrime",
+   "count": 35
+  },
+  {
+   "slug": "hacker-life-story",
+   "count": 34
+  },
+  {
+   "slug": "cybercrime-for-profit",
+   "count": 28
+  },
+  {
+   "slug": "state-sponsored-cyber-espionage",
+   "count": 21
+  },
+  {
+   "slug": "corporate-breach-response",
+   "count": 16
+  },
+  {
+   "slug": "authorised-intrusion",
+   "count": 13
+  },
+  {
+   "slug": "surveillance-and-privacy",
+   "count": 6
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 4
+  },
+  {
+   "slug": "early-hacker-history",
+   "count": 3
+  },
+  {
+   "slug": "informant-and-undercover",
+   "count": 3
+  },
+  {
+   "slug": "organised-crime",
+   "count": 3
+  },
+  {
+   "slug": "games-and-play",
+   "count": 2
+  },
+  {
+   "slug": "internet-culture",
+   "count": 2
+  },
+  {
+   "slug": "political-persecution",
+   "count": 2
+  },
+  {
+   "slug": "crypto-collapse",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "music-scene-movement",
+   "count": 1
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep1-pbx-hacking.mp3",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Farhan Arshad",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "name": "Noor Aziz Uddin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep2-vtech.mp3",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "VTech",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:51:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep3-diginotar.mp3",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:23+00:00"
+    },
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "DigiNotar",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:43:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep4-talktalk.mp3",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "TalkTalk",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep5-asus.mp3",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Asus",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "name": "Kyle Lovett",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep6-jaysonstreet.mp3",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beirut",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "name": "Jayson E. Street",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep8-manfred-part2.mp3",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:55+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Manfred",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep7-manfred-part1.mp3",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep9-mtgox.mp3",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "crypto-collapse",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mt Gox",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep10-wiretap-mishap.mp3",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep11-buyout.mp3",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep12-cryptowars.mp3",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep13-carna.mp3",
+   "subjects": [
+    {
+     "subject": "systems-and-infrastructure-design",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carna Botnet",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep14-opjustina2.mp3",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anonymous",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "name": "Justina Pelletier",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep15-illtill.mp3",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep16-eijah.mp3",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eijah",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep17-finn.mp3",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep18-jackpot.mp3",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:53+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep19-aurora.mp3",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:23+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Google",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:43:23+00:00"
+    },
+    {
+     "name": "Operation Aurora",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:43:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep20-mobman.mp3",
+   "subjects": [
+    {
+     "subject": "early-hacker-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "SubSeven",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep21-black-duck-eggs.mp3",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ira Winkler",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep22-ministories1.mp3",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep23-levin.mp3",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Vladimir Levin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://darknetdiaries.com/podcasts/darknet-diaries-ep24-bayonet.mp3",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "AlphaBay",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "name": "Hansa",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "10e2180c-dc86-11e8-9c3a-b71a39c36033",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alberto Hill",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "name": "Uruguay",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fffcc880-e7ce-11e8-b145-2f00ad634237",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Internal Revenue Service",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ef5ccd7a-f44b-11e8-9b3f-13913221718c",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Apple Podcasts",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ebc3c2c8-ff4e-11e8-9d75-9b4469d836f5",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Israel",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "name": "Unit 8200",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48fe12c0-03cf-11e9-8dff-4f9762a76237",
+   "subjects": [
+    {
+     "subject": "nuclear-age",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Iran",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "name": "Stuxnet",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "90d4a74e-03cf-11e9-8be1-c3f0413c3dee",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Saudi Aramco",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "name": "Shamoon",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e0e5b41c-25d5-11e9-a847-5bfa100b94e9",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5c346f1e-3184-11e9-a5d2-437feeef864e",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "11e97392-3bd3-11e9-bddf-378c766410f0",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "RockYou",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f1053cea-4773-11e9-b69e-2b7b70a1bdfa",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5f89d648-4847-11e9-b3ec-dfd225282585",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barnaby Jack",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:23+00:00"
+    },
+    {
+     "name": "Carbanak",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:43:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "89cf0784-4847-11e9-9cd0-7fd6e459b91b",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c283aff8-4847-11e9-a63d-afb0b2bc5914",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Las Vegas Sands",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "name": "Sheldon Adelson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ebbcf56e-4847-11e9-8e19-a70d76800c81",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Electronic Frontier Foundation",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "name": "Kazakhstan",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0d46019e-4848-11e9-bcca-5f53b299160b",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0890e368-701a-11e9-b2d6-6f074c37df8b",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "56a266c8-957a-11e9-babb-ff52736f7dbf",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "75892bda-957a-11e9-89ee-3b913c7ef3b1",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bb66cff8-9f76-11e9-9d86-677e80b04dc6",
+   "subjects": [
+    {
+     "subject": "games-and-play",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c8f48ec6-9f76-11e9-b161-17e4ea83ecf0",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e6aae6f4-9f76-11e9-8aab-7b495195262a",
+   "subjects": [
+    {
+     "subject": "games-and-play",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Microsoft",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "name": "Xbox",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f904be4c-9f76-11e9-9bf7-936d753b2490",
+   "subjects": [
+    {
+     "subject": "games-and-play",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Microsoft",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "name": "Xbox",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d3479ba2-a64c-11e9-a416-af7132e298f1",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9ef994be-afe2-11e9-b051-db4902a73513",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Belgacom",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "name": "GCHQ",
+     "kind": "company",
+     "confidence": "low",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "deff03fa-afe2-11e9-b051-2fa0c90d03dc",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elliot Alderson (fs0c131y)",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4453996a-f8e9-11e9-a0b9-9b702a08470d",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ISIS",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:52:56+00:00"
+    },
+    {
+     "name": "Operation Glowing Symphony",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "32c765a2-f513-11e9-8fb3-7f84375bf481",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kashmir",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5427f310-f513-11e9-be50-37cfc647759d",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Magecart",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f36e0528-04d5-11ea-8b1d-4b8069e8b769",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NSA",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "name": "Shadow Brokers",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "00323bb2-04d6-11ea-a9c0-73aaf443009f",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NotPetya",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "name": "Russia",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "name": "Ukraine",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "64d2bc26-22c8-11ea-88ac-cb5b32d6e108",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "17b7f9d4-04d6-11ea-af9c-5733921b8929",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jordan Harbinger",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ec347b72-0cb7-11ea-bb6e-6b4d5aa9e0f2",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Conficker",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "name": "Microsoft",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5e3cf2fa-1bac-11ea-97f5-3f2196f14805",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dream Market",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:52:56+00:00"
+    },
+    {
+     "name": "OxyMonster",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "04960e88-0cb8-11ea-987a-cfeca1fa09bf",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Coalfire",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "14604ab8-0cb8-11ea-991a-d3c35be74b47",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "HackerOne",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f269d80a-4e90-11ea-8704-7faf19d14700",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "MySpace",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "name": "Samy Kamkar",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b2c628b2-67d0-11ea-879d-f3580291a479",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2a6fb10c-7790-11ea-9b76-3b787271c313",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f4473a56-5f1a-11ea-a434-4fcfcbfaac46",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Vodafone Greece",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f35cb2fe-711e-11ea-835a-77f8ef89497a",
+   "subjects": [
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "U.S. Army PSYOP",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bc944de0-7795-11ea-8bd4-9f6447c0d9cc",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Freakyclown",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "90e7aa0c-9347-11ea-92cc-c748e96aebcd",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Strand",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7f80208c-953b-11ea-a694-8f7f355d6965",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Saudi Arabia",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "name": "Triton",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b01ba2d6-a740-11ea-bf53-ff4af923ba45",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christopher Hadnagy",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "beeda426-a740-11ea-ace1-2b5401f98087",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ghost Exodus",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "03a2eb08-a741-11ea-8a08-af020aa3307d",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Yeonmi Park",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "02dca0ae-a5b8-11ea-9298-bb33afb7c984",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bangladesh Bank",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bdbc31e8-bd8a-11ea-a262-6fc291a2a6a8",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NHS",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "name": "WannaCry",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a8dcad06-d415-11ea-88a1-2ba8a0a69248",
+   "subjects": [
+    {
+     "subject": "early-hacker-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mikko Hypponen",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "08d456e6-d416-11ea-a876-2f7e531a20ea",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "CIA",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1d89677a-d416-11ea-92b0-8375dadbe178",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "JPMorgan Chase",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "018d712e-d484-11ea-9b7b-e30b1827ab9e",
+   "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "2018 Winter Olympics",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "name": "Andy Greenberg",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8b23a66a-d484-11ea-9b7b-73b6f5015fe0",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ytcracker",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5d9d0e5c-d484-11ea-bed9-afba752bbd83",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7b68b3fa-d484-11ea-b83b-23f1e4a26838",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c0ece2ee-e310-11ea-a550-7f1c4546b8d8",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "de179240-f96f-11ea-a36c-53d0191c82ea",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pwn2Own",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5be34dd8-066b-11eb-a7ba-9f3b782f10f1",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "NSA",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "78232e82-066b-11eb-8a42-a7ff7fce7415",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tony Abbott",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d276a528-42eb-11eb-951f-0fb6c93022fa",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cam Harrison",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "name": "Carder.su",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "157ece18-42ec-11eb-aad8-5f8acc5dec72",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "LinkedIn",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c1e2e92c-55f8-11eb-a6b7-4760353a0e77",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b79f7d90-55fd-11eb-a119-f3d8ddbf2d03",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f16d0dcc-6c27-11eb-acaf-33a619543349",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cybereason",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "name": "Molerats",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ce0ec590-627d-11eb-8c86-578f05862198",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jenny Radcliffe",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dd9a3846-627d-11eb-8f43-db68eb9e2faf",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "World Bank",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e207d01a-6c27-11eb-9d03-b76304f28107",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Pirate Bay",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0fdf16b0-6c28-11eb-a9a1-83c83dd2b3ae",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    },
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kik",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "24d40aa8-6c28-11eb-a735-efa27520fe6c",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Davis",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "name": "Mariposa botnet",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d481a44a-8214-11eb-838e-77bae000bf17",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b07a577c-8214-11eb-a059-df14af830f21",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicole Beckwith",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c4a4f036-8214-11eb-a5eb-fbcf05691d9c",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Instagram",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "34ed8914-6c28-11eb-a735-73235f8fdccb",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicole Perlroth",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "df1a01b8-8214-11eb-a059-d7ed58ae9ff2",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "edbd752e-8214-11eb-862e-4790b262bc96",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Citizen Lab",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "name": "NSO Group",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "name": "Pegasus",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "93c56fe0-c6f7-11eb-b08c-27eeff3c73ed",
+   "subjects": [
+    {
+     "subject": "betting-and-gambling",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Puerto Rico",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "name": "Puerto Rico Lottery",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9e872842-c6f7-11eb-8d6e-5b2e1a0d8292",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frank Bourassa",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5821eac2-bc11-11eb-badc-bffab5f82b5c",
+   "subjects": [
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    },
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ae3a1efc-c6f7-11eb-a962-331b60aa948d",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Arya Ebrahami",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bdafbc34-c6f7-11eb-9201-db206d26ae69",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joseph Cox",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cf54ef18-c6f7-11eb-a397-93d6069240d1",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "de4e7bba-c6f7-11eb-9759-0b277c316b2e",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alethe Denis",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "849df5d6-61fd-11ec-9552-63cedac662fa",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3253b864-61fe-11ec-9be5-a33c9e4612a3",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "TeaMp0isoN",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ccd73628-0aaf-11ec-8863-6f85530308b1",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rustock botnet",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "93cbf88c-61fd-11ec-911a-a3352b38e88f",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4a752572-61fe-11ec-9442-abb05aa40ce4",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8cf38248-85fa-11ec-b4b8-43f61ee3b94f",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "47931f28-8849-11ec-830c-332a5b1fd51b",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "HD Moore",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:52:56+00:00"
+    },
+    {
+     "name": "Metasploit",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b978e860-9f47-11ec-bc34-2faba6ca86f6",
+   "subjects": [
+    {
+     "subject": "games-and-play",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9f381608-85fa-11ec-ae4d-6343990ea21f",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "CIA",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "name": "Jim Lawler",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c500999e-9f47-11ec-ba41-bbec3979ca98",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Daniel Kelley",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d05ed404-9f47-11ec-8da5-7fe290dd79a3",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joseph Harris",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dd795768-9f47-11ec-8a63-c75f6eeb8964",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Geoff White",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e8ec8ad4-9f47-11ec-93ff-d3a52ddd8a80",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mohammed Aldoub",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "075842e2-9f48-11ec-aab6-abc5a78289ec",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ed Skoudis",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0ae2a01e-cfbe-11ec-9fea-0f455588a682",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lisa Forte",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f68edf02-e20e-11ec-af8e-1b7a86ad2064",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "71d308a6-e295-11ec-b410-f325db0a284b",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Evaldas Rimašauskas",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b260a7fc-ec1d-11ec-9a03-f7c3128292bf",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeremiah Roe",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fad89d78-ec1d-11ec-94f3-5b3587a76d52",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "REvil",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d681f41a-ec1d-11ec-bb29-4b5ff1e01613",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Maddie Stone",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e0c7e8da-ec1d-11ec-8862-cf37ee2d2293",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brett Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ef45a8c0-ec1d-11ec-8862-2be879b39c9e",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brett Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "name": "Shadow Crew",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "076f6eb8-ec1e-11ec-96c5-fbdab578242a",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Haddix",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "112eac3e-ec1e-11ec-bcea-a726aa0103d3",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Andy Greenberg",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c38aa4ca-676e-11ed-b56e-bbcf0338d04f",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Bent",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d11bfdbe-676e-11ed-8319-87c30e3a2dc4",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Connor Tumbleson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8d3d6334-c5b6-11ed-872a-bfcb8043fbc4",
+   "subjects": [
+    {
+     "subject": "everyday-object-design",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Deviant Ollam",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9e7e3ffa-d340-11ed-bb09-4f5699c29ae0",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5f06f2a0-1935-11ee-aae7-6fc2304d96b1",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gary Bowser",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "name": "Team Xecuter",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "68f0f9be-1935-11ee-aae7-a7aae7116233",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Citizen Lab",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:11:27+00:00"
+    },
+    {
+     "name": "Predator spyware",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:11:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "867c73b4-1935-11ee-a8c4-a34e7bfa0a7d",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Punjab",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "912c54a0-1935-11ee-a839-47cc31407fa4",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "D3f4ult",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9ca828c2-1935-11ee-b37c-7fb8f41fb3c5",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:33+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d3927b14-7adb-11ee-acc0-7b0765b28f54",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ronnie Tokazowski",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ed8d76c2-7adb-11ee-9a01-3f18530d6604",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Axact",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fa03cfc8-7adb-11ee-b47b-3f4489dbd21c",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jim Browning",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:47:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2f72d550-7adc-11ee-b9d6-a3185c9faf51",
+   "subjects": [
+    {
+     "subject": "authorised-intrusion",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rachel Tobac",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3b6b6246-7adc-11ee-ab46-435aae387560",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:12:36+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:12:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Shannen Rossmiller",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:12:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_1421a223-1880-4caa-ae13-5fa931163dc7",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ANOM",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T14:52:56+00:00"
+    },
+    {
+     "name": "Federal Bureau of Investigation",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_e5f7b7f2-b242-4a5e-ac8e-c689f537e570",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Axie Infinity",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:44:31+00:00"
+    },
+    {
+     "name": "Tornado Cash",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_cdac7173-51d0-4a04-b942-1ec0a4a69dfd",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:33+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_18571cc8-c130-45be-a21d-ab000c5a7b0c",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Afghanistan",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_1b6a25b9-d8fe-48cd-aab1-cec94c3ae137",
+   "subjects": [
+    {
+     "subject": "early-hacker-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "sub7",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_e2e3c4c4-9142-42b0-b7af-e3e616af5376",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Rock",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:47:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_1b3170c0-7d84-48ce-bd94-00104d76aa3b",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jarett Dunn",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    },
+    {
+     "name": "Pump Fun",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_34b4ea03-f266-43c4-a1a3-99b68d18b55c",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:12:36+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:12:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bike Index",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:12:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_732fbbee-6547-4ed9-997d-3fd77ddc05db",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Conor Freeman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_d6085b24-4b75-4aa5-8cb5-fa7c30f762bb",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joe Grand",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:44:31+00:00"
+    },
+    {
+     "name": "L0pht Heavy Industries",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_113c9695-5b99-46f9-b21c-9d8606e0c7b6",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:33+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Monteiro",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_7c9ae24b-4a15-4699-97fc-df6c90bfeefa",
+   "subjects": [
+    {
+     "subject": "early-hacker-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "DEF CON",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "name": "Grifter",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_efbac779-f15b-4041-b89a-90672a9c0b0f",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marcus Hutchins",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:55+00:00"
+    },
+    {
+     "name": "WannaCry",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_3a9659a3-71c6-42de-b9df-f5b6e992fc3c",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:56+00:00"
+    },
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Vastaamo",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:47:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_217880c7-4f7f-4d2a-9587-9f33b483e45e",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Greg Linares",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_4c3a915a-797a-490f-b55e-385512c3ef61",
+   "subjects": [
+    {
+     "subject": "everyday-object-design",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:12:36+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:12:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OMG Cable",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:12:36+00:00"
+    },
+    {
+     "name": "mg",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:12:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_151e47aa-c84f-4125-ac37-3b9106682b42",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hieu Minh Ngo",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_8f11d4b1-ea1c-4e96-99fe-521511ea793c",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ecuador",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:44:31+00:00"
+    },
+    {
+     "name": "Ola Bini",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_bea9cf93-c93d-460f-aae9-47b6b99b34db",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:33+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nathan Michael",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:10:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_74956672-313f-4f98-b087-ce37ef3df72a",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tanya Janca",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "name": "We Hack Purple",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_cc53b5e9-f5c3-46ba-8692-f0ef912e5562",
+   "subjects": [
+    {
+     "subject": "hacker-life-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Maxie Reynolds",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_a1440dd8-077d-4bb9-b380-0162c98ab68d",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_019ddc61-96d0-4f23-a7b1-205caf42a3b4",
+   "subjects": [
+    {
+     "subject": "early-hacker-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Legion of Doom",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_9d4c34be-a7df-41c7-a0da-5269b660e688",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:12:36+00:00"
+    },
+    {
+     "subject": "early-hacker-history",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:12:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Legion of Doom",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:12:36+00:00"
+    },
+    {
+     "name": "Masters of Deception",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:12:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_02c8d2f1-68db-4edf-9e73-ca6f9ea40b72",
+   "subjects": [
+    {
+     "subject": "early-hacker-history",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Phrack",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T14:52:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_043c723a-13a1-48dc-8977-3ff2621e8a92",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:44:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_cb64ead7-d1f0-41c4-885c-84ce8b3e42d9",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:33+00:00"
+    },
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "SuperBox",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:10:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_1c9ead67-2af4-45f7-b74f-3330ff11c0c1",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dominican Republic",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:19:02+00:00"
+    },
+    {
+     "name": "New York City",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:19:02+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_9912ef67-3bb3-4233-acb9-f9b3eb213180",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    },
+    {
+     "subject": "state-sponsored-cyber-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "China",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:09:55+00:00"
+    },
+    {
+     "name": "Sophos",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_633acbfe-c5eb-4c84-9d97-536526b6d67f",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:47:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bayrob",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:47:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_84de1d2b-0222-4815-88f6-ead9afcf4d08",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:39+00:00"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicholas Merrill",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_7057_791c66f0-0bfc-420d-96a3-816c78a17f4c",
+   "subjects": [
+    {
+     "subject": "corporate-breach-response",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:12:36+00:00"
+    },
+    {
+     "subject": "hacker-life-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:12:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "National Public Data",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:12:36+00:00"
+    },
+    {
+     "name": "USDoD",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:12:36+00:00"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,284 @@
+{
+ "slug": "long-shot",
+ "title": "Long Shot",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "medical-research",
+   "count": 8
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "c7a7d788-ebc0-11eb-8241-bbfb04bd4a00",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c84d9880-f4ad-11eb-bcf7-1b8ee0c9e260",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:10+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:10+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c8755f14-f4ad-11eb-bcf7-472a1d660000",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicola Pasquarelli",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c8681fe8-f4ad-11eb-bcf7-235e79bca13c",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeryl Lynn Hilleman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:12:15+00:00"
+    },
+    {
+     "name": "Maurice Hilleman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c85afe6c-f4ad-11eb-bcf7-9fd30dfdc9df",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c8827294-f4ad-11eb-bcf7-6f2dec036894",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:01+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Moderna",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c88f69f4-f4ad-11eb-bcf7-77ff70a74dbd",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "COVID-19 pandemic",
+     "kind": "era",
+     "confidence": "medium",
+     "at": "2026-07-30T15:07:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c89c9750-f4ad-11eb-bcf7-9347544928ce",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:53+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c8a9b5c0-f4ad-11eb-bcf7-2f8e3b93330a",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c8b6e006-f4ad-11eb-bcf7-939de0312e4f",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:10+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:10+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c8c4e14c-f4ad-11eb-bcf7-8f244eb07e55",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "COVID-19 vaccine development",
+     "kind": "case",
+     "confidence": "low",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ]
+  }
+ ]
+}

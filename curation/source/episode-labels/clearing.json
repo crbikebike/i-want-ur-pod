@@ -1,0 +1,369 @@
+{
+ "slug": "clearing",
+ "title": "The Clearing",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "serial-offender",
+   "count": 8
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "missing-person",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "42c32a4a-9dac-11e9-b645-8f388a6c2235",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "whistleblower",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:53+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "April Balascio",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:28:53+00:00"
+    },
+    {
+     "name": "Edward Wayne Edwards",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:28:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d654eb62-a80c-11e9-bc46-6b7dc1961093",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:40+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "April Balascio",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:40+00:00"
+    },
+    {
+     "name": "Edward Wayne Edwards",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "071890de-7025-11e9-905e-f7ed7169a84c",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:13+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "April Balascio",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:13+00:00"
+    },
+    {
+     "name": "Edward Wayne Edwards",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0de28ff0-7025-11e9-b843-7708494534f5",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "April Balascio",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:34+00:00"
+    },
+    {
+     "name": "Edward Wayne Edwards",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3d329868-7025-11e9-b843-e37df098687b",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "April Balascio",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:12:15+00:00"
+    },
+    {
+     "name": "Edward Wayne Edwards",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:12:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3d38ce90-7025-11e9-b843-c372eb8f5514",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "April Balascio",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:51+00:00"
+    },
+    {
+     "name": "Edward Wayne Edwards",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3d3e6b48-7025-11e9-b843-eb2bff4345d4",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:01+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Edward Wayne Edwards",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3d43b396-7025-11e9-b843-e7585d66eec9",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:51+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "April Balascio",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:51+00:00"
+    },
+    {
+     "name": "Edward Wayne Edwards",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3d482af2-7025-11e9-b843-abdabf1e0974",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Edward Wayne Edwards",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:28:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3d4cbff4-7025-11e9-b843-1348918a630a",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:40+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "April Balascio",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8a659e2a-b9c2-11ec-acad-b305c5589afe",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:13+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nuseiba Hasan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:13+00:00"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "slug": "mystery-show",
+ "title": "Mystery Show",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "everyday-mystery",
+   "count": 6
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "http://www.wnyc.org/story/mystery-show-preview/",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/01-video-store/",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:12:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/case-2-britney/",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:30:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/case-3-belt-buckle/",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/case-4-iluv911/",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/case-5-source-code/",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/case-6-kotter/",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:19+00:00"
+    }
+   ]
+  }
+ ]
+}

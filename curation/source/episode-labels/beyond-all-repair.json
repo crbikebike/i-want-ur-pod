@@ -1,0 +1,734 @@
+{
+ "slug": "beyond-all-repair",
+ "title": "Beyond All Repair",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "cold-case-reopened",
+   "count": 7
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 3
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 3
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 2
+  },
+  {
+   "slug": "law-explained",
+   "count": 2
+  },
+  {
+   "slug": "prison-life",
+   "count": 2
+  },
+  {
+   "slug": "reentry-after-prison",
+   "count": 2
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 2
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "a40d09ca-5e8b-42b2-b89d-b909860c7e30",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "317c34e9-67d6-4b76-a208-60b1b4f9304b",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:44+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eric Kane",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:02:44+00:00"
+    },
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "634b068a-f5be-4ea9-83e3-bc42992ed346",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:39+00:00"
+    },
+    {
+     "name": "John Edgar Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5b01df65-d2f5-4f08-9599-77c82df5257d",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "35cbf7db-b9d1-44e8-b852-c17c073075e6",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:28+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eric Kane",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:01:28+00:00"
+    },
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:01:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "88b105da-a954-4f72-917e-90578b4c8f4f",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3dd9aa03-130d-4c6e-8e6f-2f2ac97911b6",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "60ed1b33-b5f1-4dd3-8630-498624e0d3af",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:45+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3eef86c6-f92e-4e65-bb5a-49dab5895f86",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "12caaf1e-411d-45ad-a52b-23bbe09ac290",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:44+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2203d277-f960-4def-8b1e-fb1ded67a79b",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9474d6b5-c859-4072-a282-7c32de85d5d2",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wideman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8c288612-a10c-4f13-b1c2-7341e06111ea",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "30896bb5-71bc-4244-83ab-edfc67cf5e8a",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:55+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marlyne Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:55+00:00"
+    },
+    {
+     "name": "Sophia Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4e3cb0ca-db62-4baa-9fd4-f658398c944a",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:32+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Shane Correia",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:32+00:00"
+    },
+    {
+     "name": "Sophia Correia",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "935750d3-971e-431e-ac32-6bb770d9ff05",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:45+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marlyne Johnson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:19:45+00:00"
+    },
+    {
+     "name": "Sophia Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "427ea237-145c-4296-8f38-04d6d316747c",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:57+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marlyne Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:57+00:00"
+    },
+    {
+     "name": "Sophia Johnson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d823942b-4647-4d97-a565-6d3057fc772d",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:44+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marlyne Johnson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:02:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8384450a-749d-4a36-b6e5-3e3d25984253",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "514405ba-fc2a-426a-b1a7-0c559404ec36",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0cdf46a6-e93a-4b75-8036-17efc2923510",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:28+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "49e85993-98bc-4b0a-9108-ecca897f76ca",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:55+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Snow",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:10:55+00:00"
+    },
+    {
+     "name": "Sophia Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c200f9ae-d56a-4162-ae2d-d3f786b43a43",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:32+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Shane Correia",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:32+00:00"
+    },
+    {
+     "name": "Sophia Correia",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "98bf1bea-c29d-41d3-8fb9-86a35333e5de",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:45+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sophia Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "aa22ae94-bb9d-4f46-829e-0c4b2c7529ec",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marlyne Johnson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:57+00:00"
+    }
+   ]
+  }
+ ]
+}

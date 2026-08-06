@@ -1,0 +1,497 @@
+{
+ "slug": "wind-of-change",
+ "title": "Wind of Change",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "cold-war-espionage",
+   "count": 7
+  },
+  {
+   "slug": "introducing",
+   "count": 3
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "captivity-and-escape",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "5354dc78-837f-11ea-91f7-1f2f2d39d214",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:07+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wind of Change",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:07+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "69891f22-8654-11ea-a2a0-6f3d0d3a22b0",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:46+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Scorpions",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T15:06:46+00:00"
+    },
+    {
+     "name": "Wind of Change",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9800e1ec-91a7-11ea-b677-df6787d45e50",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "CIA",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:26:58+00:00"
+    },
+    {
+     "name": "Scorpions",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:58+00:00"
+    },
+    {
+     "name": "Wind of Change",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-08-01T20:26:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3ab76224-99ed-11ea-ae27-fb54b58bf0e0",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nina Simone",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4f75182a-99f0-11ea-b6eb-73498a307ec0",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:07+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:07+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wind of Change",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:07+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e9fd7c52-9ba3-11ea-b22b-4f066ae3c2b9",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Klaus Meine",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:18:20+00:00"
+    },
+    {
+     "name": "Moscow Music Peace Festival 1989",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:18:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "62ae36f0-9ba4-11ea-9b6d-7b6df6e9436a",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:01+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Doc McGhee",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:01+00:00"
+    },
+    {
+     "name": "Manuel Noriega",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "44c52e22-a0f5-11ea-a571-fb796d3b730d",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:59+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "CIA",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:22:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ceab2c7e-b7fa-11ea-9f40-cfbd2ff06e0e",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Klaus Meine",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:24+00:00"
+    },
+    {
+     "name": "Scorpions",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:24+00:00"
+    },
+    {
+     "name": "Wind of Change",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "937d753c-bc99-11ea-aa27-d7e199ea84e9",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bc931734-2c7c-11ec-9d25-db4f0e1e7d03",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:46+00:00"
+    },
+    {
+     "subject": "captivity-and-escape",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Evin Prison",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:06:46+00:00"
+    },
+    {
+     "name": "Jason Rezaian",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5d018d38-0853-11ed-8525-57f8644c7634",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "63eb83e4-464f-11ed-8580-6b74373eda39",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:59+00:00"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0a9b9730-03d6-11ee-a7c7-cba794f3342f",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adelanto",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-08-01T20:26:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dc758dba-23d1-11f1-b412-77084e4469ee",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:11+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Zac Brettler",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:11+00:00"
+    }
+   ]
+  }
+ ]
+}

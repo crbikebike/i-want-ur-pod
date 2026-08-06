@@ -1,0 +1,1448 @@
+{
+ "slug": "crimetown",
+ "title": "Crimetown",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "organised-crime",
+   "count": 16
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 12
+  },
+  {
+   "slug": "political-scandal",
+   "count": 6
+  },
+  {
+   "slug": "introducing",
+   "count": 4
+  },
+  {
+   "slug": "heist-and-robbery",
+   "count": 3
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "addiction-and-recovery",
+   "count": 1
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 1
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 1
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 1
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 1
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 1
+  },
+  {
+   "slug": "whistleblower",
+   "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "e3412454-9ee5-11e6-a954-ebdf7fa5f9a3",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Providence",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4833cc8e-5fdc-11e6-9d88-b75cd538e8cd",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buddy Cianci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "daf345d2-5fdb-11e6-b6c0-27be5478e155",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Raymond Patriarca",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "daff1af6-5fdb-11e6-b6c0-ffadc46925b2",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buddy Cianci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "name": "Providence",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db09d34c-5fdb-11e6-b6c0-9f37e373b1cb",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:36+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Patriarca crime family",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db121a66-5fdb-11e6-b6c0-6f84e5180563",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buddy Cianci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db19e606-5fdb-11e6-b6c0-9b0d727f3f61",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:54+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db4120b8-5fdb-11e6-b6c0-d7cf17c66d2c",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buddy Cianci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:18:23+00:00"
+    },
+    {
+     "name": "Providence, Rhode Island",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:18:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db4b574a-5fdb-11e6-b6c0-dfcb18e5372d",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db3685ae-5fdb-11e6-b6c0-d39f3ec27192",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db69f6f0-5fdb-11e6-b6c0-5fe24b603022",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles Kennedy",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db78e7be-5fdb-11e6-b6c0-2315f04e7b89",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Raymond Patriarca",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db868e3c-5fdb-11e6-b6c0-d7f23b04e03b",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:36+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db5f4c1e-5fdb-11e6-b6c0-c3f7605642ce",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:39+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buddy Cianci",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a1a21c22-123c-11e7-bdae-23d4505a53a6",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tony Fiore",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "26d4a010-e8c9-11e6-be17-730bef6108c1",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:54+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buddy Cianci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:23:54+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db96a61e-5fdb-11e6-b6c0-bfe275b6b58b",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:23+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles Kennedy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:18:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f607b864-222a-11e7-a36a-335a1391ba31",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:54+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:54+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nicole Ouimette",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:54+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db8eab80-5fdb-11e6-b6c0-0f822cb2682f",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buddy Cianci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db54b84e-5fdb-11e6-b6c0-23089b0d3fff",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buddy Cianci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db2180f0-5fdb-11e6-b6c0-ef4640aaaa54",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buddy Cianci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d0df5370-3bd5-11e7-ae68-fbe79c779241",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "26c640ce-e8c9-11e6-be17-ff5e63afd365",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d7eb668-47d8-11e7-a3a1-6f8dd195da0e",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ralph DeMasi",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b5965bbe-b825-11e7-a8c4-d76c2473b814",
+   "subjects": [
+    {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jarrod Tillinghast",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "924da5be-d3bd-11e7-abb5-eff905b1b51c",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Courtney Calenda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fa0a4b72-b418-11e7-94e3-2bc2d22c6a19",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buddy Cianci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "51fafa0c-bcdd-11e8-be6a-7764a2aceb31",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "83302cb8-c4fe-11e8-a296-bfd45c75f99b",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Detroit",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f5dfb270-4fe0-11e9-be29-a34f0393d6d8",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:36+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Detroit",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f5e5a34c-4fe0-11e9-be29-2317d7d2f018",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f5ea11a2-4fe0-11e9-be29-6784a968e351",
+   "subjects": [
+    {
+     "subject": "parenting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:54+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:54+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f5eec026-4fe0-11e9-be29-176f0c0cd3ef",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Young Boys Inc",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:18:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f5f3aa1e-4fe0-11e9-be29-dff1c0038eec",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Coleman Young",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f5f88b88-4fe0-11e9-be29-23c2b29e408f",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Damion Lucas",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f5fd9c86-4fe0-11e9-be29-f7c2a1d8646f",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Coleman Young",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:01+00:00"
+    },
+    {
+     "name": "Damion Lucas",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f6027c10-4fe0-11e9-be29-479a98445f8b",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dimitri Mugianis",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f6072fee-4fe0-11e9-be29-5f924735232d",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Coleman Young",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:25:36+00:00"
+    },
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f60bd63e-4fe0-11e9-be29-338c8d501ffe",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f6106b36-4fe0-11e9-be29-977ace7219b0",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:54+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:23:54+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "be8c3026-a852-11e9-b3ea-bfa02d5d1778",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Golden State Killer",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:23:54+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f614e85a-4fe0-11e9-be29-9fb3cc2f1e5b",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:23+00:00"
+    },
+    {
+     "subject": "whistleblower",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gary Brown",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:18:23+00:00"
+    },
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:18:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f619a73c-4fe0-11e9-be29-0b2e3aad315a",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3327b0f8-b31c-11e9-9d1a-a7c3b063d0cf",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:23+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "musician-death",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy Balls",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:18:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f61e6556-4fe0-11e9-be29-5ba4ce5bb9c6",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "name": "Tamara Greene",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f622ea54-4fe0-11e9-be29-0b3bed6453ce",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f627699e-4fe0-11e9-be29-5b029a64ec25",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Detroit",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:53+00:00"
+    },
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f62c3122-4fe0-11e9-be29-478bb00b4e67",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:36+00:00"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:25:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f630ec58-4fe0-11e9-be29-d3eea757fc5d",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:39+00:00"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kwame Kilpatrick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:51:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f635ac70-4fe0-11e9-be29-27db7c1ad7bf",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:54+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rob Boyd",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:54+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6218035e-b65b-11ed-9a8d-3707306614b4",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "1993 World Trade Center bombing",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b3d53af4-026d-11ef-8e7a-0b5cab0bd11f",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:23+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marlyne Johnson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:18:23+00:00"
+    },
+    {
+     "name": "Sophia Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:18:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "46f53c7e-4ded-11ef-a6b1-47ec1deb162d",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Raimondi",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:49:15+00:00"
+    },
+    {
+     "name": "Pope John Paul I",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:49:15+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "68d144b8-f39d-11ef-8fb4-e3a236bf29f0",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chicago Outfit",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:58:27+00:00"
+    },
+    {
+     "name": "Ken Tekiela",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:27+00:00"
+    }
+   ]
+  }
+ ]
+}

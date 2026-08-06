@@ -1,0 +1,2350 @@
+{
+ "slug": "kind-world",
+ "title": "Kind World",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "friendship",
+   "count": 22
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 10
+  },
+  {
+   "slug": "immigrant-experience",
+   "count": 6
+  },
+  {
+   "slug": "chronic-illness",
+   "count": 5
+  },
+  {
+   "slug": "immigration-and-borders",
+   "count": 5
+  },
+  {
+   "slug": "grief-and-loss",
+   "count": 4
+  },
+  {
+   "slug": "homelessness-and-poverty",
+   "count": 4
+  },
+  {
+   "slug": "mental-health",
+   "count": 3
+  },
+  {
+   "slug": "reentry-after-prison",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 3
+  },
+  {
+   "slug": "adoption-and-origins",
+   "count": 2
+  },
+  {
+   "slug": "ageing-and-mortality",
+   "count": 2
+  },
+  {
+   "slug": "disaster-and-accident-survival",
+   "count": 2
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 2
+  },
+  {
+   "slug": "internet-culture",
+   "count": 2
+  },
+  {
+   "slug": "parenting",
+   "count": 2
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 2
+  },
+  {
+   "slug": "survival-story",
+   "count": 2
+  },
+  {
+   "slug": "addiction-and-recovery",
+   "count": 1
+  },
+  {
+   "slug": "archives-and-objects",
+   "count": 1
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 1
+  },
+  {
+   "slug": "athlete-profile",
+   "count": 1
+  },
+  {
+   "slug": "captivity-and-escape",
+   "count": 1
+  },
+  {
+   "slug": "disability-and-access",
+   "count": 1
+  },
+  {
+   "slug": "estrangement-and-reconciliation",
+   "count": 1
+  },
+  {
+   "slug": "gentrification-and-housing",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "ideas-and-argument",
+   "count": 1
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 1
+  },
+  {
+   "slug": "medical-research",
+   "count": 1
+  },
+  {
+   "slug": "musician-death",
+   "count": 1
+  },
+  {
+   "slug": "natural-disaster",
+   "count": 1
+  },
+  {
+   "slug": "queer-life",
+   "count": 1
+  },
+  {
+   "slug": "racial-violence",
+   "count": 1
+  },
+  {
+   "slug": "romance-and-heartbreak",
+   "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "http://wbur.org/kindworld/2018/03/01/52-new-ink",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c79b3ab8-273d-4418-adbf-1ea4be5c8d1d",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9fab7cc1-855b-42b9-926b-edaeb0c9f435",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:39+00:00"
+    },
+    {
+     "subject": "disability-and-access",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Drew Bell",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d0d22afe-09e2-481a-a64c-a13701690555",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lenny White",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f6401502-2062-4e7f-95a2-04035e460a33",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:34+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:34+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jenn Carson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "25c0e2a9-7375-486d-ae32-93f75038dbcf",
+   "subjects": [
+    {
+     "subject": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    },
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7bc3a9a7-6a5c-4030-ac24-665224e819ad",
+   "subjects": [
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cathy Heying",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ef99a9a0-3b30-4616-87ab-282100f36cde",
+   "subjects": [
+    {
+     "subject": "athlete-profile",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jordan Bohannon",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "488f6d1d-19ff-4582-a2a5-91e558042916",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "subject": "natural-disaster",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hurricane Florence",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "name": "North Carolina",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cdab7419-8fa3-4582-8fd2-19cecf1ec8f6",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:20+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Charles Barkley",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:50:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ab4d0e4c-9b81-4951-b257-36a68567c175",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e3351d3f-c7ee-4f1e-98e4-4328e3df212f",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2bb8e157-8f7a-42c6-b347-59e1122ce248",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:20+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:20+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aaron Stark",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:50:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7e594a8c-f50a-4bdc-949c-b3a9921ecda7",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:39+00:00"
+    },
+    {
+     "subject": "adoption-and-origins",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1603be7a-b202-4cff-9d40-e628192dfe89",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sara Cunningham",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2b9c0de0-457a-4b7c-a8c5-a52ba29f4693",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a9adca58-420e-4c58-bb47-b657a290cb88",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "85f446cc-ec90-476b-9672-11a02b109df4",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Quintin Storey",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:22+00:00"
+    },
+    {
+     "name": "Rebecca Kelly-Manders",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a42bf2b9-0887-47dd-87db-64e1a322d6ef",
+   "subjects": [
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "66be458e-4031-49d5-b1be-a918f8b9bd4e",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8c5b249c-631a-4f2f-82ac-d8e64c5df032",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:13+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dylan Siegel",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d3c9a5f2-7c7f-4785-a56a-d0a4dd5e20e5",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bdfac1df-74ec-431f-a706-87da7f504b43",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:20+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "23cfa095-a668-4b63-a67d-ec6a9494a5d3",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:39+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "José Bou",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a6616358-f3fe-413f-8cb4-c7358e9b7e7a",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:17+00:00"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Melissa Turner",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "615ac996-5e8d-4ba3-80e0-94c8d20f9555",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Connor",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "163c9405-eadf-4ab9-b858-8e76e9ac08f3",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dan Peterson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:22+00:00"
+    },
+    {
+     "name": "Norah Wood",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5011fbbc-695e-48bd-b2db-7b26f7d9972e",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "331f7176-9e8a-4384-8e46-2413f40665ae",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David France",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "662608d0-dece-44a3-b631-f0b3822ebf12",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9732d223-dd7a-45c9-adc8-f5d9cb54b217",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a47da76c-dfdd-4174-9c74-27bfd9d5282c",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8a86be0c-cb02-4d54-a03a-268e42f5970b",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "65f83269-6f8d-4db7-89dc-6fd5e97c2b80",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Felicia Rangel-Samponaro",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:17+00:00"
+    },
+    {
+     "name": "Matamoros",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0c0f43ea-775c-4be3-83cc-bce41ea63aac",
+   "subjects": [
+    {
+     "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:16:22+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a6a2e022-5764-4b55-b054-ecb386a42ca3",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chick McClure",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d09f20a4-9164-42a4-b3e3-420bf90affca",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gary Marquardt",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a1e4fa00-d2f2-4787-a9b3-3935579457a3",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lynn Schutzman",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4a04ea50-ea8a-4d0d-9041-4ce7e83d6460",
+   "subjects": [
+    {
+     "subject": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Camino de Santiago",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "020cdf4d-6a2b-4549-964d-a1e4a784742a",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:50:20+00:00"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rais Bhuiyan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:50:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7da591b0-419a-4bf1-a373-7ecbe8213f1a",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:39+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hana Dubova",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:39+00:00"
+    },
+    {
+     "name": "Rachael Cerrotti",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fd618cd9-229c-4a48-8b3d-714071863708",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:06+00:00"
+    },
+    {
+     "subject": "survival-story",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rachael Cerrotti",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4b01d175-4144-473c-bfbf-6e5947525abb",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bob Charland",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9872c4fc-3ff7-4154-bcce-6f3d03770d5d",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b2cba5ce-6d34-4195-9af1-2936ece2cb64",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1577b565-641c-489c-b818-65a7402e7fcc",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "subject": "parenting",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c4f4cf56-5fa8-4efb-8c74-d170c0311056",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "634b5b5d-c534-45a9-9596-1f96d7194529",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e637fcfa-ca69-42dc-a149-c9a86227f3d8",
+   "subjects": [
+    {
+     "subject": "survival-story",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Edith Rubin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "25cb1b37-f219-4f9b-8f27-868d3037b141",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "archives-and-objects",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "060e49a3-9049-4587-91f7-ab0ead62aa43",
+   "subjects": [
+    {
+     "subject": "talking-about-love",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0d79b79d-ca0f-4301-a02e-5fbc98d93881",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "07393675-b77c-46f5-bd6f-8d666b685e9b",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "subject": "adoption-and-origins",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Vietnam War",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "77b8c78d-6d76-4f26-b6b5-1138329bf7b9",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2e5e2589-ab8c-44fb-8cbd-1771e3ab4e8a",
+   "subjects": [
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5327d529-f208-47d0-841e-d50e9f574a2b",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Marianne McCarthy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f074918d-468e-4ff8-9ce0-4385117628fd",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4c4bfbb8-de0a-4e11-b99a-3a63829785c2",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a053ef83-d8ff-4439-959e-dee307f1a8b4",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dce85ba3-6a82-44a6-ba70-461f940decb9",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "700d1c7a-dff6-4a8b-8446-5c5e800b7cc8",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f36e188c-fbe8-413f-8c60-57a647e482be",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "94bfa461-b7e3-413c-9c25-f99ee14b0d30",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6338a793-536b-49ad-a9d0-f81026f002c5",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Suzie Hicks",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "182b1ae1-76c7-48fe-b9a3-a554984f842a",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Steve Hartman",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8f4b586a-6091-4816-9077-7a258f85f93d",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67d19690-bbe5-4996-a274-8355f26d17fa",
+   "subjects": [
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "captivity-and-escape",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Trader Joe's",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "965cb9a0-9506-4a67-9688-b32e7894acd5",
+   "subjects": [
+    {
+     "subject": "chronic-illness",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kelly Brooks",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0607fb4e-35d4-4c47-9bb4-effe9ce525d3",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0cbdf4bf-b42c-4f29-9821-c8fd3a167bce",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7418375c-ae3a-400f-b8f2-f85d44adfa13",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:40+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Laurie Santos",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ebac2832-0a89-4a65-ab9d-c80db9a0f426",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anna Baumgaertner",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:09:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "782cc772-d08e-418e-8e3a-2ff25d037226",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9a8a8d48-afbb-4de5-959b-c624342396e8",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a4aa9899-7182-4609-813b-8818fb928bf1",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4d756195-27db-43d2-a64e-bfa4270a8544",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a67cec8e-822c-4cfa-b22c-ec7d6f276cae",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "710861f8-2976-4705-ac6e-e8c0528b8207",
+   "subjects": [
+    {
+     "subject": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Shawn Dromgoole",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:51:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "069e8fd9-f610-4415-b3c2-33fd746a7465",
+   "subjects": [
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mia Birdsong",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-30T14:43:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "554c2db9-c157-4ebc-a974-670ac5dd9875",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:16:22+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nido Qubein",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "526f7a83-6aec-499b-9324-d4cebddb9b4a",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:16:22+00:00"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Irene Li",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ce0eb601-840e-4b27-b019-50cc7d37fe5f",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fd9decc6-277b-49b1-a360-b02bfca76028",
+   "subjects": [
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d9a2af22-734a-4ecf-a0eb-d362f28e80f0",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frances Schmitz",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:13+00:00"
+    },
+    {
+     "name": "Michael Tambone",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e1801da2-8ed3-4504-ac5e-16fe33c36016",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Priya Parker",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8000be1c-1515-4753-92a5-e63279f26a2d",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8a531f3d-8888-4c0e-8cc9-38739808b0c5",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Vivek Murthy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a514bc0e-5a92-4f75-aa76-90456af016d9",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "chronic-illness",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "11be7fef-5074-4d52-9832-3b3c2c000ed7",
+   "subjects": [
+    {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "parenting",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adam Grant",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e23af073-16bf-497f-98f7-5e08e25ff098",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jenn Carson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:43:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bb892475-cae2-4f9b-bb81-0441236d89a5",
+   "subjects": [
+    {
+     "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elizabeth Dunn",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:17:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "730148ab-b76b-425e-927a-ff63b6c60503",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "24012db6-8fe3-4313-ae8a-12dfc36ef6a0",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tijuana",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:29:08+00:00"
+    },
+    {
+     "name": "U.S.-Mexico border",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:29:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "19c28909-385b-4eb0-8a62-8d10aafc40d1",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:51:30+00:00"
+    },
+    {
+     "subject": "musician-death",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Maria Garcia",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:51:30+00:00"
+    },
+    {
+     "name": "Selena Quintanilla",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:51:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f7eb9647-e07b-4ac6-8faa-9dea9fe1f235",
+   "subjects": [
+    {
+     "subject": "musician-death",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:40+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Maria Garcia",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:40+00:00"
+    },
+    {
+     "name": "Selena",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:43:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c6d8346b-7d97-4de1-b2aa-4e3c5aa46957",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:25+00:00"
+    },
+    {
+     "subject": "internet-culture",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:25+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy Mays",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:25+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3cd34ce4-726a-4884-8bc4-fa502e04089c",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:16:22+00:00"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:16:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2247432b-861d-45c2-abd2-c00429b69920",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "eb049155-14b3-4c0b-bcec-cef1c34f571d",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d7b17ab4-581d-447b-82e3-a92c99a5ffce",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:13+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sophia",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:13+00:00"
+    }
+   ]
+  }
+ ]
+}

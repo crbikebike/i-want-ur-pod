@@ -1,0 +1,5837 @@
+{
+ "slug": "hit-parade",
+ "title": "Hit Parade",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "artist-band-biography",
+   "count": 67
+  },
+  {
+   "slug": "music-scene-movement",
+   "count": 60
+  },
+  {
+   "slug": "music-industry-business",
+   "count": 30
+  },
+  {
+   "slug": "talking-about-music",
+   "count": 25
+  },
+  {
+   "slug": "song-and-album-origin",
+   "count": 24
+  },
+  {
+   "slug": "advertising-and-persuasion",
+   "count": 3
+  },
+  {
+   "slug": "queer-life",
+   "count": 3
+  },
+  {
+   "slug": "introducing",
+   "count": 2
+  },
+  {
+   "slug": "music-scene-history",
+   "count": 2
+  },
+  {
+   "slug": "musician-death",
+   "count": 2
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 1
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "485a59c4-53de-11ed-bd54-a70a8cd9dfaf",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:41:08+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Red Red Wine",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:41:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a5e42-53de-11ed-bd54-d71b5fae80e0",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Capitol Records",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "The Beatles",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a63e2-53de-11ed-bd54-4f5a9c0ec6e9",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:58+00:00"
+    },
+    {
+     "subject": "queer-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:58+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elton John",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:58+00:00"
+    },
+    {
+     "name": "George Michael",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a68a6-53de-11ed-bd54-efee4e6c9964",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Do They Know It's Christmas?",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:22:35+00:00"
+    },
+    {
+     "name": "We Are the World",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:22:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858a868-53de-11ed-bd54-8389c825e22e",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48591460-53de-11ed-bd54-471cdf7f5ead",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Prince",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "name": "Tom Petty",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a7454-53de-11ed-bd54-d717a0548c0c",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donna Summer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "name": "Giorgio Moroder",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485799f0-53de-11ed-bd54-4faaa34be9f1",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billboard Hot 100",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Kelly Clarkson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485867e0-53de-11ed-bd54-c3c45ad0236f",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:41:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485873e8-53de-11ed-bd54-6b3f1b2753f2",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aerosmith",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Def Jam",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Run-DMC",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485894c2-53de-11ed-bd54-67d013deea81",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:58+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:58+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:58+00:00"
+    },
+    {
+     "name": "Ray of Light",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48585192-53de-11ed-bd54-27a5a2d8f3f4",
+   "subjects": [
+    {
+     "subject": "games-and-play",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Molanphy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:22:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485858f4-53de-11ed-bd54-8b29be093b29",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bon Jovi",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48590c7c-53de-11ed-bd54-d75c35f02df4",
+   "subjects": [
+    {
+     "subject": "music-scene-history",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rock & Roll Hall of Fame",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48585ff2-53de-11ed-bd54-0f1d241b8abf",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "MTV",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "name": "Miley Cyrus",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "name": "YouTube",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48582b68-53de-11ed-bd54-77f1a2ca8e48",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "MTV",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48586d4e-53de-11ed-bd54-2b9c78d8b91f",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:41:08+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:41:08+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Athens, Georgia",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:41:08+00:00"
+    },
+    {
+     "name": "R.E.M.",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:41:08+00:00"
+    },
+    {
+     "name": "The B-52's",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:41:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4857f058-53de-11ed-bd54-c7405b0a8e1d",
+   "subjects": [
+    {
+     "subject": "music-scene-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Athens, Georgia",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "R.E.M.",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "The B-52's",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858785c-53de-11ed-bd54-9f73c73bb906",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:58+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485aebf0-53de-11ed-bd54-7fe5cf6072a0",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:22:35+00:00"
+    },
+    {
+     "name": "Ray of Light",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:22:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48587c12-53de-11ed-bd54-573d42378e24",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aretha Franklin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48588eb4-53de-11ed-bd54-43beea997ead",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bee Gees",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48583108-53de-11ed-bd54-9738d72e2532",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48588072-53de-11ed-bd54-87ee6f4f15e7",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billboard Hot 100",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Public Enemy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485920d6-53de-11ed-bd54-d7c20ada514d",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858b808-53de-11ed-bd54-a7a46bf5b92e",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Max Martin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485acf3a-53de-11ed-bd54-6f64884f86d8",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859275c-53de-11ed-bd54-efa49bb93de2",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485ad606-53de-11ed-bd54-abc088f899c2",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lady Gaga",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48596302-53de-11ed-bd54-d738710d66a0",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "A Star Is Born",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "name": "Lady Gaga",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485add36-53de-11ed-bd54-a3c59e20a23f",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "R. Kelly",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858be5c-53de-11ed-bd54-672de3e97e47",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Creedence Clearwater Revival",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "John Fogerty",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48584a1c-53de-11ed-bd54-d3046a568a10",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48596a8c-53de-11ed-bd54-a3d9d547983a",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fingertips",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Motown",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Stevie Wonder",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48589ad0-53de-11ed-bd54-77c81753a2c1",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859876a-53de-11ed-bd54-9fb51e84080c",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    },
+    {
+     "subject": "musician-death",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485af62c-53de-11ed-bd54-778c21d24a76",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859798c-53de-11ed-bd54-fb436baa9336",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Genesis",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "name": "Phil Collins",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485ae506-53de-11ed-bd54-1f692290b985",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859ae20-53de-11ed-bd54-d3ec8b4b5f07",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Broadway",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Hamilton",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859e340-53de-11ed-bd54-97c478e9d445",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48583838-53de-11ed-bd54-2fc0ecf82b2c",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Beatles",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859ebf6-53de-11ed-bd54-cb18f49a0360",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Beatles",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4857d712-53de-11ed-bd54-0fa38f0940f3",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:22:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Woodstock",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:22:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859f31c-53de-11ed-bd54-fb3d6190cb9c",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Joni Mitchell",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48597176-53de-11ed-bd54-afaa14f1d47b",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janet Jackson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "name": "Rhythm Nation 1814",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859face-53de-11ed-bd54-bf14fb494862",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Janet Jackson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "name": "Rhythm Nation 1814",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859806c-53de-11ed-bd54-ef97d1f2d035",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Cure",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "The Smiths",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a029e-53de-11ed-bd54-33faefc1a9d1",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Depeche Mode",
+     "kind": "company",
+     "confidence": "low",
+     "at": "2026-07-30T14:42:09+00:00"
+    },
+    {
+     "name": "The Cure",
+     "kind": "company",
+     "confidence": "low",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48598d96-53de-11ed-bd54-dbba09bdb314",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billboard Hot 100",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "The 2010s",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a0a96-53de-11ed-bd54-f34511d5f7b9",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4857aba2-53de-11ed-bd54-3fdc5dbe21f5",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "All I Want for Christmas Is You",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485abf4a-53de-11ed-bd54-db8668c5bcd2",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "All I Want for Christmas Is You",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:00+00:00"
+    },
+    {
+     "name": "Mariah Carey",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4857f59e-53de-11ed-bd54-cb3c6fe1725b",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Weird Al Yankovic",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485ac71a-53de-11ed-bd54-1f0007523ccd",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Weird Al Yankovic",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4857fc74-53de-11ed-bd54-2ba9250f3697",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Whitney Houston",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485aaf96-53de-11ed-bd54-bf7fbdfc23d5",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Whitney Houston",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4857bebc-53de-11ed-bd54-cf6819ce55c0",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jennifer Lopez",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Ricky Martin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Shakira",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48579f7c-53de-11ed-bd54-1b7ec2fa63b7",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4857b368-53de-11ed-bd54-07d1c0569fdf",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy Joel",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859bd48-53de-11ed-bd54-ffe84ba64737",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy Joel",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485764a8-53de-11ed-bd54-9b9b591e01c0",
+   "subjects": [
+    {
+     "subject": "music-scene-history",
+     "role": "primary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859d742-53de-11ed-bd54-5f96dd50b381",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Atlanta",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "name": "OutKast",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48581cae-53de-11ed-bd54-cbecb2b5c551",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48583d42-53de-11ed-bd54-0b5d5295056f",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lilith Fair",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859359e-53de-11ed-bd54-036b283ffbc1",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485918a2-53de-11ed-bd54-d7e0660f36f8",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858ff70-53de-11ed-bd54-139491e05dbb",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a127a-53de-11ed-bd54-bb6df06ae2ef",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48578a5a-53de-11ed-bd54-57092ccca182",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858af8e-53de-11ed-bd54-07b138611128",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485814fc-53de-11ed-bd54-b774acc1c225",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a196e-53de-11ed-bd54-27b92582af76",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Friends in Low Places",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48580d40-53de-11ed-bd54-f762ed9ea72a",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Garth Brooks",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a201c-53de-11ed-bd54-7b0e54e16897",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a265c-53de-11ed-bd54-b346144030a3",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4857c696-53de-11ed-bd54-dfbee44ef697",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a869c-53de-11ed-bd54-574cfd94bc6d",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a8052-53de-11ed-bd54-db97f2926d26",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "AC/DC",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4857e8c4-53de-11ed-bd54-bff49191829b",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "AC/DC",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a8e80-53de-11ed-bd54-03d18e53ff81",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sam Cooke",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a9984-53de-11ed-bd54-6ff659eeb1cf",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "A Change Is Gonna Come",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Sam Cooke",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485aa190-53de-11ed-bd54-93243615a8f9",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Taylor Swift",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a95a6-53de-11ed-bd54-0f83e92271b2",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Taylor Swift",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485aa870-53de-11ed-bd54-6b60a639a5a0",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frank Farian",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:00+00:00"
+    },
+    {
+     "name": "Milli Vanilli",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485ab84c-53de-11ed-bd54-bf33a672b7b7",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frank Farian",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "name": "Milli Vanilli",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7777777",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859b582-53de-11ed-bd54-b77310a133d3",
+   "subjects": [
+    {
+     "subject": "songwriting-craft",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beyonce",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858c51e-53de-11ed-bd54-832a616990c2",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bruce Springsteen",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858cef6-53de-11ed-bd54-4f1bf402a9ea",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bruce Springsteen",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4857cf06-53de-11ed-bd54-5b99acc48a4c",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859a6dc-53de-11ed-bd54-3355de46bf38",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Steely Dan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858d9f0-53de-11ed-bd54-b73f61709ef9",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "1971",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48599fde-53de-11ed-bd54-13749f1008ee",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "1971",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000538499923",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fall Out Boy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "name": "Green Day",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000539074766",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fall Out Boy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Green Day",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858f020-53de-11ed-bd54-af01c098df1a",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aimee Mann",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:09+00:00"
+    },
+    {
+     "name": "Cyndi Lauper",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:09+00:00"
+    },
+    {
+     "name": "The Bangles",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858f976-53de-11ed-bd54-d31435e15031",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aimee Mann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Cyndi Lauper",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "The Bangles",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485775c4-53de-11ed-bd54-0f49f0a6a2ef",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brenda Lee",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4858e85a-53de-11ed-bd54-2bd86c2cddbc",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brenda Lee",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48580494-53de-11ed-bd54-b3a1acf4b145",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Macarena",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a2e0e-53de-11ed-bd54-63c250205d56",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hall & Oates",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48579126-53de-11ed-bd54-fb2b8ce3b142",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hall & Oates",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a3520-53de-11ed-bd54-8f95d9d5b154",
+   "subjects": [
+    {
+     "subject": "songwriting-craft",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a3b24-53de-11ed-bd54-7379f4bfcc25",
+   "subjects": [
+    {
+     "subject": "songwriting-craft",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a4088-53de-11ed-bd54-6f65766bcd9e",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chaka Khan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Dionne Warwick",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Roberta Flack",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859c888-53de-11ed-bd54-9765ec75f36b",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a49e8-53de-11ed-bd54-97e6c838d51f",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chris Molanphy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a5294-53de-11ed-bd54-5f67b3b29991",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hit Parade",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485995b6-53de-11ed-bd54-2bc2c81ed063",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "C.W. McCall",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    },
+    {
+     "name": "Convoy",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485824f6-53de-11ed-bd54-9b20ad1dfc83",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Missy Elliott",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "name": "Pharrell Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "name": "Timbaland",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a6c8e-53de-11ed-bd54-9324e9fdc284",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Missy Elliott",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Pharrell Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Timbaland",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485a78f0-53de-11ed-bd54-478cd299ca23",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kate Bush",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:09+00:00"
+    },
+    {
+     "name": "Running Up That Hill",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4859d0a8-53de-11ed-bd54-7f775a8ac3ff",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kate Bush",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Running Up That Hill",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Stranger Things",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48592ec8-53de-11ed-bd54-bf0ffc0b605c",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485944d0-53de-11ed-bd54-63cbcc5b39d9",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48593d64-53de-11ed-bd54-fffae7ac91ac",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy Joel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48589ff8-53de-11ed-bd54-6f1e0377df0a",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy Joel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000579734127",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485afd52-53de-11ed-bd54-070d7228f880",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Etta James",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485b054a-53de-11ed-bd54-2f8b65ac9c61",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48595a88-53de-11ed-bd54-5745a13d91a3",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Earth, Wind and Fire",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "George Clinton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "James Brown",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "485950c4-53de-11ed-bd54-7ba9afb72e0e",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elvis Costello",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:38:51+00:00"
+    },
+    {
+     "name": "Graham Parker",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:38:51+00:00"
+    },
+    {
+     "name": "Joe Jackson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48595538-53de-11ed-bd54-bb86e4032c79",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elvis Costello",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48594ba6-53de-11ed-bd54-e3c7445801ac",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3b5110d4-7bfb-11ed-b2b6-33657a0af53b",
+   "subjects": [
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Tesh",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "name": "Yanni",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48595ec0-53de-11ed-bd54-934e910121b9",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4506fc80-643e-11ed-9d1c-834eca358d1b",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christine McVie",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Fleetwood Mac",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "466630be-643e-11ed-9d1c-b3c97bf68be3",
+   "subjects": [
+    {
+     "subject": "songwriting-craft",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    },
+    {
+     "subject": "musician-death",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christine McVie",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:09+00:00"
+    },
+    {
+     "name": "Fleetwood Mac",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "47c191ce-643e-11ed-9d1c-3b18de6422f6",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Darius Rucker",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Hootie and the Blowfish",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "492972a2-643e-11ed-9d1c-2ff4cff40421",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Darius Rucker",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4aa76468-643e-11ed-9d1c-dbfcc9a186f0",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Missundaztood",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "name": "Pink",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4c34df5e-643e-11ed-9d1c-cb68276c5729",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pink",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "88102006-a886-11ed-95e6-5f69fefd7b2d",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "British Invasion",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "name": "MTV",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8833c5c4-a886-11ed-95e6-073c2504cd28",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "MTV",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "name": "The Beatles",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8856d992-a886-11ed-95e6-6b8c7f684fd9",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blur",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Britpop",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Oasis",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "887cfeba-a886-11ed-95e6-cb37f960eda2",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blur",
+     "kind": "company",
+     "confidence": "low",
+     "at": "2026-07-30T14:42:09+00:00"
+    },
+    {
+     "name": "Oasis",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5472262c-643e-11ed-9d1c-a7ca8a818627",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Pointer Sisters",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "55c2649c-643e-11ed-9d1c-735c4cc8b19a",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Pointer Sisters",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "571b6eba-643e-11ed-9d1c-5fc221ea2748",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bruno Mars",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "name": "Lenny Kravitz",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "58939006-643e-11ed-9d1c-a3ac6226e734",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bruno Mars",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    },
+    {
+     "name": "Lenny Kravitz",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5a267406-643e-11ed-9d1c-df9d3da317e6",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OutKast",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5beec19e-643e-11ed-9d1c-833d4548262e",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Andre 3000",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "name": "OutKast",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "88a02f0c-a886-11ed-95e6-638095820440",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Herb Alpert",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Kenny G",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "88c3a4be-a886-11ed-95e6-dff00f9caf7e",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Herb Alpert",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:09+00:00"
+    },
+    {
+     "name": "Kenny G",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "88e8409e-a886-11ed-95e6-6b7ee33a1751",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "CBGB",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Ramones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    },
+    {
+     "name": "Talking Heads",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T22:58:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "890b2104-a886-11ed-95e6-6ff977a7111d",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "892d869a-a886-11ed-95e6-af5c3f5e0a88",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billboard",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "name": "Lil Nas X",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "name": "Old Town Road",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "64c474da-643e-11ed-9d1c-a776ed3c6510",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lil Nas X",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    },
+    {
+     "name": "Old Town Road",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "894fa23e-a886-11ed-95e6-fbe354c41552",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lil Nas X",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "name": "Old Town Road",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67728fdc-643e-11ed-9d1c-d334ef232f8b",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "89733690-a886-11ed-95e6-7729515fed92",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brenda Lee",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "Taylor Swift",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9d1a97fa-7e6a-11ee-81d5-3bc4821246c3",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9d81c538-7e6a-11ee-81d5-4378ec68569e",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Grammy Awards",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "name": "Recording Academy",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9de09ab8-7e6a-11ee-81d5-bfcc2ecce893",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barbra Streisand",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9e3d3142-7e6a-11ee-81d5-3bc959ee48a9",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Barbra Streisand",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3ab89b86-c45e-11ee-abdd-5788754996ed",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9ef649de-7e6a-11ee-81d5-67251d5407ec",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9f6262cc-7e6a-11ee-81d5-8b5866ded610",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9fc1b7cc-7e6a-11ee-81d5-ef4a0c1a9ee1",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Backstreet Boys",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    },
+    {
+     "name": "New Kids on the Block",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:27:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0f569370-c07c-11ee-a1dc-2f2f82050bbe",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a07c1676-7e6a-11ee-81d5-bb3890b62e17",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Spice Girls",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "name": "TLC",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "name": "The Ronettes",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000659085833",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Quincy Jones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000659400979",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Jackson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "name": "Quincy Jones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000662077580",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000662077556",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billboard Hot 100",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a2463284-7e6a-11ee-81d5-5ba927d9dbf3",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lilith Fair",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "name": "Sarah McLachlan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a2a208f2-7e6a-11ee-81d5-57a5749a7c6b",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lilith Fair",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:23+00:00"
+    },
+    {
+     "name": "Sarah McLachlan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000669500433",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000669500529",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "1984",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "name": "Prince",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000672758688",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "U2",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000672759296",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bono",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "name": "U2",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000677127214",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aretha Franklin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000677127933",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aretha Franklin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000680314017",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "100068031988",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    },
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000681269099",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d570b804-bfdd-11ef-8bb8-1f8e5f451dfb",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Blue Note Records",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "name": "Come Away With Me",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "name": "Norah Jones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000684448337",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bob Dylan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000684448339",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bob Dylan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000692372898",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    },
+    {
+     "name": "Pet Shop Boys",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000692373012",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madonna",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "name": "Pet Shop Boys",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000699120674",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000699131764",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billboard Hot 100",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000703217472",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rihanna",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000703217400",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rihanna",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000708784472",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nirvana",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:38:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000708785249",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nevermind",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "name": "Nirvana",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000712805316",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    },
+    {
+     "subject": "queer-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000712805971",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "subject": "queer-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Little Richard",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "name": "Sylvester",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000717844756",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Drake",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "name": "Kendrick Lamar",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000717849845",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Drake",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:28:23+00:00"
+    },
+    {
+     "name": "Kendrick Lamar",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000722046499",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000722047319",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Weird Al Yankovic",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000726563199",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:39:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000726579734",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billboard",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000732373416",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sting",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    },
+    {
+     "name": "The Police",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000732373573",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sting",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    },
+    {
+     "name": "The Police",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cb893b7a-be4e-11f0-b17e-abb90e167de8",
+   "subjects": [
+    {
+     "subject": "advertising-and-persuasion",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000736827173",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Def Leppard",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:28:23+00:00"
+    },
+    {
+     "name": "Mutt Lange",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000736827103",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:43:14+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Robert \"Mutt\" Lange",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:43:14+00:00"
+    },
+    {
+     "name": "Shania Twain",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:43:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000741062393",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Graduate",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "name": "Titanic",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000741062430",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:39:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000742741998",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:23:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000745507555",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Bowie",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000745511257",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Bowie",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000749687950",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Denver",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:31+00:00"
+    },
+    {
+     "name": "Olivia Newton-John",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000749690275",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Denver",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:23+00:00"
+    },
+    {
+     "name": "Olivia Newton-John",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000756403931",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000756403899",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "American Top 40",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "name": "Casey Kasem",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000760700673",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:39:52+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donna Summer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:39:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000760708143",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:24:45+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:24:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Donna Summer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:24:45+00:00"
+    },
+    {
+     "name": "Giorgio Moroder",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:24:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000763292874",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "MTV",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T09:04:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000767958665",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy Idol",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:05:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000770276645",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T09:04:31+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000772437746",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Monster Ballads",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:28:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000774473445",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000777007667",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pink Floyd",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    },
+    {
+     "name": "The Dark Side of the Moon",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:00:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1000778266437",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:39:52+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jay-Z",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:39:52+00:00"
+    }
+   ]
+  }
+ ]
+}

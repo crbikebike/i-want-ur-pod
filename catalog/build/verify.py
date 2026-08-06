@@ -22,6 +22,7 @@ import time
 from pathlib import Path
 
 from catalog.build import fingerprint, migrate
+from catalog.build.labels import CURRENT_RUN
 
 ROOT = Path(__file__).resolve().parents[2]
 QUERIES = ROOT / "catalog/build/queries"
@@ -121,15 +122,17 @@ def check_counts(conn, gate: Gate, src: dict) -> None:
     )
     with_subjects = conn.execute(
         "SELECT count(DISTINCT e.show_id) FROM episodes e "
-        "JOIN episode_subjects es ON es.episode_id = e.id"
+        "JOIN episode_labels el ON el.episode_id = e.id AND el.run_id = ?",
+        (CURRENT_RUN,)
     ).fetchone()[0]
     gate.check(
         f"shows with labelled episodes: {with_subjects} (source {src['labelled_shows']})",
         with_subjects == src["labelled_shows"],
     )
     unlabelled = conn.execute(
-        "SELECT count(*) FROM episodes e WHERE NOT EXISTS "
-        "(SELECT 1 FROM episode_subjects es WHERE es.episode_id = e.id)"
+        "SELECT count(*) FROM episodes e WHERE e.deleted_at IS NULL AND NOT EXISTS "
+        "(SELECT 1 FROM episode_labels el WHERE el.episode_id = e.id AND el.run_id = ?)",
+        (CURRENT_RUN,)
     ).fetchone()[0]
     gate.note(f"{unlabelled} episodes carry no subject yet -- Phase 3 labels them")
 
@@ -151,7 +154,7 @@ def check_integrity(conn, gate: Gate) -> None:
     gate.check("every episode has a show", orphan_eps == 0)
 
     orphan_links = conn.execute(
-        "SELECT count(*) FROM episode_subjects es LEFT JOIN subjects s ON s.id = es.subject_id "
+        "SELECT count(*) FROM episode_labels el LEFT JOIN subjects s ON s.id = el.subject_id "
         "WHERE s.id IS NULL"
     ).fetchone()[0]
     gate.check("every episode-subject link resolves", orphan_links == 0)

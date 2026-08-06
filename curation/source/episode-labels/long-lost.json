@@ -1,0 +1,242 @@
+{
+ "slug": "long-lost",
+ "title": "Long Lost",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "missing-person",
+   "count": 6
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "434e72f8-de4e-37be-9c66-28e70d64af28",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:23+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3dfa6fa6-7091-a262-33ef-62c3ef7c62bc",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:39+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Klein brothers",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "be31ae08-6fa5-e341-86d8-768cf54e984a",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:30:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Klein brothers",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-08-01T20:30:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "939c02d5-db23-9acd-eb58-4e229a21278f",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:23:22+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:23:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Klein brothers",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:23:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ed731bab-c3cb-0f8f-36c4-3e1a1c3c9f3a",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Klein brothers",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d192889e-d7fc-6e0e-1980-37f090d52e7e",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Klein brothers",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8fe8d557-9ccb-46c9-ab26-52b7b4219e6e",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:19+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wetterling",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:14:19+00:00"
+    },
+    {
+     "name": "Patty Wetterling",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:14:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "95af103d-34cf-4881-b864-dffecb7ad3ea",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:42+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Klein brothers",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:28:42+00:00"
+    }
+   ]
+  }
+ ]
+}

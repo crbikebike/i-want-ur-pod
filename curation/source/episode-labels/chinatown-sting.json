@@ -1,0 +1,280 @@
+{
+ "slug": "chinatown-sting",
+ "title": "The Chinatown Sting",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "organised-crime",
+   "count": 6
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 1
+  },
+  {
+   "slug": "immigrant-experience",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "4a830582-27d1-4fce-843b-b34500f24335",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "51b80e68-1e98-4157-a1ca-b356014d0a61",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tina Wong",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:53:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "246cdf05-6f17-4ab0-ab56-b35601555185",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beryl Howell",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:55:16+00:00"
+    },
+    {
+     "name": "Tina Wong",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:55:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3187d7ab-7fd4-434c-938d-b35b00e89937",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tina Wong",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:52+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "19b37f98-1f47-4c6f-ace7-b35b00f35eed",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Beryl Howell",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-28T00:54:33+00:00"
+    },
+    {
+     "name": "Johnny Eng",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:54:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e9234cc1-3aa0-484d-b93d-b35b0105f833",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Johnny Eng",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2150fd56-45f4-4b55-91d2-b35b010cfbdb",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:59+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Johnny Eng",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9d862eed-bfb6-40b8-a82a-b37c0182a97e",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Johnny Eng",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:53:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "516355d4-2ca8-4b40-a65a-b383012a28bd",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T00:52:40+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Denny Chin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-28T00:52:40+00:00"
+    }
+   ]
+  }
+ ]
+}

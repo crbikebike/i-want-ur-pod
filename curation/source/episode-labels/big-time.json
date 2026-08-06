@@ -1,0 +1,323 @@
+{
+ "slug": "big-time",
+ "title": "Big Time",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "charismatic-con",
+   "count": 5
+  },
+  {
+   "slug": "heist-and-robbery",
+   "count": 4
+  },
+  {
+   "slug": "sports-scandal",
+   "count": 2
+  },
+  {
+   "slug": "hacking-and-cybercrime",
+   "count": 1
+  },
+  {
+   "slug": "medical-deception",
+   "count": 1
+  },
+  {
+   "slug": "organised-crime",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/OVSCNxKVUKOH103easa4zfhUpyUtJx3WVVDFM57-aqQ",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bYrHy1hKyVJ1yxnu-s3w2JLhOYcHqZ028ty7DuETWtM",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/HEZhkVWqj9SoNybs31skHis8QHujYiVA3JjvbAay9tc",
+   "subjects": [
+    {
+     "subject": "sports-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chase Cominsky",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:33+00:00"
+    },
+    {
+     "name": "Jacob Runyan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/7U3NX9CH2hCVemGfXifmv6Rq1PLIdVZ_j_BApqtRSvU",
+   "subjects": [
+    {
+     "subject": "sports-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/fRqfphHgMHUDCE683eIlGHNjPqBmCY22uhE-vbkyrUU",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:57+00:00"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Looker",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0TjonUSr8ujQ97599NAOTTnLt9vnVFPxqKPkLWHMef0",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/fUE6Bx6j9-k_0bdn-_d_5_AEMVlBsARAYk1L_mtFKKo",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/0KUcd_zzIiKvcSHHsBjUSiFG4oEI_6seWm9y_KDFIFo",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:01+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/CaliClOnbxOC2tWIWSd7D8ZQLM-LkJ-07t1nhPNCEHk",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Bloom",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:22:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/o12fINNdMNkIUAaXqG7THgV3da4Zo1urov4Dc_HpxKU",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/GsaAPuheuKUe59-0Uew6VzoD2juK8biqXS_idfc64ZE",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/id7DBF1p_twaB20vQB1HEVZO5-YnBLUK6MA_lbtz0l8",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:58+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "San Antonio Aquarium",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:26:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/xsMV3NUCPFWLBtNH5TOyX15Oq-bpiKoeYu5yejjrb-A",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/bVBUnYUliWmKkzd82RtSPFCBA7LhM0Ny-Aocj6-c-3I",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/DBBGGkMSOCwLKS6Cx0F1uG20bWyiM6rqqAbnXWPXQps",
+   "subjects": [
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kevin McGeever",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:18:20+00:00"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,291 @@
+{
+ "slug": "ghost-church",
+ "title": "Ghost Church",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "paranormal-investigation",
+   "count": 4
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 2
+  },
+  {
+   "slug": "religious-community",
+   "count": 2
+  },
+  {
+   "slug": "indigenous-history",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "7568c6c3-6deb-475a-aff4-ae780151cd5b",
+   "subjects": [
+    {
+     "subject": "paranormal-investigation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "11b938f3-217e-420b-a787-ae810135fe79",
+   "subjects": [
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3f20eaf6-0590-452f-8996-ae88016fad41",
+   "subjects": [
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:45+00:00"
+    },
+    {
+     "subject": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "09a0f9f1-9353-45af-81e4-ae8f018105a9",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:43+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fox sisters",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e7bf6bb5-aa75-45c4-bb9d-ae9601887139",
+   "subjects": [
+    {
+     "subject": "paranormal-investigation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:34+00:00"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7bc92d66-25b9-4ec4-9f82-aea40180d3d4",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    },
+    {
+     "subject": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e2b9c8df-e040-4377-b5c7-aeac001eb944",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:40+00:00"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:43:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cassadaga",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:40+00:00"
+    },
+    {
+     "name": "George Colby",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ea9f6bab-3eff-45b1-8b65-aeb300155378",
+   "subjects": [
+    {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:13:23+00:00"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carlos Camacho",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6c83842c-a527-47ed-828c-aeba002fb2cf",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "paranormal-investigation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Arthur Conan Doyle",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:27:45+00:00"
+    },
+    {
+     "name": "Harry Houdini",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a93a3d4d-cf24-4236-bc16-aec0018a6728",
+   "subjects": [
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:45+00:00"
+    }
+   ]
+  }
+ ]
+}

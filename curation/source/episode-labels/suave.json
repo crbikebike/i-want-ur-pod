@@ -1,0 +1,567 @@
+{
+ "slug": "suave",
+ "title": "Suave",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "reentry-after-prison",
+   "count": 12
+  },
+  {
+   "slug": "prison-life",
+   "count": 4
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "prx_359_9d578d3d-e323-4ec6-bba5-e69f1770753b",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "name": "Maria Hinojosa",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_20c6d837-a639-41b2-983d-0d43e1ee52e7",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:35+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_8234df16-2161-4a6d-b11d-bd03165e9fef",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:33+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_85ec7985-cd7e-4a37-b1af-f464b0be9b22",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:00+00:00"
+    },
+    {
+     "name": "Maria Hinojosa",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_6ac73bea-dfd5-4f4c-836c-aa5c8cf1481a",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:00+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_73f4efca-8c3b-4589-8e2b-0a1312e9e7e2",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:42+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_004ad258-8cc4-4dfd-8582-0df4080bfbcc",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_541a2d49-c47e-496f-8444-8cd61d5cb3f3",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_78e1bff7-809d-4bc1-9939-d5669db67407",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_ea059b03-bcd7-463e-9d05-e4e95b0aa503",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_cf40c91a-49fd-4c08-878a-9f8afec8da49",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_3bf840ee-f6d0-41ce-a08a-a761b3d0e92d",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_a4a04521-b081-48ae-8b1c-a854d8478cf7",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:25:45+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:25:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:25:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_106f8e2f-87b0-4d94-ae67-99f7d478961c",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:00+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frank Ross",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:19:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_9c894eba-65c1-4d67-8d93-63e64e88657b",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_02b4c14f-6a2e-4606-b0d0-d28aa664b084",
+   "subjects": [
+    {
+     "subject": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "name": "Puerto Rico",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_3d7abdeb-9fb9-4b17-ae3e-ca958ca32c97",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David \"Suave\" Gonzalez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_359_b6177d30-d435-45ec-a2b6-4bc7cd5c566c",
+   "subjects": [
+    {
+     "subject": "songwriting-craft",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6a42e8073fa89e3338c61cb8",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:33+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frank Ross",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6a42e74171668e3706337dbe",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:35+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6a42cca671668e3706299046",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frank Ross",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ]
+  }
+ ]
+}

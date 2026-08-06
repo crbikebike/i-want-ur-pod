@@ -1,0 +1,7376 @@
+{
+ "slug": "zeit-verbrechen",
+ "title": "Zeit Verbrechen",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "courtroom-trial",
+   "count": 31
+  },
+  {
+   "slug": "law-explained",
+   "count": 18
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 17
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 11
+  },
+  {
+   "slug": "heist-and-robbery",
+   "count": 10
+  },
+  {
+   "slug": "family-annihilation-and-parricide",
+   "count": 9
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 9
+  },
+  {
+   "slug": "war-crimes-accountability",
+   "count": 8
+  },
+  {
+   "slug": "everyday-mystery",
+   "count": 7
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 7
+  },
+  {
+   "slug": "intimate-partner-homicide",
+   "count": 6
+  },
+  {
+   "slug": "serial-offender",
+   "count": 6
+  },
+  {
+   "slug": "foreign-political-crisis",
+   "count": 5
+  },
+  {
+   "slug": "investigative-process",
+   "count": 5
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 5
+  },
+  {
+   "slug": "community-in-conflict",
+   "count": 4
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 4
+  },
+  {
+   "slug": "kidnapping-and-captivity",
+   "count": 4
+  },
+  {
+   "slug": "missing-person",
+   "count": 4
+  },
+  {
+   "slug": "organised-crime",
+   "count": 4
+  },
+  {
+   "slug": "child-victim",
+   "count": 3
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 3
+  },
+  {
+   "slug": "history-retold",
+   "count": 3
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 3
+  },
+  {
+   "slug": "media-criticism",
+   "count": 3
+  },
+  {
+   "slug": "medical-deception",
+   "count": 3
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 3
+  },
+  {
+   "slug": "prosecutorial-power",
+   "count": 3
+  },
+  {
+   "slug": "terrorism-and-aftermath",
+   "count": 3
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 3
+  },
+  {
+   "slug": "ageing-and-mortality",
+   "count": 2
+  },
+  {
+   "slug": "books-and-writing",
+   "count": 2
+  },
+  {
+   "slug": "celebrity-life",
+   "count": 2
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 2
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 2
+  },
+  {
+   "slug": "education-system-failure",
+   "count": 2
+  },
+  {
+   "slug": "employee-embezzlement",
+   "count": 2
+  },
+  {
+   "slug": "extremist-movement",
+   "count": 2
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 2
+  },
+  {
+   "slug": "homelessness-and-poverty",
+   "count": 2
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 2
+  },
+  {
+   "slug": "making-of-a-work",
+   "count": 2
+  },
+  {
+   "slug": "murder-for-hire",
+   "count": 2
+  },
+  {
+   "slug": "online-radicalisation",
+   "count": 2
+  },
+  {
+   "slug": "organised-scam-industry",
+   "count": 2
+  },
+  {
+   "slug": "personal-transformation",
+   "count": 2
+  },
+  {
+   "slug": "political-persecution",
+   "count": 2
+  },
+  {
+   "slug": "prison-life",
+   "count": 2
+  },
+  {
+   "slug": "reentry-after-prison",
+   "count": 2
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 2
+  },
+  {
+   "slug": "romance-and-catfishing",
+   "count": 2
+  },
+  {
+   "slug": "scientific-discovery",
+   "count": 2
+  },
+  {
+   "slug": "sex-work-and-exploitation",
+   "count": 2
+  },
+  {
+   "slug": "sports-scandal",
+   "count": 2
+  },
+  {
+   "slug": "stranger-homicide",
+   "count": 2
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 2
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 2
+  },
+  {
+   "slug": "ai-and-society",
+   "count": 1
+  },
+  {
+   "slug": "animal-behaviour",
+   "count": 1
+  },
+  {
+   "slug": "body-never-found",
+   "count": 1
+  },
+  {
+   "slug": "bribery-and-kickbacks",
+   "count": 1
+  },
+  {
+   "slug": "captivity-and-escape",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  },
+  {
+   "slug": "cult-and-control",
+   "count": 1
+  },
+  {
+   "slug": "death-penalty",
+   "count": 1
+  },
+  {
+   "slug": "early-hacker-history",
+   "count": 1
+  },
+  {
+   "slug": "estrangement-and-reconciliation",
+   "count": 1
+  },
+  {
+   "slug": "fashion-and-clothing",
+   "count": 1
+  },
+  {
+   "slug": "gentrification-and-housing",
+   "count": 1
+  },
+  {
+   "slug": "informant-and-undercover",
+   "count": 1
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 1
+  },
+  {
+   "slug": "offshore-secrecy",
+   "count": 1
+  },
+  {
+   "slug": "parenting",
+   "count": 1
+  },
+  {
+   "slug": "protest-movement",
+   "count": 1
+  },
+  {
+   "slug": "psychology-of-belief",
+   "count": 1
+  },
+  {
+   "slug": "racial-violence",
+   "count": 1
+  },
+  {
+   "slug": "relationship-remembered",
+   "count": 1
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 1
+  },
+  {
+   "slug": "romance-and-heartbreak",
+   "count": 1
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 1
+  },
+  {
+   "slug": "sports-history",
+   "count": 1
+  },
+  {
+   "slug": "survival-story",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  },
+  {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "d5ca0b46e2091c136f9502369a07db06",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lübeck",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d33d44212fc096e0faa0817d30932913",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Audi",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "753bcd47fc128a69e99347c8bbd81e42",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Berlin",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8b85fddb37eb8844d1f4dced8d73ecfe",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Auschwitz",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Rainer Höss",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Rudolf Höss",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5f5d073d6c9ccd3c49b1a7ae88a5125f",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9565dcbd1e18aaf112bcbfaecaa9eb0a",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Berlin",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e6cd91b6bb0102b047bbe08f1164dfa4",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "AfD",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "name": "Halle",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "da9fd2b1b149ba7f05e365bf2973d815",
+   "subjects": [
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "online-radicalisation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Munich",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "name": "Munich shooting",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ff1ed58edd5c55c89c1de799ddff40b4",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jörg Kachelmann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "351c9cfea6e16b2ee8b0c1df151d2f55",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jörg Kachelmann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "name": "Mannheim",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "28344393d16e230bc3c7313101514b6c",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jörg Kachelmann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1e4308dfe5ece63acb1de774688e1dfc",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c41819267b426f018257fd64a6189824",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bundeswehr",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "name": "Kommando Spezialkrafte",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "16dce2290f012f630285dd7b45e2b0ac",
+   "subjects": [
+    {
+     "subject": "medical-research",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lübeck",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "name": "Lübeck vaccine disaster",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1d2ba96c447b0959de2d74fb57bf5469",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Julian Assange",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "name": "WikiLeaks",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "73900bb8c34dc2f0ac45d881644d7480",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "scientific-discovery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Fallon",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "beb1924e9b3bc76f5162774330829bdb",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Russia",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3d917ee35458775104433c09090bad5a",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "23b6cab5c014c5f9a8862e4a5b6a2667",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3b95cb54901f78da51cfd2ea7c2ce926",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Big Maple Leaf",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Bode Museum",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b5ff4f4cc82289727ca4bc1066e477f2",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fd8a5119135fef97403fe38d6801887f",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rudi Assauer",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "name": "Schalke 04",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "eea6d1dfc9649b737fe7fc6bab296e0e",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Berlin",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "name": "Kurfürstendamm street race case",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6ac1b433b8c0e49a0c148fd103aaba19",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Berlin",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4d5beb85c5c192de818001419181e1c2",
+   "subjects": [
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Russia",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "name": "The Khachaturyan sisters",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2cf0a2cb3ca20768e18d972f69521711",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Monique Jacobse",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "name": "Netherlands",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3ca8cd64a182b8690ec6bfe3f83fd6b1",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Switzerland",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7b52fc431ea3a25b9b05eb40b5690ec2",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Daphne Caruana Galizia",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Malta",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ee241fc4ed0e0b2883937c3198a585e5",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ukraine",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "name": "Vladimir Putin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "714c59a54e25a361aaa0f34fb0fc3196",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "724fe25f78d1c090c86a85b879426ac9",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "online-radicalisation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "COVID-19 pandemic",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "991464d144deb32eaf1ec4a475a6cd5f",
+   "subjects": [
+    {
+     "subject": "online-radicalisation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cesar Sayoc",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "name": "Donald Trump",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3da35f24a7aba3531327d1a7a7903895",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Munich U-Bahn attack",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d32920e76a14a3a92418189b7ad9da6a",
+   "subjects": [
+    {
+     "subject": "parenting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "143606ebed6b6574a53136c18297e764",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "community-in-conflict",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Baltic Sea",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "54cc56d0f22326830590f3b375868127",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "China",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Gui Minhai",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Sweden",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b3e7e4b703f9589b3ebf425277aa4be6",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Germany",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7f895e4d1a0d8410a04b8b35f525e1ce",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Paraguay",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "name": "Reiner Oberüber",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "152cc784215cf3505782f2b1bfdfe16c",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b9644c672c54a67272523be14de36d72",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anja Beggers",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6e1210ae98e053ffcf957566e69fbda8",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chemnitz",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "name": "Daniel H.",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4a8332b0b1d2a053b3d791fe6c1227fc",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Germany",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d27ed8cdfde1e68542487ab84c9ba3ec",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Frankfurt",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "name": "Islamic State",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dd562ac2c4fed70c2375ec949f8d6d3b",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "CIA",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Havana",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Havana Syndrome",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a046994e4a6ea278f32b6b34e16d9a92",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "aed3745e81c025a3cf718a6c6d6bb9de",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8dd519b715b209baee71e38fb16322c4",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a021a1506d92c4d08439845211671da7",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Matthias Graw",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7b6e3f8c2f95603442b41d558313d835",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Albert Haidn",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "513a411699bdd60b7ed2c46d970d26b6",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Boko Haram",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "name": "Nigeria",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1137535bfc644728bf7a91f2eb17d9d3",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Iran",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "name": "Maria Torres",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b5f251aa3964f3ba73599bc94ef5574a",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dieter Wedel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8a99546993916198688dcfad705fdfcb",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dieter Wedel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "79d069ad0759e64bcf111ed2fc2a3147",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dieter Wedel",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7b43c5640215554357bf3c8f298dd71e",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "East Germany",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cbd845de0d282590df73a6a1965d4c9a",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gunther Langer",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "name": "Siegen",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8a28ec45286c6ba7c1c40811e0dae296",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "scientific-discovery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "DNA double helix",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "name": "Rosalind Franklin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c85860a628a6c5365f16bd6e7b25f973",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Krailling",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7557f7186b19b22e0ca3f89dffa6ff39",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Israel",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "name": "Yigal Amir",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "name": "Yitzhak Rabin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2f295636488bcb0395a48282adc4d246",
+   "subjects": [
+    {
+     "subject": "public-money-misused",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ferdinand Marcos",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "name": "Imelda Marcos",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "name": "Philippines",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1854fef912573ea7693ad7c1e96a85a7",
+   "subjects": [
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Libya",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Muammar Gaddafi",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "801b849bc61b1bd92314eb725fe6981e",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Madeleine McCann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b721ede7b7888500678b0286a9a16421",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6e77568c64ee844a9d21906a133dc097",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d60666b27c8ab2a90da83150ea49f841",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9c79e0e527f760744a134bc87b8298e4",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3b95614185e90603527251f68dd3c5cd",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:29+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "45bbeb96b333219aa6728767ac30f869",
+   "subjects": [
+    {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Günter Parche",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Monica Seles",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Steffi Graf",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4923365f131e86626b9bc9ef7f9b0a64",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hamburg",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "name": "Jehovah's Witnesses",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1eb8aa78f2b9077c54f0528ffc16e595",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lower Saxony",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c55df5df343cc8d7626984fd12e670db",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "25555c311bdd2bf9cad68fb7c2c89b82",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kevin Spacey",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3cdd7f6809e8410c6b683244ef67149d",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "celebrity-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kevin Spacey",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d0a6e11e2b14fc4a73668299804fd32a",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hamburg",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "291cd9ee5135681a27f81a2ec043b49a",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Russia",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "name": "Vladimir Putin",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fb942c829908177cd2204385fee99e84",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "education-system-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Columbia University",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "63cc4c963f5ce8ac216c294a9e8ccdc7",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hamburg",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "452eb9df766b56731976c9da9c56edfa",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e361e00c0fff0b211d353181f4dd5ac1",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "147a5a00b0742c9aad187e474eb46491",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0735f0dd4c83a0f524a3a61d0da083a0",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "602b683eaa5f32a8eb353f18ef8cde96",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a95e71f92c48515f26beb7a585f916b4",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "40a63b2cfeb4d9d7dbd0089f90b5c9aa",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1afd13d16afdacfa48c071464e24b3d1",
+   "subjects": [
+    {
+     "subject": "employee-embezzlement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "51242fa8cd05d81afa9a0bf51ebb4b25",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "13152f9849920d9ac47bd09d5eda4e3d",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "456b788d58b9f9ea53a63d6297b8c10a",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a653a9ceccb89163494896ea2d08e18e",
+   "subjects": [
+    {
+     "subject": "fashion-and-clothing",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9c65b238118b6bdc09086927b35092ee",
+   "subjects": [
+    {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:24+00:00"
+    },
+    {
+     "subject": "psychology-of-belief",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Berlin",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7fc30e7edb59c36f382354df09056578",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3feea6098140f9d13c3ac8cbbb1f9c18",
+   "subjects": [
+    {
+     "subject": "fashion-and-clothing",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2462a28692e540a264150fb6bfe8cac1",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "offshore-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b03331a30b78147d49fffa339b3ac6b9",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8e7e3b89c6c72f0d88e8b0eeac691333",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "SPD",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c8fe8d0f3ee4b66e890e0a712cddd2e4",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f32ccc5a90ac687012e14e39d2a91916",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8a4910c4a50ea41711d1a17fe6a79007",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e76a8e0e452d6d7eeec07a13bb777041",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d32ca938e3679515bcae0996e6fe3ac4",
+   "subjects": [
+    {
+     "subject": "employee-embezzlement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    },
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9d3da0ef0e1c8cbadd378bbb028b1509",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "07e0e32497f2e8492dbd8f16c6d4c2c8",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0a16af773fc2dcff7d6b2d4c1e4cfca9",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fcc961a53836b751e39266e64b2e8703",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Deutsche Bahn",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48da95a3effe1c5b06098bf457199e21",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7913bda8d16fee46b711af6fb0625a26",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ThyssenKrupp",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "21eea90c8adc33ce8ccea7ab180018db",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Boris Becker",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "name": "Nadja Benaissa",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1e0bfaf2d3c0b2778e817ff5c7a01e98",
+   "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Instagram",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1e720179fd493f62f472e0a63eb394cf",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f3860e4a-623b-4fa9-b7ec-7534ec920256",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Neuland",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d624a3bd-cea4-4061-a2ba-1cea4f65ce85",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7c725d29-e346-4211-9213-83a70dc12039",
+   "subjects": [
+    {
+     "subject": "colonial-legacy",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Congo",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "name": "Patrice Lumumba",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2f5f2496-4ce5-4d5a-9521-f135f0ab4d1d",
+   "subjects": [
+    {
+     "subject": "undercover-and-embedded-reporting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Congo",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "name": "Mobutu Sese Seko",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:54:18+00:00"
+    },
+    {
+     "name": "Patrice Lumumba",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T08:54:18+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9cbae7de-696d-407e-9f06-dd364dd102e3",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Düren",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0d31a20f-6fd5-4078-baad-d19f856c9bf5",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "animal-behaviour",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Claudia Darga",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fdf3734c-35db-4111-be42-9d72c876f51d",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "subject": "terrorism-and-aftermath",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cologne",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    },
+    {
+     "name": "Henriette Reker",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:09:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b5c90e61-5bac-4ed1-8a17-b5a288cd7cf4",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "05e16af6-714a-4bdb-9e89-c0a1e104b262",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "aa1ccd74-b9e7-4b6d-9e5f-5160532a572b",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Trier",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1638b771-a4ee-45e4-8ba2-7af4226bd743",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bamberg",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:45:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1cd41504-f836-457a-aa88-5d306a5dc9e0",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carlo Gesualdo",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1ab2dc9d-8a35-40bc-b719-2c0a8fb9eab3",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "80d13030-0789-407a-b53a-4cab8db19e55",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gil Ofarim",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "name": "Leipzig",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7dfe05bd-6911-4ac0-bf77-61522157bf31",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "WHITE – Geständnis eines Neonazis",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b77c50b6-ac42-47a5-81f4-95940709a10b",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lena Christ",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3779aec1-f6a3-4c7c-b93b-3c035807a676",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lena Christ",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "52485eb7-a9a9-4a83-a0d2-30d791486920",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "SS",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "name": "The Holocaust",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "00875c86-dcf4-463d-b8a8-2b821e37ca53",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b5cf230c-d6a0-4931-8bd2-400eddcf765d",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "44560e21-762f-4a9a-b0a3-706b187e8f71",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "749d282f-af09-4067-8591-73c2796ba8b2",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d33391f1-249d-4aa4-a161-0c40888ab8d7",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e132a40d-c2b4-477a-acac-d1b34794148b",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "69791fe9-3e9e-4b82-920a-240cfec77068",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:06:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4dbf625a-bff7-437d-a585-0975be24405d",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0b3416c2-d130-4e11-939c-52e04251a347",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "86827bda-9ad6-4716-8aab-092b3e9eb09f",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "419aa69e-ef16-442c-b48b-7dd1daf1bc38",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "908e6f7d-8b71-4fb1-b474-521c5a186d62",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1eefe55a-b9c1-4805-bfa2-024abf1cffd3",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "captivity-and-escape",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "13351eba-2b49-44f4-a619-6ce31bbbc83b",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "013812df-37e6-4156-abf9-194b5fa3df3d",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5490fdc9-60a8-4fe9-95fe-0e3ea79c3257",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8ae2e562-3239-4156-9733-d35ee58a9a15",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7ba2f5de-5e66-4063-83c1-220618aeb33a",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2a32029e-32b9-452c-9b2a-6aeeeb27a0d4",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d5658332-25d1-4581-9453-1ad285ede7dd",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7846e02b-f70c-4aba-82d0-93cb4a78b694",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7e00adf3-1be9-41fa-b2d0-240564e262e9",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "41f9ea80-9e0d-4d48-945d-dcd945894cdb",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "486390d3-a3e1-455e-9f7f-681385f887a0",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:03:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bedd489b-31a1-4d3f-a1de-85c8a918bf68",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b2fcd9f5-646d-4636-a824-6b8f716c715d",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "31f943ca-84f9-4951-b0d3-1a307fbc77c0",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2a9865ed-4f49-4b75-844d-b7f6e85707b7",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5cd8b6a0-0330-4edf-9416-1a72ec142566",
+   "subjects": [
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dimitri Todorov",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "name": "Munich",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "866e7e8f-ec5f-4345-958e-7223d2f55d7c",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a807e27c-62bd-447b-88d1-392c340fa92b",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "15645d25-c46f-4ff5-b43f-e4f7baec3ff1",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0f69c464-e501-4ca6-9921-44f5cc71f00e",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2fdbe32c-53cf-43f0-b827-1895dc70dd10",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fac0e21d-6c9a-460f-bfef-96a403f570d2",
+   "subjects": [
+    {
+     "subject": "cybercrime-for-profit",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8b644642-df19-4d53-b990-8c30ee1313c5",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hans Litten",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "name": "Weimar Republic",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "64a75fbf-3c5a-41ed-8119-5a6d646314a5",
+   "subjects": [
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cicero",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "name": "Rome",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "71aa38a4-b2de-41a5-9d45-684e10bbd11f",
+   "subjects": [
+    {
+     "subject": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Islamic State",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e5752cf3-e323-441a-89ef-f2259f994cba",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bandidos",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "name": "Lars Eidinger",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0d7a12f6-bd15-45cb-972a-cb325c3654b6",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "organised-scam-industry",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ghana",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d0d12c37-8c57-40d5-9551-a5568d30504f",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "ZEIT Verbrechen",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8c02647c-a7cc-42fa-8ba5-9c40db2da851",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "making-of-a-work",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mariko Minoguchi",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "name": "X Filme",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d0e42d10-a5af-4248-9bda-9670c63034b5",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "eb906f85-edce-4903-94d9-ab3379a4136a",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Aptamil",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "name": "Rossmann",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d776ab9b-eb7e-40ee-b17a-0716db65186f",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f49073cc-5416-4aef-b907-ef542a8a325c",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c668039b-e4eb-46c7-b739-88a66b7baef4",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0faf2b02-f987-44c0-9969-4735b7dbaaae",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "88ffd0b5-096b-45ea-b1b5-267d957b4002",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d64367a7-1a69-4f03-b96f-ac1322165e37",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2f88a179-4e5d-42df-b0bd-8cd0355c711c",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1f664400-79dc-4997-95de-be5607d15f4d",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "92550ec6-05f3-41af-8393-9322144d44aa",
+   "subjects": [
+    {
+     "subject": "employee-embezzlement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c4eae95c-cfcb-405d-ab31-ec98a3f307f7",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c82474df-35d3-4244-a179-7661545806b7",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a9642ce4-30da-442c-a54d-9098d99ecddf",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c4be3a7f-ebdf-4235-b535-6e2d5214bd24",
+   "subjects": [
+    {
+     "subject": "gentrification-and-housing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Berlin",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "24af254e-c33b-48de-93a1-ae3039fe283c",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    },
+    {
+     "subject": "personal-transformation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a0c411ed-ec35-4f8d-abbc-5f996f0295d2",
+   "subjects": [
+    {
+     "subject": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d2a4cb6c-5fc4-4f96-948d-32b0a74d128d",
+   "subjects": [
+    {
+     "subject": "transport-and-infrastructure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9cb15c40-fdba-42f0-80d2-9754ebc5cf86",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0babef36-cc32-4066-8d9e-21d27767cb6d",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3232d8c5-4dd5-48fc-b69b-ec1b56ad9e60",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b315a31f-c3d4-4fe5-8c3f-c6e69407325e",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "319d93f9-ca3e-4592-9362-8959822bf33a",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "afb700ed-0f40-4ab4-a211-157731813778",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4ea3676b-17c0-4a0c-9a8e-8384d0afcf91",
+   "subjects": [
+    {
+     "subject": "transport-and-infrastructure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "ageing-and-mortality",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "eebb2116-0cab-40d3-925a-92671cc3910b",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "531b6090-48da-4dcd-b103-f7b0d9f2a7c9",
+   "subjects": [
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7476a71f-2bc6-4c9b-ab31-afb3f85ec9ae",
+   "subjects": [
+    {
+     "subject": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Salem witch trials",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "79bb5ba0-2bab-4b11-9e2f-ce5e213a71ad",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wirecard",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f0743a69-a403-4694-a5f3-5d334b839fb0",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f163e856-3346-4348-9c41-1ce4bb525de6",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6547cd01-8dc0-487c-8426-70a833659702",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "France",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "name": "Gisèle Pélicot",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "56e3869f-4a25-43e3-a02f-0bd49f8e9edd",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "ageing-and-mortality",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f876dda1-c16e-4f8d-8465-2bc53e66d65c",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bern",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "name": "Mirjam Berger",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ef7fd272-5ecf-4a50-93b6-b52162e8b402",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fc1fb3ae-bf9d-45cf-bb61-ef67df0c8711",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2d4026b3-fc8c-455b-a445-3e080fdec608",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Monika Weimar",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "abf336d4-0681-4b13-a776-9b46f43eb442",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Heidelberg",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "634a705a-3352-4030-b6f3-229e6b8dbcce",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Achim Lippoth",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "14044063-550e-4a59-aa9d-59aad2dc2254",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bruno Lüdke",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a1ababc5-286a-4a14-810f-fb1480b37a8c",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d0c14cf6-b9aa-4386-b9ca-42792f3a8ad5",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ef62c1b2-e9ad-4a40-909a-78b3a9c076cd",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "70c13ff5-5e2b-4f55-acd3-4b71cffec1ef",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cb2b2443-8e6a-4f72-8ddd-45f1b984e9e8",
+   "subjects": [
+    {
+     "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "52dfdcc8-8734-4cdf-8533-0b602cc92e4a",
+   "subjects": [
+    {
+     "subject": "stranger-homicide",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "69f6cba5-4410-4b57-ac56-c0818fe9143f",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Martha Marek",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f11bb80a-e30b-4f56-bf60-d29bb34375df",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4764eb99-ad6f-4768-921e-e8f48af3b80c",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c5c0650d-7dd9-41d1-b027-4b1a5d159c4c",
+   "subjects": [
+    {
+     "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christine Schmitz",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "name": "Médecins Sans Frontières",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "name": "Srebrenica",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "74219c5a-47b8-4d5d-b0cb-06706ea7f878",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bosnia",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "name": "Srebrenica",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "de617862-1270-4fb5-ad27-e52866c032b5",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Berlin",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "name": "Ernst Gennat",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5a29d139-374f-4d03-b133-95870e385711",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "761e52c4-a953-4b19-9f70-e9e4f62b4808",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nazi Germany",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "name": "Nuremberg trials",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "baba0004-c235-4dfe-9e2c-64e3705fe224",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fe87c438-dfef-468d-8b23-07019c9a440c",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "body-never-found",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:55:09+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Azores",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "433c4367-46d1-4381-90fa-a290f373ff85",
+   "subjects": [
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Franz Čapek",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "33b2db31-a12a-4783-a895-22e7f72ad6ff",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hotzenwald",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d2323cc9-3da1-4dd8-a057-85ddd858c977",
+   "subjects": [
+    {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cambodia",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "name": "Pol Pot",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "name": "Tep Khunnal",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "678d883b-9f42-473c-bef0-ffdf49dee049",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Iraq",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "666d98f4-5bd8-4811-a448-b5618bf9574b",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6c11cb7b-5301-4059-aaf4-7cbf73f38874",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dc9fc3db-13c9-415a-a224-cae2c117e0c3",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "death-penalty",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "China",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b72f3fa4-7e09-46b6-8452-e293f34809b7",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gulf Livestock 1",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4fc6e86e-8a8e-4f81-a682-5c0b162fa6eb",
+   "subjects": [
+    {
+     "subject": "investment-fraud",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "charismatic-con",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "648b4fd1-08d2-487a-8ef9-eb496aea5735",
+   "subjects": [
+    {
+     "subject": "gentrification-and-housing",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Munich",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f6251114-a544-492d-b2ee-c9a20fd78b38",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "961e14a4-76a8-4a71-812f-4d047ceeaa84",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "14cfdd74-1e2e-4e5a-96b3-10323b14069d",
+   "subjects": [
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bbdd88aa-f383-427a-9bdd-fdccfc91139e",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "804dee10-aa0e-45de-93c7-fb289cc0a552",
+   "subjects": [
+    {
+     "subject": "education-system-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b3a27c89-961c-4cfd-bf6f-0821e4b8b92f",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "96082e63-b659-477b-8d6a-ec9d27f3a460",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dbf3d027-0393-4d4e-ae6e-09372aea9e64",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:26+00:00"
+    },
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bavaria",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:08:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f92fd354-82cd-4181-bb3b-feafcbed7f1c",
+   "subjects": [
+    {
+     "subject": "public-money-misused",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    },
+    {
+     "subject": "employee-embezzlement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "75cbff97-1fce-40ac-953a-9218cdd74b35",
+   "subjects": [
+    {
+     "subject": "estrangement-and-reconciliation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "parenting",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "65be6787-48f1-45c2-aeb0-91b52e875aa8",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e6ecd0b9-96c3-45ea-8c61-5bb976176ac3",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "39ac3d4e-0d73-4705-9401-6332ba259c62",
+   "subjects": [
+    {
+     "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "transport-and-infrastructure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "early-hacker-history",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c5aa35af-5167-40e7-a194-4a1bdb44f400",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "42a7711a-aa26-4416-afa9-f97d433d1ab0",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Letzte Generation",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7307ca6d-2f8f-4130-9b0b-7d17e333453c",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
+    },
+    {
+     "subject": "sports-scandal",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e793211c-3dd9-41e3-88c9-cb70f5f5c4aa",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8b062e44-1db9-4023-9643-3c0afa603a3a",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "eae838c2-c8bd-490a-922c-d0de4060f1f8",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "be164d2d-3ce5-44b9-a3d9-c921c186853f",
+   "subjects": [
+    {
+     "subject": "sports-scandal",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "72f4219c-de54-4df5-8e59-42b1c8356c7b",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a30927d5-6b23-4cdf-9e2b-b589bb637c53",
+   "subjects": [
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4b4289f3-6f7c-4db1-b094-29ae6c62adc3",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5794a8ce-bef9-4520-ab34-95e66a99df9b",
+   "subjects": [
+    {
+     "subject": "survival-story",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Berlin",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c4c144e0-bafb-4d58-b324-6f64000fef01",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "ai-and-society",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cb4a2a47-9a65-42fb-bd10-d82878a9154d",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d195eb28-0b24-44e1-90f1-5aa90e6a184c",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Baden-Baden",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "name": "Franz Burda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e0882e52-563d-435a-98ad-6ca1a16aed92",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lebanon",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "name": "Rami Bebbo",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1021f098-26cb-46df-8a6b-b01c5b44da28",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gil Ofarim",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "de88794f-2350-444b-b0c4-f9a8c59e2ada",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    },
+    {
+     "subject": "media-criticism",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeffrey Epstein",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:55:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "89fbfd96-fce2-4937-a4a6-2a7b46f416de",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a1f6eca8-5421-4189-9574-36515b0a7722",
+   "subjects": [
+    {
+     "subject": "food-and-drink",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gaza",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1baf87f2-a784-474b-803d-57af7ac31e9e",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gaza",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "name": "Hamas",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7858cd76-8171-4329-8970-3f3d1624f703",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gaza",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:12+00:00"
+    },
+    {
+     "name": "Mahmud Almadhoun",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b3b6f753-4f70-40ad-b36c-85ad8702f236",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:26+00:00"
+    },
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gaza",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:26+00:00"
+    },
+    {
+     "name": "Israel Defense Forces",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T23:08:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3ec858f6-6581-4a07-863a-65f104982fb5",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brigitte Macron",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "name": "France",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e4aad16a-fce2-4092-be15-f1eed86c017f",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "London",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bdcd66fb-0a30-483d-8d22-0d5575642fbf",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:56:36+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:56:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Der Goldene Handschuh",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:56:36+00:00"
+    },
+    {
+     "name": "Fritz Honka",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:56:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9cebf03d-bc8e-422a-b5de-40ae62f2a63e",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5ccef9a1-4d9f-46fe-9733-1e8410f21784",
+   "subjects": [
+    {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:26+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Liv Heide",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-29T23:08:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bff1ead1-d8a5-4c93-b793-c6157047f272",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bavaria",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:10:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f38a1160-7c27-4d47-958c-144e56c9c736",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bavaria",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:48:14+00:00"
+    },
+    {
+     "name": "Chiemsee",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:48:14+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a33ed24b-4bc9-4dc2-8168-3197e7ef167d",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Potsdam",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T23:07:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b4e474ce-b828-4714-b7a9-80f3439dccaa",
+   "subjects": [
+    {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Egon Erwin Kisch",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T23:04:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1d9034a0-44a4-411f-82d7-b7d56490ff2f",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fritz Haarmann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-29T08:46:42+00:00"
+    },
+    {
+     "name": "Hannover",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-29T08:46:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4cfe6cbc-4940-4fba-8819-34814e976e06",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:56:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Großglockner",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:56:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "aa99ff42-2b87-4736-8aa5-52b6e0082ce3",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    },
+    {
+     "subject": "medical-deception",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:47:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "667a857b-c061-40d5-a847-8ad00e1a4045",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:26+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4b453d58-6513-4f08-ba5e-a15031e2b6e6",
+   "subjects": [
+    {
+     "subject": "climate-change",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T08:56:43+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Peru",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-29T08:56:43+00:00"
+    },
+    {
+     "name": "RWE",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-29T08:56:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "614a7f65-44c3-4d5c-a9d6-405c6b3df413",
+   "subjects": [
+    {
+     "subject": "everyday-mystery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-opus-5",
+     "at": "2026-07-29T23:08:26+00:00"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,985 @@
+{
+ "slug": "cocaine-rhinestones",
+ "title": "Cocaine & Rhinestones",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "artist-band-biography",
+   "count": 16
+  },
+  {
+   "slug": "music-industry-business",
+   "count": 5
+  },
+  {
+   "slug": "song-and-album-origin",
+   "count": 5
+  },
+  {
+   "slug": "musician-downfall",
+   "count": 3
+  },
+  {
+   "slug": "books-and-writing",
+   "count": 2
+  },
+  {
+   "slug": "gendered-constraint",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
+   "count": 1
+  },
+  {
+   "slug": "music-scene-movement",
+   "count": 1
+  },
+  {
+   "slug": "talking-about-music",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=23",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:40+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ernest Tubb",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=26",
+   "subjects": [
+    {
+     "subject": "invented-category",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:22+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:15+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Loretta Lynn",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=28",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:28+00:00"
+    },
+    {
+     "subject": "musician-downfall",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Spade Cooley",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:24:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=30",
+   "subjects": [
+    {
+     "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:44+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobbie Gentry",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=32",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Merle Haggard",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "name": "Okie from Muskogee",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=34",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Louvin Brothers",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=36",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Shelby Singleton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=38",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:31:45+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:31:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeannie C. Riley",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:31:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=40",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:40+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Harper Valley PTA",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:40+00:00"
+    },
+    {
+     "name": "Tom T. Hall",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=42",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:22+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buck Owens",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:22+00:00"
+    },
+    {
+     "name": "Don Rich",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=44",
+   "subjects": [
+    {
+     "subject": "friendship",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:28+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buck Owens",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:24:28+00:00"
+    },
+    {
+     "name": "Don Rich",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:24:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=48",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Judds",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:57:44+00:00"
+    },
+    {
+     "name": "Wynonna Judd",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=46",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Doug Kershaw",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "name": "Rusty Kershaw",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://cocaineandrhinestones.com/?p=50",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ralph Mooney",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://cocaineandrhinestones.com/?p=771",
+   "subjects": [
+    {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "talking-about-music",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d6ac85df-c77c-4739-a83e-1ac974fe3099",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Starday Records",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "da7af0b2-7b3a-48da-94c4-49d07632893b",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:31:45+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Owen Bradley",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:31:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a0e0d916-8a08-460f-825b-02f05eb154ef",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nashville A-Team",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T14:56:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a15607db-dc66-455d-9995-7d482f53f1eb",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:22+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Jones",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9475c57f-c638-4ec1-b009-fe7ac314d178",
+   "subjects": [
+    {
+     "subject": "musician-downfall",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Jones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:24:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e057705f-69bf-44e4-b434-ad15fb102d5d",
+   "subjects": [
+    {
+     "subject": "musician-downfall",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:42+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Jones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1324a4cf-47ef-41b6-9f24-925401bab993",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Jones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "name": "Pappy Daily",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1b1f87e0-2087-4286-bede-04b1aa00fe2c",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dallas Frazier",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cb5e372a-eef0-475d-bc66-7a7eec4486e5",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tammy Wynette",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1a04bcf0-c99a-42e7-8d77-474aa6afad82",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:31:45+00:00"
+    },
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:31:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tammy Wynette",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:31:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ada46495-fc5e-4934-977f-6396c0c9ceba",
+   "subjects": [
+    {
+     "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:40+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Jones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:40+00:00"
+    },
+    {
+     "name": "Tammy Wynette",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6b2b0140-f523-4cd1-b9b9-50830721519f",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Jones",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:22+00:00"
+    },
+    {
+     "name": "Tammy Wynette",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "615b7ff2-ca1a-48b9-9eae-dd6e0e9612de",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:28+00:00"
+    },
+    {
+     "subject": "music-industry-business",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Billy Sherrill",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:24:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "53463bfd-0b3c-4ef4-b96a-b5a3c45b550c",
+   "subjects": [
+    {
+     "subject": "song-and-album-origin",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Jones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:42+00:00"
+    },
+    {
+     "name": "Tammy Wynette",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ead3ed5e-3701-47a4-8934-4365856a16e1",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "subject": "musician-downfall",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Jones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "929bd973-bb98-4b07-b11b-932e9b7f03bc",
+   "subjects": [
+    {
+     "subject": "musician-death",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    },
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:04:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Richey",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:00:01+00:00"
+    },
+    {
+     "name": "Tammy Wynette",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "694814cb-15e2-42fd-af81-efe63c3d0afc",
+   "subjects": [
+    {
+     "subject": "musician-death",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Jones",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5404563d-d266-43cd-a38d-3d92145c6d35",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:31:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b5cc7bed-d824-4b12-b59b-2f63a93c97d1",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:03:11+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dae5cb02-9f32-464a-a484-2c25f902b705",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:54:17+00:00"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1307 @@
+{
+ "slug": "unfinished-justice",
+ "title": "Unfinished Justice",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "unsolved-murder",
+   "count": 11
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 9
+  },
+  {
+   "slug": "missing-person",
+   "count": 7
+  },
+  {
+   "slug": "serial-offender",
+   "count": 6
+  },
+  {
+   "slug": "child-victim",
+   "count": 3
+  },
+  {
+   "slug": "intimate-partner-homicide",
+   "count": 3
+  },
+  {
+   "slug": "kidnapping-and-captivity",
+   "count": 2
+  },
+  {
+   "slug": "murder-close-to-home",
+   "count": 2
+  },
+  {
+   "slug": "stranger-homicide",
+   "count": 2
+  },
+  {
+   "slug": "captivity-and-escape",
+   "count": 1
+  },
+  {
+   "slug": "family-annihilation-and-parricide",
+   "count": 1
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 1
+  },
+  {
+   "slug": "survival-story",
+   "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "https://api.spreaker.com/episode/51688404",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/51697476",
+   "subjects": [
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lindbergh kidnapping",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/51726774",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:26:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kari Baker",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:26:32+00:00"
+    },
+    {
+     "name": "Matt Baker",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:26:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/51778678",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Annie Borjesson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/51803775",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:33+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/51856083",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jessie Nicole Morris",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/51921878",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    },
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Papin Sisters",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/51932092",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Edward Robinson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/51995222",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52020368",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Isdal Woman",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52087306",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:26:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alonzo Brooks",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:26:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52093440",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Maria Ridulph",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52149138",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:33+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52213233",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:12+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jaclyn Dowaliby",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52219699",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kassandra Ramirez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52270948",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52279128",
+   "subjects": [
+    {
+     "subject": "stranger-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52293443",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ellen Greenberg",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52293468",
+   "subjects": [
+    {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Austin yogurt shop murders",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:26:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52372615",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Carole Sund",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52372688",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:33+00:00"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:24:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52488751",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:12+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brittany Stykes",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:19:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52532598",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Missy Bevers",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52545173",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:36+00:00"
+    },
+    {
+     "subject": "captivity-and-escape",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Elisabeth Fritzl",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:36+00:00"
+    },
+    {
+     "name": "Josef Fritzl",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52645209",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:54+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Winston Maxey",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:54+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52722720",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52792485",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:26:32+00:00"
+    },
+    {
+     "subject": "survival-story",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Terry Jo Duperrault",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:26:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/52963772",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Narumi Kurosaki",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:17+00:00"
+    },
+    {
+     "name": "Nicolás Zepeda",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/53139596",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/53247292",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tina McQuaig",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/53311096",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Theresa Ann Bier",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/53498188",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:36+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "JJ Vallow",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:02:36+00:00"
+    },
+    {
+     "name": "Lori Vallow",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:36+00:00"
+    },
+    {
+     "name": "Tylee Ryan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/53630229",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:54+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:54+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kyron Horman",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:54+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/53785234",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gannon Stauch",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/53991726",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/54313349",
+   "subjects": [
+    {
+     "subject": "body-never-found",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Natalee Holloway",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/56605901",
+   "subjects": [
+    {
+     "subject": "stranger-homicide",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kaitlyn Ashley Lynch",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "name": "Lance Mason Miller",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/57704100",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    },
+    {
+     "subject": "kidnapping-and-captivity",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jayme Closs",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/58064450",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Stephanie Wasilishin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/58060957",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:36+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sedona",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:02:36+00:00"
+    },
+    {
+     "name": "Stephanie Wasilishin",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/59331576",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Buckeye, Arizona",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:02:36+00:00"
+    },
+    {
+     "name": "Daniel Cornelius Robinson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/60680101",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:54+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "West Memphis Three",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:54+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/60736212",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Delphi murders",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/63512298",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "JonBenét Ramsey",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/63584725",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Linda Hazzard",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/64742311",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Paul Richard Davis",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/66305745",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    },
+    {
+     "subject": "child-victim",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kei'Mani Latigue",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/66332553",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pauline Sowry",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/66352037",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nick Cordova",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:02:36+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://api.spreaker.com/episode/68206990",
+   "subjects": [
+    {
+     "subject": "murder-close-to-home",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:54+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lisa Ann French",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:54+00:00"
+    }
+   ]
+  }
+ ]
+}

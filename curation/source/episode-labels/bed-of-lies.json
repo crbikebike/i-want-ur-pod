@@ -1,0 +1,888 @@
+{
+ "slug": "bed-of-lies",
+ "title": "Bed of Lies",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "romance-and-catfishing",
+   "count": 6
+  },
+  {
+   "slug": "informant-and-undercover",
+   "count": 5
+  },
+  {
+   "slug": "trailer",
+   "count": 5
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 4
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 3
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 3
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 2
+  },
+  {
+   "slug": "introducing",
+   "count": 2
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 1
+  },
+  {
+   "slug": "war-crimes-accountability",
+   "count": 1
+  },
+  {
+   "slug": "whistleblower",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "gid://art19-episode-locator/V0/8w_XCuIGv8-joj9LWEIdqoKSpviBnvpJuOBOkbcxMKI",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/esocLWxwUc13lI1vgzKQyq7r9ish7zJcMI7U8roQR5A",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:32:46+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:32:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Z_aKX-tCG3ovA7vKOTCiX88dg_Q99VGHYHr7Lq_U440",
+   "subjects": [
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/SuKNQolGWpb8HNl6nEkoHxF4HP8IoJhmKoEabguFPoc",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:05+00:00"
+    },
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/OtDxx9d48OZ_Fbh-3E_XJt6adpcFR9YL7kqtwYHXKXo",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:32+00:00"
+    },
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/5g7BmamOmL3OWdKIgMOp2F_ejILL7YksSYAkUBIrxwg",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Xh02JtXwqKJAArmsXk56cFfVT6rkPJF83IFevEYZ0Fk",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/huJfwHC1MoWVnA9n4Vor7LtW7HVt_0pAHmulxGWzT1E",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/HKIhriqWHMjbhXg5XLd0yGCGZQzHKpYi21dHccx5C4A",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/mOk_Pk8Hghj0bmcheE8vydomS6zDUeb38e6c-K5jilQ",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:32:46+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Louisiana",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:32:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/2gwGol2elKIes6M_p6EqC8aKV0vKarkRwIACwXacIok",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:32:46+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:32:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/KF1KYD_Qw87-96RGzzN6JfMCnwTIIsEPX2i5brsCp0U",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:34+00:00"
+    },
+    {
+     "subject": "medical-research",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/isKGRUm2lbLzzPyGLtCJzZlA8kOKl2muRjP7WXnXHoY",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:05+00:00"
+    },
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/eBbJMhcpEX9_p2Zjh0052nVNuJP1k46RnCcOiqyfJVQ",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:32+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "UK infected blood scandal",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:25:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/ZpF4bL6jmKiPyWjpyjR-EaSUeMAGKX4zjJiMekEwdr4",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:42+00:00"
+    },
+    {
+     "subject": "whistleblower",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/Wvc9GBNic9HAFTUmhmZGuAUNIaMj6-PeQhi3TWevbL0",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/4zu0m5048_TMq1xNw7AKIhZ8YGulRY3rSEVH-XeVVLs",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "subject": "romance-and-catfishing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/OzcMdtegM31qBuHRQcW_OK0Pyi95jN8lJs8D5kumb4o",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:34+00:00"
+    },
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jehovah's Witnesses",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/aCSKWPG4oIqnvh-FFPZNpLU5qW3GbzTLDrR8amnVxY4",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:05+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cara McGoogan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "gid://art19-episode-locator/V0/d1hxhYZgRDXUlYN8Gfzy3-25bAYo0pAlhGEOWntKkaQ",
+   "subjects": [
+    {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:32+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "UK infected blood scandal",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:25:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6652307c55efd700121897e5",
+   "subjects": [
+    {
+     "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:42+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brian Langstaff",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:58:42+00:00"
+    },
+    {
+     "name": "Infected Blood Scandal",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6790a5861ab6c8a367715f31",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Northern Ireland",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "679b7f1d2ca2b62f9790314c",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "IRA",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "679b7f475ab37be0dfa0dd63",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:32:46+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:32:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67a228109cd0aa28f73fe628",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:34+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:34+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ulster Defence Association",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:57:34+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67a2355ba78c5e0767cdf829",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:05+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:05+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Provisional IRA",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67a2366a9a67c6bc4ec40d01",
+   "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:32+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:25:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67ca13edbaaeff02dcba3ce4",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:42+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brian Nelson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:58:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67dd806a51430250f5f3ff4e",
+   "subjects": [
+    {
+     "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Freddie Scappaticci",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:06+00:00"
+    },
+    {
+     "name": "MI5",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:08:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67e80ecc59009cabb2e981c3",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "67f9390dd67315f9f40043b3",
+   "subjects": [
+    {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    },
+    {
+     "subject": "institutional-coverup",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Stakeknife",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6920954453b254a5382e4f57",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:01+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Julie Ward",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "69299e5d635c16d6406b0b5b",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Julie Ward",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ]
+  }
+ ]
+}

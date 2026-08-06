@@ -1,0 +1,1719 @@
+{
+ "slug": "70-million",
+ "title": "70 Million",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "immigration-and-borders",
+   "count": 12
+  },
+  {
+   "slug": "trailer",
+   "count": 7
+  },
+  {
+   "slug": "law-explained",
+   "count": 6
+  },
+  {
+   "slug": "introducing",
+   "count": 4
+  },
+  {
+   "slug": "prosecutorial-power",
+   "count": 4
+  },
+  {
+   "slug": "addiction-and-recovery",
+   "count": 3
+  },
+  {
+   "slug": "elections-and-voting",
+   "count": 3
+  },
+  {
+   "slug": "homelessness-and-poverty",
+   "count": 3
+  },
+  {
+   "slug": "prison-life",
+   "count": 3
+  },
+  {
+   "slug": "protest-movement",
+   "count": 3
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 2
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 2
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 2
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 2
+  },
+  {
+   "slug": "reentry-after-prison",
+   "count": 2
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 2
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 1
+  },
+  {
+   "slug": "disability-and-access",
+   "count": 1
+  },
+  {
+   "slug": "education-system-failure",
+   "count": 1
+  },
+  {
+   "slug": "immigrant-experience",
+   "count": 1
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 1
+  },
+  {
+   "slug": "mental-health",
+   "count": 1
+  },
+  {
+   "slug": "private-equity-and-debt",
+   "count": 1
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 1
+  },
+  {
+   "slug": "surveillance-and-privacy",
+   "count": 1
+  },
+  {
+   "slug": "systems-and-infrastructure-design",
+   "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "03a60ccaa6f04277a742c5a1aa01dd90",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dc04551f910c4e42a907293fa1fc2010",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e749349eb51b489eac27ecee6fa33857",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:40+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Pima County",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b654274293dd4b7bb2cf7c49d0bf5580",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:35+00:00"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d7e15c45aa5c482c8085423609651e9c",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:48+00:00"
+    },
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:48+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Houston",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:14:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "326027df195541d8b86ee53c3dc00736",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ad1a60034a20469ea247095ceb12ddc9",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    },
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2fa65ba8b3f8417283b26a5cad908d9b",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "016153412f49476db4a5e36cd10402d6",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0740e4437a4e43349969d5d69038690c",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Miami-Dade County",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ef84537217d9485f9341bf7eea6d18ef",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:40+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "New Orleans",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "be72318fe6494e60a658d2c12136f578",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:35+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1a8153109a024babac4ff19e0c6371a1",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6a97de023234403084da4a8bd034ef3b",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:48+00:00"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:48+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "New Orleans",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:14:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dc5e7a38da884973bd27e943c74df364",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    },
+    {
+     "subject": "disability-and-access",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "11cf33d520e249b598c91657529f7b8e",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tamiki Banks",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:45:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0840e4db388440a9a81b3f0aafece4b8",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    },
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Brown",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:19:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cd20e94d-92c5-479f-b42c-e900bf055e97",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mark Denny",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b44c0b43-3c83-4bf1-9731-cc28aa213eff",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:59+00:00"
+    },
+    {
+     "subject": "reentry-after-prison",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Felonious Munk",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:59+00:00"
+    },
+    {
+     "name": "Terry McAuliffe",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "efeeb78e-4f57-4bc9-bc8c-260432fea72b",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Shandra Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ce3710eb-7f0a-4824-b8ef-a3d54e4ae283",
+   "subjects": [
+    {
+     "subject": "reproductive-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:35+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Diane Wilson",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-30T14:45:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d0c73018-4062-48b4-922e-91d1c33d3005",
+   "subjects": [
+    {
+     "subject": "systems-and-infrastructure-design",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Palm Beach",
+     "kind": "place",
+     "confidence": "low",
+     "at": "2026-07-30T15:14:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "629ae472-a0d5-473d-a448-5e6b75320bef",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f76a8c88-f69a-40c7-a6c9-f819b945dae4",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "44a3230d-ac1a-46b7-8481-479b9ac8d625",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alvin Hall",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:46:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "150e531c-6c25-465e-a05a-e8a05fe5899a",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Howard III",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:45:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9e90fef2-aa2e-447b-aef3-b09a641ad0c8",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    },
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "289123e8-0a6f-4495-b4eb-70533c64733a",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Detroit",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8f31817e-c098-487a-9259-1da0aaca13f5",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b6497250-5892-4794-86e8-5f0d26392791",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:40+00:00"
+    },
+    {
+     "subject": "addiction-and-recovery",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Penobscot Nation",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f41faa94-d2c9-4bab-9dc8-5745e9e4a737",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e1daf544-4493-4284-8ddb-7184b99886c9",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:46:27+00:00"
+    },
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:46:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "39e2c792-62e5-4c6c-908b-07e0182369c7",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:48+00:00"
+    },
+    {
+     "subject": "medical-system-harm",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:18:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sean Wesley",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:14:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "62199b7d-3797-4c45-9efd-8b01f3f7ce30",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b4f8ad27-b133-48a2-897f-c3f343ac4755",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    },
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "de4338d4-9cfc-47e4-8fe6-bfea119a43ed",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e4b5a73c-42be-4d76-a2e3-77a669d35188",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "09fd04b0-a3c7-44f1-baf4-2415c9aa2e02",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1825d5f6-7983-49a9-83b6-84c0e9b5effa",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5cbdce75-a963-4b2d-af12-cc576a8eaadb",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cook County",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ed19069f-200f-4a62-879e-118e4bd8db42",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7e38e510-5f50-4298-a995-d329ff0acf6d",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:46:27+00:00"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:46:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bc764b5d-faf6-4462-b589-eeadc33f1f3c",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:48+00:00"
+    },
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Project Greenlight",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T15:14:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bb13f11f-91a9-4c33-9965-0633e7d88413",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2a5f0fd3-e2ba-4296-9253-5e8e40c77c06",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    },
+    {
+     "subject": "protest-movement",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "dc4a0a18-77f4-4fcf-92e1-52b1d7f25854",
+   "subjects": [
+    {
+     "subject": "mental-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "94ccfb95-4aa0-4939-af39-6d1eaf860674",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Texas",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:10:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "433d5632-a9b0-4ec6-a405-dea0ede1bce3",
+   "subjects": [
+    {
+     "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:59+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Oregon",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6712b210-d871-440f-a595-03792f9f7bf0",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7e20710a-4b17-46e4-b6d8-9b2e860ae0bc",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:40+00:00"
+    },
+    {
+     "subject": "elections-and-voting",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Maxwell Alejandro Frost",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:40+00:00"
+    },
+    {
+     "name": "Satana DeBerry",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:53:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8ca512e3-62dd-401e-90d5-4cccccd75f26",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:46:27+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:46:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "40d52bbb-5fb7-40b2-bd60-ce25a2196eab",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:14:48+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:33:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Brookside, Alabama",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T15:14:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4961b2b4-0bb6-4494-a6fd-0301cd24136a",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b50a9559-a69e-4e3d-a91d-940afe1e1741",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    },
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b21d6061-598d-430c-ba63-2473e36142a7",
+   "subjects": [
+    {
+     "subject": "homelessness-and-poverty",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "97e4adc6-1706-4009-80a2-925217e8fc86",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "90cb7f90-b1a6-4414-b57c-3da4403448dd",
+   "subjects": [
+    {
+     "subject": "disability-and-access",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:59+00:00"
+    },
+    {
+     "subject": "education-system-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Texas",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4a0cbf48-b8dd-4cb4-9372-5f31a318d4b4",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:39+00:00"
+    },
+    {
+     "subject": "private-equity-and-debt",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b7cba93a-8610-4343-b614-c1e391c69710",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:46:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6c5452c7-3fc8-47af-b84a-6f8cb0fe5a8b",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "01199ee4-7a67-4580-8857-7c77b4d2bb71",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:47+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "22e60465-ea5d-4a23-887c-4d795067fe91",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:59+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "55c0d2cc-aa11-41fb-86c4-c840ed860a06",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Vicky",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:10:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "68c084f1-f776-4b86-a4d5-2830a1329a6a",
+   "subjects": [
+    {
+     "subject": "gender-identity",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:19:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Immigration and Customs Enforcement",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:19:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e425fe87-62c2-4a99-98bb-897239ab150d",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:46:27+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:46:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Angel Island",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T14:46:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "69137a48-67f1-44c9-89b0-487050c57489",
+   "subjects": [
+    {
+     "subject": "immigrant-experience",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:39+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a37d5d57-a97a-4751-93df-e0133624ec84",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:47+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jesse Alejandro Cottrell",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-07-30T15:15:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "db01898d-ed85-4939-8ab5-733dba3733c8",
+   "subjects": [
+    {
+     "subject": "parenting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:45:43+00:00"
+    },
+    {
+     "subject": "immigrant-experience",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e5708977-5ca3-46a6-afc8-c77903564ef0",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "U.S. Immigration and Customs Enforcement",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:18:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c59787ed-867e-4aad-a6dd-835fcbe980e2",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    },
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:18:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "U.S. Immigration and Customs Enforcement",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:18:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f620751f-be4e-4d0c-bd2a-22366bf3777c",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:42:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rosie Read",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:42:59+00:00"
+    },
+    {
+     "name": "Wyoming",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:42:59+00:00"
+    }
+   ]
+  }
+ ]
+}

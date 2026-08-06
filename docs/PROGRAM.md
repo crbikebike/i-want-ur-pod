@@ -152,12 +152,22 @@ React + localhost write API. Four jobs, all day one: a worst-first review queue,
 ### Phase 3 — Deep labelling runs
 Batched relabel with escalation. LLM arc detection with confidence. Subject extraction everywhere, confidence-gated so a subject appearing once is dropped as noise. Reviewed through the phase-2 queue, lowest confidence first.
 
-**Gate:** every show reaches depth 3. Corrections from review are feeding back into run prompts.
+**Gate:** every show reaches depth 3. Corrections from review are feeding back into run prompts. ✅ **Closed 2026-08-05** — 275/275 at depth ≥ 3 (167 at 4); `agreement` filled on all 5,195 doubtful labels by 3-vote escalation; the label queue writes human verdicts to `docs/briefs/corrections.md`, which every labelling brief cites. See `docs/HANDOFF-phase3.md`.
 
 ### Phase 4 — hfab publisher
 Always-on agent: comb feeds, label new episodes, publish incremental releases to R2. Auto-publishes labels. Alerts on anomalies (new theme appearing, show going silent, confidence dropping). Holds arcs and vocabulary changes for approval.
 
-While combing, it also fills in episode duration and re-fetches descriptions at full length (the 2026-07 run truncated them at ~250 characters, which caps subject-extraction quality). It never fetches or stores audio URLs.
+**What the comber must do on every pass**, accumulated as each phase discovers it:
+
+| Job | Why |
+|---|---|
+| New episodes → label them | The point of combing |
+| Fill in `duration_s` | Absent from the whole corpus; browse needs "6 parts, 4h 20m" |
+| Re-fetch descriptions at full length | The 2026-07 run truncated them at ~250 characters, which caps subject-extraction quality |
+| **Compare `<itunes:image>` to `shows.artwork_url`; on change, update it and stamp `artwork_updated_at`** | Publishers replace cover art. Apple serves covers with `max-age=16480651` — 190 days — so a client that has one keeps it until next year. The API appends `?v=<artwork_updated_at>` to bust that, but only the comber can notice the change. Note `feeds/*.json` does not currently capture the feed's image at all, so the comber has to start recording it. |
+| Stamp `artwork_checked_at` whether or not it changed | Lets it re-check the longest-unchecked shows rather than re-walking all 315 |
+| Notice dead feeds and shows that stopped publishing | Fills the maintenance queue in the workbench for approval |
+| Never fetch or store audio URLs | They belong to the host and rotate |
 
 **The publisher's job is depth, not recency.** The app is already current between releases because store-first reconcile reads each show's live feed on open — it has to, in order to resolve audio at all. New episodes therefore appear immediately with regex arcs; the publisher is what later gives them real labels and real arcs.
 

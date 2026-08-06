@@ -1,0 +1,903 @@
+{
+ "slug": "turning",
+ "title": "The Turning",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "cult-and-control",
+   "count": 31
+  },
+  {
+   "slug": "trailer",
+   "count": 3
+  },
+  {
+   "slug": "religious-abuse",
+   "count": 2
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 2
+  },
+  {
+   "slug": "art-and-artists",
+   "count": 1
+  },
+  {
+   "slug": "forgotten-episode",
+   "count": 1
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "religious-community",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "c807b82c-a914-11eb-a644-87de8743f075",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2e0b2b54-b72f-11eb-ad99-3f8e4f2e611e",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Missionaries of Charity",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "54482d46-b70a-11eb-9d42-53d03964e2b3",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Missionaries of Charity",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c4def2fc-bc8b-11eb-8051-bbf3228912f2",
+   "subjects": [
+    {
+     "subject": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mother Teresa",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ac379c72-c22b-11eb-b1cc-1ba9fcb3c92f",
+   "subjects": [
+    {
+     "subject": "religious-abuse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mother Teresa",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "11f08766-c7c4-11eb-9fdf-2b5c1e113f05",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mary Johnson",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "name": "Missionaries of Charity",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "36dbb69c-cd44-11eb-a308-1f07b97b3f22",
+   "subjects": [
+    {
+     "subject": "religious-community",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:30:41+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:30:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7a79af36-d2b6-11eb-bd3d-936d117de58e",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kelli Dunham",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:33+00:00"
+    },
+    {
+     "name": "Missionaries of Charity",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4dc978fc-d844-11eb-b449-ffee1cd178c4",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    },
+    {
+     "subject": "religious-abuse",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Missionaries of Charity",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7888461c-ddc7-11eb-a304-673a9501636c",
+   "subjects": [
+    {
+     "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Missionaries of Charity",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "27b44c56-e342-11eb-a3af-03dc2ba91625",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1e6c7148-e8c7-11eb-8649-b75637463e3a",
+   "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "45120784-0773-11ec-bbc4-3f65cc11b628",
+   "subjects": [
+    {
+     "subject": "faith-and-doubt",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    },
+    {
+     "subject": "religious-community",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jenna Cooper",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a1fb328a-004d-400b-b6c6-af8d00ca9cf2",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b0547061-1e92-4231-a47a-af93018aa24c",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "53111aa1-64c1-4fb2-aad5-af93016fbc0c",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b14081d9-d71d-4463-8b6d-af9a0184d578",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a44c3f29-ef7a-4202-89a0-af9d0167ed3c",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:30:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Balanchine",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:30:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "24bae566-5c0f-4433-94c2-afa801762c96",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "407c45a9-2695-43e1-aa7c-afad00143649",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4b959652-630a-4bbc-b645-afb60163dc11",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f2fb721e-a5bf-4dbd-9d99-afbd01784780",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c58fb778-4f03-43ff-a077-afc401559236",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2a963652-b011-4a22-8b76-afcb014d1b08",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e66e16ee-31bf-42e1-a9fc-aff00137d24c",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1572454e-07c7-4822-bafb-affc014130c7",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "304c1575-8892-4f81-8e46-b16100fe4fc8",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "forgotten-episode",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Lydia Abarca",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:13+00:00"
+    },
+    {
+     "name": "The Swans of Harlem",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:13+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "48ade634-1021-4506-9fc8-b16101016b49",
+   "subjects": [
+    {
+     "subject": "forgotten-episode",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "art-and-artists",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Karen Valby",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:30:41+00:00"
+    },
+    {
+     "name": "Sheila Rohan",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:30:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d2f28896-ee69-4f02-927e-b30c013b5a41",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "742c4c1b-5028-4aed-ba2b-b312010d3b02",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8353e1cd-f67a-4a4c-8b0e-b312010b19e8",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:30:41+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:30:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "aca5e89e-f47d-4539-90a2-b31201083b1c",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2b514aaa-1186-412b-9810-b31500fc1c96",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "644b8e5b-5ae5-4e5d-af3b-b31800d99662",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "96fdb3b9-7b10-4359-8a44-b31a00c859c8",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "524a320d-d8dd-4320-af14-b31c00f43679",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "68492702-4cf0-4edd-81cd-b31d00dd8524",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:57+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:58:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "982f2b9a-8c67-4c09-910e-b31d01218674",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:08+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9d241bac-df0d-4911-ae9d-b31e00ec2746",
+   "subjects": [
+    {
+     "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:30:41+00:00"
+    },
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:30:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "28a8696d-9196-4b3f-bae8-b349000a1236",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9fd7cb1b-3426-45ec-8ea9-b34f013bf597",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "River Road Fellowship",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1e0e7ae3-62a2-49c5-b362-b37500f012b9",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:33+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Satanic Panic",
+     "kind": "era",
+     "confidence": "medium",
+     "at": "2026-08-01T20:17:33+00:00"
+    }
+   ]
+  }
+ ]
+}

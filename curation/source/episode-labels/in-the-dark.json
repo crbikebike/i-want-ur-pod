@@ -1,0 +1,625 @@
+{
+ "slug": "in-the-dark",
+ "title": "In the Dark",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "trailer",
+   "count": 6
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 4
+  },
+  {
+   "slug": "captivity-and-escape",
+   "count": 2
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 2
+  },
+  {
+   "slug": "war-crimes-accountability",
+   "count": 2
+  },
+  {
+   "slug": "family-annihilation-and-parricide",
+   "count": 1
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 1
+  },
+  {
+   "slug": "missing-person",
+   "count": 1
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 1
+  },
+  {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "/apmreports/in-the-dark/2016/08/29/inthedark0_128.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wetterling",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "/apmreports/in-the-dark/2016/09/07/inthedark1_128.mp3",
+   "subjects": [
+    {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wetterling",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "/apmreports/in-the-dark/2016/09/07/inthedark2_128.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:35+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jacob Wetterling",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "/apmreports/in-the-dark/2018/04/16/season2trailer_128.mp3",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:35+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Curtis Flowers",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "/apmreports/in-the-dark/2018/05/01/inthedarks02e02_128.mp3",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Curtis Flowers",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "/apmreports/in-the-dark/2018/05/01/inthedarks02e01_128.mp3",
+   "subjects": [
+    {
+     "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:33+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Curtis Flowers",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "/apmreports/in-the-dark/2020/04/23/deltatrailer_128.mp3",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mississippi Delta",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "/apmreports/in-the-dark/2020/04/30/delta1_128.mp3",
+   "subjects": [
+    {
+     "subject": "community-in-conflict",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "/apmreports/in-the-dark/2020/05/06/delta2_128.mp3",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:42+00:00"
+    },
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Parchman prison",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c327b12e-be28-11ed-a4e8-5bef89a5732f",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_5afd3713-796f-4c2c-a2e2-80b2ccdfa3aa",
+   "subjects": [
+    {
+     "subject": "captivity-and-escape",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Sheikh Mohammed bin Rashid Al Maktoum",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_6f197e44-4c13-4dc8-b426-717135e0077f",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "subject": "captivity-and-escape",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dubai",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "name": "Sheikh Mohammed bin Rashid Al Maktoum",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_9efd2691-76c2-42f9-a359-523a1f646745",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    },
+    {
+     "subject": "captivity-and-escape",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Princess Latifa",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:37+00:00"
+    },
+    {
+     "name": "Princess Shamsa",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_319e16fa-b867-479e-b2ab-e0aa1afca818",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_442a5163-c873-467b-af84-6a251c68a97d",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Haditha",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_bab0bee3-3a4e-4441-a622-12c6f136ffc5",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_48c2adf6-0095-429c-866e-1744b4b795a4",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:33+00:00"
+    },
+    {
+     "subject": "war-crimes-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Haditha killings",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_b0355886-1c3d-4361-bb49-23c1f92b4bf6",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Curtis Flowers",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "name": "Winona, Mississippi",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_a15b29ea-6251-4b49-bafe-1d5a81361bda",
+   "subjects": [
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_4884ca3e-409d-44b7-96b5-ba1654e96042",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "prx_5770_bdefdf26-2e67-4e1c-807c-6636294cec2d",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    },
+    {
+     "subject": "family-annihilation-and-parricide",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jeremy Bamber",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:22:00+00:00"
+    },
+    {
+     "name": "Whitehouse Farm",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,284 @@
+{
+ "slug": "my-fugitive",
+ "title": "My Fugitive",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "political-persecution",
+   "count": 5
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "racial-violence",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "715d161e-88d2-11eb-a798-e7fa80299d8e",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:45+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Howard Mechanic",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "061cdb8a-8c08-11eb-9662-6324f523fe9c",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:23+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0624568a-8c08-11eb-9662-e347994e6128",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:09:39+00:00"
+    },
+    {
+     "subject": "racial-violence",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "James Earl Ray",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:39+00:00"
+    },
+    {
+     "name": "Martin Luther King Jr.",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:09:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0628896c-8c08-11eb-9662-cbbf4cacdbec",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "J. Edgar Hoover",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:29:43+00:00"
+    },
+    {
+     "name": "Martin Luther King Jr.",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "062db5b8-8c08-11eb-9662-83b47127227d",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:23:22+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "COINTELPRO",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:23:22+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "06331b34-8c08-11eb-9662-739c41f2bdce",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:14+00:00"
+    },
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "063756e0-8c08-11eb-9662-3f48ca5f3b99",
+   "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:40+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gary Tredway",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:21:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "063cdda4-8c08-11eb-9662-bbe8786b14b9",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:13:23+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Martin Luther King Jr.",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:13:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "06418854-8c08-11eb-9662-6f118b582bf0",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:45+00:00"
+    },
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Howard Mechanic",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:27:45+00:00"
+    },
+    {
+     "name": "Martin Luther King Jr.",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:27:45+00:00"
+    }
+   ]
+  }
+ ]
+}

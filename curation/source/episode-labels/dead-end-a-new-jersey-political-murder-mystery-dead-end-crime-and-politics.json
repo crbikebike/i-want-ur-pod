@@ -1,0 +1,508 @@
+{
+ "slug": "dead-end-a-new-jersey-political-murder-mystery-dead-end-crime-and-politics",
+ "title": "Dead End: A New Jersey Political Murder Mystery / Dead End: Crime and Politics",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "unsolved-murder",
+   "count": 6
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 4
+  },
+  {
+   "slug": "political-scandal",
+   "count": 3
+  },
+  {
+   "slug": "bribery-and-kickbacks",
+   "count": 1
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 1
+  },
+  {
+   "slug": "regulatory-failure",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "acae73d5-807d-4ee0-8031-409f7742f479",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:57+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John and Joyce Sheridan",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5ab2421a-b67b-4e0c-a3e9-8c8f705007b7",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:00+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Sheridan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:17:00+00:00"
+    },
+    {
+     "name": "Joyce Sheridan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:17:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c5c5e540-feec-4217-a544-8cbbbfa1f33f",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Sheridan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:47+00:00"
+    },
+    {
+     "name": "Joyce Sheridan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "60902ea6-6d3c-4682-a1de-0fcfb3427775",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:08+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Sheridan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "24453f39-3aea-495f-9493-81b8bf66cc02",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "regulatory-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7d838411-499e-49df-9dfe-e64a51727c74",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:33+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Norcross",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "967a6e27-d7f6-4921-98c4-4d196e27d686",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:58+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:58+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Norcross",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:26:58+00:00"
+    },
+    {
+     "name": "John Sheridan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "532be60b-3a0a-4286-9776-b7500ecab87f",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:57+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John and Joyce Sheridan",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8395c93f-47ff-490f-a1b3-27a95a433785",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:58+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:58+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Sheridan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "28ec48d8-90f7-4019-be53-c98548141448",
+   "subjects": [
+    {
+     "subject": "public-money-misused",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "77b680f3-7264-4046-9acf-557bbc47b7a6",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:00+00:00"
+    },
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:17:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Norcross",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:17:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d3a649e7-af61-494d-8a36-b4e3660d5664",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Norcross",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:08:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "460f31d2-90a7-4c4c-aa85-d78d4925eb03",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "George Norcross",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:22:08+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ff3a5ed7-6df5-4058-88c0-6ead45ef5a69",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bob Menendez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:24+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "99d9cc2f-2e71-49ed-b551-22f7240d83b9",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:33+00:00"
+    },
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bob Menendez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:33+00:00"
+    },
+    {
+     "name": "Nadine Arslanian",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "04a090c2-5a25-41d5-8192-22da905591e0",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:58+00:00"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:26:58+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bob Menendez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:26:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1c19d8c9-19c6-47ce-aa24-2a36efbfb2cc",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  }
+ ]
+}

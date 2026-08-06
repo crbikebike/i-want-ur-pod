@@ -1,0 +1,305 @@
+{
+ "slug": "uncivil",
+ "title": "Uncivil",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "history-retold",
+   "count": 5
+  },
+  {
+   "slug": "slavery-and-its-legacy",
+   "count": 5
+  },
+  {
+   "slug": "forgotten-episode",
+   "count": 2
+  },
+  {
+   "slug": "informant-and-undercover",
+   "count": 1
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "95ddd8b2-88da-11e7-bf3d-3ff6bef2d7c4",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9ec7ea3a-9e1a-11e7-9005-7b27fae7db0f",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d592f74-9409-11e7-b285-f76a850c5be4",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d63df8c-9409-11e7-b285-7309493d2db9",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:08:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d6b8dd6-9409-11e7-b285-e334254513fb",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:09:19+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:09:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d7343c8-9409-11e7-b285-17ce07a3debe",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:06:26+00:00"
+    },
+    {
+     "subject": "forgotten-episode",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:06:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d7ab432-9409-11e7-b285-f3dd15060cec",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:10:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d820c1e-9409-11e7-b285-0740c5c3c5e6",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:07:41+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:07:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d8a2a0c-9409-11e7-b285-47bfe89fd6af",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:07:57+00:00"
+    },
+    {
+     "subject": "forgotten-episode",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:07:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d934484-9409-11e7-b285-3fb11ecd66d2",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:07:57+00:00"
+    },
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:07:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6d9abd86-9409-11e7-b285-17834168778a",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:06:58+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6da417fa-9409-11e7-b285-cf19fcbb1da4",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:08:51+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:08:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8bd28188-0b4d-11e8-b55f-3bdbcadf5a22",
+   "subjects": [
+    {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:09:19+00:00"
+    },
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:09:19+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0e53d666-e460-11e8-bb5b-4754e7ee36a8",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:06:26+00:00"
+    },
+    {
+     "subject": "informant-and-undercover",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d7ff12d2-e45b-11e8-bcb9-27ac9a16b86a",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-28T01:10:20+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "782b0932-1853-11eb-b0c7-dbcfad0b78f6",
+   "subjects": [
+    {
+     "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  }
+ ]
+}

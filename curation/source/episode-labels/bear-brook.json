@@ -1,0 +1,686 @@
+{
+ "slug": "bear-brook",
+ "title": "Bear Brook",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "wrongful-conviction",
+   "count": 8
+  },
+  {
+   "slug": "forensic-evidence",
+   "count": 5
+  },
+  {
+   "slug": "cold-case-reopened",
+   "count": 3
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "courtroom-trial",
+   "count": 1
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "2497b1be-9a81-11e8-896f-971221a2f411",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bear Brook murders",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "311a9192-c0f9-11e8-9087-8b02b56d7a85",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:30+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ee04e3b2-c0f8-11e8-918b-eb648b20787b",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bear Brook murders",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ee085844-c0f8-11e8-918b-df86acfe8e6b",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bear Brook State Park",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ee0bbc64-c0f8-11e8-918b-8f9446842b14",
+   "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:21+00:00"
+    },
+    {
+     "subject": "unsolved-murder",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:21+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eunsoon Jun",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:21+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f61e4502-c0f8-11e8-b94d-4365d2bb5af6",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bear Brook murders",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ee0f61fc-c0f8-11e8-918b-9bd6c66ca6dc",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bear Brook murders",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:17:03+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ee12f588-c0f8-11e8-918b-0bbf4907914f",
+   "subjects": [
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:50+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bear Brook State Park",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:11:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ea0171ca-e8ff-11e8-8202-e7318961dfcd",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4f59d89c-1fe1-11e9-8109-575eb66e3291",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:30+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Terry Rasmussen",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5bc55e20-87b6-11e9-8d7e-a7866ebb39cc",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    },
+    {
+     "subject": "forensic-evidence",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bear Brook murders",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e8f38316-8f45-42a5-b63f-e76ca8b0599b",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Carroll",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:11:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c935f1d2-dde7-4cc6-87ec-3e6a1039db41",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Carroll",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "name": "Sharon Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9a644fee-ba5f-4141-9cf1-b9e5806cea7e",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:21+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:21+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Carroll",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:21+00:00"
+    },
+    {
+     "name": "Sharon Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:21:21+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f85ac4f4-f852-410c-992f-cb65e8f9d2bb",
+   "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Carroll",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:00+00:00"
+    },
+    {
+     "name": "Sharon Johnson murder",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "490d7c06-2633-4d80-a3d9-85685a17716e",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Carroll",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "name": "Sharon Johnson murder",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b55232d7-440c-4c95-9328-e5fcbeeec997",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:50+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Carroll",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:11:50+00:00"
+    },
+    {
+     "name": "Sharon Johnson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:11:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7c8e6da2-655c-4e38-be99-0a25d99ebbb8",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:06:32+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Carroll",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:32+00:00"
+    },
+    {
+     "name": "Sharon Johnson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:06:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "364116dd-fe84-4dc2-9cec-e83780f489ae",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:30+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:30+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Carroll",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:30+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9a7e7a81-0253-4889-ba85-85c6d8a8dc83",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Carroll",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:50+00:00"
+    },
+    {
+     "name": "Sharon Johnson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1cf4d264-c840-4702-8501-78b02846a2a8",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jason Carroll",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "name": "Sharon Johnson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "be708a11-a40d-48fc-a706-e8b98bc15fc1",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:21+00:00"
+    },
+    {
+     "subject": "cold-case-reopened",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:21+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6c107e30-01f4-11f1-8710-271632f3a072",
+   "subjects": [
+    {
+     "subject": "environmental-contamination",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Safe to Drink",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T15:06:32+00:00"
+    }
+   ]
+  }
+ ]
+}

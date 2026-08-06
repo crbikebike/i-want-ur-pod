@@ -1,0 +1,1226 @@
+{
+ "slug": "spectacle-true-crime",
+ "title": "Spectacle: True Crime",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "true-crime-as-genre",
+   "count": 11
+  },
+  {
+   "slug": "reality-television",
+   "count": 10
+  },
+  {
+   "slug": "trailer",
+   "count": 9
+  },
+  {
+   "slug": "introducing",
+   "count": 2
+  },
+  {
+   "slug": "screen-representation",
+   "count": 2
+  },
+  {
+   "slug": "sense-of-place",
+   "count": 2
+  },
+  {
+   "slug": "betting-and-gambling",
+   "count": 1
+  },
+  {
+   "slug": "books-and-writing",
+   "count": 1
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
+   "slug": "heist-and-robbery",
+   "count": 1
+  },
+  {
+   "slug": "music-scene-movement",
+   "count": 1
+  },
+  {
+   "slug": "organised-crime",
+   "count": 1
+  },
+  {
+   "slug": "sex-work-and-exploitation",
+   "count": 1
+  },
+  {
+   "slug": "sports-history",
+   "count": 1
+  },
+  {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "2728e6dd-d3d4-4236-b84c-dbcdf6a79f22",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "950b3605-d229-4805-8939-af53ddd6655e",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Real World",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6be9e976-7ee7-492a-9f3c-035164338f43",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "An American Family",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "42036f8a-24dc-4040-abb5-7c84bc77c115",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Survivor",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1701122b-c60d-42e6-8c85-7425db333ef5",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Bachelor",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:56:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "89c6fec6-ced6-42ef-859d-fd9cdba5b43c",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "02bfdb92-5593-47af-a262-686dd4794d29",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Kardashian",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6af0c89f-139e-49cb-a53e-e5c4bc25f658",
+   "subjects": [
+    {
+     "subject": "queer-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Queer Eye",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d564a061-222e-4197-b540-178085610ace",
+   "subjects": [
+    {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "90 Day Fiancé",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2dd448a9-2fdd-4df5-9b50-b5ab5930fe1e",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Great British Bake Off",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ed1a0df6-7bc6-4af7-9fe5-7c4fc5017d98",
+   "subjects": [
+    {
+     "subject": "reality-television",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "The Circle",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e6b3783f-176e-4000-8400-3a12a03be952",
+   "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rama",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e6b8658b-e308-436c-920c-5ad9c043023b",
+   "subjects": [
+    {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0754a09d-fc89-4fae-a2f4-93c0b8ecd38a",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Las Vegas",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "eb7e98cb-ad66-40ea-9f84-b194b9ebb489",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Las Vegas",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:01+00:00"
+    },
+    {
+     "name": "Penn Jillette",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a6f05003-e8f0-40b6-8d0a-92b36e41bf77",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Las Vegas",
+     "kind": "place",
+     "confidence": "high",
+     "at": "2026-07-30T14:56:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "becf1e7f-83d5-4e31-a21f-80b1c0c204ef",
+   "subjects": [
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:33+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Casino",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T15:23:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4991d559-ef4e-4ba4-9ae8-70b804e66a6b",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Las Vegas",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "name": "Moulin Rouge casino",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f2bf221e-2ad2-430b-926b-744364401bd5",
+   "subjects": [
+    {
+     "subject": "journalist-under-scrutiny",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "subject": "books-and-writing",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Hunter S. Thompson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "name": "Oscar Acosta",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "89bcd410-e74f-4b2e-88ed-77dd41ea076d",
+   "subjects": [
+    {
+     "subject": "talking-about-film",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "subject": "screen-representation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Paul Verhoeven",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    },
+    {
+     "name": "Showgirls",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "378baf18-7b77-46af-bcab-26723e9735d3",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Heidi Fleiss",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fb6021e8-e007-48a8-93ad-082e01a76037",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    },
+    {
+     "subject": "screen-representation",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Las Vegas",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:55:50+00:00"
+    },
+    {
+     "name": "The Hangover",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "31be2e4b-dcc8-4ebd-96b2-e0eaac39a9d2",
+   "subjects": [
+    {
+     "subject": "betting-and-gambling",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Las Vegas",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:05:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "44fc7744-f171-4f2b-ba31-1e0c5948a3dc",
+   "subjects": [
+    {
+     "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:56:59+00:00"
+    },
+    {
+     "subject": "sports-history",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Las Vegas",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T14:56:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "12554596-59a1-42f3-9303-591ba6fd80ce",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Britney Spears",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:33+00:00"
+    },
+    {
+     "name": "Céline Dion",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ba57442b-e73b-47cf-bf73-29588643eae9",
+   "subjects": [
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "heist-and-robbery",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Benny Binion",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "name": "Heather Tallchief",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:29:43+00:00"
+    },
+    {
+     "name": "Samuel Little",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cf3bc866-7107-448b-9be5-ec417d7cceaa",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9392811c-8339-4f32-b544-582cd7ea17a7",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "In Cold Blood",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:55+00:00"
+    },
+    {
+     "name": "Serial",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6ca400eb-40b7-4dff-9d54-e455a0a817bb",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ted Bundy",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a8dd1d77-2abc-4036-b930-d3d1ac73b298",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6f0b1836-619f-4432-ac33-2090ff2e98b4",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dateline",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T14:55:50+00:00"
+    },
+    {
+     "name": "Keith Morrison",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bde88804-40da-45a2-b8c0-b534b8ef2f05",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:01+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:05:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christine Chubbuck",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a6ba4da7-fe7d-493e-84ab-952c628fdd8e",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gabby Petito",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:57:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c4be65b4-cadf-4b7d-93f6-7bc3a2e61396",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:33+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anna Delvey",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:23:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "aedaad88-4f6c-4de6-b06e-4a7d3677bed5",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gabby Petito",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b2a8452c-c036-47f7-8e05-7af3dc10dd7b",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Law & Order: SVU",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fa60fe66-0250-4967-8850-286400ea5b4f",
+   "subjects": [
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7dec91bf-986b-42c0-8a19-b61e78f06ab5",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:26+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9c4abc82-1724-40ff-8421-c24c5e095fc0",
+   "subjects": [
+    {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    },
+    {
+     "subject": "true-crime-as-genre",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a19e6eed-55f0-4331-b604-0a64196dae53",
+   "subjects": [
+    {
+     "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ana Mendieta",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:01+00:00"
+    },
+    {
+     "name": "Carl Andre",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:05:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5d7360af-52a1-4c10-9d45-8ab8b57511b6",
+   "subjects": [
+    {
+     "subject": "medical-deception",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:57:56+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "bf954210-f9fc-4af9-95e7-a1394a27001a",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:23:33+00:00"
+    },
+    {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "aec45c1e-394c-4b14-9979-47656bfdb998",
+   "subjects": [
+    {
+     "subject": "forgotten-episode",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Michael Harriot",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:29:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e7c76b6a-450c-499a-9ead-8506c9eb1660",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Chad Scott",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:55+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0f43c1ab-7565-4014-8f72-76f7e7262a03",
+   "subjects": [
+    {
+     "subject": "disaster-and-accident-survival",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  }
+ ]
+}

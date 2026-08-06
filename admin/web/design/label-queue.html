@@ -1,0 +1,240 @@
+<!-- Label-queue mock, for sign-off before any JSX. Same paper, same rules as the live
+     workbench: Horizon Blue is navigation, verdict colours are only ever verdicts.
+     One card at a time, sampled lowest-agreement-first. Never a backlog counter -- the
+     Phase 2 handoff's 15,000-item queue warning is a design constraint here. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Label Queue — mock</title>
+<style>
+  :root {
+    --desk: #d9caac; --sheet: #f4ecda; --sheet-warm: #ece1c9;
+    --ink: #2b2721; --ink-soft: #5f574b; --ink-faint: #8a7f6e;
+    --rule: rgba(43,39,33,.16); --rule-soft: rgba(43,39,33,.09);
+    --green: #4f7052; --green-wash: rgba(79,112,82,.15);
+    --brick: #97493d; --brick-wash: rgba(151,73,61,.13);
+    --cement: #6f665a; --cement-wash: rgba(111,102,90,.15);
+    --horizon: #41628a; --horizon-wash: rgba(65,98,138,.13);
+    --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: ui-rounded, -apple-system, "Segoe UI", system-ui, sans-serif;
+    --r: 6px; --pill: 999px;
+    --lift: 0 1px 0 rgba(255,250,240,.5), 0 2px 3px rgba(94,72,40,.13),
+            0 12px 22px -14px rgba(94,72,40,.3);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 28px 16px 60px; color: var(--ink); font-family: var(--sans);
+    background-color: var(--desk);
+    background-image:
+      radial-gradient(rgba(255,252,245,.5) .6px, transparent .7px),
+      radial-gradient(rgba(120,95,60,.16) .5px, transparent .6px);
+    background-size: 11px 11px, 7px 7px;
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+  }
+  .wrap { width: 100%; max-width: 430px; }
+
+  header { display: flex; align-items: baseline; justify-content: space-between; margin: 0 4px 14px; }
+  header h1 { font: 700 15px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; margin: 0; }
+  header .note { font: 500 12px/1.3 var(--sans); color: var(--ink-soft); text-align: right; max-width: 200px; }
+
+  .card {
+    background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--r);
+    box-shadow: var(--lift); padding: 18px 18px 16px;
+  }
+  .show { font: 700 12px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 6px; }
+  .ep-title { font: 700 19px/1.25 var(--sans); margin: 0 0 2px; }
+  .when { font: 500 12px/1 var(--mono); color: var(--ink-faint); margin: 0 0 12px; }
+  .desc { font: 400 14px/1.5 var(--sans); color: var(--ink-soft); margin: 0 0 16px;
+          display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* The machine's read. Cement, not a verdict colour: this is the catalog talking about
+     itself, and the person has not decided anything yet. */
+  .read { background: var(--sheet-warm); border: 1px solid var(--rule-soft);
+          border-radius: var(--r); padding: 12px 14px 13px; margin-bottom: 16px; }
+  .read .k { font: 700 10.5px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 7px; }
+  .primary-line { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+  .chip { font: 700 12.5px/1 var(--mono); padding: 6px 10px; border-radius: var(--pill);
+          background: var(--cement-wash); border: 1px solid var(--cement); color: var(--ink); }
+  .pips { font: 700 13px/1 var(--mono); color: var(--ink-soft); letter-spacing: .18em; }
+  .pips b { color: var(--ink); }
+  .scatter { margin: 9px 0 0; font: 500 12px/1.5 var(--mono); color: var(--ink-soft); }
+  .scatter i { font-style: normal; color: var(--ink-faint); }
+
+  /* Verdicts. Grid mirrors the inclusion queue: confirm / smaller middle / change. */
+  .verdicts { display: grid; grid-template-columns: 1fr .68fr 1fr; gap: 9px; }
+  .btn { font: 700 13px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase;
+         padding: 14px 6px; border-radius: var(--r); border: 1.5px solid; cursor: pointer; }
+  .btn small { display: block; font: 500 10px/1.2 var(--sans); letter-spacing: 0; text-transform: none; margin-top: 4px; }
+  .btn.confirm { background: var(--green-wash); border-color: var(--green); color: var(--green); }
+  .btn.skip    { background: var(--cement-wash); border-color: var(--cement); color: var(--cement); }
+  .btn.change  { background: var(--brick-wash); border-color: var(--brick); color: var(--brick); }
+
+  /* The feedback loop, visible on the tool itself. Horizon: it is navigation -- where
+     the correction goes -- never a verdict. */
+  .loop { margin: 14px 4px 0; font: 500 12px/1.5 var(--sans); color: var(--ink-soft);
+          border-left: 3px solid var(--horizon); padding-left: 10px; }
+  .loop b { font-family: var(--mono); font-size: 11.5px; }
+
+  /* Change-subject sheet. Slides over the lower half; the card stays visible and dimmed
+     above, so the episode being decided never leaves the screen. */
+  .scrim { position: fixed; inset: 0; background: rgba(43,39,33,.28); opacity: 0;
+           pointer-events: none; transition: opacity .22s; }
+  .sheet { position: fixed; left: 0; right: 0; bottom: 0; max-height: 72vh;
+           background: var(--sheet); border-radius: 14px 14px 0 0;
+           border: 1px solid var(--rule); border-bottom: 0;
+           box-shadow: 0 -8px 30px rgba(94,72,40,.28);
+           transform: translateY(105%); transition: transform .26s cubic-bezier(.22,.61,.36,1);
+           display: flex; flex-direction: column; }
+  body.sheet-open .scrim { opacity: 1; pointer-events: auto; }
+  body.sheet-open .sheet { transform: none; }
+  .grab { width: 40px; height: 4px; border-radius: 2px; background: var(--rule);
+          margin: 8px auto 2px; }
+  .sheet-head { padding: 6px 16px 10px; border-bottom: 1px solid var(--rule-soft); }
+  .sheet-head .k { font: 700 10.5px/1 var(--mono); letter-spacing: .1em;
+                   text-transform: uppercase; color: var(--ink-faint); margin: 8px 0 8px; }
+  /* Most likely first: the voters' actual scatter ranked by vote count, then this
+     show's most-used shelves. Adjudicate the disagreement before searching from
+     scratch. Horizon border: these are navigation, not verdicts. */
+  .likely { display: flex; flex-wrap: wrap; gap: 7px; }
+  .likely button { font: 700 12px/1 var(--mono); padding: 8px 11px; border-radius: var(--pill);
+                   background: var(--horizon-wash); border: 1.5px solid var(--horizon);
+                   color: var(--ink); cursor: pointer; }
+  .likely button small { display: block; font: 500 9.5px/1.2 var(--sans); color: var(--ink-soft);
+                         margin-top: 3px; text-transform: none; letter-spacing: 0; }
+  .search { margin: 10px 0 2px; }
+  .search input { width: 100%; font: 500 14px/1 var(--sans); padding: 10px 12px;
+                  border-radius: var(--r); border: 1px solid var(--rule);
+                  background: var(--sheet-warm); color: var(--ink); outline: none; }
+  .subjects { overflow-y: auto; padding: 4px 16px 22px; }
+  .theme-label { font: 700 10.5px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase;
+                 color: var(--ink-faint); margin: 14px 0 4px; }
+  .subj { display: block; width: 100%; text-align: left; background: none; border: 0;
+          border-bottom: 1px solid var(--rule-soft); padding: 9px 2px; cursor: pointer; }
+  .subj .nm { font: 700 13.5px/1.2 var(--sans); color: var(--ink); }
+  .subj .sl { font: 500 10.5px/1 var(--mono); color: var(--ink-faint); margin-left: 6px; }
+  .subj .df { font: 400 12px/1.4 var(--sans); color: var(--ink-soft); margin-top: 2px; }
+  .subj.hidden, .theme-label.hidden { display: none; }
+  /* Picking is a verdict, so the flash may borrow green for its half-second. */
+  .subj.picked { background: var(--green-wash); }
+</style>
+<div class="wrap">
+  <header>
+    <h1>Labels</h1>
+    <div class="note">sampled, lowest agreement first — there is no count and no bottom</div>
+  </header>
+
+  <div class="card">
+    <p class="show">Hot Money · The New Narcos</p>
+    <h2 class="ep-title">Agent of Chaos</h2>
+    <p class="when">2024-09-12 · arc: Agent of Chaos</p>
+    <p class="desc">Jan Marsalek was the operational heart of Wirecard, the German
+      payments giant that turned out to be a shell over a void. When it collapsed he
+      vanished — and resurfaced in Moscow, where investigators now believe he had been
+      working with Russian intelligence for years.</p>
+
+    <div class="read">
+      <p class="k">The machine's read</p>
+      <div class="primary-line">
+        <span class="chip">corporate-fraud</span>
+        <span class="pips"><b>●</b>○○ 1 of 3 agreed</span>
+      </div>
+      <p class="scatter">votes: corporate-fraud · cold-war-espionage · government-secrecy
+        <br><i>three voters, three shelves — the shelf it wants may not exist</i></p>
+    </div>
+
+    <div class="verdicts">
+      <button class="btn confirm">Confirm<small>the label stands</small></button>
+      <button class="btn skip">Skip<small>decide later</small></button>
+      <button class="btn change" onclick="document.body.classList.add('sheet-open')">
+        Change<small>pick the right subject</small></button>
+    </div>
+  </div>
+
+  <p class="loop"><b>Every verdict feeds the next run.</b> Confirms and changes append to
+    docs/briefs/corrections.md, which future labelling briefs cite — that file is the
+    second half of the Phase 3 gate.</p>
+
+  <div class="sheet-hint">Tap <b>Change</b> to open the subject sheet. Picking records
+    the correction through the edits door (audited, undoable) and deals the next card.
+    The sheet below carries a sample of the 199 to demonstrate search and grouping; the
+    real one renders the full vocabulary from the API.</div>
+</div>
+
+<div class="scrim" onclick="closeSheet()"></div>
+<div class="sheet" role="dialog" aria-label="Pick the right subject">
+  <div class="grab"></div>
+  <div class="sheet-head">
+    <p class="k">Most likely — the voters' scatter, then this show's shelves</p>
+    <div class="likely">
+      <!-- Rank: vote count desc (incumbent listed with its count), then the show's
+           most-used primaries not already present. Five, always. -->
+      <button onclick="pick(this)">corporate-fraud<small>1 vote · the current label</small></button>
+      <button onclick="pick(this)">cold-war-espionage<small>1 vote</small></button>
+      <button onclick="pick(this)">government-secrecy<small>1 vote</small></button>
+      <button onclick="pick(this)">organised-crime<small>this show ×11</small></button>
+      <button onclick="pick(this)">founder-biography<small>this show ×2</small></button>
+    </div>
+    <div class="search">
+      <input id="q" type="search" placeholder="search all 199 — name, slug or definition"
+             oninput="filter(this.value)">
+    </div>
+  </div>
+  <div class="subjects" id="list">
+    <p class="theme-label">True Crime, Deep-Dive</p>
+    <button class="subj" onclick="pick(this)"><span class="nm">Organised Crime</span>
+      <span class="sl">organised-crime</span>
+      <p class="df">A criminal organisation operating as a business — territory, hierarchy
+        and enforcement. The contraband does not matter.</p></button>
+    <button class="subj" onclick="pick(this)"><span class="nm">The Job</span>
+      <span class="sl">heist-and-robbery</span>
+      <p class="df">One crew, one target, one job — the plan, the take and the unraveling.</p></button>
+    <button class="subj" onclick="pick(this)"><span class="nm">The Company Was Lying</span>
+      <span class="sl">corporate-fraud</span>
+      <p class="df">A business misleads investors, regulators or the public, and the lie
+        is the story.</p></button>
+    <p class="theme-label">History, Retold</p>
+    <button class="subj" onclick="pick(this)"><span class="nm">Spies and the Cold War</span>
+      <span class="sl">cold-war-espionage</span>
+      <p class="df">Espionage inside the long standoff between blocs — tradecraft,
+        defection, the mole hunt.</p></button>
+    <button class="subj" onclick="pick(this)"><span class="nm">Ruler &amp; Politician, the Life</span>
+      <span class="sl">political-figure-biography</span>
+      <p class="df">A ruler or politician's life, any country. Not the office's powers —
+        the person.</p></button>
+    <p class="theme-label">Power &amp; Institutions</p>
+    <button class="subj" onclick="pick(this)"><span class="nm">What They Didn't Tell Us</span>
+      <span class="sl">government-secrecy</span>
+      <p class="df">A state conceals what it did or knows, and the concealment is the
+        story.</p></button>
+    <button class="subj" onclick="pick(this)"><span class="nm">Founder &amp; Mogul, the Life</span>
+      <span class="sl">founder-biography</span>
+      <p class="df">A founder or mogul's life, including the fight over what they built
+        or left behind.</p></button>
+  </div>
+</div>
+
+<script>
+  function closeSheet() { document.body.classList.remove('sheet-open'); }
+  function pick(el) {
+    el.classList.add('picked');
+    // Real build: POST {action:'change', subject} -> edits door -> corrections.md,
+    // then the card flies (same .leaving animation as the other queues) and the next
+    // deals. The mock just closes.
+    setTimeout(() => { el.classList.remove('picked'); closeSheet(); }, 420);
+  }
+  function filter(q) {
+    q = q.trim().toLowerCase();
+    const subjects = [...document.querySelectorAll('.subj')];
+    subjects.forEach(s =>
+      s.classList.toggle('hidden', !!q && !s.textContent.toLowerCase().includes(q)));
+    // A theme label with nothing visible under it says a category exists with no
+    // matches, which reads as a bug. Hide it with its children.
+    document.querySelectorAll('.theme-label').forEach(t => {
+      let sib = t.nextElementSibling, any = false;
+      while (sib && !sib.classList.contains('theme-label')) {
+        if (sib.classList.contains('subj') && !sib.classList.contains('hidden')) any = true;
+        sib = sib.nextElementSibling;
+      }
+      t.classList.toggle('hidden', !!q && !any);
+    });
+  }
+</script>

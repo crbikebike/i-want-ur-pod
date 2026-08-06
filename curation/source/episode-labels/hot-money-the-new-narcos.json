@@ -1,0 +1,766 @@
+{
+ "slug": "hot-money-the-new-narcos",
+ "title": "Hot Money: The New Narcos",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "organised-crime",
+   "count": 10
+  },
+  {
+   "slug": "corporate-fraud",
+   "count": 3
+  },
+  {
+   "slug": "sex-work-and-exploitation",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 3
+  },
+  {
+   "slug": "cold-war-espionage",
+   "count": 2
+  },
+  {
+   "slug": "founder-biography",
+   "count": 2
+  },
+  {
+   "slug": "monopoly-and-market-power",
+   "count": 2
+  },
+  {
+   "slug": "foreign-political-crisis",
+   "count": 1
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 1
+  },
+  {
+   "slug": "legal-precedent",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "5a72d49b-6374-4855-b965-aea000b2b670",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    },
+    {
+     "subject": "monopoly-and-market-power",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "offshore-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b30e253a-6593-4aab-8ec8-aeac0135654a",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    },
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Stoya",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "03c41443-af82-458d-abc5-aeac0144979b",
+   "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fabian Thylmann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c053f422-e540-4121-8ec9-aeb3013b96d3",
+   "subjects": [
+    {
+     "subject": "offshore-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "identity-impostor",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fabian Thylmann",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "63d0dd7b-c2fc-44c2-910f-aeba013dd2d6",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Playboy v. Rusty and Edie's",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b1f3bec8-e9fe-4eb3-9616-aec100ce9336",
+   "subjects": [
+    {
+     "subject": "monopoly-and-market-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mastercard",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a9bef4e0-5623-44e9-8ee4-aec800e99d95",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    },
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3398c79d-64bd-4bfc-8286-aed0001cc80a",
+   "subjects": [
+    {
+     "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    },
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "OnlyFans",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5eb2321f-1c89-4968-9378-aed60110f793",
+   "subjects": [
+    {
+     "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "subject": "monopoly-and-market-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mastercard",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "name": "Visa",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "47436a63-e6a1-432a-a678-b0c101395a97",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "de1c1ffa-3a64-4ae2-baf0-b0ce00f89803",
+   "subjects": [
+    {
+     "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "5315fc71-609b-4ad0-a19f-b0ce010af6b9",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "118dcbd8-f1b4-4551-a583-b0d00108a0f2",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kinahan Cartel",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9f2cdf45-b596-4840-8d17-b0d2010bacd0",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4e777b31-925e-48c2-9851-b0d601014b00",
+   "subjects": [
+    {
+     "subject": "forensic-evidence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d9d7e6f0-2953-4ad5-a2c3-b0dc01096f7d",
+   "subjects": [
+    {
+     "subject": "undercover-and-embedded-reporting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Tehran",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ce7b949b-7454-404f-80ee-b0de0142fbf2",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Daniel Kinahan",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "87d7d785-cce0-49d9-a81d-b0e000ffb22b",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kinahan Cartel",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "060d59f0-5e30-45a0-ad85-b2f0011ebb1e",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jan Marsalek",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2548c678-babf-48e2-a02a-b2f7015db8e7",
+   "subjects": [
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "30619d1b-93c5-4bab-a453-b2f701666dc4",
+   "subjects": [
+    {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:42+00:00"
+    },
+    {
+     "subject": "foreign-political-crisis",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:42:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jan Marsalek",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:28+00:00"
+    },
+    {
+     "name": "Vienna",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c3bd00ea-3163-43c4-993e-b2fb00f0bc4f",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jan Marsalek",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0e8cc5c9-c885-409b-ad87-b3050143274d",
+   "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jan Marsalek",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:23+00:00"
+    },
+    {
+     "name": "Wirecard",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "84065047-d15f-450a-b298-b30d001335d5",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jan Marsalek",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e7a6688c-600a-4359-b70f-b31b001d663c",
+   "subjects": [
+    {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jan Marsalek",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:01+00:00"
+    },
+    {
+     "name": "Wirecard",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c76afbf3-58df-45e1-9adb-b322000379a6",
+   "subjects": [
+    {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    },
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "cold-war-espionage",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jan Marsalek",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8948f211-365d-4a46-9c2c-b32801784d62",
+   "subjects": [
+    {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    },
+    {
+     "subject": "corporate-fraud",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jan Marsalek",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "97ae9962-fbb3-421e-9127-b3f400fba0e2",
+   "subjects": [
+    {
+     "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    },
+    {
+     "subject": "founder-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Will Somerindyke",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:20:39+00:00"
+    }
+   ]
+  }
+ ]
+}

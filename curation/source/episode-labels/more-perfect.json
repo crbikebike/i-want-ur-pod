@@ -1,0 +1,1282 @@
+{
+ "slug": "more-perfect",
+ "title": "More Perfect",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "legal-precedent",
+   "count": 29
+  },
+  {
+   "slug": "law-explained",
+   "count": 6
+  },
+  {
+   "slug": "trailer",
+   "count": 4
+  },
+  {
+   "slug": "history-retold",
+   "count": 2
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
+   "slug": "death-penalty",
+   "count": 1
+  },
+  {
+   "slug": "gendered-constraint",
+   "count": 1
+  },
+  {
+   "slug": "investigative-process",
+   "count": 1
+  },
+  {
+   "slug": "political-figure-biography",
+   "count": 1
+  },
+  {
+   "slug": "political-persecution",
+   "count": 1
+  },
+  {
+   "slug": "presidential-power",
+   "count": 1
+  },
+  {
+   "slug": "reproductive-health",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "http://www.wnyc.org/story/coming-soon-more-perfect/",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/cruel-and-unusual/",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    },
+    {
+     "subject": "death-penalty",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/the-political-thicket/",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Baker v. Carr",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:53:17+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/more-perfect-presents-adoptive-couple-v-baby-girl/",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adoptive Couple v. Baby Girl",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/imperfect-plaintiff/",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Edward Blum",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/giggly-blue-robot/",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/object-anyway/",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Batson v. Kentucky",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:46+00:00"
+    },
+    {
+     "name": "James Batson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/were-back-more-perfect/",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/american-pendulum-fred/",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fred Korematsu",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:47+00:00"
+    },
+    {
+     "name": "Korematsu v. United States",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/american-pendulum-ii-dred-scott/",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dred Scott",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:33+00:00"
+    },
+    {
+     "name": "Dred Scott v. Sandford",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/whos-gerry-and-why-he-so-bad-drawing-maps/",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gill v. Whitford",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/gun-show/",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "District of Columbia v. Heller",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/heist/",
+   "subjects": [
+    {
+     "subject": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "John Marshall",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "name": "Supreme Court of the United States",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/enemy-of-mankind/",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/citizens-united/",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Anthony Kennedy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:42+00:00"
+    },
+    {
+     "name": "Citizens United v. FEC",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/hate-debate/",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/sex-appeal/",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Ruth Bader Ginsburg",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/mr-graham-and-reasonable-man/",
+   "subjects": [
+    {
+     "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Graham v. Connor",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/architect-edward-blum/",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Edward Blum",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "http://www.wnyc.org/story/justice-interrupted/",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "fbed0d5a-8ff7-42d2-93c9-cf17c88ad615",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Wickard v. Filburn",
+     "kind": "case",
+     "confidence": "medium",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "47526ef0-e2d7-4d7c-be7e-62498db53ccc",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Fred Korematsu",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:27+00:00"
+    },
+    {
+     "name": "Korematsu v. United States",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d44c497e-4810-4c3f-a824-fe28702b5e54",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2f0c5eb5-c7be-4bc6-a3db-01b6eedfd85c",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "91e8d728-764d-4d3d-8c94-38c5bdd7b2de",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dick Heller",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:03:46+00:00"
+    },
+    {
+     "name": "District of Columbia v. Heller",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "1daae8fd-95d1-46fa-abd7-02cc335720bc",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:42+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Christopher Scott",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "53415849-a873-4cf0-ac22-f08bcd41b57a",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "45a21b20-f703-46b2-bc30-50ae2061fd0e",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "19th Amendment",
+     "kind": "era",
+     "confidence": "medium",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e8f34f5b-7655-4d70-a88b-04eef5d894dd",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    },
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Korematsu v. United States",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a3f07d92-f0eb-4489-b30e-85c90e96c239",
+   "subjects": [
+    {
+     "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c971be32-ee92-45bd-980b-4eed98d17384",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:06+00:00"
+    },
+    {
+     "subject": "presidential-power",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Edith Wilson",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8c7ac809-b6ae-4353-bbcf-09ff6ecbd1c3",
+   "subjects": [
+    {
+     "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    },
+    {
+     "subject": "history-retold",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "352e35e7-0301-4694-b080-2dd5f6bf505e",
+   "subjects": [
+    {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    },
+    {
+     "subject": "law-explained",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Eleanor Holmes Norton",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:20:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a2a7e77f-58e1-45dd-b92f-0cc414147e43",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9311b07a-5016-403d-8ecf-edc6422570f1",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "2d8e7d27-9fd0-4ccd-8403-072495576140",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Al Smith",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:03:46+00:00"
+    },
+    {
+     "name": "Employment Division v. Smith",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "492ef413-cd6e-4e8d-9add-bf400cd36449",
+   "subjects": [
+    {
+     "subject": "political-figure-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Clarence Thomas",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "04547d8d-e78f-42d4-b4f5-b4b96d6be73f",
+   "subjects": [
+    {
+     "subject": "bribery-and-kickbacks",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Clarence Thomas",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "333e059e-b161-4cf4-b282-96480506eabc",
+   "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Baker v. Carr",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:27:42+00:00"
+    },
+    {
+     "name": "Charles Whittaker",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:27:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "94e62427-67b8-4993-9bd2-d56639b1c782",
+   "subjects": [
+    {
+     "subject": "reproductive-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:06+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dobbs v. Jackson Women's Health Organization",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:06+00:00"
+    },
+    {
+     "name": "Roe v. Wade",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ed360e6b-6623-4f26-94b8-294cd06cc7bf",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:15:48+00:00"
+    },
+    {
+     "subject": "reproductive-health",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dobbs v. Jackson Women's Health Organization",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:48+00:00"
+    },
+    {
+     "name": "Roe v. Wade",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:15:48+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ca720e4a-8fe2-4eaf-be3b-309889b9fafa",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:32+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:21:32+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adoptive Couple v. Baby Girl",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:21:32+00:00"
+    },
+    {
+     "name": "Dusten Brown",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:21:32+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "614af44f-e60f-4b5b-bff8-1f77e13e4704",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:42+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:42+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Branzburg v. Hayes",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:42+00:00"
+    },
+    {
+     "name": "Earl Caldwell",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T14:54:42+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "c8e66fe7-dd9e-4628-87ea-f84e63344f5c",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Souter",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:46+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8772a253-e755-455f-891b-0eb02e632e70",
+   "subjects": [
+    {
+     "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Dred Scott",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:47+00:00"
+    },
+    {
+     "name": "Dred Scott v. Sandford",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T14:55:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "df19a0d5-d4b6-4f33-b719-fb97202f81b0",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Henning Jacobson",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:33+00:00"
+    },
+    {
+     "name": "Jacobson v. Massachusetts",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-07-30T15:22:33+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "20cfdc39-7a33-4c94-a700-63711612e9b5",
+   "subjects": [
+    {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:28:39+00:00"
+    },
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:28:39+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Andy Warhol",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:28:39+00:00"
+    },
+    {
+     "name": "Lynn Goldsmith",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:28:39+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "8c77aa33-2284-431c-9394-8635ddd1c45a",
+   "subjects": [
+    {
+     "subject": "legal-precedent",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T14:54:06+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "David Souter",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T14:54:06+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0e0cc319-5300-44e0-bc45-2f662772791e",
+   "subjects": [
+    {
+     "subject": "political-persecution",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ]
+  }
+ ]
+}

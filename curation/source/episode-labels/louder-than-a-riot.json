@@ -1,0 +1,863 @@
+{
+ "slug": "louder-than-a-riot",
+ "title": "Louder Than a Riot",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "artist-band-biography",
+   "count": 4
+  },
+  {
+   "slug": "gendered-constraint",
+   "count": 4
+  },
+  {
+   "slug": "prosecutorial-power",
+   "count": 4
+  },
+  {
+   "slug": "trailer",
+   "count": 3
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 3
+  },
+  {
+   "slug": "police-misconduct",
+   "count": 2
+  },
+  {
+   "slug": "sexual-abuse-accountability",
+   "count": 2
+  },
+  {
+   "slug": "civil-rights-struggle",
+   "count": 1
+  },
+  {
+   "slug": "cost-of-fame",
+   "count": 1
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 1
+  },
+  {
+   "slug": "music-scene-movement",
+   "count": 1
+  },
+  {
+   "slug": "organised-crime",
+   "count": 1
+  },
+  {
+   "slug": "queer-life",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "a91e0c82-8544-4f88-83b1-c39248a5dd72",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    },
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f95ba7f0-945a-4118-b650-15ae07166040",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:43+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobby Shmurda",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:00:43+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a897d3fb-e107-41b7-832c-d7a6fd1e329a",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    },
+    {
+     "subject": "surveillance-and-privacy",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    },
+    {
+     "subject": "government-secrecy",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Killer Mike",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "cb7c54d4-471b-438e-afa2-1970b3b5351a",
+   "subjects": [
+    {
+     "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mac Phipps",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "e161906d-4fb3-4037-aef3-44cee95dab20",
+   "subjects": [
+    {
+     "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mac Phipps",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "7600cbc5-e23f-4d4e-a50d-83a7391564e1",
+   "subjects": [
+    {
+     "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mac Phipps",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "6b4916bc-6133-4135-8be1-37289fd5d825",
+   "subjects": [
+    {
+     "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "DJ Drama",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9f0d5596-30fe-4468-a0d5-ae27ab7cf38c",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobby Shmurda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "name": "GS9",
+     "kind": "company",
+     "confidence": "medium",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0b84c9fe-0ec7-40f6-ac13-d4db5aab5143",
+   "subjects": [
+    {
+     "subject": "musician-downfall",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "organised-crime",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobby Shmurda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:59+00:00"
+    },
+    {
+     "name": "Bryan Antoine",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:14:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d91feb79-2127-4333-b034-2d9a251bab25",
+   "subjects": [
+    {
+     "subject": "musician-downfall",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:28+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Bobby Shmurda",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "30426e14-7b54-4ddd-b2f2-00d1d8f9c694",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Isis Tha Saviour",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "eec3ab9e-4a12-4f35-8c25-a897865b8688",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Nipsey Hussle",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a7aa34df-c466-4bfa-8273-fc330673b406",
+   "subjects": [
+    {
+     "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    },
+    {
+     "subject": "civil-rights-struggle",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:01:57+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Yo Gotti",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "24d6b3c3-476f-4b4f-9fe0-24317fd8695e",
+   "subjects": [
+    {
+     "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    },
+    {
+     "subject": "wrongful-conviction",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Mac Phipps",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "58ed2f60-087a-4cc5-918c-6eb8894204c7",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    },
+    {
+     "subject": "police-misconduct",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "062aaeec-1423-4372-b57b-f6e1d4e16376",
+   "subjects": [
+    {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "subject": "prosecutorial-power",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Gunna",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "name": "Young Thug",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "0f7af7fc-73b2-4ae6-95b6-10f1b103006b",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "9093618c-af51-45b4-96ff-d95a6549b9cb",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "invented-category",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Megan Thee Stallion",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "name": "Tory Lanez",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "ed74de7b-568c-4028-a7ee-e8de573b6b42",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:59+00:00"
+    },
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:14:59+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "MC Sha-Rock",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:14:59+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "14644a1d-1e9d-4360-a580-f11a23aed807",
+   "subjects": [
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Doechii",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:00:28+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "316592b3-2a93-466e-87f6-8f92534dc466",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Trick Daddy",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:10:05+00:00"
+    },
+    {
+     "name": "Trina",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:10:05+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "80d66cf3-694a-42ca-885b-92a7c40419dd",
+   "subjects": [
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "02a20a56-87ed-46a1-845d-605dc83a9819",
+   "subjects": [
+    {
+     "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    },
+    {
+     "subject": "sexual-abuse-accountability",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Kim Osorio",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:23+00:00"
+    },
+    {
+     "name": "The Source",
+     "kind": "company",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:23+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "d25941b9-5bb7-49b5-bfb8-249db7e7e879",
+   "subjects": [
+    {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "iLoveMakonnen",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:47+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "b54a723b-44db-42c6-80f5-358f201be305",
+   "subjects": [
+    {
+     "subject": "invented-category",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:33:38+00:00"
+    },
+    {
+     "subject": "queer-life",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Saucy Santana",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:33:38+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "3ce6bc29-d551-49b9-988f-4128a03701da",
+   "subjects": [
+    {
+     "subject": "cost-of-fame",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 3,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:12+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rico Nasty",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:01:40+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "4990f829-32ed-46fe-b726-a10b781348e6",
+   "subjects": [
+    {
+     "subject": "invented-category",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    },
+    {
+     "subject": "parenting",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:19:53+00:00"
+    },
+    {
+     "subject": "gendered-constraint",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-03T05:32:11+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Rodney Carmichael",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:19:53+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "585c3bf0-3ffc-4ffa-bca6-fd52c70ae384",
+   "subjects": [
+    {
+     "subject": "music-scene-movement",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "MC Lyte",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-08-01T20:16:04+00:00"
+    }
+   ]
+  }
+ ]
+}

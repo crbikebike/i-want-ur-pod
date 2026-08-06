@@ -1,0 +1,648 @@
+{
+ "slug": "missing-murdered-finding-cleo",
+ "title": "Missing & Murdered: Finding Cleo",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 14
+  },
+  {
+   "slug": "missing-person",
+   "count": 5
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "indigenous-history",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161018_43091.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alberta Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161025_19445.mp3",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alberta Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:37+00:00"
+    },
+    {
+     "name": "Connie Walker",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161101_48356.mp3",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:52:27+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161108_92109.mp3",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alberta Williams",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161115_80900.mp3",
+   "subjects": [
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo Nicotine Semaganis",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161122_28684.mp3",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161129_86848.mp3",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:00+00:00"
+    },
+    {
+     "name": "Connie Walker",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161213_14651.mp3",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alberta Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161215_50502.mp3",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:50+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo Nicotine Semaganis",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:11:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "https://podcast-a.akamaihd.net/mp3/podcasts/missing_20161220_13315.mp3",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Alberta Williams",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-1f90d908-2fd2-4083-8d45-050f753d2ae4",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo Semaganis Nicotine",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "name": "Sixties Scoop",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-213d9a46-3a1a-4153-919e-379314758890",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-dbe7a138-a80b-4d54-8b04-6fa357f91713",
+   "subjects": [
+    {
+     "subject": "adoption-and-origins",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-33696b68-f619-4c3a-b74b-f16e7144d132",
+   "subjects": [
+    {
+     "subject": "adoption-and-origins",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo Nicotine Semaganis",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-bddb3719-da9b-4504-a4ed-ff9edee27403",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-08-01T20:22:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-3faf666f-d18e-43f1-8292-7a2989fca878",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-08-01T20:18:00+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-839ddb75-6ac4-43d3-aa37-2ab070b5e9fc",
+   "subjects": [
+    {
+     "subject": "adoption-and-origins",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:07:37+00:00"
+    },
+    {
+     "subject": "indigenous-history",
+     "role": "primary",
+     "confidence": "medium",
+     "agreement": 2,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:41:31+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Adopt Indian Metis Program",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-07-30T15:07:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-33d4a1e1-ed99-4513-a404-6e6ad615b347",
+   "subjects": [
+    {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo Semaganis Nicotine",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:15:37+00:00"
+    },
+    {
+     "name": "Sixties Scoop",
+     "kind": "era",
+     "confidence": "high",
+     "at": "2026-07-30T15:15:37+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-2724c07a-2000-4685-87ac-a7f7f30cdc0a",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo Semaganis",
+     "kind": "person",
+     "confidence": "medium",
+     "at": "2026-07-30T15:04:41+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-bfc95249-366f-4eaa-a9ae-bd8ca48bd5c9",
+   "subjects": [
+    {
+     "subject": "adoption-and-origins",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    },
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo",
+     "kind": "person",
+     "confidence": "low",
+     "at": "2026-08-01T20:21:16+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-08d959f9-90df-4be1-a6c9-386a5317a507",
+   "subjects": [
+    {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    },
+    {
+     "subject": "vanishing-and-institutional-failure",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Cleo",
+     "kind": "case",
+     "confidence": "high",
+     "at": "2026-08-01T20:16:50+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "missing-9f9bed61-5858-4ba2-933d-38ad8599b447",
+   "subjects": [
+    {
+     "subject": "missing-person",
+     "role": "primary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Jaclyn Ferland-Smith",
+     "kind": "person",
+     "confidence": "high",
+     "at": "2026-07-30T15:03:35+00:00"
+    }
+   ]
+  }
+ ]
+}

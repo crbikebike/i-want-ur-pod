@@ -1,0 +1,89 @@
+{
+ "slug": "witnessed-night-shift",
+ "title": "Witnessed: Night Shift",
+ "run": "2026-07-relabel-v176",
+ "subjectsUsed": [
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "serial-offender",
+   "count": 1
+  }
+ ],
+ "episodes": [
+  {
+   "guid": "2b45ad75-f222-4079-8d18-dc954ca9648a",
+   "subjects": [
+    {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:31:06+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "23888711-a5fe-467b-9b3d-cb9319023b0e",
+   "subjects": [
+    {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:51+00:00"
+    },
+    {
+     "subject": "serial-offender",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-07-30T15:11:51+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Columbia Veterans Hospital",
+     "kind": "place",
+     "confidence": "medium",
+     "at": "2026-07-30T15:11:51+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "abfe8998-2886-11f1-9169-1b42ba670e0c",
+   "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  }
+ ]
+}
