@@ -155,6 +155,8 @@ Batched relabel with escalation. LLM arc detection with confidence. Subject extr
 **Gate:** every show reaches depth 3. Corrections from review are feeding back into run prompts. ✅ **Closed 2026-08-05** — 275/275 at depth ≥ 3 (167 at 4); `agreement` filled on all 5,195 doubtful labels by 3-vote escalation; the label queue writes human verdicts to `docs/briefs/corrections.md`, which every labelling brief cites. See `docs/HANDOFF-phase3.md`.
 
 ### Phase 4 — hfab publisher
+**Deferred 2026-08-05 — Phase 5 starts first, by decision.** Stub with scope, existing pieces, and the one dependency Phase 5 takes on (a static release export standing in for R2): `docs/specs/phase-4-hfab-publisher.md`.
+
 Always-on agent: comb feeds, label new episodes, publish incremental releases to R2. Auto-publishes labels. Alerts on anomalies (new theme appearing, show going silent, confidence dropping). Holds arcs and vocabulary changes for approval.
 
 **What the comber must do on every pass**, accumulated as each phase discovers it:
