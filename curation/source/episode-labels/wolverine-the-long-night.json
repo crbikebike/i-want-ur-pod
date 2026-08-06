@@ -5,10 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "audio-drama-mystery",
-   "count": 10
+   "count": 9
   },
   {
    "slug": "mockumentary-investigation-fiction",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -17,6 +21,13 @@
    "guid": "dd1b86a6-eba0-4f1b-8377-a8cad4d0ab0e",
    "subjects": [
     {
+     "subject": "audio-drama-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "audio-drama-scifi",
      "role": "secondary",
      "confidence": "medium",
@@ -24,11 +35,11 @@
      "at": "2026-08-01T20:22:34+00:00"
     },
     {
-     "subject": "audio-drama-mystery",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:34+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

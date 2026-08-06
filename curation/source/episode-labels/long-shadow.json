@@ -5,22 +5,22 @@
  "subjectsUsed": [
   {
    "slug": "extremist-movement",
-   "count": 8
+   "count": 7
   },
   {
    "slug": "terrorism-and-aftermath",
-   "count": 8
+   "count": 7
   },
   {
-   "slug": "internet-culture",
-   "count": 3
+   "slug": "trailer",
+   "count": 5
   },
   {
    "slug": "mass-shooting",
    "count": 3
   },
   {
-   "slug": "history-retold",
+   "slug": "internet-culture",
    "count": 2
   },
   {
@@ -28,15 +28,15 @@
    "count": 2
   },
   {
-   "slug": "athlete-profile",
-   "count": 1
-  },
-  {
    "slug": "conspiracy-theory",
    "count": 1
   },
   {
    "slug": "engineering-failure",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
    "count": 1
   },
   {
@@ -62,10 +62,17 @@
    "subjects": [
     {
      "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:05+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -307,6 +314,13 @@
    "guid": "6196b394e314380014942590",
    "subjects": [
     {
+     "subject": "athlete-profile",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "mental-health",
      "role": "secondary",
      "confidence": "medium",
@@ -314,13 +328,11 @@
      "at": "2026-07-30T15:25:32+00:00"
     },
     {
-     "subject": "athlete-profile",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -336,6 +348,13 @@
    "guid": "6423221230476000116e682e",
    "subjects": [
     {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "terrorism-and-aftermath",
      "role": "secondary",
      "confidence": "medium",
@@ -343,11 +362,11 @@
      "at": "2026-07-30T14:58:42+00:00"
     },
     {
-     "subject": "extremist-movement",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:42+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -561,10 +580,17 @@
    "subjects": [
     {
      "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:02+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -677,10 +703,17 @@
    "subjects": [
     {
      "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:57+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

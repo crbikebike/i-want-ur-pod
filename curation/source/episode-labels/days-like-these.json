@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "personal-transformation",
-   "count": 28
+   "count": 23
   },
   {
    "slug": "survival-story",
@@ -13,6 +13,10 @@
   },
   {
    "slug": "romance-and-heartbreak",
+   "count": 7
+  },
+  {
+   "slug": "trailer",
    "count": 7
   },
   {
@@ -80,10 +84,6 @@
    "count": 2
   },
   {
-   "slug": "climate-change",
-   "count": 2
-  },
-  {
    "slug": "cold-war-espionage",
    "count": 2
   },
@@ -93,10 +93,6 @@
   },
   {
    "slug": "food-and-drink",
-   "count": 2
-  },
-  {
-   "slug": "friendship",
    "count": 2
   },
   {
@@ -113,6 +109,10 @@
   },
   {
    "slug": "buildings-and-public-space",
+   "count": 1
+  },
+  {
+   "slug": "climate-change",
    "count": 1
   },
   {
@@ -137,6 +137,10 @@
   },
   {
    "slug": "family-secret",
+   "count": 1
+  },
+  {
+   "slug": "friendship",
    "count": 1
   },
   {
@@ -174,12 +178,17 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -671,12 +680,17 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -1758,12 +1772,17 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -1901,12 +1920,17 @@
     },
     {
      "subject": "personal-transformation",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -2045,12 +2069,17 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -2219,12 +2248,17 @@
    "subjects": [
     {
      "subject": "friendship",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -2950,6 +2984,13 @@
    "guid": "https://www.abc.net.au/listen/programs/days-like-these/introducing-the-weather-that-changed-us/104723034",
    "subjects": [
     {
+     "subject": "climate-change",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "natural-disaster",
      "role": "secondary",
      "confidence": "medium",
@@ -2957,11 +2998,11 @@
      "at": "2026-07-30T15:06:10+00:00"
     },
     {
-     "subject": "climate-change",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:10+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   }

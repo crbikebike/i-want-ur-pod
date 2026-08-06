@@ -52,11 +52,11 @@
    "count": 12
   },
   {
-   "slug": "true-crime-as-genre",
-   "count": 12
+   "slug": "folklore-and-legend",
+   "count": 11
   },
   {
-   "slug": "folklore-and-legend",
+   "slug": "true-crime-as-genre",
    "count": 11
   },
   {
@@ -136,10 +136,6 @@
    "count": 4
   },
   {
-   "slug": "paranormal-investigation",
-   "count": 4
-  },
-  {
    "slug": "stranger-homicide",
    "count": 4
   },
@@ -177,6 +173,10 @@
   },
   {
    "slug": "musician-death",
+   "count": 3
+  },
+  {
+   "slug": "paranormal-investigation",
    "count": 3
   },
   {
@@ -245,6 +245,10 @@
   },
   {
    "slug": "talking-about-love",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
    "count": 2
   },
   {
@@ -3909,12 +3913,17 @@
    "subjects": [
     {
      "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -10121,10 +10130,17 @@
    "subjects": [
     {
      "subject": "paranormal-investigation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:40:14+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },

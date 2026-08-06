@@ -5,18 +5,26 @@
  "subjectsUsed": [
   {
    "slug": "legal-precedent",
-   "count": 15
+   "count": 14
   },
   {
    "slug": "indigenous-history",
-   "count": 13
+   "count": 10
   },
   {
-   "slug": "history-retold",
+   "slug": "introducing",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
    "count": 3
   },
   {
    "slug": "colonial-legacy",
+   "count": 1
+  },
+  {
+   "slug": "history-retold",
    "count": 1
   },
   {
@@ -37,10 +45,17 @@
     },
     {
      "subject": "legal-precedent",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:32+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -307,6 +322,13 @@
    "guid": "8a1ba42a-e64e-11eb-80df-7f33494253a2",
    "subjects": [
     {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "legal-precedent",
      "role": "secondary",
      "confidence": "low",
@@ -314,11 +336,11 @@
      "at": "2026-08-01T20:17:03+00:00"
     },
     {
-     "subject": "indigenous-history",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -543,10 +565,17 @@
     },
     {
      "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:34+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -562,6 +591,13 @@
    "guid": "cb4c95fc-3af7-445c-9315-fbc71f987792",
    "subjects": [
     {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "legal-precedent",
      "role": "secondary",
      "confidence": "medium",
@@ -569,11 +605,11 @@
      "at": "2026-08-01T20:19:05+00:00"
     },
     {
-     "subject": "indigenous-history",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:05+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -589,6 +625,13 @@
    "guid": "0f802c03-8125-470f-92db-ef634ef663ff",
    "subjects": [
     {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "slavery-and-its-legacy",
      "role": "secondary",
      "confidence": "medium",
@@ -596,11 +639,11 @@
      "at": "2026-07-30T15:25:32+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:32+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -658,10 +701,17 @@
    "subjects": [
     {
      "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:01+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

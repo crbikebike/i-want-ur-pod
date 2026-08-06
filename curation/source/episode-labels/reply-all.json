@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "internet-culture",
-   "count": 92
+   "count": 91
   },
   {
    "slug": "everyday-mystery",
@@ -14,6 +14,10 @@
   {
    "slug": "conspiracy-theory",
    "count": 9
+  },
+  {
+   "slug": "introducing",
+   "count": 7
   },
   {
    "slug": "organised-scam-industry",
@@ -92,19 +96,11 @@
    "count": 1
   },
   {
-   "slug": "captivity-and-escape",
-   "count": 1
-  },
-  {
    "slug": "celebrity-life",
    "count": 1
   },
   {
    "slug": "corporate-fraud",
-   "count": 1
-  },
-  {
-   "slug": "cost-of-fame",
    "count": 1
   },
   {
@@ -120,15 +116,7 @@
    "count": 1
   },
   {
-   "slug": "indigenous-history",
-   "count": 1
-  },
-  {
    "slug": "journalist-under-scrutiny",
-   "count": 1
-  },
-  {
-   "slug": "juvenile-justice",
    "count": 1
   },
   {
@@ -137,10 +125,6 @@
   },
   {
    "slug": "medical-deception",
-   "count": 1
-  },
-  {
-   "slug": "missing-person",
    "count": 1
   },
   {
@@ -153,10 +137,6 @@
   },
   {
    "slug": "prison-life",
-   "count": 1
-  },
-  {
-   "slug": "protest-movement",
    "count": 1
   },
   {
@@ -1549,11 +1529,11 @@
     {
      "subject": "scientific-discovery",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:02:56+00:00"
+     "model": "human",
+     "at": "2026-08-05T22:45:29+00:00"
     }
    ],
    "entities": [
@@ -4157,12 +4137,17 @@
     },
     {
      "subject": "protest-movement",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -4480,12 +4465,17 @@
     },
     {
      "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4561,6 +4551,13 @@
    "guid": "8dfbd724-216b-11ec-aa09-9fa9932adf6b",
    "subjects": [
     {
+     "subject": "captivity-and-escape",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "foreign-political-crisis",
      "role": "secondary",
      "confidence": "low",
@@ -4568,13 +4565,11 @@
      "at": "2026-07-29T09:05:22+00:00"
     },
     {
-     "subject": "captivity-and-escape",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4650,12 +4645,17 @@
     },
     {
      "subject": "juvenile-justice",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4853,12 +4853,17 @@
    "subjects": [
     {
      "subject": "missing-person",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4898,12 +4903,17 @@
    "subjects": [
     {
      "subject": "internet-culture",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4970,12 +4980,17 @@
    "subjects": [
     {
      "subject": "indigenous-history",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

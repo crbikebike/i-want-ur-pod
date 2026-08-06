@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "ideas-and-argument",
-   "count": 33
+   "count": 32
   },
   {
    "slug": "books-and-writing",
@@ -244,6 +244,10 @@
    "count": 1
   },
   {
+   "slug": "trailer",
+   "count": 1
+  },
+  {
    "slug": "vanishing-and-institutional-failure",
    "count": 1
   }
@@ -263,12 +267,17 @@
     },
     {
      "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

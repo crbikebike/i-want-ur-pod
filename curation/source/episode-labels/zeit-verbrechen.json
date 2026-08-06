@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "courtroom-trial",
-   "count": 32
+   "count": 31
   },
   {
    "slug": "law-explained",
@@ -329,6 +329,10 @@
   },
   {
    "slug": "survival-story",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   },
   {
@@ -5300,6 +5304,34 @@
    ]
   },
   {
+   "guid": "ef7fd272-5ecf-4a50-93b6-b52162e8b402",
+   "subjects": [
+    {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 3,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T05:02:56+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    }
+   ]
+  },
+  {
    "guid": "fc1fb3ae-bf9d-45cf-bb61-ef67df0c8711",
    "subjects": [
     {
@@ -5315,29 +5347,6 @@
      "confidence": "high",
      "model": "claude-opus-5",
      "at": "2026-07-29T23:07:26+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "ef7fd272-5ecf-4a50-93b6-b52162e8b402",
-   "subjects": [
-    {
-     "subject": "investigative-process",
-     "role": "secondary",
-     "confidence": "low",
-     "agreement": 0,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:02:56+00:00"
-    },
-    {
-     "subject": "courtroom-trial",
-     "role": "primary",
-     "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:02:56+00:00"
     }
    ]
   },

@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "heist-and-robbery",
-   "count": 5
+   "count": 4
   },
   {
    "slug": "prison-life",
@@ -16,11 +16,15 @@
    "count": 1
   },
   {
-   "slug": "charismatic-con",
+   "slug": "introducing",
    "count": 1
   },
   {
    "slug": "reentry-after-prison",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -29,6 +33,13 @@
    "guid": "747ef09a-da7d-48e6-8c44-b2aa01023200",
    "subjects": [
     {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "personal-transformation",
      "role": "secondary",
      "confidence": "medium",
@@ -36,11 +47,11 @@
      "at": "2026-07-30T15:07:51+00:00"
     },
     {
-     "subject": "heist-and-robbery",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:51+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -332,6 +343,13 @@
    "guid": "a320ccd7-c176-4522-9a65-b33f01104d21",
    "subjects": [
     {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "identity-impostor",
      "role": "secondary",
      "confidence": "high",
@@ -339,13 +357,11 @@
      "at": "2026-07-30T15:11:14+00:00"
     },
     {
-     "subject": "charismatic-con",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   }

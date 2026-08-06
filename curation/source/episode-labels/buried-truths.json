@@ -5,14 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "racial-violence",
-   "count": 43
+   "count": 40
   },
   {
    "slug": "death-in-custody",
-   "count": 7
+   "count": 6
   },
   {
    "slug": "courtroom-trial",
+   "count": 5
+  },
+  {
+   "slug": "trailer",
    "count": 5
   },
   {
@@ -20,12 +24,12 @@
    "count": 3
   },
   {
-   "slug": "civil-rights-struggle",
+   "slug": "history-retold",
    "count": 2
   },
   {
-   "slug": "history-retold",
-   "count": 2
+   "slug": "civil-rights-struggle",
+   "count": 1
   },
   {
    "slug": "elections-and-voting",
@@ -49,6 +53,13 @@
    "guid": "gid://art19-episode-locator/V0/HP4DkTxJ-Msw1CT-wPQ8F7cgKtsg6Ax7yunWvPx-D7w",
    "subjects": [
     {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "racial-violence",
      "role": "secondary",
      "confidence": "low",
@@ -58,13 +69,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "civil-rights-struggle",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -319,10 +328,17 @@
    "subjects": [
     {
      "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:49:56+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -684,10 +700,17 @@
    "subjects": [
     {
      "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:07+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1100,10 +1123,17 @@
    "subjects": [
     {
      "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:13+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1420,6 +1450,13 @@
    "guid": "c03a27b8-bd46-4052-b29a-b32f0141d780",
    "subjects": [
     {
+     "subject": "death-in-custody",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "police-misconduct",
      "role": "secondary",
      "confidence": "high",
@@ -1427,11 +1464,11 @@
      "at": "2026-07-30T15:16:13+00:00"
     },
     {
-     "subject": "death-in-custody",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:16:13+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

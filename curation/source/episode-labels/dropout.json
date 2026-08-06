@@ -5,14 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "courtroom-trial",
-   "count": 15
+   "count": 14
   },
   {
    "slug": "corporate-fraud",
-   "count": 12
+   "count": 11
   },
   {
    "slug": "founder-biography",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
    "count": 2
   },
   {
@@ -29,6 +33,13 @@
    "guid": "https://serve.castfire.com/audio/3584615/3584615_2019-01-10-174615.mp3",
    "subjects": [
     {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "founder-biography",
      "role": "secondary",
      "confidence": "medium",
@@ -36,11 +47,11 @@
      "at": "2026-08-01T20:14:59+00:00"
     },
     {
-     "subject": "corporate-fraud",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:14:59+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -270,10 +281,17 @@
     },
     {
      "subject": "courtroom-trial",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:53+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

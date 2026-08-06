@@ -12,12 +12,8 @@
    "count": 8
   },
   {
-   "slug": "personal-transformation",
-   "count": 6
-  },
-  {
-   "slug": "work-and-labour-conditions",
-   "count": 6
+   "slug": "trailer",
+   "count": 7
   },
   {
    "slug": "epidemic-and-public-health",
@@ -28,11 +24,19 @@
    "count": 5
   },
   {
-   "slug": "media-criticism",
+   "slug": "work-and-labour-conditions",
    "count": 5
   },
   {
    "slug": "civil-rights-struggle",
+   "count": 4
+  },
+  {
+   "slug": "media-criticism",
+   "count": 4
+  },
+  {
+   "slug": "personal-transformation",
    "count": 4
   },
   {
@@ -56,10 +60,6 @@
    "count": 3
   },
   {
-   "slug": "romance-and-heartbreak",
-   "count": 3
-  },
-  {
    "slug": "climate-change",
    "count": 2
   },
@@ -72,10 +72,6 @@
    "count": 2
   },
   {
-   "slug": "foreign-political-crisis",
-   "count": 2
-  },
-  {
    "slug": "political-persecution",
    "count": 2
   },
@@ -84,7 +80,7 @@
    "count": 2
   },
   {
-   "slug": "sense-of-place",
+   "slug": "romance-and-heartbreak",
    "count": 2
   },
   {
@@ -113,6 +109,10 @@
   },
   {
    "slug": "food-and-drink",
+   "count": 1
+  },
+  {
+   "slug": "foreign-political-crisis",
    "count": 1
   },
   {
@@ -160,6 +160,10 @@
    "count": 1
   },
   {
+   "slug": "sense-of-place",
+   "count": 1
+  },
+  {
    "slug": "songwriting-craft",
    "count": 1
   },
@@ -182,12 +186,17 @@
    "subjects": [
     {
      "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -323,12 +332,17 @@
     },
     {
      "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -465,12 +479,17 @@
    "subjects": [
     {
      "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -774,12 +793,17 @@
    "subjects": [
     {
      "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1760,12 +1784,17 @@
    "subjects": [
     {
      "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1949,6 +1978,13 @@
    "guid": "0a4c62e1-09d5-4e60-bd9d-68c8ed62dad3",
    "subjects": [
     {
+     "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "sense-of-place",
      "role": "secondary",
      "confidence": "low",
@@ -1958,13 +1994,11 @@
      "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "media-criticism",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -2030,10 +2064,17 @@
     },
     {
      "subject": "romance-and-heartbreak",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:13+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

@@ -5,27 +5,31 @@
  "subjectsUsed": [
   {
    "slug": "unsolved-murder",
-   "count": 82
+   "count": 77
   },
   {
    "slug": "missing-person",
-   "count": 52
+   "count": 51
   },
   {
    "slug": "child-victim",
    "count": 14
   },
   {
-   "slug": "cold-case-reopened",
-   "count": 9
-  },
-  {
    "slug": "murder-close-to-home",
    "count": 9
   },
   {
+   "slug": "cold-case-reopened",
+   "count": 8
+  },
+  {
    "slug": "vanishing-and-institutional-failure",
    "count": 7
+  },
+  {
+   "slug": "trailer",
+   "count": 6
   },
   {
    "slug": "family-annihilation-and-parricide",
@@ -44,8 +48,8 @@
    "count": 2
   },
   {
-   "slug": "epidemic-and-public-health",
-   "count": 1
+   "slug": "introducing",
+   "count": 2
   },
   {
    "slug": "identity-impostor",
@@ -73,10 +77,17 @@
     },
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:12:37+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -286,10 +297,17 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:03:06+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -524,12 +542,17 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -784,10 +807,17 @@
    "subjects": [
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:55+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1091,10 +1121,17 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:08+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1537,12 +1574,17 @@
    "subjects": [
     {
      "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -2373,12 +2415,17 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -2834,6 +2881,13 @@
    "guid": "20955898-42bb-4c2a-8956-b24c0160fedc",
    "subjects": [
     {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "unsolved-murder",
      "role": "secondary",
      "confidence": "low",
@@ -2843,13 +2897,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "cold-case-reopened",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -5011,11 +5063,11 @@
     {
      "subject": "police-misconduct",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "model": "human",
+     "at": "2026-08-05T21:56:51+00:00"
     }
    ],
    "entities": [

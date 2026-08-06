@@ -4,7 +4,7 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "investigative-process",
+   "slug": "introducing",
    "count": 2
   },
   {
@@ -63,12 +63,17 @@
     },
     {
      "subject": "investigative-process",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -77,12 +82,17 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:36+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   }

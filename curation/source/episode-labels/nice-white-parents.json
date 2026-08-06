@@ -4,11 +4,11 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "education-system-failure",
+   "slug": "trailer",
    "count": 2
   },
   {
-   "slug": "investigative-process",
+   "slug": "education-system-failure",
    "count": 1
   }
  ],
@@ -25,10 +25,17 @@
     },
     {
      "subject": "education-system-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:57+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -65,12 +72,17 @@
     },
     {
      "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:18:47+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   }

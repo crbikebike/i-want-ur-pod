@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "serial-offender",
-   "count": 68
+   "count": 64
   },
   {
    "slug": "intimate-partner-homicide",
@@ -30,6 +30,10 @@
   {
    "slug": "stranger-homicide",
    "count": 5
+  },
+  {
+   "slug": "trailer",
+   "count": 4
   },
   {
    "slug": "courtroom-trial",
@@ -114,12 +118,17 @@
    "subjects": [
     {
      "subject": "serial-offender",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -430,12 +439,17 @@
    "subjects": [
     {
      "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -821,10 +835,17 @@
    "subjects": [
     {
      "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:18+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1577,10 +1598,17 @@
    "subjects": [
     {
      "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:48:45+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

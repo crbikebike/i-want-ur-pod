@@ -4,22 +4,25 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "charismatic-con",
+   "slug": "trailer",
    "count": 3
   },
   {
-   "slug": "books-and-writing",
-   "count": 1
-  },
-  {
-   "slug": "identity-impostor",
-   "count": 1
+   "slug": "charismatic-con",
+   "count": 2
   }
  ],
  "episodes": [
   {
    "guid": "gid://art19-episode-locator/V0/U1rkY018AJqIRfU5xMWZN22JXhgxNz_6czMZ8JFWCIM",
    "subjects": [
+    {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "medical-system-harm",
      "role": "secondary",
@@ -28,11 +31,11 @@
      "at": "2026-07-28T00:55:27+00:00"
     },
     {
-     "subject": "charismatic-con",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:55:27+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -88,6 +91,13 @@
    "guid": "gid://art19-episode-locator/V0/cO_8V8QKUuNwi2wDYZYvWI2knRfIlayZQyMfmGbQPDk",
    "subjects": [
     {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "extremist-movement",
      "role": "secondary",
      "confidence": "low",
@@ -97,13 +107,11 @@
      "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "books-and-writing",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -112,12 +120,17 @@
    "subjects": [
     {
      "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:18:47+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

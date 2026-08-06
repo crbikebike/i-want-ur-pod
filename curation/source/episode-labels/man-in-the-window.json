@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "serial-offender",
-   "count": 9
+   "count": 8
   },
   {
    "slug": "forensic-evidence",
@@ -13,6 +13,10 @@
   },
   {
    "slug": "media-criticism",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -29,10 +33,17 @@
     },
     {
      "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:28:53+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

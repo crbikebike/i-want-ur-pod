@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "talking-about-music",
-   "count": 129
+   "count": 127
   },
   {
    "slug": "artist-band-biography",
@@ -13,7 +13,7 @@
   },
   {
    "slug": "musician-downfall",
-   "count": 63
+   "count": 59
   },
   {
    "slug": "musician-death",
@@ -25,11 +25,15 @@
   },
   {
    "slug": "celebrity-life",
-   "count": 14
+   "count": 12
   },
   {
    "slug": "cost-of-fame",
    "count": 10
+  },
+  {
+   "slug": "trailer",
+   "count": 9
   },
   {
    "slug": "sexual-abuse-accountability",
@@ -40,12 +44,12 @@
    "count": 7
   },
   {
-   "slug": "organised-crime",
+   "slug": "unsolved-murder",
    "count": 7
   },
   {
-   "slug": "unsolved-murder",
-   "count": 7
+   "slug": "organised-crime",
+   "count": 6
   },
   {
    "slug": "addiction-and-recovery",
@@ -3241,12 +3245,17 @@
     },
     {
      "subject": "musician-downfall",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -3865,6 +3874,13 @@
    "guid": "b3d25a3c-c5fa-11ee-81a7-e7d45b6eb4bf",
    "subjects": [
     {
+     "subject": "musician-downfall",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "organised-crime",
      "role": "secondary",
      "confidence": "low",
@@ -3874,13 +3890,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "musician-downfall",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -4584,10 +4598,17 @@
     },
     {
      "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:42:00+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -5033,6 +5054,13 @@
    "guid": "b3cf9e00-c5fa-11ee-81a7-9fe37d198cea",
    "subjects": [
     {
+     "subject": "musician-downfall",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "true-crime-as-genre",
      "role": "secondary",
      "confidence": "low",
@@ -5042,13 +5070,11 @@
      "at": "2026-08-05T04:18:46+00:00"
     },
     {
-     "subject": "musician-downfall",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:18:46+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -5593,12 +5619,17 @@
     },
     {
      "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -6095,6 +6126,13 @@
    "guid": "9d16a60e-f02f-11ee-b32b-5780df97bc2a",
    "subjects": [
     {
+     "subject": "talking-about-music",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "true-crime-as-genre",
      "role": "secondary",
      "confidence": "low",
@@ -6104,13 +6142,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "talking-about-music",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -9396,12 +9432,17 @@
    "subjects": [
     {
      "subject": "celebrity-life",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -9887,12 +9928,17 @@
     },
     {
      "subject": "musician-downfall",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -10443,12 +10489,17 @@
     },
     {
      "subject": "talking-about-music",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

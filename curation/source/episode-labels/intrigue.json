@@ -5,35 +5,39 @@
  "subjectsUsed": [
   {
    "slug": "organised-crime",
-   "count": 20
+   "count": 18
   },
   {
-   "slug": "war-crimes-accountability",
+   "slug": "trailer",
    "count": 13
   },
   {
-   "slug": "conspiracy-theory",
+   "slug": "war-crimes-accountability",
    "count": 12
   },
   {
-   "slug": "charismatic-con",
+   "slug": "conspiracy-theory",
    "count": 11
+  },
+  {
+   "slug": "charismatic-con",
+   "count": 10
   },
   {
    "slug": "cold-war-espionage",
-   "count": 11
+   "count": 10
   },
   {
    "slug": "medical-research",
-   "count": 8
-  },
-  {
-   "slug": "sexual-abuse-accountability",
    "count": 7
   },
   {
-   "slug": "political-scandal",
+   "slug": "sexual-abuse-accountability",
    "count": 6
+  },
+  {
+   "slug": "political-scandal",
+   "count": 5
   },
   {
    "slug": "body-never-found",
@@ -41,19 +45,11 @@
   },
   {
    "slug": "kidnapping-and-captivity",
-   "count": 4
+   "count": 3
   },
   {
    "slug": "archives-and-objects",
-   "count": 3
-  },
-  {
-   "slug": "hacking-and-cybercrime",
-   "count": 3
-  },
-  {
-   "slug": "terrorism-and-aftermath",
-   "count": 3
+   "count": 2
   },
   {
    "slug": "corporate-breach-response",
@@ -64,11 +60,19 @@
    "count": 2
   },
   {
+   "slug": "hacking-and-cybercrime",
+   "count": 2
+  },
+  {
    "slug": "ideas-and-argument",
    "count": 2
   },
   {
    "slug": "institutional-coverup",
+   "count": 2
+  },
+  {
+   "slug": "terrorism-and-aftermath",
    "count": 2
   },
   {
@@ -90,10 +94,17 @@
    "subjects": [
     {
      "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:32+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -254,12 +265,17 @@
    "subjects": [
     {
      "subject": "war-crimes-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -568,10 +584,17 @@
    "subjects": [
     {
      "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:14+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -839,6 +862,13 @@
    "guid": "urn:bbc:podcast:p08x8fgh",
    "subjects": [
     {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "media-criticism",
      "role": "secondary",
      "confidence": "medium",
@@ -846,11 +876,11 @@
      "at": "2026-07-29T23:25:18+00:00"
     },
     {
-     "subject": "conspiracy-theory",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:25:18+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1243,10 +1273,17 @@
     },
     {
      "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:55+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1428,6 +1465,13 @@
    "guid": "urn:bbc:podcast:p0g9f5f6",
    "subjects": [
     {
+     "subject": "medical-research",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "tech-industry-power",
      "role": "secondary",
      "confidence": "medium",
@@ -1435,11 +1479,11 @@
      "at": "2026-07-30T15:10:09+00:00"
     },
     {
-     "subject": "medical-research",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:09+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1749,10 +1793,17 @@
     },
     {
      "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:10+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1994,6 +2045,13 @@
    "guid": "urn:bbc:podcast:m001z1st",
    "subjects": [
     {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "undercover-and-embedded-reporting",
      "role": "secondary",
      "confidence": "medium",
@@ -2001,11 +2059,11 @@
      "at": "2026-07-30T15:10:01+00:00"
     },
     {
-     "subject": "organised-crime",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:01+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2285,10 +2343,17 @@
     },
     {
      "subject": "kidnapping-and-captivity",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:32+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2522,6 +2587,13 @@
    "guid": "urn:bbc:podcast:m002883z",
    "subjects": [
     {
+     "subject": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "investigative-process",
      "role": "secondary",
      "confidence": "medium",
@@ -2529,11 +2601,11 @@
      "at": "2026-07-30T14:39:41+00:00"
     },
     {
-     "subject": "archives-and-objects",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:39:41+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2763,10 +2835,17 @@
    "subjects": [
     {
      "subject": "hacking-and-cybercrime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -2966,10 +3045,17 @@
     },
     {
      "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:25:18+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -3198,10 +3284,17 @@
     },
     {
      "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:55+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

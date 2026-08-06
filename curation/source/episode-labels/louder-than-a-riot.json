@@ -4,16 +4,20 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "prosecutorial-power",
-   "count": 6
+   "slug": "artist-band-biography",
+   "count": 4
   },
   {
    "slug": "gendered-constraint",
-   "count": 5
+   "count": 4
   },
   {
-   "slug": "artist-band-biography",
+   "slug": "prosecutorial-power",
    "count": 4
+  },
+  {
+   "slug": "trailer",
+   "count": 3
   },
   {
    "slug": "wrongful-conviction",
@@ -74,12 +78,17 @@
     },
     {
      "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -95,12 +104,17 @@
     },
     {
      "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -521,6 +535,13 @@
    "guid": "0f7af7fc-73b2-4ae6-95b6-10f1b103006b",
    "subjects": [
     {
+     "subject": "gendered-constraint",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "music-scene-movement",
      "role": "secondary",
      "confidence": "low",
@@ -530,13 +551,11 @@
      "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "gendered-constraint",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

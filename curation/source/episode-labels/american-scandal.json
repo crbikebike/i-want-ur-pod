@@ -132,6 +132,10 @@
    "count": 2
   },
   {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
    "slug": "corruption-in-local-power",
    "count": 1
   },
@@ -145,14 +149,6 @@
   },
   {
    "slug": "forensic-evidence",
-   "count": 1
-  },
-  {
-   "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
-   "slug": "identity-impostor",
    "count": 1
   },
   {
@@ -5155,12 +5151,17 @@
     },
     {
      "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:18:47+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -5261,12 +5262,17 @@
    "subjects": [
     {
      "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

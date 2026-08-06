@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "celebrity-life",
-   "count": 159
+   "count": 158
   },
   {
    "slug": "artist-band-biography",
@@ -30,6 +30,10 @@
   {
    "slug": "kidnapping-and-captivity",
    "count": 6
+  },
+  {
+   "slug": "trailer",
+   "count": 5
   },
   {
    "slug": "musician-downfall",
@@ -68,10 +72,6 @@
    "count": 2
   },
   {
-   "slug": "charismatic-con",
-   "count": 2
-  },
-  {
    "slug": "employee-embezzlement",
    "count": 2
   },
@@ -92,7 +92,7 @@
    "count": 2
   },
   {
-   "slug": "ai-and-society",
+   "slug": "charismatic-con",
    "count": 1
   },
   {
@@ -112,19 +112,11 @@
    "count": 1
   },
   {
-   "slug": "family-secret",
-   "count": 1
-  },
-  {
    "slug": "film-career-biography",
    "count": 1
   },
   {
    "slug": "gender-identity",
-   "count": 1
-  },
-  {
-   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -146,12 +138,17 @@
    "subjects": [
     {
      "subject": "celebrity-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4885,12 +4882,17 @@
     },
     {
      "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4983,6 +4985,13 @@
    "guid": "gid://art19-episode-locator/V0/Siyw8dq1K3_nRBOhm6Hn5Xqv2e78cBHrEisy5YcGASo",
    "subjects": [
     {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "romance-and-catfishing",
      "role": "secondary",
      "confidence": "low",
@@ -4992,13 +5001,11 @@
      "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "charismatic-con",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -10060,6 +10067,13 @@
    "guid": "gid://art19-episode-locator/V0/pjpq08TzKlYlR-bHaTIdgpL0Iv47VuQ4uoQveqzn_sw",
    "subjects": [
     {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "media-criticism",
      "role": "secondary",
      "confidence": "low",
@@ -10069,13 +10083,11 @@
      "at": "2026-08-05T04:18:47+00:00"
     },
     {
-     "subject": "ideas-and-argument",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:18:47+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -10084,12 +10096,17 @@
    "subjects": [
     {
      "subject": "ai-and-society",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:36+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   }

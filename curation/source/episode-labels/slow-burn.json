@@ -5,7 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "political-scandal",
-   "count": 28
+   "count": 24
+  },
+  {
+   "slug": "trailer",
+   "count": 13
   },
   {
    "slug": "everyday-mystery",
@@ -16,15 +20,7 @@
    "count": 9
   },
   {
-   "slug": "media-criticism",
-   "count": 9
-  },
-  {
    "slug": "books-and-writing",
-   "count": 8
-  },
-  {
-   "slug": "civil-rights-struggle",
    "count": 8
   },
   {
@@ -32,7 +28,7 @@
    "count": 8
   },
   {
-   "slug": "war-and-its-conduct",
+   "slug": "media-criticism",
    "count": 8
   },
   {
@@ -40,7 +36,7 @@
    "count": 7
   },
   {
-   "slug": "extremist-movement",
+   "slug": "introducing",
    "count": 7
   },
   {
@@ -48,11 +44,19 @@
    "count": 7
   },
   {
-   "slug": "history-retold",
+   "slug": "war-and-its-conduct",
+   "count": 7
+  },
+  {
+   "slug": "civil-rights-struggle",
    "count": 6
   },
   {
-   "slug": "political-figure-biography",
+   "slug": "extremist-movement",
+   "count": 6
+  },
+  {
+   "slug": "history-retold",
    "count": 6
   },
   {
@@ -61,6 +65,10 @@
   },
   {
    "slug": "internet-culture",
+   "count": 5
+  },
+  {
+   "slug": "political-figure-biography",
    "count": 5
   },
   {
@@ -80,15 +88,7 @@
    "count": 4
   },
   {
-   "slug": "musician-death",
-   "count": 4
-  },
-  {
    "slug": "police-misconduct",
-   "count": 4
-  },
-  {
-   "slug": "protest-movement",
    "count": 4
   },
   {
@@ -96,16 +96,12 @@
    "count": 3
   },
   {
-   "slug": "ideas-and-argument",
+   "slug": "musician-death",
    "count": 3
   },
   {
-   "slug": "reproductive-health",
+   "slug": "protest-movement",
    "count": 3
-  },
-  {
-   "slug": "artist-band-biography",
-   "count": 2
   },
   {
    "slug": "business-rivalry",
@@ -132,15 +128,11 @@
    "count": 2
   },
   {
-   "slug": "government-secrecy",
-   "count": 2
-  },
-  {
    "slug": "hollywood-history",
    "count": 2
   },
   {
-   "slug": "indigenous-history",
+   "slug": "ideas-and-argument",
    "count": 2
   },
   {
@@ -152,7 +144,7 @@
    "count": 2
   },
   {
-   "slug": "scientific-discovery",
+   "slug": "reproductive-health",
    "count": 2
   },
   {
@@ -172,15 +164,15 @@
    "count": 1
   },
   {
+   "slug": "artist-band-biography",
+   "count": 1
+  },
+  {
    "slug": "betting-and-gambling",
    "count": 1
   },
   {
    "slug": "buildings-and-public-space",
-   "count": 1
-  },
-  {
-   "slug": "charismatic-con",
    "count": 1
   },
   {
@@ -212,7 +204,15 @@
    "count": 1
   },
   {
+   "slug": "government-secrecy",
+   "count": 1
+  },
+  {
    "slug": "graphic-and-symbol-design",
+   "count": 1
+  },
+  {
+   "slug": "indigenous-history",
    "count": 1
   },
   {
@@ -248,15 +248,15 @@
    "count": 1
   },
   {
-   "slug": "organised-crime",
-   "count": 1
-  },
-  {
    "slug": "racial-violence",
    "count": 1
   },
   {
    "slug": "regulatory-failure",
+   "count": 1
+  },
+  {
+   "slug": "scientific-discovery",
    "count": 1
   },
   {
@@ -290,10 +290,17 @@
    "subjects": [
     {
      "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:03:20+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -628,6 +635,13 @@
    "guid": "4215fce8-53df-11ed-b00e-3f7f8143d893",
    "subjects": [
     {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "presidential-power",
      "role": "secondary",
      "confidence": "medium",
@@ -635,11 +649,11 @@
      "at": "2026-07-29T09:02:11+00:00"
     },
     {
-     "subject": "political-scandal",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:02:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -999,6 +1013,13 @@
    "guid": "421603e6-53df-11ed-b00e-5b94cd90aee7",
    "subjects": [
     {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "forgotten-episode",
      "role": "secondary",
      "confidence": "medium",
@@ -1006,13 +1027,11 @@
      "at": "2026-07-29T09:01:53+00:00"
     },
     {
-     "subject": "charismatic-con",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -1034,6 +1053,13 @@
    "guid": "42160896-53df-11ed-b00e-a7ac297a4256",
    "subjects": [
     {
+     "subject": "musician-death",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "unsolved-murder",
      "role": "secondary",
      "confidence": "medium",
@@ -1041,11 +1067,11 @@
      "at": "2026-07-29T23:25:41+00:00"
     },
     {
-     "subject": "musician-death",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:25:41+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1402,6 +1428,13 @@
    "guid": "421485b6-53df-11ed-b00e-57647b9c733e",
    "subjects": [
     {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "music-scene-movement",
      "role": "secondary",
      "confidence": "low",
@@ -1409,13 +1442,11 @@
      "at": "2026-07-29T23:27:43+00:00"
     },
     {
-     "subject": "artist-band-biography",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -1494,10 +1525,17 @@
     },
     {
      "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:27:43+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1776,12 +1814,17 @@
     },
     {
      "subject": "organised-crime",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:02:56+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -1805,10 +1848,17 @@
     },
     {
      "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:03:09+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2383,10 +2433,17 @@
     },
     {
      "subject": "protest-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:02:53+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -3502,12 +3559,17 @@
    "subjects": [
     {
      "subject": "reproductive-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -3656,12 +3718,17 @@
    "subjects": [
     {
      "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -3815,6 +3882,13 @@
    "guid": "01d929de-f461-11ed-b971-4be05e915674",
    "subjects": [
     {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "legal-precedent",
      "role": "secondary",
      "confidence": "low",
@@ -3822,11 +3896,11 @@
      "at": "2026-07-29T09:04:29+00:00"
     },
     {
-     "subject": "civil-rights-struggle",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:29+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4597,12 +4671,17 @@
    "subjects": [
     {
      "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -4762,6 +4841,13 @@
    "guid": "35a720b8-0d83-11ef-b677-73d1a4ac6f90",
    "subjects": [
     {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "queer-life",
      "role": "secondary",
      "confidence": "medium",
@@ -4769,11 +4855,11 @@
      "at": "2026-07-29T23:22:35+00:00"
     },
     {
-     "subject": "civil-rights-struggle",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:22:35+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -5210,10 +5296,17 @@
    "subjects": [
     {
      "subject": "media-criticism",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:02:53+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -5625,6 +5718,13 @@
    "guid": "3956ca36-b802-11ef-a453-d7d68c5ca2ab",
    "subjects": [
     {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "political-persecution",
      "role": "secondary",
      "confidence": "medium",
@@ -5632,11 +5732,11 @@
      "at": "2026-07-29T23:22:35+00:00"
     },
     {
-     "subject": "government-secrecy",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:22:35+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -5691,10 +5791,17 @@
     },
     {
      "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:23+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -5823,6 +5930,13 @@
    "guid": "669afe9c-f0d1-11ef-8f7f-97d39af869bb",
    "subjects": [
     {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "psychology-of-belief",
      "role": "secondary",
      "confidence": "low",
@@ -5832,13 +5946,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "ideas-and-argument",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6766,10 +6878,17 @@
    "subjects": [
     {
      "subject": "political-figure-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:26:39+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -6961,10 +7080,17 @@
     },
     {
      "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:22:35+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

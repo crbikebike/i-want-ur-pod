@@ -5,7 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "gentrification-and-housing",
-   "count": 23
+   "count": 21
+  },
+  {
+   "slug": "trailer",
+   "count": 2
   },
   {
    "slug": "elections-and-voting",
@@ -16,7 +20,7 @@
    "count": 1
   },
   {
-   "slug": "juvenile-justice",
+   "slug": "introducing",
    "count": 1
   }
  ],
@@ -26,10 +30,17 @@
    "subjects": [
     {
      "subject": "gentrification-and-housing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:07+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -223,10 +234,17 @@
    "subjects": [
     {
      "subject": "gentrification-and-housing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:07:53+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -338,12 +356,17 @@
    "subjects": [
     {
      "subject": "juvenile-justice",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },

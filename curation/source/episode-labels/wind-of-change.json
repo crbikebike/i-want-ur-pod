@@ -5,26 +5,22 @@
  "subjectsUsed": [
   {
    "slug": "cold-war-espionage",
-   "count": 9
+   "count": 7
+  },
+  {
+   "slug": "introducing",
+   "count": 3
   },
   {
    "slug": "conspiracy-theory",
    "count": 2
   },
   {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
    "slug": "captivity-and-escape",
-   "count": 1
-  },
-  {
-   "slug": "corruption-in-local-power",
-   "count": 1
-  },
-  {
-   "slug": "identity-impostor",
-   "count": 1
-  },
-  {
-   "slug": "organised-crime",
    "count": 1
   }
  ],
@@ -33,6 +29,13 @@
    "guid": "5354dc78-837f-11ea-91f7-1f2f2d39d214",
    "subjects": [
     {
+     "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "conspiracy-theory",
      "role": "secondary",
      "confidence": "medium",
@@ -40,11 +43,11 @@
      "at": "2026-07-30T15:08:07+00:00"
     },
     {
-     "subject": "cold-war-espionage",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:07+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -331,12 +334,17 @@
    "subjects": [
     {
      "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -380,12 +388,17 @@
    "subjects": [
     {
      "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:07:42+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -424,12 +437,17 @@
    "subjects": [
     {
      "subject": "corruption-in-local-power",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -453,12 +471,17 @@
     },
     {
      "subject": "identity-impostor",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

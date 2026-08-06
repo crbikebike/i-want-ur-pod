@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "sport-and-politics",
-   "count": 12
+   "count": 13
   },
   {
    "slug": "sports-history",
@@ -48,10 +48,6 @@
    "count": 1
   },
   {
-   "slug": "legal-precedent",
-   "count": 1
-  },
-  {
    "slug": "management-and-leadership",
    "count": 1
   },
@@ -60,11 +56,11 @@
    "count": 1
   },
   {
-   "slug": "music-scene-movement",
+   "slug": "relationship-remembered",
    "count": 1
   },
   {
-   "slug": "relationship-remembered",
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -72,6 +68,13 @@
   {
    "guid": "gid://art19-episode-locator/V0/3djy2RvJFQ2AIP82mi0zXEQ4j08m5tJJCJ_P5znI8jM",
    "subjects": [
+    {
+     "subject": "sport-and-politics",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "sports-history",
      "role": "secondary",
@@ -82,13 +85,11 @@
      "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "sport-and-politics",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -635,12 +636,21 @@
     },
     {
      "subject": "legal-precedent",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "human",
+     "at": "2026-08-05T23:20:04+00:00"
+    },
+    {
+     "subject": "sport-and-politics",
+     "role": "primary",
+     "confidence": "high",
+     "agreement": 1,
+     "votes": 3,
+     "model": "human",
+     "at": "2026-08-05T23:20:04+00:00"
     }
    ]
   },
@@ -1276,6 +1286,15 @@
      "at": "2026-08-03T05:32:36+00:00"
     },
     {
+     "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 1,
+     "votes": 3,
+     "model": "human",
+     "at": "2026-08-05T23:21:27+00:00"
+    },
+    {
      "subject": "sports-history",
      "role": "secondary",
      "confidence": "low",
@@ -1283,13 +1302,13 @@
      "at": "2026-07-30T15:23:33+00:00"
     },
     {
-     "subject": "music-scene-movement",
+     "subject": "sport-and-politics",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:36+00:00"
+     "model": "human",
+     "at": "2026-08-05T23:21:27+00:00"
     }
    ]
   },

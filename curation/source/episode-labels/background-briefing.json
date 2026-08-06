@@ -9,23 +9,23 @@
   },
   {
    "slug": "whistleblower",
-   "count": 16
+   "count": 15
+  },
+  {
+   "slug": "trailer",
+   "count": 11
   },
   {
    "slug": "police-misconduct",
    "count": 10
   },
   {
-   "slug": "community-in-conflict",
-   "count": 8
-  },
-  {
-   "slug": "sexual-abuse-accountability",
-   "count": 8
-  },
-  {
    "slug": "work-and-labour-conditions",
    "count": 8
+  },
+  {
+   "slug": "community-in-conflict",
+   "count": 7
   },
   {
    "slug": "epidemic-and-public-health",
@@ -41,6 +41,10 @@
   },
   {
    "slug": "reproductive-health",
+   "count": 6
+  },
+  {
+   "slug": "sexual-abuse-accountability",
    "count": 6
   },
   {
@@ -92,10 +96,6 @@
    "count": 3
   },
   {
-   "slug": "death-in-custody",
-   "count": 3
-  },
-  {
    "slug": "extremist-movement",
    "count": 3
   },
@@ -117,10 +117,6 @@
   },
   {
    "slug": "management-and-leadership",
-   "count": 3
-  },
-  {
-   "slug": "medical-deception",
    "count": 3
   },
   {
@@ -176,6 +172,10 @@
    "count": 2
   },
   {
+   "slug": "death-in-custody",
+   "count": 2
+  },
+  {
    "slug": "elections-and-voting",
    "count": 2
   },
@@ -196,19 +196,15 @@
    "count": 2
   },
   {
-   "slug": "founder-biography",
-   "count": 2
-  },
-  {
-   "slug": "identity-impostor",
-   "count": 2
-  },
-  {
    "slug": "indigenous-history",
    "count": 2
   },
   {
    "slug": "media-criticism",
+   "count": 2
+  },
+  {
+   "slug": "medical-deception",
    "count": 2
   },
   {
@@ -260,11 +256,15 @@
    "count": 1
   },
   {
+   "slug": "founder-biography",
+   "count": 1
+  },
+  {
    "slug": "gendered-constraint",
    "count": 1
   },
   {
-   "slug": "government-secrecy",
+   "slug": "identity-impostor",
    "count": 1
   },
   {
@@ -281,10 +281,6 @@
   },
   {
    "slug": "labour-history",
-   "count": 1
-  },
-  {
-   "slug": "mass-shooting",
    "count": 1
   },
   {
@@ -329,10 +325,6 @@
   },
   {
    "slug": "survival-story",
-   "count": 1
-  },
-  {
-   "slug": "true-crime-as-genre",
    "count": 1
   }
  ],
@@ -3675,10 +3667,17 @@
    "subjects": [
     {
      "subject": "whistleblower",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:54:26+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4605,12 +4604,17 @@
    "subjects": [
     {
      "subject": "true-crime-as-genre",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -5140,6 +5144,13 @@
    "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/introducing-murdochs-endgame/104443568",
    "subjects": [
     {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "media-criticism",
      "role": "secondary",
      "confidence": "low",
@@ -5149,13 +5160,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "founder-biography",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -5856,12 +5865,17 @@
     },
     {
      "subject": "government-secrecy",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -6086,12 +6100,17 @@
    "subjects": [
     {
      "subject": "community-in-conflict",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -6331,10 +6350,17 @@
     },
     {
      "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:23:40+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -6490,12 +6516,17 @@
     },
     {
      "subject": "medical-deception",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -6627,6 +6658,13 @@
      "at": "2026-07-29T09:03:53+00:00"
     },
     {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "sports-scandal",
      "role": "secondary",
      "confidence": "medium",
@@ -6634,11 +6672,11 @@
      "at": "2026-07-29T09:03:53+00:00"
     },
     {
-     "subject": "sexual-abuse-accountability",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:03:53+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6815,6 +6853,13 @@
    "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/trailer-introducing-the-road-to-bondi/106425922",
    "subjects": [
     {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "terrorism-and-aftermath",
      "role": "secondary",
      "confidence": "low",
@@ -6824,13 +6869,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "mass-shooting",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6972,6 +7015,13 @@
      "at": "2026-07-29T23:23:40+00:00"
     },
     {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "investigative-process",
      "role": "secondary",
      "confidence": "medium",
@@ -6979,11 +7029,11 @@
      "at": "2026-07-29T23:23:40+00:00"
     },
     {
-     "subject": "identity-impostor",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:23:40+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -7093,6 +7143,13 @@
    "guid": "https://www.abc.net.au/listen/programs/backgroundbriefing/introducing-tammy-s-story/106685682",
    "subjects": [
     {
+     "subject": "death-in-custody",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "mental-health",
      "role": "secondary",
      "confidence": "medium",
@@ -7100,11 +7157,11 @@
      "at": "2026-07-29T08:55:46+00:00"
     },
     {
-     "subject": "death-in-custody",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:55:46+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

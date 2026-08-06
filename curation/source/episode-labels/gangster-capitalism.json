@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "institutional-coverup",
-   "count": 26
+   "count": 22
   },
   {
    "slug": "bribery-and-kickbacks",
-   "count": 9
+   "count": 8
   },
   {
    "slug": "education-system-failure",
@@ -26,6 +26,10 @@
   {
    "slug": "schooling-and-policy",
    "count": 4
+  },
+  {
+   "slug": "introducing",
+   "count": 3
   },
   {
    "slug": "charismatic-con",
@@ -57,6 +61,10 @@
   },
   {
    "slug": "sexual-abuse-accountability",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
    "count": 2
   },
   {
@@ -122,10 +130,17 @@
    "subjects": [
     {
      "subject": "bribery-and-kickbacks",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:04+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -326,10 +341,17 @@
    "subjects": [
     {
      "subject": "institutional-coverup",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:18:04+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -588,6 +610,13 @@
    "guid": "56b96aea-bc28-11eb-aa60-ef9c195be673",
    "subjects": [
     {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "religious-abuse",
      "role": "secondary",
      "confidence": "medium",
@@ -595,11 +624,11 @@
      "at": "2026-07-30T15:17:19+00:00"
     },
     {
-     "subject": "institutional-coverup",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:17:19+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -909,12 +938,17 @@
    "subjects": [
     {
      "subject": "institutional-coverup",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:54:17+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -1828,12 +1862,17 @@
    "subjects": [
     {
      "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:02:56+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

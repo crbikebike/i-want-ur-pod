@@ -8,16 +8,16 @@
    "count": 7
   },
   {
-   "slug": "murder-close-to-home",
-   "count": 4
-  },
-  {
    "slug": "courtroom-trial",
    "count": 3
   },
   {
-   "slug": "juvenile-justice",
+   "slug": "murder-close-to-home",
    "count": 3
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 2
   },
   {
    "slug": "law-explained",
@@ -34,12 +34,27 @@
   {
    "slug": "wrongful-conviction",
    "count": 2
+  },
+  {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
   {
    "guid": "a40d09ca-5e8b-42b2-b89d-b909860c7e30",
    "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
     {
      "subject": "murder-close-to-home",
      "role": "secondary",
@@ -48,11 +63,11 @@
      "at": "2026-08-01T20:15:01+00:00"
     },
     {
-     "subject": "juvenile-justice",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:01+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -389,10 +404,17 @@
     },
     {
      "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:55+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

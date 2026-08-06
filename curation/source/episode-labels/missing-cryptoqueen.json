@@ -4,12 +4,12 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "crypto-collapse",
+   "slug": "investment-fraud",
    "count": 5
   },
   {
-   "slug": "investment-fraud",
-   "count": 5
+   "slug": "crypto-collapse",
+   "count": 4
   },
   {
    "slug": "missing-person",
@@ -17,13 +17,24 @@
   },
   {
    "slug": "voluntary-disappearance",
-   "count": 4
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 2
   }
  ],
  "episodes": [
   {
    "guid": "urn:bbc:podcast:p07nklnm",
    "subjects": [
+    {
+     "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "missing-person",
      "role": "secondary",
@@ -32,11 +43,11 @@
      "at": "2026-07-30T15:04:33+00:00"
     },
     {
-     "subject": "crypto-collapse",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:33+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -450,10 +461,17 @@
     },
     {
      "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:47+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

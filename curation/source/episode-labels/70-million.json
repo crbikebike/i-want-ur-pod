@@ -5,18 +5,22 @@
  "subjectsUsed": [
   {
    "slug": "immigration-and-borders",
-   "count": 13
+   "count": 12
+  },
+  {
+   "slug": "trailer",
+   "count": 7
   },
   {
    "slug": "law-explained",
-   "count": 7
+   "count": 6
+  },
+  {
+   "slug": "introducing",
+   "count": 4
   },
   {
    "slug": "prosecutorial-power",
-   "count": 7
-  },
-  {
-   "slug": "prison-life",
    "count": 4
   },
   {
@@ -29,6 +33,10 @@
   },
   {
    "slug": "homelessness-and-poverty",
+   "count": 3
+  },
+  {
+   "slug": "prison-life",
    "count": 3
   },
   {
@@ -60,10 +68,6 @@
    "count": 2
   },
   {
-   "slug": "wrongful-conviction",
-   "count": 2
-  },
-  {
    "slug": "corruption-in-local-power",
    "count": 1
   },
@@ -73,14 +77,6 @@
   },
   {
    "slug": "education-system-failure",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
-   "count": 1
-  },
-  {
-   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -100,15 +96,7 @@
    "count": 1
   },
   {
-   "slug": "racial-violence",
-   "count": 1
-  },
-  {
    "slug": "reproductive-health",
-   "count": 1
-  },
-  {
-   "slug": "slavery-and-its-legacy",
    "count": 1
   },
   {
@@ -118,6 +106,10 @@
   {
    "slug": "systems-and-infrastructure-design",
    "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
+   "count": 1
   }
  ],
  "episodes": [
@@ -126,12 +118,17 @@
    "subjects": [
     {
      "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -140,10 +137,17 @@
    "subjects": [
     {
      "subject": "law-explained",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:56+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -369,12 +373,17 @@
    "subjects": [
     {
      "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -637,12 +646,17 @@
    "subjects": [
     {
      "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -651,12 +665,17 @@
    "subjects": [
     {
      "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:18:47+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -787,12 +806,17 @@
    "subjects": [
     {
      "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:18:47+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -907,12 +931,17 @@
     },
     {
      "subject": "ideas-and-argument",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -940,12 +969,17 @@
    "subjects": [
     {
      "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1163,12 +1197,17 @@
    "subjects": [
     {
      "subject": "prosecutorial-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1389,12 +1428,17 @@
    "subjects": [
     {
      "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -1429,10 +1473,17 @@
     },
     {
      "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:59+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

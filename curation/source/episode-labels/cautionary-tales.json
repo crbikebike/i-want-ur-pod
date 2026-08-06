@@ -16,12 +16,12 @@
    "count": 10
   },
   {
-   "slug": "history-retold",
-   "count": 10
-  },
-  {
    "slug": "charismatic-con",
    "count": 9
+  },
+  {
+   "slug": "history-retold",
+   "count": 8
   },
   {
    "slug": "war-and-its-conduct",
@@ -188,6 +188,10 @@
    "count": 2
   },
   {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
    "slug": "voluntary-disappearance",
    "count": 2
   },
@@ -314,12 +318,17 @@
    "subjects": [
     {
      "subject": "history-retold",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:04:47+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1115,6 +1124,13 @@
    "guid": "dc8ec948-94a5-11ec-b507-8306a5da0c76",
    "subjects": [
     {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "natural-disaster",
      "role": "secondary",
      "confidence": "low",
@@ -1124,13 +1140,11 @@
      "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:52:27+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

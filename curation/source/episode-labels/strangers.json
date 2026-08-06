@@ -8,16 +8,20 @@
    "count": 4
   },
   {
-   "slug": "relationship-remembered",
-   "count": 3
+   "slug": "indigenous-history",
+   "count": 2
   },
   {
-   "slug": "indigenous-history",
+   "slug": "relationship-remembered",
    "count": 2
   },
   {
    "slug": "sense-of-place",
    "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
@@ -26,12 +30,17 @@
    "subjects": [
     {
      "subject": "relationship-remembered",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:52:27+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },

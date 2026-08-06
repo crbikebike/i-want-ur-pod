@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "elections-and-voting",
-   "count": 171
+   "count": 168
   },
   {
    "slug": "economic-policy",
@@ -33,7 +33,7 @@
   },
   {
    "slug": "books-and-writing",
-   "count": 68
+   "count": 67
   },
   {
    "slug": "indigenous-history",
@@ -49,7 +49,7 @@
   },
   {
    "slug": "sexual-abuse-accountability",
-   "count": 49
+   "count": 48
   },
   {
    "slug": "celebrity-life",
@@ -196,10 +196,6 @@
    "count": 11
   },
   {
-   "slug": "talking-about-film",
-   "count": 11
-  },
-  {
    "slug": "bribery-and-kickbacks",
    "count": 10
   },
@@ -213,6 +209,10 @@
   },
   {
    "slug": "sport-and-politics",
+   "count": 10
+  },
+  {
+   "slug": "talking-about-film",
    "count": 10
   },
   {
@@ -317,6 +317,10 @@
   },
   {
    "slug": "food-and-drink",
+   "count": 4
+  },
+  {
+   "slug": "introducing",
    "count": 4
   },
   {
@@ -460,6 +464,10 @@
    "count": 2
   },
   {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
    "slug": "addiction-and-recovery",
    "count": 1
   },
@@ -549,6 +557,13 @@
    "guid": "62cc60fa-e424-43a4-b1b9-aa3e002f2f7d",
    "subjects": [
     {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "investigative-process",
      "role": "secondary",
      "confidence": "low",
@@ -558,13 +573,11 @@
      "at": "2026-08-05T05:05:16+00:00"
     },
     {
-     "subject": "elections-and-voting",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:05:16+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -10338,12 +10351,17 @@
     },
     {
      "subject": "talking-about-film",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -11983,10 +12001,17 @@
     },
     {
      "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:09:52+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -15557,12 +15582,17 @@
    "subjects": [
     {
      "subject": "elections-and-voting",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:52:27+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -15766,12 +15796,17 @@
    "subjects": [
     {
      "subject": "elections-and-voting",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:42:55+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -20652,11 +20687,11 @@
     {
      "subject": "foreign-political-crisis",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:04:47+00:00"
+     "model": "human",
+     "at": "2026-08-05T22:15:00+00:00"
     }
    ],
    "entities": [
@@ -22924,12 +22959,17 @@
    "subjects": [
     {
      "subject": "books-and-writing",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:42:55+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

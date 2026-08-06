@@ -28,15 +28,15 @@
    "count": 5
   },
   {
-   "slug": "true-crime-as-genre",
-   "count": 5
-  },
-  {
    "slug": "identity-impostor",
    "count": 4
   },
   {
    "slug": "missing-person",
+   "count": 4
+  },
+  {
+   "slug": "true-crime-as-genre",
    "count": 4
   },
   {
@@ -188,6 +188,10 @@
    "count": 1
   },
   {
+   "slug": "trailer",
+   "count": 1
+  },
+  {
    "slug": "undercover-and-embedded-reporting",
    "count": 1
   },
@@ -202,12 +206,17 @@
    "subjects": [
     {
      "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

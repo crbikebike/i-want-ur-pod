@@ -4,12 +4,16 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "identity-impostor",
-   "count": 4
-  },
-  {
    "slug": "charismatic-con",
    "count": 3
+  },
+  {
+   "slug": "identity-impostor",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
@@ -187,10 +191,17 @@
     },
     {
      "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:14:19+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

@@ -5,19 +5,23 @@
  "subjectsUsed": [
   {
    "slug": "artist-band-biography",
-   "count": 262
+   "count": 259
   },
   {
    "slug": "making-of-a-work",
-   "count": 29
+   "count": 28
   },
   {
    "slug": "songwriting-craft",
-   "count": 29
+   "count": 28
   },
   {
    "slug": "song-and-album-origin",
-   "count": 22
+   "count": 21
+  },
+  {
+   "slug": "introducing",
+   "count": 10
   },
   {
    "slug": "music-industry-business",
@@ -33,27 +37,23 @@
   },
   {
    "slug": "music-scene-movement",
-   "count": 6
+   "count": 5
   },
   {
    "slug": "books-and-writing",
    "count": 3
   },
   {
-   "slug": "celebrity-life",
-   "count": 2
+   "slug": "trailer",
+   "count": 3
   },
   {
    "slug": "musician-death",
    "count": 2
   },
   {
-   "slug": "personal-transformation",
-   "count": 2
-  },
-  {
-   "slug": "talking-about-music",
-   "count": 2
+   "slug": "celebrity-life",
+   "count": 1
   },
   {
    "slug": "charismatic-con",
@@ -80,11 +80,11 @@
    "count": 1
   },
   {
-   "slug": "management-and-leadership",
+   "slug": "natural-disaster",
    "count": 1
   },
   {
-   "slug": "natural-disaster",
+   "slug": "personal-transformation",
    "count": 1
   },
   {
@@ -135,12 +135,17 @@
     },
     {
      "subject": "talking-about-music",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:54:17+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -337,12 +342,17 @@
     },
     {
      "subject": "talking-about-music",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:54:17+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -568,12 +578,10 @@
    "subjects": [
     {
      "subject": "artist-band-biography",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     },
     {
      "subject": "music-scene-history",
@@ -581,6 +589,13 @@
      "confidence": "low",
      "model": "claude-sonnet-5",
      "at": "2026-07-28T00:49:12+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1448,12 +1463,17 @@
    "subjects": [
     {
      "subject": "management-and-leadership",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -5525,10 +5545,17 @@
     },
     {
      "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:45+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -5670,10 +5697,17 @@
     },
     {
      "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:09+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -5782,12 +5816,17 @@
    "subjects": [
     {
      "subject": "celebrity-life",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:55:09+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6152,10 +6191,17 @@
    "subjects": [
     {
      "subject": "artist-band-biography",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:06+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6257,6 +6303,13 @@
    "guid": "b4f998af-3297-401f-b66c-b06c0118ccb8",
    "subjects": [
     {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "religious-community",
      "role": "secondary",
      "confidence": "low",
@@ -6264,11 +6317,11 @@
      "at": "2026-07-28T00:51:21+00:00"
     },
     {
-     "subject": "artist-band-biography",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:21+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6344,10 +6397,17 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6397,10 +6457,17 @@
     },
     {
      "subject": "songwriting-craft",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:45+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -7845,10 +7912,17 @@
    "subjects": [
     {
      "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:19+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -8313,6 +8387,13 @@
   {
    "guid": "65cbe0af-78f0-4803-82eb-b2450151b820",
    "subjects": [
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
     {
      "subject": "music-scene-history",
      "role": "primary",

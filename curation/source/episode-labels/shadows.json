@@ -5,13 +5,24 @@
  "subjectsUsed": [
   {
    "slug": "relationship-remembered",
-   "count": 7
+   "count": 6
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
   {
    "guid": "theshadows-33d5cc10-0ae3-4ad3-9471-b556c573dc13",
    "subjects": [
+    {
+     "subject": "relationship-remembered",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
     {
      "subject": "romance-and-heartbreak",
      "role": "secondary",
@@ -20,11 +31,11 @@
      "at": "2026-07-30T15:22:31+00:00"
     },
     {
-     "subject": "relationship-remembered",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:31+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

@@ -4,11 +4,11 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "serial-offender",
+   "slug": "trailer",
    "count": 2
   },
   {
-   "slug": "cold-case-reopened",
+   "slug": "serial-offender",
    "count": 1
   }
  ],
@@ -25,10 +25,17 @@
     },
     {
      "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:53+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -55,6 +62,13 @@
    "guid": "655a3096-2890-11f1-9053-2b0093b5ea7c",
    "subjects": [
     {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "true-crime-as-genre",
      "role": "secondary",
      "confidence": "low",
@@ -64,13 +78,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "cold-case-reopened",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   }

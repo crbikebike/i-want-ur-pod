@@ -5,18 +5,26 @@
  "subjectsUsed": [
   {
    "slug": "true-crime-as-genre",
-   "count": 12
-  },
-  {
-   "slug": "reality-television",
    "count": 11
   },
   {
-   "slug": "sense-of-place",
-   "count": 3
+   "slug": "reality-television",
+   "count": 10
+  },
+  {
+   "slug": "trailer",
+   "count": 9
+  },
+  {
+   "slug": "introducing",
+   "count": 2
   },
   {
    "slug": "screen-representation",
+   "count": 2
+  },
+  {
+   "slug": "sense-of-place",
    "count": 2
   },
   {
@@ -32,35 +40,7 @@
    "count": 1
   },
   {
-   "slug": "corruption-in-local-power",
-   "count": 1
-  },
-  {
-   "slug": "cult-and-control",
-   "count": 1
-  },
-  {
-   "slug": "disaster-and-accident-survival",
-   "count": 1
-  },
-  {
    "slug": "heist-and-robbery",
-   "count": 1
-  },
-  {
-   "slug": "history-retold",
-   "count": 1
-  },
-  {
-   "slug": "hollywood-history",
-   "count": 1
-  },
-  {
-   "slug": "intimate-partner-homicide",
-   "count": 1
-  },
-  {
-   "slug": "medical-deception",
    "count": 1
   },
   {
@@ -69,10 +49,6 @@
   },
   {
    "slug": "organised-crime",
-   "count": 1
-  },
-  {
-   "slug": "police-misconduct",
    "count": 1
   },
   {
@@ -94,12 +70,17 @@
    "subjects": [
     {
      "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -321,12 +302,17 @@
    "subjects": [
     {
      "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:36+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -342,6 +328,13 @@
    "guid": "e6b8658b-e308-436c-920c-5ad9c043023b",
    "subjects": [
     {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "political-scandal",
      "role": "secondary",
      "confidence": "low",
@@ -351,13 +344,11 @@
      "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "corruption-in-local-power",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -366,10 +357,17 @@
    "subjects": [
     {
      "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:26+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -763,10 +761,17 @@
    "subjects": [
     {
      "subject": "true-crime-as-genre",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:50+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1046,12 +1051,17 @@
    "subjects": [
     {
      "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1073,6 +1083,13 @@
    "guid": "5d7360af-52a1-4c10-9d45-8ab8b57511b6",
    "subjects": [
     {
+     "subject": "medical-deception",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "organised-scam-industry",
      "role": "secondary",
      "confidence": "medium",
@@ -1080,13 +1097,11 @@
      "at": "2026-07-30T14:57:56+00:00"
     },
     {
-     "subject": "medical-deception",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1102,12 +1117,17 @@
     },
     {
      "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1125,12 +1145,17 @@
     },
     {
      "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1147,12 +1172,17 @@
    "subjects": [
     {
      "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1168,6 +1198,13 @@
    "guid": "0f43c1ab-7565-4014-8f72-76f7e7262a03",
    "subjects": [
     {
+     "subject": "disaster-and-accident-survival",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "survival-story",
      "role": "secondary",
      "confidence": "low",
@@ -1177,13 +1214,11 @@
      "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "disaster-and-accident-survival",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   }

@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "business-rivalry",
-   "count": 599
+   "count": 597
   },
   {
    "slug": "management-and-leadership",
-   "count": 15
+   "count": 14
   },
   {
    "slug": "startup-collapse",
@@ -32,6 +32,10 @@
    "count": 5
   },
   {
+   "slug": "trailer",
+   "count": 5
+  },
+  {
    "slug": "advertising-and-persuasion",
    "count": 4
   },
@@ -48,16 +52,16 @@
    "count": 4
   },
   {
-   "slug": "ai-and-society",
-   "count": 3
-  },
-  {
    "slug": "murder-close-to-home",
    "count": 3
   },
   {
    "slug": "music-industry-business",
    "count": 3
+  },
+  {
+   "slug": "ai-and-society",
+   "count": 2
   },
   {
    "slug": "fashion-and-clothing",
@@ -108,10 +112,6 @@
    "count": 1
   },
   {
-   "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
    "slug": "internet-culture",
    "count": 1
   },
@@ -138,12 +138,17 @@
    "subjects": [
     {
      "subject": "business-rivalry",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -9435,12 +9440,17 @@
    "subjects": [
     {
      "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:36+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -9501,12 +9511,17 @@
    "subjects": [
     {
      "subject": "business-rivalry",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -21140,6 +21155,13 @@
    "guid": "gid://art19-episode-locator/V0/qrdTdjqFZ08GKZqmKnqAUpKyefmKsJNeE-eccSJ4aO0",
    "subjects": [
     {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "language-and-words",
      "role": "secondary",
      "confidence": "low",
@@ -21149,13 +21171,11 @@
      "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "ideas-and-argument",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -21190,12 +21210,17 @@
    "subjects": [
     {
      "subject": "ai-and-society",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "artist-band-biography",
-   "count": 68
+   "count": 67
   },
   {
    "slug": "music-scene-movement",
@@ -13,11 +13,11 @@
   },
   {
    "slug": "music-industry-business",
-   "count": 31
+   "count": 30
   },
   {
    "slug": "talking-about-music",
-   "count": 26
+   "count": 25
   },
   {
    "slug": "song-and-album-origin",
@@ -30,6 +30,10 @@
   {
    "slug": "queer-life",
    "count": 3
+  },
+  {
+   "slug": "introducing",
+   "count": 2
   },
   {
    "slug": "music-scene-history",
@@ -45,6 +49,10 @@
   },
   {
    "slug": "sexual-abuse-accountability",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -1060,12 +1068,17 @@
     },
     {
      "subject": "talking-about-music",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:42:55+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -4769,6 +4782,13 @@
    "guid": "d570b804-bfdd-11ef-8bb8-1f8e5f451dfb",
    "subjects": [
     {
+     "subject": "artist-band-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "music-industry-business",
      "role": "secondary",
      "confidence": "medium",
@@ -4776,11 +4796,11 @@
      "at": "2026-07-29T23:00:11+00:00"
     },
     {
-     "subject": "artist-band-biography",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:00:11+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -5663,12 +5683,17 @@
    "subjects": [
     {
      "subject": "music-industry-business",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:04:47+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

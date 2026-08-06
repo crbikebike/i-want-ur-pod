@@ -5,14 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "organised-crime",
-   "count": 11
+   "count": 10
   },
   {
    "slug": "corporate-fraud",
-   "count": 4
+   "count": 3
   },
   {
    "slug": "sex-work-and-exploitation",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
    "count": 3
   },
   {
@@ -38,10 +42,6 @@
   {
    "slug": "legal-precedent",
    "count": 1
-  },
-  {
-   "slug": "offshore-secrecy",
-   "count": 1
   }
  ],
  "episodes": [
@@ -66,12 +66,17 @@
     },
     {
      "subject": "offshore-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -279,12 +284,17 @@
    "subjects": [
     {
      "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -455,6 +465,13 @@
    "guid": "060d59f0-5e30-45a0-ad85-b2f0011ebb1e",
    "subjects": [
     {
+     "subject": "corporate-fraud",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "government-secrecy",
      "role": "secondary",
      "confidence": "low",
@@ -462,11 +479,11 @@
      "at": "2026-07-30T15:01:40+00:00"
     },
     {
-     "subject": "corporate-fraud",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:01:40+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

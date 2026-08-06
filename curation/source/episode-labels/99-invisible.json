@@ -9,7 +9,7 @@
   },
   {
    "slug": "design-and-architecture",
-   "count": 79
+   "count": 78
   },
   {
    "slug": "everyday-object-design",
@@ -69,7 +69,7 @@
   },
   {
    "slug": "archives-and-objects",
-   "count": 12
+   "count": 11
   },
   {
    "slug": "gentrification-and-housing",
@@ -276,6 +276,10 @@
    "count": 2
   },
   {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
    "slug": "artist-band-biography",
    "count": 1
   },
@@ -316,6 +320,10 @@
    "count": 1
   },
   {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
    "slug": "invented-category",
    "count": 1
   },
@@ -333,10 +341,6 @@
   },
   {
    "slug": "police-misconduct",
-   "count": 1
-  },
-  {
-   "slug": "political-persecution",
    "count": 1
   },
   {
@@ -370,12 +374,17 @@
    "subjects": [
     {
      "subject": "design-and-architecture",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:52:27+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -9421,12 +9430,17 @@
     },
     {
      "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:33:28+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -15870,12 +15884,17 @@
    "subjects": [
     {
      "subject": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:33:28+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

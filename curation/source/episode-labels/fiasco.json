@@ -5,19 +5,23 @@
  "subjectsUsed": [
   {
    "slug": "elections-and-voting",
-   "count": 11
+   "count": 10
   },
   {
    "slug": "epidemic-and-public-health",
-   "count": 9
-  },
-  {
-   "slug": "government-secrecy",
-   "count": 6
+   "count": 8
   },
   {
    "slug": "political-scandal",
    "count": 6
+  },
+  {
+   "slug": "government-secrecy",
+   "count": 5
+  },
+  {
+   "slug": "trailer",
+   "count": 4
   },
   {
    "slug": "foreign-political-crisis",
@@ -28,15 +32,15 @@
    "count": 2
   },
   {
-   "slug": "terrorism-and-aftermath",
-   "count": 2
-  },
-  {
    "slug": "war-and-its-conduct",
    "count": 2
   },
   {
-   "slug": "sex-work-and-exploitation",
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "terrorism-and-aftermath",
    "count": 1
   }
  ],
@@ -65,6 +69,25 @@
      "kind": "person",
      "confidence": "medium",
      "at": "2026-07-28T00:51:56+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "f52f8b90-9b4e-11ec-a9b8-3f206a0b46c3",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -219,22 +242,15 @@
    ]
   },
   {
-   "guid": "f52f8b90-9b4e-11ec-a9b8-3f206a0b46c3",
-   "subjects": [
-    {
-     "subject": "epidemic-and-public-health",
-     "role": "primary",
-     "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
-    }
-   ]
-  },
-  {
    "guid": "7bdc4ca5-a74d-41f9-acb3-b20a0147c8a3",
    "subjects": [
+    {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "legal-precedent",
      "role": "secondary",
@@ -243,11 +259,11 @@
      "at": "2026-07-28T00:51:56+00:00"
     },
     {
-     "subject": "elections-and-voting",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:56+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -601,10 +617,17 @@
    "subjects": [
     {
      "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:29+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -926,10 +949,17 @@
    "subjects": [
     {
      "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:45+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1141,12 +1171,17 @@
     },
     {
      "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

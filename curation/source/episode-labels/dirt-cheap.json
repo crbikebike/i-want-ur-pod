@@ -5,14 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "audio-drama-mystery",
-   "count": 23
+   "count": 22
   },
   {
-   "slug": "cult-and-control",
-   "count": 1
+   "slug": "introducing",
+   "count": 2
   },
   {
-   "slug": "reality-television",
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -22,10 +22,17 @@
    "subjects": [
     {
      "subject": "audio-drama-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:45+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -374,12 +381,17 @@
    "subjects": [
     {
      "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -479,6 +491,13 @@
    "guid": "2b8a3662-8dcd-43ce-9873-e109d4e022a6",
    "subjects": [
     {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "sexual-abuse-accountability",
      "role": "secondary",
      "confidence": "medium",
@@ -486,13 +505,11 @@
      "at": "2026-07-30T15:01:40+00:00"
     },
     {
-     "subject": "cult-and-control",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:36+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

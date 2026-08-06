@@ -5,15 +5,15 @@
  "subjectsUsed": [
   {
    "slug": "missing-person",
-   "count": 127
+   "count": 125
   },
   {
    "slug": "courtroom-trial",
-   "count": 22
+   "count": 21
   },
   {
    "slug": "vanishing-and-institutional-failure",
-   "count": 18
+   "count": 16
   },
   {
    "slug": "investigative-process",
@@ -22,6 +22,10 @@
   {
    "slug": "forensic-evidence",
    "count": 6
+  },
+  {
+   "slug": "trailer",
+   "count": 5
   },
   {
    "slug": "cold-case-reopened",
@@ -1733,12 +1737,17 @@
    "subjects": [
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -2502,10 +2511,17 @@
    "subjects": [
     {
      "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:02+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2732,12 +2748,17 @@
    "subjects": [
     {
      "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -3273,10 +3294,17 @@
    "subjects": [
     {
      "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:02+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4336,6 +4364,13 @@
    "guid": "f027b30a-290a-11f0-91d5-4301578763bf",
    "subjects": [
     {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "true-crime-as-genre",
      "role": "secondary",
      "confidence": "low",
@@ -4345,13 +4380,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "missing-person",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

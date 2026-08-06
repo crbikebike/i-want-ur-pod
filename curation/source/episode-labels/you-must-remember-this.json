@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "hollywood-history",
-   "count": 69
+   "count": 67
   },
   {
    "slug": "celebrity-life",
@@ -13,7 +13,7 @@
   },
   {
    "slug": "film-career-biography",
-   "count": 55
+   "count": 52
   },
   {
    "slug": "political-persecution",
@@ -33,7 +33,7 @@
   },
   {
    "slug": "studio-system",
-   "count": 9
+   "count": 8
   },
   {
    "slug": "artist-band-biography",
@@ -41,6 +41,10 @@
   },
   {
    "slug": "cost-of-fame",
+   "count": 5
+  },
+  {
+   "slug": "introducing",
    "count": 5
   },
   {
@@ -53,6 +57,10 @@
   },
   {
    "slug": "queer-life",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
    "count": 2
   },
   {
@@ -81,10 +89,6 @@
   },
   {
    "slug": "talking-about-film",
-   "count": 1
-  },
-  {
-   "slug": "talking-about-music",
    "count": 1
   }
  ],
@@ -6091,6 +6095,13 @@
    "guid": "58893683-a286-4d29-b0a0-abb1015b2e15",
    "subjects": [
     {
+     "subject": "film-career-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "studio-system",
      "role": "secondary",
      "confidence": "low",
@@ -6098,11 +6109,11 @@
      "at": "2026-07-29T23:09:42+00:00"
     },
     {
-     "subject": "film-career-biography",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:09:42+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6497,6 +6508,13 @@
    "guid": "1ce460ee-116b-11eb-9fb4-5b89eecd6a0d",
    "subjects": [
     {
+     "subject": "hollywood-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "making-of-a-work",
      "role": "secondary",
      "confidence": "low",
@@ -6506,13 +6524,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "hollywood-history",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6914,12 +6930,17 @@
     },
     {
      "subject": "hollywood-history",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -7866,12 +7887,17 @@
     },
     {
      "subject": "talking-about-music",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -8303,10 +8329,17 @@
     },
     {
      "subject": "studio-system",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:20+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -8584,6 +8617,13 @@
    "guid": "073c8dd6-b4c2-11ee-87f8-0b97952fef3c",
    "subjects": [
     {
+     "subject": "film-career-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "making-of-a-work",
      "role": "secondary",
      "confidence": "medium",
@@ -8591,11 +8631,11 @@
      "at": "2026-07-29T23:09:42+00:00"
     },
     {
-     "subject": "film-career-biography",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:09:42+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -8726,6 +8766,13 @@
      "at": "2026-07-29T23:19:20+00:00"
     },
     {
+     "subject": "film-career-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "studio-system",
      "role": "secondary",
      "confidence": "medium",
@@ -8733,11 +8780,11 @@
      "at": "2026-07-29T23:19:20+00:00"
     },
     {
-     "subject": "film-career-biography",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:19:20+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

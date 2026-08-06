@@ -5,10 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "cult-and-control",
-   "count": 11
+   "count": 10
   },
   {
    "slug": "courtroom-trial",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -17,6 +21,13 @@
    "guid": "9d5b9739-5e18-4873-b06f-afcd014e3c2e",
    "subjects": [
     {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "murder-for-hire",
      "role": "secondary",
      "confidence": "medium",
@@ -24,11 +35,11 @@
      "at": "2026-08-01T20:28:53+00:00"
     },
     {
-     "subject": "cult-and-control",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:28:53+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

@@ -4,12 +4,16 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "history-retold",
-   "count": 9
+   "slug": "tech-industry-power",
+   "count": 8
   },
   {
-   "slug": "tech-industry-power",
-   "count": 9
+   "slug": "trailer",
+   "count": 7
+  },
+  {
+   "slug": "history-retold",
+   "count": 6
   },
   {
    "slug": "media-criticism",
@@ -21,7 +25,7 @@
   },
   {
    "slug": "elections-and-voting",
-   "count": 4
+   "count": 3
   },
   {
    "slug": "ai-and-society",
@@ -88,10 +92,6 @@
    "count": 1
   },
   {
-   "slug": "forgotten-episode",
-   "count": 1
-  },
-  {
    "slug": "founder-biography",
    "count": 1
   },
@@ -120,10 +120,6 @@
    "count": 1
   },
   {
-   "slug": "prison-life",
-   "count": 1
-  },
-  {
    "slug": "scientific-discovery",
    "count": 1
   },
@@ -141,6 +137,13 @@
    "guid": "1a033fe6-8a41-11ea-8037-8b336f1f4c0a",
    "subjects": [
     {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "media-criticism",
      "role": "secondary",
      "confidence": "low",
@@ -150,13 +153,11 @@
      "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -443,6 +444,13 @@
    "guid": "90ddfdd6-9d69-11eb-a2e9-0bcfaa3bf3e0",
    "subjects": [
     {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "media-criticism",
      "role": "secondary",
      "confidence": "low",
@@ -452,13 +460,11 @@
      "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -725,10 +731,17 @@
    "subjects": [
     {
      "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:56+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -901,12 +914,17 @@
     },
     {
      "subject": "prison-life",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:33:28+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -928,6 +946,13 @@
    "guid": "c3e30902-7610-4146-9297-af2b013de9d2",
    "subjects": [
     {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "media-criticism",
      "role": "secondary",
      "confidence": "low",
@@ -937,13 +962,11 @@
      "at": "2026-08-03T05:32:36+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:36+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1201,12 +1224,17 @@
     },
     {
      "subject": "forgotten-episode",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1395,10 +1423,17 @@
    "subjects": [
     {
      "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:29+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

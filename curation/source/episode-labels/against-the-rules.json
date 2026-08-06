@@ -5,26 +5,26 @@
  "subjectsUsed": [
   {
    "slug": "courtroom-trial",
-   "count": 20
+   "count": 19
   },
   {
    "slug": "betting-and-gambling",
-   "count": 9
-  },
-  {
-   "slug": "crypto-collapse",
    "count": 8
   },
   {
-   "slug": "books-and-writing",
-   "count": 6
+   "slug": "trailer",
+   "count": 8
+  },
+  {
+   "slug": "crypto-collapse",
+   "count": 7
   },
   {
    "slug": "corporate-fraud",
    "count": 6
   },
   {
-   "slug": "economic-policy",
+   "slug": "books-and-writing",
    "count": 5
   },
   {
@@ -32,11 +32,11 @@
    "count": 5
   },
   {
-   "slug": "legal-precedent",
+   "slug": "economic-policy",
    "count": 4
   },
   {
-   "slug": "management-and-leadership",
+   "slug": "legal-precedent",
    "count": 4
   },
   {
@@ -56,6 +56,10 @@
    "count": 3
   },
   {
+   "slug": "management-and-leadership",
+   "count": 3
+  },
+  {
    "slug": "personal-transformation",
    "count": 3
   },
@@ -65,10 +69,6 @@
   },
   {
    "slug": "investment-fraud",
-   "count": 2
-  },
-  {
-   "slug": "regulatory-failure",
    "count": 2
   },
   {
@@ -104,10 +104,6 @@
    "count": 1
   },
   {
-   "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
    "slug": "investigative-process",
    "count": 1
   },
@@ -121,6 +117,10 @@
   },
   {
    "slug": "organised-crime",
+   "count": 1
+  },
+  {
+   "slug": "regulatory-failure",
    "count": 1
   },
   {
@@ -146,12 +146,17 @@
    "subjects": [
     {
      "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -351,12 +356,17 @@
    "subjects": [
     {
      "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -597,12 +607,17 @@
    "subjects": [
     {
      "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:33:28+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -760,6 +775,13 @@
    "guid": "1388a822-a961-11ec-b4a9-f7e2d88d7a67",
    "subjects": [
     {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "media-criticism",
      "role": "secondary",
      "confidence": "low",
@@ -769,13 +791,11 @@
      "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "ideas-and-argument",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -925,10 +945,17 @@
    "subjects": [
     {
      "subject": "crypto-collapse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:52+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1239,6 +1266,13 @@
    "guid": "44bbdb23-2cdd-46c9-9432-b08501623026",
    "subjects": [
     {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "crypto-collapse",
      "role": "secondary",
      "confidence": "medium",
@@ -1246,11 +1280,11 @@
      "at": "2026-07-28T00:49:06+00:00"
     },
     {
-     "subject": "courtroom-trial",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:49:06+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2060,6 +2094,13 @@
    "guid": "c244b9f3-106d-441f-9efd-b1db011ffc6d",
    "subjects": [
     {
+     "subject": "betting-and-gambling",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "regulatory-failure",
      "role": "secondary",
      "confidence": "low",
@@ -2069,13 +2110,11 @@
      "at": "2026-08-03T05:33:28+00:00"
     },
     {
-     "subject": "betting-and-gambling",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:33:28+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -2500,11 +2539,11 @@
     {
      "subject": "scientific-discovery",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "human",
+     "at": "2026-08-05T21:44:46+00:00"
     }
    ],
    "entities": [
@@ -2548,12 +2587,17 @@
    "subjects": [
     {
      "subject": "economic-policy",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

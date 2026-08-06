@@ -5,14 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "family-annihilation-and-parricide",
-   "count": 10
+   "count": 9
   },
   {
    "slug": "grief-and-loss",
    "count": 1
   },
   {
-   "slug": "political-figure-biography",
+   "slug": "introducing",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -21,6 +25,13 @@
    "guid": "73435476-ec39-11e8-bb5c-af7ea9ae3c35",
    "subjects": [
     {
+     "subject": "family-annihilation-and-parricide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "regulatory-failure",
      "role": "secondary",
      "confidence": "medium",
@@ -28,11 +39,11 @@
      "at": "2026-07-30T15:09:10+00:00"
     },
     {
-     "subject": "family-annihilation-and-parricide",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:10+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -319,12 +330,17 @@
     },
     {
      "subject": "political-figure-biography",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   }

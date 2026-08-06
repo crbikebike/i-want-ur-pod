@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "institutional-coverup",
-   "count": 9
+   "count": 8
   },
   {
    "slug": "unsolved-murder",
-   "count": 7
+   "count": 6
   },
   {
    "slug": "police-misconduct",
@@ -17,6 +17,10 @@
   },
   {
    "slug": "journalist-under-scrutiny",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
    "count": 2
   },
   {
@@ -37,10 +41,17 @@
     },
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:30+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -332,6 +343,13 @@
    "guid": "022c9e48-ed6e-4728-bc30-b3d249abee6c",
    "subjects": [
     {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "police-misconduct",
      "role": "secondary",
      "confidence": "low",
@@ -341,13 +359,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "institutional-coverup",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

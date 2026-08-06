@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "scientific-discovery",
-   "count": 178
+   "count": 176
   },
   {
    "slug": "animal-behaviour",
-   "count": 53
+   "count": 52
   },
   {
    "slug": "legal-precedent",
@@ -212,6 +212,10 @@
    "count": 3
   },
   {
+   "slug": "trailer",
+   "count": 3
+  },
+  {
    "slug": "addiction-and-recovery",
    "count": 2
   },
@@ -410,12 +414,17 @@
    "subjects": [
     {
      "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -12594,6 +12603,25 @@
    ]
   },
   {
+   "guid": "13281368-d447-4dc7-9c39-0d20f628a215",
+   "subjects": [
+    {
+     "subject": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
    "guid": "a993293f-9092-44da-a13f-fd69cf2970c4",
    "subjects": [
     {
@@ -12621,30 +12649,21 @@
    ]
   },
   {
-   "guid": "13281368-d447-4dc7-9c39-0d20f628a215",
-   "subjects": [
-    {
-     "subject": "animal-behaviour",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
-    }
-   ]
-  },
-  {
    "guid": "43f0591d-8646-4bd9-b09f-06bf964325de",
    "subjects": [
     {
      "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

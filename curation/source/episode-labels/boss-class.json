@@ -5,15 +5,15 @@
  "subjectsUsed": [
   {
    "slug": "management-and-leadership",
-   "count": 7
+   "count": 5
+  },
+  {
+   "slug": "trailer",
+   "count": 4
   },
   {
    "slug": "ai-and-society",
-   "count": 3
-  },
-  {
-   "slug": "history-retold",
-   "count": 1
+   "count": 2
   }
  ],
  "episodes": [
@@ -22,10 +22,17 @@
    "subjects": [
     {
      "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:34+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -66,10 +73,17 @@
    "subjects": [
     {
      "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:10:13+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -156,6 +170,13 @@
    "guid": "696e27dd4796fcbb57091125",
    "subjects": [
     {
+     "subject": "ai-and-society",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "management-and-leadership",
      "role": "secondary",
      "confidence": "medium",
@@ -163,11 +184,11 @@
      "at": "2026-07-30T15:20:34+00:00"
     },
     {
-     "subject": "ai-and-society",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:34+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -237,6 +258,13 @@
    "guid": "6a315813780d0f7579afb892",
    "subjects": [
     {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "sense-of-place",
      "role": "secondary",
      "confidence": "low",
@@ -246,13 +274,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

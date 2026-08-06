@@ -8,11 +8,11 @@
    "count": 9
   },
   {
-   "slug": "scientific-discovery",
-   "count": 8
+   "slug": "medical-research",
+   "count": 7
   },
   {
-   "slug": "medical-research",
+   "slug": "scientific-discovery",
    "count": 7
   },
   {
@@ -32,8 +32,8 @@
    "count": 2
   },
   {
-   "slug": "books-and-writing",
-   "count": 1
+   "slug": "trailer",
+   "count": 2
   },
   {
    "slug": "corporate-negligence",
@@ -86,12 +86,17 @@
    "subjects": [
     {
      "subject": "scientific-discovery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:03:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1225,12 +1230,17 @@
    "subjects": [
     {
      "subject": "books-and-writing",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:02:56+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   }

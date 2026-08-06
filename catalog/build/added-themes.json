@@ -1,19 +1,25 @@
 {
-  "authored": "2026-07-26",
-  "by": "chris",
-  "what": "Themes added after the original 30. curation/source/themes.json is a read-only input, so additions live here and vocabulary.py appends them. The 30 were authored before the 27k episodes were labelled; these two exist because the subject-to-theme mapping surfaced clusters with no home, each larger than the median existing theme.",
-  "themes": [
-    {
-      "slug": "being-human",
-      "name": "Being Human",
-      "description": "A life at close range — love, grief, illness, addiction, parenting, ageing, becoming someone else — told by the people living it rather than reported from outside.",
-      "why": "3,591 episodes across 13 subjects had no home among the 30 and were forced under Personal Mysteries, Survivor Testimony, Medical Harm and Family Secrets. Would be the third-largest theme. Chris chose this name over the narrower 'A Life, Changed'; the risk he accepted is that a broad name becomes the drawer everything falls into, which is how this cluster got lost the first time. If a later run starts filing unrelated episodes here, that is the cause."
-    },
-    {
-      "slug": "sense-of-place",
-      "name": "A Sense of Place",
-      "description": "Somewhere specific — a town, a block, a landscape — and what living there does to the people who stay and the ones who leave.",
-      "why": "1,288 episodes across 3 subjects, previously filed under History, Retold, which described how they were told rather than what they were about. S-Town, La Brega and Bear Grease live here. The slug deliberately matches the existing subject slug 'sense-of-place', so vocabulary.py's same-slug pass resolves that subject to this theme automatically."
-    }
-  ]
+ "authored": "2026-07-26",
+ "by": "chris",
+ "what": "Themes added after the original 30. curation/source/themes.json is a read-only input, so additions live here and vocabulary.py appends them. The 30 were authored before the 27k episodes were labelled; these two exist because the subject-to-theme mapping surfaced clusters with no home, each larger than the median existing theme.",
+ "themes": [
+  {
+   "slug": "being-human",
+   "name": "Being Human",
+   "description": "A life at close range — love, grief, illness, addiction, parenting, ageing, becoming someone else — told by the people living it rather than reported from outside.",
+   "why": "3,591 episodes across 13 subjects had no home among the 30 and were forced under Personal Mysteries, Survivor Testimony, Medical Harm and Family Secrets. Would be the third-largest theme. Chris chose this name over the narrower 'A Life, Changed'; the risk he accepted is that a broad name becomes the drawer everything falls into, which is how this cluster got lost the first time. If a later run starts filing unrelated episodes here, that is the cause."
+  },
+  {
+   "slug": "sense-of-place",
+   "name": "A Sense of Place",
+   "description": "Somewhere specific — a town, a block, a landscape — and what living there does to the people who stay and the ones who leave.",
+   "why": "1,288 episodes across 3 subjects, previously filed under History, Retold, which described how they were told rather than what they were about. S-Town, La Brega and Bear Grease live here. The slug deliberately matches the existing subject slug 'sense-of-place', so vocabulary.py's same-slug pass resolves that subject to this theme automatically."
+  },
+  {
+   "slug": "formats",
+   "name": "Formats",
+   "description": "What an episode is rather than what it is about — a trailer, a cross-promo. Browsable the way a movie site's trailers page is browsable: a shelf of previews, each one a doorway to a show.",
+   "why": "Roughly fifteen agent reports across the relabel and every escalation slice said the same thing: trailers and cross-promos have no subject because the format is the content. Forcing a topical label onto them is how they became 13% of the review queue's scatter. Decided 2026-08-05: format becomes the label, and the topical vocabulary stops being asked a question it cannot answer."
+  }
+ ]
 }

@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "personal-transformation",
-   "count": 34
+   "count": 31
   },
   {
    "slug": "estrangement-and-reconciliation",
@@ -45,6 +45,10 @@
   },
   {
    "slug": "missing-person",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
    "count": 3
   },
   {
@@ -106,12 +110,17 @@
    "subjects": [
     {
      "subject": "personal-transformation",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1620,6 +1629,13 @@
    "guid": "0e239786-5ee4-11ee-b3a7-4b7e7f709abb",
    "subjects": [
     {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "relationship-remembered",
      "role": "secondary",
      "confidence": "low",
@@ -1629,13 +1645,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "personal-transformation",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -2023,6 +2037,13 @@
    "guid": "926bc5b1-f99c-4b9c-a4ae-b3460148061e",
    "subjects": [
     {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "relationship-remembered",
      "role": "secondary",
      "confidence": "low",
@@ -2032,13 +2053,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "personal-transformation",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

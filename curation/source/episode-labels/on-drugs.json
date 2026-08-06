@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "addiction-and-recovery",
-   "count": 14
+   "count": 12
   },
   {
    "slug": "medical-research",
-   "count": 7
+   "count": 6
   },
   {
    "slug": "history-retold",
@@ -17,6 +17,14 @@
   },
   {
    "slug": "economic-policy",
+   "count": 3
+  },
+  {
+   "slug": "introducing",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
    "count": 3
   },
   {
@@ -28,15 +36,7 @@
    "count": 2
   },
   {
-   "slug": "ideas-and-argument",
-   "count": 2
-  },
-  {
    "slug": "cybercrime-for-profit",
-   "count": 1
-  },
-  {
-   "slug": "extremist-movement",
    "count": 1
   },
   {
@@ -45,6 +45,10 @@
   },
   {
    "slug": "gender-identity",
+   "count": 1
+  },
+  {
+   "slug": "ideas-and-argument",
    "count": 1
   },
   {
@@ -70,10 +74,6 @@
   {
    "slug": "scientific-discovery",
    "count": 1
-  },
-  {
-   "slug": "terrorism-and-aftermath",
-   "count": 1
   }
  ],
  "episodes": [
@@ -82,12 +82,17 @@
    "subjects": [
     {
      "subject": "addiction-and-recovery",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -316,12 +321,17 @@
    "subjects": [
     {
      "subject": "ideas-and-argument",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -339,12 +349,17 @@
     },
     {
      "subject": "medical-research",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -703,12 +718,17 @@
     },
     {
      "subject": "terrorism-and-aftermath",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -734,12 +754,17 @@
     },
     {
      "subject": "extremist-movement",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -756,10 +781,17 @@
    "subjects": [
     {
      "subject": "addiction-and-recovery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:01+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -994,11 +1026,11 @@
     {
      "subject": "cybercrime-for-profit",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "model": "human",
+     "at": "2026-08-05T22:44:10+00:00"
     }
    ],
    "entities": [

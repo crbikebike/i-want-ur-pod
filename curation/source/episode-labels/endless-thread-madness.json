@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "internet-culture",
-   "count": 175
+   "count": 172
   },
   {
    "slug": "everyday-mystery",
@@ -24,16 +24,20 @@
    "count": 11
   },
   {
-   "slug": "history-retold",
+   "slug": "introducing",
    "count": 10
-  },
-  {
-   "slug": "archives-and-objects",
-   "count": 9
   },
   {
    "slug": "conspiracy-theory",
    "count": 9
+  },
+  {
+   "slug": "history-retold",
+   "count": 9
+  },
+  {
+   "slug": "archives-and-objects",
+   "count": 8
   },
   {
    "slug": "food-and-drink",
@@ -41,7 +45,7 @@
   },
   {
    "slug": "games-and-play",
-   "count": 8
+   "count": 7
   },
   {
    "slug": "personal-transformation",
@@ -56,15 +60,11 @@
    "count": 7
   },
   {
-   "slug": "making-of-a-work",
-   "count": 6
-  },
-  {
-   "slug": "epidemic-and-public-health",
+   "slug": "language-and-words",
    "count": 5
   },
   {
-   "slug": "language-and-words",
+   "slug": "making-of-a-work",
    "count": 5
   },
   {
@@ -72,11 +72,15 @@
    "count": 5
   },
   {
-   "slug": "celebrity-life",
-   "count": 4
+   "slug": "trailer",
+   "count": 5
   },
   {
    "slug": "cost-of-fame",
+   "count": 4
+  },
+  {
+   "slug": "epidemic-and-public-health",
    "count": 4
   },
   {
@@ -96,7 +100,7 @@
    "count": 4
   },
   {
-   "slug": "books-and-writing",
+   "slug": "celebrity-life",
    "count": 3
   },
   {
@@ -136,7 +140,7 @@
    "count": 2
   },
   {
-   "slug": "audio-drama-scifi",
+   "slug": "books-and-writing",
    "count": 2
   },
   {
@@ -160,10 +164,6 @@
    "count": 2
   },
   {
-   "slug": "elections-and-voting",
-   "count": 2
-  },
-  {
    "slug": "fashion-and-clothing",
    "count": 2
   },
@@ -177,10 +177,6 @@
   },
   {
    "slug": "friendship",
-   "count": 2
-  },
-  {
-   "slug": "government-secrecy",
    "count": 2
   },
   {
@@ -224,10 +220,6 @@
    "count": 2
   },
   {
-   "slug": "sexual-abuse-accountability",
-   "count": 2
-  },
-  {
    "slug": "systems-and-infrastructure-design",
    "count": 2
   },
@@ -241,6 +233,10 @@
   },
   {
    "slug": "artist-band-biography",
+   "count": 1
+  },
+  {
+   "slug": "audio-drama-scifi",
    "count": 1
   },
   {
@@ -264,6 +260,10 @@
    "count": 1
   },
   {
+   "slug": "elections-and-voting",
+   "count": 1
+  },
+  {
    "slug": "estrangement-and-reconciliation",
    "count": 1
   },
@@ -273,6 +273,10 @@
   },
   {
    "slug": "forensic-evidence",
+   "count": 1
+  },
+  {
+   "slug": "government-secrecy",
    "count": 1
   },
   {
@@ -316,11 +320,11 @@
    "count": 1
   },
   {
-   "slug": "talking-about-love",
+   "slug": "sexual-abuse-accountability",
    "count": 1
   },
   {
-   "slug": "terrorism-and-aftermath",
+   "slug": "talking-about-love",
    "count": 1
   }
  ],
@@ -422,12 +426,17 @@
    "subjects": [
     {
      "subject": "celebrity-life",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -1455,12 +1464,17 @@
    "subjects": [
     {
      "subject": "audio-drama-scifi",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -1558,6 +1572,25 @@
    ]
   },
   {
+   "guid": "2418d0c4-6437-4370-8057-848a4147ea32",
+   "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ]
+  },
+  {
    "guid": "9993db2c-a8b2-474c-9eef-faf7b9642075",
    "subjects": [
     {
@@ -1585,18 +1618,6 @@
      "kind": "person",
      "confidence": "medium",
      "at": "2026-07-29T04:05:09+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "2418d0c4-6437-4370-8057-848a4147ea32",
-   "subjects": [
-    {
-     "subject": "epidemic-and-public-health",
-     "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:43:17+00:00"
     }
    ]
   },
@@ -2326,10 +2347,17 @@
    "subjects": [
     {
      "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:11:53+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -3433,11 +3461,11 @@
     {
      "subject": "internet-culture",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "model": "human",
+     "at": "2026-08-05T23:22:23+00:00"
     }
    ]
   },
@@ -3477,12 +3505,17 @@
    "subjects": [
     {
      "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -5802,6 +5835,13 @@
    "guid": "d1cb79da-26b9-4578-9e28-3f14dfa4f79e",
    "subjects": [
     {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "labour-history",
      "role": "secondary",
      "confidence": "low",
@@ -5811,13 +5851,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "history-retold",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -5895,6 +5933,13 @@
    "guid": "35965e11-088f-41ab-bca5-ec2e1857849e",
    "subjects": [
     {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "internet-culture",
      "role": "secondary",
      "confidence": "medium",
@@ -5902,11 +5947,11 @@
      "at": "2026-07-29T03:42:14+00:00"
     },
     {
-     "subject": "books-and-writing",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T03:42:14+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6068,12 +6113,17 @@
     },
     {
      "subject": "terrorism-and-aftermath",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6618,6 +6668,13 @@
    "guid": "9458a81d-9afe-4788-88fd-b3faa82cade6",
    "subjects": [
     {
+     "subject": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "scientific-discovery",
      "role": "secondary",
      "confidence": "medium",
@@ -6625,11 +6682,11 @@
      "at": "2026-07-29T04:08:21+00:00"
     },
     {
-     "subject": "archives-and-objects",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:21+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -6920,12 +6977,17 @@
    "subjects": [
     {
      "subject": "elections-and-voting",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -7435,10 +7497,17 @@
    "subjects": [
     {
      "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:05+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -7649,6 +7718,13 @@
    "guid": "524cf007-2e41-429e-bac0-4fbe729315fb",
    "subjects": [
     {
+     "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "surveillance-and-privacy",
      "role": "secondary",
      "confidence": "medium",
@@ -7656,11 +7732,11 @@
      "at": "2026-07-29T04:08:09+00:00"
     },
     {
-     "subject": "sexual-abuse-accountability",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:08:09+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -7704,12 +7780,17 @@
    "subjects": [
     {
      "subject": "internet-culture",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -8101,6 +8182,13 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
+     "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "sense-of-place",
      "role": "secondary",
      "confidence": "medium",
@@ -8108,13 +8196,11 @@
      "at": "2026-07-29T08:37:44+00:00"
     },
     {
-     "subject": "making-of-a-work",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -8241,10 +8327,17 @@
    "subjects": [
     {
      "subject": "games-and-play",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:05:05+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

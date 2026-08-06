@@ -5,7 +5,15 @@
  "subjectsUsed": [
   {
    "slug": "reality-television",
-   "count": 9
+   "count": 7
+  },
+  {
+   "slug": "introducing",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 2
   },
   {
    "slug": "epidemic-and-public-health",
@@ -13,14 +21,6 @@
   },
   {
    "slug": "protest-movement",
-   "count": 1
-  },
-  {
-   "slug": "terrorism-and-aftermath",
-   "count": 1
-  },
-  {
-   "slug": "war-crimes-accountability",
    "count": 1
   }
  ],
@@ -37,10 +37,17 @@
     },
     {
      "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:52+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -57,10 +64,17 @@
    "subjects": [
     {
      "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:07+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -264,12 +278,17 @@
    "subjects": [
     {
      "subject": "war-crimes-accountability",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -293,12 +312,17 @@
     },
     {
      "subject": "terrorism-and-aftermath",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },

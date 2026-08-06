@@ -5,19 +5,19 @@
  "subjectsUsed": [
   {
    "slug": "intimate-partner-homicide",
-   "count": 6
+   "count": 5
+  },
+  {
+   "slug": "trailer",
+   "count": 5
   },
   {
    "slug": "murder-close-to-home",
-   "count": 5
+   "count": 4
   },
   {
    "slug": "corruption-in-local-power",
    "count": 3
-  },
-  {
-   "slug": "ageing-and-mortality",
-   "count": 1
   },
   {
    "slug": "charismatic-con",
@@ -28,15 +28,7 @@
    "count": 1
   },
   {
-   "slug": "making-of-a-work",
-   "count": 1
-  },
-  {
-   "slug": "personal-transformation",
-   "count": 1
-  },
-  {
-   "slug": "protest-movement",
+   "slug": "introducing",
    "count": 1
   },
   {
@@ -57,10 +49,17 @@
     },
     {
      "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:15:37+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -83,10 +82,17 @@
    "subjects": [
     {
      "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:37+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -522,12 +528,17 @@
     },
     {
      "subject": "protest-movement",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -602,12 +613,17 @@
    "subjects": [
     {
      "subject": "making-of-a-work",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -624,18 +640,30 @@
    "subjects": [
     {
      "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
   {
    "guid": "69c4447ba3dddd45e99d71d1",
    "subjects": [
+    {
+     "subject": "personal-transformation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "true-crime-as-genre",
      "role": "secondary",
@@ -646,13 +674,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "personal-transformation",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

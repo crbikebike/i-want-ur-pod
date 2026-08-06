@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "paranormal-investigation",
-   "count": 5
+   "count": 4
   },
   {
    "slug": "cult-and-control",
@@ -18,6 +18,10 @@
   {
    "slug": "indigenous-history",
    "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
@@ -26,10 +30,17 @@
    "subjects": [
     {
      "subject": "paranormal-investigation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:27:45+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

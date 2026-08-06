@@ -5,14 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "identity-impostor",
-   "count": 9
+   "count": 8
+  },
+  {
+   "slug": "trailer",
+   "count": 2
   },
   {
    "slug": "charismatic-con",
-   "count": 1
-  },
-  {
-   "slug": "wrongful-conviction",
    "count": 1
   }
  ],
@@ -131,6 +131,13 @@
    "guid": "93ae933b-9f18-4444-b4ce-4d4d5f793f90",
    "subjects": [
     {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "religious-abuse",
      "role": "secondary",
      "confidence": "medium",
@@ -138,11 +145,11 @@
      "at": "2026-07-30T15:09:10+00:00"
     },
     {
-     "subject": "identity-impostor",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:10+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -286,12 +293,17 @@
     },
     {
      "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

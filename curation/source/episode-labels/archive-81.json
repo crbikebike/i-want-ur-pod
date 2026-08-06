@@ -5,15 +5,15 @@
  "subjectsUsed": [
   {
    "slug": "audio-drama-horror",
-   "count": 42
+   "count": 39
   },
   {
    "slug": "making-of-a-work",
    "count": 4
   },
   {
-   "slug": "audio-drama-scifi",
-   "count": 2
+   "slug": "trailer",
+   "count": 4
   },
   {
    "slug": "mockumentary-investigation-fiction",
@@ -21,6 +21,10 @@
   },
   {
    "slug": "anthology-framing-fiction",
+   "count": 1
+  },
+  {
+   "slug": "audio-drama-scifi",
    "count": 1
   }
  ],
@@ -30,12 +34,17 @@
    "subjects": [
     {
      "subject": "audio-drama-horror",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:54:17+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -208,12 +217,17 @@
    "subjects": [
     {
      "subject": "audio-drama-horror",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -457,10 +471,17 @@
    "subjects": [
     {
      "subject": "audio-drama-horror",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:24:33+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -744,12 +765,17 @@
    "subjects": [
     {
      "subject": "audio-drama-scifi",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

@@ -4,20 +4,24 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "immigration-and-borders",
-   "count": 4
-  },
-  {
    "slug": "racial-violence",
    "count": 4
   },
   {
-   "slug": "unsolved-murder",
-   "count": 4
+   "slug": "immigration-and-borders",
+   "count": 3
   },
   {
    "slug": "institutional-coverup",
    "count": 3
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 2
   },
   {
    "slug": "conspiracy-theory",
@@ -41,10 +45,17 @@
     },
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:47+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -259,6 +270,13 @@
    "guid": "d72fc29e-7c0e-4d9b-974a-5a905c024706",
    "subjects": [
     {
+     "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "institutional-coverup",
      "role": "secondary",
      "confidence": "low",
@@ -266,11 +284,11 @@
      "at": "2026-08-01T20:22:08+00:00"
     },
     {
-     "subject": "immigration-and-borders",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:08+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

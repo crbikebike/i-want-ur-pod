@@ -4,8 +4,8 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "murder-for-hire",
-   "count": 4
+   "slug": "trailer",
+   "count": 5
   },
   {
    "slug": "intimate-partner-homicide",
@@ -16,23 +16,19 @@
    "count": 3
   },
   {
-   "slug": "corruption-in-local-power",
-   "count": 2
-  },
-  {
    "slug": "missing-person",
    "count": 2
   },
   {
+   "slug": "murder-for-hire",
+   "count": 2
+  },
+  {
+   "slug": "corruption-in-local-power",
+   "count": 1
+  },
+  {
    "slug": "courtroom-trial",
-   "count": 1
-  },
-  {
-   "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
-   "slug": "identity-impostor",
    "count": 1
   },
   {
@@ -53,10 +49,17 @@
     },
     {
      "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:00+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -84,10 +87,17 @@
    "subjects": [
     {
      "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:42+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -135,6 +145,13 @@
    "guid": "gid://art19-episode-locator/V0/LFxz4p4fRWIQAGLiuNUFdJ48qZJbFeswcuRrnmz8s1s",
    "subjects": [
     {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "institutional-coverup",
      "role": "secondary",
      "confidence": "low",
@@ -142,11 +159,11 @@
      "at": "2026-07-30T15:15:37+00:00"
     },
     {
-     "subject": "corruption-in-local-power",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:15:37+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -421,12 +438,17 @@
    "subjects": [
     {
      "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -443,12 +465,17 @@
    "subjects": [
     {
      "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

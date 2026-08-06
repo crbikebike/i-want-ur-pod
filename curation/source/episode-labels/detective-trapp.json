@@ -5,10 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "serial-offender",
-   "count": 7
+   "count": 5
+  },
+  {
+   "slug": "introducing",
+   "count": 1
   },
   {
    "slug": "making-of-a-work",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -25,10 +33,17 @@
     },
     {
      "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:40+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -155,6 +170,13 @@
    "guid": "0f887a4e-51ae-443f-93cd-006c9fe77455",
    "subjects": [
     {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "unsolved-murder",
      "role": "secondary",
      "confidence": "low",
@@ -164,13 +186,11 @@
      "at": "2026-08-05T04:42:42+00:00"
     },
     {
-     "subject": "serial-offender",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:42:42+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

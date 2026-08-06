@@ -4,16 +4,20 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "identity-impostor",
-   "count": 15
+   "slug": "informant-and-undercover",
+   "count": 13
   },
   {
-   "slug": "informant-and-undercover",
-   "count": 15
+   "slug": "identity-impostor",
+   "count": 12
   },
   {
    "slug": "charismatic-con",
-   "count": 9
+   "count": 8
+  },
+  {
+   "slug": "trailer",
+   "count": 8
   },
   {
    "slug": "organised-crime",
@@ -28,12 +32,12 @@
    "count": 5
   },
   {
-   "slug": "family-secret",
+   "slug": "political-scandal",
    "count": 4
   },
   {
-   "slug": "political-scandal",
-   "count": 4
+   "slug": "family-secret",
+   "count": 3
   },
   {
    "slug": "missing-person",
@@ -56,10 +60,6 @@
    "count": 2
   },
   {
-   "slug": "unsolved-murder",
-   "count": 2
-  },
-  {
    "slug": "corruption-in-local-power",
    "count": 1
   },
@@ -78,6 +78,10 @@
   {
    "slug": "true-crime-as-genre",
    "count": 1
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 1
   }
  ],
  "episodes": [
@@ -86,10 +90,17 @@
    "subjects": [
     {
      "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:50:56+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -402,12 +413,17 @@
    "subjects": [
     {
      "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -776,10 +792,17 @@
    "subjects": [
     {
      "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:25+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1117,12 +1140,17 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1307,6 +1335,13 @@
    "guid": "a49811fa-148b-49f4-95b2-b1cc016b7541",
    "subjects": [
     {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "political-scandal",
      "role": "secondary",
      "confidence": "medium",
@@ -1314,11 +1349,11 @@
      "at": "2026-07-28T00:52:33+00:00"
     },
     {
-     "subject": "identity-impostor",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:33+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1449,10 +1484,17 @@
    "subjects": [
     {
      "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:25+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1696,10 +1738,17 @@
    "subjects": [
     {
      "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:25+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1918,6 +1967,13 @@
    "guid": "c0c96694-9809-4502-b3cc-b444013a7a57",
    "subjects": [
     {
+     "subject": "family-secret",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "identity-impostor",
      "role": "secondary",
      "confidence": "medium",
@@ -1925,11 +1981,11 @@
      "at": "2026-07-28T00:51:29+00:00"
     },
     {
-     "subject": "family-secret",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:51:29+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

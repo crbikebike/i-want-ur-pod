@@ -9,11 +9,15 @@
   },
   {
    "slug": "corruption-in-local-power",
-   "count": 14
+   "count": 12
   },
   {
    "slug": "political-scandal",
    "count": 6
+  },
+  {
+   "slug": "introducing",
+   "count": 4
   },
   {
    "slug": "heist-and-robbery",
@@ -24,7 +28,7 @@
    "count": 3
   },
   {
-   "slug": "murder-close-to-home",
+   "slug": "trailer",
    "count": 2
   },
   {
@@ -44,15 +48,7 @@
    "count": 1
   },
   {
-   "slug": "serial-offender",
-   "count": 1
-  },
-  {
    "slug": "sexual-abuse-accountability",
-   "count": 1
-  },
-  {
-   "slug": "terrorism-and-aftermath",
    "count": 1
   },
   {
@@ -73,6 +69,13 @@
    "guid": "e3412454-9ee5-11e6-a954-ebdf7fa5f9a3",
    "subjects": [
     {
+     "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "organised-crime",
      "role": "secondary",
      "confidence": "low",
@@ -82,13 +85,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "corruption-in-local-power",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -697,10 +698,17 @@
    "subjects": [
     {
      "subject": "corruption-in-local-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:39+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1005,12 +1013,17 @@
    "subjects": [
     {
      "subject": "serial-offender",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -1088,6 +1101,13 @@
      "at": "2026-07-30T15:18:23+00:00"
     },
     {
+     "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "musician-death",
      "role": "secondary",
      "confidence": "low",
@@ -1097,13 +1117,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "murder-close-to-home",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -1298,12 +1316,17 @@
     },
     {
      "subject": "terrorism-and-aftermath",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -1327,12 +1350,17 @@
     },
     {
      "subject": "murder-close-to-home",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

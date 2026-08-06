@@ -5,7 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "slavery-and-its-legacy",
-   "count": 3
+   "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
@@ -14,10 +18,17 @@
    "subjects": [
     {
      "subject": "slavery-and-its-legacy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:31:06+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

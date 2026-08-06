@@ -5,14 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "missing-person",
-   "count": 14
+   "count": 12
+  },
+  {
+   "slug": "trailer",
+   "count": 2
   },
   {
    "slug": "body-never-found",
    "count": 1
   },
   {
-   "slug": "courtroom-trial",
+   "slug": "introducing",
    "count": 1
   },
   {
@@ -25,6 +29,13 @@
    "guid": "26243e9c-b9bc-4fb2-aa05-665853b23c8b",
    "subjects": [
     {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "serial-offender",
      "role": "secondary",
      "confidence": "medium",
@@ -32,11 +43,11 @@
      "at": "2026-08-01T20:18:24+00:00"
     },
     {
-     "subject": "missing-person",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:24+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -357,6 +368,13 @@
    "guid": "afdca1a8-fb63-4032-920c-ae9400bdf6b2",
    "subjects": [
     {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "intimate-partner-homicide",
      "role": "secondary",
      "confidence": "medium",
@@ -364,13 +382,11 @@
      "at": "2026-07-30T15:05:33+00:00"
     },
     {
-     "subject": "courtroom-trial",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -393,12 +409,17 @@
    "subjects": [
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

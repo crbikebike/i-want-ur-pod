@@ -5,10 +5,14 @@
  "subjectsUsed": [
   {
    "slug": "mockumentary-investigation-fiction",
-   "count": 5
+   "count": 4
   },
   {
    "slug": "audio-drama-scifi",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -18,10 +22,17 @@
    "subjects": [
     {
      "subject": "mockumentary-investigation-fiction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:53+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

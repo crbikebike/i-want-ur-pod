@@ -5,14 +5,18 @@
  "subjectsUsed": [
   {
    "slug": "sex-work-and-exploitation",
-   "count": 10
+   "count": 9
   },
   {
-   "slug": "cost-of-fame",
+   "slug": "introducing",
    "count": 1
   },
   {
    "slug": "sexual-abuse-accountability",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -22,10 +26,17 @@
    "subjects": [
     {
      "subject": "sex-work-and-exploitation",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:14+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -232,6 +243,13 @@
      "at": "2026-08-03T05:32:12+00:00"
     },
     {
+     "subject": "cost-of-fame",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "law-explained",
      "role": "secondary",
      "confidence": "medium",
@@ -239,13 +257,11 @@
      "at": "2026-08-01T20:20:01+00:00"
     },
     {
-     "subject": "cost-of-fame",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

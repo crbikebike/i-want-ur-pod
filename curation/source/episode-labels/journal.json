@@ -168,10 +168,6 @@
    "count": 2
   },
   {
-   "slug": "stranger-homicide",
-   "count": 2
-  },
-  {
    "slug": "transport-and-infrastructure",
    "count": 2
   },
@@ -229,6 +225,14 @@
   },
   {
    "slug": "sports-history",
+   "count": 1
+  },
+  {
+   "slug": "stranger-homicide",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -2598,10 +2602,17 @@
     },
     {
      "subject": "stranger-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T22:59:55+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

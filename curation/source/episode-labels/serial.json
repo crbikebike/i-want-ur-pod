@@ -4,35 +4,31 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "death-penalty",
-   "count": 6
+   "slug": "trailer",
+   "count": 12
   },
   {
-   "slug": "medical-system-harm",
+   "slug": "death-penalty",
    "count": 5
   },
   {
    "slug": "conspiracy-theory",
-   "count": 3
+   "count": 2
+  },
+  {
+   "slug": "medical-system-harm",
+   "count": 2
   },
   {
    "slug": "animal-behaviour",
-   "count": 2
-  },
-  {
-   "slug": "cold-case-reopened",
-   "count": 2
-  },
-  {
-   "slug": "elections-and-voting",
-   "count": 2
-  },
-  {
-   "slug": "juvenile-justice",
-   "count": 2
+   "count": 1
   },
   {
    "slug": "charismatic-con",
+   "count": 1
+  },
+  {
+   "slug": "cold-case-reopened",
    "count": 1
   },
   {
@@ -40,15 +36,11 @@
    "count": 1
   },
   {
-   "slug": "government-secrecy",
+   "slug": "elections-and-voting",
    "count": 1
   },
   {
-   "slug": "grief-and-loss",
-   "count": 1
-  },
-  {
-   "slug": "murder-for-hire",
+   "slug": "juvenile-justice",
    "count": 1
   },
   {
@@ -228,10 +220,17 @@
    "subjects": [
     {
      "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:34+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -272,6 +271,13 @@
    "guid": "0542fdf1-5d6b-4fdd-b16d-56e59d0ae024",
    "subjects": [
     {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "investigative-process",
      "role": "secondary",
      "confidence": "medium",
@@ -279,11 +285,11 @@
      "at": "2026-08-01T20:18:22+00:00"
     },
     {
-     "subject": "conspiracy-theory",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:22+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -335,12 +341,17 @@
     },
     {
      "subject": "grief-and-loss",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -386,6 +397,13 @@
    "guid": "972716fa-eea0-4797-b613-3d8fc2593af7",
    "subjects": [
     {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "police-misconduct",
      "role": "secondary",
      "confidence": "medium",
@@ -393,11 +411,11 @@
      "at": "2026-07-30T14:58:42+00:00"
     },
     {
-     "subject": "cold-case-reopened",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:42+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -452,6 +470,13 @@
    "guid": "5407b837-2f33-4f2f-97bd-9366288b77e6",
    "subjects": [
     {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "reproductive-health",
      "role": "secondary",
      "confidence": "medium",
@@ -459,11 +484,11 @@
      "at": "2026-07-30T15:08:06+00:00"
     },
     {
-     "subject": "medical-system-harm",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:06+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -506,10 +531,17 @@
     },
     {
      "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:01+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -537,6 +569,13 @@
    "guid": "2a5d8b09-30f0-43e2-bc9c-d111b295c87f",
    "subjects": [
     {
+     "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "war-crimes-accountability",
      "role": "secondary",
      "confidence": "low",
@@ -546,13 +585,11 @@
      "at": "2026-08-03T05:32:36+00:00"
     },
     {
-     "subject": "government-secrecy",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:36+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -598,10 +635,17 @@
    "subjects": [
     {
      "subject": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:32:46+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -638,10 +682,17 @@
    "subjects": [
     {
      "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:57:34+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -668,6 +719,13 @@
    "guid": "f98d8682-d934-4078-bcdd-b3a6bbef7963",
    "subjects": [
     {
+     "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "wrongful-conviction",
      "role": "secondary",
      "confidence": "medium",
@@ -675,11 +733,11 @@
      "at": "2026-08-01T20:18:22+00:00"
     },
     {
-     "subject": "medical-system-harm",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:22+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -709,12 +767,17 @@
     },
     {
      "subject": "murder-for-hire",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -745,6 +808,13 @@
    "guid": "434efcb6-ac5b-4a91-9a8f-dc8b94817293",
    "subjects": [
     {
+     "subject": "death-penalty",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "serial-offender",
      "role": "secondary",
      "confidence": "medium",
@@ -752,11 +822,11 @@
      "at": "2026-07-30T14:58:42+00:00"
     },
     {
-     "subject": "death-penalty",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:58:42+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

@@ -4,24 +4,24 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "music-scene-movement",
-   "count": 23
+   "slug": "artist-band-biography",
+   "count": 21
   },
   {
-   "slug": "artist-band-biography",
-   "count": 22
+   "slug": "music-scene-movement",
+   "count": 21
   },
   {
    "slug": "song-and-album-origin",
-   "count": 10
+   "count": 9
+  },
+  {
+   "slug": "trailer",
+   "count": 6
   },
   {
    "slug": "musician-death",
    "count": 3
-  },
-  {
-   "slug": "pioneer-biography",
-   "count": 2
   },
   {
    "slug": "archives-and-objects",
@@ -33,10 +33,6 @@
   },
   {
    "slug": "folklore-and-legend",
-   "count": 1
-  },
-  {
-   "slug": "forgotten-episode",
    "count": 1
   },
   {
@@ -60,6 +56,10 @@
    "count": 1
   },
   {
+   "slug": "pioneer-biography",
+   "count": 1
+  },
+  {
    "slug": "talking-about-music",
    "count": 1
   }
@@ -68,6 +68,13 @@
   {
    "guid": "743583a40b17483c846e322042096bdf",
    "subjects": [
+    {
+     "subject": "forgotten-episode",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "music-scene-movement",
      "role": "secondary",
@@ -78,13 +85,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "forgotten-episode",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -356,12 +361,17 @@
    "subjects": [
     {
      "subject": "artist-band-biography",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -647,12 +657,17 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -863,10 +878,17 @@
    "subjects": [
     {
      "subject": "pioneer-biography",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:20:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -1212,10 +1234,17 @@
    "subjects": [
     {
      "subject": "song-and-album-origin",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:47:18+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1554,10 +1583,17 @@
    "subjects": [
     {
      "subject": "music-scene-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:39+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

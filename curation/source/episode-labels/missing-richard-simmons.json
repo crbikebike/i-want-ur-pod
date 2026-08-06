@@ -5,30 +5,22 @@
  "subjectsUsed": [
   {
    "slug": "missing-person",
-   "count": 6
+   "count": 4
   },
   {
    "slug": "celebrity-life",
    "count": 3
   },
   {
-   "slug": "epidemic-and-public-health",
-   "count": 1
+   "slug": "introducing",
+   "count": 3
   },
   {
-   "slug": "reality-television",
-   "count": 1
-  },
-  {
-   "slug": "terrorism-and-aftermath",
-   "count": 1
+   "slug": "trailer",
+   "count": 3
   },
   {
    "slug": "voluntary-disappearance",
-   "count": 1
-  },
-  {
-   "slug": "war-crimes-accountability",
    "count": 1
   }
  ],
@@ -45,10 +37,17 @@
     },
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:52+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -72,10 +71,17 @@
     },
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:07+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -278,12 +284,17 @@
    "subjects": [
     {
      "subject": "reality-television",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -292,12 +303,17 @@
    "subjects": [
     {
      "subject": "war-crimes-accountability",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -321,12 +337,17 @@
     },
     {
      "subject": "terrorism-and-aftermath",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -365,6 +386,13 @@
    "guid": "gid://art19-episode-locator/V0/0IwnjW439bkHmufN6zf7uJnLYF9tQm6_bjXQRhvvPIQ",
    "subjects": [
     {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "psychology-of-belief",
      "role": "secondary",
      "confidence": "low",
@@ -374,13 +402,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "epidemic-and-public-health",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

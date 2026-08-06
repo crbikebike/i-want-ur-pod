@@ -164,10 +164,6 @@
    "count": 1
   },
   {
-   "slug": "investigative-process",
-   "count": 1
-  },
-  {
    "slug": "law-explained",
    "count": 1
   },
@@ -213,6 +209,10 @@
   },
   {
    "slug": "startup-collapse",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   },
   {
@@ -5129,6 +5129,13 @@
    "guid": "prx_30_0d9ab019-2fb8-4007-ac3e-af378bad035b",
    "subjects": [
     {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "media-criticism",
      "role": "secondary",
      "confidence": "low",
@@ -5138,13 +5145,11 @@
      "at": "2026-08-05T04:52:27+00:00"
     },
     {
-     "subject": "investigative-process",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:52:27+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },

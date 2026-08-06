@@ -116,7 +116,7 @@
    "count": 2
   },
   {
-   "slug": "true-crime-as-genre",
+   "slug": "trailer",
    "count": 2
   },
   {
@@ -125,10 +125,6 @@
   },
   {
    "slug": "addiction-and-recovery",
-   "count": 1
-  },
-  {
-   "slug": "ageing-and-mortality",
    "count": 1
   },
   {
@@ -201,6 +197,10 @@
   },
   {
    "slug": "talking-about-love",
+   "count": 1
+  },
+  {
+   "slug": "true-crime-as-genre",
    "count": 1
   }
  ],
@@ -4085,12 +4085,17 @@
    "subjects": [
     {
      "subject": "ageing-and-mortality",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -4795,12 +4800,17 @@
    "subjects": [
     {
      "subject": "true-crime-as-genre",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

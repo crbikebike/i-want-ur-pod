@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "sense-of-place",
-   "count": 213
+   "count": 211
   },
   {
    "slug": "animal-behaviour",
-   "count": 44
+   "count": 43
   },
   {
    "slug": "history-retold",
@@ -117,6 +117,10 @@
   },
   {
    "slug": "pioneer-biography",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
    "count": 3
   },
   {
@@ -234,12 +238,17 @@
    "subjects": [
     {
      "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:04:47+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -6638,12 +6647,17 @@
    "subjects": [
     {
      "subject": "animal-behaviour",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:54:17+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -8407,11 +8421,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:04:47+00:00"
+     "model": "human",
+     "at": "2026-08-05T22:17:08+00:00"
     }
    ]
   },
@@ -8796,11 +8810,11 @@
     {
      "subject": "sense-of-place",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "model": "human",
+     "at": "2026-08-05T23:21:50+00:00"
     }
    ]
   },
@@ -9518,12 +9532,17 @@
     },
     {
      "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:42:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

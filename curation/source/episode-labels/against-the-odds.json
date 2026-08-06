@@ -25,7 +25,7 @@
   },
   {
    "slug": "survival-story",
-   "count": 11
+   "count": 10
   },
   {
    "slug": "nuclear-age",
@@ -44,6 +44,10 @@
    "count": 4
   },
   {
+   "slug": "trailer",
+   "count": 4
+  },
+  {
    "slug": "animal-behaviour",
    "count": 3
   },
@@ -56,14 +60,6 @@
    "count": 2
   },
   {
-   "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
-   "slug": "identity-impostor",
-   "count": 1
-  },
-  {
    "slug": "indigenous-history",
    "count": 1
   },
@@ -74,10 +70,6 @@
   {
    "slug": "missing-person",
    "count": 1
-  },
-  {
-   "slug": "startup-collapse",
-   "count": 1
   }
  ],
  "episodes": [
@@ -86,12 +78,17 @@
    "subjects": [
     {
      "subject": "survival-story",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -7112,12 +7109,17 @@
     },
     {
      "subject": "startup-collapse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:18:47+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -8710,12 +8712,17 @@
     },
     {
      "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:18:47+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -8790,6 +8797,13 @@
    "guid": "gid://art19-episode-locator/V0/ImKg7HCUMWgWKf4HgNK7eny8Q2WX7O7uku3gLjX9N6c",
    "subjects": [
     {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "voluntary-disappearance",
      "role": "secondary",
      "confidence": "medium",
@@ -8797,13 +8811,11 @@
      "at": "2026-07-29T08:45:24+00:00"
     },
     {
-     "subject": "identity-impostor",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

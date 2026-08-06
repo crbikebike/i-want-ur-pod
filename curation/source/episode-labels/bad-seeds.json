@@ -12,11 +12,11 @@
    "count": 1
   },
   {
-   "slug": "environmental-contamination",
+   "slug": "personal-transformation",
    "count": 1
   },
   {
-   "slug": "personal-transformation",
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -26,12 +26,17 @@
    "subjects": [
     {
      "subject": "environmental-contamination",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

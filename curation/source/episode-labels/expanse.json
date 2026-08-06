@@ -5,30 +5,30 @@
  "subjectsUsed": [
   {
    "slug": "missing-person",
-   "count": 9
+   "count": 8
+  },
+  {
+   "slug": "trailer",
+   "count": 6
   },
   {
    "slug": "disaster-and-accident-survival",
-   "count": 6
+   "count": 5
   },
   {
    "slug": "heist-and-robbery",
-   "count": 6
+   "count": 5
   },
   {
    "slug": "wilderness-expedition-survival",
    "count": 5
   },
   {
-   "slug": "government-secrecy",
-   "count": 4
-  },
-  {
    "slug": "cult-and-control",
    "count": 3
   },
   {
-   "slug": "supernatural-encounter",
+   "slug": "government-secrecy",
    "count": 3
   },
   {
@@ -40,15 +40,15 @@
    "count": 2
   },
   {
+   "slug": "supernatural-encounter",
+   "count": 2
+  },
+  {
    "slug": "investigative-process",
    "count": 1
   },
   {
    "slug": "protest-movement",
-   "count": 1
-  },
-  {
-   "slug": "voluntary-disappearance",
    "count": 1
   }
  ],
@@ -58,10 +58,17 @@
    "subjects": [
     {
      "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:15:13+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -185,10 +192,17 @@
    "subjects": [
     {
      "subject": "disaster-and-accident-survival",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:30:41+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -325,10 +339,17 @@
     },
     {
      "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:55:46+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -491,12 +512,17 @@
     },
     {
      "subject": "supernatural-encounter",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -621,12 +647,17 @@
    "subjects": [
     {
      "subject": "voluntary-disappearance",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -810,10 +841,17 @@
    "subjects": [
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:56:48+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

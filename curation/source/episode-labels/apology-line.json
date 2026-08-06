@@ -4,15 +4,11 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
+   "slug": "trailer",
+   "count": 3
+  },
+  {
    "slug": "archives-and-objects",
-   "count": 2
-  },
-  {
-   "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
-   "slug": "identity-impostor",
    "count": 1
   },
   {
@@ -25,6 +21,13 @@
    "guid": "gid://art19-episode-locator/V0/2E7Nce-ZiX0Rmo017w7js5BvvKiOIMjWELujxOvJync",
    "subjects": [
     {
+     "subject": "archives-and-objects",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "personal-transformation",
      "role": "secondary",
      "confidence": "medium",
@@ -32,11 +35,11 @@
      "at": "2026-07-28T00:57:03+00:00"
     },
     {
-     "subject": "archives-and-objects",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:57:03+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -123,18 +126,30 @@
    "subjects": [
     {
      "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
   {
    "guid": "gid://art19-episode-locator/V0/VtIFrso4No37hB2PPIbM1Hc5AWHcnEqE7S9AZuPk6Vk",
    "subjects": [
+    {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "investigative-process",
      "role": "secondary",
@@ -143,13 +158,11 @@
      "at": "2026-07-30T15:12:57+00:00"
     },
     {
-     "subject": "identity-impostor",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

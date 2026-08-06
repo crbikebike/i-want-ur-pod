@@ -4,27 +4,27 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "vanishing-and-institutional-failure",
-   "count": 4
+   "slug": "trailer",
+   "count": 5
   },
   {
    "slug": "unsolved-murder",
    "count": 3
   },
   {
-   "slug": "cold-case-reopened",
-   "count": 2
-  },
-  {
    "slug": "police-misconduct",
    "count": 2
   },
   {
-   "slug": "wrongful-conviction",
+   "slug": "vanishing-and-institutional-failure",
    "count": 2
   },
   {
-   "slug": "sexual-abuse-accountability",
+   "slug": "cold-case-reopened",
+   "count": 1
+  },
+  {
+   "slug": "wrongful-conviction",
    "count": 1
   }
  ],
@@ -41,16 +41,30 @@
     },
     {
      "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:06:46+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
   {
    "guid": "675cadc7-6ef0-4795-b2d9-adb000700ea0",
    "subjects": [
+    {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
     {
      "subject": "queer-life",
      "role": "secondary",
@@ -59,11 +73,11 @@
      "at": "2026-08-01T20:20:52+00:00"
     },
     {
-     "subject": "cold-case-reopened",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:52+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -265,10 +279,17 @@
     },
     {
      "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:27:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -390,10 +411,17 @@
    "subjects": [
     {
      "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:27:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -409,12 +437,17 @@
     },
     {
      "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:54:17+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

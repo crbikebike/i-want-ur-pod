@@ -5,23 +5,31 @@
  "subjectsUsed": [
   {
    "slug": "missing-person",
-   "count": 11
-  },
-  {
-   "slug": "vanishing-and-institutional-failure",
    "count": 10
   },
   {
+   "slug": "vanishing-and-institutional-failure",
+   "count": 9
+  },
+  {
    "slug": "indigenous-history",
-   "count": 5
+   "count": 3
   },
   {
    "slug": "religious-abuse",
    "count": 3
   },
   {
+   "slug": "trailer",
+   "count": 3
+  },
+  {
    "slug": "sexual-abuse-accountability",
    "count": 2
+  },
+  {
+   "slug": "introducing",
+   "count": 1
   },
   {
    "slug": "investigative-process",
@@ -33,6 +41,13 @@
    "guid": "a210b2fa-7083-11eb-bbff-f3ceaedfae04",
    "subjects": [
     {
+     "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "vanishing-and-institutional-failure",
      "role": "secondary",
      "confidence": "medium",
@@ -40,11 +55,11 @@
      "at": "2026-07-30T15:00:43+00:00"
     },
     {
-     "subject": "missing-person",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:43+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -303,6 +318,13 @@
    "guid": "6bd71c88-cd5c-11ec-bbfb-cf6abee36db8",
    "subjects": [
     {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "religious-abuse",
      "role": "secondary",
      "confidence": "medium",
@@ -310,11 +332,11 @@
      "at": "2026-08-01T20:19:05+00:00"
     },
     {
-     "subject": "indigenous-history",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:05+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -639,10 +661,17 @@
     },
     {
      "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:32+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -878,10 +907,17 @@
     },
     {
      "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:33:38+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

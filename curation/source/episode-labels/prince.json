@@ -4,24 +4,12 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
+   "slug": "trailer",
+   "count": 7
+  },
+  {
    "slug": "political-figure-biography",
-   "count": 4
-  },
-  {
-   "slug": "management-and-leadership",
    "count": 2
-  },
-  {
-   "slug": "elections-and-voting",
-   "count": 1
-  },
-  {
-   "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
-   "slug": "organised-scam-industry",
-   "count": 1
   }
  ],
  "episodes": [
@@ -30,10 +18,17 @@
    "subjects": [
     {
      "subject": "political-figure-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:13:23+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -90,10 +85,17 @@
    "subjects": [
     {
      "subject": "political-figure-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:27:45+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -109,6 +111,13 @@
    "guid": "6682dd7fda59509cbac05aa1",
    "subjects": [
     {
+     "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "presidential-power",
      "role": "secondary",
      "confidence": "low",
@@ -118,19 +127,24 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "elections-and-voting",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
   {
    "guid": "679237f46468d3dae322147e",
    "subjects": [
+    {
+     "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "work-and-labour-conditions",
      "role": "secondary",
@@ -139,13 +153,11 @@
      "at": "2026-07-30T15:09:39+00:00"
     },
     {
-     "subject": "organised-scam-industry",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -154,10 +166,17 @@
    "subjects": [
     {
      "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:30:37+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -173,16 +192,30 @@
     },
     {
      "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:23:22+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
   {
    "guid": "6a314f3d101389aa3d3e3574",
    "subjects": [
+    {
+     "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "sense-of-place",
      "role": "secondary",
@@ -191,13 +224,11 @@
      "at": "2026-07-30T15:11:14+00:00"
     },
     {
-     "subject": "ideas-and-argument",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

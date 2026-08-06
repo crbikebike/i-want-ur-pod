@@ -5,21 +5,32 @@
  "subjectsUsed": [
   {
    "slug": "reentry-after-prison",
-   "count": 13
-  },
-  {
-   "slug": "juvenile-justice",
-   "count": 4
+   "count": 12
   },
   {
    "slug": "prison-life",
    "count": 4
+  },
+  {
+   "slug": "juvenile-justice",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 2
   }
  ],
  "episodes": [
   {
    "guid": "prx_359_9d578d3d-e323-4ec6-bba5-e69f1770753b",
    "subjects": [
+    {
+     "subject": "juvenile-justice",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "reentry-after-prison",
      "role": "secondary",
@@ -28,11 +39,11 @@
      "at": "2026-07-30T15:15:37+00:00"
     },
     {
-     "subject": "juvenile-justice",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:15:37+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -257,10 +268,17 @@
     },
     {
      "subject": "reentry-after-prison",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:37+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

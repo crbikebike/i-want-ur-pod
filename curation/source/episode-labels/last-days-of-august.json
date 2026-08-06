@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "internet-culture",
-   "count": 6
+   "count": 5
   },
   {
    "slug": "cost-of-fame",
@@ -21,6 +21,10 @@
   },
   {
    "slug": "hacking-and-cybercrime",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -201,6 +205,13 @@
    "guid": "d2fb665818f44ab7956bf7477012b7ad",
    "subjects": [
     {
+     "subject": "internet-culture",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "sex-work-and-exploitation",
      "role": "secondary",
      "confidence": "low",
@@ -208,11 +219,11 @@
      "at": "2026-08-01T20:22:59+00:00"
     },
     {
-     "subject": "internet-culture",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:22:59+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

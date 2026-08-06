@@ -9,11 +9,11 @@
   },
   {
    "slug": "founder-biography",
-   "count": 30
+   "count": 27
   },
   {
    "slug": "economic-policy",
-   "count": 15
+   "count": 13
   },
   {
    "slug": "elections-and-voting",
@@ -24,8 +24,8 @@
    "count": 8
   },
   {
-   "slug": "management-and-leadership",
-   "count": 5
+   "slug": "introducing",
+   "count": 6
   },
   {
    "slug": "business-rivalry",
@@ -36,12 +36,12 @@
    "count": 4
   },
   {
-   "slug": "medical-research",
+   "slug": "management-and-leadership",
    "count": 4
   },
   {
-   "slug": "celebrity-life",
-   "count": 3
+   "slug": "medical-research",
+   "count": 4
   },
   {
    "slug": "presidential-power",
@@ -49,6 +49,10 @@
   },
   {
    "slug": "advertising-and-persuasion",
+   "count": 2
+  },
+  {
+   "slug": "celebrity-life",
    "count": 2
   },
   {
@@ -84,6 +88,10 @@
    "count": 1
   },
   {
+   "slug": "trailer",
+   "count": 1
+  },
+  {
    "slug": "whistleblower",
    "count": 1
   }
@@ -94,12 +102,17 @@
    "subjects": [
     {
      "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -846,12 +859,17 @@
    "subjects": [
     {
      "subject": "management-and-leadership",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -1325,12 +1343,17 @@
    "subjects": [
     {
      "subject": "economic-policy",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:41:24+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -1467,10 +1490,17 @@
    "subjects": [
     {
      "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -2261,10 +2291,17 @@
     },
     {
      "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:00:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -2993,12 +3030,17 @@
    "subjects": [
     {
      "subject": "economic-policy",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4691,12 +4733,17 @@
    "subjects": [
     {
      "subject": "celebrity-life",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   }

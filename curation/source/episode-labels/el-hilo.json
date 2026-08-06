@@ -52,12 +52,12 @@
    "count": 6
   },
   {
-   "slug": "investigative-process",
+   "slug": "sport-and-politics",
    "count": 6
   },
   {
-   "slug": "sport-and-politics",
-   "count": 6
+   "slug": "investigative-process",
+   "count": 5
   },
   {
    "slug": "natural-disaster",
@@ -117,10 +117,6 @@
   },
   {
    "slug": "extremist-movement",
-   "count": 3
-  },
-  {
-   "slug": "history-retold",
    "count": 3
   },
   {
@@ -192,6 +188,10 @@
    "count": 2
   },
   {
+   "slug": "history-retold",
+   "count": 2
+  },
+  {
    "slug": "indigenous-history",
    "count": 2
   },
@@ -201,6 +201,10 @@
   },
   {
    "slug": "sexual-abuse-accountability",
+   "count": 2
+  },
+  {
+   "slug": "trailer",
    "count": 2
   },
   {
@@ -295,12 +299,17 @@
     },
     {
      "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -6917,6 +6926,42 @@
    ]
   },
   {
+   "guid": "0a4e206f-b3e0-4aed-b3bf-b1ed00d78c17",
+   "subjects": [
+    {
+     "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "agreement": 0,
+     "votes": 2,
+     "model": "claude-sonnet-5",
+     "at": "2026-08-05T04:40:44+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "El hilo",
+     "kind": "work",
+     "confidence": "high",
+     "at": "2026-07-29T08:55:44+00:00"
+    }
+   ]
+  },
+  {
    "guid": "0ecb394c-9a41-4ef7-b469-b1f10096e11c",
    "subjects": [
     {
@@ -6940,37 +6985,6 @@
      "kind": "case",
      "confidence": "high",
      "at": "2026-07-29T04:09:25+00:00"
-    }
-   ]
-  },
-  {
-   "guid": "0a4e206f-b3e0-4aed-b3bf-b1ed00d78c17",
-   "subjects": [
-    {
-     "subject": "investigative-process",
-     "role": "secondary",
-     "confidence": "low",
-     "agreement": 0,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
-    },
-    {
-     "subject": "history-retold",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "El hilo",
-     "kind": "work",
-     "confidence": "high",
-     "at": "2026-07-29T08:55:44+00:00"
     }
    ]
   },

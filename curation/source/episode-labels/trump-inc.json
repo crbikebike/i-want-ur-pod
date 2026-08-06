@@ -9,7 +9,7 @@
   },
   {
    "slug": "presidential-power",
-   "count": 14
+   "count": 13
   },
   {
    "slug": "bribery-and-kickbacks",
@@ -24,16 +24,16 @@
    "count": 5
   },
   {
-   "slug": "investigative-process",
-   "count": 5
-  },
-  {
    "slug": "public-money-misused",
    "count": 5
   },
   {
    "slug": "regulatory-failure",
    "count": 5
+  },
+  {
+   "slug": "investigative-process",
+   "count": 4
   },
   {
    "slug": "founder-biography",
@@ -44,11 +44,11 @@
    "count": 3
   },
   {
-   "slug": "economic-policy",
-   "count": 2
+   "slug": "introducing",
+   "count": 3
   },
   {
-   "slug": "political-figure-biography",
+   "slug": "economic-policy",
    "count": 2
   },
   {
@@ -77,6 +77,10 @@
   },
   {
    "slug": "organised-crime",
+   "count": 1
+  },
+  {
+   "slug": "political-figure-biography",
    "count": 1
   },
   {
@@ -2640,6 +2644,13 @@
    "guid": "38c491fd-87f6-41fc-b55b-28a90727e80d",
    "subjects": [
     {
+     "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "terrorism-and-aftermath",
      "role": "secondary",
      "confidence": "medium",
@@ -2647,11 +2658,11 @@
      "at": "2026-07-30T14:42:39+00:00"
     },
     {
-     "subject": "presidential-power",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:42:39+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -2695,10 +2706,17 @@
    "subjects": [
     {
      "subject": "political-figure-biography",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:15:34+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -2813,10 +2831,17 @@
    "subjects": [
     {
      "subject": "investigative-process",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:09:17+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   }

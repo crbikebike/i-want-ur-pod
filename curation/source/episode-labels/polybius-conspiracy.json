@@ -8,16 +8,12 @@
    "count": 5
   },
   {
-   "slug": "conspiracy-theory",
+   "slug": "trailer",
    "count": 4
   },
   {
-   "slug": "audio-drama-mystery",
-   "count": 1
-  },
-  {
-   "slug": "mockumentary-investigation-fiction",
-   "count": 1
+   "slug": "conspiracy-theory",
+   "count": 2
   }
  ],
  "episodes": [
@@ -37,6 +33,40 @@
      "confidence": "medium",
      "model": "claude-sonnet-5",
      "at": "2026-08-01T20:20:01+00:00"
+    }
+   ]
+  },
+  {
+   "guid": "a1ac14c1-6819-44e6-9567-35dbf42d3bc7",
+   "subjects": [
+    {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "medium",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-01T20:28:53+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    }
+   ],
+   "entities": [
+    {
+     "name": "Polybius",
+     "kind": "work",
+     "confidence": "medium",
+     "at": "2026-08-01T20:28:53+00:00"
     }
    ]
   },
@@ -141,33 +171,6 @@
    ]
   },
   {
-   "guid": "a1ac14c1-6819-44e6-9567-35dbf42d3bc7",
-   "subjects": [
-    {
-     "subject": "folklore-and-legend",
-     "role": "secondary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:28:53+00:00"
-    },
-    {
-     "subject": "conspiracy-theory",
-     "role": "primary",
-     "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:28:53+00:00"
-    }
-   ],
-   "entities": [
-    {
-     "name": "Polybius",
-     "kind": "work",
-     "confidence": "medium",
-     "at": "2026-08-01T20:28:53+00:00"
-    }
-   ]
-  },
-  {
    "guid": "a73c1f57-4594-46a6-b23f-4849b51576cf",
    "subjects": [
     {
@@ -226,12 +229,17 @@
    "subjects": [
     {
      "subject": "mockumentary-investigation-fiction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -247,6 +255,13 @@
    "guid": "787ceba4-5927-40e1-bd9d-ed52c0e2db0e",
    "subjects": [
     {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "everyday-mystery",
      "role": "secondary",
      "confidence": "low",
@@ -256,13 +271,11 @@
      "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "conspiracy-theory",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -271,12 +284,17 @@
    "subjects": [
     {
      "subject": "audio-drama-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:18:47+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

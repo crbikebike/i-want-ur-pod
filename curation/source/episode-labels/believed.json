@@ -5,7 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "sexual-abuse-accountability",
-   "count": 10
+   "count": 9
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
@@ -21,10 +25,17 @@
     },
     {
      "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:26:51+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

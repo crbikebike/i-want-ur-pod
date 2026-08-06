@@ -5,11 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "terrorism-and-aftermath",
-   "count": 3
+   "count": 2
   },
   {
-   "slug": "books-and-writing",
-   "count": 1
+   "slug": "trailer",
+   "count": 2
   }
  ],
  "episodes": [
@@ -18,10 +18,17 @@
    "subjects": [
     {
      "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T01:06:26+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -55,6 +62,13 @@
    "guid": "gid://art19-episode-locator/V0/2N0FexpvJFtoECsBrLQWWCuXWoy2bw66k4-5WlKNBCs",
    "subjects": [
     {
+     "subject": "books-and-writing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "language-and-words",
      "role": "secondary",
      "confidence": "low",
@@ -64,13 +78,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "books-and-writing",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   }

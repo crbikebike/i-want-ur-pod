@@ -5,22 +5,26 @@
  "subjectsUsed": [
   {
    "slug": "tech-industry-power",
-   "count": 37
+   "count": 33
   },
   {
    "slug": "startup-collapse",
-   "count": 12
+   "count": 11
   },
   {
    "slug": "founder-biography",
-   "count": 11
+   "count": 10
+  },
+  {
+   "slug": "introducing",
+   "count": 10
   },
   {
    "slug": "internet-culture",
    "count": 8
   },
   {
-   "slug": "work-and-labour-conditions",
+   "slug": "trailer",
    "count": 8
   },
   {
@@ -28,16 +32,16 @@
    "count": 7
   },
   {
-   "slug": "state-sponsored-cyber-espionage",
-   "count": 7
-  },
-  {
    "slug": "surveillance-and-privacy",
    "count": 7
   },
   {
-   "slug": "economic-policy",
-   "count": 4
+   "slug": "state-sponsored-cyber-espionage",
+   "count": 6
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 6
   },
   {
    "slug": "media-criticism",
@@ -52,11 +56,11 @@
    "count": 4
   },
   {
-   "slug": "murder-close-to-home",
-   "count": 4
+   "slug": "corporate-negligence",
+   "count": 3
   },
   {
-   "slug": "corporate-negligence",
+   "slug": "economic-policy",
    "count": 3
   },
   {
@@ -76,11 +80,11 @@
    "count": 3
   },
   {
-   "slug": "scientific-discovery",
+   "slug": "murder-close-to-home",
    "count": 3
   },
   {
-   "slug": "sense-of-place",
+   "slug": "scientific-discovery",
    "count": 3
   },
   {
@@ -96,15 +100,7 @@
    "count": 2
   },
   {
-   "slug": "crypto-collapse",
-   "count": 2
-  },
-  {
    "slug": "cult-and-control",
-   "count": 2
-  },
-  {
-   "slug": "epidemic-and-public-health",
    "count": 2
   },
   {
@@ -120,11 +116,7 @@
    "count": 2
   },
   {
-   "slug": "management-and-leadership",
-   "count": 2
-  },
-  {
-   "slug": "psychology-of-belief",
+   "slug": "sense-of-place",
    "count": 2
   },
   {
@@ -172,6 +164,10 @@
    "count": 1
   },
   {
+   "slug": "crypto-collapse",
+   "count": 1
+  },
+  {
    "slug": "elections-and-voting",
    "count": 1
   },
@@ -196,7 +192,7 @@
    "count": 1
   },
   {
-   "slug": "murder-for-hire",
+   "slug": "management-and-leadership",
    "count": 1
   },
   {
@@ -209,6 +205,10 @@
   },
   {
    "slug": "police-misconduct",
+   "count": 1
+  },
+  {
+   "slug": "psychology-of-belief",
    "count": 1
   },
   {
@@ -2847,12 +2847,17 @@
    "subjects": [
     {
      "subject": "work-and-labour-conditions",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -2882,12 +2887,17 @@
    "subjects": [
     {
      "subject": "tech-industry-power",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -2931,12 +2941,17 @@
    "subjects": [
     {
      "subject": "work-and-labour-conditions",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -3007,12 +3022,17 @@
    "subjects": [
     {
      "subject": "economic-policy",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -3298,6 +3318,13 @@
    "guid": "1d0a3c7a-c832-11e9-9364-673ac84be092",
    "subjects": [
     {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "medical-research",
      "role": "secondary",
      "confidence": "medium",
@@ -3305,11 +3332,11 @@
      "at": "2026-07-29T23:05:23+00:00"
     },
     {
-     "subject": "epidemic-and-public-health",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:23+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -3529,12 +3556,17 @@
    "subjects": [
     {
      "subject": "sense-of-place",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -3712,10 +3744,17 @@
     },
     {
      "subject": "startup-collapse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:40+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -3877,12 +3916,17 @@
    "subjects": [
     {
      "subject": "murder-for-hire",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -3972,10 +4016,17 @@
     },
     {
      "subject": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:23+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -3991,10 +4042,17 @@
     },
     {
      "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:05:23+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4194,6 +4252,13 @@
    "guid": "520ff5e8-27a0-11ec-b6ec-eb4d42b970b0",
    "subjects": [
     {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "medical-research",
      "role": "secondary",
      "confidence": "high",
@@ -4201,11 +4266,11 @@
      "at": "2026-07-29T23:14:40+00:00"
     },
     {
-     "subject": "epidemic-and-public-health",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:14:40+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4228,12 +4293,17 @@
    "subjects": [
     {
      "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4493,12 +4563,17 @@
    "subjects": [
     {
      "subject": "management-and-leadership",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -4523,12 +4598,17 @@
     },
     {
      "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4709,10 +4789,17 @@
    "subjects": [
     {
      "subject": "crypto-collapse",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:53+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4755,10 +4842,17 @@
    "subjects": [
     {
      "subject": "tech-industry-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:40:53+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4959,10 +5053,17 @@
     },
     {
      "subject": "state-sponsored-cyber-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:49+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4998,10 +5099,17 @@
     },
     {
      "subject": "murder-close-to-home",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:04:56+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

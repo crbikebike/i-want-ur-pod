@@ -4,51 +4,43 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "sexual-abuse-accountability",
+   "slug": "trailer",
    "count": 31
   },
   {
+   "slug": "sexual-abuse-accountability",
+   "count": 28
+  },
+  {
    "slug": "unsolved-murder",
-   "count": 29
+   "count": 26
   },
   {
    "slug": "cult-and-control",
-   "count": 24
+   "count": 21
   },
   {
    "slug": "missing-person",
-   "count": 18
-  },
-  {
-   "slug": "racial-violence",
-   "count": 13
+   "count": 16
   },
   {
    "slug": "courtroom-trial",
    "count": 12
   },
   {
-   "slug": "identity-impostor",
-   "count": 12
-  },
-  {
-   "slug": "wrongful-conviction",
+   "slug": "racial-violence",
    "count": 11
   },
   {
-   "slug": "serial-offender",
+   "slug": "identity-impostor",
    "count": 10
   },
   {
-   "slug": "child-victim",
-   "count": 9
+   "slug": "wrongful-conviction",
+   "count": 10
   },
   {
    "slug": "police-misconduct",
-   "count": 9
-  },
-  {
-   "slug": "terrorism-and-aftermath",
    "count": 9
   },
   {
@@ -56,19 +48,23 @@
    "count": 8
   },
   {
-   "slug": "indigenous-history",
+   "slug": "serial-offender",
    "count": 8
   },
   {
-   "slug": "romance-and-catfishing",
+   "slug": "terrorism-and-aftermath",
    "count": 8
+  },
+  {
+   "slug": "child-victim",
+   "count": 7
   },
   {
    "slug": "extremist-movement",
    "count": 7
   },
   {
-   "slug": "investigative-process",
+   "slug": "indigenous-history",
    "count": 7
   },
   {
@@ -76,12 +72,8 @@
    "count": 7
   },
   {
-   "slug": "vanishing-and-institutional-failure",
+   "slug": "romance-and-catfishing",
    "count": 7
-  },
-  {
-   "slug": "conspiracy-theory",
-   "count": 6
   },
   {
    "slug": "corporate-fraud",
@@ -90,6 +82,14 @@
   {
    "slug": "crypto-collapse",
    "count": 6
+  },
+  {
+   "slug": "investigative-process",
+   "count": 6
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 5
   },
   {
    "slug": "informant-and-undercover",
@@ -109,6 +109,10 @@
   },
   {
    "slug": "online-radicalisation",
+   "count": 4
+  },
+  {
+   "slug": "vanishing-and-institutional-failure",
    "count": 4
   },
   {
@@ -152,16 +156,8 @@
    "count": 2
   },
   {
-   "slug": "organised-crime",
-   "count": 2
-  },
-  {
    "slug": "true-crime-as-genre",
    "count": 2
-  },
-  {
-   "slug": "ai-and-society",
-   "count": 1
   },
   {
    "slug": "anti-queer-violence",
@@ -172,11 +168,11 @@
    "count": 1
   },
   {
-   "slug": "corporate-negligence",
+   "slug": "cybercrime-for-profit",
    "count": 1
   },
   {
-   "slug": "cybercrime-for-profit",
+   "slug": "organised-crime",
    "count": 1
   },
   {
@@ -198,10 +194,17 @@
    "subjects": [
     {
      "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:11:19+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -525,10 +528,17 @@
     },
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:04:41+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -677,10 +687,17 @@
    "subjects": [
     {
      "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:11:13+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1085,10 +1102,17 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:12:17+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1238,10 +1262,17 @@
     },
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:58:48+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1506,6 +1537,13 @@
    "guid": "uncover-d8d7de28-7e88-4bc3-9820-cccf5aa86368",
    "subjects": [
     {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "wrongful-conviction",
      "role": "secondary",
      "confidence": "medium",
@@ -1513,11 +1551,11 @@
      "at": "2026-07-29T08:40:16+00:00"
     },
     {
-     "subject": "conspiracy-theory",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:40:16+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1766,10 +1804,17 @@
     },
     {
      "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:40:16+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2492,10 +2537,17 @@
     },
     {
      "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:40:16+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2692,10 +2744,17 @@
     },
     {
      "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:51+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -3450,10 +3509,17 @@
     },
     {
      "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:11:13+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -3992,6 +4058,13 @@
    "guid": "uncover-d7ba81e0-940c-499c-a118-f0536b6031e9",
    "subjects": [
     {
+     "subject": "indigenous-history",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "institutional-coverup",
      "role": "secondary",
      "confidence": "medium",
@@ -3999,11 +4072,11 @@
      "at": "2026-07-29T04:11:13+00:00"
     },
     {
-     "subject": "indigenous-history",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:11:13+00:00"
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4827,10 +4900,17 @@
     },
     {
      "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:00:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4879,12 +4959,17 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:42:55+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -5189,10 +5274,17 @@
     },
     {
      "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:51+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -5428,10 +5520,17 @@
    "subjects": [
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:12:17+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -6045,6 +6144,13 @@
    "guid": "uncover-427c2698-abec-47a7-9574-a56c3d7c3a19",
    "subjects": [
     {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "informant-and-undercover",
      "role": "secondary",
      "confidence": "medium",
@@ -6052,11 +6158,11 @@
      "at": "2026-07-29T08:59:51+00:00"
     },
     {
-     "subject": "child-victim",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:51+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -6289,10 +6395,17 @@
    "subjects": [
     {
      "subject": "romance-and-catfishing",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:51+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -6492,6 +6605,13 @@
    "guid": "uncover-c4e06520-4c68-4252-b6e4-44683e552f0a",
    "subjects": [
     {
+     "subject": "organised-crime",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "regulatory-failure",
      "role": "secondary",
      "confidence": "medium",
@@ -6499,13 +6619,11 @@
      "at": "2026-07-29T08:59:51+00:00"
     },
     {
-     "subject": "organised-crime",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:52:27+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -6762,6 +6880,13 @@
    "guid": "uncover-11ac93bb-a96f-492e-8e65-20a3e06ff49b",
    "subjects": [
     {
+     "subject": "child-victim",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "war-and-its-conduct",
      "role": "secondary",
      "confidence": "medium",
@@ -6769,11 +6894,11 @@
      "at": "2026-07-29T08:59:51+00:00"
     },
     {
-     "subject": "child-victim",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:59:51+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -7316,10 +7441,17 @@
     },
     {
      "subject": "racial-violence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T09:02:32+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -7348,10 +7480,17 @@
    "subjects": [
     {
      "subject": "terrorism-and-aftermath",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:37:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -7508,6 +7647,13 @@
    "guid": "uncover-ade27723-cb2e-48eb-866c-f5270c58b63c",
    "subjects": [
     {
+     "subject": "corporate-negligence",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "forensic-evidence",
      "role": "secondary",
      "confidence": "medium",
@@ -7515,13 +7661,11 @@
      "at": "2026-07-29T09:04:52+00:00"
     },
     {
-     "subject": "corporate-negligence",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -7735,10 +7879,17 @@
    "subjects": [
     {
      "subject": "sexual-abuse-accountability",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:38:17+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -7998,10 +8149,17 @@
     },
     {
      "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:37:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -8230,10 +8388,17 @@
     },
     {
      "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:37:57+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -8255,6 +8420,13 @@
    "guid": "uncover-355596d7-2aa6-4c3a-9901-8c504b340f67",
    "subjects": [
     {
+     "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "true-crime-as-genre",
      "role": "secondary",
      "confidence": "low",
@@ -8264,13 +8436,11 @@
      "at": "2026-08-05T04:54:17+00:00"
     },
     {
-     "subject": "investigative-process",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:54:17+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -8286,10 +8456,17 @@
     },
     {
      "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:12:17+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -8511,6 +8688,13 @@
    "guid": "uncover-8f3bcf8c-1df3-4f08-bc8e-7ab2bf7dbba6",
    "subjects": [
     {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "unsolved-murder",
      "role": "secondary",
      "confidence": "medium",
@@ -8518,11 +8702,11 @@
      "at": "2026-07-29T04:12:17+00:00"
     },
     {
-     "subject": "identity-impostor",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T04:12:17+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -8660,10 +8844,17 @@
     },
     {
      "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:37:57+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -8994,6 +9185,13 @@
      "at": "2026-07-29T08:41:20+00:00"
     },
     {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "online-radicalisation",
      "role": "secondary",
      "confidence": "high",
@@ -9001,11 +9199,11 @@
      "at": "2026-07-29T08:41:20+00:00"
     },
     {
-     "subject": "cult-and-control",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:41:20+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -9260,6 +9458,13 @@
    "guid": "uncover-570f1910-c3bd-4133-8817-b84e244f482b",
    "subjects": [
     {
+     "subject": "ai-and-society",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "forensic-evidence",
      "role": "secondary",
      "confidence": "high",
@@ -9267,13 +9472,11 @@
      "at": "2026-07-29T08:41:20+00:00"
     },
     {
-     "subject": "ai-and-society",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:04:47+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

@@ -5,15 +5,19 @@
  "subjectsUsed": [
   {
    "slug": "war-and-its-conduct",
-   "count": 49
+   "count": 46
   },
   {
    "slug": "cold-war-espionage",
-   "count": 12
+   "count": 11
   },
   {
    "slug": "foreign-political-crisis",
-   "count": 8
+   "count": 6
+  },
+  {
+   "slug": "trailer",
+   "count": 6
   },
   {
    "slug": "history-retold",
@@ -50,12 +54,17 @@
    "subjects": [
     {
      "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -431,12 +440,17 @@
    "subjects": [
     {
      "subject": "cold-war-espionage",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:42:33+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -894,10 +908,17 @@
    "subjects": [
     {
      "subject": "war-and-its-conduct",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:30+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -1592,10 +1613,17 @@
     },
     {
      "subject": "war-and-its-conduct",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:44:36+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -1668,6 +1696,13 @@
    "guid": "ea79b6e0-e46e-11f0-a16a-37af7c54f59f",
    "subjects": [
     {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "war-and-its-conduct",
      "role": "secondary",
      "confidence": "low",
@@ -1677,13 +1712,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "foreign-political-crisis",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1869,6 +1902,13 @@
    "guid": "a3036972-5b39-11f1-a44f-3373367fad13",
    "subjects": [
     {
+     "subject": "foreign-political-crisis",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "war-and-its-conduct",
      "role": "secondary",
      "confidence": "low",
@@ -1878,13 +1918,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "foreign-political-crisis",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   }

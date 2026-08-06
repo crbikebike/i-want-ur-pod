@@ -5,19 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "missing-person",
-   "count": 9
+   "count": 8
   },
   {
    "slug": "vanishing-and-institutional-failure",
-   "count": 7
-  },
-  {
-   "slug": "charismatic-con",
-   "count": 5
-  },
-  {
-   "slug": "intimate-partner-homicide",
-   "count": 5
+   "count": 6
   },
   {
    "slug": "serial-offender",
@@ -28,7 +20,15 @@
    "count": 4
   },
   {
+   "slug": "charismatic-con",
+   "count": 4
+  },
+  {
    "slug": "institutional-coverup",
+   "count": 4
+  },
+  {
+   "slug": "intimate-partner-homicide",
    "count": 4
   },
   {
@@ -36,8 +36,8 @@
    "count": 4
   },
   {
-   "slug": "sense-of-place",
-   "count": 3
+   "slug": "trailer",
+   "count": 4
   },
   {
    "slug": "unsolved-murder",
@@ -60,6 +60,10 @@
    "count": 2
   },
   {
+   "slug": "sense-of-place",
+   "count": 2
+  },
+  {
    "slug": "art-and-artists",
    "count": 1
   },
@@ -73,6 +77,10 @@
   },
   {
    "slug": "environmental-contamination",
+   "count": 1
+  },
+  {
+   "slug": "introducing",
    "count": 1
   },
   {
@@ -102,12 +110,17 @@
    "subjects": [
     {
      "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -414,10 +427,17 @@
    "subjects": [
     {
      "subject": "intimate-partner-homicide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:55:16+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -721,6 +741,13 @@
    "guid": "1683dcc7-248c-4a5c-bef6-b007011edc8c",
    "subjects": [
     {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "sports-history",
      "role": "secondary",
      "confidence": "medium",
@@ -728,11 +755,11 @@
      "at": "2026-07-28T00:52:19+00:00"
     },
     {
-     "subject": "charismatic-con",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:52:19+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1233,10 +1260,17 @@
    "subjects": [
     {
      "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:55:16+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1615,10 +1649,17 @@
     },
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-28T00:53:52+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

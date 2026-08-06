@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "extremist-movement",
-   "count": 6
+   "count": 5
   },
   {
    "slug": "kidnapping-and-captivity",
@@ -14,12 +14,23 @@
   {
    "slug": "terrorism-and-aftermath",
    "count": 1
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
   {
    "guid": "recall-cb9f208d-17ce-4642-9c31-e0c6c50adaa3",
    "subjects": [
+    {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "kidnapping-and-captivity",
      "role": "secondary",
@@ -28,11 +39,11 @@
      "at": "2026-08-01T20:21:23+00:00"
     },
     {
-     "subject": "extremist-movement",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:23+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

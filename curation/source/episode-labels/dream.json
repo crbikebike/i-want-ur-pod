@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "organised-scam-industry",
-   "count": 45
+   "count": 41
   },
   {
    "slug": "conspiracy-theory",
@@ -20,11 +20,11 @@
    "count": 6
   },
   {
-   "slug": "advertising-and-persuasion",
-   "count": 4
+   "slug": "trailer",
+   "count": 6
   },
   {
-   "slug": "charismatic-con",
+   "slug": "advertising-and-persuasion",
    "count": 4
   },
   {
@@ -36,7 +36,7 @@
    "count": 4
   },
   {
-   "slug": "reproductive-health",
+   "slug": "charismatic-con",
    "count": 3
   },
   {
@@ -61,6 +61,10 @@
   },
   {
    "slug": "private-equity-and-debt",
+   "count": 2
+  },
+  {
+   "slug": "reproductive-health",
    "count": 2
   },
   {
@@ -166,12 +170,17 @@
    "subjects": [
     {
      "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:54:17+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -378,10 +387,17 @@
    "subjects": [
     {
      "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:23:40+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -559,12 +575,17 @@
    "subjects": [
     {
      "subject": "organised-scam-industry",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -875,10 +896,17 @@
    "subjects": [
     {
      "subject": "reproductive-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:28:07+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -895,12 +923,17 @@
    "subjects": [
     {
      "subject": "organised-scam-industry",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:41:15+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1655,11 +1688,11 @@
     {
      "subject": "environmental-contamination",
      "role": "primary",
-     "confidence": "low",
+     "confidence": "high",
      "agreement": 1,
      "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:02:56+00:00"
+     "model": "human",
+     "at": "2026-08-05T22:14:40+00:00"
     }
    ],
    "entities": [
@@ -1729,6 +1762,13 @@
    "guid": "68bb796ea4a9a4d945a87c22",
    "subjects": [
     {
+     "subject": "charismatic-con",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "making-of-a-work",
      "role": "secondary",
      "confidence": "low",
@@ -1738,13 +1778,11 @@
      "at": "2026-08-05T05:04:47+00:00"
     },
     {
-     "subject": "charismatic-con",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:04:47+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

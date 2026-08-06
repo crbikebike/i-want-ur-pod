@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "audio-drama-mystery",
-   "count": 45
+   "count": 44
   },
   {
    "slug": "literary-drama-fiction",
@@ -21,6 +21,10 @@
   },
   {
    "slug": "organised-crime",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -53,10 +57,17 @@
    "subjects": [
     {
      "subject": "audio-drama-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:39+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

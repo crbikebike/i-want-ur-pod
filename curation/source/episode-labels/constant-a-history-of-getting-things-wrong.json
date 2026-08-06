@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "history-retold",
-   "count": 50
+   "count": 47
   },
   {
    "slug": "scientific-discovery",
@@ -13,11 +13,11 @@
   },
   {
    "slug": "forgotten-episode",
-   "count": 34
+   "count": 32
   },
   {
    "slug": "folklore-and-legend",
-   "count": 17
+   "count": 16
   },
   {
    "slug": "psychology-of-belief",
@@ -41,6 +41,10 @@
   },
   {
    "slug": "medical-deception",
+   "count": 5
+  },
+  {
+   "slug": "trailer",
    "count": 5
   },
   {
@@ -112,6 +116,10 @@
    "count": 2
   },
   {
+   "slug": "introducing",
+   "count": 2
+  },
+  {
    "slug": "journalist-under-scrutiny",
    "count": 2
   },
@@ -177,10 +185,6 @@
   },
   {
    "slug": "voluntary-disappearance",
-   "count": 1
-  },
-  {
-   "slug": "work-and-labour-conditions",
    "count": 1
   }
  ],
@@ -657,12 +661,17 @@
    "subjects": [
     {
      "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:54:17+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -886,6 +895,13 @@
    "guid": "http://www.blubrry.com/the_constant/38208780/its-a-gamble/",
    "subjects": [
     {
+     "subject": "forgotten-episode",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "history-retold",
      "role": "secondary",
      "confidence": "low",
@@ -895,13 +911,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "forgotten-episode",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1035,12 +1049,17 @@
    "subjects": [
     {
      "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1083,6 +1102,13 @@
    "guid": "http://www.blubrry.com/the_constant/40799594/join-us/",
    "subjects": [
     {
+     "subject": "forgotten-episode",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "history-retold",
      "role": "secondary",
      "confidence": "low",
@@ -1092,13 +1118,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "forgotten-episode",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -3219,12 +3243,17 @@
    "subjects": [
     {
      "subject": "history-retold",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -4324,6 +4353,13 @@
    "guid": "a0972ede-63bc-11ee-a397-1fb5845898f5",
    "subjects": [
     {
+     "subject": "folklore-and-legend",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "sense-of-place",
      "role": "secondary",
      "confidence": "medium",
@@ -4331,11 +4367,11 @@
      "at": "2026-07-29T08:57:48+00:00"
     },
     {
-     "subject": "folklore-and-legend",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T08:57:48+00:00"
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -4981,12 +5017,17 @@
    "subjects": [
     {
      "subject": "history-retold",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

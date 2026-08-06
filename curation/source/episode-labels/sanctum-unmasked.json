@@ -4,10 +4,6 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "founder-biography",
-   "count": 3
-  },
-  {
    "slug": "sex-work-and-exploitation",
    "count": 3
   },
@@ -16,7 +12,15 @@
    "count": 2
   },
   {
+   "slug": "founder-biography",
+   "count": 2
+  },
+  {
    "slug": "addiction-and-recovery",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -25,6 +29,13 @@
    "guid": "bb623e49-7227-4d9c-a0f0-af8f0168fada",
    "subjects": [
     {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "sex-work-and-exploitation",
      "role": "secondary",
      "confidence": "low",
@@ -32,11 +43,11 @@
      "at": "2026-08-01T20:20:45+00:00"
     },
     {
-     "subject": "founder-biography",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:45+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

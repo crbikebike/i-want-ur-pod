@@ -8,7 +8,7 @@
    "count": 6
   },
   {
-   "slug": "music-industry-business",
+   "slug": "introducing",
    "count": 1
   }
  ],
@@ -152,12 +152,17 @@
    "subjects": [
     {
      "subject": "music-industry-business",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   }

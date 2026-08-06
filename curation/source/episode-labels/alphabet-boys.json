@@ -5,19 +5,15 @@
  "subjectsUsed": [
   {
    "slug": "informant-and-undercover",
-   "count": 23
+   "count": 20
   },
   {
-   "slug": "mass-shooting",
-   "count": 2
+   "slug": "introducing",
+   "count": 4
   },
   {
-   "slug": "charismatic-con",
-   "count": 1
-  },
-  {
-   "slug": "heist-and-robbery",
-   "count": 1
+   "slug": "trailer",
+   "count": 3
   }
  ],
  "episodes": [
@@ -26,10 +22,17 @@
    "subjects": [
     {
      "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:20:39+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -234,12 +237,17 @@
    "subjects": [
     {
      "subject": "charismatic-con",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -261,6 +269,13 @@
    "guid": "a5ec29dd-9610-4ab3-80f4-b01501702bac",
    "subjects": [
     {
+     "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "organised-crime",
      "role": "secondary",
      "confidence": "low",
@@ -268,11 +283,11 @@
      "at": "2026-07-30T15:01:40+00:00"
     },
     {
-     "subject": "informant-and-undercover",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:01:40+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -491,12 +506,17 @@
    "subjects": [
     {
      "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -512,6 +532,13 @@
    "guid": "23613af4-3e90-4769-b246-b1a800fa94c9",
    "subjects": [
     {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "media-criticism",
      "role": "secondary",
      "confidence": "medium",
@@ -519,11 +546,11 @@
      "at": "2026-08-01T20:16:04+00:00"
     },
     {
-     "subject": "mass-shooting",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:16:04+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -547,10 +574,17 @@
     },
     {
      "subject": "mass-shooting",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:18:47+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -572,6 +606,13 @@
    "guid": "a40cf157-617c-4bdb-b56e-b2d70180bceb",
    "subjects": [
     {
+     "subject": "heist-and-robbery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "personal-transformation",
      "role": "secondary",
      "confidence": "medium",
@@ -579,13 +620,11 @@
      "at": "2026-07-30T15:05:32+00:00"
     },
     {
-     "subject": "heist-and-robbery",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

@@ -4,23 +4,19 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
-   "slug": "informant-and-undercover",
-   "count": 6
-  },
-  {
    "slug": "romance-and-catfishing",
    "count": 6
   },
   {
-   "slug": "government-secrecy",
+   "slug": "informant-and-undercover",
    "count": 5
   },
   {
-   "slug": "institutional-coverup",
-   "count": 4
+   "slug": "trailer",
+   "count": 5
   },
   {
-   "slug": "medical-system-harm",
+   "slug": "government-secrecy",
    "count": 4
   },
   {
@@ -28,15 +24,19 @@
    "count": 3
   },
   {
-   "slug": "religious-abuse",
-   "count": 1
+   "slug": "medical-system-harm",
+   "count": 3
+  },
+  {
+   "slug": "institutional-coverup",
+   "count": 2
+  },
+  {
+   "slug": "introducing",
+   "count": 2
   },
   {
    "slug": "unsolved-murder",
-   "count": 1
-  },
-  {
-   "slug": "vanishing-and-institutional-failure",
    "count": 1
   },
   {
@@ -54,10 +54,17 @@
    "subjects": [
     {
      "subject": "informant-and-undercover",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:03+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -211,10 +218,17 @@
     },
     {
      "subject": "medical-system-harm",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:32:46+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -403,12 +417,17 @@
     },
     {
      "subject": "religious-abuse",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -424,6 +443,13 @@
    "guid": "gid://art19-episode-locator/V0/aCSKWPG4oIqnvh-FFPZNpLU5qW3GbzTLDrR8amnVxY4",
    "subjects": [
     {
+     "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "medical-system-harm",
      "role": "secondary",
      "confidence": "medium",
@@ -431,11 +457,11 @@
      "at": "2026-08-01T20:19:05+00:00"
     },
     {
-     "subject": "institutional-coverup",
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:19:05+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -459,10 +485,17 @@
     },
     {
      "subject": "institutional-coverup",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:25:32+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -519,10 +552,17 @@
     },
     {
      "subject": "government-secrecy",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:06+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -791,12 +831,17 @@
     },
     {
      "subject": "vanishing-and-institutional-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

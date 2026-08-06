@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "serial-offender",
-   "count": 12
+   "count": 11
   },
   {
    "slug": "wrongful-conviction",
@@ -16,15 +16,15 @@
    "count": 2
   },
   {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
    "slug": "cold-case-reopened",
    "count": 1
   },
   {
    "slug": "forensic-evidence",
-   "count": 1
-  },
-  {
-   "slug": "missing-person",
    "count": 1
   },
   {
@@ -37,6 +37,13 @@
    "guid": "http://www.podtrac.com/pts/redirect.mp3/podcasts.howstuffworks.com/hsw/podcasts/atlm/2017-12-22-atlm-official-trailer.mp3",
    "subjects": [
     {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "wrongful-conviction",
      "role": "secondary",
      "confidence": "medium",
@@ -44,11 +51,11 @@
      "at": "2026-07-30T15:03:35+00:00"
     },
     {
-     "subject": "serial-offender",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:03:35+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -78,12 +85,17 @@
     },
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

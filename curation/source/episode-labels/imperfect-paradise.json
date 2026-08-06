@@ -21,22 +21,18 @@
   },
   {
    "slug": "police-misconduct",
-   "count": 8
+   "count": 7
   },
   {
    "slug": "cold-case-reopened",
-   "count": 7
-  },
-  {
-   "slug": "political-scandal",
-   "count": 7
-  },
-  {
-   "slug": "conspiracy-theory",
    "count": 6
   },
   {
    "slug": "labour-history",
+   "count": 6
+  },
+  {
+   "slug": "political-scandal",
    "count": 6
   },
   {
@@ -49,6 +45,14 @@
   },
   {
    "slug": "civil-rights-struggle",
+   "count": 5
+  },
+  {
+   "slug": "conspiracy-theory",
+   "count": 5
+  },
+  {
+   "slug": "trailer",
    "count": 5
   },
   {
@@ -96,19 +100,11 @@
    "count": 3
   },
   {
-   "slug": "parenting",
-   "count": 3
-  },
-  {
    "slug": "public-money-misused",
    "count": 3
   },
   {
    "slug": "racial-violence",
-   "count": 3
-  },
-  {
-   "slug": "sense-of-place",
    "count": 3
   },
   {
@@ -132,6 +128,10 @@
    "count": 2
   },
   {
+   "slug": "introducing",
+   "count": 2
+  },
+  {
    "slug": "media-criticism",
    "count": 2
   },
@@ -140,7 +140,15 @@
    "count": 2
   },
   {
+   "slug": "parenting",
+   "count": 2
+  },
+  {
    "slug": "reentry-after-prison",
+   "count": 2
+  },
+  {
+   "slug": "sense-of-place",
    "count": 2
   },
   {
@@ -201,10 +209,6 @@
   },
   {
    "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
-   "slug": "making-of-a-work",
    "count": 1
   },
   {
@@ -354,10 +358,17 @@
     },
     {
      "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:10:40+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -596,10 +607,17 @@
     },
     {
      "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:01:00+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -789,6 +807,13 @@
    "guid": "76407eaf-07d9-4ad9-a826-af6c0168f2db",
    "subjects": [
     {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "online-radicalisation",
      "role": "secondary",
      "confidence": "high",
@@ -796,11 +821,11 @@
      "at": "2026-07-30T14:45:23+00:00"
     },
     {
-     "subject": "conspiracy-theory",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:45:23+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1127,12 +1152,17 @@
     },
     {
      "subject": "making-of-a-work",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -1222,12 +1252,17 @@
    "subjects": [
     {
      "subject": "sense-of-place",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1236,10 +1271,17 @@
    "subjects": [
     {
      "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:41:59+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -2603,12 +2645,17 @@
    "subjects": [
     {
      "subject": "parenting",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

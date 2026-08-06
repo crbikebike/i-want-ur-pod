@@ -9,17 +9,28 @@
   },
   {
    "slug": "cult-and-control",
-   "count": 4
+   "count": 3
   },
   {
    "slug": "religious-abuse",
    "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
   {
    "guid": "c807b82c-a914-11eb-a644-87de8743f075",
    "subjects": [
+    {
+     "subject": "cult-and-control",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "religious-community",
      "role": "secondary",
@@ -28,11 +39,11 @@
      "at": "2026-08-01T20:27:57+00:00"
     },
     {
-     "subject": "cult-and-control",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:27:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

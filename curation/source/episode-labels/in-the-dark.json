@@ -4,27 +4,19 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
+   "slug": "trailer",
+   "count": 6
+  },
+  {
    "slug": "wrongful-conviction",
-   "count": 5
+   "count": 4
   },
   {
    "slug": "captivity-and-escape",
-   "count": 3
+   "count": 2
   },
   {
    "slug": "epidemic-and-public-health",
-   "count": 3
-  },
-  {
-   "slug": "family-annihilation-and-parricide",
-   "count": 2
-  },
-  {
-   "slug": "missing-person",
-   "count": 2
-  },
-  {
-   "slug": "unsolved-murder",
    "count": 2
   },
   {
@@ -32,7 +24,19 @@
    "count": 2
   },
   {
+   "slug": "family-annihilation-and-parricide",
+   "count": 1
+  },
+  {
    "slug": "government-secrecy",
+   "count": 1
+  },
+  {
+   "slug": "missing-person",
+   "count": 1
+  },
+  {
+   "slug": "unsolved-murder",
    "count": 1
   },
   {
@@ -53,10 +57,17 @@
     },
     {
      "subject": "missing-person",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:16+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -136,10 +147,17 @@
     },
     {
      "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:17:35+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -210,10 +228,17 @@
    "subjects": [
     {
      "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:33+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -289,6 +314,13 @@
    "guid": "prx_5770_5afd3713-796f-4c2c-a2e2-80b2ccdfa3aa",
    "subjects": [
     {
+     "subject": "captivity-and-escape",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "gendered-constraint",
      "role": "secondary",
      "confidence": "low",
@@ -298,13 +330,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "captivity-and-escape",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -386,6 +416,13 @@
    "guid": "prx_5770_319e16fa-b867-479e-b2ab-e0aa1afca818",
    "subjects": [
     {
+     "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "war-crimes-accountability",
      "role": "secondary",
      "confidence": "low",
@@ -395,13 +432,11 @@
      "at": "2026-08-05T05:02:56+00:00"
     },
     {
-     "subject": "unsolved-murder",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:02:56+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -510,6 +545,13 @@
    "guid": "prx_5770_a15b29ea-6251-4b49-bafe-1d5a81361bda",
    "subjects": [
     {
+     "subject": "family-annihilation-and-parricide",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "wrongful-conviction",
      "role": "secondary",
      "confidence": "medium",
@@ -517,11 +559,11 @@
      "at": "2026-07-30T15:07:37+00:00"
     },
     {
-     "subject": "family-annihilation-and-parricide",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:07:37+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

@@ -4,43 +4,35 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
+   "slug": "trailer",
+   "count": 20
+  },
+  {
    "slug": "police-misconduct",
-   "count": 17
+   "count": 15
   },
   {
    "slug": "political-persecution",
-   "count": 12
-  },
-  {
-   "slug": "mass-shooting",
-   "count": 9
+   "count": 11
   },
   {
    "slug": "political-figure-biography",
-   "count": 9
-  },
-  {
-   "slug": "extremist-movement",
-   "count": 7
-  },
-  {
-   "slug": "immigration-and-borders",
-   "count": 7
+   "count": 8
   },
   {
    "slug": "institutional-coverup",
    "count": 7
   },
   {
-   "slug": "conspiracy-theory",
+   "slug": "mass-shooting",
+   "count": 7
+  },
+  {
+   "slug": "extremist-movement",
    "count": 6
   },
   {
-   "slug": "elections-and-voting",
-   "count": 6
-  },
-  {
-   "slug": "investigative-process",
+   "slug": "immigration-and-borders",
    "count": 6
   },
   {
@@ -48,39 +40,31 @@
    "count": 6
   },
   {
-   "slug": "work-and-labour-conditions",
-   "count": 6
-  },
-  {
    "slug": "athlete-profile",
    "count": 5
   },
   {
-   "slug": "epidemic-and-public-health",
+   "slug": "conspiracy-theory",
    "count": 5
+  },
+  {
+   "slug": "elections-and-voting",
+   "count": 5
+  },
+  {
+   "slug": "investigative-process",
+   "count": 5
+  },
+  {
+   "slug": "work-and-labour-conditions",
+   "count": 5
+  },
+  {
+   "slug": "epidemic-and-public-health",
+   "count": 4
   },
   {
    "slug": "presidential-power",
-   "count": 5
-  },
-  {
-   "slug": "reproductive-health",
-   "count": 5
-  },
-  {
-   "slug": "sport-and-politics",
-   "count": 5
-  },
-  {
-   "slug": "unsolved-murder",
-   "count": 5
-  },
-  {
-   "slug": "war-and-its-conduct",
-   "count": 5
-  },
-  {
-   "slug": "gender-identity",
    "count": 4
   },
   {
@@ -88,7 +72,15 @@
    "count": 4
   },
   {
+   "slug": "reproductive-health",
+   "count": 4
+  },
+  {
    "slug": "romance-and-heartbreak",
+   "count": 4
+  },
+  {
+   "slug": "sport-and-politics",
    "count": 4
   },
   {
@@ -96,11 +88,19 @@
    "count": 4
   },
   {
-   "slug": "government-secrecy",
+   "slug": "unsolved-murder",
+   "count": 4
+  },
+  {
+   "slug": "war-and-its-conduct",
+   "count": 4
+  },
+  {
+   "slug": "gender-identity",
    "count": 3
   },
   {
-   "slug": "political-scandal",
+   "slug": "government-secrecy",
    "count": 3
   },
   {
@@ -121,6 +121,10 @@
   },
   {
    "slug": "organised-crime",
+   "count": 2
+  },
+  {
+   "slug": "political-scandal",
    "count": 2
   },
   {
@@ -202,12 +206,17 @@
    "subjects": [
     {
      "subject": "investigative-process",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -476,10 +485,17 @@
    "subjects": [
     {
      "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:43+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -581,6 +597,13 @@
    "guid": "61fae801-8209-4266-87c9-9eae8119f8f1",
    "subjects": [
     {
+     "subject": "presidential-power",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "reality-television",
      "role": "secondary",
      "confidence": "low",
@@ -588,11 +611,11 @@
      "at": "2026-07-29T23:16:50+00:00"
     },
     {
-     "subject": "presidential-power",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:50+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -724,12 +747,17 @@
    "subjects": [
     {
      "subject": "political-scandal",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -821,12 +849,17 @@
     },
     {
      "subject": "work-and-labour-conditions",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1243,10 +1276,17 @@
    "subjects": [
     {
      "subject": "political-figure-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:48:06+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -1540,12 +1580,17 @@
    "subjects": [
     {
      "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -1851,10 +1896,17 @@
    "subjects": [
     {
      "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:43+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2207,10 +2259,17 @@
     },
     {
      "subject": "police-misconduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:16:50+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2575,10 +2634,17 @@
     },
     {
      "subject": "immigration-and-borders",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:07:30+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -2801,12 +2867,17 @@
    "subjects": [
     {
      "subject": "war-and-its-conduct",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -3049,6 +3120,13 @@
    "guid": "138a2555-a61a-4bc5-82cd-ca9fd1770ea1",
    "subjects": [
     {
+     "subject": "mass-shooting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "racial-violence",
      "role": "secondary",
      "confidence": "medium",
@@ -3056,11 +3134,11 @@
      "at": "2026-07-30T14:53:55+00:00"
     },
     {
-     "subject": "mass-shooting",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:53:55+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -3540,6 +3618,13 @@
    "guid": "88a47b68-b144-4eeb-acca-62f1c147f786",
    "subjects": [
     {
+     "subject": "gender-identity",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "history-retold",
      "role": "secondary",
      "confidence": "low",
@@ -3547,11 +3632,11 @@
      "at": "2026-07-30T14:51:53+00:00"
     },
     {
-     "subject": "gender-identity",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:53+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -3883,12 +3968,17 @@
    "subjects": [
     {
      "subject": "elections-and-voting",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4032,10 +4122,17 @@
     },
     {
      "subject": "sport-and-politics",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:18:00+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4196,6 +4293,13 @@
    "guid": "6552ca64-7155-43db-852c-0fb24920a35c",
    "subjects": [
     {
+     "subject": "extremist-movement",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "institutional-coverup",
      "role": "secondary",
      "confidence": "medium",
@@ -4203,11 +4307,11 @@
      "at": "2026-07-29T23:08:38+00:00"
     },
     {
-     "subject": "extremist-movement",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:08:38+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4300,6 +4404,13 @@
    "guid": "7edd2935-8ef5-41b8-a005-62c5f0db9b03",
    "subjects": [
     {
+     "subject": "political-persecution",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "surveillance-and-privacy",
      "role": "secondary",
      "confidence": "medium",
@@ -4307,11 +4418,11 @@
      "at": "2026-07-30T14:46:03+00:00"
     },
     {
-     "subject": "political-persecution",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:46:03+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4434,6 +4545,13 @@
    "guid": "2b580eda-088b-4695-bd98-aa58a2154753",
    "subjects": [
     {
+     "subject": "conspiracy-theory",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "estrangement-and-reconciliation",
      "role": "secondary",
      "confidence": "medium",
@@ -4441,11 +4559,11 @@
      "at": "2026-07-29T23:10:06+00:00"
     },
     {
-     "subject": "conspiracy-theory",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:10:06+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4535,10 +4653,17 @@
    "subjects": [
     {
      "subject": "reproductive-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:51:53+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -4926,10 +5051,17 @@
     },
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:07:40+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

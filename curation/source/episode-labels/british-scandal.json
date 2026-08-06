@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "political-scandal",
-   "count": 36
+   "count": 34
   },
   {
    "slug": "cold-war-espionage",
@@ -56,10 +56,6 @@
    "count": 8
   },
   {
-   "slug": "reality-television",
-   "count": 8
-  },
-  {
    "slug": "wrongful-conviction",
    "count": 8
   },
@@ -68,11 +64,15 @@
    "count": 7
   },
   {
-   "slug": "charismatic-con",
-   "count": 5
+   "slug": "reality-television",
+   "count": 7
   },
   {
-   "slug": "identity-impostor",
+   "slug": "trailer",
+   "count": 6
+  },
+  {
+   "slug": "charismatic-con",
    "count": 5
   },
   {
@@ -89,6 +89,10 @@
   },
   {
    "slug": "employee-embezzlement",
+   "count": 4
+  },
+  {
+   "slug": "identity-impostor",
    "count": 4
   },
   {
@@ -172,10 +176,6 @@
    "count": 1
   },
   {
-   "slug": "ideas-and-argument",
-   "count": 1
-  },
-  {
    "slug": "legal-precedent",
    "count": 1
   },
@@ -185,10 +185,6 @@
   },
   {
    "slug": "musician-death",
-   "count": 1
-  },
-  {
-   "slug": "psychology-of-belief",
    "count": 1
   },
   {
@@ -210,12 +206,17 @@
    "subjects": [
     {
      "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -3322,12 +3323,17 @@
     },
     {
      "subject": "psychology-of-belief",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -9059,12 +9065,17 @@
    "subjects": [
     {
      "subject": "reality-television",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -9257,6 +9268,13 @@
    "guid": "gid://art19-episode-locator/V0/ZyurduSRilWyve6BkBnMfjW0B43H63jotEihXVJKDdc",
    "subjects": [
     {
+     "subject": "political-scandal",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "true-crime-as-genre",
      "role": "secondary",
      "confidence": "low",
@@ -9266,13 +9284,11 @@
      "at": "2026-08-03T05:32:12+00:00"
     },
     {
-     "subject": "political-scandal",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "agreement": 3,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:12+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -9640,12 +9656,17 @@
     },
     {
      "subject": "ideas-and-argument",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -9727,6 +9748,13 @@
    "guid": "gid://art19-episode-locator/V0/d3ccMTZmp0Ig9KLrgo5C7_8ttIWt5X-twpfb3Ko_jQI",
    "subjects": [
     {
+     "subject": "identity-impostor",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "voluntary-disappearance",
      "role": "secondary",
      "confidence": "medium",
@@ -9734,11 +9762,11 @@
      "at": "2026-07-29T23:06:06+00:00"
     },
     {
-     "subject": "identity-impostor",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-opus-5",
-     "at": "2026-07-29T23:06:06+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

@@ -5,17 +5,28 @@
  "subjectsUsed": [
   {
    "slug": "founder-biography",
-   "count": 9
+   "count": 8
   },
   {
    "slug": "murder-for-hire",
    "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
   {
    "guid": "91c17d04-b412-11ea-b538-b70956d07a72",
    "subjects": [
+    {
+     "subject": "founder-biography",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "murder-for-hire",
      "role": "secondary",
@@ -24,11 +35,11 @@
      "at": "2026-08-01T20:21:40+00:00"
     },
     {
-     "subject": "founder-biography",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:40+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "wrongful-conviction",
-   "count": 9
+   "count": 8
   },
   {
    "slug": "forensic-evidence",
@@ -13,18 +13,22 @@
   },
   {
    "slug": "cold-case-reopened",
-   "count": 4
+   "count": 3
   },
   {
    "slug": "unsolved-murder",
    "count": 3
   },
   {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
    "slug": "courtroom-trial",
    "count": 1
   },
   {
-   "slug": "environmental-contamination",
+   "slug": "introducing",
    "count": 1
   }
  ],
@@ -33,6 +37,13 @@
    "guid": "2497b1be-9a81-11e8-896f-971221a2f411",
    "subjects": [
     {
+     "subject": "cold-case-reopened",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "forensic-evidence",
      "role": "secondary",
      "confidence": "medium",
@@ -40,11 +51,11 @@
      "at": "2026-07-30T15:04:41+00:00"
     },
     {
-     "subject": "cold-case-reopened",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:04:41+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -310,10 +321,17 @@
    "subjects": [
     {
      "subject": "wrongful-conviction",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:11:50+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -642,12 +660,17 @@
    "subjects": [
     {
      "subject": "environmental-contamination",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

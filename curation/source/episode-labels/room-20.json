@@ -5,18 +5,22 @@
  "subjectsUsed": [
   {
    "slug": "unsolved-murder",
-   "count": 5
-  },
-  {
-   "slug": "art-and-artists",
-   "count": 1
+   "count": 4
   },
   {
    "slug": "forensic-evidence",
    "count": 1
   },
   {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
    "slug": "missing-person",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -33,10 +37,17 @@
     },
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:21:40+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },
@@ -169,6 +180,13 @@
    "guid": "eadb5d5c-e185-4005-90e1-ac986fdd35d7",
    "subjects": [
     {
+     "subject": "art-and-artists",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "celebrity-life",
      "role": "secondary",
      "confidence": "low",
@@ -178,13 +196,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "art-and-artists",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   }

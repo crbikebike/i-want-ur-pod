@@ -4,19 +4,11 @@
  "run": "2026-07-relabel-v176",
  "subjectsUsed": [
   {
+   "slug": "introducing",
+   "count": 5
+  },
+  {
    "slug": "presidential-power",
-   "count": 3
-  },
-  {
-   "slug": "extremist-movement",
-   "count": 2
-  },
-  {
-   "slug": "political-persecution",
-   "count": 2
-  },
-  {
-   "slug": "protest-movement",
    "count": 2
   },
   {
@@ -24,7 +16,7 @@
    "count": 1
   },
   {
-   "slug": "elections-and-voting",
+   "slug": "extremist-movement",
    "count": 1
   },
   {
@@ -40,7 +32,15 @@
    "count": 1
   },
   {
+   "slug": "political-persecution",
+   "count": 1
+  },
+  {
    "slug": "sport-and-politics",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   },
   {
@@ -54,10 +54,17 @@
    "subjects": [
     {
      "subject": "presidential-power",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:08:47+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -305,12 +312,17 @@
    "subjects": [
     {
      "subject": "extremist-movement",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -334,10 +346,17 @@
     },
     {
      "subject": "political-persecution",
-     "role": "primary",
-     "confidence": "medium",
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:05:33+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -388,12 +407,17 @@
    "subjects": [
     {
      "subject": "protest-movement",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -402,12 +426,17 @@
    "subjects": [
     {
      "subject": "elections-and-voting",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -416,12 +445,17 @@
    "subjects": [
     {
      "subject": "protest-movement",
-     "role": "primary",
+     "role": "secondary",
      "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "introducing",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

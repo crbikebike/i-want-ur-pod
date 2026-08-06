@@ -5,7 +5,11 @@
  "subjectsUsed": [
   {
    "slug": "serial-offender",
-   "count": 10
+   "count": 8
+  },
+  {
+   "slug": "trailer",
+   "count": 2
   },
   {
    "slug": "missing-person",
@@ -17,6 +21,13 @@
    "guid": "42c32a4a-9dac-11e9-b645-8f388a6c2235",
    "subjects": [
     {
+     "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
      "subject": "whistleblower",
      "role": "secondary",
      "confidence": "medium",
@@ -24,11 +35,11 @@
      "at": "2026-08-01T20:28:53+00:00"
     },
     {
-     "subject": "serial-offender",
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:28:53+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -58,10 +69,17 @@
     },
     {
      "subject": "serial-offender",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-08-01T20:21:40+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [

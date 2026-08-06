@@ -13,19 +13,27 @@
   },
   {
    "slug": "courtroom-trial",
-   "count": 6
-  },
-  {
-   "slug": "regulatory-failure",
    "count": 5
   },
   {
-   "slug": "unsolved-murder",
+   "slug": "regulatory-failure",
    "count": 4
   },
   {
    "slug": "intimate-partner-homicide",
    "count": 3
+  },
+  {
+   "slug": "unsolved-murder",
+   "count": 3
+  },
+  {
+   "slug": "trailer",
+   "count": 2
+  },
+  {
+   "slug": "introducing",
+   "count": 1
   },
   {
    "slug": "journalist-under-scrutiny",
@@ -46,10 +54,17 @@
    "subjects": [
     {
      "subject": "unsolved-murder",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T15:22:33+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -641,6 +656,13 @@
    "guid": "c2efb8a6-7fcb-4138-b057-ae9400bfa010",
    "subjects": [
     {
+     "subject": "courtroom-trial",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "intimate-partner-homicide",
      "role": "secondary",
      "confidence": "low",
@@ -650,13 +672,11 @@
      "at": "2026-08-05T04:40:44+00:00"
     },
     {
-     "subject": "courtroom-trial",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [
@@ -739,10 +759,17 @@
    "subjects": [
     {
      "subject": "regulatory-failure",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
      "confidence": "high",
-     "model": "claude-sonnet-5",
-     "at": "2026-07-30T14:54:06+00:00"
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

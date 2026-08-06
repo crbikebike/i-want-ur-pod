@@ -9,13 +9,24 @@
   },
   {
    "slug": "epidemic-and-public-health",
-   "count": 3
+   "count": 2
+  },
+  {
+   "slug": "trailer",
+   "count": 1
   }
  ],
  "episodes": [
   {
    "guid": "c7a7d788-ebc0-11eb-8241-bbfb04bd4a00",
    "subjects": [
+    {
+     "subject": "epidemic-and-public-health",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
     {
      "subject": "history-retold",
      "role": "secondary",
@@ -26,13 +37,11 @@
      "at": "2026-08-03T05:32:11+00:00"
     },
     {
-     "subject": "epidemic-and-public-health",
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "low",
-     "agreement": 1,
-     "votes": 3,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-03T05:32:11+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ]
   },

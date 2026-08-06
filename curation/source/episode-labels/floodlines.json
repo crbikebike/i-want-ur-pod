@@ -5,18 +5,22 @@
  "subjectsUsed": [
   {
    "slug": "natural-disaster",
-   "count": 8
-  },
-  {
-   "slug": "civil-rights-struggle",
-   "count": 1
+   "count": 7
   },
   {
    "slug": "engineering-failure",
    "count": 1
   },
   {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
    "slug": "police-misconduct",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   }
  ],
@@ -26,12 +30,17 @@
    "subjects": [
     {
      "subject": "natural-disaster",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
+    },
+    {
+     "subject": "trailer",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
-     "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:40:44+00:00"
+     "confidence": "high",
+     "model": "publisher",
+     "at": "2026-08-06T03:37:49+00:00"
     }
    ],
    "entities": [
@@ -259,6 +268,13 @@
    "guid": "17f019e0-b6da-11ed-b463-27485ee63d66",
    "subjects": [
     {
+     "subject": "civil-rights-struggle",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "racial-violence",
      "role": "secondary",
      "confidence": "low",
@@ -268,13 +284,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "civil-rights-struggle",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ],
    "entities": [

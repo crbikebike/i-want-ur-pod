@@ -5,7 +5,7 @@
  "subjectsUsed": [
   {
    "slug": "folklore-and-legend",
-   "count": 443
+   "count": 442
   },
   {
    "slug": "history-retold",
@@ -29,10 +29,6 @@
   },
   {
    "slug": "charismatic-con",
-   "count": 3
-  },
-  {
-   "slug": "everyday-mystery",
    "count": 3
   },
   {
@@ -64,6 +60,10 @@
    "count": 2
   },
   {
+   "slug": "everyday-mystery",
+   "count": 2
+  },
+  {
    "slug": "forgotten-episode",
    "count": 2
   },
@@ -88,11 +88,19 @@
    "count": 1
   },
   {
+   "slug": "introducing",
+   "count": 1
+  },
+  {
    "slug": "mental-health",
    "count": 1
   },
   {
    "slug": "missing-person",
+   "count": 1
+  },
+  {
+   "slug": "trailer",
    "count": 1
   },
   {
@@ -4081,12 +4089,17 @@
    "subjects": [
     {
      "subject": "folklore-and-legend",
-     "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 2,
+     "role": "secondary",
+     "confidence": "low",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T04:52:27+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
+     "subject": "trailer",
+     "role": "primary",
+     "confidence": "high",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
@@ -4279,6 +4292,13 @@
    "guid": "30560cc5-0097-4ec5-b44e-d26ad1c8b0e3",
    "subjects": [
     {
+     "subject": "everyday-mystery",
+     "role": "secondary",
+     "confidence": "low",
+     "model": "claude-sonnet-5",
+     "at": "2026-08-06T03:42:41+00:00"
+    },
+    {
      "subject": "folklore-and-legend",
      "role": "secondary",
      "confidence": "low",
@@ -4288,13 +4308,11 @@
      "at": "2026-08-05T05:01:57+00:00"
     },
     {
-     "subject": "everyday-mystery",
+     "subject": "introducing",
      "role": "primary",
-     "confidence": "medium",
-     "agreement": 2,
-     "votes": 3,
+     "confidence": "high",
      "model": "claude-sonnet-5",
-     "at": "2026-08-05T05:01:57+00:00"
+     "at": "2026-08-06T03:42:41+00:00"
     }
    ]
   },
